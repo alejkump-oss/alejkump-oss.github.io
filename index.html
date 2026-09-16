@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>n8n workflow reliability review — find the failures that look like success</title>
+<title>n8n workflow reliability review — when every step is green and nothing landed</title>
 <meta name="description" content="A fixed-scope reliability review of one exported n8n workflow. Static analysis plus manual judgement, every finding stating what it does not prove, and a NOT CHECKED list as plain as what was checked.">
 <link rel="canonical" href="https://alejkump-oss.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alejkump-oss.github.io/">
-<meta property="og:title" content="Your n8n automation says it succeeded. It didn't.">
+<meta property="og:title" content="Every step was green. Nothing landed.">
 <meta property="og:description" content="A reliability review of one exported n8n workflow, aimed at the failure that never raises an error and surfaces weeks later as a customer who says they sent something you never got.">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Your n8n automation says it succeeded. It didn't.">
+<meta name="twitter:title" content="Every step was green. Nothing landed.">
 <meta name="twitter:description" content="A reliability review of one exported n8n workflow. Every finding states what it does not prove.">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
@@ -54,11 +54,12 @@
 
 <main class="wrap">
 
-  <h1>Your automation says it succeeded. It didn&rsquo;t.</h1>
+  <h1>Every step was green. Nothing landed.</h1>
 
-  <p class="lede">I review <strong>one exported n8n workflow</strong> and tell you
-  where it can fail without ever turning a run red &mdash; then show you what I
-  checked, what I didn&rsquo;t, and what each finding does <em>not</em> prove.</p>
+  <p class="lede">And you found out eleven days later, because a customer asked.
+  I review <strong>one exported n8n workflow</strong> and tell you which of its
+  silent failure paths actually matter &mdash; then show you what I checked, what
+  I didn&rsquo;t, and what each finding does <em>not</em> prove.</p>
 
   <p class="who">For teams already running n8n in production &mdash; agencies,
   operations teams, and the person who owns the automations but not the time to
@@ -84,13 +85,20 @@
 
   <h2 id="problem">The failure this is about</h2>
 
+  <p>It almost always has three parts, and people tell it in this order:</p>
+
   <blockquote>
-    <p>&ldquo;Our automations run. But every so often a customer says they sent
-    something and we never got it, and we can&rsquo;t tell whether that&rsquo;s
-    true, how often it happens, or which ones it happened to.&rdquo;</p>
+    <p>Every node was green. Nothing actually landed in the destination.
+    <strong>And nobody found out for days</strong>, until a human asked a
+    question.</p>
   </blockquote>
 
-  <p>That is hard to chase because nothing went wrong in a way n8n can see. A node
+  <p>The first two are the bug. <strong>The third is the cost.</strong> A failure
+  that announces itself is a bad afternoon; a failure that reports success is a
+  fortnight of decisions made on data that was never there, and a reconciliation
+  afterwards that nobody budgeted for.</p>
+
+  <p>It is hard to chase because nothing went wrong in a way n8n can see. A node
   returned a clean 200. A payload shape changed upstream and a mapping quietly
   produced nothing. A duplicate check passed twice because two executions
   overlapped. The execution list shows green runs, so there is no error to search
@@ -113,7 +121,32 @@
 
   <p>The deliverable is <strong>a report you can verify without trusting the
   person who wrote it.</strong> That is the product. The tooling underneath it is
-  not the point.</p>
+  not the point &mdash; and I would rather say why than let you find out.</p>
+
+  <div class="panel">
+    <h3>Reading the file is the easy part, and it is getting cheaper</h3>
+    <p>Free tools exist that will take a workflow export and hand you a list of
+    places it could fail. Some are good. If a list is what you need, use one and
+    keep your money.</p>
+    <p><strong>A list is not the hard part.</strong> The hard part is the three
+    things a list does not do: telling you which two of eleven findings are worth
+    your week, stating plainly what was <em>not</em> examined, and refusing to
+    claim something has failed when the evidence only shows it <em>can</em>. The
+    last one matters most, because a tool that only ever argues in one direction
+    will eventually cost you a sprint on a problem you never had.</p>
+    <p>That judgement is what I sell. Not the reading.</p>
+  </div>
+
+  <div class="panel">
+    <h3>It works on the first day</h3>
+    <p>Monitoring and anomaly detection need a baseline &mdash; weeks of your
+    normal behaviour before they can tell normal from wrong. That is fine if the
+    workflow has been running for months and nothing has changed.</p>
+    <p>Reading the export needs none of that. It works on a workflow you shipped
+    this morning, on one you inherited from someone who left, and on one you are
+    about to put ten times the volume through. <strong>Those are exactly the
+    three moments when the risk is highest and a baseline does not exist yet.</strong></p>
+  </div>
 
   <div class="panel">
     <h3>Three properties that are the actual product</h3>
