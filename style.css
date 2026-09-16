@@ -159,3 +159,47 @@ footer.site a { color: var(--ink-soft); }
 .cta:hover { opacity: 0.9; }
 
 .fill { background: repeating-linear-gradient(45deg, var(--accent-soft), var(--accent-soft) 6px, transparent 6px, transparent 12px); padding: 0 0.3em; border-radius: 2px; }
+
+/* --- Conversion layer, added 2026-09-16 ------------------------------------ */
+
+.who {
+  font-size: 0.97rem;
+  color: var(--ink-faint);
+  margin: -0.4rem 0 1.6rem;
+}
+
+.cta-row { display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 2.4rem; }
+.cta-note { font-size: 0.87rem; color: var(--ink-faint); }
+
+ol.steps { margin: 0; padding-left: 1.2rem; }
+ol.steps li { margin-bottom: 0.7rem; }
+ol.steps li:last-child { margin-bottom: 0; }
+
+.warn {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--ink-faint);
+  border-radius: 6px;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+  background: var(--bg-panel);
+}
+
+h3 + p { margin-top: 0.2rem; }
+
+/* Narrow screens: the nav wraps rather than scrolling the body sideways, and
+   tables get room. Checked on a 390px viewport. */
+@media (max-width: 640px) {
+  .wrap { padding: 0 1.15rem; }
+  header.site { padding: 1.1rem 0; margin-bottom: 2.25rem; }
+  header.site .wrap { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  header.site nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+  header.site nav a { margin-left: 0; }
+  h1 { font-size: 1.75rem; }
+  .lede { font-size: 1.05rem; }
+  th, td { padding: 0.55rem 0.6rem; }
+  th { white-space: normal; }
+  pre { font-size: 0.74rem; padding: 0.8rem; }
+  .cta { display: block; text-align: center; }
+  .cta-row { gap: 0.6rem; }
+}

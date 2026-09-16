@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The dedupe that passed every test and was never a dedupe</title>
 <meta name="description" content="An n8n lead-intake dedupe built on $getWorkflowStaticData passed every sequential test, then lost dedupe keys under concurrency. Worked end to end from n8n's own source.">
+<link rel="canonical" href="https://alejkump-oss.github.io/teardown.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alejkump-oss.github.io/teardown.html">
+<meta property="og:title" content="The dedupe that passed every test and was never a dedupe">
+<meta property="og:description" content="It passed every sequential test for a full session. Every one of those tests was sequential, and the property it depended on was a concurrency guarantee.">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The dedupe that passed every test and was never a dedupe">
+<meta name="twitter:description" content="Predicted from n8n 2.33.7 source, then reproduced on the first attempt.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>

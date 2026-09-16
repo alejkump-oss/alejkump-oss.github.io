@@ -1,0 +1,5 @@
+# Everything here is public and intended to be indexed.
+User-agent: *
+Allow: /
+
+Sitemap: https://alejkump-oss.github.io/sitemap.xml

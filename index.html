@@ -3,9 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Workflow reliability reviews for n8n</title>
-<meta name="description" content="A structured reliability review of one exported n8n workflow. Static analysis plus manual judgement, with a NOT CHECKED list stated as plainly as what was checked.">
+<title>n8n workflow reliability review — find the failures that look like success</title>
+<meta name="description" content="A fixed-scope reliability review of one exported n8n workflow. Static analysis plus manual judgement, every finding stating what it does not prove, and a NOT CHECKED list as plain as what was checked.">
+<link rel="canonical" href="https://alejkump-oss.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alejkump-oss.github.io/">
+<meta property="og:title" content="Your n8n automation says it succeeded. It didn't.">
+<meta property="og:description" content="A reliability review of one exported n8n workflow, aimed at the failure that never raises an error and surfaces weeks later as a customer who says they sent something you never got.">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Your n8n automation says it succeeded. It didn't.">
+<meta name="twitter:description" content="A reliability review of one exported n8n workflow. Every finding states what it does not prove.">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Računalniško programiranje Alej Kump s.p.",
+  "url": "https://alejkump-oss.github.io/",
+  "email": "alej.kump@gmail.com",
+  "description": "Reliability reviews of n8n automation workflows.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ulica heroja Marinclja 3",
+    "postalCode": "1330",
+    "addressLocality": "Kočevje",
+    "addressCountry": "SI"
+  },
+  "founder": { "@type": "Person", "name": "Alej Kump" },
+  "areaServed": "EU",
+  "knowsAbout": ["n8n", "workflow automation", "workflow reliability", "idempotency"]
+}
+</script>
 </head>
 <body>
 
@@ -16,6 +45,7 @@
       <a href="teardown.html">A worked example</a>
       <a href="#what">What it is</a>
       <a href="#limits">What it isn't</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </div>
 </header>
@@ -24,16 +54,25 @@
 
   <h1>Your automation says it succeeded. It didn&rsquo;t.</h1>
 
-  <p class="lede">A structured reliability review of one exported n8n workflow &mdash;
-  aimed at the failure that never raises an error, never marks a run red, and
-  surfaces weeks later as a customer who says they sent something you never got.</p>
+  <p class="lede">I review <strong>one exported n8n workflow</strong> and tell you
+  where it can fail without ever turning a run red &mdash; then show you what I
+  checked, what I didn&rsquo;t, and what each finding does <em>not</em> prove.</p>
+
+  <p class="who">For teams already running n8n in production &mdash; agencies,
+  operations teams, and the person who owns the automations but not the time to
+  re-read them.</p>
+
+  <p class="cta-row">
+    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
+    <span class="cta-note">Email. No form, no signup, no newsletter.</span>
+  </p>
 
   <div class="disclosure">
-    <strong>Who is writing this.</strong> I run an independent automation
-    practice and I sell the review described on this page. This is a commercial
-    page, not neutral advice. Everything on it is checkable, and the section on
-    what the review <em>cannot</em> establish is as detailed as the section on
-    what it can.
+    <strong>Who is writing this.</strong> I&rsquo;m Alej Kump. I registered this
+    business on 15 September 2026 and this page sells a service I provide
+    personally. It is a commercial page, not neutral advice &mdash; and I have no
+    clients yet, which is why everything here is written to be checked rather
+    than believed.
   </div>
 
   <h2 id="problem">The failure this is about</h2>
@@ -44,116 +83,168 @@
     true, how often it happens, or which ones it happened to.&rdquo;</p>
   </blockquote>
 
-  <p>The reason that is hard to chase is that nothing went wrong in a way n8n
-  can see. A node returned a clean 200. A payload shape changed upstream and a
-  mapping quietly produced nothing. A duplicate check passed twice because two
-  executions overlapped. The execution list shows green runs, so there is no
-  error to search for and no failed run to open.</p>
+  <p>That is hard to chase because nothing went wrong in a way n8n can see. A node
+  returned a clean 200. A payload shape changed upstream and a mapping quietly
+  produced nothing. A duplicate check passed twice because two executions
+  overlapped. The execution list shows green runs, so there is no error to search
+  for and no failed run to open.</p>
 
-  <p>Every one of those is visible in the workflow&rsquo;s own export, before
-  anything runs. That is what this review reads.</p>
+  <p><strong>Every one of those is visible in the workflow&rsquo;s own export,
+  before anything runs.</strong> That is what this review reads.</p>
 
-  <h2 id="what">What the review is</h2>
+  <h2 id="what">What it is, in three lines</h2>
 
-  <p><strong>A structured reliability review of one exported n8n workflow:</strong>
-  static analysis of the export, plus manual judgement, plus whatever execution
-  evidence you choose to share.</p>
+  <div class="panel">
+    <ol class="steps">
+      <li><strong>You send</strong> the workflow export and say what it&rsquo;s for.</li>
+      <li><strong>I review it</strong> &mdash; deterministic static analysis of the
+      export, plus judgement about your business.</li>
+      <li><strong>You get</strong> ranked findings, what each does <em>not</em>
+      prove, recommended fixes kept separate, and a NOT CHECKED list.</li>
+    </ol>
+  </div>
 
-  <p>The analysis is deterministic and it derives, from the export alone: the
-  node inventory and connection graph, triggers, Code-node structure, nodes that
-  can fail with nowhere to send the failure, paths that end without recording
-  anything, the non-atomic static-data idempotency pattern, isolated nodes,
-  unwired Merge inputs, webhook triggers with no authentication configured,
-  credential <em>references</em>, secret-shaped parameter keys, and unrecognised
-  node types.</p>
+  <p>The deliverable is <strong>a report you can verify without trusting the
+  person who wrote it.</strong> That is the product. The tooling underneath it is
+  not the point.</p>
 
   <div class="panel">
     <h3>Three properties that are the actual product</h3>
     <ul>
       <li><strong>Nothing from your export is ever executed.</strong> No node
-      runs, no request is made, and no credential value is read. Code nodes are
+      runs, no request is made, no credential value is read. Code nodes are
       inspected as text.</li>
-      <li><strong>No parameter value and no Code-node body is printed in the
-      report</strong> &mdash; a blanket rule rather than a filter, because a
-      filter is a list of the leaks somebody thought of.</li>
+      <li><strong>No parameter value or Code-node body appears in the report</strong>
+      &mdash; a blanket rule rather than a filter, because a filter is a list of
+      the leaks somebody thought of.</li>
       <li><strong>Every finding carries what it does <em>not</em> prove.</strong>
-      &ldquo;This workflow contains an unhandled failure path&rdquo; and
-      &ldquo;this workflow has failed&rdquo; are different claims, and an export
-      can only support the first.</li>
+      &ldquo;This contains an unhandled failure path&rdquo; and &ldquo;this has
+      failed&rdquo; are different claims. An export only supports the first.</li>
     </ul>
   </div>
 
-  <h3>What you supply</h3>
+  <h3>What gets checked, from the export alone</h3>
+  <p>Node inventory and connection graph; triggers; Code-node structure; nodes
+  that can fail with nowhere to send the failure; paths that end recording
+  nothing; the non-atomic static-data idempotency pattern; isolated and
+  unreachable nodes; unwired Merge inputs; webhook triggers with no
+  authentication; credential <em>references</em>; secret-shaped parameter keys;
+  and unrecognised node types.</p>
+
+  <h2 id="who">Who this is for &mdash; and who it isn&rsquo;t</h2>
+
   <div class="tbl-scroll">
   <table>
-    <tr><th>The workflow export, JSON, credential values stripped</th><td>Required. Without it there is nothing to review</td></tr>
-    <tr><th>What the workflow is for, in your words</th><td>Required. Severity is a judgement about your business, not a property of a node</td></tr>
-    <tr><th>Expected input and expected output</th><td>Required</td></tr>
-    <tr><th>Known symptoms</th><td>If any. &ldquo;None that we know of&rdquo; is a real answer</td></tr>
-    <tr><th>Execution or log evidence</th><td>Optional &mdash; and the only thing that can establish whether a failure has actually happened</td></tr>
+    <tr>
+      <th>A good fit</th>
+      <td>You run n8n in production. Something has gone quietly wrong at least
+      once, or you are about to put more volume through a workflow than it has
+      carried before. Someone can approve a small fixed-price piece of work.</td>
+    </tr>
+    <tr>
+      <th>Not a fit &mdash; and I&rsquo;ll say so</th>
+      <td>You are on Make, Zapier or Power Automate only. I have not built the
+      evidence to review those and will not pretend otherwise. You want the
+      workflow fixed rather than reviewed &mdash; that is a different job. You want
+      an ongoing retainer as a first engagement.</td>
+    </tr>
   </table>
   </div>
-
-  <h3>What you get back</h3>
-  <div class="tbl-scroll">
-  <table>
-    <tr><th>Findings, ranked by impact</th><td>Each naming a concrete failure scenario and the input that produces it</td></tr>
-    <tr><th>The evidence for each</th><td>Quoted from your own export</td></tr>
-    <tr><th>What each finding does not prove</th><td>Carried on every finding</td></tr>
-    <tr><th>A risk explanation in business terms</th><td>What it costs you, not what it is called</td></tr>
-    <tr><th>Recommended fixes, kept separate</th><td>A finding is observed; a recommendation is judgement. They are never mixed</td></tr>
-    <tr><th>A test plan</th><td>What to check after fixing, and how you would know it worked</td></tr>
-    <tr><th>A NOT CHECKED list</th><td>Stated as plainly as what was checked</td></tr>
-  </table>
-  </div>
-
-  <p>The deliverable is <strong>a report you can verify without trusting the
-  person who wrote it.</strong> That is the product. The tooling underneath it
-  is not the point.</p>
 
   <h2 id="limits">What it is not, and cannot become</h2>
 
   <p>Stated here rather than discovered later, because a review that overstates
-  its reach is worse than no review &mdash; it spends your engineers&rsquo; time
-  on work that was never needed.</p>
+  its reach is worse than no review &mdash; it spends your engineers&rsquo; time on
+  work that was never needed.</p>
 
   <ul>
     <li><strong>It is not &ldquo;we reproduce your workflow end to end&rdquo;.</strong>
-    Your workflow is never run. There is no n8n execution engine here and none
-    is planned.</li>
+    Your workflow is never run. There is no n8n execution engine here and none is
+    planned.</li>
     <li><strong>No n8n expression is evaluated.</strong> A wrong expression is
     invisible to static analysis.</li>
-    <li><strong>No Code node is executed.</strong> Code-node findings are
-    lexical &mdash; the source is read as text.</li>
+    <li><strong>No Code node is executed.</strong> Code-node findings are lexical
+    &mdash; the source is read as text.</li>
     <li><strong>Nothing is said about your credentials.</strong> Only the
-    reference is read, so nothing here establishes whether a credential is
-    valid, expired, or over-scoped.</li>
+    reference is read, so nothing establishes whether one is valid, expired or
+    over-scoped.</li>
     <li><strong>Instance configuration is not in an export.</strong> A global
-    error workflow, execution timeouts, queue mode, concurrency settings and
-    your n8n version can all change the conclusions.</li>
-    <li><strong>Runtime history is not in an export.</strong> Nothing derived
-    from a file says how often a path has actually been taken.</li>
+    error workflow, timeouts, queue mode, concurrency settings and your n8n
+    version can all change the conclusions.</li>
+    <li><strong>Runtime history is not in an export.</strong> Nothing derived from
+    a file says how often a path has actually been taken.</li>
     <li><strong>Where a finding cannot be reproduced, it is reported as observed
-    by inspection, not reproduced</strong> &mdash; and labelled that way. A
-    finding you cannot reproduce is withdrawn, not defended.</li>
+    by inspection, not reproduced</strong> &mdash; and labelled that way. A finding
+    you cannot reproduce is withdrawn, not defended.</li>
   </ul>
 
   <h2>A worked example</h2>
 
-  <p>Rather than a case study, which would require a client I have not yet had,
-  here is the method applied to a workflow of my own &mdash; a lead-intake
-  deduplication that passed every test for a full session and was never a dedupe
-  at all. It ends at the finding, not at an offer.</p>
+  <p>Rather than a case study, which would need a client I have not had, here is
+  the method applied to a workflow of my own &mdash; a lead-intake deduplication
+  that passed every test for a full session and was never a dedupe at all. It
+  ends at the finding, not at an offer.</p>
 
   <p><a class="cta" href="teardown.html">Read the teardown &rarr;</a></p>
 
+  <h2 id="faq">Questions people actually ask</h2>
+
+  <h3>Who have you done this for?</h3>
+  <p><strong>Nobody yet.</strong> This business was registered on 15 September
+  2026 and has had no clients. I could have waited and said nothing, but you would
+  have found out, and a first engagement built on a vague impression is worse for
+  both of us. What exists instead of a client list is a method you can inspect:
+  the <a href="teardown.html">teardown</a> is a real defect found in my own work,
+  including the part where my own tests passed for a whole session and were
+  measuring the wrong thing.</p>
+
+  <h3>What do I actually send you?</h3>
+  <p>To start, just a description &mdash; what the workflow does, what should
+  happen, and anything odd you have noticed. The export comes later, with
+  credential values stripped. <strong>Please don&rsquo;t email credentials, API
+  keys, tokens or passwords at any point.</strong> If one arrives anyway I will
+  tell you immediately and treat it as exposed, because deleting an email is not
+  the same as rotating a key.</p>
+
+  <h3>What if you don&rsquo;t find anything?</h3>
+  <p>Then I say so, and that is a real result rather than a failed engagement. A
+  review that always finds something is not a review.</p>
+
+  <h3>How long does it take?</h3>
+  <p>Days, not weeks &mdash; and I will give you a date once I have seen the
+  workflow rather than before. I would rather commit to something I can hold than
+  to something that sounds impressive.</p>
+
+  <h3>What does it cost?</h3>
+  <p>A fixed price, agreed before any work starts, and small enough to be an
+  expense approval rather than a budget decision. I quote it in the first
+  conversation, once I know the workflow is one I can actually help with.</p>
+
+  <h3>Are you a real business I can invoice through?</h3>
+  <p>Yes &mdash; a registered Slovenian <em>s.p.</em>, paid by bank transfer, with
+  the full register details in the footer. That matters more than it sounds: much
+  of the cheap end of this market settles in crypto to an anonymous handle, which
+  an accountant cannot book.</p>
+
+  <h3>Can you just fix it instead?</h3>
+  <p>Not as the first piece of work. An audit that fixes things is not an audit
+  &mdash; mixing them makes both unverifiable. If the findings justify a fix, we
+  scope that separately afterwards.</p>
+
   <h2 id="contact">Talking to me</h2>
 
-  <p>Send the export and what the workflow is for. If there is nothing worth
-  reporting in it, I will say so &mdash; that is a real outcome and it is the
-  one that makes the rest credible.</p>
+  <p>Tell me what the workflow does and what you think is going wrong. If it is
+  not something I can genuinely help with, I will say so in the first reply
+  &mdash; that is the outcome that makes the rest of this page credible.</p>
 
-  <p><a class="cta" href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></p>
+  <p class="cta-row">
+    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
+    <span class="cta-note">Opens your mail app with the questions pre-filled.</span>
+  </p>
+
+  <p class="warn"><strong>Please don&rsquo;t send secrets.</strong> No credentials,
+  API keys, tokens or passwords &mdash; not in the first email and not in the
+  export. There is nothing I need that requires them.</p>
 
 </main>
 
