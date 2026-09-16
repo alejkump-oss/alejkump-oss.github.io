@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The dedupe that passed every test and was never a dedupe</title>
+<meta name="description" content="An n8n lead-intake dedupe built on $getWorkflowStaticData passed every sequential test, then lost dedupe keys under concurrency. Worked end to end from n8n's own source.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="mark" href="./">Workflow reliability reviews</a>
+    <nav>
+      <a href="./">Back to the review</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>The dedupe that passed every test and was never a dedupe</h1>
+
+  <p class="meta">16 September 2026 &middot; a worked example, on one of my own workflows</p>
+
+  <div class="disclosure">
+    <strong>Disclosure.</strong> I sell reliability reviews of n8n workflows,
+    and this article exists partly to show how I work. The defect below is in my
+    own workflow, not a client&rsquo;s and not one built to be broken. The
+    limits of what it establishes are set out at the end and are not
+    decoration.
+  </div>
+
+  <p>An n8n workflow deduplicated inbound leads using
+  <code>$getWorkflowStaticData()</code>, n8n&rsquo;s own documented way to keep
+  a value between executions without standing up a database. It was tested for a
+  full session and behaved correctly every time. Duplicates were caught. State
+  survived across two completely separate Docker containers sharing only a named
+  volume &mdash; the second run correctly detecting the first&rsquo;s record.
+  Retention pruning worked. The tests were repeated after a schema change and
+  passed again.</p>
+
+  <p>Every one of those tests was <strong>sequential</strong>.</p>
+
+  <p>That is the whole problem, and it is not a testing failure so much as a
+  category error. Sequential tests establish observed behaviour. The property the
+  workflow actually depended on &mdash; that two executions cannot both pass the
+  duplicate check with the same key &mdash; is a <em>concurrency guarantee</em>,
+  and no number of sequential passes speaks to it.</p>
+
+  <p>Worth being precise about how this went wrong, because the tempting version
+  is false. It is not that nobody noticed. The limitation was written down, in
+  advance, in the project&rsquo;s own documentation: concurrent-execution safety
+  of <code>$getWorkflowStaticData</code> &ldquo;has not been established &mdash;
+  see the idempotency design doc&rsquo;s open risk.&rdquo; The risk was named in
+  writing, and the documentation was upgraded from &ldquo;design-level
+  only&rdquo; to &ldquo;proven durable&rdquo; anyway.
+  <strong>Naming a risk is not the same as pricing it.</strong></p>
+
+  <h2>What the source says</h2>
+
+  <p>Ten minutes in n8n 2.33.7&rsquo;s own source settled it:</p>
+
+  <ul>
+    <li><code>Workflow.getStaticData()</code> returns an in-memory object created
+    <strong>per execution</strong>, loaded from the workflow row when that
+    execution starts.</li>
+    <li><code>WorkflowStaticDataService.saveStaticDataById()</code> issues
+    <code>UPDATE workflow SET staticData = &lt;entire blob&gt; WHERE id = ?</code>
+    &mdash; a full overwrite. No merge. No compare-and-set.</li>
+    <li>It is called from the <code>workflowExecuteAfter</code> lifecycle hook
+    &mdash; <strong>after the execution finishes</strong>, not at the moment the
+    Code node mutates the object.</li>
+  </ul>
+
+  <p>That is a read-modify-write race with last-write-wins. The decisive detail
+  is the third one: <strong>no code inside a Code node can close this race,
+  because the node never performs the write.</strong> Retry logic does not help.
+  A better key does not help. Checking a second time before writing does not
+  help. The gap is between the node finishing and n8n persisting, and that gap is
+  not the workflow&rsquo;s to control.</p>
+
+  <p>This is also why the database underneath does not rescue it. The
+  reproduction ran on SQLite, and a reader on Postgres will reasonably ask
+  whether isolation level changes the answer. It does not: the write is a
+  whole-blob overwrite issued after the execution has ended, so there is no
+  transaction still open for an isolation level to protect.</p>
+
+  <h2>Predicted, then reproduced</h2>
+
+  <p>Predicted from the source first, then reproduced on the first attempt:</p>
+
+  <ul>
+    <li>Two concurrent executions with the <strong>same</strong> key &mdash;
+    both accepted. The duplicate was not caught.</li>
+    <li>Three concurrent executions with three <strong>distinct</strong> keys
+    &mdash; all three leads were correctly accepted, but only one of the three
+    keys persisted. <strong>Two keys were silently discarded, so those two leads
+    would not be recognised as duplicates if they arrived again.</strong></li>
+  </ul>
+
+  <p>Be precise about the second result, because it is both the more dangerous
+  one and the one easiest to overstate. No lead was destroyed. What was destroyed
+  was the memory that those leads had been seen &mdash; and nothing reports that.
+  No error is raised, no execution is marked failed, and n8n&rsquo;s execution
+  list shows three clean green runs. The failure is silent, and it surfaces later
+  as duplicates nobody can explain.</p>
+
+  <h2>The same pattern, read off an export</h2>
+
+  <p>This is detectable statically, without running anything. Against that
+  workflow the analysis reports, among other findings:</p>
+
+<pre><code>[HIGH] STATIC_DATA_CHECK_AND_SET — State is kept in n8n workflow
+       static data, which is not atomic
+    nodes:      Idempotency Check (design-level)
+    proof:      These Code nodes call $getWorkflowStaticData() and also
+                write. n8n gives each execution an in-memory COPY of
+                static data and writes the whole blob back when the
+                execution ends — so a check-and-set built on it is a
+                read-modify-write race. No recognised trigger here can
+                fire concurrently, which narrows but does not remove the
+                exposure — a manual re-run or a queue-mode instance
+                still can.
+    NOT proven: Whether the race has actually cost this client a record.
+                That needs their execution history, which is not in the
+                export. Also not proven: what the stored keys are — the
+                node was not run.</code></pre>
+
+  <p>Note the clause that makes the finding <em>less</em> alarming: <em>&ldquo;No
+  recognised trigger here can fire concurrently.&rdquo;</em> The analysis
+  volunteers it. A finding that only ever argues in one direction is a sales
+  document with line numbers.</p>
+
+  <h2>What this does not establish</h2>
+
+  <ul>
+    <li><strong>It does not prove any workflow has lost data.</strong> It proves
+    the race exists and is reachable.</li>
+    <li><strong>The workflow in question is behind a manual trigger.</strong>
+    There is no live webhook or form in it, and the race was reproduced by firing
+    concurrent executions deliberately. That narrows the exposure considerably
+    for this workflow &mdash; a manual re-run or a queue-mode instance still
+    reopens it.</li>
+    <li><strong>It applies where state is in static data <em>and</em> executions
+    can overlap.</strong> Not to every n8n workflow.</li>
+    <li><strong>It is version-specific.</strong> n8n 2.33.7. Re-check against the
+    version you actually run rather than assuming it carries forward.</li>
+    <li><strong>The same run reports two other findings on that workflow</strong>
+    &mdash; no error handling wired anywhere, and four terminal paths that record
+    nothing. Both are defensible in a manual-trigger MVP whose terminals are
+    deliberately no-send. Neither would be defensible behind a live trigger.</li>
+  </ul>
+
+  <hr>
+
+  <h2>If you want this done to yours</h2>
+
+  <p>Send the export and tell me what the workflow is for. You will get the
+  findings, what each one does not prove, and the NOT CHECKED list. If there is
+  nothing worth reporting, I will say so.</p>
+
+  <p><a class="cta" href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a>
+  &nbsp; <a href="./">or read what the review covers &rarr;</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>This is a commercial page.</strong> It advertises a paid service
+    and is written by the person who provides it.</p>
+    <p class="legal">
+      Računalniško programiranje Alej Kump s.p. &middot;
+      entered in the Poslovni register Slovenije (AJPES), 15 September 2026
+      &middot; activity 62.100 &middot;
+      <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
+      <span>registered seat Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia &middot;
+      matična številka 7585942000 &middot;
+      davčna številka 67735509</span>
+    </p>
+    <p class="legal">This site stores nothing in your browser, sets no cookie,
+    loads no font, script, image or resource from anywhere else, and sends
+    nothing anywhere. There is no analytics and no form.</p>
+  </div>
+</footer>
+
+</body>
+</html>

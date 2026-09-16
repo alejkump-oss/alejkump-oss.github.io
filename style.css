@@ -1,0 +1,161 @@
+/* Self-contained. No webfont, no CDN, no tracker, no external request of any
+   kind — which is also why this site needs no cookie banner: it stores nothing
+   in the visitor's browser and asks nothing of it. See
+   agency/commercial/public-participation-channel-2026-09-16.md A28. */
+
+:root {
+  --ink: #16191d;
+  --ink-soft: #4a5159;
+  --ink-faint: #767d85;
+  --bg: #fbfaf8;
+  --bg-panel: #ffffff;
+  --rule: #e2ded8;
+  --accent: #8a3324;
+  --accent-soft: #f3ece9;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8e6e3;
+    --ink-soft: #b0aba4;
+    --ink-faint: #85807a;
+    --bg: #15171a;
+    --bg-panel: #1c1f23;
+    --rule: #2e3237;
+    --accent: #e08a72;
+    --accent-soft: #2a211f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
+
+header.site {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.5rem 0;
+  margin-bottom: 3.5rem;
+}
+header.site .wrap { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+header.site a { color: var(--ink); text-decoration: none; }
+header.site .mark { font-weight: 650; letter-spacing: -0.01em; }
+header.site nav a { color: var(--ink-soft); font-size: 0.92rem; margin-left: 1.25rem; }
+header.site nav a:hover { color: var(--accent); }
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+  font-weight: 680;
+}
+h2 {
+  font-size: 1.28rem;
+  letter-spacing: -0.01em;
+  margin: 3rem 0 1rem;
+  font-weight: 650;
+}
+h3 { font-size: 1.02rem; margin: 2rem 0 0.6rem; font-weight: 650; }
+
+p { margin: 0 0 1.15rem; }
+.lede { font-size: 1.12rem; color: var(--ink-soft); }
+
+a { color: var(--accent); }
+
+blockquote {
+  margin: 1.75rem 0;
+  padding: 0.2rem 0 0.2rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+ul, ol { margin: 0 0 1.15rem; padding-left: 1.3rem; }
+li { margin-bottom: 0.5rem; }
+
+code {
+  font: 0.86em/1.5 var(--mono);
+  background: var(--accent-soft);
+  padding: 0.12em 0.36em;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--bg-panel);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+  font: 0.82rem/1.55 var(--mono);
+  margin: 1.5rem 0;
+}
+pre code { background: none; padding: 0; font-size: inherit; }
+
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.35rem 1.5rem;
+  margin: 2rem 0;
+}
+.panel h3 { margin-top: 0; }
+.panel p:last-child, .panel ul:last-child { margin-bottom: 0; }
+
+.disclosure {
+  background: var(--accent-soft);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.disclosure strong { color: var(--ink); }
+
+.tbl-scroll { overflow-x: auto; margin: 1.5rem 0; }
+table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+th, td { text-align: left; padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 650; color: var(--ink); white-space: nowrap; }
+td { color: var(--ink-soft); }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 3.5rem 0; }
+
+footer.site {
+  border-top: 1px solid var(--rule);
+  margin-top: 4.5rem;
+  padding: 2.5rem 0 3.5rem;
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+}
+footer.site p { margin-bottom: 0.8rem; }
+footer.site .legal { font-size: 0.83rem; line-height: 1.6; }
+footer.site a { color: var(--ink-soft); }
+
+.meta { font-size: 0.88rem; color: var(--ink-faint); margin-bottom: 2.5rem; }
+
+.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1.3rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.97rem;
+}
+@media (prefers-color-scheme: dark) { .cta { color: #15171a; } }
+.cta:hover { opacity: 0.9; }
+
+.fill { background: repeating-linear-gradient(45deg, var(--accent-soft), var(--accent-soft) 6px, transparent 6px, transparent 12px); padding: 0 0.3em; border-radius: 2px; }

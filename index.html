@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workflow reliability reviews for n8n</title>
+<meta name="description" content="A structured reliability review of one exported n8n workflow. Static analysis plus manual judgement, with a NOT CHECKED list stated as plainly as what was checked.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="mark" href="./">Workflow reliability reviews</a>
+    <nav>
+      <a href="teardown.html">A worked example</a>
+      <a href="#what">What it is</a>
+      <a href="#limits">What it isn't</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Your automation says it succeeded. It didn&rsquo;t.</h1>
+
+  <p class="lede">A structured reliability review of one exported n8n workflow &mdash;
+  aimed at the failure that never raises an error, never marks a run red, and
+  surfaces weeks later as a customer who says they sent something you never got.</p>
+
+  <div class="disclosure">
+    <strong>Who is writing this.</strong> I run an independent automation
+    practice and I sell the review described on this page. This is a commercial
+    page, not neutral advice. Everything on it is checkable, and the section on
+    what the review <em>cannot</em> establish is as detailed as the section on
+    what it can.
+  </div>
+
+  <h2 id="problem">The failure this is about</h2>
+
+  <blockquote>
+    <p>&ldquo;Our automations run. But every so often a customer says they sent
+    something and we never got it, and we can&rsquo;t tell whether that&rsquo;s
+    true, how often it happens, or which ones it happened to.&rdquo;</p>
+  </blockquote>
+
+  <p>The reason that is hard to chase is that nothing went wrong in a way n8n
+  can see. A node returned a clean 200. A payload shape changed upstream and a
+  mapping quietly produced nothing. A duplicate check passed twice because two
+  executions overlapped. The execution list shows green runs, so there is no
+  error to search for and no failed run to open.</p>
+
+  <p>Every one of those is visible in the workflow&rsquo;s own export, before
+  anything runs. That is what this review reads.</p>
+
+  <h2 id="what">What the review is</h2>
+
+  <p><strong>A structured reliability review of one exported n8n workflow:</strong>
+  static analysis of the export, plus manual judgement, plus whatever execution
+  evidence you choose to share.</p>
+
+  <p>The analysis is deterministic and it derives, from the export alone: the
+  node inventory and connection graph, triggers, Code-node structure, nodes that
+  can fail with nowhere to send the failure, paths that end without recording
+  anything, the non-atomic static-data idempotency pattern, isolated nodes,
+  unwired Merge inputs, webhook triggers with no authentication configured,
+  credential <em>references</em>, secret-shaped parameter keys, and unrecognised
+  node types.</p>
+
+  <div class="panel">
+    <h3>Three properties that are the actual product</h3>
+    <ul>
+      <li><strong>Nothing from your export is ever executed.</strong> No node
+      runs, no request is made, and no credential value is read. Code nodes are
+      inspected as text.</li>
+      <li><strong>No parameter value and no Code-node body is printed in the
+      report</strong> &mdash; a blanket rule rather than a filter, because a
+      filter is a list of the leaks somebody thought of.</li>
+      <li><strong>Every finding carries what it does <em>not</em> prove.</strong>
+      &ldquo;This workflow contains an unhandled failure path&rdquo; and
+      &ldquo;this workflow has failed&rdquo; are different claims, and an export
+      can only support the first.</li>
+    </ul>
+  </div>
+
+  <h3>What you supply</h3>
+  <div class="tbl-scroll">
+  <table>
+    <tr><th>The workflow export, JSON, credential values stripped</th><td>Required. Without it there is nothing to review</td></tr>
+    <tr><th>What the workflow is for, in your words</th><td>Required. Severity is a judgement about your business, not a property of a node</td></tr>
+    <tr><th>Expected input and expected output</th><td>Required</td></tr>
+    <tr><th>Known symptoms</th><td>If any. &ldquo;None that we know of&rdquo; is a real answer</td></tr>
+    <tr><th>Execution or log evidence</th><td>Optional &mdash; and the only thing that can establish whether a failure has actually happened</td></tr>
+  </table>
+  </div>
+
+  <h3>What you get back</h3>
+  <div class="tbl-scroll">
+  <table>
+    <tr><th>Findings, ranked by impact</th><td>Each naming a concrete failure scenario and the input that produces it</td></tr>
+    <tr><th>The evidence for each</th><td>Quoted from your own export</td></tr>
+    <tr><th>What each finding does not prove</th><td>Carried on every finding</td></tr>
+    <tr><th>A risk explanation in business terms</th><td>What it costs you, not what it is called</td></tr>
+    <tr><th>Recommended fixes, kept separate</th><td>A finding is observed; a recommendation is judgement. They are never mixed</td></tr>
+    <tr><th>A test plan</th><td>What to check after fixing, and how you would know it worked</td></tr>
+    <tr><th>A NOT CHECKED list</th><td>Stated as plainly as what was checked</td></tr>
+  </table>
+  </div>
+
+  <p>The deliverable is <strong>a report you can verify without trusting the
+  person who wrote it.</strong> That is the product. The tooling underneath it
+  is not the point.</p>
+
+  <h2 id="limits">What it is not, and cannot become</h2>
+
+  <p>Stated here rather than discovered later, because a review that overstates
+  its reach is worse than no review &mdash; it spends your engineers&rsquo; time
+  on work that was never needed.</p>
+
+  <ul>
+    <li><strong>It is not &ldquo;we reproduce your workflow end to end&rdquo;.</strong>
+    Your workflow is never run. There is no n8n execution engine here and none
+    is planned.</li>
+    <li><strong>No n8n expression is evaluated.</strong> A wrong expression is
+    invisible to static analysis.</li>
+    <li><strong>No Code node is executed.</strong> Code-node findings are
+    lexical &mdash; the source is read as text.</li>
+    <li><strong>Nothing is said about your credentials.</strong> Only the
+    reference is read, so nothing here establishes whether a credential is
+    valid, expired, or over-scoped.</li>
+    <li><strong>Instance configuration is not in an export.</strong> A global
+    error workflow, execution timeouts, queue mode, concurrency settings and
+    your n8n version can all change the conclusions.</li>
+    <li><strong>Runtime history is not in an export.</strong> Nothing derived
+    from a file says how often a path has actually been taken.</li>
+    <li><strong>Where a finding cannot be reproduced, it is reported as observed
+    by inspection, not reproduced</strong> &mdash; and labelled that way. A
+    finding you cannot reproduce is withdrawn, not defended.</li>
+  </ul>
+
+  <h2>A worked example</h2>
+
+  <p>Rather than a case study, which would require a client I have not yet had,
+  here is the method applied to a workflow of my own &mdash; a lead-intake
+  deduplication that passed every test for a full session and was never a dedupe
+  at all. It ends at the finding, not at an offer.</p>
+
+  <p><a class="cta" href="teardown.html">Read the teardown &rarr;</a></p>
+
+  <h2 id="contact">Talking to me</h2>
+
+  <p>Send the export and what the workflow is for. If there is nothing worth
+  reporting in it, I will say so &mdash; that is a real outcome and it is the
+  one that makes the rest credible.</p>
+
+  <p><a class="cta" href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>This is a commercial page.</strong> It advertises a paid service
+    and is written by the person who provides it.</p>
+    <p class="legal">
+      Računalniško programiranje Alej Kump s.p. &middot;
+      entered in the Poslovni register Slovenije (AJPES), 15 September 2026
+      &middot; activity 62.100 &middot;
+      <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
+      <span>registered seat Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia &middot;
+      matična številka 7585942000 &middot;
+      davčna številka 67735509</span>
+    </p>
+    <p class="legal">This site stores nothing in your browser, sets no cookie,
+    loads no font, script, image or resource from anywhere else, and sends
+    nothing anywhere. There is no analytics and no form.</p>
+  </div>
+</footer>
+
+</body>
+</html>
