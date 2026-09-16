@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the report looks like — a full sample review</title>
+<meta name="description" content="A complete sample of the Single-Workflow Failure Review, run against a synthetic workflow. The executive summary in full, one finding in full, and the NOT CHECKED discipline. No real client.">
+<link rel="canonical" href="https://alejkump-oss.github.io/sample-report.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alejkump-oss.github.io/sample-report.html">
+<meta property="og:title" content="What the report actually looks like">
+<meta property="og:description" content="A full sample review on a synthetic workflow — executive summary, a finding in full, and what it refuses to claim.">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What the report actually looks like">
+<meta name="twitter:description" content="A full sample review on a synthetic workflow. No real client.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="mark" href="./">Workflow reliability reviews</a>
+    <nav>
+      <a href="./">The review</a>
+      <a href="teardown.html">A worked example</a>
+      <a href="checklist.html">Free checklist</a>
+      <a href="sample-report.html">Sample report</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>What the report actually looks like</h1>
+
+  <p class="lede">Most people asking about a review want to know one thing:
+  what do I get at the end of it? This is the answer, at full length, on a
+  workflow built for the purpose.</p>
+
+  <div class="disclosure">
+    <strong>SAMPLE &mdash; NOT A REAL CLIENT.</strong> I have no clients yet,
+    and nothing here is anyone&rsquo;s real workflow. The subject is a synthetic
+    test workflow I wrote. The findings are genuine output from the same
+    analysis a real engagement uses &mdash; the tool does not know the workflow
+    is synthetic &mdash; but the business context around it is invented to make
+    the report readable, and it is labelled as such throughout.
+  </div>
+
+  <h2>The synthetic scenario</h2>
+
+  <p>An end-of-day routine, run by hand, that reshapes enquiry records and posts
+  them to a CRM. Six nodes. It is deliberately ordinary: the interesting thing
+  about it is not its complexity but that everything below is visible in its
+  export, before it ever runs again.</p>
+
+  <h2>1. The executive summary, in full</h2>
+
+  <p class="small">Written for the person who owns the business outcome, not the
+  code. This is the whole of it &mdash; not an extract.</p>
+
+  <div class="panel">
+    <p>Your end-of-day routine posts enquiries to your CRM. If anything goes
+    wrong part-way through a run &mdash; a malformed record, the CRM being
+    briefly unavailable, an expired key &mdash; <strong>the run stops where it
+    is, and everything after the failure point is simply not posted.</strong>
+    Nothing raises an alarm, nothing writes the failed record anywhere, and
+    nothing tells you which records made it and which did not. The next morning
+    the workflow looks like it ran. Your CRM is missing records nobody
+    counted.</p>
+
+    <p>Four things drive that, and they are independent of each other:</p>
+    <ol>
+      <li><strong>Your export still carries a parameter whose name looks like an
+      API key.</strong> If that value is real, then every copy of this file
+      &mdash; the one you sent me, the one in your backups, the one in a
+      colleague&rsquo;s downloads folder &mdash; is a copy of a working
+      credential. This is the only finding whose consequences reach outside the
+      workflow, and the only one with an action that cannot wait for a fix
+      cycle.</li>
+      <li><strong>One step converts text into structured data in a way that
+      fails hard on anything unexpected.</strong> One bad record does not get
+      skipped. It stops the whole run.</li>
+      <li><strong>The step that talks to your CRM has nowhere to send a
+      failure.</strong> Network blips, authentication problems and CRM-side
+      errors all have the same outcome: the run halts and the record in flight
+      is not written anywhere.</li>
+      <li><strong>Nothing anywhere in this workflow handles a failure.</strong>
+      No error branch, no error trigger, no error workflow named in the file.</li>
+    </ol>
+
+    <p><strong>What none of this establishes: that you have actually lost a
+    record.</strong> I cannot see that from an export and I do not claim it.
+    Whether any of these paths has ever been taken lives in your n8n execution
+    history, which is not in the file you sent.</p>
+
+    <p><strong>What narrows the risk, stated because it is in your
+    favour.</strong> The only entry point in this export is a manual trigger,
+    and the workflow&rsquo;s active flag is false. Nothing fires this on its own.
+    Someone is present every time it runs, which means a stopped run is at least
+    <em>observable</em> by a human who was already looking &mdash; it is just not
+    <em>reported</em>. If this workflow is ever moved behind a schedule or a
+    webhook, every severity goes up. That is the single change most likely to
+    turn a manageable set of gaps into an outage nobody sees.</p>
+  </div>
+
+  <p>Notice what that section does twice: it says what the evidence
+  <em>cannot</em> support, and it volunteers the fact that makes the situation
+  less alarming. A report that only ever argues in one direction is a sales
+  document with severity labels on it.</p>
+
+  <h2>2. What the full report contains</h2>
+
+  <div class="tbl-scroll">
+  <table>
+    <tr><th>Executive summary</th><td>The above. Business terms, no jargon</td></tr>
+    <tr><th>Scope</th><td>Exactly what was reviewed, and what was not</td></tr>
+    <tr><th>Method</th><td>What static analysis means here, and the statement that your workflow was never executed</td></tr>
+    <tr><th>Findings</th><td>Ranked by <em>business impact</em>, which is not the tool's severity order &mdash; and where the two differ, the reason is argued</td></tr>
+    <tr><th>CHECKED and NOT CHECKED</th><td>Stated as plainly as each other</td></tr>
+    <tr><th>Remediation plan</th><td>Kept in its own section, because a finding is observed and a recommendation is judgement</td></tr>
+    <tr><th>Test plan</th><td>What to check after fixing, with pass conditions</td></tr>
+    <tr><th>Limitations</th><td>What evidence would change the answers, and why execution history is the only thing that can</td></tr>
+    <tr><th>Next actions</th><td>With an owner and a date against each</td></tr>
+    <tr><th>Appendix</th><td>How to reproduce the report yourself against your own export</td></tr>
+  </table>
+  </div>
+
+  <h2>3. One finding, in the format they all use</h2>
+
+  <div class="panel">
+    <h3>Finding 1 &mdash; An API-key-shaped parameter is still populated in the export</h3>
+    <p><strong>Tool severity: HIGH. My ranking: first.</strong><br>
+    <strong>Status: observed by inspection, not reproduced.</strong></p>
+
+    <p><strong>What it is.</strong> The export contains a parameter on one node
+    whose <em>key name</em> matches a secret pattern, and whose value is a
+    string. The tool reports the key name and the fact that a string is present.
+    <strong>It does not read the value</strong> &mdash; not to check it, not to
+    measure it, not to hash it.</p>
+
+    <p><strong>Why it is ranked first, above three availability findings.</strong>
+    This is the only finding whose blast radius leaves the workflow. Every other
+    problem here costs you records inside a system you control. This one is a
+    credential sitting in a file that has already been emailed at least once
+    &mdash; to me. Rotation cannot wait for a fix cycle.</p>
+
+    <p><strong>What it does not prove.</strong> Whether the value is a real
+    secret or a placeholder. Deciding that would require reading it, which the
+    tool will not do. <strong>If it turns out to be a placeholder this finding
+    drops to INFO</strong> and the ranking above is wrong &mdash; that is a
+    two-minute check on your side and it is the first thing in Next Actions.</p>
+  </div>
+
+  <p>Every finding carries those four parts: what it is, what happens because of
+  it, what it does <em>not</em> prove, and why its severity is what it is. Where
+  my ranking differs from the tool&rsquo;s, the report says so and argues it
+  rather than quietly reordering.</p>
+
+  <h2>4. The part most reports leave out</h2>
+
+  <p>The report has a section listing what was <strong>not</strong> checked, at
+  the same level of detail as what was. In the sample it runs to more than a
+  dozen items: no expression was evaluated, no Code node was executed, no
+  credential value was read, instance configuration is not in an export, runtime
+  history is not in an export, and so on.</p>
+
+  <p>That section exists because the alternative is worse. A report with no
+  not-checked list quietly implies total coverage, and total coverage is never
+  true. If you have ever received an audit that found eleven things and implied
+  those were <em>all</em> the things, you have read the other kind.</p>
+
+  <h2>5. What a real engagement adds</h2>
+
+  <p>This sample is on a synthetic workflow, so two things are missing that a
+  real one has:</p>
+
+  <ul>
+    <li><strong>A hand-written reproduction</strong> for any finding that sits in
+    your own Code-node logic &mdash; written against your source and the input
+    that breaks it, with the output of that run included. Structural findings
+    stay labelled <em>observed by inspection</em> even in a real engagement,
+    because that is what they are.</li>
+    <li><strong>Your execution evidence, if you share it.</strong> It is
+    optional, and it is the only thing that can turn &ldquo;this path can
+    fail&rdquo; into &ldquo;this path did fail, on these dates&rdquo;.</li>
+  </ul>
+
+  <h2>Want one of these on your workflow?</h2>
+
+  <p>Tell me what the workflow does and what you think is going wrong. If it is
+  not something I can genuinely help with, I will say so in the first reply.</p>
+
+  <p class="cta-row">
+    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
+    <span class="cta-note">Email. No form, no signup.</span>
+  </p>
+
+  <p class="warn"><strong>And before you send any export anywhere</strong> &mdash;
+  to me or to anyone &mdash; open it and search it for keys. Finding 1 above is
+  the most common real problem in this whole category, and it is the one that
+  costs something outside your own systems.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>This is a commercial page.</strong> It advertises a paid service
+    and is written by the person who provides it.</p>
+    <p class="legal">
+      Računalniško programiranje Alej Kump s.p. &middot;
+      entered in the Poslovni register Slovenije (AJPES), 15 September 2026
+      &middot; activity 62.100 &middot;
+      <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
+      <span>registered seat Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia &middot;
+      matična številka 7585942000 &middot;
+      davčna številka 67735509</span>
+    </p>
+    <p class="legal">This site stores nothing in your browser, sets no cookie,
+    loads no font, script, image or resource from anywhere else, and sends
+    nothing anywhere. There is no analytics and no form.</p>
+  </div>
+</footer>
+
+</body>
+</html>
