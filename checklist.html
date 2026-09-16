@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The n8n workflow reliability checklist — 18 checks you can run yourself</title>
+<meta name="description" content="Eighteen checks for an n8n workflow that runs green and still loses records. What to look for, why it matters, how to check it, and what a bad answer looks like. Free, no signup.">
+<link rel="canonical" href="https://alejkump-oss.github.io/checklist.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://alejkump-oss.github.io/checklist.html">
+<meta property="og:title" content="The n8n workflow reliability checklist">
+<meta property="og:description" content="Eighteen checks for a workflow that runs green and still loses records. Free, no signup, no email required.">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The n8n workflow reliability checklist">
+<meta name="twitter:description" content="Eighteen checks you can run on your own workflow in an afternoon.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="mark" href="./">Workflow reliability reviews</a>
+    <nav>
+      <a href="./">The review</a>
+      <a href="teardown.html">A worked example</a>
+      <a href="checklist.html">Checklist</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>The n8n workflow reliability checklist</h1>
+
+  <p class="lede">Eighteen checks for the failure that doesn&rsquo;t turn a run
+  red. Free, no signup, no email, nothing gated. Work through it on your own
+  workflow in an afternoon.</p>
+
+  <div class="disclosure">
+    <strong>Who wrote this, and why.</strong> I&rsquo;m Alej Kump, and I sell
+    reliability reviews of n8n workflows &mdash; so I have an obvious interest in
+    you caring about this. The checklist is the honest version of what I look for,
+    published in full rather than teased. Most of it you can do yourself, and if
+    you do it yourself you don&rsquo;t need me. That is the intended outcome.
+  </div>
+
+  <h2>How to use it</h2>
+
+  <p>Take one workflow &mdash; the one whose failure would cost you most, not the
+  most complicated one. Open the canvas and go through each check. Each has
+  <strong>what to look for</strong>, <strong>why it matters</strong>, and
+  <strong>what a bad answer looks like</strong>.</p>
+
+  <p>Score nothing. A total out of eighteen would be a made-up number, and the
+  point is not a grade &mdash; it is finding the two or three that make you
+  uncomfortable.</p>
+
+  <h2 id="silent">A. The failure that looks like success</h2>
+
+  <p>The whole reason this list exists. n8n marks an execution successful when no
+  node threw. That is not the same as the work having happened.</p>
+
+  <div class="panel">
+    <h3>1. Does every path end somewhere that records what happened?</h3>
+    <p><strong>Look for:</strong> nodes with no outgoing connection that only
+    shape data &mdash; a Set, an If branch that quietly terminates, a NoOp.</p>
+    <p><strong>Why:</strong> when execution reaches one, nothing outside n8n&rsquo;s
+    own execution list knows the path was taken. If that branch is your
+    &ldquo;skip&rdquo; or &ldquo;duplicate&rdquo; case, you have no count of how
+    often it fires.</p>
+    <p><strong>Bad answer:</strong> &ldquo;It just ends there, it&rsquo;s fine.&rdquo;
+    Fine until someone asks how many were skipped last month.</p>
+  </div>
+
+  <div class="panel">
+    <h3>2. Can a node succeed and still produce nothing?</h3>
+    <p><strong>Look for:</strong> an HTTP Request whose response shape you
+    don&rsquo;t validate, followed by a mapping that reads fields off it.</p>
+    <p><strong>Why:</strong> a clean 200 with a changed payload shape makes the
+    mapping produce empty values. Nothing throws. The run is green and the record
+    is blank.</p>
+    <p><strong>Bad answer:</strong> &ldquo;The API doesn&rsquo;t change.&rdquo; It
+    changed for everyone else too.</p>
+  </div>
+
+  <div class="panel">
+    <h3>3. Is there anything that asserts the expected shape, at the edge?</h3>
+    <p><strong>Look for:</strong> a validation step immediately after data enters
+    &mdash; required fields present, arrays non-empty, timestamps within a sane
+    window.</p>
+    <p><strong>Why:</strong> validating at the edge turns a silent wrong result
+    into a loud failure you can route. Validating nowhere means the first thing
+    that notices is a human, later.</p>
+    <p><strong>Bad answer:</strong> validation exists but only logs, and the item
+    continues down the happy path anyway.</p>
+  </div>
+
+  <h2 id="errors">B. Error handling</h2>
+
+  <div class="panel">
+    <h3>4. Does any node that reaches outside n8n have an error output wired?</h3>
+    <p><strong>Look for:</strong> HTTP Request, database, email, any third-party
+    node. Check its error output, and its <code>onError</code> setting.</p>
+    <p><strong>Why:</strong> with nothing wired and <code>stopWorkflow</code> set,
+    a failure halts the execution where it stands and the item in flight is not
+    written anywhere. It is not retried, not queued, not recorded. It is gone.</p>
+    <p><strong>Bad answer:</strong> &ldquo;It&rsquo;ll show up in the execution
+    list as failed.&rdquo; Only if somebody reads the execution list.</p>
+  </div>
+
+  <div class="panel">
+    <h3>5. Is there an error workflow configured &mdash; and has it ever fired?</h3>
+    <p><strong>Look for:</strong> workflow settings &rarr; Error Workflow, or an
+    Error Trigger node somewhere.</p>
+    <p><strong>Why:</strong> a global error workflow is the difference between a
+    failure you learn about and one you discover in a customer complaint.</p>
+    <p><strong>Bad answer:</strong> it is configured and has never fired. Either
+    nothing has failed in months, or it is not wired the way you think. Test it
+    deliberately.</p>
+  </div>
+
+  <div class="panel">
+    <h3>6. Does a failure notify a person, or a channel nobody reads?</h3>
+    <p><strong>Why:</strong> alerting into a channel with three hundred unread
+    messages is the same as no alerting, with extra steps and a false sense of
+    coverage.</p>
+    <p><strong>Bad answer:</strong> &ldquo;It posts to #alerts.&rdquo; When did
+    someone last act on one?</p>
+  </div>
+
+  <h2 id="duplicates">C. Duplicates and idempotency</h2>
+
+  <p>The most expensive category, because the damage is often financial and
+  always invisible at the time.</p>
+
+  <div class="panel">
+    <h3>7. Can the same input arrive twice?</h3>
+    <p><strong>Look for:</strong> webhooks from providers with at-least-once
+    delivery &mdash; payment processors, e-commerce platforms, most webhook
+    senders. Many retry if your response is slow, even when you did receive it.</p>
+    <p><strong>Why:</strong> if the answer is yes and nothing deduplicates, the
+    second delivery does the work again. Twice-charged, twice-emailed,
+    twice-created.</p>
+    <p><strong>Bad answer:</strong> &ldquo;They only send it once.&rdquo; Check
+    their documentation rather than their behaviour so far.</p>
+  </div>
+
+  <div class="panel">
+    <h3>8. If you deduplicate, what stores the key &mdash; and is the write atomic?</h3>
+    <p><strong>Look for:</strong> a Code node calling
+    <code>$getWorkflowStaticData()</code> that both reads and writes.</p>
+    <p><strong>Why, and this is the one that surprises people:</strong> n8n gives
+    each execution an in-memory copy of static data and writes the whole blob back
+    <em>after</em> the execution ends. That is a read-modify-write race, and no
+    code inside the node can close it, because the node never performs the write.
+    Two concurrent executions can both pass the same duplicate check.</p>
+    <p><strong>Bad answer:</strong> &ldquo;We tested it and it caught the
+    duplicate.&rdquo; Sequential tests cannot establish a concurrency property. I
+    know because that is exactly the mistake I made in my own workflow &mdash;
+    <a href="teardown.html">the whole story is here</a>.</p>
+  </div>
+
+  <div class="panel">
+    <h3>9. Is the check-and-set a single operation?</h3>
+    <p><strong>Look for:</strong> a pattern of &ldquo;does this exist? &rarr; no
+    &rarr; create it&rdquo; across two separate nodes.</p>
+    <p><strong>Why:</strong> two executions can both read &ldquo;no&rdquo; before
+    either writes. The fix is a store that decides atomically &mdash; a unique
+    constraint, or an insert that does nothing on conflict &mdash; so exactly one
+    execution wins by construction rather than by timing.</p>
+    <p><strong>Bad answer:</strong> a delay or a random jitter between the check
+    and the write. That narrows the window; it does not close it.</p>
+  </div>
+
+  <div class="panel">
+    <h3>10. Is a retry safe to run twice?</h3>
+    <p><strong>Look for:</strong> retry settings on a node that sends, charges or
+    creates something, and where the retried node sits relative to that send.</p>
+    <p><strong>Why:</strong> retrying a read is free. Retrying a send is a second
+    send unless the far end is idempotent.</p>
+    <p><strong>Bad answer:</strong> retries enabled everywhere by default, without
+    asking what each one repeats.</p>
+  </div>
+
+  <h2 id="triggers">D. Triggers and entry points</h2>
+
+  <div class="panel">
+    <h3>11. How many entry points does this workflow have?</h3>
+    <p><strong>Why:</strong> every trigger is an independent way in, so a guard
+    placed on one path does not apply to the others. Two triggers means two
+    paths to audit, not one.</p>
+  </div>
+
+  <div class="panel">
+    <h3>12. If it is a webhook, is authentication configured?</h3>
+    <p><strong>Look for:</strong> the Webhook node&rsquo;s authentication
+    parameter. In an export it is often <em>absent</em> rather than set to
+    &ldquo;none&rdquo; &mdash; absent is the default and it means unauthenticated.</p>
+    <p><strong>Why:</strong> the URL contains a generated id, so the protection is
+    that nobody guesses it. A URL is not a secret once it has been in a browser
+    history, a log, a proxy, a bug report, or a third party&rsquo;s integration
+    settings. Anything that reaches the endpoint enters your workflow as if it
+    were the real caller.</p>
+    <p><strong>Bad answer:</strong> &ldquo;Nobody knows the URL.&rdquo; That is a
+    statement about today.</p>
+    <p class="small">Something in front of n8n &mdash; a gateway, a reverse proxy,
+    an allow-list &mdash; may already authenticate this. Worth confirming rather
+    than assuming, in either direction.</p>
+  </div>
+
+  <div class="panel">
+    <h3>13. If the webhook promises a response, does a node produce one?</h3>
+    <p><strong>Look for:</strong> response mode set to &ldquo;using Respond to
+    Webhook node&rdquo;, with no such node in the workflow.</p>
+    <p><strong>Why:</strong> the caller waits until it times out &mdash; and a
+    caller that times out usually retries, which lands you back in section C.</p>
+  </div>
+
+  <h2 id="hygiene">E. Things that quietly change behaviour</h2>
+
+  <div class="panel">
+    <h3>14. Are any nodes disabled?</h3>
+    <p><strong>Why:</strong> n8n passes items straight through a disabled node, so
+    the step is skipped while the diagram still shows it. The canvas says one
+    thing and the execution does another. A disabled validation or dedupe step is
+    the most expensive version of this.</p>
+    <p><strong>Bad answer:</strong> &ldquo;That was disabled for testing.&rdquo;
+    When?</p>
+  </div>
+
+  <div class="panel">
+    <h3>15. Is any node unreachable, or fed by nothing?</h3>
+    <p><strong>Look for:</strong> nodes with no incoming connection, and Merge
+    nodes with an input nothing feeds.</p>
+    <p><strong>Why:</strong> an unreachable node is either dead weight or a branch
+    someone meant to wire. A Merge waiting on an input that never arrives either
+    stalls the branch or silently emits less than you expect.</p>
+  </div>
+
+  <div class="panel">
+    <h3>16. Is there pinned test data left in the workflow?</h3>
+    <p><strong>Why:</strong> pinned data overrides what the node would actually
+    produce. A workflow can run perfectly in testing and process the same frozen
+    record forever.</p>
+  </div>
+
+  <h2 id="secrets">F. Credentials and what leaves the building</h2>
+
+  <div class="panel">
+    <h3>17. Is any secret typed into a parameter rather than a credential?</h3>
+    <p><strong>Look for:</strong> API keys in a URL query string, in a header
+    <em>value</em> field, or as a literal inside a Code node.</p>
+    <p><strong>Why:</strong> credentials are stored separately and are not
+    included when you export a workflow. Anything typed into a parameter
+    <strong>is</strong> in the export &mdash; and exports get emailed, pasted into
+    chats, and committed to repositories.</p>
+    <p><strong>Bad answer:</strong> &ldquo;It&rsquo;s only in a header.&rdquo; A
+    header value is a parameter.</p>
+    <p class="small">Before you send an export anywhere, to me or to anyone: open
+    it and search it. This is the one item on this list where the cost of being
+    wrong is not measured in lost records.</p>
+  </div>
+
+  <div class="panel">
+    <h3>18. Could you rebuild this if the instance disappeared tonight?</h3>
+    <p><strong>Look for:</strong> where the export lives, who else can produce it,
+    and whether anyone but the original author understands the workflow.</p>
+    <p><strong>Why:</strong> most automation risk is not technical. It is that one
+    person knew how it worked and no longer works here.</p>
+  </div>
+
+  <h2 id="limits">What this checklist cannot do</h2>
+
+  <p>Stated as plainly as the rest, because a checklist that implies completeness
+  is doing the same thing as a green run that did nothing.</p>
+
+  <ul>
+    <li><strong>It cannot tell you whether any of this has actually happened to
+    you.</strong> Every item above identifies a <em>reachable</em> failure. Only
+    your execution history shows whether it fired, and an exported workflow does
+    not contain execution history.</li>
+    <li><strong>It does not evaluate your expressions.</strong> A wrong
+    <code>={{ ... }}</code> is invisible to inspection and needs a run.</li>
+    <li><strong>It does not read your Code nodes for logic errors</strong> &mdash;
+    only for structural patterns like the static-data one in item 8.</li>
+    <li><strong>It knows nothing about your instance.</strong> A global error
+    workflow, execution timeouts, queue mode and concurrency settings all change
+    the answers, and none is in a workflow export.</li>
+    <li><strong>It is not a security assessment.</strong> Item 12 and item 17 are
+    two specific, checkable things &mdash; not a claim that your setup is secure
+    if they pass.</li>
+  </ul>
+
+  <p>If you work through this and find nothing, that is a real result and you
+  should believe it. A checklist that always finds something is a sales document.</p>
+
+  <h2 id="next">If you want a second pair of eyes</h2>
+
+  <p>Most of this list you can do yourself in an afternoon, and I would rather you
+  did. Where it gets harder is the part a checklist is bad at: deciding which
+  findings actually matter for <em>your</em> business, and being certain you have
+  not missed one on a workflow with forty nodes.</p>
+
+  <p>That is what I sell &mdash; <a href="./">a fixed-scope review of one
+  workflow</a>, where every finding states what it does not prove, and the list of
+  what I did not check is as plain as the list of what I did.</p>
+
+  <p class="cta-row">
+    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhich%20checklist%20items%20made%20you%20uncomfortable%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Tell me which items made you uncomfortable &rarr;</a>
+    <span class="cta-note">Email. No form, no signup.</span>
+  </p>
+
+  <p class="warn"><strong>And whatever you do, don&rsquo;t send secrets.</strong>
+  Not to me, not to anyone. See item 17 &mdash; check your export before it leaves
+  your machine.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><strong>This is a commercial page.</strong> It advertises a paid service
+    and is written by the person who provides it.</p>
+    <p class="legal">
+      Računalniško programiranje Alej Kump s.p. &middot;
+      entered in the Poslovni register Slovenije (AJPES), 15 September 2026
+      &middot; activity 62.100 &middot;
+      <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
+      <span>registered seat Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia &middot;
+      matična številka 7585942000 &middot;
+      davčna številka 67735509</span>
+    </p>
+    <p class="legal">This site stores nothing in your browser, sets no cookie,
+    loads no font, script, image or resource from anywhere else, and sends
+    nothing anywhere. There is no analytics and no form.</p>
+  </div>
+</footer>
+
+</body>
+</html>
