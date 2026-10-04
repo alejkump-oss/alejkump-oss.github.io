@@ -383,3 +383,11 @@ header.site nav a {
   .phone-3d, .screen-img, .package-card,
   .hero-detail-layer, .process-bg-layer { transition: none !important; }
 }
+
+/* Under the hero phone: the screens are demos for invented businesses (audit 2026-10-04, P0). */
+.phone-note {
+  margin: 0.5rem 0 0;
+  text-align: center;
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
