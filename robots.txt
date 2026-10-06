@@ -1,5 +1,8 @@
-# Everything here is public and intended to be indexed.
+# Everything here is public and intended to be indexed, except the
+# spletne-strani.html redirect stub, which carries its own noindex meta tag
+# (it is deliberately NOT disallowed here: a crawler must be able to fetch it
+# to see the noindex and follow the redirect to the root).
 User-agent: *
 Allow: /
 
-Sitemap: https://alejkump-oss.github.io/sitemap.xml
+Sitemap: https://alejkump.si/sitemap.xml

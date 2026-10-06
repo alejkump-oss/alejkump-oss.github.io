@@ -1,28 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="sl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>n8n workflow reliability review — when every step is green and nothing landed</title>
-<meta name="description" content="A fixed-scope reliability review of one exported n8n workflow. Static analysis plus manual judgement, every finding stating what it does not prove, and a NOT CHECKED list as plain as what was checked.">
-<link rel="canonical" href="https://alejkump-oss.github.io/">
+<title>Izdelava spletnih strani Kočevje in Dolenjska | Alej Kump</title>
+<meta name="description" content="Izdelava spletnih strani za lokalna podjetja v Kočevju, po Dolenjski in Sloveniji. Brezplačen konceptni predogled, fiksna cena od 450 €, brez obveznosti.">
+<link rel="canonical" href="https://alejkump.si/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://alejkump-oss.github.io/">
-<meta property="og:title" content="Every step was green. Nothing landed.">
-<meta property="og:description" content="A reliability review of one exported n8n workflow, aimed at the failure that never raises an error and surfaces weeks later as a customer who says they sent something you never got.">
-<meta property="og:locale" content="en_GB">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Every step was green. Nothing landed.">
-<meta name="twitter:description" content="A reliability review of one exported n8n workflow. Every finding states what it does not prove.">
+<meta property="og:url" content="https://alejkump.si/">
+<meta property="og:title" content="Spletna stran za vaše lokalno podjetje">
+<meta property="og:description" content="Najprej brezplačen konceptni predogled na telefonu, brez obveznosti. Fiksna cena, jasen potek dela, stran je vaša ob plačilu.">
+<meta property="og:locale" content="sl_SI">
+<meta property="og:image" content="https://alejkump.si/assets/img/hero-workspace-1200.jpg">
+<meta property="og:image:alt" content="Delovna miza s prenosnikom in beležko ob oknu — ilustracija, ustvarjena z UI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://alejkump.si/assets/img/hero-workspace-1200.jpg">
+<meta name="twitter:title" content="Spletna stran za vaše lokalno podjetje">
+<meta name="twitter:description" content="Brezplačen konceptni predogled, fiksna cena, jasen potek dela.">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="premium.css">
+<link rel="preload" as="image" type="image/avif" href="assets/img/hero-workspace-828.avif" imagesrcset="assets/img/hero-workspace-480.avif 480w, assets/img/hero-workspace-828.avif 828w, assets/img/hero-workspace-1200.avif 1200w, assets/img/hero-workspace-1600.avif 1600w" imagesizes="100vw">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Računalniško programiranje Alej Kump s.p.",
-  "url": "https://alejkump-oss.github.io/",
+  "alternateName": "Alej Kump · Spletne strani",
+  "url": "https://alejkump.si/",
   "email": "alej.kump@gmail.com",
-  "description": "Reliability reviews of n8n automation workflows.",
+  "telephone": "+386 70 479 188",
+  "description": "Izdelava hitrih, mobilno prilagojenih spletnih strani za lokalna podjetja v Sloveniji, z brezplačnim konceptnim predogledom pred naročilom.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Ulica heroja Marinclja 3",
@@ -31,8 +39,20 @@
     "addressCountry": "SI"
   },
   "founder": { "@type": "Person", "name": "Alej Kump" },
-  "areaServed": "EU",
-  "knowsAbout": ["n8n", "workflow automation", "workflow reliability", "idempotency"]
+  "areaServed": [
+    { "@type": "City", "name": "Kočevje" },
+    { "@type": "AdministrativeArea", "name": "Dolenjska" },
+    { "@type": "Country", "name": "Slovenija" }
+  ],
+  "geo": { "@type": "GeoCoordinates", "latitude": 45.643, "longitude": 14.862 },
+  "priceRange": "450-990 EUR",
+  "sameAs": ["https://www.instagram.com/alej_kump/"],
+  "knowsAbout": ["izdelava spletnih strani", "mobilno prilagojene strani", "spletne strani za lokalna podjetja"],
+  "makesOffer": [
+    { "@type": "Offer", "name": "Osnovna", "price": "450", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Lokalni posel", "price": "690", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Premium", "price": "990", "priceCurrency": "EUR" }
+  ]
 }
 </script>
 </head>
@@ -40,276 +60,284 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="mark" href="./">Workflow reliability reviews</a>
+    <a class="mark" href="./">Spletne strani za lokalna podjetja</a>
     <nav>
-      <a href="spletne-strani.html">Slovenščina: spletne strani</a>
-      <a href="teardown.html">A worked example</a>
-      <a href="checklist.html">Free checklist</a>
-      <a href="sample-report.html">Sample report</a>
-      <a href="#what">What it is</a>
-      <a href="#limits">What it isn't</a>
-      <a href="#faq">FAQ</a>
+      <a href="#kako">Kako poteka</a>
+      <a href="#paketi">Paketi</a>
+      <a href="#kdo">Kdo to piše</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 
+<section class="hero-premium">
+  <div class="hero-bg" aria-hidden="true">
+    <picture>
+      <source type="image/avif" srcset="assets/img/hero-workspace-480.avif 480w, assets/img/hero-workspace-828.avif 828w, assets/img/hero-workspace-1200.avif 1200w, assets/img/hero-workspace-1600.avif 1600w" sizes="100vw">
+      <source type="image/webp" srcset="assets/img/hero-workspace-480.webp 480w, assets/img/hero-workspace-828.webp 828w, assets/img/hero-workspace-1200.webp 1200w, assets/img/hero-workspace-1600.webp 1600w" sizes="100vw">
+      <img src="assets/img/hero-workspace-828.jpg" width="1600" height="2000" alt="" loading="eager" fetchpriority="high" decoding="async">
+    </picture>
+    <div class="hero-bg-veil"></div>
+  </div>
+  <div class="hero-detail-layer" aria-hidden="true"></div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="kicker-eyebrow">Spletne strani &middot; Kočevje</span>
+      <h1>Izdelava spletnih strani za lokalna podjetja</h1>
+
+      <p class="lede">Najprej si na telefonu ogledate brezplačen konceptni
+      predogled, brez kakršnekoli obveznosti. Če vam je všeč, dobite pisno ponudbo
+      za izbrani paket s fiksno ceno — in šele takrat se odločite.</p>
+
+      <p class="who" id="komu">Za lokalna podjetja v Sloveniji, ki še nimajo svoje
+      spletne strani ali imajo zastarelo, počasno oziroma slabo berljivo na
+      telefonu. Obrtnike, mojstre, lokale, nastanitve, storitvene dejavnosti — vse,
+      kjer bi stranka rada na hitro videla, kaj ponujate, in vas poklicala ali
+      vam pisala.</p>
+
+      <p class="cta-row">
+        <a class="cta" href="mailto:alej.kump@gmail.com?subject=Povpra%C5%A1evanje%20za%20spletno%20stran&amp;body=Pozdravljeni%2C%0A%0AZanima%20me%20spletna%20stran%20za%20moje%20podjetje.%0A%0ADejavnost%3A%0AKateri%20paket%20vas%20zanima%20%28Osnovna%20%2F%20Lokalni%20posel%20%2F%20Premium%29%3A%0AKaj%20bi%20stran%20morala%20vsebovati%3A%0A%0ALep%20pozdrav">Povprašajte po konceptu &rarr;</a>
+        <span class="cta-note">E-pošta. Brez obrazca, brez prijave. Ali pokličite:
+        <a href="tel:+38670479188"><strong>070 479 188</strong></a>.</span>
+      </p>
+
+      <div class="disclosure">
+        <strong>Kdo to piše.</strong> Sem Alej Kump. To podjetje sem registriral
+        15. septembra 2026 in ta stran prodaja storitev, ki jo opravljam osebno
+        &mdash; gre torej za komercialno stran, ne za nevtralen nasvet. Do danes
+        nimam še nobene stranke, kar povem odkrito namesto da bi se pretvarjal
+        drugače.
+      </div>
+    </div>
+
+    <div class="phone-stage">
+      <div class="phone-3d">
+        <div class="phone-screen">
+          <picture class="screen-img active">
+            <source type="image/avif" srcset="assets/img/screen-mizarstvo-220.avif 220w, assets/img/screen-mizarstvo-440.avif 440w, assets/img/screen-mizarstvo-660.avif 660w" sizes="(min-width: 760px) 232px, 54vw">
+            <source type="image/webp" srcset="assets/img/screen-mizarstvo-220.webp 220w, assets/img/screen-mizarstvo-440.webp 440w, assets/img/screen-mizarstvo-660.webp 660w" sizes="(min-width: 760px) 232px, 54vw">
+            <img src="assets/img/screen-mizarstvo-440.jpg" width="660" height="1428" alt="" loading="eager" decoding="async">
+          </picture>
+          <picture class="screen-img">
+            <source type="image/avif" srcset="assets/img/screen-frizer-220.avif 220w, assets/img/screen-frizer-440.avif 440w, assets/img/screen-frizer-660.avif 660w" sizes="(min-width: 760px) 232px, 54vw">
+            <source type="image/webp" srcset="assets/img/screen-frizer-220.webp 220w, assets/img/screen-frizer-440.webp 440w, assets/img/screen-frizer-660.webp 660w" sizes="(min-width: 760px) 232px, 54vw">
+            <img src="assets/img/screen-frizer-440.jpg" width="660" height="1428" alt="" loading="eager" decoding="async">
+          </picture>
+          <picture class="screen-img">
+            <source type="image/avif" srcset="assets/img/screen-apartmaji-220.avif 220w, assets/img/screen-apartmaji-440.avif 440w, assets/img/screen-apartmaji-660.avif 660w" sizes="(min-width: 760px) 232px, 54vw">
+            <source type="image/webp" srcset="assets/img/screen-apartmaji-220.webp 220w, assets/img/screen-apartmaji-440.webp 440w, assets/img/screen-apartmaji-660.webp 660w" sizes="(min-width: 760px) 232px, 54vw">
+            <img src="assets/img/screen-apartmaji-440.jpg" width="660" height="1428" alt="" loading="eager" decoding="async">
+          </picture>
+        </div>
+      </div>
+      <div class="phone-dots" role="group" aria-label="Preklopi primer na zaslonu">
+        <button type="button" aria-current="true" aria-label="Mizarstvo Hrast"></button>
+        <button type="button" aria-current="false" aria-label="Frizerski salon Lila"></button>
+        <button type="button" aria-current="false" aria-label="Apartmaji Ob jezeru"></button>
+      </div>
+      <p class="phone-note">Primeri za izmišljena podjetja — ne resnične stranke.</p>
+    </div>
+  </div>
+</section>
+
 <main class="wrap">
 
-  <h1>Every step was green. Nothing landed.</h1>
+  <h2 id="kako">Kako poteka</h2>
 
-  <p class="lede">And you found out eleven days later, because a customer asked.
-  I review <strong>one exported n8n workflow</strong> and tell you which of its
-  silent failure paths actually matter &mdash; then show you what I checked, what
-  I didn&rsquo;t, and what each finding does <em>not</em> prove.</p>
-
-  <p class="who">For teams already running n8n in production &mdash; agencies,
-  operations teams, and the person who owns the automations but not the time to
-  re-read them.</p>
-
-  <p class="cta-row">
-    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
-    <span class="cta-note">Email. No form, no signup, no newsletter.</span>
-  </p>
-
-  <div class="disclosure">
-    <strong>Who is writing this.</strong> I&rsquo;m Alej Kump. I registered this
-    business on 15 September 2026 and this page sells a service I provide
-    personally. It is a commercial page, not neutral advice &mdash; and I have no
-    clients yet, which is why everything here is written to be checked rather
-    than believed.
+  <div class="process-wrap">
+    <div class="process-bg-layer" aria-hidden="true"></div>
+    <div class="panel">
+      <ol class="steps">
+        <li><strong>Brezplačen konceptni predogled</strong> &mdash; ogledate si
+        ga na telefonu, brez obveznosti in brez plačila.</li>
+        <li><strong>Pisna ponudba</strong> za paket, ki ga izberete, s fiksno
+        ceno.</li>
+        <li><strong>50&nbsp;% akontacija</strong> ob naročilu, izdelava strani v
+        dogovorjenem roku, preostanek ob prevzemu.</li>
+        <li><strong>Stran je vaša</strong> &mdash; skupaj z besedili, slikami in
+        domeno &mdash; ko je v celoti plačana.</li>
+      </ol>
+    </div>
   </div>
 
-  <p class="small">Not ready to talk to anyone? <a href="checklist.html"><strong>The
-  18-point reliability checklist</strong></a> is the same thing I look for,
-  published in full. Free, no signup — and if you work through it yourself you
-  probably don&rsquo;t need me.</p>
+  <h2 id="paketi">Paketi in cene</h2>
 
-  <h2 id="problem">The failure this is about</h2>
-
-  <p>It almost always has three parts, and people tell it in this order:</p>
-
-  <blockquote>
-    <p>Every node was green. Nothing actually landed in the destination.
-    <strong>And nobody found out for days</strong>, until a human asked a
-    question.</p>
-  </blockquote>
-
-  <p>The first two are the bug. <strong>The third is the cost.</strong> A failure
-  that announces itself is a bad afternoon; a failure that reports success is a
-  fortnight of decisions made on data that was never there, and a reconciliation
-  afterwards that nobody budgeted for.</p>
-
-  <p>It is hard to chase because nothing went wrong in a way n8n can see. A node
-  returned a clean 200. A payload shape changed upstream and a mapping quietly
-  produced nothing. A duplicate check passed twice because two executions
-  overlapped. The execution list shows green runs, so there is no error to search
-  for and no failed run to open.</p>
-
-  <p><strong>Every one of those is visible in the workflow&rsquo;s own export,
-  before anything runs.</strong> That is what this review reads.</p>
-
-  <h2 id="what">What it is, in three lines</h2>
-
-  <div class="panel">
-    <ol class="steps">
-      <li><strong>You send</strong> the workflow export and say what it&rsquo;s for.</li>
-      <li><strong>I review it</strong> &mdash; deterministic static analysis of the
-      export, plus judgement about your business.</li>
-      <li><strong>You get</strong> ranked findings, what each does <em>not</em>
-      prove, recommended fixes kept separate, and a NOT CHECKED list.</li>
-    </ol>
+  <div class="packages-grid">
+    <div class="package-card">
+      <h3>Osnovna</h3>
+      <p class="price">450&nbsp;€</p>
+      <dl>
+        <dt>Obseg</dt><dd>1 stran, razdeljena na sekcije</dd>
+        <dt>Popravki</dt><dd>1 krog popravkov</dd>
+        <dt>Rok izdelave</dt><dd>7 delovnih dni</dd>
+      </dl>
+    </div>
+    <div class="package-card">
+      <h3>Lokalni posel</h3>
+      <p class="price">690&nbsp;€</p>
+      <dl>
+        <dt>Obseg</dt><dd>do 5 strani</dd>
+        <dt>Popravki</dt><dd>2 kroga popravkov</dd>
+        <dt>Rok izdelave</dt><dd>10 delovnih dni</dd>
+      </dl>
+    </div>
+    <div class="package-card">
+      <h3>Premium</h3>
+      <p class="price">990&nbsp;€</p>
+      <dl>
+        <dt>Obseg</dt><dd>do 5 strani, s prilagojenimi fotografijami in besedilom</dd>
+        <dt>Popravki</dt><dd>2 kroga popravkov</dd>
+        <dt>Rok izdelave</dt><dd>14 delovnih dni</dd>
+      </dl>
+    </div>
   </div>
 
-  <p>The deliverable is <strong>a report you can verify without trusting the
-  person who wrote it.</strong> That is the product. The tooling underneath it is
-  not the point &mdash; and I would rather say why than let you find out.</p>
+  <p><strong>Za prve tri stranke:</strong> gostovanje in vzdrževanje sta prvih
+  6 mesecev brezplačna. Cena strani ostane enaka; po šestih mesecih se sami
+  odločite, ali nadaljujete po običajni mesečni ceni ali stran gostite na
+  svojem računu.</p>
 
-  <div class="panel">
-    <h3>Reading the file is the easy part, and it is getting cheaper</h3>
-    <p>Free tools exist that will take a workflow export and hand you a list of
-    places it could fail. Some are good. If a list is what you need, use one and
-    keep your money.</p>
-    <p><strong>A list is not the hard part.</strong> The hard part is the three
-    things a list does not do: telling you which two of eleven findings are worth
-    your week, stating plainly what was <em>not</em> examined, and refusing to
-    claim something has failed when the evidence only shows it <em>can</em>. The
-    last one matters most, because a tool that only ever argues in one direction
-    will eventually cost you a sprint on a problem you never had.</p>
-    <p>That judgement is what I sell. Not the reading.</p>
-  </div>
+  <p class="small">Neobvezno mesečno za gostovanje in vzdrževanje: 15&nbsp;€
+  (Osnovna), 25&nbsp;€ (Lokalni posel), 29&nbsp;€ (Premium). Cene so končne za
+  vas &mdash; nisem zavezanec za DDV, zato se DDV ne obračuna (čl. 94
+  ZDDV-1). Rok izdelave teče od dneva, ko prejmem dogovorjeno vsebino in
+  akontacijo.</p>
 
-  <div class="panel">
-    <h3>It works on the first day</h3>
-    <p>Monitoring and anomaly detection need a baseline &mdash; weeks of your
-    normal behaviour before they can tell normal from wrong. That is fine if the
-    workflow has been running for months and nothing has changed.</p>
-    <p>Reading the export needs none of that. It works on a workflow you shipped
-    this morning, on one you inherited from someone who left, and on one you are
-    about to put ten times the volume through. <strong>Those are exactly the
-    three moments when the risk is highest and a baseline does not exist yet.</strong></p>
-  </div>
+  <p class="small">Od česa je odvisna končna cena, sem razložil v članku
+  <a href="clanki-koliko-stane-spletna-stran.html">Koliko stane spletna stran za lokalno podjetje</a>.</p>
 
-  <div class="panel">
-    <h3>Three properties that are the actual product</h3>
-    <ul>
-      <li><strong>Nothing from your export is ever executed.</strong> No node
-      runs, no request is made, no credential value is read. Code nodes are
-      inspected as text.</li>
-      <li><strong>No parameter value or Code-node body appears in the report</strong>
-      &mdash; a blanket rule rather than a filter, because a filter is a list of
-      the leaks somebody thought of.</li>
-      <li><strong>Every finding carries what it does <em>not</em> prove.</strong>
-      &ldquo;This contains an unhandled failure path&rdquo; and &ldquo;this has
-      failed&rdquo; are different claims. An export only supports the first.</li>
+  <p>Noben paket ne vključuje: spletne trgovine ali rezervacijskega sistema
+  (razen povezave na obstoječo storitev, če jo že imate), kakršnekoli obljube
+  o uvrstitvi na iskalnikih, nakupa fotografij mimo tistih, ki jih priskrbite
+  sami, ali česarkoli, kar ni zapisano v ponudbi.</p>
+
+  <h2 id="gostovanje">Gostovanje</h2>
+
+  <p>Stran gostimo na brezplačnem gostovanju, ki dovoljuje komercialno rabo,
+  ali na vašem obstoječem računu, če ga imate in ga raje uporabite.
+  Lastništvo strani, besedil, slik in domene preide na vas, ko je paket v
+  celoti plačan (glejte 4. korak zgoraj).</p>
+
+  <h2 id="primeri">Primeri strani</h2>
+
+  <p>Strank še nimam, zato vam ne morem pokazati strani za resnično
+  podjetje. Pripravil sem tri primere za <strong>izmišljena podjetja</strong> —
+  vsak je na vrhu jasno označen kot primer in ni namenjen iskalnikom.
+  Odprite jih na telefonu:</p>
+
+  <div class="examples-wrap">
+    <div class="examples-bg-layer" aria-hidden="true"></div>
+    <ul class="examples-list">
+      <li>
+        <span class="thumb">
+          <picture>
+            <source type="image/avif" srcset="assets/img/thumb-mizarstvo-160.avif 160w, assets/img/thumb-mizarstvo-320.avif 320w" sizes="54px">
+            <source type="image/webp" srcset="assets/img/thumb-mizarstvo-160.webp 160w, assets/img/thumb-mizarstvo-320.webp 320w" sizes="54px">
+            <img src="assets/img/thumb-mizarstvo-320.jpg" width="320" height="693" alt="Zaslonska slika primera Mizarstvo Hrast" loading="lazy" decoding="async">
+          </picture>
+        </span>
+        <span class="ex-text">
+          <a href="https://ak-primer-mizarstvo.pages.dev/" rel="noopener">Mizarstvo Hrast</a>
+          <p>primer paketa Lokalni posel (več podstrani)</p>
+        </span>
+      </li>
+      <li>
+        <span class="thumb">
+          <picture>
+            <source type="image/avif" srcset="assets/img/thumb-frizer-160.avif 160w, assets/img/thumb-frizer-320.avif 320w" sizes="54px">
+            <source type="image/webp" srcset="assets/img/thumb-frizer-160.webp 160w, assets/img/thumb-frizer-320.webp 320w" sizes="54px">
+            <img src="assets/img/thumb-frizer-320.jpg" width="320" height="693" alt="Zaslonska slika primera Frizerski salon Lila" loading="lazy" decoding="async">
+          </picture>
+        </span>
+        <span class="ex-text">
+          <a href="https://ak-primer-frizer.pages.dev/" rel="noopener">Frizerski salon Lila</a>
+          <p>primer paketa Osnovna (ena stran)</p>
+        </span>
+      </li>
+      <li>
+        <span class="thumb">
+          <picture>
+            <source type="image/avif" srcset="assets/img/thumb-apartmaji-160.avif 160w, assets/img/thumb-apartmaji-320.avif 320w" sizes="54px">
+            <source type="image/webp" srcset="assets/img/thumb-apartmaji-160.webp 160w, assets/img/thumb-apartmaji-320.webp 320w" sizes="54px">
+            <img src="assets/img/thumb-apartmaji-320.jpg" width="320" height="693" alt="Zaslonska slika primera Apartmaji Ob jezeru" loading="lazy" decoding="async">
+          </picture>
+        </span>
+        <span class="ex-text">
+          <a href="https://ak-primer-apartmaji.pages.dev/" rel="noopener">Apartmaji Ob jezeru</a>
+          <p>primer paketa Lokalni posel (nastanitve, povpraševanje po e-pošti)</p>
+        </span>
+      </li>
     </ul>
   </div>
 
-  <h3>What gets checked, from the export alone</h3>
-  <p>Node inventory and connection graph; triggers; Code-node structure; nodes
-  that can fail with nowhere to send the failure; paths that end recording
-  nothing; the non-atomic static-data idempotency pattern; isolated and
-  unreachable nodes; unwired Merge inputs; webhook triggers with no
-  authentication; credential <em>references</em>; secret-shaped parameter keys;
-  and unrecognised node types.</p>
+  <p><strong>Primer — izmišljeno podjetje:</strong> animirana stran za
+  <a href="https://gostilna-pri-lipi-primer.higgsfield.app" rel="noopener">Gostilno Pri Lipi</a>.
+  Animirane strani so del paketa Premium (990&nbsp;€).</p>
 
-  <h2 id="who">Who this is for &mdash; and who it isn&rsquo;t</h2>
-
-  <div class="tbl-scroll">
-  <table>
-    <tr>
-      <th>A good fit</th>
-      <td>You run n8n in production. Something has gone quietly wrong at least
-      once, or you are about to put more volume through a workflow than it has
-      carried before. Someone can approve a small fixed-price piece of work.</td>
-    </tr>
-    <tr>
-      <th>Not a fit &mdash; and I&rsquo;ll say so</th>
-      <td>You are on Make, Zapier or Power Automate only. I have not built the
-      evidence to review those and will not pretend otherwise. You want the
-      workflow fixed rather than reviewed &mdash; that is a different job. You want
-      an ongoing retainer as a first engagement.</td>
-    </tr>
-  </table>
-  </div>
-
-  <h2 id="limits">What it is not, and cannot become</h2>
-
-  <p>Stated here rather than discovered later, because a review that overstates
-  its reach is worse than no review &mdash; it spends your engineers&rsquo; time on
-  work that was never needed.</p>
+  <h2 id="clanki">Članki</h2>
 
   <ul>
-    <li><strong>It is not &ldquo;we reproduce your workflow end to end&rdquo;.</strong>
-    Your workflow is never run. There is no n8n execution engine here and none is
-    planned.</li>
-    <li><strong>No n8n expression is evaluated.</strong> A wrong expression is
-    invisible to static analysis.</li>
-    <li><strong>No Code node is executed.</strong> Code-node findings are lexical
-    &mdash; the source is read as text.</li>
-    <li><strong>Nothing is said about your credentials.</strong> Only the
-    reference is read, so nothing establishes whether one is valid, expired or
-    over-scoped.</li>
-    <li><strong>Instance configuration is not in an export.</strong> A global
-    error workflow, timeouts, queue mode, concurrency settings and your n8n
-    version can all change the conclusions.</li>
-    <li><strong>Runtime history is not in an export.</strong> Nothing derived from
-    a file says how often a path has actually been taken.</li>
-    <li><strong>Where a finding cannot be reproduced, it is reported as observed
-    by inspection, not reproduced</strong> &mdash; and labelled that way. A finding
-    you cannot reproduce is withdrawn, not defended.</li>
+    <li><a href="clanki-koliko-stane-spletna-stran.html">Koliko stane
+    spletna stran za lokalno podjetje?</a></li>
+    <li><a href="clanki-facebook-ali-spletna-stran.html">Facebook ali lastna
+    spletna stran?</a></li>
   </ul>
 
-  <h2>A worked example</h2>
+  <h2 id="kdo">Kdo to piše</h2>
 
-  <p>Rather than a case study, which would need a client I have not had, here is
-  the method applied to a workflow of my own &mdash; a lead-intake deduplication
-  that passed every test for a full session and was never a dedupe at all. It
-  ends at the finding, not at an offer.</p>
+  <p>Sem Alej Kump, iz Kočevja. To podjetje (<em>Računalniško programiranje
+  Alej Kump s.p.</em>) sem registriral 15. septembra 2026 in do danes nimam
+  še nobene stranke. To povem odkrito, ker bi tako ali tako ugotovili sami, in
+  ker se mi zdi lažje nekaj dogovoriti s človekom, ki pove, kje je šele na
+  začetku. Namesto seznama preteklih strank lahko preverite, kaj znam narediti
+  &mdash; v brezplačnem konceptnem predogledu za vaše podjetje, preden se
+  karkoli dogovorimo.</p>
 
-  <p><a class="cta" href="teardown.html">Read the teardown &rarr;</a></p>
+  <div class="mood-strip">
+    <img src="assets/img/kocevje-mood-828.jpg" width="1200" height="679" alt="Ilustracija gozdnatih gričev in jezera ob sončnem zahodu, ustvarjena z umetno inteligenco" loading="eager" decoding="async">
+    <span class="mood-caption">Ilustracija (ustvarjena z UI) — delam iz Kočevja</span>
+  </div>
 
-  <h2 id="faq">Questions people actually ask</h2>
+  <h2 id="kontakt">Kontakt</h2>
 
-  <h3>Who have you done this for?</h3>
-  <p><strong>Nobody yet.</strong> This business was registered on 15 September
-  2026 and has had no clients. I could have waited and said nothing, but you would
-  have found out, and a first engagement built on a vague impression is worse for
-  both of us. What exists instead of a client list is a method you can inspect:
-  the <a href="teardown.html">teardown</a> is a real defect found in my own work,
-  including the part where my own tests passed for a whole session and were
-  measuring the wrong thing.</p>
+  <p>Najhitreje: pokličite ali pošljite SMS na
+  <a href="tel:+38670479188"><strong>070 479 188</strong></a>.</p>
 
-  <h3>What do I actually send you?</h3>
-  <p>To start, just a description &mdash; what the workflow does, what should
-  happen, and anything odd you have noticed. The export comes later, with
-  credential values stripped. <strong>Please don&rsquo;t email credentials, API
-  keys, tokens or passwords at any point.</strong> If one arrives anyway I will
-  tell you immediately and treat it as exposed, because deleting an email is not
-  the same as rotating a key.</p>
-
-  <h3>What does the report look like?</h3>
-  <p>There is <a href="sample-report.html"><strong>a full sample review</strong></a> on the site &mdash; a real analysis run against a synthetic workflow, with the executive summary and one finding at full length. It is the quickest way to see whether this is the kind of thing you want.</p>
-
-  <h3>What if you don&rsquo;t find anything?</h3>
-  <p>Then I say so, and that is a real result rather than a failed engagement. A
-  review that always finds something is not a review.</p>
-
-  <h3>How long does it take?</h3>
-  <p>Days, not weeks &mdash; and I will give you a date once I have seen the
-  workflow rather than before. I would rather commit to something I can hold than
-  to something that sounds impressive.</p>
-
-  <h3>What does it cost?</h3>
-  <p>A fixed price, agreed before any work starts, and small enough to be an
-  expense approval rather than a budget decision. I quote it in the first
-  conversation, once I know the workflow is one I can actually help with.</p>
-
-  <h3>Are you a real business I can invoice through?</h3>
-  <p>Yes &mdash; a registered Slovenian <em>s.p.</em>, paid by bank transfer, with
-  the full register details in the footer. That matters more than it sounds: much
-  of the cheap end of this market settles in crypto to an anonymous handle, which
-  an accountant cannot book.</p>
-
-  <h3>Can you just fix it instead?</h3>
-  <p>Not as the first piece of work. An audit that fixes things is not an audit
-  &mdash; mixing them makes both unverifiable. If the findings justify a fix, we
-  scope that separately afterwards.</p>
-
-  <h2 id="contact">Talking to me</h2>
-
-  <p>Tell me what the workflow does and what you think is going wrong. If it is
-  not something I can genuinely help with, I will say so in the first reply
-  &mdash; that is the outcome that makes the rest of this page credible.</p>
+  <p>Ali pa mi napišite, za kakšno dejavnost gre in kateri paket vas zanima. Če
+  presodim, da vam ne morem pošteno pomagati, vam to povem v prvem
+  odgovoru.</p>
 
   <p class="cta-row">
-    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
-    <span class="cta-note">Opens your mail app with the questions pre-filled.</span>
+    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Povpra%C5%A1evanje%20za%20spletno%20stran&amp;body=Pozdravljeni%2C%0A%0AZanima%20me%20spletna%20stran%20za%20moje%20podjetje.%0A%0ADejavnost%3A%0AKateri%20paket%20vas%20zanima%20%28Osnovna%20%2F%20Lokalni%20posel%20%2F%20Premium%29%3A%0AKaj%20bi%20stran%20morala%20vsebovati%3A%0A%0ALep%20pozdrav">Povprašajte po konceptu &rarr;</a>
+    <span class="cta-note">Odpre vaš poštni program z že izpolnjenim vprašanjem.</span>
   </p>
 
-  <p class="warn"><strong>Please don&rsquo;t send secrets.</strong> No credentials,
-  API keys, tokens or passwords &mdash; not in the first email and not in the
-  export. There is nothing I need that requires them.</p>
+  <p>Raje na Instagramu? Napišite STRAN v sporočilo na
+  <a href="https://www.instagram.com/alej_kump/" rel="noopener">@alej_kump</a>.</p>
 
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <p><strong>This is a commercial page.</strong> It advertises a paid service
-    and is written by the person who provides it.</p>
+    <p><strong>To je komercialna stran.</strong> Oglašuje plačljivo storitev
+    in jo je napisala oseba, ki jo opravlja.</p>
     <p class="legal">
-      Računalniško programiranje Alej Kump s.p. &middot;
-      entered in the Poslovni register Slovenije (AJPES), 15 September 2026
-      &middot; activity 62.100 &middot;
+      <strong>Alej Kump · Spletne strani</strong> (Računalniško programiranje Alej Kump s.p.) &middot;
+      vpisano v Poslovni register Slovenije (AJPES) 15. septembra 2026
+      &middot; dejavnost 62.100 &middot;
       <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
-      <span>registered seat Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia &middot;
+      <span>sedež Ulica heroja Marinclja 3, 1330 Kočevje, Slovenija &middot;
       matična številka 7585942000 &middot;
       davčna številka 67735509</span>
     </p>
-    <p class="legal">This site stores nothing in your browser, sets no cookie,
-    loads no font, script, image or resource from anywhere else, and sends
-    nothing anywhere. There is no analytics and no form.</p>
+    <p class="legal">Ta stran ne shranjuje ničesar v vašem brskalniku in ne
+    nastavlja piškotkov. Slike, slog (CSS) in skript na tej strani so
+    gostovani tukaj &mdash; nič se ne nalaga od drugod, ni analitike in ni
+    obrazcev.</p>
   </div>
 </footer>
 
+<script src="premium.js" defer></script>
 </body>
 </html>
