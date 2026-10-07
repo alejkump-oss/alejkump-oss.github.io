@@ -1,170 +1,143 @@
-// Premium interactions for spletne-strani.html. Vanilla JS, no dependency,
-// one small file, loaded with `defer`. Everything here is progressive
-// enhancement: every element this script touches already looks correct in
-// the HTML/CSS alone (fixed 3D tilt on the phone, first screenshot shown,
-// flat package cards) if this file fails to load or is blocked.
+// Homepage interactions (index.html), rebuilt 2026-10-07. Vanilla JS, no
+// dependency, one small local file loaded with `defer`. Everything here is
+// progressive enhancement: without it, every section is visible, the hero
+// shows its still poster and the phone shows its first screenshot.
 //
-// Motion is gated once, at the top, by three independent signals, and NONE
-// of the code below runs its timers or listeners when any of them says no:
-//   1. prefers-reduced-motion: reduce
-//   2. a simple low-end heuristic (deviceMemory / hardwareConcurrency)
-//   3. a short first-paint frame-time probe — if the browser cannot keep up
-//      with plain rAF callbacks before we even start animating, more motion
-//      would make it worse, not better.
+// Motion (hero video, reveal-on-scroll, auto-cycling phone, tilt) is skipped
+// entirely when the visitor asks for reduced motion, and the video is also
+// skipped on Save-Data and on low-memory devices. Nothing is stored in the
+// browser: no cookie, no localStorage.
 (function () {
   'use strict';
 
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var lowMemory = typeof navigator.deviceMemory === 'number' && navigator.deviceMemory > 0 && navigator.deviceMemory < 4;
-  var lowCores = typeof navigator.hardwareConcurrency === 'number' && navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 2;
+  var mq = function (q) { return window.matchMedia && window.matchMedia(q).matches; };
+  var reduceMotion = mq('(prefers-reduced-motion: reduce)');
+  var conn = navigator.connection || {};
+  var saveData = conn.saveData === true || /(^|-)2g$/.test(conn.effectiveType || '');
+  var lowMemory = typeof navigator.deviceMemory === 'number' && navigator.deviceMemory > 0 && navigator.deviceMemory < 2;
 
-  function start(enableMotion) {
-    var root = document.documentElement;
-    if (!enableMotion) root.classList.add('no-motion');
-
-    initScreenCycle(enableMotion);
-    if (enableMotion) {
-      initPhoneTilt();
-      initCardTilt();
-      initParallax();
+  function heroVideo() {
+    var v = document.querySelector('.hero-video');
+    if (!v || reduceMotion || saveData || lowMemory) return;
+    var tall = mq('(max-aspect-ratio: 4/5)');
+    var key = tall ? 'tall' : 'wide';
+    var canWebm = v.canPlayType('video/webm; codecs="vp9"');
+    var src = canWebm ? v.getAttribute('data-' + key + '-webm') : v.getAttribute('data-' + key + '-mp4');
+    if (!src) return;
+    v.muted = true;
+    v.setAttribute('muted', '');
+    v.src = src;
+    v.addEventListener('playing', function () { v.classList.add('playing'); }, { once: true });
+    var p = v.play();
+    if (p && p.catch) p.catch(function () { /* autoplay refused: the poster stays */ });
+    // Pause when the hero is off-screen, to save battery.
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting) { var q = v.play(); if (q && q.catch) q.catch(function () {}); } else { v.pause(); }
+        });
+      }).observe(v);
     }
   }
 
-  // Three screenshots cycling on the hero phone. Dots are always clickable
-  // (a user-initiated change is not the "motion" prefers-reduced-motion asks
-  // us to avoid); only the automatic timer and the cross-fade transition are
-  // conditional on enableMotion / the no-motion class set in CSS.
-  function initScreenCycle(enableMotion) {
+  function reveal() {
+    var els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+    if (!els.length) return;
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    // Stagger siblings that share a parent, so grids cascade in.
+    els.forEach(function (el) {
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.hasAttribute('data-reveal'); });
+      var i = sibs.indexOf(el);
+      if (i > 0) el.style.setProperty('--d', Math.min(i, 5) * 0.08 + 's');
+    });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  function chrome() {
+    var header = document.querySelector('header.site');
+    var hero = document.querySelector('.hero');
+    var bar = document.querySelector('.callbar');
+    var finalCta = document.querySelector('.final');
+    if (!hero) return;
+    var heroGone = false, finalIn = false;
+    function sync() {
+      if (header) header.classList.toggle('scrolled', heroGone);
+      if (bar) bar.classList.toggle('show', heroGone && !finalIn);
+    }
+    if (!('IntersectionObserver' in window)) { heroGone = true; sync(); return; }
+    new IntersectionObserver(function (es) {
+      heroGone = !es[0].isIntersecting; sync();
+    }, { threshold: 0.15 }).observe(hero);
+    if (finalCta) {
+      new IntersectionObserver(function (es) {
+        finalIn = es[0].isIntersecting; sync();
+      }, { threshold: 0.2 }).observe(finalCta);
+    }
+  }
+
+  // Three demo screenshots on the hero phone. Dots always work (a click is
+  // not the motion reduced-motion asks us to avoid); the timer does not run
+  // under reduced motion.
+  function screenCycle() {
     var screen = document.querySelector('.phone-screen');
+    var dots = document.querySelector('.phone-dots');
     if (!screen) return;
     var frames = Array.prototype.slice.call(screen.querySelectorAll('.screen-img'));
-    var dotsWrap = document.querySelector('.phone-dots');
     if (frames.length < 2) return;
-    var i = frames.findIndex(function (f) { return f.classList.contains('active'); });
-    if (i < 0) i = 0;
-
+    var i = 0, timer = null;
     function show(n) {
       frames[i].classList.remove('active');
-      if (dotsWrap) dotsWrap.children[i].setAttribute('aria-current', 'false');
+      if (dots) dots.children[i].setAttribute('aria-current', 'false');
       i = (n + frames.length) % frames.length;
       frames[i].classList.add('active');
-      if (dotsWrap) dotsWrap.children[i].setAttribute('aria-current', 'true');
+      if (dots) dots.children[i].setAttribute('aria-current', 'true');
     }
-
-    if (dotsWrap) {
-      Array.prototype.forEach.call(dotsWrap.children, function (btn, idx) {
-        btn.addEventListener('click', function () { show(idx); resetTimer(); });
-      });
-    }
-
-    var timer = null;
-    function resetTimer() {
+    function reset() {
       if (timer) clearInterval(timer);
-      if (enableMotion) timer = setInterval(function () { show(i + 1); }, 4200);
+      if (!reduceMotion) timer = setInterval(function () { show(i + 1); }, 3800);
     }
-    resetTimer();
+    if (dots) {
+      Array.prototype.forEach.call(dots.children, function (b, idx) {
+        b.addEventListener('click', function () { show(idx); reset(); });
+      });
+    }
+    reset();
   }
 
-  // Pointer-driven tilt on the hero phone, for hover-capable pointers only.
-  // Touch devices get a gentle scroll-position tilt instead (initParallax
-  // covers the translateY layers; this adds a small rotate to the phone
-  // itself based on how far it has scrolled through the viewport).
-  function initPhoneTilt() {
-    var stage = document.querySelector('.phone-stage');
-    var phone = document.querySelector('.phone-3d');
+  function phoneTilt() {
+    if (reduceMotion || !mq('(hover: hover) and (pointer: fine)')) return;
+    var stage = document.querySelector('.hero-phone');
+    var phone = document.querySelector('.phone');
     if (!stage || !phone) return;
-    var canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-    if (canHover) {
-      stage.addEventListener('pointermove', function (e) {
-        var r = stage.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        phone.style.setProperty('--tilty', (px * 12).toFixed(2) + 'deg');
-        phone.style.setProperty('--tiltx', (-py * 10).toFixed(2) + 'deg');
-      });
-      stage.addEventListener('pointerleave', function () {
-        phone.style.setProperty('--tilty', '0deg');
-        phone.style.setProperty('--tiltx', '0deg');
-      });
-    } else {
-      var raf = null;
-      window.addEventListener('scroll', function () {
-        if (raf) return;
-        raf = requestAnimationFrame(function () {
-          raf = null;
-          var r = stage.getBoundingClientRect();
-          var centre = r.top + r.height / 2 - window.innerHeight / 2;
-          var t = Math.max(-1, Math.min(1, centre / (window.innerHeight / 2)));
-          phone.style.setProperty('--tilty', (t * -6).toFixed(2) + 'deg');
-        });
-      }, { passive: true });
-    }
-  }
-
-  // Package cards: small pointer-driven tilt, hover-capable pointers only.
-  function initCardTilt() {
-    if (!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches)) return;
-    var cards = document.querySelectorAll('.package-card');
-    cards.forEach(function (card) {
-      card.addEventListener('pointermove', function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width - 0.5;
-        var py = (e.clientY - r.top) / r.height - 0.5;
-        card.style.setProperty('--ry', (px * 8).toFixed(2) + 'deg');
-        card.style.setProperty('--rx', (-py * 8).toFixed(2) + 'deg');
-      });
-      card.addEventListener('pointerleave', function () {
-        card.style.setProperty('--ry', '0deg');
-        card.style.setProperty('--rx', '0deg');
-      });
+    stage.addEventListener('pointermove', function (e) {
+      var r = stage.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      phone.style.setProperty('--tilty', (px * 18 - 4).toFixed(2) + 'deg');
+      phone.style.setProperty('--tiltx', (-py * 12).toFixed(2) + 'deg');
+    });
+    stage.addEventListener('pointerleave', function () {
+      phone.style.removeProperty('--tilty');
+      phone.style.removeProperty('--tiltx');
     });
   }
 
-  // Depth parallax for the two desktop-only decorative photo layers.
-  function initParallax() {
-    var detail = document.querySelector('.hero-detail-layer');
-    var processBg = document.querySelector('.process-bg-layer');
-    if (!detail && !processBg) return;
-    var raf = null;
-    function update() {
-      raf = null;
-      var y = window.scrollY || window.pageYOffset;
-      if (detail) detail.style.setProperty('--parallax-y', (y * 0.06).toFixed(1) + 'px');
-      if (processBg) {
-        var r = processBg.getBoundingClientRect();
-        var local = (window.innerHeight - r.top) * 0.04;
-        processBg.style.setProperty('--parallax-y2', local.toFixed(1) + 'px');
-      }
-    }
-    window.addEventListener('scroll', function () {
-      if (raf) return;
-      raf = requestAnimationFrame(update);
-    }, { passive: true });
-    update();
+  function start() {
+    heroVideo();
+    reveal();
+    chrome();
+    screenCycle();
+    phoneTilt();
   }
 
-  // A short frame-time probe: if we can't get a handful of animation frames
-  // in under ~40ms apiece (well above the 16.7ms a 60fps display needs), the
-  // device is struggling right now and extra transforms would show as jank,
-  // not polish. Runs once, costs under 200ms, then decides.
-  function probeThenStart() {
-    if (reduceMotion || lowMemory || lowCores) { start(false); return; }
-    var samples = [];
-    var last = performance.now();
-    function frame(t) {
-      samples.push(t - last);
-      last = t;
-      if (samples.length < 6) { requestAnimationFrame(frame); return; }
-      var avg = samples.reduce(function (a, b) { return a + b; }, 0) / samples.length;
-      start(avg <= 40);
-    }
-    requestAnimationFrame(frame);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', probeThenStart);
-  } else {
-    probeThenStart();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
 })();
