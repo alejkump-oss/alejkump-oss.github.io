@@ -143,16 +143,21 @@ var MARKET_CONFIG = {
       b.classList.add('ready');
 
       if (s.phase === 'before') {
-        b.appendChild(el('p', 'mk-day', 'Prodaja se začne v ponedeljek, 19. 10.'));
+        b.appendChild(el('p', 'mk-day', 'Naročite že danes – po ponedeljkovi ceni'));
         var pb = el('p', 'mk-price');
         pb.appendChild(el('span', 'mk-amount', String(s.first.price)));
         pb.appendChild(el('span', 'mk-cur', ' €'));
         b.appendChild(pb);
-        b.appendChild(el('p', 'mk-sub', 'v ponedeljek: 1 mesec upravljanja z vsemi 5 funkcijami. Vsak naslednji dan je paket manjši in cenejši, do petka (20 €). Ta teden največ ' + root.MARKET_CONFIG.CAPACITY + ' strank.'));
+        b.appendChild(el('p', 'mk-sub', 'Danes in v ponedeljek: 1 mesec upravljanja z vsemi 5 funkcijami. Vsak naslednji dan je paket manjši in cenejši, do petka (20 €). Ta teden največ ' + root.MARKET_CONFIG.CAPACITY + ' strank.'));
         if (compact) {
           var look = el('a', 'btn btn-primary mk-buy', 'Kaj dobite');
           look.href = 'market.html';
           b.appendChild(look);
+        } else {
+          var early = buyHref(s.first, root.MARKET_CONFIG);
+          var eb = el('a', 'btn btn-primary mk-buy', 'Naročim za ' + eur(s.first.price) + ' (po e-pošti)');
+          eb.href = early.href;
+          b.appendChild(eb);
         }
         return;
       }
