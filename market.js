@@ -9,6 +9,11 @@
 // to "Naročite po e-pošti" (mailto). Deactivate each day's link in Stripe when
 // that day ends, because a Payment Link keeps working after the page stops
 // showing it.
+//
+// 2026-10-18: card payment is NOT offered yet. market.html (step 01, footer)
+// and pogoji-market.html (points 3, 4, 8) describe e-mail orders with bank
+// transfer only. Pasting a link here without first adding card payment back
+// to that copy and to the terms would sell on terms the buyer was never shown.
 // ---------------------------------------------------------------------------
 var MARKET_CONFIG = {
   STRIPE_LINK_PON: '',
@@ -26,8 +31,8 @@ var MARKET_CONFIG = {
   var FEATURES = {
     1: 'Reeli in objave (ustvarjanje in načrtovanje)',
     2: 'Dnevne zgodbe',
-    3: 'Odgovori na komentarje',
-    4: 'Odgovori na DM (samo tistim, ki pišejo prvi)',
+    3: 'Pravila za odgovore na komentarje (vklopite jih vi)',
+    4: 'Pravila za odgovore na DM (samo tistim, ki pišejo prvi; vklopite jih vi)',
     5: 'Tedenski načrt vsebin + analitika'
   };
 
@@ -41,6 +46,13 @@ var MARKET_CONFIG = {
 
   var STRIPE = /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9_-]+$/;
 
+  // The Monday the next agent of the week starts (owner decision 2026-10-18:
+  // a new agent every week). Named only on the weekend before it.
+  var NEXT_MONDAY = { date: '2026-10-26', label: 'ponedeljek, 26. 10.' };
+
+  // 'pon 19. 10.' -> '19. 10.'
+  function dayMonth(tier) { return tier.label.split(' ').slice(1).join(' '); }
+
   // Today's calendar date in Ljubljana as YYYY-MM-DD, whatever the visitor's
   // own time zone is.
   function ljDate(now, tz) {
@@ -53,7 +65,8 @@ var MARKET_CONFIG = {
   // Pure: the sale state for a given Ljubljana date.
   //   { phase: 'before' }                       before Monday
   //   { phase: 'open', tier, next, lost }      Mon-Fri
-  //   { phase: 'closed' }                       Saturday onwards
+  //   { phase: 'closed', weekend }              Saturday onwards; weekend is
+  //                                             true only before NEXT_MONDAY
   function state(date) {
     if (date < WEEK[0].date) return { phase: 'before', first: WEEK[0] };
     for (var i = 0; i < WEEK.length; i++) {
@@ -63,14 +76,14 @@ var MARKET_CONFIG = {
         return { phase: 'open', index: i, tier: WEEK[i], next: next, lost: lost };
       }
     }
-    return { phase: 'closed' };
+    return { phase: 'closed', weekend: date < NEXT_MONDAY.date };
   }
 
   function buyHref(tier, cfg) {
     var link = cfg[tier.link];
     if (typeof link === 'string' && STRIPE.test(link)) return { href: link, stripe: true };
     var subject = 'MARKET';
-    var body = 'Pozdravljeni,\n\nnaročam MARKET, paket z dne ' + tier.label + ' (' + tier.price + ' €).\n\n' +
+    var body = 'Pozdravljeni,\n\nnaročam MARKET, paket dneva ' + tier.day + ', ' + dayMonth(tier) + ' (' + tier.price + ' €).\n\n' +
       'Instagram račun: @\nIme in priimek oziroma podjetje:\n\nLep pozdrav';
     return {
       href: 'mailto:' + cfg.EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body),
@@ -78,7 +91,7 @@ var MARKET_CONFIG = {
     };
   }
 
-  var api = { FEATURES: FEATURES, WEEK: WEEK, ljDate: ljDate, state: state, buyHref: buyHref, STRIPE: STRIPE };
+  var api = { FEATURES: FEATURES, WEEK: WEEK, NEXT_MONDAY: NEXT_MONDAY, ljDate: ljDate, state: state, buyHref: buyHref, STRIPE: STRIPE };
   if (typeof module !== 'undefined' && module.exports) { module.exports = api; return; }
 
   // ---------------- DOM ----------------
@@ -137,12 +150,12 @@ var MARKET_CONFIG = {
       }
       if (s.phase === 'closed') {
         b.appendChild(el('p', 'mk-day', 'Prodaja agenta MARKET je zaključena.'));
-        b.appendChild(el('p', 'mk-sub', 'Naslednji agent tedna v ponedeljek.'));
+        if (s.weekend) b.appendChild(el('p', 'mk-sub', 'Vsak teden nov agent tedna – naslednji v ' + NEXT_MONDAY.label));
         return;
       }
 
       var t = s.tier;
-      b.appendChild(el('p', 'mk-day', 'Danes, ' + t.day + ' ' + t.label.split(' ')[1] + ' ' + t.label.split(' ')[2]));
+      b.appendChild(el('p', 'mk-day', 'Danes, ' + t.day + ', ' + dayMonth(t)));
       var p = el('p', 'mk-price');
       p.appendChild(el('span', 'mk-amount', String(t.price)));
       p.appendChild(el('span', 'mk-cur', ' €'));
@@ -159,7 +172,7 @@ var MARKET_CONFIG = {
       if (s.next) {
         tom.textContent = 'Jutri (' + s.next.label + '): ' + eur(s.next.price) + ', brez funkcije »' + s.lost.map(function (f) { return FEATURES[f]; }).join('«, »') + '«.';
       } else {
-        tom.textContent = 'Danes je zadnji dan prodaje. Naslednji agent tedna v ponedeljek.';
+        tom.textContent = 'Danes je zadnji dan prodaje. Vsak teden nov agent tedna.';
       }
       b.appendChild(tom);
 
@@ -172,12 +185,12 @@ var MARKET_CONFIG = {
         b.appendChild(more);
       } else {
         var h = buyHref(t, root.MARKET_CONFIG);
-        var a = el('a', 'btn btn-primary mk-buy', h.stripe ? 'Naročilo z obveznostjo plačila: ' + eur(t.price) : 'Naročite po e-pošti: ' + eur(t.price));
+        var a = el('a', 'btn btn-primary mk-buy', h.stripe ? 'Naročilo z obveznostjo plačila: ' + eur(t.price) : 'Naročite po e-pošti');
         a.href = h.href;
         b.appendChild(a);
         b.appendChild(el('p', 'mk-note', h.stripe
           ? 'Plačilo s kartico poteka na strani Stripe. Z naročilom se strinjate s pogoji prodaje. Cena velja za dan plačila.'
-          : 'Gumb odpre vaš poštni program z že izpolnjenim naročilom. Odgovorim z navodili za plačilo; velja cena dneva, ko pošljete e-pošto.'));
+          : 'Gumb odpre vaš poštni program z že izpolnjenim naročilom. Odgovorim s potrdilom in navodili za plačilo na TRR; velja cena dneva, ko pošljete e-pošto.'));
       }
     });
   }
