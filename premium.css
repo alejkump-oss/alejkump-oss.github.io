@@ -1,4 +1,5 @@
-/* Homepage layer (index.html only), rebuilt 2026-10-07.
+/* Homepage layer (index.html; since 2026-10-18 also market.html and
+   pogoji-market.html), rebuilt 2026-10-07.
    Loaded after style.css and uses its tokens. Everything is local: system
    fonts, images and video from assets/, no external request of any kind.
    Motion is progressive: without JavaScript, or with prefers-reduced-motion,
@@ -410,3 +411,74 @@ main#vsebina { display: block; }
   #primeri::before { animation: none; }
   .show-card, .show-card:hover { transition: none; transform: none; }
 }
+
+/* ---------- MARKET, agent tedna (market.html + homepage banner), 2026-10-18 ---------- */
+.mk-today { padding: 1.4rem 1.3rem; border-radius: 24px; color: #fff;
+  background: linear-gradient(#0f161e, #0f161e) padding-box, linear-gradient(140deg, var(--glow-a), var(--glow-b) 50%, #6d7bff) border-box;
+  border: 1.5px solid transparent; box-shadow: 0 30px 70px -30px rgba(224, 112, 90, .55); }
+.mk-today p { margin: 0; }
+.mk-day { font-size: .82rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; color: var(--glow-a); margin-bottom: .5rem !important; }
+.mk-price { display: flex; align-items: baseline; line-height: 1; }
+.mk-amount { font-size: clamp(3.4rem, 12vw, 4.8rem); font-weight: 850; letter-spacing: -.06em; }
+.mk-cur { font-size: 1.7rem; font-weight: 750; }
+.mk-sub { font-size: .88rem; color: rgba(255, 255, 255, .78); margin: .6rem 0 1rem !important; }
+.mk-list { list-style: none; padding: 0; margin: 0 0 1rem; display: grid; gap: .4rem; font-size: .95rem; }
+.mk-list li { margin: 0; padding-left: 1.6rem; position: relative; }
+.mk-list li::before { content: "\2713"; position: absolute; left: 0; color: var(--glow-a); font-weight: 800; }
+.mk-tomorrow { font-size: .9rem; padding: .7rem .9rem; border-radius: 14px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .12); margin-bottom: 1rem !important; }
+.mk-today .btn { width: 100%; text-align: center; }
+.mk-note { font-size: .8rem; color: rgba(255, 255, 255, .7); margin-top: .7rem !important; }
+.mk-terms { font-size: .85rem; margin: .8rem 0 0; }
+.mk-terms a { color: #fff; }
+
+/* homepage banner, above the hero */
+.market-top { position: relative; z-index: 1; color: #fff; padding: 5.4rem 0 2rem;
+  background: radial-gradient(80% 120% at 85% 0%, #2a1c22 0%, #0b1016 60%); border-bottom: 1px solid rgba(255, 255, 255, .08); }
+.market-top .wrap { display: grid; gap: 1.2rem; align-items: center; }
+.market-top h2 { color: #fff; font-size: clamp(1.6rem, 6vw, 2.6rem); line-height: 1.05; letter-spacing: -.035em; font-weight: 850; margin: 0 0 .5rem; }
+.market-top .mk-lede { margin: 0; color: rgba(255, 255, 255, .82); font-size: 1rem; max-width: 36rem; }
+.market-top .mk-today { padding: 1.1rem 1.2rem; }
+.market-top .mk-amount { font-size: clamp(2.6rem, 10vw, 3.4rem); }
+.market-top .mk-sub { margin-bottom: .8rem !important; }
+.market-top .mk-tomorrow { display: none; }
+
+/* market.html */
+body.market .mk-hero { color: #fff; padding: 6.5rem 0 3.5rem; background: radial-gradient(90% 70% at 85% 0%, #2a1c22 0%, #0b1016 62%); }
+body.market .mk-hero .wrap { display: grid; gap: 2rem; align-items: start; }
+body.market .mk-hero h1 { color: #fff; margin: 0 0 1.1rem; }
+body.market .mk-hero .h1-big { font-size: clamp(2.4rem, 9.5vw, 5rem); }
+body.market .hero-lede a { color: #fff; }
+.mk-features { display: grid; gap: 1rem; margin-top: 2rem; }
+.mk-feature { position: relative; padding: 1.4rem 1.3rem; border-radius: 22px; background: var(--bg-panel); border: 1px solid var(--rule); box-shadow: var(--shadow); transition: opacity .3s ease; }
+.mk-feature h3 { margin: .2rem 0 .4rem; font-size: 1.12rem; font-weight: 800; }
+.mk-feature p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
+.mk-n { font-size: .78rem; font-weight: 800; letter-spacing: .12em; color: var(--accent); }
+.mk-inc { display: inline-block; margin-top: .8rem; font-size: .76rem; font-weight: 750; padding: .25rem .6rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.mk-inc:empty { display: none; }
+.mk-feature.is-off { opacity: .55; }
+.mk-feature.is-off .mk-inc { background: transparent; border: 1px solid var(--rule); color: var(--ink-faint); }
+.mk-ladder { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 1.6rem; background: var(--bg-panel); border: 1px solid var(--rule); border-radius: 18px; overflow: hidden; font-size: .95rem; }
+.mk-ladder th, .mk-ladder td { text-align: left; padding: .85rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.mk-ladder tr:last-child td { border-bottom: 0; }
+.mk-ladder th { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+.mk-ladder td:nth-child(2) { font-weight: 800; white-space: nowrap; }
+.mk-ladder tr.is-today td { background: var(--accent-soft); }
+.mk-ladder tr.is-today td:first-child::after { content: " \00b7 danes"; color: var(--accent); font-weight: 800; }
+.mk-final { max-width: 30rem; margin: 2rem auto 0; text-align: left; }
+.legal-doc h2 { font-size: 1.25rem; margin: 2.2rem 0 .6rem; }
+.legal-doc p, .legal-doc li { color: var(--ink-soft); }
+@media (min-width: 760px) {
+  .mk-features { grid-template-columns: repeat(2, 1fr); }
+  .market-top .wrap { grid-template-columns: minmax(0, 1fr) 21rem; gap: 2rem; }
+}
+@media (min-width: 980px) {
+  .mk-features { grid-template-columns: repeat(3, 1fr); }
+  body.market .mk-hero .wrap { grid-template-columns: minmax(0, 1fr) 24rem; gap: 3rem; align-items: center; }
+}
+@media (max-width: 759px) {
+  .mk-ladder th:nth-child(3), .mk-ladder td:nth-child(3) { font-size: .88rem; }
+}
+.mk-ladder td:first-child { white-space: nowrap; }
+.mk-features + .small { margin-top: 1.2rem; }
+.mk-ladder tr.is-today td:first-child::after { content: "danes"; display: block; }
+.mk-ladder th, .mk-ladder td { padding-left: .7rem; padding-right: .7rem; }
