@@ -14,6 +14,13 @@
 // and pogoji-market.html (points 3, 4, 8) describe e-mail orders with bank
 // transfer only. Pasting a link here without first adding card payment back
 // to that copy and to the terms would sell on terms the buyer was never shown.
+//
+// 2026-10-18 (later the same day, owner decision): MARKET is done-for-you for
+// one month. The buyer connects Instagram to our system and our agents run it;
+// the buyer never deals with our internal tool. Buyer-facing text in this file
+// therefore names no tool (the tool is named only in pogoji-market.html,
+// point 8, as a sub-processor). CAPACITY is a real weekly limit, not scarcity
+// copy: change it only when the real limit changes.
 // ---------------------------------------------------------------------------
 var MARKET_CONFIG = {
   STRIPE_LINK_PON: '',
@@ -22,6 +29,7 @@ var MARKET_CONFIG = {
   STRIPE_LINK_CET: '',
   STRIPE_LINK_PET: '',
   EMAIL: 'alej.kump@gmail.com',
+  CAPACITY: 5,
   TIMEZONE: 'Europe/Ljubljana'
 };
 
@@ -29,11 +37,11 @@ var MARKET_CONFIG = {
   'use strict';
 
   var FEATURES = {
-    1: 'Reeli in objave (ustvarjanje in načrtovanje)',
-    2: 'Dnevne zgodbe',
-    3: 'Pravila za odgovore na komentarje (vklopite jih vi)',
-    4: 'Pravila za odgovore na DM (samo tistim, ki pišejo prvi; vklopite jih vi)',
-    5: 'Tedenski načrt vsebin + analitika'
+    1: 'Reeli in objave: pripravimo in objavimo 3 reele na teden (12 v mesecu)',
+    2: 'Dnevne zgodbe: 1 zgodba vsak delavnik',
+    3: 'Odgovori na komentarje v 24 urah ob delavnikih',
+    4: 'Odgovori na DM tistim, ki pišejo prvi, v 24 urah ob delavnikih',
+    5: 'Tedenski načrt + kratko poročilo'
   };
 
   var WEEK = [
@@ -83,8 +91,8 @@ var MARKET_CONFIG = {
     var link = cfg[tier.link];
     if (typeof link === 'string' && STRIPE.test(link)) return { href: link, stripe: true };
     var subject = 'MARKET';
-    var body = 'Pozdravljeni,\n\nnaročam MARKET, paket dneva ' + tier.day + ', ' + dayMonth(tier) + ' (' + tier.price + ' €).\n\n' +
-      'Instagram račun: @\nIme in priimek oziroma podjetje:\n\nLep pozdrav';
+    var body = 'Pozdravljeni,\n\nnaročam MARKET, 1 mesec upravljanja Instagrama, paket dneva ' + tier.day + ', ' + dayMonth(tier) + ' (' + tier.price + ' € za prvi mesec).\n\n' +
+      'Instagram račun: @\nVrsta računa (Business, Creator ali ne vem):\nIme in priimek oziroma podjetje:\n\nLep pozdrav';
     return {
       href: 'mailto:' + cfg.EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body),
       stripe: false
@@ -140,7 +148,7 @@ var MARKET_CONFIG = {
         pb.appendChild(el('span', 'mk-amount', String(s.first.price)));
         pb.appendChild(el('span', 'mk-cur', ' €'));
         b.appendChild(pb);
-        b.appendChild(el('p', 'mk-sub', 'v ponedeljek, vseh 5 funkcij. Vsak naslednji dan je paket manjši in cenejši, do petka (20 €).'));
+        b.appendChild(el('p', 'mk-sub', 'v ponedeljek: 1 mesec upravljanja z vsemi 5 funkcijami. Vsak naslednji dan je paket manjši in cenejši, do petka (20 €). Ta teden največ ' + root.MARKET_CONFIG.CAPACITY + ' strank.'));
         if (compact) {
           var look = el('a', 'btn btn-primary mk-buy', 'Kaj dobite');
           look.href = 'market.html';
@@ -160,7 +168,7 @@ var MARKET_CONFIG = {
       p.appendChild(el('span', 'mk-amount', String(t.price)));
       p.appendChild(el('span', 'mk-cur', ' €'));
       b.appendChild(p);
-      b.appendChild(el('p', 'mk-sub', 'enkratna nastavitev, ' + t.features.length + (t.features.length === 1 ? ' funkcija' : (t.features.length === 2 ? ' funkciji' : (t.features.length < 5 ? ' funkcije' : ' funkcij'))) + '; DDV ni obračunan. Ootto plačujete posebej.'));
+      b.appendChild(el('p', 'mk-sub', 'prvi mesec upravljanja, ' + t.features.length + (t.features.length === 1 ? ' funkcija' : (t.features.length === 2 ? ' funkciji' : (t.features.length < 5 ? ' funkcije' : ' funkcij'))) + '; DDV ni obračunan. Brez obveznosti po mesecu. Ta teden največ ' + root.MARKET_CONFIG.CAPACITY + ' strank.'));
 
       if (!compact) {
         var ul = el('ul', 'mk-list');
