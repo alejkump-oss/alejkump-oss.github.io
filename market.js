@@ -23,11 +23,11 @@
 // copy: change it only when the real limit changes.
 // ---------------------------------------------------------------------------
 var MARKET_CONFIG = {
-  STRIPE_LINK_PON: '',
-  STRIPE_LINK_TOR: '',
-  STRIPE_LINK_SRE: '',
-  STRIPE_LINK_CET: '',
-  STRIPE_LINK_PET: '',
+  STRIPE_LINK_PON: 'https://buy.stripe.com/3cI5kCdQqc4a9Gk9kJdMI01',
+  STRIPE_LINK_TOR: 'https://buy.stripe.com/aFa7sK4fQ4BI2dSaoNdMI00',
+  STRIPE_LINK_SRE: 'https://buy.stripe.com/cNibJ0bIi1pw2dSfJ7dMI02',
+  STRIPE_LINK_CET: 'https://buy.stripe.com/14A6oG5jU2tAg4I40pdMI03',
+  STRIPE_LINK_PET: 'https://buy.stripe.com/bJe6oGbIi9W26u8cwVdMI04',
   EMAIL: 'alej.kump@gmail.com',
   CAPACITY: 5,
   TIMEZONE: 'Europe/Ljubljana'
@@ -204,6 +204,12 @@ var MARKET_CONFIG = {
         b.appendChild(el('p', 'mk-note', h.stripe
           ? 'Plačilo s kartico poteka na strani Stripe. Z naročilom se strinjate s pogoji prodaje. Cena velja za dan plačila.'
           : 'Gumb odpre vaš poštni program z že izpolnjenim naročilom. Odgovorim s potrdilom in navodili za plačilo na TRR; velja cena dneva, ko pošljete e-pošto.'));
+        if (h.stripe) {
+          var mail = buyHref(t, { EMAIL: root.MARKET_CONFIG.EMAIL });
+          var alt = el('a', 'mk-alt', 'Raje plačate z nakazilom na TRR? Naročite po e-pošti');
+          alt.href = mail.href;
+          b.appendChild(alt);
+        }
       }
     });
   }
