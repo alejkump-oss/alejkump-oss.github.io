@@ -483,5 +483,5 @@ body.market .hero-lede a { color: #fff; }
 .mk-ladder tr.is-today td:first-child::after { content: "danes"; display: block; }
 .mk-ladder th, .mk-ladder td { padding-left: .7rem; padding-right: .7rem; }
 
-.pay-card { display: block; margin-top: .7rem; font-size: .88rem; text-align: center; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.btn-pay { display: block; width: 100%; box-sizing: border-box; margin-top: .7rem; text-align: center; white-space: normal; }
 .pay-note { margin-top: 1.4rem; max-width: 62ch; }
