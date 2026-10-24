@@ -9,17 +9,17 @@
 // [data-google-buy] button then stays the prefilled e-mail order (mailto) that
 // is already in the HTML, so the page works with JS off and with no link set.
 //
-// The Payment Link must be a RECURRING price (22 EUR, monthly) with the
-// Stripe customer portal enabled, because google.html and pogoji-google.html
-// (points 4 and 6) promise an automatic monthly charge and cancellation in the
-// customer portal or by e-mail. Deactivate the link in Stripe after
+// The Payment Link is a RECURRING price (22 EUR, monthly, no customer limit;
+// plink_1UUDKjD6oEwK8qbtrvpl73CA, created 2026-10-25). google.html and
+// pogoji-google.html (points 4 and 6) promise an automatic monthly charge and
+// cancellation by e-mail (the owner cancels the subscription in Stripe). Deactivate the link in Stripe after
 // 22. 11. 2026, when the sale window ends: a Payment Link keeps working after
 // the page stops showing it. Existing subscribers keep the 22 € price.
 //
 // CAPACITY is a real limit (one person with agents), not scarcity copy.
 // ---------------------------------------------------------------------------
 var GOOGLE_CONFIG = {
-  STRIPE_LINK_GOOGLE: '',
+  STRIPE_LINK_GOOGLE: 'https://buy.stripe.com/6oU9AScMm9W25q42WldMI0d',
   EMAIL: 'alej.kump@gmail.com',
   CAPACITY: 10,
   PRICE: 22
@@ -58,7 +58,7 @@ var GOOGLE_CONFIG = {
       a.textContent = 'Naročilo z obveznostjo plačila: ' + cfg.PRICE + ' € na mesec';
     });
     Array.prototype.forEach.call(document.querySelectorAll('[data-google-note]'), function (p) {
-      p.textContent = 'Plačilo s kartico poteka na strani Stripe. ' + cfg.PRICE + ' € se samodejno bremeni vsak mesec, dokler ne odpoveste (v portalu za stranke Stripe ali po e-pošti). Z naročilom se strinjate s pogoji prodaje.';
+      p.textContent = 'Plačilo s kartico poteka na strani Stripe. ' + cfg.PRICE + ' € se samodejno bremeni vsak mesec, dokler ne odpoveste (z e-pošto na alej.kump@gmail.com). Z naročilom se strinjate s pogoji prodaje.';
     });
     Array.prototype.forEach.call(document.querySelectorAll('[data-google-alt]'), function (p) {
       p.textContent = '';
