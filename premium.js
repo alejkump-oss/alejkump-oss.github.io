@@ -63,7 +63,7 @@
 
   function chrome() {
     var header = document.querySelector('header.site');
-    var hero = document.querySelector('.hero');
+    var hero = document.querySelector('.hero, .page-hero, .mk-hero');
     var bar = document.querySelector('.callbar');
     var finalCta = document.querySelector('.final');
     if (!hero) return;
@@ -130,7 +130,35 @@
     });
   }
 
+  // Mobile menu (2026-10-25 multi-page split). Without JS the CSS shows the
+  // links as a wrapping row instead, so the menu never depends on this.
+  function navToggle() {
+    var header = document.querySelector('header.site');
+    var btn = header && header.querySelector('.nav-toggle');
+    if (!btn) return;
+    function set(open) {
+      header.classList.toggle('nav-open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', function () { set(!header.classList.contains('nav-open')); });
+    header.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('nav a')) set(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+  }
+
+  // The homepage used to be one long page. Old links such as ./#paketi
+  // (sent e-mails, articles, bookmarks) now open the chapter page instead.
+  function oldAnchors() {
+    var id = (location.hash || '').slice(1);
+    if (!id || document.getElementById(id) || !document.querySelector('.hero')) return;
+    var map = { storitve: 'storitve.html', komu: 'storitve.html#komu', paketi: 'cene.html', gostovanje: 'cene.html#gostovanje',
+      primeri: 'primeri.html', kako: 'kako-poteka.html', vprasanja: 'kako-poteka.html#vprasanja',
+      kdo: 'o-meni.html', agent: 'google.html' };
+    if (map[id]) location.replace(map[id]);
+  }
+
   function start() {
+    oldAnchors();
+    navToggle();
     heroVideo();
     reveal();
     chrome();
