@@ -57,6 +57,7 @@ var MARKET_CONFIG = {
   // The Monday the next agent of the week starts (owner decision 2026-10-18:
   // a new agent every week). Named only on the weekend before it.
   var NEXT_MONDAY = { date: '2026-10-26', label: 'ponedeljek, 26. 10.' };
+  var NEXT_AGENT = { href: 'google.html' };
 
   // 'pon 19. 10.' -> '19. 10.'
   function dayMonth(tier) { return tier.label.split(' ').slice(1).join(' '); }
@@ -163,7 +164,15 @@ var MARKET_CONFIG = {
       }
       if (s.phase === 'closed') {
         b.appendChild(el('p', 'mk-day', 'Prodaja agenta MARKET je zaključena.'));
-        if (s.weekend) b.appendChild(el('p', 'mk-sub', 'Vsak teden nov agent tedna – naslednji v ' + NEXT_MONDAY.label));
+        // 2026-10-24: the next agent of the week is GOOGLE (google.html).
+        var nx = el('p', 'mk-sub', s.weekend ? 'Vsak teden nov agent tedna – naslednji v ' + NEXT_MONDAY.label + ': ' : 'Zdaj je agent tedna: ');
+        var go = el('a', null, 'GOOGLE, pomoč pri Google ocenah in profilu (22 € na mesec)');
+        go.href = NEXT_AGENT.href;
+        nx.appendChild(go);
+        b.appendChild(nx);
+        var gb = el('a', 'btn btn-primary mk-buy', 'Kaj dobite pri agentu GOOGLE');
+        gb.href = NEXT_AGENT.href;
+        b.appendChild(gb);
         return;
       }
 

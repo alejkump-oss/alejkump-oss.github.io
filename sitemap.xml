@@ -55,6 +55,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://alejkump.si/google.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://alejkump.si/pogoji-google.html</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://alejkump.si/pogoji-market.html</loc>
     <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>

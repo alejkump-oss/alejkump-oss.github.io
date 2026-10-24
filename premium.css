@@ -430,6 +430,9 @@ main#vsebina { display: block; }
 .mk-note { font-size: .8rem; color: rgba(255, 255, 255, .7); margin-top: .7rem !important; }
 .mk-terms { font-size: .85rem; margin: .8rem 0 0; }
 .mk-terms a { color: #fff; }
+/* google.html (2026-10-24): secondary bank-transfer link under the card button */
+.mk-alt { display: inline-block; color: #fff; font-size: .85rem; }
+.mk-note:empty { display: none; }
 
 /* homepage banner, above the hero */
 .market-top { position: relative; z-index: 1; color: #fff; padding: 5.4rem 0 2rem;
