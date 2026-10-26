@@ -13,59 +13,38 @@
 <meta property="og:title" content="Izdelava spletnih strani Kočevje in Dolenjska | AK agencija, Alej Kump">
 <meta property="og:description" content="Izdelava spletnih strani za lokalna podjetja v Kočevju, po Dolenjski in Sloveniji. Brezplačen konceptni predogled, fiksna cena od 450 €, brez obveznosti.">
 <meta property="og:locale" content="sl_SI">
-<meta property="og:image" content="https://alejkump.si/assets/img/og-town-1200.jpg">
-<meta property="og:image:alt" content="Telefon s primerom spletne strani na trgu majhnega mesta zvečer: ilustracija, ustvarjena z UI">
+<meta property="og:image" content="https://alejkump.si/prenova/assets/film-end.jpg">
+<meta property="og:image:alt" content="Telefon v temnem studiu, na zaslonu spletna stran: ilustracija, ustvarjena z UI">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alejkump.si/assets/img/og-town-1200.jpg">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="premium.css">
-<link rel="stylesheet" href="home.css">
+<meta name="twitter:image" content="https://alejkump.si/prenova/assets/film-end.jpg">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-serif-latin-400-normal.woff2" crossorigin>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Računalniško programiranje Alej Kump s.p.",
-  "alternateName": "AK agencija",
-  "url": "https://alejkump.si/",
-  "email": "alej.kump@gmail.com",
-  "telephone": "+386 70 479 188",
-  "description": "Izdelava hitrih, mobilno prilagojenih spletnih strani za lokalna podjetja v Sloveniji, z brezplačnim konceptnim predogledom pred naročilom.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Ulica heroja Marinclja 3",
-    "postalCode": "1330",
-    "addressLocality": "Kočevje",
-    "addressCountry": "SI"
-  },
-  "founder": { "@type": "Person", "name": "Alej Kump" },
-  "areaServed": [
-    { "@type": "City", "name": "Kočevje" },
-    { "@type": "AdministrativeArea", "name": "Dolenjska" },
-    { "@type": "Country", "name": "Slovenija" }
-  ],
-  "geo": { "@type": "GeoCoordinates", "latitude": 45.643, "longitude": 14.862 },
-  "priceRange": "450-990 EUR",
-  "sameAs": ["https://www.instagram.com/alej_kump/"],
-  "knowsAbout": ["izdelava spletnih strani", "mobilno prilagojene strani", "spletne strani za lokalna podjetja"],
-  "makesOffer": [
-    { "@type": "Offer", "name": "Osnovna", "price": "450", "priceCurrency": "EUR" },
-    { "@type": "Offer", "name": "Lokalni posel", "price": "690", "priceCurrency": "EUR" },
-    { "@type": "Offer", "name": "Premium", "price": "990", "priceCurrency": "EUR" }
-  ]
-}
+<link rel="stylesheet" href="prenova/prenova.css">
+<script>
+/* Decided before first paint so the film section never jumps from the static
+   layout to the pinned one. scrub.js confirms it; if scrub.js never runs, the
+   timeout puts the static, fully readable layout back. */
+(function () {
+  var d = document.documentElement, mm = window.matchMedia;
+  d.classList.add('js');
+  var reduce = mm && mm('(prefers-reduced-motion: reduce)').matches;
+  var c = navigator.connection || {};
+  var save = c.saveData === true || /(^|-)2g$/.test(c.effectiveType || '');
+  if (!reduce && !save && 'requestAnimationFrame' in window) {
+    d.classList.add('scrub');
+    setTimeout(function () { if (!window.__akScrub) d.classList.remove('scrub'); }, 4000);
+  }
+})();
 </script>
-<script>document.documentElement.classList.add('js');</script>
 </head>
 
-<body class="ak-home">
+<body>
 
 <a class="skip" href="#vsebina">Preskoči na vsebino</a>
 
-<header class="site ak-head">
-  <div class="head-row">
+<header class="top" id="glava">
+  <div class="top-row">
     <a class="brand" href="#top">
-      <svg width="38" height="38" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#0b1016"></rect><path fill="#ec9466" d="M6 47 20 17h8l14 30h-8.2L24 25.8 14.2 47zM36 17h7.4v30H36zM43.4 29.6 52 17h8.8L43.4 40.4zM43.4 29.2 61 47h-8.8l-8.8-9z"></path></svg>
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#0b1016"></rect><path fill="#ec9466" d="M6 47 20 17h8l14 30h-8.2L24 25.8 14.2 47zM36 17h7.4v30H36zM43.4 29.6 52 17h8.8L43.4 40.4zM43.4 29.2 61 47h-8.8l-8.8-9z"></path></svg>
       <span>AK agencija</span>
     </a>
     <nav id="glavni-meni" aria-label="Glavni meni">
@@ -77,198 +56,232 @@
       <a href="google.html">GOOGLE</a>
       <a href="kontakt.html">Kontakt</a>
     </nav>
-    <div class="head-end">
-      <a class="pill-call" href="tel:+38670479188">070 479 188</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="glavni-meni"><span class="nav-toggle-bars" aria-hidden="true"></span><span class="sr">Meni</span></button>
+    <div class="top-end">
+      <a class="pill" href="tel:+38670479188">070 479 188</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="glavni-meni"><span aria-hidden="true"></span><span class="sr">Meni</span></button>
     </div>
   </div>
 </header>
 
 <main id="vsebina">
 
-  <section id="top" class="tint" aria-labelledby="naslov">
-    <div class="wrap-x hero-in">
-      <div class="hero-copy-x">
-        <p class="badge ak-rise"><span class="badge-dot" aria-hidden="true"></span>Brezplačen predogled za vaše podjetje</p>
-        <h1 id="naslov" class="hero-h1 ak-rise-2">Najprej vidite.<br><em>Šele nato</em> se odločite.</h1>
-        <p class="hero-p ak-rise-3">Spletne strani za lokalna podjetja. Predogled vaše strani odprete na telefonu, preden karkoli plačate. Potem dobite pisno ponudbo s fiksno ceno.</p>
-        <div class="ak-ctas ak-rise-3">
-          <a class="btn-x btn-ink" href="tel:+38670479188">Pokličite 070 479 188</a>
-          <a class="btn-x btn-line" href="mailto:alej.kump@gmail.com?subject=Predogled%20strani">Želim predogled →</a>
-        </div>
-      </div>
+  <!-- ===== Film: scroll position drives the clip. Without JS or with reduced
+       motion this is a still image followed by four stacked blocks. ===== -->
+  <section id="top" class="film" aria-labelledby="naslov">
+    <div class="film-track">
+      <div class="film-stage">
+        <img class="film-still" src="prenova/assets/film-end.jpg" width="1920" height="1080" alt="Telefon v temnem studiu, na zaslonu spletna stran: ilustracija, ustvarjena z UI" decoding="async">
+        <video class="film-video" muted playsinline preload="none" disablepictureinpicture aria-hidden="true" tabindex="-1"
+               data-desktop="prenova/assets/film.mp4" data-desktop-poster="prenova/assets/film-poster.jpg"
+               data-mobile="prenova/assets/film-mobile.mp4" data-mobile-poster="prenova/assets/film-mobile-poster.jpg"></video>
+        <div class="film-scrim" aria-hidden="true"></div>
+        <div class="film-progress" aria-hidden="true"><span></span></div>
+        <p class="film-hint" aria-hidden="true"><span></span></p>
 
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-glow"></div>
-        <div class="phone-x ak-float">
-          <div class="phone-x-screen">
-            <picture>
-              <source type="image/avif" srcset="assets/img/screen-mizarstvo-440.avif 440w, assets/img/screen-mizarstvo-660.avif 660w" sizes="256px">
-              <source type="image/webp" srcset="assets/img/screen-mizarstvo-440.webp 440w, assets/img/screen-mizarstvo-660.webp 660w" sizes="256px">
-              <img class="ak-scroll" src="assets/img/screen-mizarstvo-440.jpg" width="440" height="952" alt="" decoding="async">
-            </picture>
+        <div class="chapters">
+          <div class="ch ch-1 ch-left" data-from="0" data-to="0.2">
+            <p class="badge"><span class="dot" aria-hidden="true"></span>Brezplačen predogled za vaše podjetje</p>
+            <h1 id="naslov" class="display">Najprej vidite.<br><em>Šele nato</em> se odločite.</h1>
+            <p class="lead">Spletne strani za lokalna podjetja. Predogled vaše strani odprete na telefonu, preden karkoli plačate. Potem dobite pisno ponudbo s fiksno ceno.</p>
+            <div class="ctas">
+              <a class="btn btn-glow" href="tel:+38670479188">Pokličite 070 479 188</a>
+              <a class="btn btn-ghost" href="mailto:alej.kump@gmail.com?subject=Predogled%20strani">Želim predogled →</a>
+            </div>
           </div>
-        </div>
-        <div class="hero-tag">
-          <strong>Predogled · 0 €</strong>
-          <span>koncept za izmišljeno podjetje</span>
+
+          <div class="ch ch-2 ch-right" data-from="0.22" data-to="0.45">
+            <p class="kick">Kaj dobite</p>
+            <h2 class="display-m">Vse bistveno, na telefonu vaše stranke.</h2>
+            <ul class="ticks">
+              <li>Storitve in delovni čas</li>
+              <li>Gumb Pokliči in zemljevid</li>
+              <li>Prilagojeno telefonu</li>
+            </ul>
+            <p class="fine">Že v paketu Osnovna. Lokalni posel doda do 5 podstrani za vaše storitve.</p>
+          </div>
+
+          <div class="ch ch-3 ch-left" data-from="0.5" data-to="0.72">
+            <p class="kick">Prvi korak</p>
+            <h2 class="display-m">Najprej predogled. <em>Brezplačno.</em></h2>
+            <p class="lead">Iz vaših javnih podatkov pripravim predogled strani. Odprete ga na telefonu. Če vam ni všeč, ne plačate ničesar.</p>
+            <p class="fine">Če rečete »ne«, vas ne kontaktiram več.</p>
+          </div>
+
+          <div class="ch ch-4 ch-right" data-from="0.77" data-to="1">
+            <p class="kick">Paketi</p>
+            <h2 class="display-m">Ena cena, napisana vnaprej. <em>Od 450 €.</em></h2>
+            <p class="lead">Fiksna cena in rok v pisni ponudbi. Od naročila do objave 7–14 delovnih dni.</p>
+            <div class="ctas">
+              <a class="btn btn-glow" href="#cene">Poglejte pakete</a>
+              <a class="btn btn-ghost" href="https://www.instagram.com/alej_kump/" rel="noopener">Napišite STRAN →</a>
+            </div>
+            <p class="fine">Končne cene, DDV ni obračunan (94. člen ZDDV-1).</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="strip" aria-label="Zakaj z nami">
-    <ul class="wrap-x">
-      <li><strong>0 €</strong><span>predogled pred naročilom</span></li>
-      <li><strong>od 450 €</strong><span>fiksna cena, zapisana vnaprej</span></li>
-      <li><strong>7–14 delovnih dni</strong><span>od naročila do objave</span></li>
-      <li><strong>Račun</strong><span>davčno potrjen, za vsako plačilo</span></li>
+  <section class="facts" aria-label="Zakaj z nami">
+    <ul class="wrap">
+      <li data-reveal><strong>0 €</strong><span>predogled pred naročilom</span></li>
+      <li data-reveal><strong>od 450 €</strong><span>fiksna cena, zapisana vnaprej</span></li>
+      <li data-reveal><strong>7–14 delovnih dni</strong><span>od naročila do objave</span></li>
+      <li data-reveal><strong>Račun</strong><span>davčno potrjen, za vsako plačilo</span></li>
     </ul>
   </section>
 
-  <section id="primeri" class="wrap-x primeri-x" aria-labelledby="primeri-h">
-    <div class="sec-head">
-      <div class="sec-title">
+  <section id="primeri" class="sec dark" aria-labelledby="primeri-h">
+    <div class="wrap">
+      <div class="head" data-reveal>
         <p class="kick">Primeri</p>
-        <h2 id="primeri-h" class="h2">Tako izgleda stran na telefonu vaše stranke.</h2>
+        <h2 id="primeri-h" class="display-l">Tako izgleda stran na telefonu vaše stranke.</h2>
+        <p class="note">Strank še nimam, zato so to koncepti za izmišljena podjetja. Vaš predogled naredim iz podatkov vašega podjetja.</p>
       </div>
-      <p class="sec-note">Strank še nimam, zato so to koncepti za izmišljena podjetja. Vaš predogled naredim iz podatkov vašega podjetja.</p>
+      <div class="ex-grid">
+        <figure class="ex" data-reveal>
+          <div class="ex-phone">
+            <picture>
+              <source type="image/avif" srcset="assets/img/screen-mizarstvo-440.avif 440w, assets/img/screen-mizarstvo-660.avif 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 30vw, 66vw">
+              <source type="image/webp" srcset="assets/img/screen-mizarstvo-440.webp 440w, assets/img/screen-mizarstvo-660.webp 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 30vw, 66vw">
+              <img src="assets/img/screen-mizarstvo-440.jpg" width="440" height="952" alt="Koncept spletne strani za izmišljeno mizarstvo na telefonu" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><strong>Mizarstvo Hrast</strong><span>koncept · izmišljeno podjetje</span></figcaption>
+        </figure>
+        <figure class="ex" data-reveal>
+          <div class="ex-phone">
+            <picture>
+              <source type="image/avif" srcset="assets/img/screen-frizer-440.avif 440w, assets/img/screen-frizer-660.avif 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 30vw, 66vw">
+              <source type="image/webp" srcset="assets/img/screen-frizer-440.webp 440w, assets/img/screen-frizer-660.webp 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 30vw, 66vw">
+              <img src="assets/img/screen-frizer-440.jpg" width="440" height="952" alt="Koncept spletne strani za izmišljen frizerski salon na telefonu" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><strong>Frizerski salon Lila</strong><span>koncept · izmišljeno podjetje</span></figcaption>
+        </figure>
+        <figure class="ex" data-reveal>
+          <div class="ex-phone">
+            <picture>
+              <source type="image/avif" srcset="assets/img/screen-apartmaji-440.avif 440w, assets/img/screen-apartmaji-660.avif 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 30vw, 66vw">
+              <source type="image/webp" srcset="assets/img/screen-apartmaji-440.webp 440w, assets/img/screen-apartmaji-660.webp 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 30vw, 66vw">
+              <img src="assets/img/screen-apartmaji-440.jpg" width="440" height="952" alt="Koncept spletne strani za izmišljene apartmaje na telefonu" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <figcaption><strong>Apartmaji Ob jezeru</strong><span>koncept · izmišljeno podjetje</span></figcaption>
+        </figure>
+      </div>
+      <a class="more" href="primeri.html">Vsi primeri →</a>
     </div>
-    <div class="ex-grid">
-      <figure class="ex ak-card">
-        <figcaption><strong>Mizarstvo Hrast</strong><span>koncept · izmišljeno podjetje</span></figcaption>
-        <picture>
-          <source type="image/avif" srcset="assets/img/screen-mizarstvo-440.avif 440w, assets/img/screen-mizarstvo-660.avif 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 34vw, 70vw">
-          <source type="image/webp" srcset="assets/img/screen-mizarstvo-440.webp 440w, assets/img/screen-mizarstvo-660.webp 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 34vw, 70vw">
-          <img src="assets/img/screen-mizarstvo-440.jpg" width="440" height="952" alt="Koncept spletne strani za izmišljeno mizarstvo na telefonu" loading="lazy" decoding="async">
-        </picture>
-      </figure>
-      <figure class="ex ak-card">
-        <figcaption><strong>Frizerski salon Lila</strong><span>koncept · izmišljeno podjetje</span></figcaption>
-        <picture>
-          <source type="image/avif" srcset="assets/img/screen-frizer-440.avif 440w, assets/img/screen-frizer-660.avif 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 34vw, 70vw">
-          <source type="image/webp" srcset="assets/img/screen-frizer-440.webp 440w, assets/img/screen-frizer-660.webp 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 34vw, 70vw">
-          <img src="assets/img/screen-frizer-440.jpg" width="440" height="952" alt="Koncept spletne strani za izmišljen frizerski salon na telefonu" loading="lazy" decoding="async">
-        </picture>
-      </figure>
-      <figure class="ex ak-card">
-        <figcaption><strong>Apartmaji Ob jezeru</strong><span>koncept · izmišljeno podjetje</span></figcaption>
-        <picture>
-          <source type="image/avif" srcset="assets/img/screen-apartmaji-440.avif 440w, assets/img/screen-apartmaji-660.avif 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 34vw, 70vw">
-          <source type="image/webp" srcset="assets/img/screen-apartmaji-440.webp 440w, assets/img/screen-apartmaji-660.webp 660w" sizes="(min-width: 1200px) 260px, (min-width: 760px) 34vw, 70vw">
-          <img src="assets/img/screen-apartmaji-440.jpg" width="440" height="952" alt="Koncept spletne strani za izmišljene apartmaje na telefonu" loading="lazy" decoding="async">
-        </picture>
-      </figure>
-    </div>
-    <a class="link-more" href="primeri.html">Vsi primeri →</a>
   </section>
 
-  <section id="cene" class="tint" aria-labelledby="paketi">
-    <div class="wrap-x cene-x">
-      <div class="sec-head">
-        <div class="sec-title">
-          <p class="kick">Paketi</p>
-          <h2 id="paketi" class="h2">Ena cena, napisana vnaprej.</h2>
-        </div>
-        <p class="sec-note">Končne cene, DDV ni obračunan (94. člen ZDDV-1). Domena ni vključena. Plačilo 50 % ob naročilu, 50 % ob predaji.</p>
+  <section id="cene" class="sec light" aria-labelledby="paketi">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <p class="kick">Paketi</p>
+        <h2 id="paketi" class="display-l">Ena cena, napisana vnaprej.</h2>
+        <p class="note">Končne cene, DDV ni obračunan (94. člen ZDDV-1). Domena ni vključena. Plačilo 50 % ob naročilu, 50 % ob predaji.</p>
       </div>
-      <div class="ak-prices">
-        <article class="plan ak-card">
+      <div class="plans">
+        <article class="plan" data-reveal>
           <h3>Osnovna</h3>
-          <p class="plan-amount">450 €</p>
+          <p class="amount">450 €</p>
           <p class="plan-lead">Ena stran z vsem bistvenim.</p>
-          <ul><li><span aria-hidden="true">✓</span> Storitve in delovni čas</li><li><span aria-hidden="true">✓</span> Gumb Pokliči in zemljevid</li><li><span aria-hidden="true">✓</span> Prilagojeno telefonu</li></ul>
-          <a class="plan-btn" href="cene.html">Podrobnosti</a>
+          <ul><li>Storitve in delovni čas</li><li>Gumb Pokliči in zemljevid</li><li>Prilagojeno telefonu</li></ul>
+          <a class="plan-btn" href="cene.html">Podrobnosti<span class="sr"> paketa Osnovna</span></a>
         </article>
-        <article class="plan plan-dark ak-card">
-          <div class="plan-top"><h3>Lokalni posel</h3><span class="plan-flag">Priporočam</span></div>
-          <p class="plan-amount">690 €</p>
+        <article class="plan plan-night" data-reveal>
+          <div class="plan-top"><h3>Lokalni posel</h3><span class="flag">Priporočam</span></div>
+          <p class="amount">690 €</p>
           <p class="plan-lead">Do 5 podstrani za vaše storitve.</p>
-          <ul><li><span aria-hidden="true">✓</span> Vse iz paketa Osnovna</li><li><span aria-hidden="true">✓</span> Ločene strani za storitve</li><li><span aria-hidden="true">✓</span> Galerija del in kontakt</li></ul>
-          <a class="plan-btn" href="cene.html">Podrobnosti</a>
+          <ul><li>Vse iz paketa Osnovna</li><li>Ločene strani za storitve</li><li>Galerija del in kontakt</li></ul>
+          <a class="plan-btn" href="cene.html">Podrobnosti<span class="sr"> paketa Lokalni posel</span></a>
         </article>
-        <article class="plan ak-card">
+        <article class="plan" data-reveal>
           <h3>Premium</h3>
-          <p class="plan-amount">990 €</p>
+          <p class="amount">990 €</p>
           <p class="plan-lead">S pripravljenimi besedili in slikami.</p>
-          <ul><li><span aria-hidden="true">✓</span> Vse iz paketa Lokalni posel</li><li><span aria-hidden="true">✓</span> Besedila za vaše storitve</li><li><span aria-hidden="true">✓</span> Pripravljene slike</li></ul>
-          <a class="plan-btn" href="cene.html">Podrobnosti</a>
+          <ul><li>Vse iz paketa Lokalni posel</li><li>Besedila za vaše storitve</li><li>Pripravljene slike</li></ul>
+          <a class="plan-btn" href="cene.html">Podrobnosti<span class="sr"> paketa Premium</span></a>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="postopek" class="wrap-x steps-x" aria-labelledby="kako">
-    <div class="sec-title">
-      <p class="kick">Kako poteka</p>
-      <h2 id="kako" class="h2">Štirje koraki. Prvi je brezplačen.</h2>
+  <section id="postopek" class="sec dark" aria-labelledby="kako">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <p class="kick">Kako poteka</p>
+        <h2 id="kako" class="display-l">Štirje koraki. <em>Prvi je brezplačen.</em></h2>
+      </div>
+      <ol class="steps">
+        <li data-reveal><span class="no first">01</span><strong>Predogled</strong><span>Iz vaših javnih podatkov pripravim predogled strani. Odprete ga na telefonu.</span></li>
+        <li data-reveal><span class="no">02</span><strong>Pisna ponudba</strong><span>Fiksna cena in rok. Odločite se brez pritiska.</span></li>
+        <li data-reveal><span class="no">03</span><strong>Izdelava</strong><span>7–14 delovnih dni, z vašimi popravki vmes.</span></li>
+        <li data-reveal><span class="no">04</span><strong>Objava</strong><span>Stran gre na splet na vaši domeni. Za vsako plačilo davčno potrjen račun.</span></li>
+      </ol>
     </div>
-    <ol class="ak-steps">
-      <li><span class="step-no first">01</span><strong>Predogled</strong><span>Iz vaših javnih podatkov pripravim predogled strani. Odprete ga na telefonu.</span></li>
-      <li><span class="step-no">02</span><strong>Pisna ponudba</strong><span>Fiksna cena in rok. Odločite se brez pritiska.</span></li>
-      <li><span class="step-no">03</span><strong>Izdelava</strong><span>7–14 delovnih dni, z vašimi popravki vmes.</span></li>
-      <li><span class="step-no">04</span><strong>Objava</strong><span>Stran gre na splet na vaši domeni. Za vsako plačilo davčno potrjen račun.</span></li>
-    </ol>
   </section>
 
-  <section id="o-meni" class="tint" aria-labelledby="kdo">
-    <div class="wrap-x about-x">
-      <figure class="about-photo">
+  <section id="o-meni" class="sec light" aria-labelledby="kdo">
+    <div class="wrap about">
+      <figure class="about-photo" data-reveal>
         <picture>
           <source type="image/webp" srcset="assets/img/alej-portret-480.webp 480w, assets/img/alej-portret-760.webp 760w" sizes="(min-width: 1000px) 460px, calc(100vw - 32px)">
           <img src="assets/img/alej-portret-760.jpg" srcset="assets/img/alej-portret-480.jpg 480w, assets/img/alej-portret-760.jpg 760w" sizes="(min-width: 1000px) 460px, calc(100vw - 32px)" width="760" height="950" alt="Alej Kump, AK agencija" loading="lazy" decoding="async">
         </picture>
       </figure>
-      <div class="about-copy">
+      <div class="about-copy" data-reveal>
         <p class="kick">Kdo to piše</p>
-        <h2 id="kdo" class="h2 h2-m about-h">Sem Alej Kump iz Kočevja.</h2>
+        <h2 id="kdo" class="display-l">Sem Alej Kump iz Kočevja.</h2>
         <p class="about-p">Želim, da imajo podjetja iz naših krajev enako dobre strani kot velika podjetja. Podjetje sem registriral 15. septembra 2026 in do danes še nimam nobene stranke. To povem odkrito, zato vam najprej pokažem predogled, šele potem prosim za naročilo.</p>
-        <p class="about-note">Ta stran je komercialna: prodaja storitev, ki jo opravljam osebno.</p>
+        <p class="note">Ta stran je komercialna: prodaja storitev, ki jo opravljam osebno.</p>
       </div>
     </div>
   </section>
 
-  <section id="google" class="wrap-x google-x" aria-labelledby="agent">
-    <div class="google-box">
-      <div class="google-text">
-        <p class="kick">Novo · naročila do 22. 11. 2026</p>
-        <h2 id="agent" class="h2 h2-m">GOOGLE: odgovori na ocene in objava, vsak teden.</h2>
-        <p>Vsak teden tudi pregled delovnega časa, telefona in naslova. Objavite sami, gesla ne pošiljate. 22 € na mesec, brez vezave. Rezultatov ne obljubljam.</p>
+  <section id="google" class="sec dark sec-tight" aria-labelledby="agent">
+    <div class="wrap">
+      <div class="google" data-reveal>
+        <div class="google-text">
+          <p class="kick">Novo · naročila do 22. 11. 2026</p>
+          <h2 id="agent" class="display-m">GOOGLE: odgovori na ocene in objava, vsak teden.</h2>
+          <p>Vsak teden tudi pregled delovnega časa, telefona in naslova. Objavite sami, gesla ne pošiljate. 22 € na mesec, brez vezave. Rezultatov ne obljubljam.</p>
+        </div>
+        <a class="btn btn-glow" href="google.html">Kaj dobite →</a>
       </div>
-      <a class="btn-x btn-ink" href="google.html">Kaj dobite →</a>
     </div>
   </section>
 
-  <section id="vprasanja" class="wrap-x faq-x" aria-labelledby="vprasanja-h">
-    <div class="faq-head">
-      <p class="kick">Vprašanja</p>
-      <h2 id="vprasanja-h" class="h2 h2-m">Kar vas verjetno zanima.</h2>
+  <section id="vprasanja" class="sec dark" aria-labelledby="vprasanja-h">
+    <div class="wrap faq-wrap">
+      <div class="head" data-reveal>
+        <p class="kick">Vprašanja</p>
+        <h2 id="vprasanja-h" class="display-l">Kar vas verjetno zanima.</h2>
+      </div>
+      <dl class="faq">
+        <div data-reveal><dt>Kaj stane predogled?</dt><dd>Nič. Če vam ni všeč, ne plačate ničesar. Če rečete »ne«, vas ne kontaktiram več.</dd></div>
+        <div data-reveal><dt>Ali je domena vključena?</dt><dd>Ne, domena se plača posebej. Pri nakupu in nastavitvi vam pomagam.</dd></div>
+        <div data-reveal><dt>Kako hitro je stran gotova?</dt><dd>V 7–14 delovnih dneh od naročila, odvisno od paketa in vaših popravkov.</dd></div>
+        <div data-reveal><dt>Kako plačam?</dt><dd>50 % ob naročilu in 50 % ob predaji, s kartico ali na TRR. Za vsako plačilo prejmete davčno potrjen račun.</dd></div>
+      </dl>
     </div>
-    <dl class="ak-faq">
-      <div><dt>Kaj stane predogled?</dt><dd>Nič. Če vam ni všeč, ne plačate ničesar. Če rečete »ne«, vas ne kontaktiram več.</dd></div>
-      <div><dt>Ali je domena vključena?</dt><dd>Ne, domena se plača posebej. Pri nakupu in nastavitvi vam pomagam.</dd></div>
-      <div><dt>Kako hitro je stran gotova?</dt><dd>V 7–14 delovnih dneh od naročila, odvisno od paketa in vaših popravkov.</dd></div>
-      <div><dt>Kako plačam?</dt><dd>50 % ob naročilu in 50 % ob predaji, s kartico ali na TRR. Za vsako plačilo prejmete davčno potrjen račun.</dd></div>
-    </dl>
   </section>
 
-  <section id="kontakt" class="night" aria-labelledby="kontakt-h">
-    <div class="wrap-x contact-x">
-      <div class="contact-text">
-        <h2 id="kontakt-h" class="h2 contact-h">Poglejte, kako bi izgledala <em>vaša</em> stran.</h2>
-        <p class="contact-p">Pokličite ali pošljite SMS in povejte, s čim se ukvarjate. Ali na Instagramu napišite STRAN na <a href="https://www.instagram.com/alej_kump/" rel="noopener">@alej_kump</a>.</p>
-      </div>
-      <div class="contact-btns">
-        <a class="btn-x btn-copper" href="tel:+38670479188">Pokličite 070 479 188</a>
-        <a class="btn-x btn-ghost" href="mailto:alej.kump@gmail.com?subject=Predogled%20strani">alej.kump@gmail.com</a>
+  <section id="kontakt" class="contact" aria-labelledby="kontakt-h">
+    <div class="wrap contact-in" data-reveal>
+      <h2 id="kontakt-h" class="display-xl">Poglejte, kako bi izgledala <em>vaša</em> stran.</h2>
+      <p class="contact-p">Pokličite ali pošljite SMS in povejte, s čim se ukvarjate. Ali na Instagramu napišite STRAN na <a href="https://www.instagram.com/alej_kump/" rel="noopener">@alej_kump</a>.</p>
+      <div class="ctas ctas-center">
+        <a class="btn btn-glow btn-lg" href="tel:+38670479188">Pokličite 070 479 188</a>
+        <a class="btn btn-ghost btn-lg" href="mailto:alej.kump@gmail.com?subject=Predogled%20strani">alej.kump@gmail.com</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="night night-foot">
-  <div class="wrap-x foot-in">
+<footer class="foot">
+  <div class="wrap">
     <nav class="foot-links" aria-label="Strani">
       <a href="storitve.html">Storitve</a>
       <a href="cene.html">Cene</a>
@@ -283,11 +296,11 @@
     </nav>
     <p>To je komercialna stran. Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja.</p>
     <p>AK agencija (Računalniško programiranje Alej Kump s.p.) · vpisano v Poslovni register Slovenije (AJPES) 15. septembra 2026 · dejavnost 62.100 · sedež Ulica heroja Marinclja 3, 1330 Kočevje · matična številka 7585942000 · davčna številka 67735509 · <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></p>
-    <p>Ta stran ne shranjuje ničesar v vašem brskalniku in ne nastavlja piškotkov. Slike, pisava, slog (CSS) in skript na tej strani so gostovani tukaj. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Ni obrazcev.</p>
+    <p>Ta stran ne shranjuje ničesar v vašem brskalniku in ne nastavlja piškotkov. Slike, video, pisava, slog (CSS) in skript na tej strani so gostovani tukaj. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Ni obrazcev.</p>
   </div>
 </footer>
 
-<script src="premium.js" defer></script>
+<script src="prenova/scrub.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>
