@@ -1,0 +1,132 @@
+/* marketing.css — MARKETING service page, 2026-10-27.
+   Loaded after prenova/prenova.css and uses only its tokens. Adds the parts the
+   homepage does not have: a static hero (no film), the package groups,
+   comparison table, price lists, the "not included" list and a small per-month label on prices. Motion is
+   transform/opacity only and is off under prefers-reduced-motion. */
+
+.top nav a[aria-current="page"] { color: var(--d-ink); }
+
+/* ---------- hero ---------- */
+.mk-hero {
+  position: relative; overflow: hidden;
+  padding-top: calc(var(--head-h) + clamp(40px, 8vw, 104px));
+  padding-bottom: clamp(56px, 8vw, 112px);
+  background:
+    radial-gradient(70% 60% at 85% 20%, rgba(236, 148, 102, .20), rgba(236, 148, 102, 0) 60%),
+    radial-gradient(60% 50% at 0% 100%, rgba(217, 105, 79, .10), rgba(217, 105, 79, 0) 70%),
+    var(--night);
+}
+.mk-hero-in { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; align-items: center; }
+@media (min-width: 900px) { .mk-hero-in { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 64px; } }
+.mk-copy { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.mk-copy .display { max-width: 11em; }
+
+/* Decorative phone: an abstract reel frame (no real client footage). */
+.mk-phone { justify-self: center; width: min(72%, 270px); padding: 9px; border-radius: 38px; background: #05080b;
+  box-shadow: 0 0 0 1px #2a3747, 0 40px 80px -36px rgba(0, 0, 0, .95), 0 0 80px -20px rgba(236, 148, 102, .35); }
+.mk-screen { position: relative; aspect-ratio: 9 / 16; border-radius: 30px; overflow: hidden;
+  background:
+    radial-gradient(90% 55% at 30% 25%, rgba(236, 148, 102, .55), rgba(236, 148, 102, 0) 70%),
+    radial-gradient(80% 50% at 80% 80%, rgba(217, 105, 79, .45), rgba(217, 105, 79, 0) 70%),
+    linear-gradient(160deg, #1b2633, #0e141b); }
+.mk-bar { position: absolute; left: 14px; right: 14px; top: 14px; height: 3px; border-radius: 3px; background: rgba(238, 240, 243, .25); overflow: hidden; }
+.mk-bar span { display: block; height: 100%; width: 100%; background: var(--d-ink); transform-origin: 0 50%; transform: scaleX(.42); }
+.mk-cap { position: absolute; left: 50%; top: 58%; transform: translate(-50%, -50%); width: 82%;
+  display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.mk-cap span { display: block; padding: 4px 10px; border-radius: 8px; background: var(--d-ink); color: var(--night);
+  font-weight: 700; font-size: 15px; line-height: 1.25; text-align: center; }
+.mk-cap span + span { background: var(--glow); }
+.mk-tags { position: absolute; left: 14px; right: 14px; bottom: 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+.mk-tags span { font-size: 12px; font-weight: 600; color: var(--d-ink); padding: 3px 10px; border-radius: 999px;
+  background: rgba(11, 16, 22, .55); border: 1px solid rgba(238, 240, 243, .2); }
+@media (prefers-reduced-motion: no-preference) {
+  .mk-bar span { animation: mk-play 9s linear infinite; }
+  @keyframes mk-play { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+}
+
+/* ---------- prices ---------- */
+.plan-night .amount .per { color: var(--d-soft); }
+.plans-note { margin-top: 28px; }
+
+/* package groups: anchored chips + collapsible groups (all open without JS) */
+.grp-nav { position: sticky; top: var(--head-h); z-index: 5; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+  margin: 0 calc(var(--gutter) * -1) 8px; padding: 10px var(--gutter); background: rgba(247, 245, 241, .94);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.grp-nav::-webkit-scrollbar { display: none; }
+.light .grp-nav a { flex: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--white); color: var(--ink); font-size: 14px; font-weight: 600; white-space: nowrap; }
+.light .grp-nav a:hover { border-color: var(--ink); text-decoration: none; }
+.grp { border-top: 1px solid var(--line); scroll-margin-top: calc(var(--head-h) + 72px); }
+.grp:last-of-type { border-bottom: 1px solid var(--line); }
+.grp > summary { list-style: none; cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 4px 16px; padding: 28px 40px 28px 0; position: relative; }
+.grp > summary::-webkit-details-marker { display: none; }
+.grp > summary::after { content: ""; position: absolute; right: 4px; top: 50%; width: 12px; height: 12px; margin-top: -9px;
+  border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); transform: rotate(45deg); transition: transform .25s var(--ease); }
+.grp[open] > summary::after { transform: rotate(-135deg); margin-top: -3px; }
+.grp-h { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.05; }
+.grp-hint { font-size: 14px; color: var(--faint); }
+.grp-body { padding-bottom: clamp(40px, 6vw, 72px); }
+
+/* six monthly plans: 1 column on phone, 2 on tablet, 3 x 2 on desktop */
+.plans-6 { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+@media (min-width: 700px) { .plans-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .plans-6 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.plans-6 .plan { padding: 30px 24px; gap: 16px; }
+.plans-6 .amount { font-size: clamp(52px, 5vw, 64px); }
+.plan h4 { font-size: 15px; font-weight: 700; letter-spacing: .08em; line-height: 1.4; }
+.plan-note { font-size: 14px; color: var(--faint); }
+.amount .per, .card-price .per { font-family: var(--sans); font-size: 16px; letter-spacing: 0; color: var(--soft); margin-left: 6px; }
+
+/* comparison table: scrolls inside its own box on a narrow phone, never the page */
+.cmp-h { font-size: 18px; font-weight: 600; margin: clamp(40px, 6vw, 64px) 0 14px; }
+/* position: relative keeps the absolutely-positioned .sr labels inside the
+   scroll box; without it they escape the clip and widen the whole page. */
+.cmp-wrap { position: relative; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--white); }
+.cmp { width: 100%; min-width: 700px; border-collapse: collapse; font-size: 15px; color: var(--ink); }
+.cmp th, .cmp td { padding: 13px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: middle; }
+.cmp tbody tr:last-child th, .cmp tbody tr:last-child td { border-bottom: 0; }
+.cmp thead th { font-size: 13px; font-weight: 700; letter-spacing: .06em; }
+.cmp tbody th { text-align: left; font-weight: 600; color: var(--soft); }
+.cmp td.na { color: var(--faint); }
+.cmp .hi { background: var(--accent-soft); }
+.cmp thead .hi { color: var(--accent); }
+.cmp-note { margin-top: 14px; }
+
+/* purpose packages */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; }
+.card { display: flex; flex-direction: column; gap: 10px; padding: 26px 22px; border-radius: var(--r-lg); background: var(--white); border: 1px solid var(--line); }
+.card h4 { font-size: 15px; font-weight: 700; letter-spacing: .08em; }
+.card-price { font-family: var(--display); font-size: 44px; line-height: 1; }
+.card p:not(.card-price) { color: var(--soft); font-size: 15px; }
+.light a.card-link { margin-top: auto; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center; }
+
+/* one-off and add-on price lists */
+.once-wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (min-width: 900px) { .once-wrap { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 32px; } }
+.once-free { display: flex; flex-direction: column; gap: 10px; padding: 28px 24px; border-radius: var(--r-lg); color: var(--d-ink);
+  background: radial-gradient(90% 80% at 100% 0%, rgba(236, 148, 102, .26), rgba(236, 148, 102, 0) 60%), var(--night); }
+.once-free h4 { font-size: 17px; font-weight: 600; }
+.once-price { font-family: var(--display); font-size: 52px; line-height: 1; color: var(--glow); }
+.once-free p:not(.once-price) { color: var(--d-soft); font-size: 15px; }
+.once-free .btn { margin-top: 8px; }
+.plist { border-top: 1px solid var(--line); }
+.plist li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.pl-name { font-weight: 600; min-width: 0; }
+.pl-name small { display: block; font-size: 14px; font-weight: 400; color: var(--faint); }
+.pl-price { flex: none; font-family: var(--display); font-size: 26px; line-height: 1.1; white-space: nowrap; }
+.plist-wide { max-width: 760px; }
+
+/* ---------- not included ---------- */
+.nots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 0 40px; border-top: 1px solid var(--night-line); }
+.nots li { display: flex; gap: 14px; padding: 24px 0; border-bottom: 1px solid var(--night-line); }
+.nots li::before { content: ""; flex: none; width: 22px; height: 22px; margin-top: 2px; border-radius: 50%;
+  background: rgba(238, 240, 243, .08) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23bcc4ce' stroke-width='2.4' stroke-linecap='round' d='m8 8 8 8M16 8l-8 8'/%3E%3C/svg%3E") center / 14px no-repeat; }
+.nots strong { display: block; font-size: 17px; }
+.nots span { color: var(--d-soft); font-size: 15px; }
+
+/* ---------- proof (own Instagram) ---------- */
+.proof { display: flex; flex-direction: column; gap: 20px; max-width: 46em; }
+.proof .about-p { color: var(--soft); }
+.proof .ctas a.btn-ig { background: var(--ink); color: var(--white); }
+.proof .ctas a.btn-ig:hover { background: #000; color: var(--white); }
