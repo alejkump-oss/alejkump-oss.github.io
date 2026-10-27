@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://alejkump.si/prenova/assets/film-end.jpg">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-serif-latin-400-normal.woff2" crossorigin>
-<link rel="stylesheet" href="prenova/prenova.css">
+<link rel="stylesheet" href="prenova/prenova.css?v=4">
 <script>
 /* Intro film plays once over the page, then fades out (prenova/intro.js).
    Decided before first paint so the page never flashes underneath. */
@@ -40,6 +40,7 @@
 <body>
 
 <div id="intro" class="intro">
+  <img class="intro-img" alt="" aria-hidden="true" decoding="async" data-src="prenova/assets/intro-mobile.webp">
   <video aria-hidden="true" muted playsinline preload="auto" disablepictureinpicture tabindex="-1"
          data-desktop="prenova/assets/intro.mp4" data-desktop-poster="prenova/assets/film-poster.jpg"
          data-mobile="prenova/assets/intro-mobile.mp4" data-mobile-poster="prenova/assets/film-mobile-poster.jpg"></video>
@@ -321,7 +322,7 @@
   </div>
 </footer>
 
-<script src="prenova/intro.js?v=3" defer></script>
+<script src="prenova/intro.js?v=4" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>

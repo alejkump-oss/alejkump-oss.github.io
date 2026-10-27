@@ -24,6 +24,20 @@
   if (reduce || save || !v) { finish(); return; }
 
   var mobile = mm && mm('(max-width: 760px)').matches;
+  // Phones: an animated image, because phones often refuse to autoplay video
+  // (low-power mode, data saver). It always plays; hide it after its 3 s.
+  if (mobile) {
+    var img = box.querySelector('.intro-img');
+    if (!img) { finish(); return; }
+    if (v) v.parentNode.removeChild(v);
+    img.onload = function () { setTimeout(finish, 3000); };
+    img.onerror = finish;
+    img.src = img.getAttribute('data-src');
+    setTimeout(function () { if (!img.complete) finish(); }, 2500);
+    setTimeout(finish, 6000);
+    return;
+  }
+  var im2 = box.querySelector('.intro-img'); if (im2) im2.parentNode.removeChild(im2);
   v.src = mobile ? v.getAttribute('data-mobile') : v.getAttribute('data-desktop');
   v.poster = mobile ? v.getAttribute('data-mobile-poster') : v.getAttribute('data-desktop-poster');
   v.muted = true;
