@@ -27,18 +27,18 @@
   v.src = mobile ? v.getAttribute('data-mobile') : v.getAttribute('data-desktop');
   v.poster = mobile ? v.getAttribute('data-mobile-poster') : v.getAttribute('data-desktop-poster');
   v.muted = true;
-  v.playbackRate = 1.4;
+  v.playbackRate = 1;
 
   v.addEventListener('ended', finish);
   v.addEventListener('error', finish);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') finish(); });
 
   var started = false;
-  v.addEventListener('playing', function () { started = true; v.playbackRate = 1.4; });
+  v.addEventListener('playing', function () { started = true; });
   var p = v.play();
   if (p && p.catch) p.catch(finish);
   // Never hold the page: if nothing is playing after 3 s, go straight in;
   // and never longer than 16 s in total.
-  setTimeout(function () { if (!started) finish(); }, 3000);
-  setTimeout(finish, 16000);
+  setTimeout(function () { if (!started) finish(); }, 1500);
+  setTimeout(finish, 4000);
 })();

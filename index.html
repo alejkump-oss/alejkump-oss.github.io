@@ -31,7 +31,7 @@
   if (!reduce && !save) {
     d.classList.add('intro-on');
     /* safety: never keep the page locked, even if intro.js fails to load */
-    setTimeout(function () { d.classList.remove('intro-on'); }, 17000);
+    setTimeout(function () { d.classList.remove('intro-on'); }, 6000);
   }
 })();
 </script>
@@ -41,8 +41,8 @@
 
 <div id="intro" class="intro">
   <video aria-hidden="true" muted playsinline preload="auto" disablepictureinpicture tabindex="-1"
-         data-desktop="prenova/assets/film.mp4" data-desktop-poster="prenova/assets/film-poster.jpg"
-         data-mobile="prenova/assets/film-mobile.mp4" data-mobile-poster="prenova/assets/film-mobile-poster.jpg"></video>
+         data-desktop="prenova/assets/intro.mp4" data-desktop-poster="prenova/assets/film-poster.jpg"
+         data-mobile="prenova/assets/intro-mobile.mp4" data-mobile-poster="prenova/assets/film-mobile-poster.jpg"></video>
 </div>
 
 <a class="skip" href="#vsebina">Preskoči na vsebino</a>
