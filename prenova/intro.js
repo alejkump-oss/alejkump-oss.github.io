@@ -1,5 +1,5 @@
 /* Intro film: plays once, full screen, when the homepage opens; then fades
-   into the page. Skippable; never blocks the page if the video can't play
+   into the page. No button: it goes to the page by itself; never blocks the page if the video can't play
    (autoplay refused, slow network, reduced motion, Save-Data). */
 (function () {
   var box = document.getElementById('intro');
@@ -29,7 +29,6 @@
   v.muted = true;
   v.playbackRate = 1.4;
 
-  box.querySelector('.intro-skip').addEventListener('click', finish);
   v.addEventListener('ended', finish);
   v.addEventListener('error', finish);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') finish(); });
