@@ -21,7 +21,7 @@
   var reduce = mm && mm('(prefers-reduced-motion: reduce)').matches;
   var c = navigator.connection || {};
   var save = c.saveData === true || /(^|-)2g$/.test(c.effectiveType || '');
-  if (reduce || save || !v) { finish(); return; }
+  if (save || !v) { finish(); return; }  // owner: show it even with Reduce Motion on
 
   var mobile = mm && mm('(max-width: 760px)').matches;
   // Phones: an animated image, because phones often refuse to autoplay video
