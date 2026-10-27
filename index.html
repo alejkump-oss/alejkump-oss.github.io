@@ -20,24 +20,31 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-serif-latin-400-normal.woff2" crossorigin>
 <link rel="stylesheet" href="prenova/prenova.css">
 <script>
-/* Decided before first paint so the film section never jumps from the static
-   layout to the pinned one. scrub.js confirms it; if scrub.js never runs, the
-   timeout puts the static, fully readable layout back. */
+/* Intro film plays once over the page, then fades out (prenova/intro.js).
+   Decided before first paint so the page never flashes underneath. */
 (function () {
   var d = document.documentElement, mm = window.matchMedia;
   d.classList.add('js');
   var reduce = mm && mm('(prefers-reduced-motion: reduce)').matches;
   var c = navigator.connection || {};
   var save = c.saveData === true || /(^|-)2g$/.test(c.effectiveType || '');
-  if (!reduce && !save && 'requestAnimationFrame' in window) {
-    d.classList.add('scrub');
-    setTimeout(function () { if (!window.__akScrub) d.classList.remove('scrub'); }, 4000);
+  if (!reduce && !save) {
+    d.classList.add('intro-on');
+    /* safety: never keep the page locked, even if intro.js fails to load */
+    setTimeout(function () { d.classList.remove('intro-on'); }, 17000);
   }
 })();
 </script>
 </head>
 
 <body>
+
+<div id="intro" class="intro">
+  <video aria-hidden="true" muted playsinline preload="auto" disablepictureinpicture tabindex="-1"
+         data-desktop="prenova/assets/film.mp4" data-desktop-poster="prenova/assets/film-poster.jpg"
+         data-mobile="prenova/assets/film-mobile.mp4" data-mobile-poster="prenova/assets/film-mobile-poster.jpg"></video>
+  <button class="intro-skip" type="button">Preskoči <span aria-hidden="true">→</span></button>
+</div>
 
 <a class="skip" href="#vsebina">Preskoči na vsebino</a>
 
@@ -315,7 +322,7 @@
   </div>
 </footer>
 
-<script src="prenova/scrub.js" defer></script>
+<script src="prenova/intro.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>
