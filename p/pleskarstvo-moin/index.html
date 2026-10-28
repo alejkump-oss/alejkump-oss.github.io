@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Pleskarstvo MOIN · Kočevje</title>
+<meta name="description" content="Pleskarstvo MOIN, Sascha Pascal Gerber s.p. Slikopleskar, Šalka vas 44, 1330 Kočevje. Pokličite 040 868 550.">
+<meta name="theme-color" content="#1e3a4a">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wall:#f7f3ec; --wall2:#efe8dc; --card:#fffdf9; --ink:#1b2a33; --ink2:#43535d; --mute:#6f7b82;
+  --line:rgba(27,42,51,.13); --deep:#1e3a4a; --deep2:#24475a; --terra:#e8673c; --terra2:#f08a62;
+  --sage:#9fb8a2; --ochre:#e3b45b; --sky:#a9c6d6; --rose:#e7b9a6;
+  --disp:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;
+  --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--wall) url(assets/plaster.svg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;padding-bottom:88px}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2)}
+.tag::before{content:"";width:22px;height:10px;border-radius:3px;background:var(--terra)}
+h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:1.02;letter-spacing:-.015em}
+h2{font-size:clamp(36px,8.4vw,72px);margin:.25em 0 .35em}
+h2 em,h1 em{font-style:normal;position:relative;white-space:nowrap;z-index:0}
+h2 em::after,h1 em::after{content:"";position:absolute;left:-.08em;right:-.08em;bottom:.04em;height:.36em;z-index:-1;border-radius:.2em .5em .3em .6em;
+  background:var(--terra2);opacity:.55;transform-origin:left;transform:scaleX(0);transition:transform 1.1s cubic-bezier(.6,0,.2,1) .35s}
+.in h2 em::after,h2.in em::after,.hero.in h1 em::after{transform:none}
+.lead{color:var(--ink2);font-size:clamp(16.5px,2.2vw,19px);max-width:56ch}
+.ph{display:inline-block;margin-top:10px;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);background:var(--wall2);border:1px dashed rgba(27,42,51,.3);padding:3px 9px;border-radius:6px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .35s,box-shadow .35s}
+.nav.solid{background:rgba(247,243,236,.93);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:11px;white-space:nowrap}
+.logo .mk{width:40px;height:40px;flex:none}
+.logo b{display:block;font-family:var(--disp);font-weight:800;font-size:23px;line-height:1;letter-spacing:-.01em}
+.logo small{display:block;font-size:10px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.nav-call{display:none;align-items:center;gap:8px;background:var(--deep);color:#fff;padding:11px 18px;border-radius:999px;font-weight:700;font-size:15px}
+.nav-call svg{width:16px;height:16px}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+
+.ribbon{position:fixed;top:74px;right:10px;z-index:60;font-size:11px;font-weight:700;letter-spacing:.05em;padding:6px 11px;border-radius:99px;
+  background:rgba(27,42,51,.9);color:#fff;border:1px solid var(--terra);pointer-events:none}
+
+/* hero */
+.hero{position:relative;padding:118px 0 0;overflow:hidden;isolation:isolate}
+.hero .inner{position:relative;z-index:2}
+.hero h1{font-size:clamp(48px,13.5vw,112px);margin:.2em 0 .22em}
+.hero h1 span{display:block}
+.hero h1 .t{color:var(--deep2)}
+.hero p.sub{max-width:44ch;color:var(--ink2);font-size:clamp(17px,2.4vw,20px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 26px;border-radius:999px;font-weight:800;font-size:16.5px;transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
+.btn svg{width:21px;height:21px;flex:none}
+.btn-t{background:var(--terra);color:#fff;box-shadow:0 10px 24px -10px rgba(232,103,60,.9)}
+.btn-t:hover{transform:translateY(-2px);background:#df5a2e}
+.btn-big{min-height:66px;font-size:19px;padding:0 30px}
+.btn-o{border:2px solid var(--ink);color:var(--ink)}
+.btn-o:hover{background:rgba(27,42,51,.06)}
+@media(max-width:480px){.cta-row .btn{width:100%}}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:24px;font-size:14px;color:var(--ink2);font-weight:600}
+.facts span{display:inline-flex;align-items:center;gap:7px}
+.facts svg{width:16px;height:16px;color:var(--terra)}
+
+/* painted wall art */
+.wallart{position:relative;margin-top:44px;height:clamp(190px,42vw,330px)}
+.wallart .band{position:absolute;left:0;height:30%;border-radius:0 40px 40px 0;transform-origin:left;transform:scaleX(0)}
+.wallart .b1{top:6%;width:92%;background:var(--deep);transition:transform 1.5s cubic-bezier(.6,0,.2,1) .2s}
+.wallart .b2{top:38%;width:74%;background:var(--terra);transition:transform 1.5s cubic-bezier(.6,0,.2,1) .7s}
+.wallart .b3{top:70%;width:56%;background:var(--sage);transition:transform 1.5s cubic-bezier(.6,0,.2,1) 1.2s}
+.wallart .band::after{content:"";position:absolute;inset:0;border-radius:inherit;background:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 3px,transparent 3px 9px)}
+.hero.in .wallart .band{transform:none}
+.roller{--rw:clamp(70px,14vw,110px);position:absolute;top:2%;left:calc(var(--rw) * -1.1);width:var(--rw);transition:left 1.5s cubic-bezier(.6,0,.2,1) .2s;z-index:3;color:var(--ink)}
+.hero.in .roller{left:calc(92% - var(--rw) * .71)}
+.wallart .ill{position:absolute;right:0;bottom:-26px;font-size:11px;color:var(--mute)}
+.edge{height:26px;background:var(--deep);-webkit-mask:radial-gradient(14px 14px at 14px 0,transparent 98%,#000) -14px 0/28px 26px repeat-x;mask:radial-gradient(14px 14px at 14px 0,transparent 98%,#000) -14px 0/28px 26px repeat-x;margin-top:56px}
+
+section{padding:clamp(72px,11vw,124px) 0;position:relative}
+
+/* services */
+.svc-grid{display:grid;gap:18px;margin-top:38px}
+@media(min-width:820px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(27,42,51,.45)}
+.chip{position:relative;height:150px;display:flex;align-items:flex-end;padding:16px 18px}
+.chip .code{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.88);color:var(--ink);padding:5px 10px;border-radius:99px}
+.chip svg{position:absolute;right:16px;top:16px;width:58px;height:58px;color:rgba(255,255,255,.92)}
+.c1{background:var(--deep)} .c2{background:var(--terra)} .c3{background:var(--sage)} .c3 svg{color:var(--ink)}
+.svc .txt{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column}
+.svc h3{font-size:28px}
+.svc p{color:var(--ink2);font-size:15.5px;margin-top:8px}
+.svc .src{display:block;font-size:12.5px;color:var(--mute);margin-top:10px}
+.svc .more{margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14.5px;color:var(--deep2)}
+.svc .more svg{width:18px;height:18px;transition:transform .25s}.svc:hover .more svg{transform:translateX(4px)}
+
+/* why */
+.why{background:var(--deep);color:#fff}
+.why .tag{color:#cfdbe2}.why .lead{color:#c7d3da}
+.why h2 em::after{background:var(--terra)}
+.why-grid{display:grid;gap:16px;margin-top:38px}
+@media(min-width:760px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.why-grid{grid-template-columns:repeat(4,1fr)}}
+.wcard{background:var(--deep2);border-radius:20px;padding:24px 22px;border:1px solid rgba(255,255,255,.1)}
+.wcard .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.08);color:var(--terra2)}
+.wcard .ic svg{width:24px;height:24px}
+.wcard h3{font-size:22px;margin-top:16px}
+.wcard p{color:#c7d3da;font-size:15px;margin-top:6px}
+.wcard small{display:block;color:#93a7b3;font-size:12px;margin-top:10px}
+
+/* swatches strip */
+.swatches{display:flex;height:16px}
+.swatches i{flex:1}
+
+/* area */
+.area{display:grid;gap:28px;align-items:stretch}
+@media(min-width:900px){.area{grid-template-columns:1fr 1fr;gap:56px}}
+.mapcard{position:relative;overflow:hidden;min-height:340px;display:block;border-radius:22px;background:#e6e0d3;border:1px solid var(--line)}
+.mapcard svg.m{position:absolute;inset:0;width:100%;height:100%}
+.mpin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%)}
+.mpin svg{width:52px;height:52px;color:var(--terra);filter:drop-shadow(0 6px 8px rgba(0,0,0,.25));animation:bob 2.4s ease-in-out infinite}
+.mpin::after{content:"";position:absolute;left:50%;bottom:-5px;width:14px;height:14px;margin-left:-7px;border-radius:50%;border:2px solid var(--terra);animation:ring 2.4s ease-out infinite}
+@keyframes ring{0%{transform:scale(.4);opacity:1}100%{transform:scale(4);opacity:0}}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.mapcard .label{position:absolute;left:14px;right:14px;bottom:14px;background:var(--card);border-radius:14px;padding:12px 16px;box-shadow:0 8px 20px -12px rgba(0,0,0,.3)}
+.mapcard .label b{font-family:var(--disp);font-size:22px;display:block;line-height:1.1}
+.mapcard .label small{color:var(--mute);font-size:13px}
+.list{margin-top:22px;border-top:1px solid var(--ink)}
+.list div{display:flex;gap:14px;align-items:flex-start;padding:15px 2px;border-bottom:1px solid var(--line)}
+.list svg{width:21px;height:21px;flex:none;margin-top:3px;color:var(--terra)}
+.list b{display:block;font-weight:700;word-break:break-word}
+.list small{color:var(--mute);font-size:14px}
+
+/* hours + contact */
+.grid2{display:grid;gap:18px;margin-top:10px}
+@media(min-width:900px){.grid2{grid-template-columns:1.05fr 1fr}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 22px}
+.panel h3{font-size:clamp(28px,6vw,38px)}
+.hours{margin-top:16px;border-top:1px solid var(--ink)}
+.hours div{display:flex;justify-content:space-between;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line);font-weight:600}
+.hours div b{font-weight:800}
+.hours div.off{color:var(--mute)}
+.hours div.today{background:linear-gradient(90deg,rgba(232,103,60,.18),transparent);margin:0 -10px;padding:12px 12px;border-radius:8px}
+.note{font-size:13.5px;color:var(--mute);margin-top:14px}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-weight:700;font-size:14px;padding:6px 12px;border-radius:99px;background:var(--wall2)}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--mute)}
+.status.open i{background:#2f9e5b;box-shadow:0 0 0 4px rgba(47,158,91,.2)}
+.callp{background:var(--terra);color:#fff;text-align:center;border:0;position:relative;overflow:hidden}
+.callp::before{content:"";position:absolute;width:260px;height:260px;right:-90px;top:-110px;border-radius:50%;background:rgba(255,255,255,.12)}
+.callp small{display:block;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;margin-top:6px;position:relative}
+.callp .n{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(46px,13vw,76px);line-height:1;margin:16px 0 22px;white-space:nowrap;position:relative}
+.callp .btn{width:100%;background:#fff;color:var(--ink);position:relative}
+.callp .btn:hover{background:var(--wall)}
+.callp .alt{display:block;margin-top:16px;font-size:14.5px;color:#fff8f2;position:relative}
+
+footer{background:#13212a;color:#a8b6bf;padding:38px 0 30px;font-size:13px}
+footer .wrap{display:flex;flex-direction:column;gap:10px}
+footer .disc{font-size:12px;opacity:.85}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:60px;font-size:18px;box-shadow:0 12px 28px -10px rgba(27,42,51,.6)}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+.no-js .rv{opacity:1;transform:none}.no-js .wallart .band{transform:none}.no-js .roller{display:none}.no-js h1 em::after,.no-js h2 em::after{transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}.wallart .band{transform:none}.roller{display:none}h1 em::after,h2 em::after{transform:none}
+}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="ribbon" aria-hidden="true">Predogled – AK agencija</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+    <symbol id="doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 2h9l4 4v16H6z"/><path d="M14 2v5h5M9 13h7M9 17h5"/></g></symbol>
+    <symbol id="roll" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="3" width="14" height="6" rx="2"/><path d="M17 6h3v6h-8v3"/><rect x="10" y="15" width="4" height="7" rx="1"/></g></symbol>
+    <symbol id="brush" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M14 3l7 7-6 2-3-3z"/><path d="M12 9l-6 6c-1.5 1.5-2 4-3 6 2-1 4.5-1.5 6-3l6-6"/></g></symbol>
+    <symbol id="chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 4h16v12H9l-5 4z"/></symbol>
+    <symbol id="home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 11l9-7 9 7v10h-6v-6H9v6H3z"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Pleskarstvo MOIN, na vrh">
+      <svg class="mk" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1e3a4a"/><rect x="12" y="14" width="34" height="14" rx="4" fill="#e8673c"/><path d="M46 21h6v12H32v8" fill="none" stroke="#f7f3ec" stroke-width="4" stroke-linejoin="round"/><rect x="28" y="40" width="8" height="14" rx="2" fill="#f7f3ec"/></svg>
+      <span><b>Pleskarstvo MOIN</b><small>Slikopleskar · Kočevje</small></span>
+    </a>
+    <a class="nav-call" href="tel:+38640868550"><svg aria-hidden="true"><use href="#tel"/></svg>040 868 550</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero" style="padding-bottom:0">
+    <div class="wrap inner">
+      <div class="tag rv">Pleskarstvo MOIN · Šalka vas, Kočevje</div>
+      <h1 class="rv d1"><span>Nova barva</span><span class="t">za vaše <em>stene.</em></span></h1>
+      <p class="sub rv d2">Slikopleskarstvo Sascha Pascal Gerber iz Šalke vasi pri Kočevju. Pokličite, opišite prostor in se dogovorimo za naprej.</p>
+      <div class="cta-row rv d3">
+        <a class="btn btn-t btn-big" href="tel:+38640868550"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 040 868 550</a>
+        <a class="btn btn-o" href="#storitve">Storitve <svg aria-hidden="true" style="width:18px;height:18px"><use href="#arrow"/></svg></a>
+      </div>
+      <div class="facts rv d3">
+        <span><svg aria-hidden="true"><use href="#pinico"/></svg>Šalka vas 44, Kočevje</span>
+        <span><svg aria-hidden="true"><use href="#clock"/></svg>pon–pet 7–18</span>
+        <span><svg aria-hidden="true"><use href="#star"/></svg>5,0 na Googlu (13 mnenj)</span>
+      </div>
+      <div class="wallart" aria-hidden="true">
+        <span class="band b1"></span><span class="band b2"></span><span class="band b3"></span>
+        <svg class="roller" viewBox="0 0 110 120"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="6" width="70" height="30" rx="10" fill="#f7f3ec"/><path d="M78 21h18v34H50v20"/></g><rect x="42" y="74" width="16" height="42" rx="5" fill="currentColor"/></svg>
+        <span class="ill">ilustracija</span>
+      </div>
+    </div>
+    <div class="edge" aria-hidden="true"></div>
+  </section>
+
+  <section id="storitve" style="background:var(--deep);color:#fff;padding-top:40px">
+    <div class="wrap">
+      <div class="tag rv" style="color:#cfdbe2">Storitve</div>
+      <h2 class="rv d1">Kaj <em>naredimo</em></h2>
+      <p class="lead rv d2" style="color:#c7d3da">Registrirana dejavnost: pleskarska dela. Natančen seznam del, cene in pogoje dopolnimo skupaj.</p>
+      <div class="svc-grid" style="color:var(--ink)">
+        <article class="svc rv">
+          <div class="chip c1"><svg aria-hidden="true"><use href="#roll"/></svg><span class="code">01 · pleskanje</span></div>
+          <div class="txt"><h3>Pleskarska dela</h3>
+            <p>Stanovanje, hiša ali poslovni prostor potrebuje novo barvo? Pokličite in opišite, kaj bi radi.</p>
+            <span class="src">Obseg del dopolnimo skupaj.</span>
+            <a class="more" href="tel:+38640868550">Pokličite za dogovor <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </article>
+        <article class="svc rv d1">
+          <div class="chip c2"><svg aria-hidden="true"><use href="#brush"/></svg><span class="code">02 · slikopleskarstvo</span></div>
+          <div class="txt"><h3>Slikopleskarstvo</h3>
+            <p>Slikopleskarska dela po dogovoru. Katera dela izvajamo, opišemo tukaj skupaj z izvajalcem.</p>
+            <span class="src">Seznam del dopolnimo skupaj.</span>
+            <a class="more" href="tel:+38640868550">Vprašajte <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </article>
+        <article class="svc rv d2">
+          <div class="chip c3"><svg aria-hidden="true"><use href="#chat"/></svg><span class="code">03 · dogovor</span></div>
+          <div class="txt"><h3>Ogled in ponudba</h3>
+            <p>Kako poteka dogovor, ogled in priprava ponudbe, zapišemo tukaj po pogovoru z izvajalcem.</p>
+            <span class="src">Potek dopolnimo skupaj.</span>
+            <a class="more" href="tel:+38640868550">Pokličite <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <div class="swatches" aria-hidden="true"><i style="background:var(--deep2)"></i><i style="background:var(--terra)"></i><i style="background:var(--ochre)"></i><i style="background:var(--sage)"></i><i style="background:var(--sky)"></i><i style="background:var(--rose)"></i></div>
+
+  <section class="why" id="zakaj">
+    <div class="wrap">
+      <div class="tag rv">Zakaj mi</div>
+      <h2 class="rv d1">Preprosto do <em>izvajalca.</em></h2>
+      <p class="lead rv d2">Nič velikih obljub, samo podatki, ki jih lahko preverite.</p>
+      <div class="why-grid">
+        <div class="wcard rv"><span class="ic"><svg aria-hidden="true"><use href="#doc"/></svg></span><h3>Registriran s.p.</h3><p>Pleskarstvo MOIN, Sascha Pascal Gerber s.p., dejavnost pleskarska dela.</p><small>Poslovni register (AJPES)</small></div>
+        <div class="wcard rv d1"><span class="ic"><svg aria-hidden="true"><use href="#home"/></svg></span><h3>Doma v Šalki vasi</h3><p>Sedež na naslovu Šalka vas 44, pri Kočevju.</p><small>Poslovni register, Google Zemljevidi</small></div>
+        <div class="wcard rv d2"><span class="ic"><svg aria-hidden="true"><use href="#tel"/></svg></span><h3>En klic</h3><p>Pokličete neposredno 040 868 550, od ponedeljka do petka med 7. in 18. uro.</p><small>Google Zemljevidi</small></div>
+        <div class="wcard rv d3"><span class="ic"><svg aria-hidden="true"><use href="#star"/></svg></span><h3>5,0 na Googlu</h3><p>Povprečna ocena 5,0 iz 13 mnenj na Google Zemljevidih.</p><small>Stanje 28. 10. 2026; mnenja Google ne preverja</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="obmocje">
+    <div class="wrap area">
+      <div class="rv">
+        <div class="tag">Območje dela</div>
+        <h2>Iz Šalke vasi <em>na teren</em></h2>
+        <p class="lead">Sedež je v Šalki vasi pri Kočevju. Do katerih krajev izvajalec prihaja, dopolnimo skupaj.</p>
+        <span class="ph">območje dopolnimo skupaj</span>
+        <div class="list">
+          <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Šalka vas 44</b><small>1330 Kočevje</small></span></div>
+          <div><svg aria-hidden="true"><use href="#home"/></svg><span><b>Kočevje z okolico</b><small>kraji, kamor izvajalec prihaja: dopolnimo skupaj</small></span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-o" href="https://www.google.com/maps/search/?api=1&amp;query=Pleskarstvo+MOIN+Kocevje" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg>Odpri v Google Zemljevidih</a>
+        </div>
+      </div>
+      <a class="mapcard rv d1" href="https://www.google.com/maps/search/?api=1&amp;query=Pleskarstvo+MOIN+Kocevje" target="_blank" rel="noopener" aria-label="Pleskarstvo MOIN na Google Zemljevidih">
+        <svg class="m" viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="340" fill="#e6e0d3"/>
+          <path d="M260 -10 C 300 80, 330 140, 420 170 L420 -10z" fill="#c9d8b8"/>
+          <path d="M-10 250 C 80 230, 140 300, 170 360 L-10 360z" fill="#c9d8b8"/>
+          <path d="M-10 120 C 90 140, 150 150, 200 158 S 320 190, 420 250" fill="none" stroke="#fff" stroke-width="12"/>
+          <path d="M200 158 C 210 110, 230 60, 250 -10" fill="none" stroke="#fff" stroke-width="7"/>
+          <path d="M200 158 C 190 210, 170 270, 160 360" fill="none" stroke="#fff" stroke-width="7"/>
+          <g fill="#d6cfc0"><rect x="150" y="110" width="20" height="16" rx="2"/><rect x="226" y="120" width="18" height="14" rx="2"/><rect x="214" y="184" width="22" height="16" rx="2"/><rect x="120" y="170" width="18" height="16" rx="2"/><rect x="250" y="210" width="20" height="16" rx="2"/></g>
+        </svg>
+        <div class="mpin"><svg aria-hidden="true"><use href="#pinico"/></svg></div>
+        <div class="label"><b>Šalka vas 44, Kočevje</b><small>shematski prikaz · odpri zemljevid</small></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding-top:0">
+    <div class="wrap">
+      <div class="tag rv">Kontakt</div>
+      <h2 class="rv d1">Pokličite <em>in povejte.</em></h2>
+      <div class="grid2">
+        <div class="panel rv">
+          <h3>Delovni čas</h3>
+          <div class="hours" id="hours">
+            <div data-d="1"><span>Ponedeljek</span><b>7–18</b></div>
+            <div data-d="2"><span>Torek</span><b>7–18</b></div>
+            <div data-d="3"><span>Sreda</span><b>7–18</b></div>
+            <div data-d="4"><span>Četrtek</span><b>7–18</b></div>
+            <div data-d="5"><span>Petek</span><b>7–18</b></div>
+            <div data-d="6"><span>Sobota</span><b>8.30–14.30</b></div>
+            <div data-d="0" class="off"><span>Nedelja</span><b>zaprto</b></div>
+          </div>
+          <span class="status" id="status" hidden><i></i><span></span></span>
+          <p class="note">Delovni čas po podatkih Google Zemljevidov, 28. 10. 2026. Ob praznikih se lahko razlikuje.</p>
+        </div>
+        <div class="panel callp rv d1">
+          <small>Pleskarstvo MOIN · Sascha Pascal Gerber</small>
+          <a class="n" href="tel:+38640868550">040 868 550</a>
+          <a class="btn btn-big" href="tel:+38640868550"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči zdaj</a>
+          <span class="alt">Šalka vas 44, 1330 Kočevje</span>
+        </div>
+      </div>
+      <div class="list" style="margin-top:28px">
+        <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38640868550">040 868 550</a></b><small>telefon</small></span></div>
+        <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b><a href="https://www.google.com/maps/search/?api=1&amp;query=Pleskarstvo+MOIN+Kocevje" target="_blank" rel="noopener">Šalka vas 44, 1330 Kočevje</a></b><small>naslov · odpri v Google Zemljevidih</small></span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Pleskarstvo MOIN, Sascha Pascal Gerber s.p. · Šalka vas 44, 1330 Kočevje · matična št. 7531656000 · <a href="tel:+38640868550">040 868 550</a></span>
+    <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
+    <span class="disc">Predogled, ni javna spletna stran podjetja. Grafike so ilustracija in ne prikazujejo del podjetja Pleskarstvo MOIN. Ocena in delovni čas: Google Zemljevidi, 28. 10. 2026.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-t" href="tel:+38640868550"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 040 868 550</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  /* today's row + open/closed, Europe/Ljubljana time, from the hours listed on Google Maps */
+  try{
+    var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Ljubljana',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6},d,h,m;
+    parts.forEach(function(p){if(p.type==='weekday')d=wd[p.value];if(p.type==='hour')h=+p.value;if(p.type==='minute')m=+p.value;});
+    var row=document.querySelector('#hours [data-d="'+d+'"]');if(row)row.classList.add('today');
+    var t=h*60+m;
+    var open=(d>=1&&d<=5&&t>=420&&t<1080)||(d===6&&t>=510&&t<870);
+    var st=document.getElementById('status');st.hidden=false;
+    if(open)st.classList.add('open');
+    st.lastElementChild.textContent=open?'Po navedenem delovnem času je zdaj odprto':'Po navedenem delovnem času je zdaj zaprto';
+  }catch(e){}
+  var hero=document.getElementById('hero');
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});hero.classList.add('in');}
+  else{
+    requestAnimationFrame(function(){setTimeout(function(){hero.classList.add('in');},120);});
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    var check=function(){var vh=window.innerHeight;els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<vh*0.94&&r.bottom>0)el.classList.add('in');}});};
+    window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+  }
+})();
+</script>
+
+<!--
+SOURCES: see NOTES.md (not deployed). Facts as fetched 28. 10. 2026: Google Maps "pleskarstvo MOIN, Sascha Pascal Gerber s.p.",
+Slikopleskar, Salka vas 44, 1330 Kocevje, tel 040 868 550, Mon-Fri 7-18, Sat 8:30-14:30, Sun closed, 5,0 (13 reviews).
+Registry (bizi.si, CompanyWall, AJPES snippet): MS 7531656000, registered 18. 6. 2026, SKD 43.342 Pleskarska dela.
+No prices, years, warranties, service area, team size, materials or testimonials are claimed. No photos used.
+-->
+</body>
+</html>
