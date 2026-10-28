@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 520" role="img" aria-label="Ilustracija dvokrilnega okna">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cfe0e8"/>
+      <stop offset=".62" stop-color="#e9f1f3"/>
+      <stop offset="1" stop-color="#f6efe3"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity=".75"/>
+      <stop offset=".58" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c79058"/>
+      <stop offset="1" stop-color="#a06b38"/>
+    </linearGradient>
+  </defs>
+  <!-- wall reveal -->
+  <rect x="10" y="10" width="400" height="470" rx="4" fill="#e7e2d9"/>
+  <!-- outer frame -->
+  <rect x="34" y="34" width="352" height="422" rx="3" fill="#383e42"/>
+  <!-- glass -->
+  <rect x="52" y="52" width="150" height="386" fill="url(#sky)"/>
+  <rect x="218" y="52" width="150" height="386" fill="url(#sky)"/>
+  <!-- distant hills (generic) -->
+  <path d="M52 330c30-22 62-30 96-18s44 6 54 0v126H52z" fill="#b9cdb4" opacity=".7"/>
+  <path d="M218 318c26-14 56-24 88-14s46 10 62 2v132H218z" fill="#b9cdb4" opacity=".7"/>
+  <path d="M52 372c40-16 90-14 150-2v68H52zM218 366c50-12 100-10 150 2v70H218z" fill="#9fb89a" opacity=".7"/>
+  <!-- shine -->
+  <rect x="52" y="52" width="150" height="386" fill="url(#shine)"/>
+  <rect x="218" y="52" width="150" height="386" fill="url(#shine)"/>
+  <!-- sash profiles -->
+  <rect x="44" y="44" width="166" height="402" fill="none" stroke="#2c3134" stroke-width="16"/>
+  <rect x="210" y="44" width="166" height="402" fill="none" stroke="#2c3134" stroke-width="16"/>
+  <rect x="52" y="52" width="150" height="386" fill="none" stroke="#4a5257" stroke-width="2"/>
+  <rect x="218" y="52" width="150" height="386" fill="none" stroke="#4a5257" stroke-width="2"/>
+  <!-- handle -->
+  <rect x="222" y="226" width="10" height="34" rx="3" fill="#d9dcde"/>
+  <rect x="224" y="236" width="6" height="44" rx="3" fill="#eef0f1"/>
+  <!-- sill -->
+  <path d="M18 456h384l10 18H8z" fill="url(#sill)"/>
+  <rect x="8" y="474" width="404" height="8" rx="2" fill="#8a5a2e"/>
+</svg>

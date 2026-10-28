@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" preserveAspectRatio="none">
+  <!-- generic, hand-drawn wood-grain texture; not a photo of any real product -->
+  <rect width="600" height="200" fill="#c08a52"/>
+  <g fill="none" stroke="#a5703c" stroke-width="2" opacity=".55">
+    <path d="M0 18c120 6 220-10 320 2s200 8 280-4"/>
+    <path d="M0 42c90 10 200-6 300 6s210 6 300-6"/>
+    <path d="M0 70c140-8 240 14 330 4s180-10 270 2"/>
+    <path d="M0 96c80 4 170-12 250-2 70 8 90 30 150 30s120-24 200-20"/>
+    <path d="M0 128c110 8 210-8 300 0s200 10 300-2"/>
+    <path d="M0 156c130-6 230 10 320 2s190-8 280 4"/>
+    <path d="M0 182c100 6 200-6 300 4s200 4 300-6"/>
+  </g>
+  <g fill="none" stroke="#d9a56d" stroke-width="1.5" opacity=".5">
+    <path d="M0 30c150 2 250-8 340 2s170 4 260-4"/>
+    <path d="M0 112c120 4 200-6 280 2 50 6 80 16 120 14s110-14 200-10"/>
+    <path d="M0 170c140 2 240-6 330 2s180 2 270-4"/>
+  </g>
+  <ellipse cx="420" cy="104" rx="26" ry="9" fill="none" stroke="#8f5e30" stroke-width="2" opacity=".5"/>
+</svg>
