@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Jana gradnje · Kočevje</title>
+<meta name="description" content="Jana gradnje, gradbeništvo. Kolodvorska cesta 16a, 1330 Kočevje. Pokličite 070 700 800.">
+<meta name="theme-color" content="#1d2126">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,700;112,800;112,900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width:899px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width:900px)">
+<style>
+:root{
+  --sand:#f1ede6; --sand2:#e6e0d6; --card:#fbf9f5; --ink:#1d2126; --ink2:#41464d; --mute:#6f7379;
+  --line:rgba(29,33,38,.14); --brick:#c4532a; --brick2:#de6b3f; --brickd:#9c3f1d;
+  --bp:#14304d; --bp2:#1b3d61; --bpl:rgba(170,205,240,.16);
+  --disp:"Archivo","Arial Black",Arial,sans-serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--sand);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.62;padding-bottom:86px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2)}
+.tag::before{content:"";width:22px;height:10px;border-radius:2px;background:var(--brick);box-shadow:inset 0 -3px 0 rgba(0,0,0,.18)}
+h1,h2,h3{font-family:var(--disp);font-stretch:112%;font-weight:900;line-height:.98;letter-spacing:-.01em}
+h2{font-size:clamp(36px,8.4vw,72px);margin:.22em 0 .32em}
+h2 em{font-style:normal;color:var(--brick)}
+.lead{color:var(--ink2);font-size:clamp(16.5px,2.2vw,19px);max-width:56ch}
+.ill{position:absolute;right:10px;bottom:10px;z-index:3;font-size:10px;letter-spacing:.06em;color:#fff;background:rgba(29,33,38,.66);padding:3px 9px;border-radius:99px}
+.ph{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brickd);background:rgba(196,83,42,.12);border:1px dashed rgba(196,83,42,.55);padding:3px 9px;border-radius:6px}
+
+/* ribbon */
+.ribbon{position:fixed;top:74px;right:10px;z-index:60;font-size:11px;font-weight:700;letter-spacing:.06em;padding:6px 11px;border-radius:99px;
+  background:rgba(29,33,38,.9);border:1px solid var(--brick2);color:#fff;pointer-events:none}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .35s,box-shadow .35s}
+.nav.solid{background:rgba(241,237,230,.93);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:11px;white-space:nowrap;min-width:0}
+.blocks{display:grid;grid-template-columns:repeat(3,10px);grid-auto-rows:7px;gap:2px;flex:none}
+.blocks i{background:var(--brick);border-radius:1px}
+.blocks i:nth-child(1){grid-column:1/3}.blocks i:nth-child(2){grid-column:3/4}
+.blocks i:nth-child(3){grid-column:1/2}.blocks i:nth-child(4){grid-column:2/4}
+.blocks i:nth-child(5){grid-column:1/3}.blocks i:nth-child(6){grid-column:3/4}
+.logo b{display:block;font-family:var(--disp);font-stretch:112%;font-weight:900;font-size:21px;line-height:1;color:#fff;transition:color .35s}
+.logo small{display:block;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#e7c3b3;margin-top:3px;transition:color .35s}
+.nav.solid .logo b{color:var(--ink)}.nav.solid .logo small{color:var(--ink2)}
+.nav-call{display:none;align-items:center;gap:8px;background:var(--brick);color:#fff;padding:10px 18px;border-radius:10px;font-weight:700;font-size:15px}
+.nav-call:hover{background:var(--brickd)}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;padding:120px 0 0;background:var(--ink);color:#fff}
+.hero .bg{position:absolute;inset:0;z-index:-2}
+.hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:drift 18s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,23,27,.55) 0%,rgba(20,23,27,.25) 28%,rgba(20,23,27,.86) 62%,rgba(20,23,27,.97) 100%)}
+@media(min-width:900px){.hero{align-items:center}.hero::before{background:linear-gradient(90deg,rgba(20,23,27,.96) 0%,rgba(20,23,27,.82) 42%,rgba(20,23,27,.12) 100%)}}
+.hero .ill{right:auto;left:var(--pad);bottom:auto;top:80px}
+.hero .inner{padding-bottom:44px}
+@media(min-width:900px){.hero .inner{padding-bottom:110px}.hero .inner>*{max-width:640px}}
+.hero .tag{color:#e2ddd6}
+.hero h1{font-size:clamp(46px,12.5vw,104px);margin:.2em 0 .22em}
+.hero h1 span{display:block}
+.hero h1 .b{color:var(--brick2)}
+.hero p.sub{max-width:44ch;color:#d9d6d1;font-size:clamp(17px,2.4vw,20px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 24px;border-radius:12px;font-weight:700;font-size:16.5px;transition:transform .2s,background .2s,box-shadow .2s;text-align:center}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-b{background:var(--brick);color:#fff;box-shadow:0 10px 24px -10px rgba(196,83,42,.8)}
+.btn-b:hover{background:var(--brickd);transform:translateY(-2px)}
+.btn-big{min-height:66px;font-size:19px;padding:0 28px}
+.btn-ghost{border:2px solid rgba(255,255,255,.5);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-ink{border:2px solid var(--ink);color:var(--ink)}
+.btn-ink:hover{background:rgba(29,33,38,.05)}
+@media(max-width:480px){.cta-row .btn{width:100%}}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:24px;font-size:14px;color:#cdc9c3}
+.facts span{display:inline-flex;align-items:center;gap:7px}
+.facts svg{width:16px;height:16px;color:var(--brick2)}
+
+/* measuring tape */
+.tape{position:relative;background:#e9b949;color:var(--ink);overflow:hidden;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.tape .track{display:flex;width:max-content;animation:tick 40s linear infinite}
+.tape .seg{position:relative;display:flex;align-items:center;gap:26px;padding:20px 26px 12px 0;white-space:nowrap;font-family:var(--disp);font-stretch:112%;font-weight:800;font-size:20px;text-transform:uppercase;letter-spacing:.02em}
+.tape .track::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 12px),repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 60px);
+  background-size:12px 6px,60px 10px;background-repeat:repeat-x}
+.tape .seg::after{content:"";width:10px;height:10px;background:var(--brick);border-radius:2px;flex:none}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section{padding:clamp(76px,11vw,130px) 0;position:relative}
+
+/* services */
+.svc-grid{display:grid;gap:20px;margin-top:40px}
+@media(min-width:820px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{position:relative;background:var(--card);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 var(--line),0 18px 40px -28px rgba(29,33,38,.45);transition:transform .35s,box-shadow .35s}
+.svc:hover{transform:translateY(-5px);box-shadow:0 1px 0 var(--line),0 28px 50px -26px rgba(29,33,38,.5)}
+.svc .pic{position:relative;aspect-ratio:1/1.02;overflow:hidden}
+@media(max-width:819px){.svc .pic{aspect-ratio:16/11}}
+.svc .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s}
+.svc:hover .pic img{transform:scale(1.05)}
+.svc .pic::after{content:"";position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(0deg,rgba(20,23,27,.55),transparent)}
+.svc .no{position:absolute;left:14px;top:14px;z-index:3;background:var(--card);color:var(--ink);font-family:var(--disp);font-weight:900;font-size:15px;line-height:1;padding:8px 10px;border-radius:8px}
+.svc .txt{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column;gap:8px}
+.svc h3{font-size:28px}
+.svc p{color:var(--ink2);font-size:15.5px}
+.svc .ph{align-self:flex-start;margin-top:4px}
+.svc .more{margin-top:auto;padding-top:14px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14.5px;color:var(--brickd)}
+.svc .more svg{width:18px;height:18px;transition:transform .25s}.svc:hover .more svg{transform:translateX(4px)}
+
+/* how: blueprint */
+.how{background:var(--bp);color:#fff;overflow:hidden;
+  background-image:linear-gradient(var(--bpl) 1px,transparent 1px),linear-gradient(90deg,var(--bpl) 1px,transparent 1px),
+  linear-gradient(rgba(170,205,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(170,205,240,.07) 1px,transparent 1px);
+  background-size:96px 96px,96px 96px,24px 24px,24px 24px}
+.how .tag{color:#cfe0f2}.how .tag::before{background:#9cc4ea;box-shadow:none}
+.how h2 em{color:#9cc4ea}
+.how .lead{color:#c7d6e6}
+.how .ph{color:#cfe0f2;background:rgba(156,196,234,.12);border-color:rgba(156,196,234,.5)}
+.steps{position:relative;margin-top:48px;display:grid;gap:0;counter-reset:s}
+@media(min-width:900px){.steps{grid-template-columns:repeat(4,1fr);gap:26px}}
+.steps::before{content:"";position:absolute;left:27px;top:6px;bottom:30px;width:2px;
+  background:repeating-linear-gradient(180deg,#9cc4ea 0 10px,transparent 10px 18px);transform-origin:top;transform:scaleY(0);transition:transform 2.2s cubic-bezier(.4,0,.2,1)}
+@media(min-width:900px){.steps::before{left:28px;right:28px;top:28px;bottom:auto;width:auto;height:2px;
+  background:repeating-linear-gradient(90deg,#9cc4ea 0 10px,transparent 10px 18px);transform-origin:left;transform:scaleX(0)}}
+.steps.in::before{transform:none}
+.step{position:relative;padding:0 0 34px 80px}
+@media(min-width:900px){.step{padding:88px 0 0}}
+.step .n{position:absolute;left:0;top:0;width:56px;height:56px;border-radius:12px;background:var(--bp);border:2px solid #9cc4ea;color:#fff;display:grid;place-items:center;
+  font-family:var(--disp);font-weight:900;font-size:22px}
+.step .n::after{content:"";position:absolute;inset:-8px;border:1px dashed rgba(156,196,234,.45);border-radius:16px}
+.step h3{font-size:30px;line-height:1}
+.step p{color:#c7d6e6;font-size:15.5px;margin-top:8px;max-width:30ch}
+.step .dim{display:block;margin-top:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#8fb3d6}
+
+/* crane band */
+.band{overflow:hidden;isolation:isolate;padding:clamp(110px,17vw,180px) 0;color:#fff}
+.band .bgimg{position:absolute;inset:0;z-index:-2}
+.band .bgimg img{width:100%;height:100%;object-fit:cover}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,23,27,.9),rgba(20,23,27,.45))}
+.band h2{max-width:14ch}
+.band h2 em{color:var(--brick2)}
+.band .lead{color:#dedad4}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chips span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:9px 14px;border-radius:99px;font-size:14.5px;font-weight:600;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.chips svg{width:16px;height:16px;color:var(--brick2)}
+
+/* location */
+.loc{display:grid;gap:28px;align-items:stretch}
+@media(min-width:900px){.loc{grid-template-columns:1fr 1fr;gap:56px}}
+.addr{margin-top:22px;border-top:2px solid var(--ink)}
+.addr div{display:flex;gap:14px;align-items:flex-start;padding:15px 2px;border-bottom:1px solid var(--line)}
+.addr svg{width:21px;height:21px;flex:none;margin-top:3px;color:var(--brick)}
+.addr b{display:block;font-weight:700;word-break:break-word}
+.addr small{color:var(--mute);font-size:14px}
+.mapcard{position:relative;overflow:hidden;min-height:340px;display:block;border-radius:18px;background:#e4dfd5;box-shadow:0 1px 0 var(--line),0 18px 40px -28px rgba(29,33,38,.45)}
+.mapcard svg.m{position:absolute;inset:0;width:100%;height:100%}
+.mpin{position:absolute;left:55%;top:46%;transform:translate(-50%,-100%)}
+.mpin svg{width:52px;height:52px;color:var(--brick);filter:drop-shadow(0 6px 8px rgba(0,0,0,.3));animation:bob 2.4s ease-in-out infinite}
+.mpin::after{content:"";position:absolute;left:50%;bottom:-5px;width:14px;height:14px;margin-left:-7px;border-radius:50%;border:2px solid var(--brick);animation:ring 2.4s ease-out infinite}
+@keyframes ring{0%{transform:scale(.4);opacity:1}100%{transform:scale(4);opacity:0}}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.mapcard .label{position:absolute;left:14px;right:14px;bottom:14px;background:var(--card);border-radius:12px;padding:12px 14px;box-shadow:0 6px 18px -10px rgba(0,0,0,.4)}
+.mapcard .label b{font-family:var(--disp);font-weight:900;font-size:20px;line-height:1.05;display:block}
+.mapcard .label small{color:var(--mute);font-size:13px}
+
+/* contact */
+.contact{background:var(--ink);color:#fff;text-align:center;overflow:hidden}
+.contact::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;
+  background:repeating-linear-gradient(90deg,var(--brick) 0 46px,var(--brickd) 46px 48px);opacity:.95}
+.contact .tag{color:#e2ddd6}
+.contact .lead{color:#cdc9c3;margin:0 auto}
+.bignum{display:inline-block;font-family:var(--disp);font-stretch:112%;font-weight:900;font-size:clamp(40px,12.4vw,132px);line-height:1;margin:22px 0 8px;color:var(--brick2);white-space:nowrap}
+.contact .cta-row{justify-content:center}
+
+footer{background:#121417;color:#9da1a7;padding:38px 0 30px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+footer .disc{flex-basis:100%;font-size:12px;opacity:.85}
+footer .legal{flex-basis:100%;color:#c5c8cc}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:60px;font-size:18px}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+.no-js .rv{opacity:1;transform:none}.no-js .steps::before{transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}.steps::before{transform:none}.hero .bg img{transform:none}
+}
+:focus-visible{outline:3px solid var(--brick2);outline-offset:3px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="ribbon" aria-hidden="true">Predogled – AK agencija</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="brick" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="1"/><path d="M2 12h20M9 5v7M15 12v7"/></g></symbol>
+    <symbol id="helmet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 17h18v2H3z"/><path d="M5 17a7 7 0 0 1 14 0"/><path d="M10 10V6h4v4"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Jana gradnje, na vrh">
+      <span class="blocks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span><b>Jana gradnje</b><small>Gradbeništvo · Kočevje</small></span>
+    </a>
+    <a class="nav-call" href="tel:+38670700800"><svg width="16" height="16" aria-hidden="true"><use href="#tel"/></svg>070 700 800</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-bottom:0">
+    <div class="bg">
+      <picture>
+        <source media="(max-width:899px)" srcset="assets/hero-m.webp" width="860" height="1333">
+        <img src="assets/hero.webp" alt="Roke z zidarsko žlico polagajo betonski zidak na sveže malto" width="1600" height="1066" fetchpriority="high">
+      </picture>
+    </div>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap inner">
+      <div class="tag rv">Jana gradnje · Kolodvorska cesta, Kočevje</div>
+      <h1 class="rv d1"><span>Gradbena dela</span><span class="b">v Kočevju.</span></h1>
+      <p class="sub rv d2">Načrtujete gradnjo, prizidek ali obnovo? Pokličite, povejte, kaj imate v mislih, in se dogovorimo za naslednji korak.</p>
+      <div class="cta-row rv d3">
+        <a class="btn btn-b btn-big" href="tel:+38670700800"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 070 700 800</a>
+        <a class="btn btn-ghost" href="#storitve">Kaj delamo <svg aria-hidden="true" style="width:18px;height:18px"><use href="#arrow"/></svg></a>
+      </div>
+      <div class="facts rv d3">
+        <span><svg aria-hidden="true"><use href="#pinico"/></svg>Kolodvorska cesta 16a, Kočevje</span>
+        <span><svg aria-hidden="true"><use href="#tel"/></svg>070 700 800</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="tape" aria-hidden="true">
+    <div class="track">
+      <span class="seg">Gradbeništvo</span><span class="seg">Kolodvorska cesta 16a</span><span class="seg">Kočevje</span><span class="seg">070 700 800</span>
+      <span class="seg">Gradbeništvo</span><span class="seg">Kolodvorska cesta 16a</span><span class="seg">Kočevje</span><span class="seg">070 700 800</span>
+    </div>
+  </div>
+
+  <section id="storitve">
+    <div class="wrap">
+      <div class="tag rv">Področja dela</div>
+      <h2 class="rv d1">Od zidaka <em>do hiše.</em></h2>
+      <p class="lead rv d2">Predlog razdelkov za gradbeno podjetje. Katera dela dejansko izvajate, na katerem območju in s kakšnimi pogoji, dopolnimo skupaj.</p>
+      <div class="svc-grid">
+        <article class="svc rv">
+          <div class="pic">
+            <img src="assets/hisa.webp" alt="Sodobna dvonadstropna hiša z velikimi okni in bazenom" loading="lazy" width="1200" height="1080">
+            <span class="no">01</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Novogradnje</h3><p>Gradnja stanovanjskih in drugih objektov po dogovoru.</p><span class="ph">dopolnimo skupaj</span>
+            <a class="more" href="tel:+38670700800">Pokličite za ogled <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </article>
+        <article class="svc rv d1">
+          <div class="pic">
+            <img src="assets/zidanje.webp" alt="Zidarska žlica nanaša malto na opečni zid" loading="lazy" width="1000" height="1080">
+            <span class="no">02</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Zidarska dela</h3><p>Zidanje, prizidki in adaptacije obstoječih objektov.</p><span class="ph">dopolnimo skupaj</span>
+            <a class="more" href="tel:+38670700800">Vprašajte <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </article>
+        <article class="svc rv d2">
+          <div class="pic">
+            <img src="assets/beton.webp" alt="Gradbišče z opažem, armaturo in betonskimi stebri" loading="lazy" width="1200" height="864">
+            <span class="no">03</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Betonska dela</h3><p>Temelji, plošče in drugi betonski elementi.</p><span class="ph">dopolnimo skupaj</span>
+            <a class="more" href="tel:+38670700800">Dogovorite se <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="kako">
+    <div class="wrap">
+      <div class="tag rv">Kako poteka</div>
+      <h2 class="rv d1">Štirje koraki <em>do začetka del.</em></h2>
+      <p class="lead rv d2">Predlog poteka sodelovanja. <span class="ph">potrdimo skupaj</span></p>
+      <div class="steps" id="steps">
+        <div class="step rv"><span class="n">1</span><h3>Klic</h3><p>Pokličete 070 700 800 in na kratko opišete, kaj načrtujete.</p><span class="dim">korak 01</span></div>
+        <div class="step rv d1"><span class="n">2</span><h3>Ogled</h3><p>Dogovorimo se za ogled lokacije ali objekta.</p><span class="dim">korak 02</span></div>
+        <div class="step rv d2"><span class="n">3</span><h3>Ponudba</h3><p>Prejmete ponudbo za dogovorjeni obseg del.</p><span class="dim">korak 03</span></div>
+        <div class="step rv d3"><span class="n">4</span><h3>Izvedba</h3><p>Dela izvedemo po dogovorjenem terminu.</p><span class="dim">korak 04</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="bgimg"><img src="assets/zerjav.webp" alt="" loading="lazy" width="1600" height="1066"></div>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap">
+      <div class="tag rv" style="color:#e2ddd6">Gradnja ali obnova</div>
+      <h2 class="rv d1">Imate načrt? <em>Prvi korak je klic.</em></h2>
+      <p class="lead rv d2">Povejte, kje in kaj želite graditi, in skupaj preverimo, kako naprej.</p>
+      <div class="chips rv d3">
+        <span><svg aria-hidden="true"><use href="#helmet"/></svg>Gradbeništvo</span>
+        <span><svg aria-hidden="true"><use href="#pinico"/></svg>Kolodvorska cesta 16a</span>
+        <span><svg aria-hidden="true"><use href="#tel"/></svg>070 700 800</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="lokacija">
+    <div class="wrap loc">
+      <div class="rv">
+        <div class="tag">Kje smo</div>
+        <h2>Kolodvorska <em>cesta 16a</em></h2>
+        <p class="lead">V Kočevju, blizu železniške postaje. Pot najlažje najdete na Google Zemljevidih.</p>
+        <div class="addr">
+          <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Kolodvorska cesta 16a</b><small>1330 Kočevje</small></span></div>
+          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38670700800">070 700 800</a></b><small>telefon</small></span></div>
+          <div><svg aria-hidden="true"><use href="#clock"/></svg><span><b>Delovni čas</b><small>dopolnimo skupaj</small></span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="https://www.google.com/maps/search/?api=1&amp;query=Jana+gradnje+Ko%C4%8Devje" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg>Odpri v Google Zemljevidih</a>
+        </div>
+      </div>
+      <a class="mapcard rv d1" href="https://www.google.com/maps/search/?api=1&amp;query=Jana+gradnje+Ko%C4%8Devje" target="_blank" rel="noopener" aria-label="Jana gradnje na Google Zemljevidih">
+        <svg class="m" viewBox="0 0 400 340" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <path d="M130 -10 C 150 80, 170 150, 180 200 S 200 300, 214 360" fill="none" stroke="#fff" stroke-width="16"/>
+          <path d="M130 -10 C 150 80, 170 150, 180 200 S 200 300, 214 360" fill="none" stroke="#e9b949" stroke-width="3"/>
+          <path d="M250 -10 L 262 360" stroke="#8d8a83" stroke-width="5"/>
+          <path d="M250 -10 L 262 360" stroke="#e4dfd5" stroke-width="2" stroke-dasharray="6 8"/>
+          <path d="M180 200 C 240 214, 330 236, 420 270" fill="none" stroke="#fff" stroke-width="9"/>
+          <path d="M-20 170 C 60 180, 120 190, 180 200" fill="none" stroke="#fff" stroke-width="8"/>
+          <g fill="#d1cabd"><rect x="200" y="120" width="34" height="26" rx="2"/><rect x="200" y="70" width="22" height="16" rx="2"/><rect x="90" y="100" width="22" height="18" rx="2"/><rect x="70" y="230" width="26" height="18" rx="2"/><rect x="290" y="120" width="20" height="16" rx="2"/><rect x="300" y="60" width="24" height="16" rx="2"/><rect x="232" y="250" width="18" height="16" rx="2"/></g>
+          <g fill="#c7d3b4"><circle cx="350" cy="190" r="26"/><circle cx="60" cy="40" r="30"/><circle cx="110" cy="300" r="24"/></g>
+        </svg>
+        <div class="mpin"><svg aria-hidden="true"><use href="#pinico"/></svg></div>
+        <div class="label"><b>Kolodvorska cesta 16a</b><small>shematski prikaz · odpri zemljevid</small></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="tag rv">Kontakt</div>
+      <h2 class="rv d1">Kaj boste gradili?</h2>
+      <p class="lead rv d2">Pokličite in povejte, kaj potrebujete.</p>
+      <a class="bignum rv d2" href="tel:+38670700800">070 700 800</a>
+      <div class="cta-row rv d3">
+        <a class="btn btn-b btn-big" href="tel:+38670700800"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči zdaj</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Jana gradnje, trgovina in gradbeništvo, d.o.o. (naziv po Google Zemljevidih) · Kolodvorska cesta 16a, 1330 Kočevje · <a href="tel:+38670700800">070 700 800</a></span>
+    <span>Pravni naziv in podatke podjetja dopolnimo skupaj.</span>
+    <span class="legal">Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
+    <span class="disc">Fotografije na tej strani so ilustrativne (Unsplash, licenca Unsplash) in ne prikazujejo objektov, gradbišč ali del podjetja. Področja dela in potek sodelovanja so predlog, ki ga potrdimo skupaj. Naslov in telefon: Google Zemljevidi, 28. 10. 2026.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-b" href="tel:+38670700800"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 070 700 800</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>window.innerHeight*0.7);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv,.steps');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el);});
+  var check=function(){var h=window.innerHeight;if(h+window.scrollY>=document.documentElement.scrollHeight-8){els.forEach(function(el){el.classList.add('in');});return;}
+    els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<h*0.94&&r.bottom>0)el.classList.add('in');}});};
+  window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+})();
+</script>
+
+<!--
+SOURCES: see NOTES.md (not deployed). Google Maps listing 28. 10. 2026: "Jana gradnje, trgovina in gradbeništvo, d.o.o.",
+category Gradbenik, Kolodvorska cesta 16a, 1330 Kocevje, tel 070 700 800, no hours, no website, no reviews, not claimed.
+No company of that name in bizi.si / CompanyWall (incl. deleted) / PIRS. No prices, years, references, reviews, certifications
+or service area are claimed. Photos: Unsplash License.
+-->
+</body>
+</html>
