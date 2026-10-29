@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Domen Bambič s.p. · Vodovodne in ogrevalne inštalacije · Dobrepolje</title>
+<meta name="description" content="DHS, hišne storitve, Domen Bambič s.p. Vodovodne in ogrevalne inštalacije, toplotne črpalke, prenova kopalnic. Ponikve 28, 1312 Videm - Dobrepolje. Pokličite 051 864 601.">
+<meta name="theme-color" content="#0b1e3a">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width:899px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width:900px)">
+<style>
+:root{
+  --frost:#f2f5f9; --frost2:#e4eaf2; --card:#ffffff; --navy:#0b1e3a; --navy2:#13294b; --navy3:#1c3760;
+  --ink:#0b1e3a; --ink2:#3b4c66; --mute:#6a7891; --line:rgba(11,30,58,.12);
+  --water:#2f7cf6; --water2:#7fb3ff; --waterd:#1a5fd0; --ember:#ff6b2c; --ember2:#ffa06e;
+  --flow:linear-gradient(90deg,var(--water) 0%,#7c6cf0 50%,var(--ember) 100%);
+  --disp:"Sora",system-ui,sans-serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--frost);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.62;padding-bottom:92px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-family:var(--disp);font-weight:700;line-height:1.04;letter-spacing:-.025em}
+h2{font-size:clamp(34px,7.4vw,62px);margin:.25em 0 .35em}
+h2 em{font-style:normal;background:var(--flow);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--waterd)}
+.eyebrow::before{content:"";width:28px;height:3px;border-radius:3px;background:var(--flow)}
+.lead{color:var(--ink2);font-size:clamp(16.5px,2.2vw,19px);max-width:60ch}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);background:var(--card);border:1px dashed rgba(11,30,58,.35);padding:3px 10px;border-radius:999px}
+.ill{position:absolute;z-index:3;font-size:10.5px;letter-spacing:.04em;color:#fff;background:rgba(11,30,58,.68);padding:3px 9px;border-radius:999px;pointer-events:none}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;color:#fff;transition:background .3s,box-shadow .3s}
+.nav.solid{background:rgba(11,30,58,.94);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.07)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:11px;white-space:nowrap;min-width:0}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{display:block;font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.01em;line-height:1.1}
+.logo small{display:block;font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.72;margin-top:2px}
+.nav-call{display:none;align-items:center;gap:8px;background:#fff;color:var(--navy);padding:10px 18px;border-radius:999px;font-weight:700;font-size:15px}
+.nav-call svg{width:16px;height:16px;color:var(--water)}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+.ribbon{position:fixed;top:74px;right:10px;z-index:60;font-size:11px;font-weight:700;letter-spacing:.04em;padding:6px 12px;border-radius:999px;background:var(--ember);color:#fff;box-shadow:0 6px 18px -8px rgba(0,0,0,.55);pointer-events:none}
+
+/* hero */
+.hero{position:relative;min-height:min(100svh,880px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;padding:130px 0 0;color:#fff;background:var(--navy)}
+.hero .bg{position:absolute;inset:0;z-index:-2}
+.hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);animation:settle 18s ease-out forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,30,58,.55) 0%,rgba(11,30,58,.18) 26%,rgba(11,30,58,.78) 56%,rgba(11,30,58,.98) 84%)}
+@media(min-width:900px){.hero::before{background:linear-gradient(90deg,rgba(11,30,58,.97) 0%,rgba(11,30,58,.82) 40%,rgba(11,30,58,.25) 75%,rgba(11,30,58,.1) 100%),linear-gradient(0deg,rgba(11,30,58,.6),transparent 40%)}}
+.hero .ill{right:var(--pad);top:80px}
+@media(min-width:900px){.hero .ill{top:auto;bottom:22px}}
+.hero .inner{padding-bottom:42px}
+@media(min-width:900px){.hero .inner{padding-bottom:84px}}
+.status{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);padding:6px 14px 6px 10px;border-radius:999px}
+.status i{width:9px;height:9px;border-radius:50%;background:#9aa6b8;flex:none}
+.status.open i{background:#35d07f;box-shadow:0 0 0 4px rgba(53,208,127,.22)}
+.hero h1{font-size:clamp(44px,11.4vw,108px);margin:.32em 0 .22em;max-width:11ch}
+.hero h1 span{display:block}
+.hero h1 .w{color:var(--water2)}
+.hero h1 .h{color:var(--ember2)}
+.hero .sub{max-width:47ch;color:#dbe3ef;font-size:clamp(17px,2.3vw,20px)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16.5px;text-align:center;transition:transform .2s,background .2s,box-shadow .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-p{background:var(--water);color:#fff;box-shadow:0 16px 30px -14px rgba(47,124,246,.95)}
+.btn-p:hover{background:var(--waterd);transform:translateY(-2px)}
+.btn-big{min-height:64px;font-size:18.5px;padding:0 30px}
+.btn-g{border:2px solid rgba(255,255,255,.5);color:#fff}
+.btn-g:hover{background:rgba(255,255,255,.1)}
+.btn-o{border:2px solid var(--navy);color:var(--navy)}
+.btn-o:hover{background:rgba(11,30,58,.06)}
+@media(max-width:480px){.cta .btn{width:100%}}
+.hline{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);max-width:720px;font-size:14.5px;color:#c9d4e4}
+.hline span{display:inline-flex;align-items:center;gap:8px}
+.hline svg{width:16px;height:16px;color:var(--water2);flex:none}
+.flowbar{height:6px;background:var(--flow)}
+
+/* trio */
+.trio{background:var(--navy);color:#fff;padding:0}
+.trio .wrap{display:grid}
+@media(min-width:760px){.trio .wrap{grid-template-columns:repeat(3,1fr)}}
+.trio div.t{padding:22px 4px;display:flex;gap:14px;align-items:center;border-top:1px solid rgba(255,255,255,.08)}
+.trio div.t:first-child{border-top:0}
+@media(min-width:760px){.trio div.t{padding:28px 22px;border-top:0;border-left:1px solid rgba(255,255,255,.08)}.trio div.t:first-child{border-left:0;padding-left:0}}
+.trio .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;flex:none}
+.trio .ic svg{width:24px;height:24px}
+.trio b{font-family:var(--disp);font-weight:600;font-size:18px;display:block;line-height:1.2}
+.trio small{color:#a9b6c9;font-size:13.5px}
+
+section{padding:clamp(72px,11vw,124px) 0;position:relative}
+
+/* services */
+.svc-head{display:grid;gap:8px}
+@media(min-width:900px){.svc-head{grid-template-columns:1.1fr 1fr;align-items:end;gap:56px}}
+.svc-grid{display:grid;gap:18px;margin-top:40px}
+@media(min-width:700px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{position:relative;background:var(--card);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 var(--line),0 18px 40px -30px rgba(11,30,58,.45);transition:transform .3s,box-shadow .3s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 1px 0 var(--line),0 28px 50px -28px rgba(11,30,58,.55)}
+.svc .pic{position:relative;aspect-ratio:5/4;overflow:hidden;background:var(--frost2)}
+.svc .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s}
+.svc:hover .pic img{transform:scale(1.05)}
+.svc .pic .ill{left:12px;bottom:12px}
+.svc .kind{position:absolute;right:12px;top:12px;z-index:3;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;padding:5px 11px;border-radius:999px}
+.k-w{background:var(--water)}.k-h{background:var(--ember)}.k-d{background:var(--navy)}
+.svc .txt{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+.svc h3{font-size:clamp(22px,2.6vw,25px)}
+.svc p{color:var(--ink2);font-size:15.5px;margin-top:8px}
+.svc ul{list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}
+.svc li{font-size:13px;font-weight:600;color:var(--ink2);background:var(--frost);padding:4px 11px;border-radius:999px}
+.svc.plain{background:var(--navy);color:#fff}
+.svc.plain .pic{background:radial-gradient(circle at 30% 30%,#1f4a86,var(--navy) 70%)}
+.svc.plain .pic svg{position:absolute;inset:0;margin:auto;width:46%;height:auto}
+.svc.plain p{color:#c3cede}
+.svc.plain li{background:rgba(255,255,255,.1);color:#dbe3ef}
+.src{display:block;font-size:12.5px;color:var(--mute);margin-top:18px}
+
+/* how: pipe timeline */
+.how{background:var(--card)}
+.how-grid{display:grid;gap:34px}
+@media(min-width:900px){.how-grid{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}.how-grid .intro{position:sticky;top:110px}}
+.pipe{list-style:none;position:relative;padding-left:58px}
+.pipe::before{content:"";position:absolute;left:21px;top:8px;bottom:8px;width:6px;border-radius:6px;background:var(--frost2)}
+.pipe::after{content:"";position:absolute;left:21px;top:8px;bottom:8px;width:6px;border-radius:6px;background:linear-gradient(180deg,var(--water),#7c6cf0 55%,var(--ember));transform:scaleY(0);transform-origin:top;transition:transform 1.8s cubic-bezier(.6,0,.2,1) .2s}
+.pipe.in::after{transform:none}
+.pipe li{position:relative;padding:4px 0 34px}
+.pipe li:last-child{padding-bottom:0}
+.pipe .n{position:absolute;left:-58px;top:0;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:3px solid var(--water);font-family:var(--disp);font-weight:700;font-size:18px;color:var(--navy);z-index:1}
+.pipe li:nth-child(3) .n{border-color:#a36ad8}.pipe li:nth-child(4) .n{border-color:var(--ember)}
+.pipe h3{font-size:24px;padding-top:8px}
+.pipe p{color:var(--ink2);margin-top:4px;max-width:46ch}
+
+/* band */
+.band{overflow:hidden;isolation:isolate;padding:clamp(110px,16vw,190px) 0;color:#fff;background:var(--navy)}
+.band .bgimg{position:absolute;inset:0;z-index:-2}
+.band .bgimg img{width:100%;height:100%;object-fit:cover}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(11,30,58,.94),rgba(11,30,58,.55))}
+.band .ill{right:12px;bottom:12px}
+.band blockquote{font-family:var(--disp);font-weight:700;font-size:clamp(34px,7vw,66px);line-height:1.08;letter-spacing:-.025em;max-width:16ch}
+.band blockquote span{color:var(--ember2)}
+.band cite{display:block;font-style:normal;color:#c3cede;margin-top:18px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.chips span{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.26);padding:8px 15px;border-radius:999px;font-weight:600;font-size:14.5px}
+.chips svg{width:16px;height:16px;color:var(--water2)}
+
+/* registry */
+.reg{display:grid;gap:30px}
+@media(min-width:900px){.reg{grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}}
+.sheet{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 1px 0 var(--line),0 18px 40px -30px rgba(11,30,58,.45)}
+.sheet .hd{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:16px 20px;background:var(--navy);color:#fff;font-weight:700;font-size:14px}
+.sheet .hd span:last-child{color:var(--water2);font-size:12.5px;font-weight:600}
+.sheet dl div{display:grid;gap:2px;padding:13px 20px;border-top:1px solid var(--line)}
+@media(min-width:560px){.sheet dl div{grid-template-columns:150px 1fr;gap:14px}}
+.sheet dt{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-top:3px}
+.sheet dd{font-weight:600;word-break:break-word}
+.sheet dd small{display:block;font-weight:500;color:var(--mute);font-size:12.5px}
+
+/* contact */
+.contact{display:grid;gap:18px;margin-top:12px}
+@media(min-width:900px){.contact{grid-template-columns:1.1fr 1fr}}
+.callp{position:relative;overflow:hidden;background:var(--navy);color:#fff;border-radius:22px;padding:32px 24px}
+.callp::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--flow)}
+.callp::after{content:"";position:absolute;right:-70px;bottom:-70px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(47,124,246,.35),transparent 70%)}
+.callp small{display:block;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#a9b6c9;position:relative;z-index:1}
+.callp .n{display:block;font-family:var(--disp);font-weight:700;font-size:clamp(42px,12vw,78px);line-height:1;letter-spacing:-.03em;margin:14px 0 22px;white-space:nowrap;position:relative;z-index:1}
+.callp .btn{width:100%;position:relative;z-index:1}
+.callp .who{display:block;margin-top:14px;font-size:14.5px;color:#c3cede;position:relative;z-index:1}
+.panel{background:var(--card);border-radius:22px;padding:6px 22px;box-shadow:0 1px 0 var(--line),0 18px 40px -30px rgba(11,30,58,.45)}
+.crow{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
+.crow:last-child{border-bottom:0}
+.crow svg{width:22px;height:22px;flex:none;margin-top:2px;color:var(--water)}
+.crow b{display:block;font-weight:700;word-break:break-word}
+.crow small{color:var(--mute);font-size:13.5px}
+.crow a b,.crow b a{text-decoration:underline;text-decoration-color:var(--water2);text-decoration-thickness:2px;text-underline-offset:3px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:2px 16px;font-size:14.5px;margin-top:4px}
+.hours span:nth-child(odd){color:var(--mute)}
+.hours .today{font-weight:700;color:var(--ink)}
+
+footer{background:var(--navy);color:#a9b6c9;padding:40px 0 32px;font-size:13px}
+footer .wrap{display:flex;flex-direction:column;gap:10px}
+footer .disc{font-size:12px;opacity:.85}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:60px;font-size:18px;box-shadow:0 14px 30px -10px rgba(11,30,58,.7)}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+.no-js .rv{opacity:1;transform:none}.no-js .pipe::after{transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}.pipe::after{transform:none}.hero .bg img{transform:none}
+}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="ribbon" aria-hidden="true">Predogled – AK agencija</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="drop" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5C8 8 5.5 11.6 5.5 15a6.5 6.5 0 0 0 13 0c0-3.4-2.5-7-6.5-12.5z"/></symbol>
+    <symbol id="flame" viewBox="0 0 24 24"><path fill="currentColor" d="M12.5 2c.6 3.2-1 5-2.6 6.8C8.3 10.6 7 12.2 7 14.8A5.2 5.2 0 0 0 12.2 20c3 0 5.3-2.3 5.3-5.4 0-2.6-1.4-4.2-2.4-5.6-.2 1.3-.8 2.3-1.8 2.9.4-3.6-.2-7.2-.8-9.9z"/></symbol>
+    <symbol id="leaf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 19c0-8 5-13 15-14-.5 9-5.5 14-13 14H5zm0 0 8-8"/></symbol>
+    <symbol id="map" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></g></symbol>
+    <symbol id="user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Domen Bambič s.p., na vrh">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#fff"/><path d="M22 12c-6 9-10 15-10 21a10 10 0 0 0 20 0c0-6-4-12-10-21z" fill="#2f7cf6"/><path d="M44 52c6 0 10-4 10-9 0-6-5-9-6-15-3 3-4 6-4 9-2-2-3-4-3-7-4 3-7 8-7 13 0 5 4 9 10 9z" fill="#ff6b2c"/></svg>
+      <span><b>Domen Bambič</b><small>DHS · hišne storitve</small></span>
+    </a>
+    <a class="nav-call" href="tel:+38651864601"><svg aria-hidden="true"><use href="#tel"/></svg>051 864 601</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-bottom:0">
+    <div class="bg">
+      <picture>
+        <source media="(max-width:899px)" srcset="assets/hero-m.webp" width="800" height="1200">
+        <img src="assets/hero.webp" alt="Kotlovnica s cevmi, ventili in termometri na rumeni steni" width="1600" height="900" fetchpriority="high">
+      </picture>
+    </div>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap inner">
+      <div class="status rv" id="status"><i></i><span>Pon–sob 7–17 · pokličite</span></div>
+      <h1 class="rv d1"><span class="w">Voda teče.</span> <span class="h">Dom je topel.</span></h1>
+      <p class="sub rv d2">Vodovodne in ogrevalne inštalacije, toplotne črpalke, prenova kopalnic in hišna popravila. Domen Bambič s.p. s Ponikev pri Dobrepolju.</p>
+      <div class="cta rv d3">
+        <a class="btn btn-p btn-big" href="tel:+38651864601"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 051 864 601</a>
+        <a class="btn btn-g" href="#storitve">Storitve <svg aria-hidden="true" style="width:18px;height:18px"><use href="#arrow"/></svg></a>
+      </div>
+      <div class="hline rv d3">
+        <span><svg aria-hidden="true"><use href="#pin"/></svg>Ponikve 28, Videm - Dobrepolje</span>
+        <span><svg aria-hidden="true"><use href="#map"/></svg>po navedbah podjetja: po vsej Sloveniji</span>
+      </div>
+    </div>
+  </section>
+  <div class="flowbar" aria-hidden="true"></div>
+
+  <section class="trio" aria-label="Tri glavna področja">
+    <div class="wrap">
+      <div class="t rv"><span class="ic" style="background:rgba(47,124,246,.18);color:#7fb3ff"><svg aria-hidden="true"><use href="#drop"/></svg></span><span><b>Vodovodne inštalacije</b><small>vodovod in odtoki</small></span></div>
+      <div class="t rv d1"><span class="ic" style="background:rgba(255,107,44,.18);color:#ffa06e"><svg aria-hidden="true"><use href="#flame"/></svg></span><span><b>Ogrevalne inštalacije</b><small>radiatorji in talno ogrevanje</small></span></div>
+      <div class="t rv d2"><span class="ic" style="background:rgba(53,208,127,.16);color:#7fe0ad"><svg aria-hidden="true"><use href="#leaf"/></svg></span><span><b>Toplotne črpalke</b><small>dobava in montaža</small></span></div>
+    </div>
+  </section>
+
+  <section id="storitve">
+    <div class="wrap">
+      <div class="svc-head">
+        <div>
+          <span class="eyebrow rv">Storitve</span>
+          <h2 class="rv d1">Od prve cevi do <em>toplega doma.</em></h2>
+        </div>
+        <p class="lead rv d2">Storitve, kot jih podjetje samo navaja na svojih javnih profilih. Natančen obseg, materiale in pogoje dopolnimo skupaj.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc rv">
+          <div class="pic"><img src="assets/vodovod.webp" alt="Odprta stena z vodovodnimi in odtočnimi cevmi med gradnjo" loading="lazy" width="1000" height="800"><span class="kind k-w">Voda</span><span class="ill">Ilustrativna fotografija</span></div>
+          <div class="txt"><h3>Vodovodne inštalacije</h3>
+            <p>Vodovod in odtoki v novogradnji ali obstoječi hiši.</p>
+            <ul><li>vodovodne inštalacije</li><li>odtočne inštalacije</li><li>novogradnje</li></ul>
+          </div>
+        </article>
+        <article class="svc rv d1">
+          <div class="pic"><img src="assets/ogrevanje.webp" alt="Bel litoželezni radiator ob svetlo zeleni steni" loading="lazy" width="1000" height="800"><span class="kind k-h">Toplota</span><span class="ill">Ilustrativna fotografija</span></div>
+          <div class="txt"><h3>Ogrevalne inštalacije</h3>
+            <p>Radiatorsko in talno ogrevanje, tudi predelave obstoječih sistemov.</p>
+            <ul><li>radiatorji</li><li>talno ogrevanje</li><li>termostatski ventili</li></ul>
+          </div>
+        </article>
+        <article class="svc rv d2">
+          <div class="pic"><img src="assets/crpalka.webp" alt="Zunanja enota toplotne črpalke ob beli hiši" loading="lazy" width="1000" height="800"><span class="kind k-h">Toplota</span><span class="ill">Ilustrativna fotografija</span></div>
+          <div class="txt"><h3>Toplotne črpalke</h3>
+            <p>Dobava in montaža toplotne črpalke ter priklop na ogrevalni sistem.</p>
+            <ul><li>dobava</li><li>montaža</li><li>zamenjava stare ogrevalne naprave</li></ul>
+          </div>
+        </article>
+        <article class="svc rv">
+          <div class="pic"><img src="assets/kopalnica.webp" alt="Sodobna kopalnica s kamnitim umivalnikom in tušem" loading="lazy" width="1000" height="800"><span class="kind k-w">Voda</span><span class="ill">Ilustrativna fotografija</span></div>
+          <div class="txt"><h3>Prenova kopalnic</h3>
+            <p>Vodovodne inštalacije za prenovo stare kopalnice ali kopalnico v novogradnji.</p>
+            <ul><li>prenova kopalnice</li><li>groba inštalacija kopalnice</li></ul>
+          </div>
+        </article>
+        <article class="svc rv d1">
+          <div class="pic"><img src="assets/popravila.webp" alt="Voda teče iz pipe v okrogel umivalnik" loading="lazy" width="1000" height="800"><span class="kind k-d">Dom</span><span class="ill">Ilustrativna fotografija</span></div>
+          <div class="txt"><h3>Hišna popravila in vzdrževanje</h3>
+            <p>Popravila in vzdrževanje objektov, za kar je podjetje tudi registrirano.</p>
+            <ul><li>popravila</li><li>vzdrževanje objektov</li></ul>
+          </div>
+        </article>
+        <article class="svc plain rv d2">
+          <div class="pic" aria-hidden="true"><svg viewBox="0 0 120 96"><g fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 26h34a10 10 0 0 1 10 10v24a10 10 0 0 0 10 10h46" stroke="#2f7cf6"/><path d="M10 50h18a8 8 0 0 1 8 8v28" stroke="#ff6b2c"/></g><circle cx="54" cy="44" r="9" fill="#fff"/></svg></div>
+          <div class="txt"><h3>Adaptacije inštalacij</h3>
+            <p>Predelava obstoječih inštalacij ob prenovi ali adaptaciji hiše.</p>
+            <ul><li>adaptacije</li><li>prenova hiše</li></ul>
+          </div>
+        </article>
+      </div>
+      <span class="src rv">Vir: predstavitev podjetja na Mojmojster.net in objava lastnika na Google Zemljevidih (pregledano 29. 10. 2026). Registrirana dejavnost: 81.100 Vzdrževanje objektov in hišniška dejavnost.</span>
+    </div>
+  </section>
+
+  <section class="how" id="kako">
+    <div class="wrap how-grid">
+      <div class="intro">
+        <span class="eyebrow rv">Kako poteka</span>
+        <h2 class="rv d1">Štirje koraki, <em>en klic.</em></h2>
+        <p class="lead rv d2">Predlog poteka, ki ga prilagodimo tako, kot dejansko delate.</p>
+        <span class="tag rv d2" style="margin-top:10px">predlog · potek potrdimo z izvajalcem</span>
+      </div>
+      <ol class="pipe" id="pipe">
+        <li class="rv"><span class="n">1</span><h3>Klic</h3><p>Pokličete 051 864 601 in na kratko opišete, kaj potrebujete: okvara, prenova ali novogradnja.</p></li>
+        <li class="rv d1"><span class="n">2</span><h3>Ogled</h3><p>Dogovor za ogled na mestu, kjer je to potrebno.</p></li>
+        <li class="rv d2"><span class="n">3</span><h3>Ponudba</h3><p>Ponudba za dogovorjena dela in termin izvedbe.</p></li>
+        <li class="rv d3"><span class="n">4</span><h3>Izvedba</h3><p>Izvedba del po dogovoru.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="bgimg"><img src="assets/pas.webp" alt="Vodomeri in cevi na zunanji steni" loading="lazy" width="1600" height="900"></div>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap">
+      <blockquote class="rv">Udobje vašega doma. <span>Naša skrb.</span></blockquote>
+      <cite class="rv d1">Slogan s predstavitvene slike podjetja na Google Zemljevidih</cite>
+      <div class="chips rv d2">
+        <span><svg aria-hidden="true"><use href="#drop"/></svg>vodovod</span>
+        <span><svg aria-hidden="true"><use href="#flame"/></svg>ogrevanje</span>
+        <span><svg aria-hidden="true"><use href="#leaf"/></svg>toplotne črpalke</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="podjetje">
+    <div class="wrap reg">
+      <div class="rv">
+        <span class="eyebrow">O podjetju</span>
+        <h2>Podatki, ki jih <em>lahko preverite.</em></h2>
+        <p class="lead">Registriran samostojni podjetnik s sedežem na Ponikvah v občini Dobrepolje, vpisan od leta 2016.</p>
+        <span class="tag" style="margin-top:12px">mnenja strank, fotografije del in logotip dopolnimo skupaj</span>
+      </div>
+      <div class="sheet rv d1">
+        <div class="hd"><span>Poslovni register</span><span>stanje 29. 10. 2026</span></div>
+        <dl>
+          <div><dt>Firma</dt><dd>DHS, hišne storitve, Domen Bambič s.p.</dd></div>
+          <div><dt>Nosilec</dt><dd>Domen Bambič</dd></div>
+          <div><dt>Sedež</dt><dd>Ponikve 28, 1312 Videm - Dobrepolje</dd></div>
+          <div><dt>Dejavnost</dt><dd>81.100 Vzdrževanje objektov in hišniška dejavnost</dd></div>
+          <div><dt>Vpis</dt><dd>7. 4. 2016</dd></div>
+          <div><dt>Matična št.</dt><dd>7050542000</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding-top:0">
+    <div class="wrap">
+      <span class="eyebrow rv">Kontakt</span>
+      <h2 class="rv d1">Pokličite in <em>opišite težavo.</em></h2>
+      <div class="contact">
+        <div class="callp rv">
+          <small>Domen Bambič s.p.</small>
+          <a class="n" href="tel:+38651864601">051 864 601</a>
+          <a class="btn btn-p btn-big" href="tel:+38651864601"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči zdaj</a>
+          <span class="who">Kontaktna oseba: Domen Bambič</span>
+        </div>
+        <div class="panel rv d1">
+          <a class="crow" href="tel:+38651864601"><svg aria-hidden="true"><use href="#tel"/></svg><span><b>051 864 601</b><small>telefon</small></span></a>
+          <a class="crow" href="mailto:Domen.bambicdhs@gmail.com"><svg aria-hidden="true"><use href="#mail"/></svg><span><b>Domen.bambicdhs@gmail.com</b><small>e-pošta</small></span></a>
+          <a class="crow" href="https://www.google.com/maps/search/?api=1&amp;query=Dhs+hi%C5%A1ne+storitve+Domen+Bambi%C4%8D+Ponikve+28" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pin"/></svg><span><b>Ponikve 28, 1312 Videm - Dobrepolje</b><small>naslov · odpri v Google Zemljevidih</small></span></a>
+          <div class="crow"><svg aria-hidden="true"><use href="#clock"/></svg><span><b>Delovni čas</b>
+            <span class="hours" id="hours"><span data-d="1">ponedeljek–petek</span><span data-d="1">7.00–17.00</span><span data-d="6">sobota</span><span data-d="6">7.00–17.00</span><span data-d="0">nedelja</span><span data-d="0">zaprto</span></span>
+            <small>po podatkih Google Zemljevidov, 29. 10. 2026</small></span></div>
+          <div class="crow"><svg aria-hidden="true"><use href="#map"/></svg><span><b>Območje dela</b><small>po navedbah podjetja po vsej Sloveniji · natančneje dopolnimo skupaj</small></span></div>
+        </div>
+      </div>
+      <div class="cta" style="margin-top:22px">
+        <a class="btn btn-o" href="https://www.google.com/maps/search/?api=1&amp;query=Dhs+hi%C5%A1ne+storitve+Domen+Bambi%C4%8D+Ponikve+28" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pin"/></svg>Odpri v Google Zemljevidih</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>DHS, hišne storitve, Domen Bambič s.p. · Ponikve 28, 1312 Videm - Dobrepolje · matična št. 7050542000 · <a href="tel:+38651864601">051 864 601</a></span>
+    <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
+    <span class="disc">Predogled, ni javna spletna stran podjetja. Fotografije so ilustrativne (Unsplash, licenca Unsplash) in ne prikazujejo objektov ali del podjetja. Storitve: Mojmojster.net in Google Zemljevidi; registrski podatki: CompanyWall, PIRS, bizi.si; pregledano 29. 10. 2026.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-p" href="tel:+38651864601"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 051 864 601</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>window.innerHeight*0.55);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // Open/closed from the hours listed on Google Maps (Mon-Sat 7-17, Sun closed), Europe/Ljubljana time.
+  try{
+    var parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Ljubljana',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    var wd={},map={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};parts.forEach(function(p){wd[p.type]=p.value;});
+    var d=map[wd.weekday],m=parseInt(wd.hour,10)*60+parseInt(wd.minute,10);
+    var open=d>=1&&d<=6&&m>=420&&m<1020;
+    var st=document.getElementById('status');
+    st.classList.toggle('open',open);
+    st.querySelector('span').textContent=open?'Zdaj odprto · do 17.00':(d===0?'Nedelja: zaprto · pon–sob 7–17':'Zdaj zaprto · pon–sob 7–17');
+    var key=d===0?'0':(d===6?'6':'1');
+    document.querySelectorAll('#hours [data-d="'+key+'"]').forEach(function(e){e.classList.add('today');});
+  }catch(e){}
+
+  var els=document.querySelectorAll('.rv,#pipe');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el);});
+  var check=function(){var vh=window.innerHeight;els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<vh*0.94&&r.bottom>0)el.classList.add('in');}});};
+  window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+})();
+</script>
+
+<!--
+SOURCES: see NOTES.md (not deployed). Registry facts: CompanyWall, PIRS, bizi.si (29. 10. 2026). Services: the company's own
+Mojmojster.net profile text and the owner's banner posted on Google Maps. Hours: Google Maps. No prices, reviews, warranty,
+certifications, years of experience, clients or project photos are claimed. Photos: Unsplash License, illustrative only,
+brand marks blurred.
+-->
+</body>
+</html>
