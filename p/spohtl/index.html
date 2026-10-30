@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Špohtl · Pleskarstvo Simon Lavrič · Sodražica</title>
+<meta name="description" content="ŠPOHTL, pleskarstvo, Simon Lavrič s.p. iz Sodražice: beljenje, kitanje in glajenje, barvanje sten, fasad, napuščev in notranjih vrat. Pokličite 031 600 144.">
+<meta name="theme-color" content="#1f3329">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width:899px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width:900px)">
+<style>
+:root{
+  --lime:#f4efe4; --lime2:#ebe4d4; --card:#fbf8f1; --moss:#1f3329; --moss2:#2a4336; --moss3:#365444;
+  --ink:#1b2620; --ink2:#46524b; --mute:#6d766f; --line:rgba(31,51,41,.14);
+  --blush:#f0c4b4; --blush2:#f7dcd1; --rose:#a4513c; --sage:#a9b8a0;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--lime);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;padding-bottom:92px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1;letter-spacing:-.01em}
+h2{font-size:clamp(42px,9vw,84px);margin:.15em 0 .3em}
+h2 em,h1 em{font-style:italic;color:var(--rose)}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2)}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor;flex:none}
+.lead{color:var(--ink2);font-size:clamp(17px,2.1vw,19.5px);max-width:56ch}
+.ph{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--ink2);background:var(--card);border:1px dashed rgba(31,51,41,.4);padding:4px 10px;border-radius:999px}
+.ill{position:absolute;z-index:3;font-size:10.5px;letter-spacing:.04em;color:#fff;background:rgba(27,38,32,.62);padding:3px 9px;border-radius:999px;pointer-events:none}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;color:#fff;transition:background .3s,box-shadow .3s}
+.nav.solid{background:rgba(31,51,41,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.07)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
+.logo b{font-family:var(--serif);font-weight:400;font-style:italic;font-size:31px;line-height:1}
+.logo small{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.nav-links{display:none;gap:26px;font-size:15px;font-weight:600}
+.nav-links a{opacity:.85}.nav-links a:hover{opacity:1}
+@media(min-width:960px){.nav-links{display:flex}}
+.nav-call{display:none;align-items:center;gap:8px;background:var(--blush);color:var(--moss);padding:10px 20px;border-radius:999px;font-weight:800;font-size:15px}
+.nav-call svg{width:16px;height:16px}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+.ribbon{position:fixed;top:74px;right:10px;z-index:60;font-size:11px;font-weight:700;letter-spacing:.05em;padding:6px 12px;border-radius:999px;background:var(--blush);color:var(--moss);box-shadow:0 6px 16px -8px rgba(0,0,0,.5);pointer-events:none}
+
+/* hero */
+.hero{position:relative;min-height:min(100svh,920px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;padding:130px 0 0;color:#fff;background:var(--moss)}
+.hero .bg{position:absolute;inset:0;z-index:-2}
+.hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.07);animation:settle 18s ease-out forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(31,51,41,.55) 0%,rgba(31,51,41,.08) 26%,rgba(31,51,41,.7) 55%,rgba(31,51,41,.97) 84%)}
+@media(min-width:900px){.hero::before{background:linear-gradient(90deg,rgba(31,51,41,.88) 0%,rgba(31,51,41,.62) 38%,rgba(31,51,41,.05) 72%),linear-gradient(180deg,rgba(31,51,41,.5) 0%,rgba(31,51,41,0) 22%,rgba(31,51,41,.1) 60%,rgba(31,51,41,.85) 100%)}}
+.hero .ill{right:var(--pad);top:80px}
+@media(min-width:900px){.hero .ill{top:auto;bottom:24px}}
+.hero .inner{padding-bottom:38px}
+@media(min-width:900px){.hero .inner{padding-bottom:70px}}
+.hero .eyebrow{color:#e5ecdf}
+.hero h1{font-size:clamp(58px,15vw,150px);margin:.12em 0 .16em;max-width:11ch}
+.hero h1 em{color:var(--blush)}
+.hero .sub{max-width:50ch;color:#e5ebe2;font-size:clamp(17px,2.2vw,20px)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 28px;border-radius:999px;font-weight:800;font-size:16.5px;text-align:center;transition:transform .2s,background .2s,box-shadow .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-p{background:var(--blush);color:var(--moss);box-shadow:0 14px 30px -14px rgba(240,196,180,.9)}
+.btn-p:hover{background:var(--blush2);transform:translateY(-2px)}
+.btn-big{min-height:66px;font-size:19px;padding:0 32px}
+.btn-o{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+.btn-o:hover{background:rgba(255,255,255,.1)}
+.btn-m{background:var(--moss);color:#fff}
+.btn-m:hover{background:var(--moss2)}
+.btn-line{border:1.5px solid var(--moss);color:var(--moss)}
+.btn-line:hover{background:rgba(31,51,41,.06)}
+@media(max-width:480px){.cta .btn{width:100%}}
+
+/* swatches */
+.chips{background:var(--card);border-bottom:1px solid var(--line)}
+.chips .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+@media(min-width:760px){.chips .wrap{grid-template-columns:repeat(6,1fr)}}
+.chip{padding:16px 10px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.chip:nth-child(3n){border-right:0}
+@media(min-width:760px){.chip{border-bottom:0}.chip:nth-child(3n){border-right:1px solid var(--line)}.chip:last-child{border-right:0}}
+.chip i{display:block;height:34px;border-radius:6px;margin-bottom:10px;transform-origin:left;transition:transform .8s cubic-bezier(.6,0,.2,1)}
+.chip small{display:block;font-size:10.5px;font-weight:700;letter-spacing:.14em;color:var(--mute)}
+.chip b{display:block;font-size:14px;font-weight:700;line-height:1.25;margin-top:2px}
+.chips.rv .chip i{transform:scaleX(0)}
+.chips.rv.in .chip i{transform:none}
+.chips .chip:nth-child(2) i{transition-delay:.08s}.chips .chip:nth-child(3) i{transition-delay:.16s}.chips .chip:nth-child(4) i{transition-delay:.24s}.chips .chip:nth-child(5) i{transition-delay:.32s}.chips .chip:nth-child(6) i{transition-delay:.4s}
+
+section{padding:clamp(76px,11vw,132px) 0;position:relative}
+
+/* services: editorial rows */
+.svc-head{display:grid;gap:8px;margin-bottom:clamp(36px,6vw,64px)}
+@media(min-width:900px){.svc-head{grid-template-columns:1.1fr 1fr;align-items:end;gap:56px}}
+.rows{display:grid;gap:clamp(40px,7vw,80px)}
+.row{display:grid;gap:20px;align-items:center}
+@media(min-width:820px){.row{grid-template-columns:1fr 1fr;gap:56px}.row:nth-child(even) .pic{order:2}}
+.row .pic{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--lime2);max-height:560px}
+@media(min-width:820px){.row .pic{aspect-ratio:4/4.4}}
+.row .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s cubic-bezier(.2,.7,.2,1)}
+.row:hover .pic img{transform:scale(1.04)}
+.row .pic .ill{left:12px;bottom:12px}
+.row .no{font-family:var(--serif);font-style:italic;font-size:clamp(54px,8vw,92px);line-height:.8;color:var(--sage)}
+.row h3{font-size:clamp(36px,5.4vw,56px);margin:.18em 0 .25em}
+.row p{color:var(--ink2);max-width:46ch}
+.tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags li{font-size:14px;font-weight:600;color:var(--moss);background:var(--card);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.extra{display:grid;gap:14px;margin-top:clamp(44px,7vw,80px)}
+@media(min-width:820px){.extra{grid-template-columns:1fr 1fr}}
+.tile{position:relative;overflow:hidden;background:var(--moss);color:#fff;border-radius:18px;padding:26px 24px 26px;display:flex;gap:18px;align-items:flex-start}
+.tile svg{width:58px;height:58px;flex:none;color:var(--blush)}
+.tile h3{font-size:34px}
+.tile p{color:#d5dfd2;font-size:15.5px;margin-top:6px}
+.tile .tags li{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#eef2ea}
+.tile.light{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.tile.light svg{color:var(--rose)}
+.tile.light p{color:var(--ink2)}
+.tile.light .tags li{background:var(--lime);border-color:var(--line);color:var(--moss)}
+.src{display:block;font-size:13px;color:var(--mute);margin-top:22px}
+
+/* name */
+.name{background:var(--blush);color:var(--moss);padding:clamp(64px,9vw,104px) 0}
+.name .wrap{display:grid;gap:18px}
+@media(min-width:900px){.name .wrap{grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}}
+.name .big{font-family:var(--serif);font-style:italic;font-size:clamp(84px,22vw,220px);line-height:.85;letter-spacing:-.02em}
+.name .big span{display:block;font-family:var(--sans);font-style:normal;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-top:clamp(18px,3.4vw,44px)}
+.name p{font-size:clamp(17px,2.1vw,19.5px);max-width:44ch}
+.name .ph{margin-top:14px;background:rgba(255,255,255,.5);border-color:rgba(31,51,41,.45);color:var(--moss)}
+
+/* how */
+.how{background:var(--moss);color:#fff;overflow:hidden}
+.how .eyebrow{color:#cfdacb}
+.how h2 em{color:var(--blush)}
+.how .lead{color:#cfdacb}
+.how .ph{background:transparent;color:var(--blush);border-color:rgba(240,196,180,.6);margin-top:8px}
+.how-grid{display:grid;gap:36px}
+@media(min-width:900px){.how-grid{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}}
+.how .pic{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;margin-top:28px}
+@media(min-width:900px){.how .pic{aspect-ratio:4/5;position:sticky;top:96px}}
+.how .pic img{width:100%;height:100%;object-fit:cover}
+.how .pic .ill{left:12px;bottom:12px}
+.steps{list-style:none;position:relative}
+.steps::before{content:"";position:absolute;left:27px;top:10px;bottom:10px;width:2px;background:rgba(255,255,255,.14)}
+.step{position:relative;display:grid;grid-template-columns:56px 1fr;gap:18px;padding:18px 0 26px}
+.step .n{position:relative;z-index:1;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--moss2);border:2px solid var(--moss3);font-family:var(--serif);font-style:italic;font-size:30px;color:var(--blush);transition:background .6s,border-color .6s,color .6s}
+.step.in .n{background:var(--blush);border-color:var(--blush);color:var(--moss)}
+.step h3{font-size:34px;margin-top:6px}
+.step p{color:#cfdacb;font-size:16px;margin-top:4px;max-width:44ch}
+
+/* band */
+.band{overflow:hidden;isolation:isolate;padding:clamp(120px,17vw,200px) 0;color:#fff;background:var(--moss)}
+.band .bgimg{position:absolute;inset:0;z-index:-2}
+.band .bgimg img{width:100%;height:100%;object-fit:cover}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(31,51,41,.93),rgba(31,51,41,.45))}
+.band .ill{right:12px;bottom:12px}
+.band h2{max-width:14ch}
+.band h2 em{color:var(--blush)}
+.band .lead{color:#e3e9df}
+
+/* registry */
+.reg{display:grid;gap:30px}
+@media(min-width:900px){.reg{grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}}
+.label{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(31,51,41,.5)}
+.label .top{height:86px;background:var(--moss);position:relative}
+.label .top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22px;background:linear-gradient(90deg,var(--sage) 0 25%,var(--blush) 25% 50%,var(--lime2) 50% 75%,var(--moss3) 75%)}
+.label .top b{position:absolute;left:20px;top:16px;font-family:var(--serif);font-style:italic;font-weight:400;font-size:34px;color:#fff;line-height:1}
+.label .top small{position:absolute;right:18px;top:22px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blush)}
+.label dl div{display:grid;gap:2px;padding:13px 20px;border-top:1px solid var(--line)}
+.label dl div:first-child{border-top:0}
+@media(min-width:560px){.label dl div{grid-template-columns:140px 1fr;gap:14px}}
+.label dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding-top:3px}
+.label dd{font-weight:600;word-break:break-word}
+.label dd small{display:block;font-weight:500;color:var(--mute);font-size:13px}
+
+/* contact */
+.contact{display:grid;gap:16px;margin-top:14px}
+@media(min-width:900px){.contact{grid-template-columns:1.15fr 1fr}}
+.callp{position:relative;overflow:hidden;background:var(--moss);color:#fff;border-radius:18px;padding:32px 24px}
+.callp::after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:var(--blush);opacity:.16}
+.callp small{display:block;font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--blush);position:relative;z-index:1}
+.callp .n{display:block;font-family:var(--serif);font-size:clamp(54px,15vw,96px);line-height:1;margin:14px 0 24px;white-space:nowrap;position:relative;z-index:1}
+.callp .btn{width:100%;position:relative;z-index:1}
+.callp .who{display:block;margin-top:14px;font-size:15px;color:#d5dfd2;position:relative;z-index:1}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:6px 22px}
+.crow{display:flex;gap:14px;align-items:flex-start;padding:17px 0;border-bottom:1px solid var(--line)}
+.crow:last-child{border-bottom:0}
+.crow svg{width:22px;height:22px;flex:none;margin-top:2px;color:var(--rose)}
+.crow b{display:block;font-weight:700;word-break:break-word}
+.crow small{color:var(--mute);font-size:13.5px}
+a.crow b{text-decoration:underline;text-decoration-color:var(--blush);text-decoration-thickness:3px;text-underline-offset:4px}
+
+footer{background:var(--moss);color:#b9c6b6;padding:40px 0 32px;font-size:13px}
+footer .wrap{display:flex;flex-direction:column;gap:10px}
+footer .disc{font-size:12px;opacity:.85}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:60px;font-size:18px;box-shadow:0 14px 30px -10px rgba(31,51,41,.7);border:2px solid var(--moss)}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+.no-js .rv{opacity:1;transform:none}.no-js .chips .chip i{transform:none}.no-js .step .n{background:var(--blush);color:var(--moss)}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}.chips .chip i{transform:none!important}.hero .bg img{transform:none}
+}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="ribbon" aria-hidden="true">Predogled – AK agencija</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="area" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Špohtl, na vrh"><b>Špohtl</b><small>pleskarstvo</small></a>
+    <nav class="nav-links" aria-label="Glavna navigacija">
+      <a href="#storitve">Storitve</a><a href="#kako">Kako poteka</a><a href="#podatki">Podatki</a><a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="nav-call" href="tel:+38631600144"><svg aria-hidden="true"><use href="#tel"/></svg>031 600 144</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-bottom:0">
+    <div class="bg">
+      <picture>
+        <source media="(max-width:899px)" srcset="assets/hero-m.webp" width="800" height="1200">
+        <img src="assets/hero.webp" alt="Valjček v pladnju z belo barvo na lesenem stolčku" width="1600" height="900" fetchpriority="high">
+      </picture>
+    </div>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap inner">
+      <div class="eyebrow rv">Pleskarstvo · Sodražica</div>
+      <h1 class="rv d1">Od kita do <em>zadnjega sloja.</em></h1>
+      <p class="sub rv d2">Simon Lavrič, s.p.: beljenje stanovanj, kitanje in glajenje stropov, barvanje sten, fasad, napuščev in notranjih vrat. Pokličite in povejte, kaj bi radi prepleskali.</p>
+      <div class="cta rv d3">
+        <a class="btn btn-p btn-big" href="tel:+38631600144"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 031 600 144</a>
+        <a class="btn btn-o" href="#storitve">Kaj delamo <svg aria-hidden="true" style="width:18px;height:18px"><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="chips rv" aria-label="Storitve na kratko">
+    <div class="wrap">
+      <div class="chip"><i style="background:#f6f3ec;box-shadow:inset 0 0 0 1px rgba(31,51,41,.15)"></i><small>01</small><b>Beljenje</b></div>
+      <div class="chip"><i style="background:#ddd6c6"></i><small>02</small><b>Kitanje in glajenje</b></div>
+      <div class="chip"><i style="background:#7f9479"></i><small>03</small><b>Barvanje sten</b></div>
+      <div class="chip"><i style="background:#c9cf8e"></i><small>04</small><b>Hiša in fasada</b></div>
+      <div class="chip"><i style="background:#8a5a3c"></i><small>05</small><b>Napušč</b></div>
+      <div class="chip"><i style="background:#f0c4b4"></i><small>06</small><b>Notranja vrata</b></div>
+    </div>
+  </div>
+
+  <section id="storitve">
+    <div class="wrap">
+      <div class="svc-head">
+        <div>
+          <div class="eyebrow rv">Storitve</div>
+          <h2 class="rv d1">Kar je treba <em>prepleskati.</em></h2>
+        </div>
+        <p class="lead rv d2">Storitve, kot jih Simon navaja na svojem javnem profilu. Obseg, materiale in pogoje dopolnimo skupaj.</p>
+      </div>
+
+      <div class="rows">
+        <article class="row">
+          <div class="pic rv"><img src="assets/beljenje.webp" alt="Valjček z belo barvo v pleskarskem pladnju" loading="lazy" width="800" height="1000"><span class="ill">Ilustrativna fotografija</span></div>
+          <div class="txt rv d1">
+            <span class="no">01</span>
+            <h3>Beljenje stanovanja</h3>
+            <p>Sveže beli prostori, stanovanje ali hiša. Na profilu je izrecno navedeno dvakratno beljenje.</p>
+            <ul class="tags"><li>dvakratno beljenje</li><li>notranje barve</li></ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="pic rv"><img src="assets/kitanje.webp" alt="Stena z zakitanimi mesti in nizek oder ob opečni steni" loading="lazy" width="800" height="1000"><span class="ill">Ilustrativna fotografija</span></div>
+          <div class="txt rv d1">
+            <span class="no">02</span>
+            <h3>Kitanje in glajenje</h3>
+            <p>Priprava podlage, preden pride barva na vrsto: kitanje in glajenje stropa in sten.</p>
+            <ul class="tags"><li>kitanje in glajenje stropa</li><li>kitanje, glajenje in pleskanje</li></ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="pic rv"><img src="assets/stene.webp" alt="Spalnica s temno zeleno pobarvano steno" loading="lazy" width="800" height="1000"><span class="ill">Ilustrativna fotografija</span></div>
+          <div class="txt rv d1">
+            <span class="no">03</span>
+            <h3>Barvanje sten</h3>
+            <p>Ko bela ni dovolj: barvne stene v dnevni sobi, spalnici ali hodniku.</p>
+            <ul class="tags"><li>barvanje sten</li><li>barve za stene</li></ul>
+          </div>
+        </article>
+        <article class="row">
+          <div class="pic rv"><img src="assets/fasada.webp" alt="Pobarvana fasada z okni in temnimi polkni" loading="lazy" width="800" height="1000"><span class="ill">Ilustrativna fotografija</span></div>
+          <div class="txt rv d1">
+            <span class="no">04</span>
+            <h3>Hiša in fasada</h3>
+            <p>Pleskanje hiše in barvanje fasade, ko je zunanjost potrebna osvežitve.</p>
+            <ul class="tags"><li>pleskanje hiše</li><li>barvanje fasade</li></ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="extra">
+        <article class="tile rv">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"><path d="M6 30L32 10l26 20"/><path d="M12 26v28h40V26"/><path d="M6 30h52"/><path d="M14 36h36"/></g></svg>
+          <div><span class="no" style="font-family:var(--serif);font-style:italic;color:var(--sage);font-size:22px">05</span><h3>Napušč</h3><p>Barvanje lesenega napušča, kot ga navaja profil.</p><ul class="tags"><li>barvanje napušča (beltop)</li></ul></div>
+        </article>
+        <article class="tile light rv d1">
+          <img src="assets/vrata.webp" alt="Bela notranja vrata in sveže pobarvana stena" loading="lazy" width="800" height="1000" style="width:92px;height:116px;object-fit:cover;border-radius:10px;flex:none">
+          <div><span class="no" style="font-family:var(--serif);font-style:italic;color:var(--sage);font-size:22px">06</span><h3>Notranja vrata</h3><p>Prepleskanje notranjih vrat, da se ujemajo s sveže pobarvanimi stenami.</p><ul class="tags"><li>prepleskanje notranjih vrat</li></ul><span class="src" style="margin-top:8px;font-size:11px">Fotografija je ilustrativna.</span></div>
+        </article>
+      </div>
+      <span class="src rv">Vir seznama: profil izvajalca na Mojmojster.net (pregledano 30. 10. 2026). Registrirana dejavnost: 43.342 Pleskarska dela.</span>
+    </div>
+  </section>
+
+  <section class="name">
+    <div class="wrap">
+      <div class="big rv">Špohtl<span>Ime, ki se ga zapomniš</span></div>
+      <div class="rv d1">
+        <p>V pogovornem jeziku je »špahtl« oziroma »špohtl« kit ali lopatica za kitanje, torej prvi korak pred vsakim lepim slojem barve.</p>
+        <span class="ph">zgodbo imena dopolnimo skupaj</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="kako">
+    <div class="wrap how-grid">
+      <div>
+        <div class="eyebrow rv">Kako poteka</div>
+        <h2 class="rv d1">Štirje koraki do <em>svežih sten.</em></h2>
+        <p class="lead rv d2">Predlog poteka, ki ga lahko prilagodimo.</p>
+        <span class="ph rv d2">predlog · potek potrdimo z izvajalcem</span>
+        <div class="pic rv d3"><img src="assets/barva.webp" alt="Odprta kanta bele barve s čopičem na pokrovu" loading="lazy" width="800" height="1000"><span class="ill">Ilustrativna fotografija</span></div>
+      </div>
+      <ol class="steps">
+        <li class="step rv"><span class="n">1</span><div><h3>Klic</h3><p>Pokličete 031 600 144 in na kratko opišete prostor: kaj, koliko in do kdaj.</p></div></li>
+        <li class="step rv"><span class="n">2</span><div><h3>Ogled</h3><p>Dogovor za ogled na mestu, kjer je to potrebno, da se vidi stanje sten in stropov.</p></div></li>
+        <li class="step rv"><span class="n">3</span><div><h3>Ponudba</h3><p>Ponudba za dogovorjena dela in termin izvedbe.</p></div></li>
+        <li class="step rv"><span class="n">4</span><div><h3>Pleskanje</h3><p>Priprava podlage, kitanje in barvanje po dogovoru.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="bgimg"><img src="assets/prostor.webp" alt="Prazna soba s svetlo sivimi stenami in belimi okenskimi okvirji" loading="lazy" width="1600" height="900"></div>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap">
+      <div class="eyebrow rv" style="color:#e3e9df">Sodražica in okolica</div>
+      <h2 class="rv d1">Pleskar <em>iz bližine.</em></h2>
+      <p class="lead rv d2">Sedež je v Sodražici. Do katerih krajev pride Simon, dopolnimo skupaj, do takrat pa velja: pokličite in vprašajte.</p>
+      <div class="cta rv d3"><a class="btn btn-p" href="tel:+38631600144"><svg aria-hidden="true"><use href="#tel"/></svg>031 600 144</a></div>
+    </div>
+  </section>
+
+  <section id="podatki">
+    <div class="wrap reg">
+      <div class="rv">
+        <div class="eyebrow">Podatki</div>
+        <h2>Vse, kar lahko <em>preverite.</em></h2>
+        <p class="lead">Registriran samostojni podjetnik z dejavnostjo pleskarskih del, s sedežem v Sodražici.</p>
+        <span class="ph" style="margin-top:14px">fotografije del in reference dopolnimo skupaj</span>
+      </div>
+      <div class="label rv d1">
+        <div class="top"><b>Špohtl</b><small>stanje 30. 10. 2026</small></div>
+        <dl>
+          <div><dt>Firma</dt><dd>ŠPOHTL, pleskarstvo, Simon Lavrič s.p.</dd></div>
+          <div><dt>Nosilec</dt><dd>Simon Lavrič</dd></div>
+          <div><dt>Sedež</dt><dd>Cesta Notranjskega odreda 25, 1317 Sodražica</dd></div>
+          <div><dt>Dejavnost</dt><dd>43.342 Pleskarska dela</dd></div>
+          <div><dt>Vpis</dt><dd>1. 2. 2025</dd></div>
+          <div><dt>Matična št.</dt><dd>9841261000</dd></div>
+          <div><dt>Delovni čas</dt><dd><span class="ph">dopolnimo skupaj</span><small>do takrat: pokličite</small></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow rv">Kontakt</div>
+      <h2 class="rv d1">Pokličite <em>Simona.</em></h2>
+      <div class="contact">
+        <div class="callp rv">
+          <small>Špohtl · pleskarstvo</small>
+          <a class="n" href="tel:+38631600144">031 600 144</a>
+          <a class="btn btn-p btn-big" href="tel:+38631600144"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči zdaj</a>
+          <span class="who">Simon Lavrič, s.p.</span>
+        </div>
+        <div class="panel rv d1">
+          <a class="crow" href="tel:+38631600144"><svg aria-hidden="true"><use href="#tel"/></svg><span><b>031 600 144</b><small>telefon</small></span></a>
+          <a class="crow" href="https://www.google.com/maps/search/?api=1&amp;query=Cesta+Notranjskega+odreda+25%2C+1317+Sodra%C5%BEica" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Cesta Notranjskega odreda 25, 1317 Sodražica</b><small>sedež · odpri v Google Zemljevidih</small></span></a>
+          <div class="crow"><svg aria-hidden="true"><use href="#mail"/></svg><span><b>E-pošta: dopolnimo skupaj</b><small>javni e-naslov ni objavljen</small></span></div>
+          <div class="crow"><svg aria-hidden="true"><use href="#clock"/></svg><span><b>Delovni čas: dopolnimo skupaj</b><small>pokličite za dogovor</small></span></div>
+          <div class="crow"><svg aria-hidden="true"><use href="#area"/></svg><span><b>Območje dela: dopolnimo skupaj</b><small>sedež v Sodražici</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>ŠPOHTL, pleskarstvo, Simon Lavrič s.p. · Cesta Notranjskega odreda 25, 1317 Sodražica · matična št. 9841261000 · <a href="tel:+38631600144">031 600 144</a></span>
+    <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
+    <span class="disc">Predogled, ni javna spletna stran podjetja. Fotografije so ilustrativne (Unsplash, licenca Unsplash) in ne prikazujejo del podjetja ŠPOHTL. Seznam storitev: profil na Mojmojster.net; registrski podatki: bizi.si, CompanyWall, PIRS; pregledano 30. 10. 2026.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-p" href="tel:+38631600144"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 031 600 144</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>window.innerHeight*0.55);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el);});
+  var check=function(){var vh=window.innerHeight;els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<vh*0.94&&r.bottom>0)el.classList.add('in');}});};
+  window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+})();
+</script>
+
+<!--
+SOURCES: see NOTES.md (not deployed). Registry facts (bizi.si, CompanyWall, PIRS, iTIS) and the service list (Mojmojster.net
+profile) as read 30. 10. 2026. No hours, e-mail, prices, warranty, team size, clients, reviews or project photos are claimed.
+Photos: Unsplash License, illustrative only.
+-->
+</body>
+</html>
