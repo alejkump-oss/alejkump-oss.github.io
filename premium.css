@@ -640,3 +640,14 @@ footer.site .foot-nav a:hover { color: var(--accent); }
   .chapter:hover, .contact-card:hover { transform: none; }
 }
 @media (max-width: 1099px) { .js body.home header.site nav { background: #0b1016; } }
+
+/* 2026-10-31: sticky call button on phones for inner pages (same as homepage .stick). */
+.stick-call { display: none; }
+@media (max-width: 760px) {
+  .stick-call { display: flex; align-items: center; justify-content: center; position: fixed; left: 12px; right: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 50; min-height: 52px; padding: 0 18px; border-radius: 999px;
+    background: #ec9466; color: #0b1016; font-weight: 700; font-size: 16px; text-decoration: none;
+    box-shadow: 0 14px 34px -14px rgba(236, 148, 102, .7); }
+  .stick-call:hover, .stick-call:focus-visible { background: #f2a67e; color: #0b1016; text-decoration: none; }
+  body[data-stick] { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+}
