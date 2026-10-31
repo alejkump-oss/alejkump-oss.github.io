@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Mizarstvo Prelesnik · Ribnica</title>
+<meta name="description" content="Mizarstvo Vinko Prelesnik s.p., pohištvo po meri in oprema za dom. Breg pri Ribnici na Dolenjskem 12, 1310 Ribnica. Pokličite 041 344 586.">
+<meta name="theme-color" content="#f7f2e8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width:899px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width:900px)">
+<style>
+:root{
+  --birch:#f7f2e8; --birch2:#efe5d2; --paper:#fffdf8; --pine:#e6cb96; --pine2:#c99e5b; --pine3:#a87a3c;
+  --forest:#2e5a43; --forest2:#1d3a2b; --forest3:#14291f; --moss:#8fb08c; --leaf:#cfe0c3;
+  --ink:#1f2a24; --ink2:#5b645b; --line:rgba(31,42,36,.1);
+  --head:"Bricolage Grotesque",system-ui,-apple-system,Segoe UI,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Inter",system-ui,-apple-system,Segoe UI,sans-serif;
+  --r:26px; --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--birch);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;padding-bottom:86px}
+img{display:block;max-width:100%;-webkit-user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--forest);font-weight:700}
+.eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:currentColor;opacity:.6}
+h1,h2,h3{font-family:var(--head);font-weight:800;line-height:.98;letter-spacing:-.03em}
+h2{font-size:clamp(36px,8vw,68px);margin:.35em 0 .4em}
+h1 em,h2 em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--forest)}
+.lead{color:var(--ink2);font-size:clamp(16px,2.2vw,18.5px);max-width:56ch}
+.ill{position:absolute;right:12px;bottom:12px;font-size:10px;letter-spacing:.06em;color:#fff;
+  background:rgba(20,41,31,.55);padding:3px 9px;border-radius:99px;backdrop-filter:blur(4px);z-index:3}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .4s,box-shadow .4s}
+.nav.solid{background:rgba(247,242,232,.88);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-size:21px;font-weight:800;letter-spacing:-.01em;white-space:nowrap;color:var(--forest2)}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--pine3);line-height:1;margin-bottom:3px}
+.logo svg{width:38px;height:38px;flex:none}
+.logo svg .rings{animation:spin 40s linear infinite;transform-origin:50% 50%}
+.nav-call{display:none;align-items:center;gap:8px;background:var(--forest);color:#fff;padding:10px 18px;border-radius:99px;font-weight:700;font-size:14px}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;padding:96px 0 40px;overflow:hidden;isolation:isolate;
+  background:radial-gradient(900px 520px at 100% 0%,rgba(207,224,195,.75),transparent 60%),
+             radial-gradient(700px 500px at 0% 100%,rgba(230,203,150,.45),transparent 60%),var(--birch)}
+.hero .grid{display:grid;gap:34px;align-items:center}
+@media(min-width:900px){.hero{padding:120px 0 80px;min-height:min(100svh,940px);display:flex;align-items:center}.hero .grid{grid-template-columns:1.05fr .95fr;gap:56px}}
+.hero h1{font-size:clamp(52px,14vw,118px);margin:.18em 0 .22em}
+.hero h1 .l2{display:block;font-family:var(--serif);font-style:italic;font-weight:400;color:var(--forest);letter-spacing:-.01em}
+.hero p.sub{max-width:42ch;color:var(--ink2);font-size:clamp(16.5px,2.4vw,19px)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:99px;background:var(--paper);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--ink)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--moss);flex:none}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:99px;
+  font-weight:700;font-size:16px;transition:transform .25s,box-shadow .3s,background .3s;text-align:center}
+.btn-forest{color:#fff;background:linear-gradient(100deg,var(--forest2),var(--forest) 50%,var(--forest2));background-size:220% 100%;
+  animation:shine 3.6s ease-in-out infinite;box-shadow:0 14px 34px -12px rgba(29,58,43,.75),inset 0 1px 0 rgba(255,255,255,.18)}
+@keyframes shine{50%{background-position:100% 0}}
+.btn-forest:hover{transform:translateY(-2px)}
+.btn-big{min-height:64px;font-size:19px;padding:0 30px}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:rgba(31,42,36,.05)}
+.btn-pine{background:var(--pine);color:var(--forest3)}
+.btn svg{width:22px;height:22px;flex:none}
+.pulse{position:relative}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;animation:pulse 2.4s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(46,90,67,.45)}70%,100%{box-shadow:0 0 0 18px rgba(46,90,67,0)}}
+@media(max-width:480px){.cta-row .btn{width:100%}}
+
+.arch{position:relative;border-radius:240px 240px var(--r) var(--r);overflow:hidden;aspect-ratio:4/5;max-height:620px;width:100%;
+  box-shadow:0 40px 80px -40px rgba(31,42,36,.55);background:var(--pine)}
+@media(max-width:899px){.arch{aspect-ratio:5/6;border-radius:200px 200px var(--r) var(--r)}}
+.arch img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);animation:drift 16s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+.arch .ill{right:auto;left:14px}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,41,31,.35))}
+.heroart{position:relative}
+.curlsvg{position:absolute;left:-14px;top:-30px;width:150px;z-index:4;filter:drop-shadow(0 10px 14px rgba(168,122,60,.3))}
+.curlsvg path{fill:none;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:drawc 2.6s cubic-bezier(.5,.1,.2,1) .5s forwards}
+@keyframes drawc{to{stroke-dashoffset:0}}
+.stamp{position:absolute;right:8px;bottom:28px;z-index:4;width:118px;height:118px;border-radius:50%;background:var(--forest);color:var(--leaf);
+  display:grid;place-items:center;box-shadow:0 18px 40px -16px rgba(20,41,31,.7)}
+.stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.stamp text{font:700 10.5px var(--sans);letter-spacing:.24em;fill:var(--leaf);text-transform:uppercase}
+.stamp b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:30px;color:#fff;line-height:1}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* sawdust */
+.dust{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.dust i{position:absolute;top:-20px;width:6px;height:3px;border-radius:2px;background:var(--pine2);opacity:0;animation:fall linear infinite}
+@keyframes fall{0%{transform:translate(0,0) rotate(0);opacity:0}10%{opacity:.7}90%{opacity:.5}100%{transform:translate(60px,110vh) rotate(540deg);opacity:0}}
+
+/* marquee */
+.strip{background:var(--forest);color:var(--birch);overflow:hidden;padding:15px 0;position:relative;z-index:2}
+.track{display:flex;gap:28px;width:max-content;animation:roll 34s linear infinite}
+.track span{font-family:var(--serif);font-style:italic;font-size:26px;white-space:nowrap;display:flex;align-items:center;gap:28px}
+.track span::after{content:"";width:18px;height:18px;flex:none;border-radius:50%;
+  background:radial-gradient(circle,var(--pine) 0 2px,transparent 2px 4px,var(--pine) 4px 5px,transparent 5px 7px,var(--pine) 7px 8px,transparent 8px)}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+section{padding:clamp(76px,12vw,130px) 0}
+
+/* plane */
+.plane-grid{display:grid;gap:34px;align-items:center}
+@media(min-width:900px){.plane-grid{grid-template-columns:1fr 1.1fr;gap:64px}}
+.bench{position:relative;border-radius:var(--r);padding:22px 14px 14px;background:var(--paper);
+  box-shadow:0 30px 70px -40px rgba(31,42,36,.55),inset 0 0 0 1px var(--line)}
+.bench .tag{position:absolute;left:18px;top:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--pine3)}
+.bench svg{width:100%;height:auto;display:block}
+.pl-move{animation:none}
+.bench.in .pl-move{animation:glide 5s cubic-bezier(.55,.05,.35,1) .3s infinite}
+@keyframes glide{0%{transform:translateX(0)}62%,72%{transform:translateX(300px)}100%{transform:translateX(0)}}
+.fresh{transform-box:fill-box;transform-origin:left center;transform:scaleX(0)}
+.bench.in .fresh{animation:fresh 5s cubic-bezier(.55,.05,.35,1) .3s infinite}
+@keyframes fresh{0%{transform:scaleX(0);opacity:1}62%,72%{transform:scaleX(1);opacity:1}96%,100%{transform:scaleX(1);opacity:0}}
+.shav{fill:none;stroke:url(#shavg);stroke-width:7;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.bench.in .shav{animation:shav 5s cubic-bezier(.55,.05,.35,1) .3s infinite}
+@keyframes shav{0%{stroke-dashoffset:1;opacity:1}62%,72%{stroke-dashoffset:0;opacity:1}86%,100%{stroke-dashoffset:0;opacity:0}}
+.flake{opacity:0}
+.bench.in .flake{animation:flake 5s ease-out infinite;animation-delay:var(--d)}
+@keyframes flake{0%{opacity:0;transform:translate(0,0)}8%{opacity:1}30%{opacity:0;transform:translate(var(--x),var(--y)) rotate(200deg)}100%{opacity:0}}
+.steps{list-style:none;display:grid;gap:12px;margin-top:26px;counter-reset:s}
+.steps li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:18px;background:var(--paper);border:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s);flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:var(--leaf);color:var(--forest2);font-family:var(--head);font-weight:800;font-size:17px}
+.steps b{display:block}
+.steps small{color:var(--ink2);font-size:14px}
+
+/* services */
+.svc-head{display:grid;gap:10px}
+.cats{display:grid;gap:18px;margin-top:40px}
+@media(min-width:760px){.cats{grid-template-columns:repeat(3,1fr)}}
+.cat{position:relative;border-radius:var(--r);overflow:hidden;background:var(--paper);border:1px solid var(--line);transition:transform .4s,box-shadow .4s}
+.cat:hover{transform:translateY(-6px);box-shadow:0 30px 60px -36px rgba(31,42,36,.5)}
+.cat .pic{position:relative;aspect-ratio:4/5;overflow:hidden;margin:10px 10px 0;border-radius:calc(var(--r) - 8px)}
+@media(max-width:759px){.cat .pic{aspect-ratio:4/3}}
+.cat .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s}
+.cat:hover .pic img{transform:scale(1.06)}
+.cat .num{position:absolute;left:12px;top:12px;z-index:3;font-family:var(--serif);font-style:italic;font-size:22px;color:var(--forest2);
+  background:var(--birch);width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
+.cat .txt{padding:18px 20px 22px}
+.cat h3{font-size:28px}
+.cat p{color:var(--ink2);font-size:15px;margin-top:6px}
+.cat .more{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:13px;font-weight:700;color:var(--forest)}
+
+/* rings */
+.ribnica{background:var(--forest2);color:var(--birch);position:relative;overflow:hidden}
+.ribnica .eyebrow{color:var(--pine)}
+.ribnica h2 em{color:var(--pine)}
+.ribnica .lead{color:#d6dccf}
+.rgrid{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.rgrid{grid-template-columns:1fr 1fr;gap:64px}}
+.trunk{position:relative;width:min(100%,460px);margin:0 auto;aspect-ratio:1}
+.trunk svg{width:100%;height:100%;overflow:visible}
+.trunk .bark{fill:#3b2a1a}
+.trunk .wood{fill:url(#woodg)}
+.trunk .yr{fill:none;stroke:rgba(122,82,40,.55);stroke-width:1.6;stroke-dasharray:1;stroke-dashoffset:1}
+.trunk .rot{transform-origin:230px 230px;animation:spin 120s linear infinite}
+.trunk.in .yr{animation:drawc 1.4s cubic-bezier(.5,.1,.2,1) forwards;animation-delay:var(--d,0s)}
+.trunk .pith{fill:#8a5a2b;transform-origin:center;transform-box:fill-box;transform:scale(0);transition:transform .8s cubic-bezier(.3,1.6,.5,1)}
+.trunk.in .pith{transform:scale(1)}
+.trunk .crack{fill:none;stroke:rgba(80,50,25,.45);stroke-width:1.4;stroke-linecap:round;opacity:0;transition:opacity 1.2s 2.6s}
+.trunk.in .crack{opacity:1}
+.trunk .lbl{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--pine);white-space:nowrap}
+.rfacts{display:grid;gap:12px;margin-top:28px}
+.rfacts div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.rfacts svg{width:22px;height:22px;flex:none;color:var(--pine);margin-top:2px}
+.rfacts b{display:block;color:#fff}
+.rfacts small{color:#c7cfc2;font-size:14px}
+.leafbg{position:absolute;right:-120px;top:-120px;width:380px;opacity:.08;pointer-events:none}
+
+/* hours + call */
+.callband{position:relative;overflow:hidden}
+.callgrid{display:grid;gap:26px;align-items:stretch}
+@media(min-width:900px){.callgrid{grid-template-columns:1fr 1fr;gap:28px}}
+.card{border-radius:var(--r);padding:30px 24px;background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden}
+.card h3{font-size:clamp(28px,6vw,40px);margin:.3em 0 .35em}
+.card h3 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--forest)}
+.hourline{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:16px;background:var(--birch2);font-weight:700;margin-top:14px}
+.hourline svg{width:22px;height:22px;flex:none;color:var(--forest)}
+.note{font-size:13.5px;color:var(--ink2);margin-top:12px}
+.callcard{background:var(--forest);color:#fff;text-align:center;border:0;
+  background-image:radial-gradient(500px 300px at 100% 0%,rgba(207,224,195,.18),transparent 60%),repeating-radial-gradient(circle at 0% 110%,transparent 0 24px,rgba(230,203,150,.09) 24px 25px)}
+.callcard small{display:block;color:var(--leaf);font-size:14px;font-weight:600}
+.callcard .n{display:block;font-family:var(--head);font-weight:800;font-size:clamp(42px,12.5vw,70px);letter-spacing:-.03em;white-space:nowrap;line-height:1;margin:14px 0 20px}
+.callcard .btn{width:100%}
+
+/* location */
+.loc{display:grid;gap:28px;align-items:stretch}
+@media(min-width:900px){.loc{grid-template-columns:1fr 1fr;gap:56px}}
+.addr{margin-top:22px;display:grid;gap:12px}
+.addr div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:18px;background:var(--paper);border:1px solid var(--line)}
+.addr svg{width:22px;height:22px;flex:none;color:var(--forest);margin-top:2px}
+.addr b{display:block;word-break:break-word}
+.addr small{color:var(--ink2);font-size:14px}
+.mapcard{position:relative;border-radius:var(--r);overflow:hidden;min-height:330px;display:block;color:var(--forest3);
+  background:radial-gradient(circle at 50% 46%,rgba(46,90,67,.18),transparent 34%),
+   repeating-linear-gradient(0deg,rgba(31,42,36,.05) 0 1px,transparent 1px 34px),
+   repeating-linear-gradient(90deg,rgba(31,42,36,.05) 0 1px,transparent 1px 34px),linear-gradient(160deg,#e9f0e1,#dfe8d4);
+  border:1px solid var(--line)}
+.mapcard svg.roads{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-100%);color:var(--forest)}
+.pin svg{width:52px;height:52px;filter:drop-shadow(0 8px 14px rgba(46,90,67,.45));animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.mapcard .label{position:absolute;left:18px;bottom:16px;right:18px;padding:14px 16px;border-radius:16px;background:rgba(255,253,248,.9);backdrop-filter:blur(6px)}
+.mapcard .label b{font-family:var(--head);font-size:21px;line-height:1.1;display:block}
+.mapcard .label small{color:var(--ink2);font-size:13px}
+
+/* contact */
+.contact{text-align:center;position:relative;overflow:hidden;background:var(--birch2)}
+.contact .lead{margin:0 auto}
+.bignum{display:inline-block;font-family:var(--head);font-weight:800;letter-spacing:-.04em;font-size:clamp(50px,14.5vw,124px);white-space:nowrap;line-height:1;margin:22px 0 6px;color:var(--forest2)}
+.contact .cta-row{justify-content:center}
+
+footer{background:var(--forest3);color:#bfc9bb;padding:40px 0 30px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer .disc{flex-basis:100%;font-size:12px;opacity:.85}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:58px;font-size:17px}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.badge{position:fixed;top:76px;right:10px;z-index:60;font-size:11px;letter-spacing:.06em;padding:6px 11px;border-radius:99px;
+  background:rgba(29,58,43,.9);border:1px solid rgba(207,224,195,.5);color:var(--leaf);backdrop-filter:blur(8px);pointer-events:none}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+.no-js .rv{opacity:1;transform:none}
+.no-js .yr,.no-js .curlsvg path{stroke-dashoffset:0}.no-js .pith{transform:scale(1)}.no-js .crack{opacity:1}
+.no-js .shav{stroke-dashoffset:0}.no-js .fresh{transform:scaleX(1)}.no-js .pl-move{transform:translateX(300px)}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .arch img{transform:none}
+  .yr,.curlsvg path,.shav{stroke-dashoffset:0}.pith{transform:scale(1)}.crack{opacity:1}
+  .fresh{transform:scaleX(1)}.pl-move{transform:translateX(300px)}.dust{display:none}
+}
+:focus-visible{outline:2px solid var(--forest);outline-offset:3px;border-radius:8px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="badge" aria-hidden="true">Predogled · Alej Kump</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="tree" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l6 8h-3l4 6H5l4-6H6z"/><path d="M12 16v6"/></g></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <linearGradient id="shavg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dcae"/><stop offset=".6" stop-color="#e6cb96"/><stop offset="1" stop-color="#c99e5b"/></linearGradient>
+    <linearGradient id="boardg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9b77c"/><stop offset="1" stop-color="#b98a4b"/></linearGradient>
+    <radialGradient id="woodg" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f1d9a8"/><stop offset=".7" stop-color="#e6c48a"/><stop offset="1" stop-color="#cfa465"/></radialGradient>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Mizarstvo Prelesnik, na vrh">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#2e5a43"/>
+        <g class="rings" fill="none" stroke="#e6cb96" stroke-width="1.3">
+          <ellipse cx="20.5" cy="19.5" rx="14" ry="13.2"/><ellipse cx="21" cy="20" rx="10" ry="9.4"/><ellipse cx="20.5" cy="19.6" rx="6" ry="5.6"/><circle cx="20.8" cy="19.8" r="2"/>
+        </g>
+      </svg>
+      <span><small>Mizarstvo</small>Prelesnik</span>
+    </a>
+    <a class="nav-call" href="tel:+38641344586"><svg width="16" height="16" aria-hidden="true"><use href="#tel"/></svg>041 344 586</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="dust" aria-hidden="true">
+      <i style="left:6%;animation-duration:13s;animation-delay:-2s"></i><i style="left:14%;animation-duration:17s;animation-delay:-9s;width:4px"></i>
+      <i style="left:23%;animation-duration:15s;animation-delay:-5s"></i><i style="left:31%;animation-duration:19s;animation-delay:-12s;width:8px"></i>
+      <i style="left:42%;animation-duration:14s;animation-delay:-1s;width:5px"></i><i style="left:51%;animation-duration:18s;animation-delay:-7s"></i>
+      <i style="left:60%;animation-duration:16s;animation-delay:-3s;width:4px"></i><i style="left:68%;animation-duration:20s;animation-delay:-14s"></i>
+      <i style="left:77%;animation-duration:13s;animation-delay:-8s;width:7px"></i><i style="left:85%;animation-duration:17s;animation-delay:-4s"></i>
+      <i style="left:93%;animation-duration:15s;animation-delay:-11s;width:5px"></i><i style="left:47%;animation-duration:22s;animation-delay:-16s;width:4px"></i>
+    </div>
+    <div class="wrap grid">
+      <div>
+        <div class="eyebrow rv">Mizarstvo · Ribnica</div>
+        <h1 class="rv d1">Pohištvo <span class="l2">po vaši meri.</span></h1>
+        <p class="sub rv d2">Mizarstvo Vinko Prelesnik z Brega pri Ribnici. Povejte, kaj potrebujete za svoj dom, in se dogovorimo.</p>
+        <div class="chips rv d2">
+          <span class="chip"><i></i>Mizarstvo</span><span class="chip"><i></i>Pohištvo po meri</span><span class="chip"><i></i>Oprema za dom</span>
+        </div>
+        <div class="cta-row rv d3">
+          <a class="btn btn-forest btn-big pulse" href="tel:+38641344586"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 041 344 586</a>
+          <a class="btn btn-line" href="#kaj-delamo">Kaj delamo <svg aria-hidden="true" style="width:18px;height:18px"><use href="#arrow"/></svg></a>
+        </div>
+      </div>
+      <div class="heroart rv d2">
+        <svg class="curlsvg" viewBox="0 0 150 120" aria-hidden="true">
+          <path pathLength="1" stroke="url(#shavg)" stroke-width="9" d="M8 104 C 40 98, 78 92, 104 70 C 128 50, 126 18, 100 14 C 76 10, 66 38, 84 50 C 100 60, 116 44, 106 32"/>
+        </svg>
+        <div class="arch">
+          <picture>
+            <source media="(max-width:899px)" srcset="assets/hero-m.webp" width="900" height="1500">
+            <img src="assets/hero.webp" alt="Oblanci na leseni delovni klopi" width="1920" height="1080" fetchpriority="high">
+          </picture>
+          <span class="ill">Ilustrativna fotografija</span>
+        </div>
+        <div class="stamp" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs>
+            <text><textPath href="#circ">Ribnica · les · mizarstvo · </textPath></text></svg>
+          <b>les</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="track">
+      <span>Mizarstvo</span><span>Pohištvo po meri</span><span>Oprema za dom</span><span>Breg pri Ribnici</span><span>041 344 586</span>
+      <span>Mizarstvo</span><span>Pohištvo po meri</span><span>Oprema za dom</span><span>Breg pri Ribnici</span><span>041 344 586</span>
+    </div>
+  </div>
+
+  <section id="kako">
+    <div class="wrap plane-grid">
+      <div>
+        <div class="eyebrow rv">Kako začnemo</div>
+        <h2 class="rv d1">Vse se začne <em>s pogovorom.</em></h2>
+        <p class="lead rv d2">Pohištvo po meri nastane za točno določen prostor. Pokličite in povejte, kaj si želite.</p>
+        <ol class="steps">
+          <li class="rv"><span><b>Pokličete 041 344 586</b><small>najhitreje do dogovora</small></span></li>
+          <li class="rv d1"><span><b>Poveste, kaj potrebujete</b><small>prostor, želje, ideje</small></span></li>
+          <li class="rv d2"><span><b>Nadaljnji koraki</b><small>potek in ponudbo dopolnimo skupaj</small></span></li>
+        </ol>
+      </div>
+      <div class="bench rv d1" id="bench">
+        <span class="tag">Skobeljnik · ilustracija</span>
+        <svg viewBox="0 0 520 300" role="img" aria-label="Animacija: skobeljnik drsi po deski in za seboj pušča oblanec">
+          <!-- board -->
+          <rect x="20" y="196" width="480" height="62" rx="6" fill="url(#boardg)"/>
+          <path d="M28 212 C 120 206, 220 218, 320 210 S 460 206, 494 214 M28 230 C 140 224, 240 238, 340 228 S 470 226, 494 232 M28 246 C 110 242, 230 252, 330 246 S 460 242, 494 248" fill="none" stroke="rgba(120,80,35,.35)" stroke-width="1.4"/>
+          <rect class="fresh" x="80" y="196" width="300" height="10" fill="#f6e3bd"/>
+          <rect x="20" y="258" width="480" height="10" rx="3" fill="#9c6f36" opacity=".55"/>
+          <!-- flakes -->
+          <g fill="#e6cb96">
+            <rect class="flake" x="150" y="186" width="7" height="3" rx="1.5" style="--d:1s;--x:-30px;--y:-40px"/>
+            <rect class="flake" x="230" y="186" width="5" height="3" rx="1.5" style="--d:1.8s;--x:-24px;--y:-56px"/>
+            <rect class="flake" x="310" y="186" width="8" height="3" rx="1.5" style="--d:2.6s;--x:-36px;--y:-34px"/>
+            <rect class="flake" x="360" y="186" width="5" height="3" rx="1.5" style="--d:3.1s;--x:-18px;--y:-48px"/>
+          </g>
+          <!-- plane -->
+          <g class="pl-move">
+            <path class="shav" pathLength="1" d="M128 170 C 112 150, 104 124, 120 106 C 136 90, 160 96, 158 116 C 156 134, 134 136, 132 120 C 131 110, 142 106, 146 114"/>
+            <path d="M60 196 L72 160 H200 L214 196 Z" fill="#2e5a43"/>
+            <path d="M72 160 H200 L204 170 H68 Z" fill="#3e7458"/>
+            <rect x="122" y="150" width="14" height="22" rx="2" fill="#c9d3cc"/>
+            <path d="M150 160 C 150 128, 168 112, 192 112 C 204 112, 210 120, 208 130 C 200 128, 188 130, 182 140 L 178 160 Z" fill="#a87a3c"/>
+            <circle cx="86" cy="150" r="13" fill="#a87a3c"/>
+            <rect x="80" y="152" width="12" height="10" fill="#a87a3c"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="kaj-delamo" style="padding-top:0">
+    <div class="wrap">
+      <div class="svc-head">
+        <div class="eyebrow rv">Kaj delamo</div>
+        <h2 class="rv d1">Mizarstvo, pohištvo, <em>oprema za dom.</em></h2>
+        <p class="lead rv d2">Tri področja dela. Natančen seznam del dopolnimo skupaj.</p>
+      </div>
+      <div class="cats">
+        <article class="cat rv">
+          <div class="pic">
+            <img src="assets/mizarstvo.webp" alt="Dleto med oblanci na delovni mizi" loading="lazy" width="1000" height="1250">
+            <span class="num">01</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Mizarstvo</h3><p>Seznam del dopolnimo skupaj.</p><a class="more" href="tel:+38641344586">Vprašajte po telefonu <svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </article>
+        <article class="cat rv d1">
+          <div class="pic">
+            <img src="assets/pohistvo.webp" alt="Svetla jedilnica z lesenimi stoli in policami" loading="lazy" width="1000" height="1250">
+            <span class="num">02</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Pohištvo po meri</h3><p>Seznam del dopolnimo skupaj.</p><a class="more" href="tel:+38641344586">Vprašajte po telefonu <svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </article>
+        <article class="cat rv d2">
+          <div class="pic">
+            <img src="assets/oprema.webp" alt="Lesena klop ob oknu in okrogla mizica" loading="lazy" width="1000" height="1250">
+            <span class="num">03</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Oprema za dom</h3><p>Seznam del dopolnimo skupaj.</p><a class="more" href="tel:+38641344586">Vprašajte po telefonu <svg width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ribnica" id="ribnica">
+    <svg class="leafbg" viewBox="0 0 24 24" aria-hidden="true"><use href="#tree" style="color:#e6cb96"/></svg>
+    <div class="wrap rgrid">
+      <div>
+        <div class="eyebrow rv">Ribnica</div>
+        <h2 class="rv d1">Iz kraja, ki ga poznajo <em>po lesu.</em></h2>
+        <p class="lead rv d2">Ribniška dolina je znana po bogati lesarski tradiciji. Mizarstvo Prelesnik je doma na Bregu pri Ribnici.</p>
+        <div class="rfacts">
+          <div class="rv"><svg aria-hidden="true"><use href="#tree"/></svg><span><b>Mizarstvo · pohištvo in oprema</b><small>področje dela</small></span></div>
+          <div class="rv d1"><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Breg pri Ribnici na Dolenjskem 12</b><small>1310 Ribnica</small></span></div>
+          <div class="rv d2"><svg aria-hidden="true"><use href="#tel"/></svg><span><b>041 344 586</b><small>za dogovor pokličite</small></span></div>
+        </div>
+      </div>
+      <div class="trunk rv d1" id="trunk">
+        <svg viewBox="0 0 460 460" role="img" aria-label="Animacija: letnice v prerezu debla rastejo od sredine navzven">
+          <path class="bark" d="M230 14 C 345 10, 448 104, 446 228 C 444 352, 350 448, 228 446 C 104 444, 12 350, 14 230 C 16 108, 112 18, 230 14 Z"/>
+          <path class="wood" d="M230 32 C 336 30, 428 114, 426 228 C 424 340, 340 428, 228 426 C 116 424, 34 340, 34 230 C 34 118, 120 34, 230 32 Z"/>
+          <g class="rot">
+            <ellipse class="yr" pathLength="1" cx="232" cy="228" rx="182" ry="176" style="--d:2.4s"/>
+            <ellipse class="yr" pathLength="1" cx="234" cy="226" rx="160" ry="153" style="--d:2.15s"/>
+            <ellipse class="yr" pathLength="1" cx="232" cy="229" rx="138" ry="133" style="--d:1.9s"/>
+            <ellipse class="yr" pathLength="1" cx="236" cy="227" rx="118" ry="112" style="--d:1.65s"/>
+            <ellipse class="yr" pathLength="1" cx="233" cy="230" rx="98" ry="94" style="--d:1.4s"/>
+            <ellipse class="yr" pathLength="1" cx="236" cy="228" rx="80" ry="75" style="--d:1.15s"/>
+            <ellipse class="yr" pathLength="1" cx="234" cy="231" rx="62" ry="58" style="--d:.9s"/>
+            <ellipse class="yr" pathLength="1" cx="237" cy="229" rx="45" ry="42" style="--d:.65s"/>
+            <ellipse class="yr" pathLength="1" cx="236" cy="231" rx="29" ry="27" style="--d:.4s"/>
+            <ellipse class="yr" pathLength="1" cx="237" cy="230" rx="15" ry="14" style="--d:.15s"/>
+          </g>
+          <circle class="pith" cx="237" cy="230" r="5"/>
+          <path class="crack" d="M240 236 L 262 290 L 258 318 M236 222 L 214 170"/>
+        </svg>
+        <span class="lbl">letnice · ilustracija</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="callband" id="klic">
+    <div class="wrap">
+      <div class="eyebrow rv">Dogovor</div>
+      <h2 class="rv d1">Imate idejo? <em>Pokličite.</em></h2>
+      <div class="callgrid">
+        <div class="card rv">
+          <div class="eyebrow">Delovni čas</div>
+          <h3>Dopolnimo <em>skupaj.</em></h3>
+          <div class="hourline"><svg aria-hidden="true"><use href="#clock"/></svg><span>Delovni čas: dopolnimo skupaj</span></div>
+          <div class="hourline"><svg aria-hidden="true"><use href="#tel"/></svg><span>Pokličite za dogovor</span></div>
+          <p class="note">Termin se dogovorimo po telefonu.</p>
+        </div>
+        <div class="card callcard rv d1">
+          <small>Mizarstvo Vinko Prelesnik s.p.</small>
+          <a class="n" href="tel:+38641344586">041 344 586</a>
+          <a class="btn btn-pine btn-big" href="tel:+38641344586"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite zdaj</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lokacija" style="padding-top:0">
+    <div class="wrap loc">
+      <div class="rv">
+        <div class="eyebrow">Lokacija</div>
+        <h2>Breg pri <em>Ribnici.</em></h2>
+        <p class="lead">Pot do nas najlažje najdete na Google Zemljevidih.</p>
+        <div class="addr">
+          <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Breg pri Ribnici na Dolenjskem 12</b><small>1310 Ribnica</small></span></div>
+          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38641344586">041 344 586</a></b><small>telefon</small></span></div>
+          <div><svg aria-hidden="true"><use href="#clock"/></svg><span><b>Pokličite za dogovor</b><small>delovni čas dopolnimo skupaj</small></span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Mizarstvo+Prelesnik+Ribnica" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg>Odpri v Google Zemljevidih</a>
+        </div>
+      </div>
+      <a class="mapcard rv d1" href="https://www.google.com/maps/search/?api=1&amp;query=Mizarstvo+Prelesnik+Ribnica" target="_blank" rel="noopener" aria-label="Mizarstvo Prelesnik na Google Zemljevidih">
+        <svg class="roads" viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-10 90 C 80 120, 140 140, 200 147 S 320 190, 420 230" fill="none" stroke="#fffdf8" stroke-width="12"/>
+          <path d="M-10 90 C 80 120, 140 140, 200 147 S 320 190, 420 230" fill="none" stroke="rgba(46,90,67,.45)" stroke-width="1.6" stroke-dasharray="8 8"/>
+          <path d="M200 147 C 190 200, 220 250, 196 340" fill="none" stroke="#fffdf8" stroke-width="7"/>
+          <path d="M290 -10 C 262 60, 230 110, 200 147" fill="none" stroke="#fffdf8" stroke-width="6"/>
+          <g fill="rgba(46,90,67,.22)"><circle cx="70" cy="40" r="16"/><circle cx="96" cy="52" r="12"/><circle cx="340" cy="90" r="18"/><circle cx="318" cy="70" r="11"/><circle cx="60" cy="230" r="14"/><circle cx="350" cy="280" r="15"/></g>
+        </svg>
+        <div class="pin"><svg aria-hidden="true"><use href="#pinico"/></svg></div>
+        <div class="label"><b>Breg pri Ribnici na Dolenjskem 12</b><small>shematski prikaz · odpri zemljevid</small></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="eyebrow rv">Kontakt</div>
+      <h2 class="rv d1">Začnimo <em>s pogovorom.</em></h2>
+      <p class="lead rv d2">Pokličite in povejte, kaj potrebujete.</p>
+      <a class="bignum rv d2" href="tel:+38641344586">041 344 586</a>
+      <div class="cta-row rv d3">
+        <a class="btn btn-forest btn-big pulse" href="tel:+38641344586"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 041 344 586</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Vinko Prelesnik s.p. · Breg pri Ribnici na Dolenjskem 12, 1310 Ribnica · <a href="tel:+38641344586">041 344 586</a></span>
+    <span>Predogled pripravil Alej Kump, alejkump.si</span>
+    <span class="disc">Fotografije na tej strani so ilustrativne (Unsplash, licenca Unsplash) in ne prikazujejo izdelkov ali prostorov Mizarstva Prelesnik. Animacije so ilustracija.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-forest" href="tel:+38641344586"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 041 344 586</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  ['contextmenu','dragstart','selectstart','copy'].forEach(function(e){
+    document.addEventListener(e,function(ev){ev.preventDefault();});
+  });
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>30);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});}
+  else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    var check=function(){var h=window.innerHeight;if(h+window.scrollY>=document.documentElement.scrollHeight-8){els.forEach(function(el){el.classList.add('in');});return;}els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<h*0.94&&r.bottom>0)el.classList.add('in');}});};
+    window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+  }
+})();
+</script>
+
+<!--
+SOURCES: see NOTES.md (not deployed). Business facts as fetched 21. 10. 2026: Vinko Prelesnik s.p., Breg pri Ribnici na Dolenjskem 12,
+1310 Ribnica, tel 041 344 586, activity "Mizarstvo; Pohistvo in oprema". No hours, rating, reviews, e-mail, prices, years,
+projects, materials, warranties, delivery area or team size are claimed. Photos: Unsplash License, illustrative.
+-->
+</body>
+</html>

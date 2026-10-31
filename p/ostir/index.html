@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Oštir Garage · Avtoservis Kočevje</title>
+<meta name="description" content="Oštir Garage, Gašper Oštir s.p., Šalka vas pri Kočevju — avtoservis in vulkanizerstvo. Pokličite 040 323 886.">
+<meta name="theme-color" content="#0c0d0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width:700px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width:701px)">
+<style>
+:root{
+  --bg:#0c0d0f; --bg2:#121418; --card:#16191e; --line:rgba(255,255,255,.09);
+  --ink:#f3f1ed; --mute:#a5a9b0; --red:#ff4b33; --red2:#ff7a5c; --red-dim:rgba(255,75,51,.14);
+  --steel:#c9d1db;
+  --head:"Archivo","Arial Narrow",Impact,sans-serif; --sans:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;
+  --r:18px; --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;padding-bottom:84px}
+img{display:block;max-width:100%;-webkit-user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--red2);font-weight:700}
+h1,h2,h3{font-family:var(--head);font-weight:800;line-height:1;letter-spacing:-.01em}
+h2{font-size:clamp(36px,7.5vw,68px);margin:.3em 0 .4em}
+h1 em,h2 em{font-style:normal;color:var(--red)}
+.lead{color:var(--mute);font-size:clamp(16px,2.2vw,18px);max-width:58ch}
+.ill{position:absolute;right:10px;bottom:10px;font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,.72);
+  background:rgba(0,0,0,.55);padding:3px 8px;border-radius:99px;backdrop-filter:blur(4px);z-index:3}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(12,13,15,.86);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-size:20px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.logo b{color:var(--red)}
+.logo svg{width:30px;height:30px;flex:none}
+.nav-call{display:none;align-items:center;gap:8px;border:1px solid rgba(255,75,51,.4);padding:10px 18px;border-radius:99px;
+  font-weight:700;font-size:14px;color:var(--red2);transition:background .3s}
+.nav-call:hover{background:var(--red-dim)}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:min(100svh,980px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-img{position:absolute;inset:0;z-index:-2}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:55% 50%;transform:scale(1.08);animation:drift 16s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(12,13,15,.6) 0%,rgba(12,13,15,.15) 30%,rgba(12,13,15,.66) 62%,#0c0d0f 100%),
+             linear-gradient(90deg,rgba(12,13,15,.8),transparent 72%)}
+.gauge{position:absolute;right:-110px;top:13%;width:400px;height:400px;z-index:-1;opacity:.2;color:var(--steel)}
+.gauge .needle{transform-origin:100px 100px;animation:sweep 5s cubic-bezier(.5,0,.2,1) .6s infinite alternate}
+@keyframes sweep{from{transform:rotate(-120deg)}to{transform:rotate(40deg)}}
+@media(max-width:700px){.gauge{width:280px;height:280px;right:-120px;top:9%}}
+.hero-inner{padding-bottom:clamp(56px,10vh,110px);padding-top:120px;width:100%}
+.hero h1{font-size:clamp(50px,12vw,128px);margin:.18em 0 .24em;max-width:11ch}
+.hero p{max-width:46ch;color:#dedbd6;font-size:clamp(16px,2.4vw,19px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:99px;
+  font-weight:700;font-size:16px;transition:transform .25s,box-shadow .3s,background .3s}
+.btn-red{background:linear-gradient(135deg,var(--red2),var(--red) 60%,#d8301c);color:#fff;
+  box-shadow:0 10px 40px -10px rgba(255,75,51,.65),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn-red:hover{transform:translateY(-2px);box-shadow:0 16px 50px -10px rgba(255,75,51,.85)}
+.btn-big{min-height:66px;font-size:19px;padding:0 34px}
+.btn-ghost{border:1px solid rgba(255,255,255,.24)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.btn svg{width:22px;height:22px;flex:none}
+.pulse{position:relative}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,75,51,.5)}70%,100%{box-shadow:0 0 0 16px rgba(255,75,51,0)}}
+.hero .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--mute);font-size:14px}
+.hero .meta span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--red);margin-right:9px;vertical-align:middle}
+@media(max-width:480px){.cta-row .btn{width:100%}}
+
+/* strip */
+.strip{border-block:1px solid var(--line);background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 12px,transparent 12px 24px),var(--bg2);overflow:hidden;padding:18px 0}
+.track{display:flex;gap:40px;width:max-content;animation:roll 32s linear infinite}
+.track span{font-family:var(--head);font-size:22px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#d2d5da;white-space:nowrap;display:flex;align-items:center;gap:40px}
+.track span::after{content:"";width:9px;height:9px;transform:rotate(45deg);background:var(--red)}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:clamp(80px,12vw,140px) 0}
+.grid{display:grid;gap:16px;margin-top:44px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+.card{position:relative;padding:30px 26px 28px;border-radius:var(--r);background:linear-gradient(160deg,#191c22,#0f1115);
+  border:1px solid var(--line);overflow:hidden;transition:transform .4s,border-color .4s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,75,51,.42)}
+.card .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--red-dim);color:var(--red2);margin-bottom:22px}
+.card .ico svg{width:27px;height:27px}
+.card h3{font-size:26px;margin-bottom:10px}
+.card p{color:var(--mute);font-size:15px}
+.card .num{position:absolute;top:22px;right:24px;font-family:var(--head);font-size:14px;letter-spacing:.12em;color:rgba(255,255,255,.22)}
+.card .tag{display:inline-block;margin-top:14px;font-size:12px;color:var(--mute);border:1px dashed rgba(255,255,255,.2);padding:3px 10px;border-radius:99px}
+.card.feature{grid-column:1/-1;padding:0;display:grid}
+@media(min-width:760px){.card.feature{grid-template-columns:1.1fr 1fr}}
+.card.feature .txt{padding:34px 28px;display:flex;flex-direction:column;justify-content:center}
+.card.feature .pic{position:relative;min-height:300px}
+.card.feature .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+
+/* call band */
+.band{background:radial-gradient(800px 420px at 85% 0%,rgba(255,75,51,.16),transparent 60%),var(--bg2);border-block:1px solid var(--line)}
+.band-grid{display:grid;gap:30px;align-items:center}
+@media(min-width:900px){.band-grid{grid-template-columns:1.2fr 1fr;gap:60px}}
+.checks{display:grid;gap:10px;margin-top:22px}
+.checks li{list-style:none;display:flex;gap:12px;align-items:flex-start;color:#dcd9d4}
+.checks li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:6px;background:var(--red-dim);
+  box-shadow:inset 0 0 0 1px rgba(255,75,51,.5)}
+.callcard{border-radius:var(--r);border:1px solid rgba(255,75,51,.3);padding:34px 26px;text-align:center;
+  background:linear-gradient(170deg,#1b1d22,#111317)}
+.callcard small{display:block;color:var(--mute);font-size:14px}
+.callcard .n{display:block;font-family:var(--head);font-weight:900;font-size:clamp(36px,10vw,72px);white-space:nowrap;line-height:1;margin:14px 0 20px;color:#fff;letter-spacing:.01em}
+.callcard .btn{width:100%}
+
+/* steps */
+.steps{display:grid;gap:16px;margin-top:44px}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{padding:30px 26px;border-top:2px solid rgba(255,75,51,.55);background:linear-gradient(180deg,rgba(255,75,51,.06),transparent 70%);border-radius:0 0 var(--r) var(--r)}
+.step .n{font-family:var(--head);font-weight:900;font-size:60px;line-height:1;color:var(--red)}
+.step h3{font-size:26px;margin:12px 0 6px}
+.step p{color:var(--mute);font-size:15px}
+
+/* location */
+.loc{display:grid;gap:28px;align-items:stretch}
+@media(min-width:900px){.loc{grid-template-columns:1fr 1fr;gap:56px}}
+.mapcard{position:relative;border-radius:var(--r);border:1px solid var(--line);overflow:hidden;min-height:320px;display:block;
+  background:radial-gradient(circle at 54% 48%,rgba(255,75,51,.2),transparent 34%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 34px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 34px),
+    linear-gradient(160deg,#161a22,#0c0e12)}
+.mapcard svg.roads{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:54%;top:48%;transform:translate(-50%,-100%);color:var(--red)}
+.pin svg{width:46px;height:46px;filter:drop-shadow(0 6px 16px rgba(255,75,51,.6));animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.mapcard .label{position:absolute;left:16px;bottom:16px;right:16px}
+.mapcard .label b{font-family:var(--head);font-size:30px;line-height:1}
+.mapcard .label small{display:block;color:var(--mute);font-size:13px}
+.addr{margin-top:26px;display:grid;gap:12px}
+.addr div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.addr svg{width:22px;height:22px;flex:none;color:var(--red);margin-top:2px}
+.addr b{display:block;word-break:break-word}
+.addr small{color:var(--mute);font-size:14px}
+.ph{color:var(--mute);font-style:italic}
+
+/* contact */
+.contact{text-align:center;position:relative;overflow:hidden;background:var(--bg2);border-top:1px solid var(--line)}
+.contact::before{content:"";position:absolute;left:50%;top:40%;width:900px;max-width:160vw;aspect-ratio:1;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(255,75,51,.13),transparent 60%);pointer-events:none}
+.contact .lead{margin:0 auto}
+.bignum{position:relative;display:inline-block;font-family:var(--head);font-weight:900;font-size:clamp(44px,13vw,120px);white-space:nowrap;line-height:1;margin:26px 0 8px;color:#fff}
+.contact .cta-row{justify-content:center;position:relative}
+.hours{margin-top:24px;color:var(--mute);font-size:15px;position:relative}
+.hours b{color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding:40px 0 30px;color:var(--mute);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer .disc{flex-basis:100%;font-size:12px;opacity:.85}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:58px;font-size:17px}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.badge{position:fixed;top:76px;right:10px;z-index:60;font-size:11px;letter-spacing:.06em;padding:6px 11px;border-radius:99px;
+  background:rgba(12,13,15,.82);border:1px solid rgba(255,75,51,.35);color:var(--red2);backdrop-filter:blur(8px);pointer-events:none}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+.no-js .rv{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero-img img{transform:none}
+}
+:focus-visible{outline:2px solid var(--red2);outline-offset:3px;border-radius:8px}
+
+/* --- livelier: amber accent, caution strip, winter-tyre countdown, shine --- */
+:root{--amber:#ffc22e;--amber2:#ffdc72}
+.strip{background:repeating-linear-gradient(135deg,#ffc22e 0 22px,#141414 22px 44px);border:0;padding:0}
+.strip .track{background:#ffc22e;margin:10px 0;padding:10px 0}
+.strip .track span{color:#141414!important}
+.btn-red{background:linear-gradient(100deg,#ff4b33,#ff7a3d 60%,#ff4b33);background-size:200% 100%;animation:shine 3.5s ease-in-out infinite}
+@keyframes shine{50%{background-position:100% 0}}
+.hero-chip{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;padding:8px 14px;border-radius:99px;
+  background:var(--amber);color:#141414;font-weight:800;font-size:13px;letter-spacing:.02em;animation:bob 2.8s ease-in-out infinite;box-shadow:0 8px 30px rgba(255,194,46,.35)}
+.hero-chip i{width:8px;height:8px;border-radius:50%;background:#e8341c;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.2}}
+.winter{position:relative;overflow:hidden;background:
+  radial-gradient(700px 380px at 10% 0%,rgba(120,190,255,.20),transparent 60%),
+  radial-gradient(600px 360px at 95% 100%,rgba(255,194,46,.18),transparent 60%),#0f1620;border-block:1px solid rgba(140,200,255,.18)}
+.winter .wrap{display:grid;gap:28px;align-items:center}
+@media(min-width:900px){.winter .wrap{grid-template-columns:1.1fr 1fr;gap:60px}}
+.winter h2 em{color:#8fd0ff}
+.winter .eyebrow{color:#8fd0ff}
+.snow{position:absolute;inset:0;pointer-events:none;z-index:0}
+.snow b{position:absolute;top:-10px;width:6px;height:6px;border-radius:50%;background:#fff;opacity:.7;animation:fall linear infinite}
+@keyframes fall{to{transform:translate3d(30px,700px,0)}}
+.winter .wrap{position:relative;z-index:1}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.count div{background:rgba(255,255,255,.06);border:1px solid rgba(143,208,255,.25);border-radius:14px;padding:16px 6px;text-align:center}
+.count b{display:block;font-family:var(--head);font-weight:900;font-size:clamp(30px,8vw,52px);line-height:1;color:#fff}
+.count small{display:block;margin-top:6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9fb3c8}
+.winter .note{color:#c4d3e3;font-size:15px;margin-top:14px}
+.tyre{width:120px;height:120px;color:var(--amber);animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.snow,.tyre,.hero-chip,.btn-red{animation:none!important}}
+</style>
+</head>
+<body class="no-js">
+
+<div class="badge" aria-hidden="true">Predogled · Alej Kump</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="wrench" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Oštir Garage, na vrh">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="var(--red)" stroke-width="2.2"/><use href="#wrench" x="6" y="6" width="20" height="20" style="color:#fff"/></svg>
+      <span><b>Oštir</b> Garage</span>
+    </a>
+    <a class="nav-call" href="tel:+38640323886"><svg width="16" height="16" aria-hidden="true"><use href="#tel"/></svg>040 323 886</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <div class="hero-img">
+      <picture>
+        <source media="(max-width:700px)" srcset="assets/hero-m.webp" width="900" height="1500">
+        <img src="assets/hero.webp" alt="Roke s ključem pri delu v motornem prostoru avtomobila" width="1920" height="1080" fetchpriority="high">
+      </picture>
+    </div>
+    <svg class="gauge" viewBox="0 0 200 200" aria-hidden="true">
+      <g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="92" stroke-width="3"/><circle cx="100" cy="100" r="78" stroke-width="10" stroke-dasharray="2 9.3"/></g>
+      <g class="needle"><path d="M100 100 L100 30" stroke="var(--red)" stroke-width="5" stroke-linecap="round"/></g>
+      <circle cx="100" cy="100" r="9" fill="currentColor"/>
+    </svg>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap hero-inner">
+      <div class="hero-chip rv"><i></i>Zimske gume: rezervirajte menjavo zdaj</div>
+      <div class="eyebrow rv">Avtoservis · Vulkanizerstvo · Kočevje</div>
+      <h1 class="rv d1">Avtoservis <em>pri Kočevju.</em></h1>
+      <p class="rv d2">Oštir Garage v Šalki vasi pri Kočevju — popravila in vzdrževanje vozil ter pnevmatike. Pokličite in se dogovorite za termin.</p>
+      <div class="cta-row rv d3">
+        <a class="btn btn-red btn-big pulse" href="tel:+38640323886"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 040 323 886</a>
+        <a class="btn btn-ghost" href="#storitve">Storitve</a>
+      </div>
+      <div class="meta rv d3"><span>Šalka vas 121</span><span>1330 Kočevje</span><span>Termin po dogovoru</span></div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="track">
+      <span>Avtoservis</span><span>Vulkanizerstvo</span><span>Menjava pnevmatik</span><span>Avtostoritve</span><span>Kočevje</span>
+      <span>Avtoservis</span><span>Vulkanizerstvo</span><span>Menjava pnevmatik</span><span>Avtostoritve</span><span>Kočevje</span>
+    </div>
+  </div>
+
+
+  <section class="winter" id="zimske-gume">
+    <div class="snow" aria-hidden="true"><b style="left:4%;animation-duration:9s;animation-delay:-2s;opacity:.7"></b><b style="left:13%;animation-duration:12s;animation-delay:-6s;opacity:.5"></b><b style="left:22%;animation-duration:8s;animation-delay:-1s;opacity:.8"></b><b style="left:31%;animation-duration:14s;animation-delay:-9s;opacity:.4"></b><b style="left:42%;animation-duration:10s;animation-delay:-3s;opacity:.6"></b><b style="left:51%;animation-duration:13s;animation-delay:-7s;opacity:.5"></b><b style="left:60%;animation-duration:9s;animation-delay:-5s;opacity:.8"></b><b style="left:69%;animation-duration:11s;animation-delay:-2s;opacity:.5"></b><b style="left:78%;animation-duration:15s;animation-delay:-10s;opacity:.4"></b><b style="left:87%;animation-duration:10s;animation-delay:-4s;opacity:.7"></b><b style="left:95%;animation-duration:12s;animation-delay:-8s;opacity:.5"></b></div>
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">Sezonska menjava</div>
+        <h2>Čas za <em>zimske gume.</em></h2>
+        <p class="lead" style="color:#c4d3e3">Od 15. novembra do 15. marca mora imeti vozilo v Sloveniji zimsko opremo. Pokličite in si rezervirajte termin za menjavo pnevmatik, preden se začne gneča.</p>
+        <div class="cta-row" style="margin-top:22px">
+          <a class="btn btn-red btn-big pulse" href="tel:+38640323886"><svg aria-hidden="true"><use href="#tel"/></svg>Rezervirajte menjavo</a>
+        </div>
+      </div>
+      <div class="rv d1">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+          <svg class="tyre" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor"><circle cx="50" cy="50" r="44" stroke-width="12" stroke-dasharray="6 4"/><circle cx="50" cy="50" r="22" stroke-width="5"/><path d="M50 28v44M28 50h44M34 34l32 32M66 34L34 66" stroke-width="3"/></g></svg>
+          <div><div class="eyebrow">Do obvezne zimske opreme</div><div style="color:#c4d3e3;font-size:14px">15. 11. 2026</div></div>
+        </div>
+        <div class="count" id="count" aria-live="off">
+          <div><b id="cd-d">--</b><small>dni</small></div>
+          <div><b id="cd-h">--</b><small>ur</small></div>
+          <div><b id="cd-m">--</b><small>min</small></div>
+          <div><b id="cd-s">--</b><small>sek</small></div>
+        </div>
+        <p class="note">Ena menjava, en klic: <a href="tel:+38640323886" style="color:var(--amber);font-weight:800">040 323 886</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="storitve">
+    <div class="wrap">
+      <div class="eyebrow rv">Storitve</div>
+      <h2 class="rv d1">Kar vaše vozilo <em>potrebuje.</em></h2>
+      <p class="lead rv d2">Pokličite in povejte, kaj se dogaja z vozilom — skupaj se dogovorimo, kdaj ga pripeljete.</p>
+      <div class="grid">
+        <article class="card feature rv">
+          <div class="txt">
+            <div class="ico"><svg aria-hidden="true"><use href="#wrench"/></svg></div>
+            <h3>Avtoservis</h3>
+            <p>Popravila in vzdrževanje motornih vozil. Opišite težavo po telefonu in dogovorimo se za pregled.</p>
+            <span class="tag">Seznam del dopolnimo skupaj</span>
+          </div>
+          <div class="pic"><img src="assets/guma.webp" alt="Mehanik v rokavicah drži pnevmatiko na dvignjenem vozilu" loading="lazy" width="780" height="1040"><span class="ill">Ilustrativna fotografija</span></div>
+        </article>
+        <article class="card rv"><span class="num">02</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 3v5.5M12 15.5V21M3 12h5.5M15.5 12H21"/></svg></div>
+          <h3>Vulkanizerstvo</h3>
+          <p>Pnevmatike za vaše vozilo. Pokličite in vprašajte za termin sezonske menjave.</p>
+        </article>
+        <article class="card rv d1"><span class="num">03</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 15l2-5c.4-1 1.3-2 2.6-2h8.8c1.3 0 2.2 1 2.6 2l2 5v3H3z"/><circle cx="7.5" cy="18" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/></svg></div>
+          <h3>Avtostoritve</h3>
+          <p>Potrebujete še kaj drugega za vozilo? Pokličite in vprašajte — povemo, ali to naredimo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="klic">
+    <div class="wrap band-grid">
+      <div class="rv">
+        <div class="eyebrow">Najhitreje po telefonu</div>
+        <h2>En klic in <em>dogovorjeno.</em></h2>
+        <ul class="checks">
+          <li>Povejte, kakšno vozilo imate.</li>
+          <li>Opišite, kaj je narobe ali kaj potrebujete.</li>
+          <li>Dogovorimo se za termin, ki vam ustreza.</li>
+        </ul>
+      </div>
+      <div class="callcard rv d1">
+        <small>Pokličite</small>
+        <a class="n" href="tel:+38640323886">040 323 886</a>
+        <a class="btn btn-red btn-big pulse" href="tel:+38640323886"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite zdaj</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="postopek">
+    <div class="wrap">
+      <div class="eyebrow rv">Kako poteka</div>
+      <h2 class="rv d1">Trije koraki. <em>Brez zapletov.</em></h2>
+      <div class="steps">
+        <div class="step rv"><div class="n">01</div><h3>Pokličete</h3><p>Na 040 323 886 opišete vozilo in težavo.</p></div>
+        <div class="step rv d1"><div class="n">02</div><h3>Termin</h3><p>Skupaj izberemo čas, ki vam ustreza.</p></div>
+        <div class="step rv d2"><div class="n">03</div><h3>Pripeljete vozilo</h3><p>Vozilo pripeljete v Šalko vas 121 pri Kočevju.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="lokacija">
+    <div class="wrap loc">
+      <div class="rv">
+        <div class="eyebrow">Lokacija</div>
+        <h2>Najdete nas <em>pri Kočevju.</em></h2>
+        <p class="lead">Za pot nas poiščite na zemljevidu ali pokličite.</p>
+        <div class="addr">
+          <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Šalka vas 121</b><small>1330 Kočevje</small></span></div>
+          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38640323886">040 323 886</a></b><small>pokličite za termin</small></span></div>
+          <div><svg aria-hidden="true"><use href="#mail"/></svg><span><b><a href="mailto:ostirgarage@gmail.com">ostirgarage@gmail.com</a></b><small>e-pošta</small></span></div>
+          <div><svg aria-hidden="true"><use href="#clock"/></svg><span><b>Delovni čas</b><small class="ph">(dopolnimo skupaj)</small></span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=%C5%A0alka+vas+121%2C+1330+Ko%C4%8Devje" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg>Odpri v Google Zemljevidih</a>
+        </div>
+      </div>
+      <a class="mapcard rv d1" href="https://www.google.com/maps/search/?api=1&amp;query=%C5%A0alka+vas+121%2C+1330+Ko%C4%8Devje" target="_blank" rel="noopener" aria-label="Šalka vas 121, Kočevje na Google Zemljevidih">
+        <svg class="roads" viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-10 80 C 90 110, 160 150, 216 154 S 340 200, 420 250" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="10"/>
+          <path d="M-10 80 C 90 110, 160 150, 216 154 S 340 200, 420 250" fill="none" stroke="rgba(255,122,92,.35)" stroke-width="1.5" stroke-dasharray="8 8"/>
+          <path d="M216 154 C 200 210, 230 270, 210 340" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="6"/>
+          <path d="M300 -10 C 280 60, 240 110, 216 154" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="5"/>
+        </svg>
+        <div class="pin"><svg aria-hidden="true"><use href="#pinico"/></svg></div>
+        <div class="label"><b>Šalka vas</b><small>shematski prikaz · odpri zemljevid</small></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="eyebrow rv">Kontakt</div>
+      <h2 class="rv d1">Pokličite za <em>termin.</em></h2>
+      <p class="lead rv d2">Povejte, kaj potrebujete, in skupaj najdemo čas, ki vam ustreza.</p>
+      <a class="bignum rv d2" href="tel:+38640323886">040 323 886</a>
+      <div class="cta-row rv d3">
+        <a class="btn btn-red btn-big pulse" href="tel:+38640323886"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 040 323 886</a>
+        <a class="btn btn-ghost" href="mailto:ostirgarage@gmail.com">ostirgarage@gmail.com</a>
+      </div>
+      <p class="hours rv"><b>Delovni čas:</b> <span class="ph">(dopolnimo skupaj)</span></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>GAŠPER OŠTIR S.P. · Šalka vas 121, 1330 Kočevje · <a href="tel:+38640323886">040 323 886</a></span>
+    <span>Predogled pripravil Alej Kump, alejkump.si</span>
+    <span class="disc">Fotografije na tej strani so ilustrativne (Unsplash, licenca Unsplash) in ne prikazujejo dejanske delavnice podjetja.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-red" href="tel:+38640323886"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 040 323 886</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  ['contextmenu','dragstart','selectstart','copy'].forEach(function(e){
+    document.addEventListener(e,function(ev){ev.preventDefault();});
+  });
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});}
+  else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    var check=function(){var h=window.innerHeight;els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<h*0.94&&r.bottom>0)el.classList.add('in');}});};
+    window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+  }
+})();
+(function(){
+  var end=new Date('2026-11-15T00:00:00+01:00').getTime();
+  function p(n){return n<10?'0'+n:''+n}
+  function tick(){var t=Math.max(0,end-Date.now()),s=Math.floor(t/1000);
+    document.getElementById('cd-d').textContent=Math.floor(s/86400);
+    document.getElementById('cd-h').textContent=p(Math.floor(s%86400/3600));
+    document.getElementById('cd-m').textContent=p(Math.floor(s%3600/60));
+    document.getElementById('cd-s').textContent=p(s%60);}
+  tick();setInterval(tick,1000);
+})();
+</script>
+
+<!--
+SOURCES: see NOTES.md (not deployed). Facts: name, address, phone, e-mail, SKD 95.310 and activity list
+from bizi.si; e-mail given by the owner by phone 21. 10. Photos: Unsplash License.
+Hours, prices, brands, years, reviews: not shown (unknown).
+-->
+</body>
+</html>

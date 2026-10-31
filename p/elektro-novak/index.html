@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Elektro Novak · Električar Kočevje</title>
+<meta name="description" content="Elektro Novak, Janez Novak s.p., Mestni log III 1, Kočevje. Elektroinštalacije. Pokličite 031 875 680.">
+<meta name="theme-color" content="#070d1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width:700px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width:701px)">
+<style>
+:root{
+  --navy:#070d1a; --navy2:#0d1628; --graph:#141c2c; --graph2:#1c2638;
+  --volt:#ffd60a; --volt2:#ffe866; --cyan:#22d3ee; --cyan2:#7deaff;
+  --ink:#e8eef8; --ink2:#a9b6cc; --mute:#7b89a3; --line:rgba(255,255,255,.1);
+  --head:"Space Grotesk",system-ui,-apple-system,Segoe UI,sans-serif; --sans:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;
+  --r:22px; --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--navy);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;padding-bottom:84px}
+img{display:block;max-width:100%;-webkit-user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);font-weight:800;display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;box-shadow:0 0 10px currentColor}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.02;letter-spacing:-.025em}
+h2{font-size:clamp(34px,7.6vw,64px);margin:.3em 0 .4em}
+h2 em,h1 em{font-style:normal;color:var(--volt);text-shadow:0 0 28px rgba(255,214,10,.45)}
+.lead{color:var(--ink2);font-size:clamp(16px,2.2vw,18px);max-width:58ch}
+.ill{position:absolute;right:10px;bottom:10px;font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,.85);
+  background:rgba(0,0,0,.55);padding:3px 8px;border-radius:99px;backdrop-filter:blur(4px);z-index:3}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .4s,box-shadow .4s}
+.nav.solid{background:rgba(7,13,26,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(34,211,238,.18)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--head);font-size:21px;font-weight:700;white-space:nowrap;letter-spacing:-.02em}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--volt);line-height:1;margin-bottom:3px}
+.logo .bolt{width:36px;height:36px;flex:none;border-radius:11px;display:grid;place-items:center;background:var(--volt);color:var(--navy);
+  box-shadow:0 0 0 0 rgba(255,214,10,.6);animation:zap 3.4s ease-in-out infinite}
+.logo .bolt svg{width:20px;height:20px}
+@keyframes zap{0%,100%{box-shadow:0 0 0 0 rgba(255,214,10,.0)}50%{box-shadow:0 0 22px 2px rgba(255,214,10,.55)}}
+.nav-call{display:none;align-items:center;gap:8px;background:var(--volt);color:var(--navy);padding:10px 18px;border-radius:99px;font-weight:800;font-size:14px}
+.nav-call svg{width:16px;height:16px}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:min(100svh,980px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:var(--navy)}
+.hero-img{position:absolute;inset:0;z-index:-4}
+.hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);animation:drift 18s ease-out forwards;filter:saturate(.85) brightness(.85)}
+@keyframes drift{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-3;
+  background:linear-gradient(180deg,rgba(7,13,26,.7) 0%,rgba(7,13,26,.25) 30%,rgba(7,13,26,.78) 60%,var(--navy) 100%),
+             linear-gradient(90deg,rgba(7,13,26,.82),rgba(7,13,26,.2) 75%)}
+.circuit{position:absolute;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none}
+.circuit .base{fill:none;stroke:rgba(125,234,255,.16);stroke-width:2}
+.circuit .flow{fill:none;stroke:var(--cyan);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:60 900;animation:flow 4.2s linear infinite;filter:url(#glow)}
+.circuit .flow.y{stroke:var(--volt);animation-duration:5.6s}
+.circuit .flow.d1{animation-delay:-1.4s}.circuit .flow.d2{animation-delay:-2.8s}.circuit .flow.d3{animation-delay:-3.6s}
+.circuit circle{fill:var(--navy);stroke:rgba(125,234,255,.55);stroke-width:2}
+.circuit circle.hot{stroke:var(--volt);animation:node 2.4s ease-in-out infinite}
+@keyframes flow{from{stroke-dashoffset:960}to{stroke-dashoffset:0}}
+@keyframes node{50%{fill:var(--volt)}}
+
+/* bulb */
+.bulbbox{position:absolute;right:max(10px,6vw);top:0;width:130px;z-index:-1;transform-origin:50% 0;animation:sway 6s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-2.2deg)}50%{transform:rotate(2.2deg)}}
+.bulbbox svg{width:100%;height:auto;overflow:visible}
+.bulb-glow{position:absolute;left:50%;bottom:6px;width:280px;height:280px;transform:translate(-50%,30%);border-radius:50%;
+  background:radial-gradient(circle,rgba(255,214,10,.55),rgba(255,214,10,.12) 40%,transparent 68%);opacity:0;pointer-events:none;
+  animation:flick 2.6s .5s linear forwards, hum 3.2s 3.4s ease-in-out infinite}
+.bulb-glass{fill:rgba(255,255,255,.06);stroke:rgba(255,255,255,.45);stroke-width:2}
+.bulb-lit{fill:var(--volt2);opacity:0;animation:flick 2.6s .5s linear forwards}
+.filament{fill:none;stroke:#6b5a1a;stroke-width:2.2;stroke-linecap:round}
+.filament.on{stroke:#fff8c4;opacity:0;animation:flick 2.6s .5s linear forwards;filter:url(#glow)}
+@keyframes flick{0%{opacity:0}6%{opacity:.9}9%{opacity:.05}14%{opacity:.75}17%{opacity:0}30%{opacity:0}33%{opacity:1}36%{opacity:.3}40%{opacity:1}100%{opacity:1}}
+@keyframes hum{0%,100%{opacity:1}50%{opacity:.82}}
+.sparks{position:absolute;left:50%;bottom:30px;width:0;height:0}
+.sparks i{position:absolute;left:0;top:0;width:3px;height:3px;border-radius:50%;background:#fff6b0;box-shadow:0 0 6px 2px rgba(255,214,10,.9);opacity:0;
+  animation:spark var(--t,2.4s) var(--dl,0s) ease-out infinite}
+@keyframes spark{0%{transform:translate(0,0);opacity:0}4%{opacity:1}60%{opacity:.8}100%{transform:translate(var(--x,20px),var(--y,40px));opacity:0}}
+@media(min-width:900px){.bulbbox{width:190px;right:12%}.bulb-glow{width:420px;height:420px}}
+
+.hero-inner{padding-bottom:clamp(48px,9vh,100px);padding-top:120px;width:100%}
+.status{display:inline-flex;align-items:center;gap:9px;padding:8px 14px 8px 12px;border-radius:99px;font-weight:800;font-size:13px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);margin-bottom:16px}
+.status i{width:10px;height:10px;border-radius:50%;background:#8a94a6;flex:none}
+.status.open i{background:#3ddc6f;animation:ping 1.8s infinite}
+.status.closed i{background:#ff5d5d}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(61,220,111,.7)}70%,100%{box-shadow:0 0 0 10px rgba(61,220,111,0)}}
+.hero h1{font-size:clamp(52px,14vw,128px);margin:.14em 0 .2em;max-width:10ch;color:#fff}
+.hero p.sub{max-width:44ch;color:#d3dcec;font-size:clamp(16px,2.4vw,19px)}
+.rating{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-top:18px;padding:10px 16px;border-radius:16px;
+  background:rgba(13,22,40,.82);border:1px solid rgba(255,214,10,.35);backdrop-filter:blur(8px)}
+.rating b{font-family:var(--head);font-size:26px;line-height:1;color:#fff}
+.stars{letter-spacing:2px;font-size:17px;background:linear-gradient(90deg,var(--volt) 94%,rgba(255,214,10,.3) 94%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rating span{font-size:14px;font-weight:700}
+.rating small{flex-basis:100%;font-size:11px;color:var(--mute)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:99px;
+  font-weight:800;font-size:16px;transition:transform .25s,box-shadow .3s,background .3s;text-align:center}
+.btn-volt{color:var(--navy);background:linear-gradient(100deg,var(--volt),var(--volt2) 50%,var(--volt));background-size:220% 100%;
+  animation:shine 3s ease-in-out infinite;box-shadow:0 12px 40px -10px rgba(255,214,10,.7),inset 0 1px 0 rgba(255,255,255,.6)}
+@keyframes shine{50%{background-position:100% 0}}
+.btn-volt:hover{transform:translateY(-2px)}
+.btn-big{min-height:64px;font-size:19px;padding:0 30px}
+.btn-ghost{border:1.5px solid rgba(125,234,255,.5);color:#fff}
+.btn-ghost:hover{background:rgba(34,211,238,.1)}
+.btn svg{width:22px;height:22px;flex:none}
+.pulse{position:relative}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;animation:pulse 2.4s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,214,10,.55)}70%,100%{box-shadow:0 0 0 18px rgba(255,214,10,0)}}
+@media(max-width:480px){.cta-row .btn{width:100%}}
+.hero>.ill{bottom:36px}
+
+/* marquee */
+.strip{background:var(--volt);color:var(--navy);overflow:hidden;padding:15px 0;transform:rotate(-1.4deg);margin:-14px -10px 0;position:relative;z-index:2;
+  box-shadow:0 10px 40px -10px rgba(255,214,10,.55)}
+.strip.alt{background:var(--cyan);transform:rotate(1.2deg);margin:0 -10px;box-shadow:0 10px 40px -10px rgba(34,211,238,.5)}
+.track{display:flex;gap:30px;width:max-content;animation:roll 28s linear infinite}
+.strip.alt .track{animation-direction:reverse;animation-duration:34s}
+.track span{font-family:var(--head);font-size:23px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:30px;letter-spacing:-.01em;text-transform:uppercase}
+.track span::after{content:"";width:16px;height:16px;flex:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23070d1a' d='M13 2 4 14h7l-1 8 9-12h-7z'/%3E%3C/svg%3E") center/contain no-repeat}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:clamp(76px,12vw,130px) 0;position:relative}
+.svc-grid{display:grid;gap:18px;margin-top:40px}
+@media(min-width:760px){.svc-grid{grid-template-columns:1fr 1fr}}
+.svc{position:relative;border-radius:var(--r);overflow:hidden;background:var(--graph);border:1px solid var(--line);transition:transform .4s,border-color .4s}
+.svc::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;z-index:4;
+  background:conic-gradient(from var(--a,0deg),transparent 0 70%,var(--cyan) 80%,var(--volt) 88%,transparent 96%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:edge 5s linear infinite}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes edge{to{--a:360deg}}
+.svc:hover{transform:translateY(-5px)}
+.svc .pic{position:relative;aspect-ratio:4/3;overflow:hidden}
+.svc .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s;filter:saturate(.9)}
+.svc .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,28,44,.9))}
+.svc:hover .pic img{transform:scale(1.06)}
+.svc .txt{padding:6px 22px 24px;position:relative}
+.svc .num{font-family:var(--head);font-size:13px;color:var(--cyan);letter-spacing:.2em;font-weight:700}
+.svc h3{font-size:clamp(26px,6vw,32px);margin-top:4px;color:#fff}
+.svc p{color:var(--ink2);font-size:15px;margin-top:6px}
+.tag{position:absolute;left:12px;top:12px;z-index:3;background:var(--volt);color:var(--navy);font-size:12px;font-weight:800;padding:6px 11px;border-radius:99px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.ph-card{border-radius:var(--r);border:2px dashed rgba(125,234,255,.3);padding:24px 22px;display:flex;gap:16px;align-items:center;background:rgba(34,211,238,.04)}
+.ph-card .ico{width:58px;height:58px;flex:none;border-radius:16px;display:grid;place-items:center;background:rgba(34,211,238,.12);color:var(--cyan)}
+.ph-card .ico svg{width:30px;height:30px}
+.ph-card h3{font-size:22px;color:#fff}
+.ph-card p{color:var(--ink2);font-size:14px}
+@media(min-width:760px){.ph-card{grid-column:1/-1}}
+
+/* steps */
+.steps-sec{background:linear-gradient(180deg,var(--navy),var(--navy2))}
+.steps{list-style:none;margin-top:40px;position:relative;display:grid;gap:22px;padding-left:46px}
+.steps::before{content:"";position:absolute;left:17px;top:10px;bottom:10px;width:2px;background:rgba(125,234,255,.16)}
+.steps::after{content:"";position:absolute;left:16px;top:10px;width:4px;height:70px;border-radius:4px;background:linear-gradient(transparent,var(--volt),transparent);
+  box-shadow:0 0 14px var(--volt);animation:down 3.2s linear infinite}
+@keyframes down{from{top:0;opacity:0}10%{opacity:1}90%{opacity:1}to{top:calc(100% - 70px);opacity:0}}
+.steps li{position:relative;padding:20px 22px;border-radius:18px;background:var(--graph);border:1px solid var(--line)}
+.steps li::before{content:attr(data-n);position:absolute;left:-46px;top:16px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:var(--navy);border:2px solid var(--cyan);color:var(--cyan);font-family:var(--head);font-weight:700;font-size:15px;box-shadow:0 0 14px rgba(34,211,238,.4)}
+.steps h3{font-size:22px;color:#fff}
+.steps p{color:var(--ink2);font-size:15px;margin-top:4px}
+.steps a{color:var(--volt);font-weight:800}
+@media(min-width:900px){
+  .steps{grid-template-columns:repeat(3,1fr);padding-left:0;padding-top:56px}
+  .steps::before{left:18px;right:18px;top:17px;bottom:auto;width:auto;height:2px}
+  .steps::after{top:16px;left:0;width:90px;height:4px;background:linear-gradient(90deg,transparent,var(--volt),transparent);animation:across 3.6s linear infinite}
+  .steps li::before{left:0;top:-56px}
+}
+@keyframes across{from{left:0;opacity:0}10%{opacity:1}90%{opacity:1}to{left:calc(100% - 90px);opacity:0}}
+
+/* rating band */
+.band{background:radial-gradient(700px 400px at 90% 0%,rgba(255,214,10,.16),transparent 60%),radial-gradient(600px 380px at 0% 100%,rgba(34,211,238,.18),transparent 60%),var(--navy2);overflow:hidden}
+.band .eyebrow{color:var(--volt)}
+.facts{display:grid;gap:14px;margin-top:36px}
+@media(min-width:760px){.facts{grid-template-columns:repeat(3,1fr)}}
+.fact{border-radius:var(--r);padding:26px 22px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.fact b{display:block;font-family:var(--head);font-size:clamp(42px,10vw,62px);line-height:1;color:#fff;letter-spacing:-.03em}
+.fact .stars{font-size:22px;display:inline-block;margin-top:6px}
+.fact span{display:block;margin-top:8px;color:var(--ink2);font-size:15px}
+.src{margin-top:18px;font-size:12px;color:var(--mute)}
+
+/* hours */
+.hours-grid{display:grid;gap:28px;align-items:start}
+@media(min-width:900px){.hours-grid{grid-template-columns:1fr 1fr;gap:60px}}
+.week{list-style:none;border-radius:var(--r);overflow:hidden;background:var(--graph);border:1px solid var(--line)}
+.week li{display:flex;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line);font-weight:600}
+.week li:last-child{border-bottom:0}
+.week li span:last-child{font-variant-numeric:tabular-nums}
+.week li.off span:last-child{color:var(--mute)}
+.week li.today{background:linear-gradient(90deg,rgba(255,214,10,.16),rgba(34,211,238,.06));color:var(--volt);font-weight:800}
+.week li.today span:first-child::after{content:" · danes";font-size:12px;letter-spacing:.06em}
+.bigstatus{margin-top:22px;display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:18px;background:var(--graph2);border:1px solid var(--line);font-weight:800;font-size:18px}
+.bigstatus i{width:16px;height:16px;border-radius:50%;flex:none;background:#8a94a6}
+.bigstatus.open i{background:#3ddc6f;animation:ping 1.8s infinite}
+.bigstatus.closed i{background:#ff5d5d}
+.note{font-size:13px;color:var(--mute);margin-top:10px}
+
+/* call */
+.callband{background:var(--volt);color:var(--navy);overflow:hidden}
+.callband::before{content:"";position:absolute;inset:0;opacity:.18;
+  background:linear-gradient(90deg,var(--navy) 1px,transparent 1px) 0 0/34px 34px,linear-gradient(0deg,var(--navy) 1px,transparent 1px) 0 0/34px 34px}
+.callband .wrap{position:relative;display:grid;gap:26px;align-items:center}
+@media(min-width:900px){.callband .wrap{grid-template-columns:1.1fr 1fr;gap:60px}}
+.callband .eyebrow{color:var(--navy)}
+.callband h2 em{color:var(--navy);text-shadow:none;background:linear-gradient(transparent 62%,rgba(255,255,255,.6) 62%)}
+.callband .lead{color:#2a3550}
+.callcard{border-radius:var(--r);background:var(--navy);color:#fff;padding:30px 22px;text-align:center;box-shadow:0 26px 60px -24px rgba(7,13,26,.7)}
+.callcard small{display:block;color:var(--ink2);font-size:14px;font-weight:700}
+.callcard .n{display:block;font-family:var(--head);font-weight:700;font-size:clamp(40px,11.5vw,68px);white-space:nowrap;line-height:1;margin:12px 0 18px;color:var(--volt);letter-spacing:-.02em;text-shadow:0 0 30px rgba(255,214,10,.4)}
+.callcard .btn{width:100%}
+.callcard .land{display:block;margin-top:16px;font-size:14px;color:var(--ink2)}
+.callcard .land a{color:#fff;font-weight:800;white-space:nowrap}
+
+/* location */
+.loc{display:grid;gap:28px;align-items:stretch}
+@media(min-width:900px){.loc{grid-template-columns:1fr 1fr;gap:56px}}
+.addr{margin-top:22px;display:grid;gap:12px}
+.addr div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:var(--graph);border:1px solid var(--line)}
+.addr svg{width:22px;height:22px;flex:none;color:var(--cyan);margin-top:2px}
+.addr b{display:block;word-break:break-word;color:#fff}
+.addr small{color:var(--ink2);font-size:14px}
+.mapcard{position:relative;border-radius:var(--r);overflow:hidden;min-height:320px;display:block;color:#fff;border:1px solid var(--line);
+  background:radial-gradient(circle at 52% 46%,rgba(34,211,238,.28),transparent 36%),
+   repeating-linear-gradient(0deg,rgba(125,234,255,.06) 0 1px,transparent 1px 34px),
+   repeating-linear-gradient(90deg,rgba(125,234,255,.06) 0 1px,transparent 1px 34px),linear-gradient(160deg,#0f1a30,#070d1a)}
+.mapcard svg.roads{position:absolute;inset:0;width:100%;height:100%}
+.mapcard .flow{fill:none;stroke:var(--volt);stroke-width:2;stroke-dasharray:40 700;animation:flow 4s linear infinite}
+.pin{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%);color:var(--volt)}
+.pin svg{width:50px;height:50px;filter:drop-shadow(0 6px 16px rgba(255,214,10,.6));animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.mapcard .label{position:absolute;left:18px;bottom:16px;right:18px}
+.mapcard .label b{font-family:var(--head);font-size:26px;line-height:1.05;display:block}
+.mapcard .label small{color:var(--ink2);font-size:13px}
+.btn-line{border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.btn-line:hover{border-color:var(--cyan)}
+
+/* contact */
+.contact{text-align:center;overflow:hidden;background:radial-gradient(600px 300px at 50% 0%,rgba(255,214,10,.12),transparent 70%),var(--navy2)}
+.contact .lead{margin:0 auto}
+.contact .eyebrow{justify-content:center}
+.bignum{display:inline-block;font-family:var(--head);font-weight:700;font-size:clamp(48px,13.5vw,120px);white-space:nowrap;line-height:1;margin:22px 0 6px;color:var(--volt);
+  letter-spacing:-.03em;text-shadow:0 0 40px rgba(255,214,10,.35)}
+.contact .cta-row{justify-content:center}
+
+footer{background:#04080f;color:var(--mute);padding:40px 0 30px;font-size:13px;border-top:1px solid rgba(34,211,238,.15)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:58px;font-size:17px}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.badge{position:fixed;top:74px;left:10px;z-index:60;font-size:11px;letter-spacing:.06em;padding:6px 11px;border-radius:99px;
+  background:rgba(7,13,26,.88);border:1px solid rgba(255,214,10,.45);color:var(--volt);backdrop-filter:blur(8px);pointer-events:none}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+.no-js .rv{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero-img img{transform:none}
+  .bulb-glow,.bulb-lit,.filament.on{opacity:1}
+}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="badge" aria-hidden="true">Predogled · Alej Kump</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="boltico" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Elektro Novak, na vrh">
+      <span class="bolt"><svg aria-hidden="true"><use href="#boltico"/></svg></span>
+      <span><small>Električar · Kočevje</small>Elektro Novak</span>
+    </a>
+    <a class="nav-call" href="tel:+38631875680"><svg aria-hidden="true"><use href="#tel"/></svg>031 875 680</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <div class="hero-img">
+      <picture>
+        <source media="(max-width:700px)" srcset="assets/hero-m.webp" width="900" height="1500">
+        <img src="assets/hero.webp" alt="Vrstne sponke in vodniki v električni omarici" width="1920" height="1080" fetchpriority="high">
+      </picture>
+    </div>
+    <svg class="circuit" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="base" id="c1" d="M-10 120 H90 Q100 120 100 130 V250 Q100 260 110 260 H230"/>
+      <path class="base" id="c2" d="M410 300 H330 Q320 300 320 310 V420 Q320 430 310 430 H180 Q170 430 170 440 V560"/>
+      <path class="base" id="c3" d="M-10 470 H40 Q50 470 50 480 V620 Q50 630 60 630 H160"/>
+      <path class="base" id="c4" d="M410 640 H300 Q290 640 290 650 V810"/>
+      <path class="flow" d="M-10 120 H90 Q100 120 100 130 V250 Q100 260 110 260 H230"/>
+      <path class="flow y d1" d="M410 300 H330 Q320 300 320 310 V420 Q320 430 310 430 H180 Q170 430 170 440 V560"/>
+      <path class="flow d2" d="M-10 470 H40 Q50 470 50 480 V620 Q50 630 60 630 H160"/>
+      <path class="flow y d3" d="M410 640 H300 Q290 640 290 650 V810"/>
+      <circle cx="230" cy="260" r="5" class="hot"/><circle cx="170" cy="560" r="5"/><circle cx="160" cy="630" r="5" class="hot"/><circle cx="100" cy="190" r="4"/>
+    </svg>
+    <div class="bulbbox" aria-hidden="true">
+      <div class="bulb-glow"></div>
+      <svg viewBox="0 0 120 300">
+        <path d="M60 0 V150" stroke="#2a3550" stroke-width="3"/>
+        <rect x="46" y="148" width="28" height="26" rx="4" fill="#1d2840" stroke="#3a4868" stroke-width="2"/>
+        <rect x="44" y="174" width="32" height="22" rx="3" fill="#8b93a6"/>
+        <path d="M44 181h32M44 188h32" stroke="#5f6779" stroke-width="2"/>
+        <path class="bulb-glass" d="M48 196 C48 212 26 222 26 252 A34 34 0 0 0 94 252 C94 222 72 212 72 196 Z"/>
+        <path class="bulb-lit" d="M48 196 C48 212 26 222 26 252 A34 34 0 0 0 94 252 C94 222 72 212 72 196 Z" style="mix-blend-mode:screen"/>
+        <path class="filament" d="M52 198 L50 240 Q55 232 60 240 Q65 232 70 240 L68 198"/>
+        <path class="filament on" d="M50 240 Q55 232 60 240 Q65 232 70 240"/>
+      </svg>
+      <div class="sparks" id="sparks"></div>
+    </div>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap hero-inner">
+      <div class="status rv" data-status><i></i><span>Delovni čas: pon–pet 8–16</span></div>
+      <div><span class="eyebrow rv" style="color:var(--volt)">Električar · Kočevje</span></div>
+      <h1 class="rv d1">Elektro <em>Novak.</em></h1>
+      <p class="sub rv d2">Elektroinštalacije v Kočevju. Janez Novak s.p., Mestni log III 1. Pokličite in povejte, kaj potrebujete.</p>
+      <div class="rating rv d2"><b>4,7</b><span class="stars" aria-hidden="true">★★★★★</span><span>na Googlu · 11 mnenj</span><small>vir: Google Zemljevidi, 21. 10. 2026</small></div>
+      <div class="cta-row rv d3">
+        <a class="btn btn-volt btn-big pulse" href="tel:+38631875680"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 875 680</a>
+        <a class="btn btn-ghost" href="#storitve">Storitve</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="track">
+      <span>Elektroinštalacije</span><span>Popravila</span><span>Vzdrževanje</span><span>Električar</span><span>Kočevje</span>
+      <span>Elektroinštalacije</span><span>Popravila</span><span>Vzdrževanje</span><span>Električar</span><span>Kočevje</span>
+    </div>
+  </div>
+
+  <section id="storitve">
+    <div class="wrap">
+      <div class="eyebrow rv">Storitve</div>
+      <h2 class="rv d1">Kaj <em>delamo.</em></h2>
+      <p class="lead rv d2">Elektroinštalacije v Kočevju in okolici — pokličite in povejte, kaj potrebujete. Natančen seznam del dopolnimo skupaj z vami.</p>
+      <div class="svc-grid">
+        <article class="svc rv">
+          <div class="pic">
+            <img src="assets/instalacije.webp" alt="Vodniki v podometni razdelilni omarici med deli" loading="lazy" width="1200" height="900">
+            <span class="tag">Glavna dejavnost</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><div class="num">01</div><h3>Elektroinštalacije</h3><p>Napeljave in električne inštalacije. Seznam del dopolnimo skupaj.</p></div>
+        </article>
+        <article class="svc rv d1">
+          <div class="pic">
+            <img src="assets/meritve.webp" alt="Merilne klešče, kabli in razvodna doza" loading="lazy" width="1200" height="900">
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><div class="num">02</div><h3>Popravila in vzdrževanje</h3><p>Ko kaj ne deluje, pokličite. Seznam del dopolnimo skupaj.</p></div>
+        </article>
+        <div class="ph-card rv">
+          <div class="ico"><svg aria-hidden="true"><use href="#boltico"/></svg></div>
+          <div><h3>Kaj še delate?</h3><p>Tu dodamo vaše storitve, kot jih opišete vi. Seznam del dopolnimo skupaj.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip alt" aria-hidden="true">
+    <div class="track">
+      <span>4,7 ★ na Googlu</span><span>Mestni log III 1</span><span>031 875 680</span><span>pon–pet 8–16</span>
+      <span>4,7 ★ na Googlu</span><span>Mestni log III 1</span><span>031 875 680</span><span>pon–pet 8–16</span>
+    </div>
+  </div>
+
+  <section class="steps-sec" id="kako">
+    <div class="wrap">
+      <div class="eyebrow rv">Kako do električarja</div>
+      <h2 class="rv d1">Trije koraki. <em>Prvi je klic.</em></h2>
+      <ol class="steps">
+        <li class="rv" data-n="1"><h3>Pokličite</h3><p><a href="tel:+38631875680">031 875 680</a>, od ponedeljka do petka med 8. in 16. uro.</p></li>
+        <li class="rv d1" data-n="2"><h3>Opišite težavo</h3><p>Povejte, kje ste in kaj potrebujete.</p></li>
+        <li class="rv d2" data-n="3"><h3>Dogovorite se</h3><p>Skupaj se dogovorite za nadaljnje korake.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" id="mnenja">
+    <div class="wrap">
+      <div class="eyebrow rv">Na Googlu</div>
+      <h2 class="rv d1">4,7 zvezdice. <em>11 mnenj.</em></h2>
+      <p class="lead rv d2">Ocena in kategorija, kot ju prikazujejo Google Zemljevidi.</p>
+      <div class="facts">
+        <div class="fact rv"><b>4,7</b><span class="stars" aria-hidden="true">★★★★★</span><span>povprečna ocena</span></div>
+        <div class="fact rv d1"><b>11</b><span>mnenj strank na Googlu</span></div>
+        <div class="fact rv d2"><b style="font-size:clamp(32px,7.5vw,44px)">Električar</b><span>kategorija na Google Zemljevidih</span></div>
+      </div>
+      <p class="src rv">vir: Google Zemljevidi, 21. 10. 2026</p>
+    </div>
+  </section>
+
+  <section id="delovni-cas">
+    <div class="wrap hours-grid">
+      <div class="rv">
+        <div class="eyebrow">Delovni čas</div>
+        <h2>Je zdaj <em>odprto?</em></h2>
+        <div class="bigstatus" data-status><i></i><span>Delovni čas: pon–pet 8–16</span></div>
+        <p class="note">Po podatkih Google Zemljevidov. Ob praznikih raje pokličite.</p>
+      </div>
+      <ul class="week rv d1" id="week">
+        <li data-d="1"><span>Ponedeljek</span><span>8.00–16.00</span></li>
+        <li data-d="2"><span>Torek</span><span>8.00–16.00</span></li>
+        <li data-d="3"><span>Sreda</span><span>8.00–16.00</span></li>
+        <li data-d="4"><span>Četrtek</span><span>8.00–16.00</span></li>
+        <li data-d="5"><span>Petek</span><span>8.00–16.00</span></li>
+        <li data-d="6" class="off"><span>Sobota</span><span>zaprto</span></li>
+        <li data-d="0" class="off"><span>Nedelja</span><span>zaprto</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="callband" id="klic">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">Najhitreje po telefonu</div>
+        <h2>Vprašanje? <em>Pokličite.</em></h2>
+        <p class="lead">Za vprašanja o elektroinštalacijah pokličite med delovnim časom.</p>
+      </div>
+      <div class="callcard rv d1">
+        <small>Elektro Novak · Janez Novak s.p.</small>
+        <a class="n" href="tel:+38631875680">031 875 680</a>
+        <a class="btn btn-volt btn-big pulse" href="tel:+38631875680"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite zdaj</a>
+        <span class="land">Stacionarni telefon: <a href="tel:+38618931128">01 893 11 28</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="lokacija">
+    <div class="wrap loc">
+      <div class="rv">
+        <div class="eyebrow">Lokacija</div>
+        <h2>Mestni log, <em>Kočevje.</em></h2>
+        <p class="lead">Za pot nas poiščite na Google Zemljevidih.</p>
+        <div class="addr">
+          <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Mestni log III 1</b><small>1330 Kočevje</small></span></div>
+          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38631875680">031 875 680</a></b><small>mobilni telefon</small></span></div>
+          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38618931128">01 893 11 28</a></b><small>stacionarni telefon</small></span></div>
+          <div><svg aria-hidden="true"><use href="#mail"/></svg><span><b><a href="mailto:elektro.novak@siol.com">elektro.novak@siol.com</a></b><small>e-pošta</small></span></div>
+          <div><svg aria-hidden="true"><use href="#clock"/></svg><span><b>pon–pet 8–16 · sob–ned zaprto</b><small>delovni čas</small></span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Elektro+Novak+Ko%C4%8Devje" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg>Odpri v Google Zemljevidih</a>
+        </div>
+      </div>
+      <a class="mapcard rv d1" href="https://www.google.com/maps/search/?api=1&amp;query=Elektro+Novak+Ko%C4%8Devje" target="_blank" rel="noopener" aria-label="Elektro Novak na Google Zemljevidih">
+        <svg class="roads" viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-10 90 C 90 120, 150 150, 208 148 S 330 190, 420 240" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="10"/>
+          <path class="flow" d="M-10 90 C 90 120, 150 150, 208 148 S 330 190, 420 240"/>
+          <path d="M208 148 C 196 210, 226 270, 206 340" fill="none" stroke="rgba(255,255,255,.09)" stroke-width="6"/>
+          <path d="M290 -10 C 270 60, 236 110, 208 148" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="5"/>
+        </svg>
+        <div class="pin"><svg aria-hidden="true"><use href="#pinico"/></svg></div>
+        <div class="label"><b>Mestni log III 1</b><small>shematski prikaz · odpri zemljevid</small></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="eyebrow rv">Kontakt</div>
+      <h2 class="rv d1">Se slišimo <em>po telefonu.</em></h2>
+      <p class="lead rv d2">Pokličite ali pišite na elektro.novak@siol.com.</p>
+      <a class="bignum rv d2" href="tel:+38631875680">031 875 680</a>
+      <div class="cta-row rv d3">
+        <a class="btn btn-volt btn-big pulse" href="tel:+38631875680"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 875 680</a>
+        <a class="btn btn-line" href="mailto:elektro.novak@siol.com">Pišite nam</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Janez Novak s.p. · Mestni log III 1, 1330 Kočevje · <a href="tel:+38631875680">031 875 680</a> · <a href="tel:+38618931128">01 893 11 28</a></span>
+    <span>Predogled pripravil Alej Kump, alejkump.si</span>
+    <span class="disc">Fotografije na tej strani so ilustrativne (Unsplash, licenca Unsplash) in ne prikazujejo dejanskih del, opreme ali prostorov Elektro Novak. Ocena, število mnenj, kategorija in delovni čas: Google Zemljevidi, 21. 10. 2026. Naziv, naslov, dejavnost, stacionarni telefon in e-pošta: bizi.si, 21. 10. 2026.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-volt" href="tel:+38631875680"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 875 680</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  ['contextmenu','dragstart','selectstart','copy'].forEach(function(e){
+    document.addEventListener(e,function(ev){ev.preventDefault();});
+  });
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function all(){els.forEach(function(el){el.classList.add('in');});}
+  if(reduce||!('IntersectionObserver' in window)){all();}
+  else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    var check=function(){
+      var h=window.innerHeight;
+      if(h+window.scrollY>=document.documentElement.scrollHeight-8){all();return;}
+      els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<h*0.94&&r.bottom>0)el.classList.add('in');}});
+    };
+    window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+  }
+  /* sparks from the bulb */
+  if(!reduce){
+    var box=document.getElementById('sparks');
+    for(var i=0;i<14;i++){
+      var s=document.createElement('i');
+      var ang=Math.random()*Math.PI*2, dist=30+Math.random()*70;
+      s.style.setProperty('--x',(Math.cos(ang)*dist).toFixed(1)+'px');
+      s.style.setProperty('--y',(Math.abs(Math.sin(ang))*dist+20).toFixed(1)+'px');
+      s.style.setProperty('--t',(1.4+Math.random()*2.2).toFixed(2)+'s');
+      s.style.setProperty('--dl',(3+Math.random()*6).toFixed(2)+'s');
+      box.appendChild(s);
+    }
+  }
+})();
+/* Odprto zdaj / Zaprto, computed in Europe/Ljubljana time.
+   Hours (Google Maps, 21. 10. 2026): Mon-Fri 8-16, Sat-Sun closed. */
+(function(){
+  var OPEN=8, CLOSE=16;
+  var WD={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  function workday(d){return d>=1&&d<=5;}
+  function now(){
+    try{
+      var parts=new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Ljubljana',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+      var o={};parts.forEach(function(p){o[p.type]=p.value;});
+      return {d:WD[o.weekday],m:parseInt(o.hour,10)*60+parseInt(o.minute,10)};
+    }catch(e){return null;}
+  }
+  function render(){
+    var t=now(), text, cls;
+    if(!t||t.d===undefined||isNaN(t.m)){return;}
+    var open=OPEN*60, close=CLOSE*60;
+    if(workday(t.d)&&t.m>=open&&t.m<close){
+      var left=close-t.m;cls='open';
+      text=left<=60?'Odprto zdaj · zapremo čez '+left+' min':'Odprto zdaj · do 16.00';
+    }else if(workday(t.d)&&t.m<open){
+      cls='closed';text='Zaprto · odpremo danes ob 8.00';
+    }else{
+      cls='closed';
+      var n=(t.d+1)%7;
+      text=workday(n)?'Zaprto · odpremo jutri ob 8.00':'Zaprto · odpremo v ponedeljek ob 8.00';
+    }
+    document.querySelectorAll('[data-status]').forEach(function(el){
+      el.classList.remove('open','closed');el.classList.add(cls);
+      el.querySelector('span').textContent=text;
+    });
+    document.querySelectorAll('#week li').forEach(function(li){
+      li.classList.toggle('today',parseInt(li.getAttribute('data-d'),10)===t.d);
+    });
+  }
+  render();setInterval(render,30000);
+})();
+</script>
+
+<!--
+SOURCES: see NOTES.md (not deployed). Facts: name on Google, category, rating 4,7 / 11 reviews, address, mobile phone,
+hours from Google Maps (21. 10. 2026); legal name, address, landline, e-mail, activity "Elektroinštalacije" from bizi.si.
+Photos: Unsplash License. No specific services, prices, years, certificates, guarantees, emergency/24-7 or service area claimed.
+-->
+</body>
+</html>

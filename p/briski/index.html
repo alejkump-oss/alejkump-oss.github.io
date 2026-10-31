@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Gostilnica in pizzeria Briški · Kočevje</title>
+<meta name="description" content="Gostilnica in pizzeria Briški, Trg zbora odposlancev 56, Kočevje. Pokličite 01 895 56 01.">
+<meta name="theme-color" content="#1a0f0a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width:700px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width:701px)">
+<style>
+:root{
+  --tomato:#e8402c; --tomato2:#ff6a45; --basil:#2f8f4e; --basil2:#53b872; --cream:#fff6e6; --cream2:#f6e7cc;
+  --fire:#ff8a1f; --ember:#ffb347; --ink:#2b1a10; --ink2:#5b4636; --dark:#1a0f0a; --dark2:#24150d;
+  --line:rgba(43,26,16,.12);
+  --head:"Fraunces",Georgia,"Times New Roman",serif; --sans:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;
+  --r:22px; --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;padding-bottom:84px}
+img{display:block;max-width:100%;-webkit-user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--tomato);font-weight:800}
+h1,h2,h3{font-family:var(--head);font-weight:900;line-height:1.02;letter-spacing:-.015em}
+h2{font-size:clamp(34px,7.5vw,64px);margin:.3em 0 .4em}
+h2 em,h1 em{font-style:italic;color:var(--tomato)}
+.lead{color:var(--ink2);font-size:clamp(16px,2.2vw,18px);max-width:58ch}
+.ill{position:absolute;right:10px;bottom:10px;font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,.8);
+  background:rgba(0,0,0,.5);padding:3px 8px;border-radius:99px;backdrop-filter:blur(4px);z-index:3}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .4s,box-shadow .4s}
+.nav.solid{background:rgba(26,15,10,.88);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--head);font-size:21px;font-weight:900;white-space:nowrap}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--ember);line-height:1}
+.logo svg{width:34px;height:34px;flex:none;animation:spin 18s linear infinite}
+.nav-call{display:none;align-items:center;gap:8px;background:var(--tomato);color:#fff;padding:10px 18px;border-radius:99px;font-weight:800;font-size:14px}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:min(100svh,980px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:var(--dark);color:#fff}
+.hero-img{position:absolute;inset:0;z-index:-3}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.1);animation:drift 18s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(180deg,rgba(26,15,10,.55) 0%,rgba(26,15,10,.05) 28%,rgba(26,15,10,.62) 58%,var(--dark) 100%),
+             linear-gradient(90deg,rgba(26,15,10,.7),transparent 70%)}
+.embers{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.embers i{position:absolute;bottom:-12px;width:5px;height:5px;border-radius:50%;background:var(--ember);
+  box-shadow:0 0 8px 2px rgba(255,138,31,.8);opacity:0;animation:rise linear infinite}
+@keyframes rise{0%{transform:translate3d(0,0,0) scale(1);opacity:0}10%{opacity:.95}
+  100%{transform:translate3d(var(--dx,30px),-92vh,0) scale(.3);opacity:0}}
+.hero-inner{padding-bottom:clamp(48px,9vh,100px);padding-top:104px;width:100%}
+.status{display:inline-flex;align-items:center;gap:9px;padding:8px 14px 8px 12px;border-radius:99px;font-weight:800;font-size:13px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);margin-bottom:16px}
+.status i{width:10px;height:10px;border-radius:50%;background:#aaa;flex:none}
+.status.open i{background:#3ddc6f;box-shadow:0 0 0 0 rgba(61,220,111,.7);animation:ping 1.8s infinite}
+.status.closed i{background:var(--tomato2)}
+@keyframes ping{70%,100%{box-shadow:0 0 0 10px rgba(61,220,111,0)}}
+.hero h1{font-size:clamp(46px,12vw,118px);margin:.12em 0 .22em;max-width:12ch}
+.hero h1 em{color:var(--ember)}
+.hero p.sub{max-width:44ch;color:#f3e6d6;font-size:clamp(16px,2.4vw,19px)}
+.rating{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-top:18px;padding:10px 16px;border-radius:16px;background:rgba(255,246,230,.95);color:var(--ink)}
+.rating b{font-family:var(--head);font-size:24px;line-height:1}
+.stars{letter-spacing:2px;font-size:17px;background:linear-gradient(90deg,#f5a623 88%,rgba(245,166,35,.3) 88%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rating span{font-size:14px;font-weight:700}
+.rating small{flex-basis:100%;font-size:11px;color:var(--ink2)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:99px;
+  font-weight:800;font-size:16px;transition:transform .25s,box-shadow .3s,background .3s;text-align:center}
+.btn-red{color:#fff;background:linear-gradient(100deg,var(--tomato),var(--fire) 55%,var(--tomato));background-size:220% 100%;
+  animation:shine 3.2s ease-in-out infinite;box-shadow:0 12px 36px -10px rgba(232,64,44,.75),inset 0 1px 0 rgba(255,255,255,.35)}
+@keyframes shine{50%{background-position:100% 0}}
+.btn-red:hover{transform:translateY(-2px)}
+.btn-big{min-height:64px;font-size:19px;padding:0 30px}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn svg{width:22px;height:22px;flex:none}
+.pulse{position:relative}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;animation:pulse 2.4s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,106,69,.55)}70%,100%{box-shadow:0 0 0 18px rgba(255,106,69,0)}}
+@media(max-width:480px){.cta-row .btn{width:100%}}
+.hero-pizza{position:absolute;right:-90px;top:84px;width:300px;height:300px;z-index:-1;opacity:.9;filter:drop-shadow(0 20px 40px rgba(0,0,0,.5))}
+.hero-pizza svg{width:100%;height:100%;animation:spin 26s linear infinite}
+@media(min-width:900px){.hero-pizza{right:6%;top:18%;width:400px;height:400px}}
+@media(max-width:700px){.hero-pizza{opacity:.55;width:240px;height:240px;right:-80px;top:70px}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.hero>.ill{bottom:36px}
+/* marquee */
+.strip{background:var(--tomato);color:#fff;overflow:hidden;padding:16px 0;transform:rotate(-1.4deg);margin:-14px -10px 0;position:relative;z-index:2;
+  box-shadow:0 10px 30px -12px rgba(232,64,44,.6)}
+.strip.alt{background:var(--basil);transform:rotate(1.2deg);margin:0 -10px;box-shadow:0 10px 30px -12px rgba(47,143,78,.6)}
+.track{display:flex;gap:34px;width:max-content;animation:roll 30s linear infinite}
+.strip.alt .track{animation-direction:reverse;animation-duration:36s}
+.track span{font-family:var(--head);font-style:italic;font-size:24px;font-weight:800;white-space:nowrap;display:flex;align-items:center;gap:34px}
+.track span::after{content:"";width:14px;height:14px;border-radius:50%;background:var(--cream);box-shadow:inset -3px -3px 0 rgba(0,0,0,.12)}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:clamp(76px,12vw,130px) 0}
+.menu-grid{display:grid;gap:18px;margin-top:40px}
+@media(min-width:760px){.menu-grid{grid-template-columns:1fr 1fr}}
+.dish{position:relative;border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 18px 50px -24px rgba(43,26,16,.45);transition:transform .4s}
+.dish:hover{transform:translateY(-5px) rotate(-.4deg)}
+.dish .pic{position:relative;aspect-ratio:4/3;overflow:hidden}
+.dish .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.dish:hover .pic img{transform:scale(1.06)}
+.dish .txt{padding:22px 22px 24px}
+.dish h3{font-size:30px}
+.dish p{color:var(--ink2);font-size:15px;margin-top:6px}
+.gchip{position:absolute;left:12px;top:12px;z-index:3;background:var(--cream);color:var(--ink);font-size:12px;font-weight:800;padding:6px 11px;border-radius:99px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.steam{position:absolute;left:50%;top:18%;width:120px;height:80px;transform:translateX(-50%);pointer-events:none;z-index:2}
+.steam b{position:absolute;bottom:0;width:14px;height:60px;border-radius:50%;background:linear-gradient(to top,rgba(255,255,255,.55),transparent);
+  filter:blur(6px);opacity:0;animation:steam 3.6s ease-out infinite}
+.steam b:nth-child(1){left:20px}.steam b:nth-child(2){left:52px;animation-delay:1.2s}.steam b:nth-child(3){left:84px;animation-delay:2.4s}
+@keyframes steam{0%{transform:translateY(20px) scaleX(1);opacity:0}30%{opacity:.9}100%{transform:translateY(-50px) scaleX(2.2);opacity:0}}
+.ph-card{border-radius:var(--r);border:2px dashed rgba(43,26,16,.25);padding:26px 22px;display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.5)}
+.ph-card .ico{width:58px;height:58px;flex:none;border-radius:16px;display:grid;place-items:center;background:var(--cream2);color:var(--tomato)}
+.ph-card .ico svg{width:32px;height:32px}
+.ph-card h3{font-size:24px}
+.ph-card p{color:var(--ink2);font-size:14px;font-style:italic}
+
+/* rating band */
+.band{background:radial-gradient(700px 400px at 90% 0%,rgba(255,138,31,.25),transparent 60%),radial-gradient(600px 380px at 0% 100%,rgba(232,64,44,.25),transparent 60%),var(--dark);color:#fff;position:relative;overflow:hidden}
+.band .eyebrow{color:var(--ember)}
+.band h2 em{color:var(--ember)}
+.band .lead{color:#e9d9c6}
+.facts{display:grid;gap:14px;margin-top:36px}
+@media(min-width:760px){.facts{grid-template-columns:repeat(3,1fr)}}
+.fact{border-radius:var(--r);padding:26px 22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.fact b{display:block;font-family:var(--head);font-size:clamp(40px,10vw,60px);line-height:1;color:#fff}
+.fact .stars{font-size:22px;display:inline-block;color:transparent;margin-top:6px}
+.fact span{display:block;margin-top:8px;color:#e9d9c6;font-size:15px}
+.src{margin-top:18px;font-size:12px;color:#bfa991}
+
+/* hours */
+.hours-grid{display:grid;gap:28px;align-items:start}
+@media(min-width:900px){.hours-grid{grid-template-columns:1fr 1fr;gap:60px}}
+.week{list-style:none;border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 18px 50px -24px rgba(43,26,16,.4)}
+.week li{display:flex;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line);font-weight:600}
+.week li:last-child{border-bottom:0}
+.week li span:last-child{font-variant-numeric:tabular-nums}
+.week li.today{background:linear-gradient(90deg,rgba(232,64,44,.12),rgba(255,138,31,.08));color:var(--tomato);font-weight:800}
+.week li.today span:first-child::after{content:" · danes";font-size:12px;letter-spacing:.06em}
+.bigstatus{margin-top:22px;display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:18px;background:var(--cream2);font-weight:800;font-size:18px}
+.bigstatus i{width:16px;height:16px;border-radius:50%;flex:none;background:#aaa}
+.bigstatus.open i{background:#2fbf5c;animation:ping 1.8s infinite}
+.bigstatus.closed i{background:var(--tomato)}
+.note{font-size:13px;color:var(--ink2);margin-top:10px}
+
+/* call */
+.callband{background:var(--basil);color:#fff;position:relative;overflow:hidden}
+.callband::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,255,255,.14) 0 2px,transparent 3px) 0 0/26px 26px;opacity:.6}
+.callband .wrap{position:relative;display:grid;gap:26px;align-items:center}
+@media(min-width:900px){.callband .wrap{grid-template-columns:1.1fr 1fr;gap:60px}}
+.callband .eyebrow{color:#d8f5c9}
+.callband h2 em{color:var(--ember)}
+.callcard{border-radius:var(--r);background:var(--cream);color:var(--ink);padding:30px 22px;text-align:center;box-shadow:0 26px 60px -24px rgba(0,0,0,.5)}
+.callcard small{display:block;color:var(--ink2);font-size:14px;font-weight:700}
+.callcard .n{display:block;font-family:var(--head);font-weight:900;font-size:clamp(38px,11vw,66px);white-space:nowrap;line-height:1;margin:12px 0 18px;color:var(--tomato)}
+.callcard .btn{width:100%}
+
+/* location */
+.loc{display:grid;gap:28px;align-items:stretch}
+@media(min-width:900px){.loc{grid-template-columns:1fr 1fr;gap:56px}}
+.addr{margin-top:22px;display:grid;gap:12px}
+.addr div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:#fff;box-shadow:0 10px 30px -20px rgba(43,26,16,.45)}
+.addr svg{width:22px;height:22px;flex:none;color:var(--tomato);margin-top:2px}
+.addr b{display:block;word-break:break-word}
+.addr small{color:var(--ink2);font-size:14px}
+.mapcard{position:relative;border-radius:var(--r);overflow:hidden;min-height:320px;display:block;color:#fff;
+  background:radial-gradient(circle at 52% 46%,rgba(255,138,31,.35),transparent 36%),
+   repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 34px),
+   repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 34px),linear-gradient(160deg,#2a1a10,#160c07)}
+.mapcard svg.roads{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%);color:var(--tomato2)}
+.pin svg{width:50px;height:50px;filter:drop-shadow(0 6px 16px rgba(232,64,44,.7));animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.mapcard .label{position:absolute;left:18px;bottom:16px;right:18px}
+.mapcard .label b{font-family:var(--head);font-size:28px;line-height:1.05;display:block}
+.mapcard .label small{color:#d9c4ad;font-size:13px}
+
+/* contact */
+.contact{text-align:center;position:relative;overflow:hidden;background:var(--cream2)}
+.contact .lead{margin:0 auto}
+.bignum{display:inline-block;font-family:var(--head);font-weight:900;font-size:clamp(46px,13vw,116px);white-space:nowrap;line-height:1;margin:22px 0 6px;color:var(--tomato)}
+.contact .cta-row{justify-content:center}
+
+footer{background:var(--dark);color:#cdb9a3;padding:40px 0 30px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer .disc{flex-basis:100%;font-size:12px;opacity:.85}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:58px;font-size:17px}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.badge{position:fixed;top:74px;right:10px;z-index:60;font-size:11px;letter-spacing:.06em;padding:6px 11px;border-radius:99px;
+  background:rgba(26,15,10,.85);border:1px solid rgba(255,179,71,.45);color:var(--ember);backdrop-filter:blur(8px);pointer-events:none}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+.no-js .rv{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero-img img{transform:none}
+}
+:focus-visible{outline:2px solid var(--fire);outline-offset:3px;border-radius:8px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="badge" aria-hidden="true">Predogled · Alej Kump</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="pizza" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="96" fill="#e9a65a"/>
+      <circle cx="100" cy="100" r="96" fill="none" stroke="#b86b2a" stroke-width="3" stroke-dasharray="3 11"/>
+      <circle cx="100" cy="100" r="80" fill="#d9381e"/>
+      <g fill="#fff3d6">
+        <path d="M70 58c10-6 22-2 24 8s-8 16-18 14-14-16-6-22z"/>
+        <path d="M124 52c9-3 19 3 18 12s-11 13-19 9-9-18 1-21z"/>
+        <path d="M58 104c8-7 21-4 22 6s-9 15-18 13-11-13-4-19z"/>
+        <path d="M110 96c10-5 22 1 21 11s-12 15-21 11-10-17 0-22z"/>
+        <path d="M86 138c9-5 21 0 20 10s-12 13-20 9-9-15 0-19z"/>
+        <path d="M138 124c8-4 18 2 16 10s-11 11-17 7-7-14 1-17z"/>
+      </g>
+      <g fill="#2f8f4e">
+        <path d="M98 78c6-10 18-12 20-10-2 8-12 16-20 10z"/><path d="M98 78c-2-10 6-18 10-18 1 8-4 16-10 18z" fill="#53b872"/>
+        <path d="M72 128c4-10 16-14 19-12-1 8-11 16-19 12z"/>
+        <path d="M140 92c6-8 16-8 18-6-3 7-12 12-18 6z"/>
+        <path d="M118 150c5-8 15-10 17-8-2 7-11 13-17 8z" fill="#53b872"/>
+      </g>
+      <g stroke="#1a0f0a" stroke-opacity=".18" stroke-width="2"><path d="M100 4v192M4 100h192M32 32l136 136M168 32L32 168"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Gostilnica in pizzeria Briški, na vrh">
+      <svg aria-hidden="true"><use href="#pizza"/></svg>
+      <span><small>Gostilnica in pizzeria</small>Briški</span>
+    </a>
+    <a class="nav-call" href="tel:+38618955601"><svg width="16" height="16" aria-hidden="true"><use href="#tel"/></svg>01 895 56 01</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <div class="hero-img">
+      <picture>
+        <source media="(max-width:700px)" srcset="assets/hero-m.webp" width="900" height="1500">
+        <img src="assets/hero.webp" alt="Pica v krušni peči z ognjem v ozadju" width="1920" height="1080" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="embers" id="embers" aria-hidden="true"></div>
+    <div class="hero-pizza" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#pizza"/></svg></div>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap hero-inner">
+      <div class="status rv" data-status><i></i><span>Delovni čas: pon–pet 9–21, sob–ned 11–21</span></div>
+      <div class="eyebrow rv" style="color:var(--ember)">Gostilnica · Pizzeria · Kočevje</div>
+      <h1 class="rv d1">Pizzeria <em>Briški.</em></h1>
+      <p class="sub rv d2">Gostilnica in pizzeria na Trgu zbora odposlancev v Kočevju. Pridite na pico ali gostilniško jed, ali pa nas pokličite.</p>
+      <div class="rating rv d2"><b>4,4</b><span class="stars" aria-hidden="true">★★★★★</span><span>na Googlu · 576 mnenj</span><small>vir: Google Zemljevidi, 21. 10. 2026</small></div>
+      <div class="cta-row rv d3">
+        <a class="btn btn-red btn-big pulse" href="tel:+38618955601"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 01 895 56 01</a>
+        <a class="btn btn-ghost" href="#jedilnik">Jedilnik</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="track">
+      <span>Pizza Klasika</span><span>Ocvrti lignji</span><span>Pice</span><span>Gostilniške jedi</span><span>Kočevje</span>
+      <span>Pizza Klasika</span><span>Ocvrti lignji</span><span>Pice</span><span>Gostilniške jedi</span><span>Kočevje</span>
+    </div>
+  </div>
+
+  <section id="jedilnik">
+    <div class="wrap">
+      <div class="eyebrow rv">Jedilnik</div>
+      <h2 class="rv d1">Izpostavljeno <em>na Googlu.</em></h2>
+      <p class="lead rv d2">Dve jedi, ki jih Google Zemljevidi izpostavljajo pri Briških. Celoten jedilnik dodamo skupaj z vami.</p>
+      <div class="menu-grid">
+        <article class="dish rv">
+          <div class="pic">
+            <img src="assets/pec.webp" alt="Pice v krušni peči" loading="lazy" width="1200" height="900">
+            <div class="steam" aria-hidden="true"><b></b><b></b><b></b></div>
+            <span class="gchip">Izpostavljeno na Googlu</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Pizza Klasika</h3><p>Opis in cena: dopolnimo skupaj.</p></div>
+        </article>
+        <article class="dish rv d1">
+          <div class="pic">
+            <img src="assets/lignji.webp" alt="Krožnik ocvrtih lignjev" loading="lazy" width="1000" height="533">
+            <div class="steam" aria-hidden="true"><b></b><b></b><b></b></div>
+            <span class="gchip">Izpostavljeno na Googlu</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Ocvrti lignji</h3><p>Opis in cena: dopolnimo skupaj.</p></div>
+        </article>
+        <div class="ph-card rv">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 2.8 19.6c5.9 2.6 12.5 2.6 18.4 0z"/><circle cx="10" cy="12" r="1.4"/><circle cx="14" cy="16" r="1.4"/><circle cx="12" cy="8" r="1"/></svg></div>
+          <div><h3>Pice</h3><p>Celoten jedilnik dopolnimo skupaj.</p></div>
+        </div>
+        <div class="ph-card rv d1">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 13h18a9 9 0 0 1-18 0z"/><path d="M8 9c0-2 2-2 2-4M12 9c0-2 2-2 2-4M16 9c0-2 2-2 2-4"/></svg></div>
+          <div><h3>Gostilniške jedi</h3><p>Celoten jedilnik dopolnimo skupaj.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip alt" aria-hidden="true">
+    <div class="track">
+      <span>Strežba na lokaciji</span><span>4,4 ★ na Googlu</span><span>Trg zbora odposlancev 56</span><span>01 895 56 01</span>
+      <span>Strežba na lokaciji</span><span>4,4 ★ na Googlu</span><span>Trg zbora odposlancev 56</span><span>01 895 56 01</span>
+    </div>
+  </div>
+
+  <section class="band" id="mnenja">
+    <div class="wrap">
+      <div class="eyebrow rv">Na Googlu</div>
+      <h2 class="rv d1">4,4 zvezdice. <em>576 mnenj.</em></h2>
+      <p class="lead rv d2">Ocena, cena in storitve, kot jih prikazujejo Google Zemljevidi.</p>
+      <div class="facts">
+        <div class="fact rv"><b>4,4</b><span class="stars" aria-hidden="true">★★★★★</span><span>povprečna ocena iz 576 mnenj</span></div>
+        <div class="fact rv d1"><b>10–15 €</b><span>na osebo</span></div>
+        <div class="fact rv d2"><b style="font-size:clamp(30px,7vw,42px)">Strežba na lokaciji</b><span>sedite in uživajte</span></div>
+      </div>
+      <p class="src rv">vir: Google Zemljevidi, 21. 10. 2026</p>
+    </div>
+  </section>
+
+  <section id="delovni-cas">
+    <div class="wrap hours-grid">
+      <div class="rv">
+        <div class="eyebrow">Delovni čas</div>
+        <h2>Ste lačni? <em>Preverite, ali smo odprti.</em></h2>
+        <div class="bigstatus" data-status><i></i><span>Delovni čas: pon–pet 9–21, sob–ned 11–21</span></div>
+        <p class="note">Po podatkih Google Zemljevidov. Ob praznikih raje pokličite.</p>
+      </div>
+      <ul class="week rv d1" id="week">
+        <li data-d="1"><span>Ponedeljek</span><span>9.00–21.00</span></li>
+        <li data-d="2"><span>Torek</span><span>9.00–21.00</span></li>
+        <li data-d="3"><span>Sreda</span><span>9.00–21.00</span></li>
+        <li data-d="4"><span>Četrtek</span><span>9.00–21.00</span></li>
+        <li data-d="5"><span>Petek</span><span>9.00–21.00</span></li>
+        <li data-d="6"><span>Sobota</span><span>11.00–21.00</span></li>
+        <li data-d="0"><span>Nedelja</span><span>11.00–21.00</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="callband" id="klic">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">Najhitreje po telefonu</div>
+        <h2>Vprašanje? <em>Pokličite.</em></h2>
+        <p class="lead" style="color:#e6f5dc">Za vse, kar vas zanima o jedeh in obisku, nas pokličite med delovnim časom.</p>
+      </div>
+      <div class="callcard rv d1">
+        <small>Gostilnica in pizzeria Briški</small>
+        <a class="n" href="tel:+38618955601">01 895 56 01</a>
+        <a class="btn btn-red btn-big pulse" href="tel:+38618955601"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite zdaj</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="lokacija">
+    <div class="wrap loc">
+      <div class="rv">
+        <div class="eyebrow">Lokacija</div>
+        <h2>V središču <em>Kočevja.</em></h2>
+        <p class="lead">Za pot nas poiščite na Google Zemljevidih.</p>
+        <div class="addr">
+          <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Trg zbora odposlancev 56</b><small>1330 Kočevje</small></span></div>
+          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38618955601">01 895 56 01</a></b><small>telefon</small></span></div>
+          <div><svg aria-hidden="true"><use href="#mail"/></svg><span><b><a href="mailto:bostjan@kocevje.com">bostjan@kocevje.com</a></b><small>e-pošta</small></span></div>
+          <div><svg aria-hidden="true"><use href="#clock"/></svg><span><b>pon–pet 9–21 · sob–ned 11–21</b><small>delovni čas</small></span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Gostilnica+in+pizzeria+Bri%C5%A1ki+Ko%C4%8Devje" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg>Odpri v Google Zemljevidih</a>
+        </div>
+      </div>
+      <a class="mapcard rv d1" href="https://www.google.com/maps/search/?api=1&amp;query=Gostilnica+in+pizzeria+Bri%C5%A1ki+Ko%C4%8Devje" target="_blank" rel="noopener" aria-label="Gostilnica in pizzeria Briški na Google Zemljevidih">
+        <svg class="roads" viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-10 90 C 90 120, 150 150, 208 148 S 330 190, 420 240" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="10"/>
+          <path d="M-10 90 C 90 120, 150 150, 208 148 S 330 190, 420 240" fill="none" stroke="rgba(255,138,31,.45)" stroke-width="1.5" stroke-dasharray="8 8"/>
+          <path d="M208 148 C 196 210, 226 270, 206 340" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="6"/>
+          <path d="M290 -10 C 270 60, 236 110, 208 148" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="5"/>
+        </svg>
+        <div class="pin"><svg aria-hidden="true"><use href="#pinico"/></svg></div>
+        <div class="label"><b>Trg zbora odposlancev 56</b><small>shematski prikaz · odpri zemljevid</small></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="eyebrow rv">Kontakt</div>
+      <h2 class="rv d1">Se vidimo <em>pri Briških.</em></h2>
+      <p class="lead rv d2">Pokličite ali nam pišite.</p>
+      <a class="bignum rv d2" href="tel:+38618955601">01 895 56 01</a>
+      <div class="cta-row rv d3">
+        <a class="btn btn-red btn-big pulse" href="tel:+38618955601"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 01 895 56 01</a>
+        <a class="btn btn-line" href="mailto:bostjan@kocevje.com">bostjan@kocevje.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>TATJANA BRIŠKI S.P. · Trg zbora odposlancev 56, 1330 Kočevje · <a href="tel:+38618955601">01 895 56 01</a></span>
+    <span>Predogled pripravil Alej Kump, alejkump.si</span>
+    <span class="disc">Fotografije na tej strani so ilustrativne (Unsplash, licenca Unsplash) in ne prikazujejo dejanskih jedi ali prostorov gostilnice. Ocena, cena na osebo, delovni čas in izpostavljeni jedi: Google Zemljevidi, 21. 10. 2026.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-red" href="tel:+38618955601"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 01 895 56 01</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  ['contextmenu','dragstart','selectstart','copy'].forEach(function(e){
+    document.addEventListener(e,function(ev){ev.preventDefault();});
+  });
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});}
+  else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    var check=function(){var h=window.innerHeight;els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<h*0.94&&r.bottom>0)el.classList.add('in');}});};
+    window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+  }
+  /* embers */
+  if(!reduce){
+    var box=document.getElementById('embers');
+    for(var i=0;i<26;i++){
+      var e=document.createElement('i');
+      var s=2+Math.random()*5;
+      e.style.left=(Math.random()*100)+'%';
+      e.style.width=e.style.height=s+'px';
+      e.style.animationDuration=(5+Math.random()*7)+'s';
+      e.style.animationDelay=(-Math.random()*10)+'s';
+      e.style.setProperty('--dx',(Math.random()*120-60)+'px');
+      box.appendChild(e);
+    }
+  }
+})();
+/* Odprto zdaj / Zaprto, computed in Europe/Ljubljana time.
+   Hours (Google Maps, 21. 10. 2026): Mon-Fri 9-21, Sat-Sun 11-21. */
+(function(){
+  var OPEN={0:11,1:9,2:9,3:9,4:9,5:9,6:11}, CLOSE=21;
+  var WD={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  function now(){
+    try{
+      var parts=new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Ljubljana',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+      var o={};parts.forEach(function(p){o[p.type]=p.value;});
+      return {d:WD[o.weekday],m:parseInt(o.hour,10)*60+parseInt(o.minute,10)};
+    }catch(e){return null;}
+  }
+  function render(){
+    var t=now(), text, cls;
+    if(!t||t.d===undefined){return;}
+    var open=OPEN[t.d]*60, close=CLOSE*60;
+    if(t.m>=open&&t.m<close){
+      var left=close-t.m;
+      cls='open';
+      text=left<=60?'Odprto zdaj · zapremo čez '+left+' min':'Odprto zdaj · do 21.00';
+    }else if(t.m<open){
+      cls='closed';text='Zaprto · odpremo danes ob '+OPEN[t.d]+'.00';
+    }else{
+      var n=(t.d+1)%7;cls='closed';text='Zaprto · odpremo jutri ob '+OPEN[n]+'.00';
+    }
+    document.querySelectorAll('[data-status]').forEach(function(el){
+      el.classList.remove('open','closed');el.classList.add(cls);
+      el.querySelector('span').textContent=text;
+    });
+    document.querySelectorAll('#week li').forEach(function(li){
+      li.classList.toggle('today',parseInt(li.getAttribute('data-d'),10)===t.d);
+    });
+  }
+  render();setInterval(render,30000);
+})();
+</script>
+
+<!--
+SOURCES: see NOTES.md (not deployed). Facts: legal name, address, activity from bizi.si; name on Google,
+hours, rating 4,4 / 576 reviews, 10-15 EUR per person, dine-in, two menu highlights from Google Maps (21. 10. 2026).
+Phone and e-mail as given. Photos: Unsplash License. No prices, dishes beyond the two highlights, years,
+awards, delivery, takeaway or online reservations are claimed.
+-->
+</body>
+</html>

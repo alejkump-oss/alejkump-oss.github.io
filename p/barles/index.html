@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Mizarstvo Barles · Breg pri Kočevju</title>
+<meta name="description" content="Mizarstvo BARLES d.o.o., pohištvo po meri. Breg pri Kočevju 57, 1332 Stara Cerkev. Pokličite 031 680 363.">
+<meta name="theme-color" content="#1d1915">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width:700px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width:701px)">
+<style>
+:root{
+  --oak:#c8925a; --oak2:#e2b680; --honey:#f0c98e; --walnut:#5b3a24; --walnut2:#7a4f31;
+  --cream:#f7f0e4; --cream2:#efe3cf; --paper:#fbf7f0;
+  --char:#1d1915; --char2:#2a241e; --ink:#2a2119; --ink2:#5f5042; --sage:#7f9a6b;
+  --line:rgba(42,33,25,.12);
+  --head:"Fraunces",Georgia,"Times New Roman",serif; --sans:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;
+  --r:22px; --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;padding-bottom:84px}
+img{display:block;max-width:100%;-webkit-user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--walnut2);font-weight:800}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.02;letter-spacing:-.015em}
+h2{font-size:clamp(34px,7.5vw,64px);margin:.3em 0 .4em}
+h2 em,h1 em{font-style:italic;font-weight:500;color:var(--oak)}
+.lead{color:var(--ink2);font-size:clamp(16px,2.2vw,18px);max-width:58ch}
+.ill{position:absolute;right:10px;bottom:10px;font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,.85);
+  background:rgba(0,0,0,.5);padding:3px 8px;border-radius:99px;backdrop-filter:blur(4px);z-index:3}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .4s,box-shadow .4s}
+.nav.solid{background:rgba(29,25,21,.9);backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-family:var(--head);font-size:22px;font-weight:900;letter-spacing:.06em;white-space:nowrap}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--honey);line-height:1;margin-bottom:2px}
+.logo svg{width:36px;height:36px;flex:none}
+.logo svg .ring{animation:spin 30s linear infinite;transform-origin:50% 50%}
+.nav-call{display:none;align-items:center;gap:8px;background:var(--oak);color:var(--char);padding:10px 18px;border-radius:99px;font-weight:800;font-size:14px}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:min(100svh,980px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;background:var(--char);color:#fff}
+.hero-img{position:absolute;inset:0;z-index:-3}
+.hero-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);animation:drift 18s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(180deg,rgba(29,25,21,.6) 0%,rgba(29,25,21,.08) 26%,rgba(29,25,21,.66) 56%,var(--char) 100%),
+             linear-gradient(90deg,rgba(29,25,21,.65),transparent 70%)}
+.grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;mix-blend-mode:screen}
+.grain path{fill:none;stroke:var(--honey);stroke-width:1.1;stroke-linecap:round;stroke-dasharray:140 900;animation:grainflow linear infinite}
+@keyframes grainflow{from{stroke-dashoffset:1040}to{stroke-dashoffset:0}}
+.hero-inner{padding-bottom:clamp(48px,9vh,100px);padding-top:104px;width:100%}
+.status{display:inline-flex;align-items:center;gap:9px;padding:8px 14px 8px 12px;border-radius:99px;font-weight:800;font-size:13px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(8px);margin-bottom:16px}
+.status i{width:10px;height:10px;border-radius:50%;background:#aaa;flex:none}
+.status.open i{background:#5fd27d;box-shadow:0 0 0 0 rgba(95,210,125,.7);animation:ping 1.8s infinite}
+.status.closed i{background:#e98a5b}
+@keyframes ping{70%,100%{box-shadow:0 0 0 10px rgba(95,210,125,0)}}
+.hero h1{font-size:clamp(50px,13vw,124px);margin:.1em 0 .2em;max-width:11ch;font-weight:900}
+.hero h1 em{color:var(--honey)}
+.hero p.sub{max-width:44ch;color:#efe4d4;font-size:clamp(16px,2.4vw,19px)}
+.rating{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin-top:18px;padding:10px 16px;border-radius:16px;background:rgba(251,247,240,.96);color:var(--ink)}
+.rating b{font-family:var(--head);font-size:24px;line-height:1}
+.stars{letter-spacing:2px;font-size:17px;background:linear-gradient(90deg,#e8a33c 98%,rgba(232,163,60,.3) 98%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rating span{font-size:14px;font-weight:700}
+.rating small{flex-basis:100%;font-size:11px;color:var(--ink2)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:99px;
+  font-weight:800;font-size:16px;transition:transform .25s,box-shadow .3s,background .3s;text-align:center}
+.btn-oak{color:var(--char);background:linear-gradient(100deg,var(--oak),var(--honey) 50%,var(--oak));background-size:220% 100%;
+  animation:shine 3.4s ease-in-out infinite;box-shadow:0 12px 36px -10px rgba(200,146,90,.8),inset 0 1px 0 rgba(255,255,255,.45)}
+@keyframes shine{50%{background-position:100% 0}}
+.btn-oak:hover{transform:translateY(-2px)}
+.btn-big{min-height:64px;font-size:19px;padding:0 30px}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.42);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn svg{width:22px;height:22px;flex:none}
+.pulse{position:relative}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;animation:pulse 2.4s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(240,201,142,.6)}70%,100%{box-shadow:0 0 0 18px rgba(240,201,142,0)}}
+@media(max-width:480px){.cta-row .btn{width:100%}}
+.hero>.ill{bottom:36px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* marquee */
+.strip{background:var(--oak);color:var(--char);overflow:hidden;padding:16px 0;transform:rotate(-1.3deg);margin:-14px -10px 0;position:relative;z-index:2;
+  box-shadow:0 10px 30px -12px rgba(91,58,36,.6);
+  background-image:repeating-linear-gradient(92deg,rgba(91,58,36,.0) 0 18px,rgba(91,58,36,.09) 18px 19px,rgba(91,58,36,0) 19px 31px)}
+.strip.alt{background-color:var(--walnut);color:var(--cream);transform:rotate(1.1deg);margin:0 -10px}
+.track{display:flex;gap:30px;width:max-content;animation:roll 32s linear infinite}
+.strip.alt .track{animation-direction:reverse;animation-duration:38s}
+.track span{font-family:var(--head);font-style:italic;font-size:24px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:30px}
+.track span::after{content:"";width:16px;height:16px;border-radius:50%;flex:none;
+  background:radial-gradient(circle,transparent 0 2px,currentColor 2px 3px,transparent 3px 5px,currentColor 5px 6px,transparent 6px)}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+section{padding:clamp(76px,12vw,130px) 0}
+
+/* drawing */
+.draw-grid{display:grid;gap:30px;align-items:center}
+@media(min-width:900px){.draw-grid{grid-template-columns:1fr 1.15fr;gap:60px}}
+.blueprint{position:relative;border-radius:var(--r);padding:18px;background:
+  repeating-linear-gradient(0deg,rgba(91,58,36,.07) 0 1px,transparent 1px 22px),
+  repeating-linear-gradient(90deg,rgba(91,58,36,.07) 0 1px,transparent 1px 22px),var(--paper);
+  box-shadow:0 24px 60px -30px rgba(42,33,25,.55),inset 0 0 0 1px rgba(91,58,36,.12)}
+.blueprint svg{width:100%;height:auto;display:block}
+.blueprint .tag{position:absolute;left:16px;top:14px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--walnut2)}
+.ln{fill:none;stroke:var(--walnut);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.ln.thin{stroke-width:1.2;stroke:var(--walnut2)}
+.wood{opacity:0;transition:opacity 1.2s ease}
+.door{transform-box:fill-box;transform-origin:left center}
+.dim{fill:none;stroke:var(--oak);stroke-width:1.4;stroke-dasharray:1;stroke-dashoffset:1}
+.dimtxt{font:italic 700 15px var(--head);fill:var(--walnut2);opacity:0;transition:opacity .8s}.dimbg{opacity:0;transition:opacity .8s}
+.blueprint.in .ln,.blueprint.in .dim{animation:draw 1.5s cubic-bezier(.6,.1,.3,1) forwards;animation-delay:var(--d,0s)}
+.blueprint.in .wood{opacity:1;transition-delay:var(--d,2.6s)}
+.blueprint.in .dimtxt,.blueprint.in .dimbg{opacity:1;transition-delay:3.6s}
+.blueprint.in .door.swing{animation:swing 5s ease-in-out 4s infinite}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes swing{0%,20%,100%{transform:perspective(600px) rotateY(0)}45%,70%{transform:perspective(600px) rotateY(-58deg)}}
+.steps{list-style:none;display:grid;gap:12px;margin-top:24px;counter-reset:s}
+.steps li{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:#fff;box-shadow:0 10px 30px -22px rgba(42,33,25,.5)}
+.steps li::before{counter-increment:s;content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:var(--walnut);color:var(--honey);font-family:var(--head);font-weight:900;font-size:17px}
+.steps b{display:block}
+.steps small{color:var(--ink2);font-size:14px}
+
+/* categories */
+.cats{display:grid;gap:18px;margin-top:40px}
+@media(min-width:760px){.cats{grid-template-columns:repeat(3,1fr)}}
+.cat{position:relative;border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 18px 50px -24px rgba(42,33,25,.45);transition:transform .4s}
+.cat:hover{transform:translateY(-5px)}
+.cat .pic{position:relative;aspect-ratio:4/5;overflow:hidden}
+@media(max-width:759px){.cat .pic{aspect-ratio:4/3}}
+.cat .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s}
+.cat:hover .pic img{transform:scale(1.06)}
+.cat .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,240,215,.35) 48%,transparent 62%);
+  transform:translateX(-120%);animation:sheen 6s ease-in-out infinite}
+.cat:nth-child(2) .pic::after{animation-delay:2s}.cat:nth-child(3) .pic::after{animation-delay:4s}
+@keyframes sheen{0%,60%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+.cat .txt{padding:20px 22px 24px}
+.cat h3{font-size:30px}
+.cat p{color:var(--ink2);font-size:15px;margin-top:6px}
+.gchip{position:absolute;left:12px;top:12px;z-index:3;background:var(--paper);color:var(--ink);font-size:12px;font-weight:800;padding:6px 11px;border-radius:99px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+
+/* rating band */
+.band{background:radial-gradient(700px 400px at 90% 0%,rgba(200,146,90,.28),transparent 60%),radial-gradient(600px 380px at 0% 100%,rgba(122,79,49,.45),transparent 60%),var(--char);color:#fff;position:relative;overflow:hidden}
+.band .eyebrow{color:var(--honey)}
+.band h2 em{color:var(--honey)}
+.band .lead{color:#e6d8c5}
+.rings{position:absolute;right:-140px;top:-140px;width:420px;height:420px;opacity:.16;pointer-events:none}
+.rings circle{fill:none;stroke:var(--honey);stroke-width:1.4}
+.rings g{transform-origin:50% 50%;animation:spin 60s linear infinite}
+.facts{display:grid;gap:14px;margin-top:36px;position:relative}
+@media(min-width:760px){.facts{grid-template-columns:repeat(3,1fr)}}
+.fact{border-radius:var(--r);padding:26px 22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.fact b{display:block;font-family:var(--head);font-size:clamp(40px,10vw,60px);line-height:1;color:#fff}
+.fact .stars{font-size:22px;display:inline-block;margin-top:6px}
+.fact span{display:block;margin-top:8px;color:#e6d8c5;font-size:15px}
+.src{margin-top:18px;font-size:12px;color:#bba78f}
+
+/* hours */
+.hours-grid{display:grid;gap:28px;align-items:start}
+@media(min-width:900px){.hours-grid{grid-template-columns:1fr 1fr;gap:60px}}
+.week{list-style:none;border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 18px 50px -24px rgba(42,33,25,.4)}
+.week li{display:flex;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line);font-weight:600}
+.week li:last-child{border-bottom:0}
+.week li span:last-child{font-variant-numeric:tabular-nums}
+.week li.off span:last-child{color:var(--ink2);font-weight:500}
+.week li.today{background:linear-gradient(90deg,rgba(200,146,90,.22),rgba(240,201,142,.12));color:var(--walnut);font-weight:800}
+.week li.today span:first-child::after{content:" · danes";font-size:12px;letter-spacing:.06em}
+.bigstatus{margin-top:22px;display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:18px;background:var(--cream2);font-weight:800;font-size:18px}
+.bigstatus i{width:16px;height:16px;border-radius:50%;flex:none;background:#aaa}
+.bigstatus.open i{background:#3fae5f;animation:ping 1.8s infinite}
+.bigstatus.closed i{background:#d0703f}
+.note{font-size:13px;color:var(--ink2);margin-top:10px}
+
+/* call */
+.callband{background:var(--walnut);color:#fff;position:relative;overflow:hidden}
+.callband::before{content:"";position:absolute;inset:0;opacity:.5;
+  background:repeating-radial-gradient(ellipse at 10% 120%,rgba(240,201,142,.0) 0 26px,rgba(240,201,142,.14) 26px 27px)}
+.callband .wrap{position:relative;display:grid;gap:26px;align-items:center}
+@media(min-width:900px){.callband .wrap{grid-template-columns:1.1fr 1fr;gap:60px}}
+.callband .eyebrow{color:var(--honey)}
+.callband h2 em{color:var(--honey)}
+.callcard{border-radius:var(--r);background:var(--paper);color:var(--ink);padding:30px 22px;text-align:center;box-shadow:0 26px 60px -24px rgba(0,0,0,.55)}
+.callcard small{display:block;color:var(--ink2);font-size:14px;font-weight:700}
+.callcard .n{display:block;font-family:var(--head);font-weight:900;font-size:clamp(40px,12vw,68px);white-space:nowrap;line-height:1;margin:12px 0 18px;color:var(--walnut)}
+.callcard .btn{width:100%}
+
+/* location */
+.loc{display:grid;gap:28px;align-items:stretch}
+@media(min-width:900px){.loc{grid-template-columns:1fr 1fr;gap:56px}}
+.addr{margin-top:22px;display:grid;gap:12px}
+.addr div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-radius:16px;background:#fff;box-shadow:0 10px 30px -20px rgba(42,33,25,.45)}
+.addr svg{width:22px;height:22px;flex:none;color:var(--oak);margin-top:2px}
+.addr b{display:block;word-break:break-word}
+.addr small{color:var(--ink2);font-size:14px}
+.mapcard{position:relative;border-radius:var(--r);overflow:hidden;min-height:320px;display:block;color:#fff;
+  background:radial-gradient(circle at 52% 46%,rgba(200,146,90,.38),transparent 36%),
+   repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 34px),
+   repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 34px),linear-gradient(160deg,#2c2620,#17130f)}
+.mapcard svg.roads{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%);color:var(--honey)}
+.pin svg{width:50px;height:50px;filter:drop-shadow(0 6px 16px rgba(200,146,90,.7));animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.mapcard .label{position:absolute;left:18px;bottom:16px;right:18px}
+.mapcard .label b{font-family:var(--head);font-size:28px;line-height:1.05;display:block}
+.mapcard .label small{color:#d6c3ab;font-size:13px}
+
+/* contact */
+.contact{text-align:center;position:relative;overflow:hidden;background:var(--cream2)}
+.contact .lead{margin:0 auto}
+.bignum{display:inline-block;font-family:var(--head);font-weight:900;font-size:clamp(48px,14vw,120px);white-space:nowrap;line-height:1;margin:22px 0 6px;color:var(--walnut)}
+.contact .cta-row{justify-content:center}
+.mailbtn{word-break:break-all}
+
+footer{background:var(--char);color:#cbb9a3;padding:40px 0 30px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer .disc{flex-basis:100%;font-size:12px;opacity:.85}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:58px;font-size:17px}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.badge{position:fixed;top:74px;right:10px;z-index:60;font-size:11px;letter-spacing:.06em;padding:6px 11px;border-radius:99px;
+  background:rgba(29,25,21,.86);border:1px solid rgba(240,201,142,.45);color:var(--honey);backdrop-filter:blur(8px);pointer-events:none}
+
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+.no-js .rv{opacity:1;transform:none}
+.no-js .ln,.no-js .dim{stroke-dashoffset:0}.no-js .wood,.no-js .dimtxt,.no-js .dimbg{opacity:1}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero-img img{transform:none}
+  .ln,.dim{stroke-dashoffset:0}.wood,.dimtxt,.dimbg{opacity:1}
+}
+:focus-visible{outline:2px solid var(--oak);outline-offset:3px;border-radius:8px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="badge" aria-hidden="true">Predogled · Alej Kump</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <linearGradient id="oakg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2b680"/><stop offset=".55" stop-color="#c8925a"/><stop offset="1" stop-color="#b07a45"/></linearGradient>
+    <linearGradient id="walg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a5a38"/><stop offset="1" stop-color="#5b3a24"/></linearGradient>
+    <pattern id="grainp" width="60" height="40" patternUnits="userSpaceOnUse">
+      <path d="M0 8 Q15 4 30 9 T60 7 M0 20 Q18 15 32 21 T60 19 M0 32 Q14 28 30 33 T60 31" fill="none" stroke="rgba(91,58,36,.28)" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Mizarstvo Barles, na vrh">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#c8925a"/>
+        <g class="ring" fill="none" stroke="#5b3a24" stroke-width="1.2">
+          <ellipse cx="21" cy="19" rx="14" ry="13"/><ellipse cx="21.5" cy="19.5" rx="10" ry="9"/><ellipse cx="21" cy="19" rx="6" ry="5.5"/><circle cx="21" cy="19.5" r="2"/>
+        </g>
+      </svg>
+      <span><small>Mizarstvo</small>BARLES</span>
+    </a>
+    <a class="nav-call" href="tel:+38631680363"><svg width="16" height="16" aria-hidden="true"><use href="#tel"/></svg>031 680 363</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <div class="hero-img">
+      <picture>
+        <source media="(max-width:700px)" srcset="assets/hero-m.webp" width="900" height="1500">
+        <img src="assets/hero.webp" alt="Kuhinja z lesenimi elementi" width="1920" height="1080" fetchpriority="high">
+      </picture>
+    </div>
+    <svg class="grain" viewBox="0 0 400 800" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-20 120 C 80 90, 160 150, 260 120 S 380 80, 440 110" style="animation-duration:11s"/>
+      <path d="M-20 210 C 90 180, 170 240, 270 205 S 390 170, 440 200" style="animation-duration:14s;animation-delay:-4s"/>
+      <path d="M-20 300 C 70 280, 160 330, 250 300 S 370 260, 440 290" style="animation-duration:12s;animation-delay:-7s"/>
+      <path d="M-20 390 C 100 360, 180 420, 280 385 S 380 350, 440 380" style="animation-duration:16s;animation-delay:-2s"/>
+      <path d="M-20 480 C 80 455, 170 510, 260 475 S 380 440, 440 470" style="animation-duration:13s;animation-delay:-9s"/>
+    </svg>
+    <span class="ill">Ilustrativna fotografija</span>
+    <div class="wrap hero-inner">
+      <div class="status rv" data-status><i></i><span>Delovni čas: pon–pet 9–17</span></div>
+      <div class="eyebrow rv" style="color:var(--honey)">Pohištveni mizar · Breg pri Kočevju</div>
+      <h1 class="rv d1">Pohištvo <em>po meri.</em></h1>
+      <p class="sub rv d2">Mizarstvo BARLES iz Brega pri Kočevju. Povejte nam, kaj potrebujete za svoj dom, in se dogovorimo.</p>
+      <div class="rating rv d2"><b>4,9</b><span class="stars" aria-hidden="true">★★★★★</span><span>na Googlu · 8 mnenj</span><small>vir: Google Zemljevidi, 21. 10. 2026</small></div>
+      <div class="cta-row rv d3">
+        <a class="btn btn-oak btn-big pulse" href="tel:+38631680363"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 680 363</a>
+        <a class="btn btn-ghost" href="#pohistvo">Kaj izdelamo</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="track">
+      <span>Pohištvo po meri</span><span>Kuhinja</span><span>Notranjost</span><span>Dom</span><span>Pohištveni mizar</span><span>Breg pri Kočevju</span>
+      <span>Pohištvo po meri</span><span>Kuhinja</span><span>Notranjost</span><span>Dom</span><span>Pohištveni mizar</span><span>Breg pri Kočevju</span>
+    </div>
+  </div>
+
+  <section id="skica">
+    <div class="wrap draw-grid">
+      <div>
+        <div class="eyebrow rv">Od skice do pohištva</div>
+        <h2 class="rv d1">Narejeno <em>za vaš prostor.</em></h2>
+        <p class="lead rv d2">Pohištvo po meri se začne s pogovorom. Pokličite med delovnim časom in povejte, kaj si želite.</p>
+        <ol class="steps">
+          <li class="rv"><span><b>Pokličete 031 680 363</b><small>pon–pet med 9. in 17. uro</small></span></li>
+          <li class="rv d1"><span><b>Poveste, kaj potrebujete</b><small>prostor, želje, ideje</small></span></li>
+          <li class="rv d2"><span><b>Nadaljnji koraki</b><small>potek in ponudbo dopolnimo skupaj</small></span></li>
+        </ol>
+      </div>
+      <div class="blueprint rv d1" id="bp">
+        <span class="tag">Skica · ilustracija</span>
+        <svg viewBox="0 0 520 420" role="img" aria-label="Animirana skica kuhinjskih omaric, ki se sestavi pred očmi">
+          <!-- wall cabinets -->
+          <rect class="wood" x="70" y="60" width="380" height="100" fill="url(#walg)" style="--d:2.4s"/>
+          <rect class="wood" x="70" y="60" width="380" height="100" fill="url(#grainp)" style="--d:2.6s"/>
+          <path class="ln" pathLength="1" style="--d:0s" d="M70 60 H450 V160 H70 Z"/>
+          <path class="ln thin" pathLength="1" style="--d:.5s;stroke:#f0c98e" d="M165 60 V160 M260 60 V160 M355 60 V160"/>
+          <path class="ln thin" pathLength="1" style="--d:1s;stroke:#f0c98e;stroke-width:2.4" d="M150 120 V140 M180 120 V140 M340 120 V140 M370 120 V140"/>
+          <!-- counter -->
+          <rect class="wood" x="56" y="236" width="408" height="16" rx="3" fill="url(#oakg)" style="--d:2.8s"/>
+          <path class="ln" pathLength="1" style="--d:.3s" d="M56 236 H464 V252 H56 Z"/>
+          <!-- base carcass -->
+          <rect class="wood" x="70" y="252" width="380" height="118" fill="url(#oakg)" style="--d:3s"/>
+          <rect class="wood" x="70" y="252" width="380" height="118" fill="url(#grainp)" style="--d:3.1s"/>
+          <path class="ln" pathLength="1" style="--d:.6s" d="M70 252 V370 H450 V252"/>
+          <path class="ln thin" pathLength="1" style="--d:1.1s" d="M165 252 V370 M355 252 V370"/>
+          <path class="ln thin" pathLength="1" style="--d:1.4s" d="M165 291 H355 M165 330 H355"/>
+          <path class="ln thin" pathLength="1" style="--d:1.7s" d="M240 271 H280 M240 310 H280 M240 350 H280"/>
+          <!-- plinth -->
+          <path class="ln thin" pathLength="1" style="--d:1.2s" d="M76 370 V382 H444 V370"/>
+          <!-- swinging doors -->
+          <g class="door swing">
+            <rect class="wood" x="70" y="252" width="95" height="118" fill="url(#oakg)" style="--d:3.2s"/>
+            <path class="ln" pathLength="1" style="--d:1.3s" d="M70 252 H165 V370 H70 Z"/>
+            <path class="ln thin" pathLength="1" style="--d:1.9s" d="M150 290 V330"/>
+          </g>
+          <g>
+            <rect class="wood" x="355" y="252" width="95" height="118" fill="url(#oakg)" style="--d:3.3s"/>
+            <path class="ln" pathLength="1" style="--d:1.5s" d="M355 252 H450 V370 H355 Z"/>
+            <path class="ln thin" pathLength="1" style="--d:2s" d="M370 290 V330"/>
+          </g>
+          <!-- dimension line -->
+          <path class="dim" pathLength="1" style="--d:2.2s" d="M70 404 H450 M70 396 V412 M450 396 V412"/>
+          <rect x="216" y="394" width="88" height="20" fill="#fbf7f0" class="dimbg"/>
+          <text class="dimtxt" x="260" y="409" text-anchor="middle">po meri</text>
+          <path class="dim" pathLength="1" style="--d:2.4s" d="M30 60 V370 M22 60 H38 M22 370 H38"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="pohistvo" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow rv">Pohištvo</div>
+      <h2 class="rv d1">Kuhinja, notranjost, <em>dom.</em></h2>
+      <p class="lead rv d2">Na Googlu so fotografije Mizarstva BARLES razvrščene v kategorije Kuhinja, Notranjost in Dom. Kaj točno izdelamo, dopolnimo skupaj.</p>
+      <div class="cats">
+        <article class="cat rv">
+          <div class="pic">
+            <img src="assets/kuhinja.webp" alt="Kuhinja z omaricami v temnem lesu" loading="lazy" width="1000" height="1250">
+            <span class="gchip">Kategorija na Googlu</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Kuhinja</h3><p>Podrobnosti dopolnimo skupaj.</p></div>
+        </article>
+        <article class="cat rv d1">
+          <div class="pic">
+            <img src="assets/omara.webp" alt="Lesena vgradna stena z vrati ob oknu" loading="lazy" width="1000" height="1250">
+            <span class="gchip">Kategorija na Googlu</span>
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Notranjost in dom</h3><p>Podrobnosti dopolnimo skupaj.</p></div>
+        </article>
+        <article class="cat rv d2">
+          <div class="pic">
+            <img src="assets/delavnica.webp" alt="Leseno orodje na delovni mizi v delavnici" loading="lazy" width="1400" height="1000">
+            <span class="ill">Ilustrativna fotografija</span>
+          </div>
+          <div class="txt"><h3>Pohištvo po meri</h3><p>Dejavnost podjetja: pohištvo in oprema. Seznam izdelkov dopolnimo skupaj.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip alt" aria-hidden="true">
+    <div class="track">
+      <span>4,9 ★ na Googlu</span><span>031 680 363</span><span>pon–pet 9–17</span><span>Breg pri Kočevju 57</span>
+      <span>4,9 ★ na Googlu</span><span>031 680 363</span><span>pon–pet 9–17</span><span>Breg pri Kočevju 57</span>
+    </div>
+  </div>
+
+  <section class="band" id="mnenja">
+    <svg class="rings" viewBox="0 0 420 420" aria-hidden="true"><g>
+      <circle cx="210" cy="210" r="200"/><circle cx="214" cy="206" r="172"/><circle cx="208" cy="212" r="146"/><circle cx="212" cy="208" r="118"/>
+      <circle cx="210" cy="210" r="92"/><circle cx="213" cy="207" r="66"/><circle cx="210" cy="210" r="40"/><circle cx="211" cy="209" r="16"/>
+    </g></svg>
+    <div class="wrap">
+      <div class="eyebrow rv">Na Googlu</div>
+      <h2 class="rv d1">4,9 zvezdice. <em>8 mnenj.</em></h2>
+      <p class="lead rv d2">Ocena in kategorija, kot ju prikazujejo Google Zemljevidi.</p>
+      <div class="facts">
+        <div class="fact rv"><b>4,9</b><span class="stars" aria-hidden="true">★★★★★</span><span>povprečna ocena iz 8 mnenj</span></div>
+        <div class="fact rv d1"><b style="font-size:clamp(30px,7vw,42px)">Pohištveni mizar</b><span>kategorija na Googlu</span></div>
+        <div class="fact rv d2"><b style="font-size:clamp(30px,7vw,42px)">pon–pet 9–17</b><span>delovni čas</span></div>
+      </div>
+      <p class="src rv">vir: Google Zemljevidi, 21. 10. 2026</p>
+    </div>
+  </section>
+
+  <section id="delovni-cas">
+    <div class="wrap hours-grid">
+      <div class="rv">
+        <div class="eyebrow">Delovni čas</div>
+        <h2>Smo zdaj <em>dosegljivi?</em></h2>
+        <div class="bigstatus" data-status><i></i><span>Delovni čas: pon–pet 9–17</span></div>
+        <p class="note">Po podatkih Google Zemljevidov. Ob praznikih raje preverite po telefonu.</p>
+      </div>
+      <ul class="week rv d1" id="week">
+        <li data-d="1"><span>Ponedeljek</span><span>9.00–17.00</span></li>
+        <li data-d="2"><span>Torek</span><span>9.00–17.00</span></li>
+        <li data-d="3"><span>Sreda</span><span>9.00–17.00</span></li>
+        <li data-d="4"><span>Četrtek</span><span>9.00–17.00</span></li>
+        <li data-d="5"><span>Petek</span><span>9.00–17.00</span></li>
+        <li data-d="6" class="off"><span>Sobota</span><span>zaprto</span></li>
+        <li data-d="0" class="off"><span>Nedelja</span><span>zaprto</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="callband" id="klic">
+    <div class="wrap">
+      <div class="rv">
+        <div class="eyebrow">Najhitreje po telefonu</div>
+        <h2>Imate idejo? <em>Pokličite.</em></h2>
+        <p class="lead" style="color:#eadbc8">Za pohištvo po meri nas pokličite od ponedeljka do petka med 9. in 17. uro.</p>
+      </div>
+      <div class="callcard rv d1">
+        <small>Mizarstvo BARLES d.o.o.</small>
+        <a class="n" href="tel:+38631680363">031 680 363</a>
+        <a class="btn btn-oak btn-big pulse" href="tel:+38631680363"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite zdaj</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="lokacija">
+    <div class="wrap loc">
+      <div class="rv">
+        <div class="eyebrow">Lokacija</div>
+        <h2>Breg pri <em>Kočevju.</em></h2>
+        <p class="lead">Za pot nas poiščite na Google Zemljevidih.</p>
+        <div class="addr">
+          <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Breg pri Kočevju 57</b><small>1332 Stara Cerkev</small></span></div>
+          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38631680363">031 680 363</a></b><small>telefon</small></span></div>
+          <div><svg aria-hidden="true"><use href="#mail"/></svg><span><b><a href="mailto:barles.bartol@gmail.com">barles.bartol@gmail.com</a></b><small>e-pošta</small></span></div>
+          <div><svg aria-hidden="true"><use href="#clock"/></svg><span><b>pon–pet 9–17 · sob–ned zaprto</b><small>delovni čas</small></span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Mizarstvo+BARLES+Breg+pri+Ko%C4%8Devju+57" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg>Odpri v Google Zemljevidih</a>
+        </div>
+      </div>
+      <a class="mapcard rv d1" href="https://www.google.com/maps/search/?api=1&amp;query=Mizarstvo+BARLES+Breg+pri+Ko%C4%8Devju+57" target="_blank" rel="noopener" aria-label="Mizarstvo BARLES na Google Zemljevidih">
+        <svg class="roads" viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-10 70 C 90 110, 150 140, 208 148 S 330 200, 420 250" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="10"/>
+          <path d="M-10 70 C 90 110, 150 140, 208 148 S 330 200, 420 250" fill="none" stroke="rgba(200,146,90,.5)" stroke-width="1.5" stroke-dasharray="8 8"/>
+          <path d="M208 148 C 196 210, 226 270, 206 340" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="6"/>
+          <path d="M300 -10 C 270 60, 236 110, 208 148" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="5"/>
+        </svg>
+        <div class="pin"><svg aria-hidden="true"><use href="#pinico"/></svg></div>
+        <div class="label"><b>Breg pri Kočevju 57</b><small>shematski prikaz · odpri zemljevid</small></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="eyebrow rv">Kontakt</div>
+      <h2 class="rv d1">Začnimo <em>s pogovorom.</em></h2>
+      <p class="lead rv d2">Pokličite ali nam pišite.</p>
+      <a class="bignum rv d2" href="tel:+38631680363">031 680 363</a>
+      <div class="cta-row rv d3">
+        <a class="btn btn-oak btn-big pulse" href="tel:+38631680363"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 680 363</a>
+        <a class="btn btn-line mailbtn" href="mailto:barles.bartol@gmail.com">barles.bartol@gmail.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>BARLES d.o.o. · Breg pri Kočevju 57, 1332 Stara Cerkev · <a href="tel:+38631680363">031 680 363</a></span>
+    <span>Predogled pripravil Alej Kump, alejkump.si</span>
+    <span class="disc">Fotografije na tej strani so ilustrativne (Unsplash, licenca Unsplash) in ne prikazujejo izdelkov ali prostorov Mizarstva BARLES. Skica je ilustracija. Ocena, število mnenj, kategorija, kategorije fotografij in delovni čas: Google Zemljevidi, 21. 10. 2026. Podatki o podjetju: bizi.si.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-oak" href="tel:+38631680363"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 680 363</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  ['contextmenu','dragstart','selectstart','copy'].forEach(function(e){
+    document.addEventListener(e,function(ev){ev.preventDefault();});
+  });
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});}
+  else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    var check=function(){var h=window.innerHeight;if(h+window.scrollY>=document.documentElement.scrollHeight-8){els.forEach(function(el){el.classList.add('in');});return;}els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<h*0.94&&r.bottom>0)el.classList.add('in');}});};
+    window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+  }
+})();
+/* Odprto zdaj / Zaprto, computed in Europe/Ljubljana time.
+   Hours (Google Maps, 21. 10. 2026): Mon-Fri 9-17, Sat-Sun closed. Holidays not modelled. */
+(function(){
+  var OPEN=9, CLOSE=17;
+  var WD={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  var NAMES=['v nedeljo','v ponedeljek','v torek','v sredo','v četrtek','v petek','v soboto'];
+  function workday(d){return d>=1&&d<=5;}
+  function now(){
+    try{
+      var parts=new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Ljubljana',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+      var o={};parts.forEach(function(p){o[p.type]=p.value;});
+      return {d:WD[o.weekday],m:parseInt(o.hour,10)*60+parseInt(o.minute,10)};
+    }catch(e){return null;}
+  }
+  function render(){
+    var t=now(), text, cls;
+    if(!t||t.d===undefined){return;}
+    var open=OPEN*60, close=CLOSE*60;
+    if(workday(t.d)&&t.m>=open&&t.m<close){
+      var left=close-t.m;cls='open';
+      text=left<=60?'Odprto zdaj · zapremo čez '+left+' min':'Odprto zdaj · do 17.00';
+    }else if(workday(t.d)&&t.m<open){
+      cls='closed';text='Zaprto · odpremo danes ob 9.00';
+    }else{
+      var n=(t.d+1)%7, k=1;while(!workday(n)){n=(n+1)%7;k++;}
+      cls='closed';text='Zaprto · odpremo '+(k===1?'jutri':NAMES[n])+' ob 9.00';
+    }
+    document.querySelectorAll('[data-status]').forEach(function(el){
+      el.classList.remove('open','closed');el.classList.add(cls);
+      el.querySelector('span').textContent=text;
+    });
+    document.querySelectorAll('#week li').forEach(function(li){
+      li.classList.toggle('today',parseInt(li.getAttribute('data-d'),10)===t.d);
+    });
+  }
+  render();setInterval(render,30000);
+})();
+</script>
+
+<!--
+SOURCES: see NOTES.md (not deployed). Google Maps (21. 10. 2026): name, category "Pohištveni mizar", rating 4,9 / 8 reviews,
+photo categories Notranjost/Dom/Kuhinja, hours Mon-Fri 9-17. bizi.si: BARLES d.o.o., Breg pri Kočevju 57, 1332 Stara Cerkev,
+"Pohištvo in oprema". Phone and e-mail as given. Photos: Unsplash License. No prices, years, projects, materials, warranties,
+delivery areas, team size or quoted reviews are claimed.
+-->
+</body>
+</html>
