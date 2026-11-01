@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Vulkanizerstvo Koncilja · Dobrnič</title>
+<meta name="description" content="Vulkanizerstvo Boštjan Koncilja s.p., Dobrnič (Trebnje) — menjava, centriranje in popravilo pnevmatik. Pokličite 041 523 019.">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero-m.webp" media="(max-width:700px)">
+<link rel="preload" as="image" href="assets/hero.webp" media="(min-width:701px)">
+<style>
+:root{
+  --bg:#0a0b0d; --bg2:#101216; --card:#14171c; --line:rgba(255,255,255,.09);
+  --ink:#f2f0ec; --mute:#a3a7ad; --amb:#ff9a2e; --amb2:#ffc06b; --amb-dim:rgba(255,154,46,.15);
+  --ice:#9fd4ff; --ice-dim:rgba(159,212,255,.14);
+  --head:"Barlow Condensed","Arial Narrow",Impact,sans-serif; --sans:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;
+  --r:18px; --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;padding-bottom:84px}
+img{display:block;max-width:100%;-webkit-user-drag:none;pointer-events:none}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--amb);font-weight:700}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:.98;letter-spacing:.005em;text-transform:uppercase}
+h2{font-size:clamp(40px,8.5vw,76px);margin:.3em 0 .35em}
+h1 em,h2 em{font-style:normal;color:var(--amb)}
+.lead{color:var(--mute);font-size:clamp(16px,2.2vw,18px);max-width:58ch}
+.ill{position:absolute;right:10px;bottom:10px;font-size:10px;letter-spacing:.08em;color:rgba(255,255,255,.66);
+  background:rgba(0,0,0,.5);padding:3px 8px;border-radius:99px;backdrop-filter:blur(4px);z-index:3}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(10,11,13,.84);backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--head);font-size:22px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.logo b{color:var(--amb)}
+.logo svg{width:28px;height:28px;flex:none;animation:spin 9s linear infinite}
+.nav-call{display:none;align-items:center;gap:8px;border:1px solid rgba(255,154,46,.35);padding:10px 18px;border-radius:99px;
+  font-weight:700;font-size:14px;color:var(--amb2);transition:background .3s}
+.nav-call:hover{background:var(--amb-dim)}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:min(100svh,980px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero-img{position:absolute;inset:0;z-index:-2}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;transform:scale(1.1);animation:drift 16s ease-out forwards}
+@keyframes drift{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(10,11,13,.55) 0%,rgba(10,11,13,.12) 30%,rgba(10,11,13,.6) 62%,#0a0b0d 100%),
+             linear-gradient(90deg,rgba(10,11,13,.75),transparent 70%)}
+.ring{position:absolute;right:-120px;top:14%;width:420px;height:420px;z-index:-1;opacity:.22;animation:spin 40s linear infinite}
+@media(max-width:700px){.ring{width:300px;height:300px;right:-130px;top:9%}}
+.hero-inner{padding-bottom:clamp(56px,10vh,110px);padding-top:120px;width:100%}
+.hero h1{font-size:clamp(58px,14vw,150px);margin:.16em 0 .2em;max-width:10ch}
+.hero h1 .shine{display:inline-block;background:linear-gradient(100deg,var(--amb) 0%,var(--amb2) 42%,#fff 50%,var(--amb2) 58%,var(--amb) 100%);
+  background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:textshine 6s linear 1.2s infinite}
+@keyframes textshine{0%{background-position:120% 0}55%,100%{background-position:-120% 0}}
+.hero p{max-width:44ch;color:#dcdad6;font-size:clamp(16px,2.4vw,19px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:99px;
+  font-weight:700;font-size:16px;transition:transform .25s,box-shadow .3s,background .3s}
+.btn-amb{background:linear-gradient(135deg,var(--amb2),var(--amb) 60%,#e57a10);color:#1a0f02;
+  box-shadow:0 10px 40px -10px rgba(255,154,46,.6),inset 0 1px 0 rgba(255,255,255,.45)}
+.btn-amb:hover{transform:translateY(-2px);box-shadow:0 16px 50px -10px rgba(255,154,46,.8)}
+.btn-ghost{border:1px solid rgba(255,255,255,.22)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+.btn svg{width:20px;height:20px;flex:none}
+.pulse{position:relative}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(255,154,46,.55);animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,154,46,.5)}70%,100%{box-shadow:0 0 0 16px rgba(255,154,46,0)}}
+.hero .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--mute);font-size:14px}
+.hero .meta span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amb);margin-right:9px;vertical-align:middle}
+@media(max-width:480px){.cta-row .btn{width:100%}}
+
+/* marquee (tread strip) */
+.strip{border-block:1px solid var(--line);background:
+  repeating-linear-gradient(115deg,rgba(255,255,255,.025) 0 14px,transparent 14px 28px),var(--bg2);overflow:hidden;padding:18px 0}
+.track{display:flex;gap:44px;width:max-content;animation:roll 30s linear infinite}
+.track span{font-family:var(--head);font-size:26px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#cfd2d6;white-space:nowrap;display:flex;align-items:center;gap:44px}
+.track span::after{content:"";width:10px;height:10px;border-radius:50%;border:2px solid var(--amb)}
+@keyframes roll{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:clamp(80px,12vw,140px) 0}
+.grid{display:grid;gap:16px;margin-top:44px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{position:relative;padding:30px 26px 28px;border-radius:var(--r);background:linear-gradient(160deg,#171a20,#0e1014);
+  border:1px solid var(--line);overflow:hidden;transition:transform .4s,border-color .4s}
+.card::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,200,140,.08) 50%,transparent 65%);
+  transform:translateX(-100%);transition:transform .9s ease}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,154,46,.4)}
+.card:hover::before{transform:translateX(100%)}
+.card .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:var(--amb-dim);color:var(--amb2);margin-bottom:22px}
+.card .ico svg{width:26px;height:26px}
+.card h3{font-size:30px;margin-bottom:10px}
+.card p{color:var(--mute);font-size:15px}
+.card .num{position:absolute;top:22px;right:24px;font-family:var(--head);font-size:15px;letter-spacing:.12em;color:rgba(255,255,255,.22)}
+.card.feature{grid-column:1/-1;padding:0;display:grid}
+@media(min-width:760px){.card.feature{grid-template-columns:1fr 1.1fr}}
+.card.feature .txt{padding:34px 28px;display:flex;flex-direction:column;justify-content:center}
+.card.feature .pic{position:relative;min-height:260px}
+.card.feature .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* season */
+.season{background:radial-gradient(900px 500px at 15% 0%,var(--ice-dim),transparent 60%),var(--bg2);border-block:1px solid var(--line)}
+.season-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.season-grid{grid-template-columns:1fr 1.05fr;gap:64px}}
+.frame{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--card)}
+.frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.frame:hover img{transform:scale(1.04)}
+.count{display:flex;align-items:flex-end;gap:16px;margin:28px 0 6px;flex-wrap:wrap}
+.count b{font-family:var(--head);font-size:clamp(84px,20vw,140px);line-height:.85;color:var(--ice);
+  text-shadow:0 0 40px rgba(159,212,255,.35)}
+.count small{color:var(--mute);font-size:15px;max-width:22ch;padding-bottom:8px}
+.rule{margin-top:22px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+@media(min-width:520px){.rule{grid-template-columns:1fr 1fr}}
+.rule div{background:#0d0f13;padding:16px 18px}
+.rule b{display:block;font-family:var(--head);font-size:26px;color:var(--ink);text-transform:uppercase;line-height:1.1}
+.rule small{color:var(--mute);font-size:13px}
+.src{margin-top:12px;font-size:12px;color:var(--mute);opacity:.8}
+
+/* steps */
+.steps{display:grid;gap:16px;margin-top:44px}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{position:relative;padding:30px 26px;border-top:2px solid rgba(255,154,46,.5);background:linear-gradient(180deg,rgba(255,154,46,.06),transparent 70%);border-radius:0 0 var(--r) var(--r)}
+.step .n{font-family:var(--head);font-size:68px;line-height:1;color:var(--amb)}
+.step h3{font-size:32px;margin:10px 0 6px}
+.step p{color:var(--mute);font-size:15px}
+
+/* location */
+.loc{display:grid;gap:28px;align-items:stretch}
+@media(min-width:900px){.loc{grid-template-columns:1fr 1fr;gap:56px}}
+.mapcard{position:relative;border-radius:var(--r);border:1px solid var(--line);overflow:hidden;min-height:320px;
+  background:
+    radial-gradient(circle at 58% 46%,rgba(255,154,46,.22),transparent 34%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 34px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 34px),
+    linear-gradient(160deg,#151922,#0b0d11)}
+.mapcard svg.roads{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:58%;top:46%;transform:translate(-50%,-100%);color:var(--amb)}
+.pin svg{width:46px;height:46px;filter:drop-shadow(0 6px 16px rgba(255,154,46,.6));animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.pin::after{content:"";position:absolute;left:50%;bottom:-6px;width:60px;height:60px;border-radius:50%;transform:translate(-50%,50%);
+  border:2px solid rgba(255,154,46,.6);animation:ping 2.4s ease-out infinite}
+@keyframes ping{0%{transform:translate(-50%,50%) scale(.2);opacity:1}100%{transform:translate(-50%,50%) scale(1.6);opacity:0}}
+.mapcard .label{position:absolute;left:16px;bottom:16px;right:16px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.mapcard .label b{font-family:var(--head);font-size:34px;text-transform:uppercase;line-height:1}
+.mapcard .label small{display:block;color:var(--mute);font-size:13px}
+.addr{margin-top:26px;display:grid;gap:12px}
+.addr div{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.addr svg{width:22px;height:22px;flex:none;color:var(--amb);margin-top:2px}
+.addr b{display:block}
+.addr small{color:var(--mute);font-size:14px}
+
+/* contact */
+.contact{text-align:center;position:relative;overflow:hidden;background:var(--bg2);border-top:1px solid var(--line)}
+.contact::before{content:"";position:absolute;left:50%;top:40%;width:900px;max-width:160vw;aspect-ratio:1;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(255,154,46,.14),transparent 60%);pointer-events:none}
+.contact .lead{margin:0 auto}
+.bignum{position:relative;display:inline-block;font-family:var(--head);font-weight:800;font-size:clamp(54px,15vw,128px);line-height:1;margin:26px 0 6px;color:var(--amb2);
+  letter-spacing:.02em;transition:text-shadow .4s}
+.bignum:hover{text-shadow:0 0 40px rgba(255,192,107,.45)}
+.contact .cta-row{justify-content:center;position:relative}
+.hours{margin-top:24px;color:var(--mute);font-size:15px;position:relative}
+.hours b{color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding:40px 0 30px;color:var(--mute);font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer .disc{flex-basis:100%;font-size:12px;opacity:.8}
+
+/* sticky mobile call */
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:58px;font-size:17px}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+/* preview badge */
+.badge{position:fixed;top:76px;right:10px;z-index:60;font-size:11px;letter-spacing:.06em;padding:6px 11px;border-radius:99px;
+  background:rgba(10,11,13,.8);border:1px solid rgba(255,154,46,.3);color:var(--amb2);backdrop-filter:blur(8px);pointer-events:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+.no-js .rv{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero-img img{transform:none}
+}
+:focus-visible{outline:2px solid var(--amb2);outline-offset:3px;border-radius:8px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="badge" aria-hidden="true">Predogled · Alej Kump</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="tyre" viewBox="0 0 48 48"><g fill="none" stroke="currentColor"><circle cx="24" cy="24" r="21" stroke-width="5" stroke-dasharray="4 2.6"/><circle cx="24" cy="24" r="12" stroke-width="2.4"/><circle cx="24" cy="24" r="3" stroke-width="2.4"/><path stroke-width="2.4" d="M24 12v9M24 27v9M12 24h9M27 24h9"/></g></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Vulkanizerstvo Koncilja, na vrh"><svg aria-hidden="true" style="color:var(--amb)"><use href="#tyre"/></svg><span><b>Koncilja</b> vulkanizerstvo</span></a>
+    <a class="nav-call" href="tel:+38641523019"><svg width="16" height="16" aria-hidden="true"><use href="#tel"/></svg>041 523 019</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <div class="hero-img">
+      <picture>
+        <source media="(max-width:700px)" srcset="assets/hero-m.webp" width="900" height="1592">
+        <img src="assets/hero.webp" alt="Kolo s pnevmatiko na stroju za centriranje v delavnici" width="1920" height="1086" fetchpriority="high">
+      </picture>
+    </div>
+    <svg class="ring" aria-hidden="true" style="color:var(--amb)"><use href="#tyre"/></svg>
+    <span class="ill">ilustrativna slika</span>
+    <div class="wrap hero-inner">
+      <div class="eyebrow rv">Vulkanizerstvo · Dobrnič, Trebnje</div>
+      <h1 class="rv d1">Varno na cesto. <span class="shine">Vsako sezono.</span></h1>
+      <p class="rv d2">Vulkanizerstvo Boštjan Koncilja v Dobrniču — menjava, centriranje in popravilo pnevmatik. Pokličite in se dogovorite za termin.</p>
+      <div class="cta-row rv d3">
+        <a class="btn btn-amb pulse" href="tel:+38641523019"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 041 523 019</a>
+        <a class="btn btn-ghost" href="#storitve">Storitve</a>
+      </div>
+      <div class="meta rv d3"><span>Dobrnič</span><span>Občina Trebnje</span><span>Termin po dogovoru</span></div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="track">
+      <span>Menjava pnevmatik</span><span>Centriranje koles</span><span>Popravilo predrtin</span><span>Sezonska menjava</span><span>Hramba pnevmatik</span>
+      <span>Menjava pnevmatik</span><span>Centriranje koles</span><span>Popravilo predrtin</span><span>Sezonska menjava</span><span>Hramba pnevmatik</span>
+    </div>
+  </div>
+
+  <section id="storitve">
+    <div class="wrap">
+      <div class="eyebrow rv">Storitve</div>
+      <h2 class="rv d1">Vse za vaše <em>pnevmatike.</em></h2>
+      <p class="lead rv d2">Od hitre menjave do popravila predrte gume. Pokličite in povejte, kaj potrebujete — skupaj se dogovorimo za termin.</p>
+      <div class="grid">
+        <article class="card feature rv">
+          <div class="txt">
+            <div class="ico"><svg aria-hidden="true"><use href="#tyre"/></svg></div>
+            <h3>Menjava in montaža pnevmatik</h3>
+            <p>Demontaža stare in montaža nove pnevmatike na platišče — za osebna vozila, na jeklenih ali aluminijastih platiščih.</p>
+          </div>
+          <div class="pic"><img src="assets/profil.webp" alt="Profil nove pnevmatike na aluminijastem platišču" loading="lazy" width="1400" height="1046"><span class="ill">ilustrativna slika</span></div>
+        </article>
+        <article class="card rv"><span class="num">02</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></div>
+          <h3>Centriranje koles</h3>
+          <p>Uravnoteženje koles na stroju, da vožnja ostane mirna in brez tresenja volana.</p>
+        </article>
+        <article class="card rv d1"><span class="num">03</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-.5-.5-2.5z"/></svg></div>
+          <h3>Popravilo predrtih gum</h3>
+          <p>Predrta guma? Pokličite — pregledamo jo in povemo, ali je popravilo mogoče.</p>
+        </article>
+        <article class="card rv d2"><span class="num">04</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9"/></svg></div>
+          <h3>Sezonska menjava</h3>
+          <p>Zimske jeseni, letne spomladi. Dogovorite se za termin pravočasno, preden se začne gneča.</p>
+        </article>
+        <article class="card rv"><span class="num">05</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M7 21v-8h10v8M7 17h10"/></svg></div>
+          <h3>Hramba pnevmatik</h3>
+          <p>Vprašajte za shranjevanje pnevmatik med sezonama, da vam jih ni treba hraniti doma.</p>
+        </article>
+        <article class="card rv d1"><span class="num">06</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 13l4-4M5 18a9 9 0 1 1 14 0"/><circle cx="12" cy="13" r="1.5"/></svg></div>
+          <h3>Tlak in profil</h3>
+          <p>Preverjanje tlaka in globine profila, da veste, ali so vaše pnevmatike še varne.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="season" id="sezona">
+    <div class="wrap season-grid">
+      <div class="rv">
+        <div class="eyebrow" style="color:var(--ice)">Sezonska menjava</div>
+        <h2>Zima pride <em style="color:var(--ice)">vsako leto.</em></h2>
+        <p class="lead">Zimska oprema je v Sloveniji obvezna od 15. novembra do 15. marca. Ne čakajte na prvi sneg — pokličite in rezervirajte termin za menjavo.</p>
+        <div class="count" id="count">
+          <b id="days">—</b>
+          <small id="countlbl">dni do 15. novembra, ko začne veljati obvezna zimska oprema</small>
+        </div>
+        <div class="rule">
+          <div><b>15. 11. – 15. 3.</b><small>obdobje obvezne zimske opreme</small></div>
+          <div><b>vsaj 3 mm</b><small>globina profila zimske pnevmatike</small></div>
+        </div>
+        <p class="src">Vir: Zakon o pravilih cestnega prometa (ZPrCP).</p>
+        <div class="cta-row">
+          <a class="btn btn-amb" href="tel:+38641523019"><svg aria-hidden="true"><use href="#tel"/></svg>Rezervirajte menjavo</a>
+        </div>
+      </div>
+      <div class="frame rv d1">
+        <img src="assets/zimske.webp" alt="Zložene zimske pnevmatike ob vratih delavnice, zunaj sneg" loading="lazy" width="1400" height="1046">
+        <span class="ill">ilustrativna slika</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="postopek">
+    <div class="wrap">
+      <div class="eyebrow rv">Kako poteka</div>
+      <h2 class="rv d1">Trije koraki. <em>Preprosto.</em></h2>
+      <div class="steps">
+        <div class="step rv"><div class="n">01</div><h3>Pokličete</h3><p>Na 041 523 019 povejte, kakšno vozilo imate in kaj potrebujete.</p></div>
+        <div class="step rv d1"><div class="n">02</div><h3>Dogovor za termin</h3><p>Skupaj izberemo čas, ki vam ustreza.</p></div>
+        <div class="step rv d2"><div class="n">03</div><h3>Pripeljete vozilo</h3><p>V Dobrnič pripeljete vozilo in odpeljete s pripravljenimi pnevmatikami.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="season" id="lokacija" style="background:var(--bg2)">
+    <div class="wrap loc">
+      <div class="rv">
+        <div class="eyebrow">Lokacija</div>
+        <h2>Najdete nas v <em>Dobrniču.</em></h2>
+        <p class="lead">Vulkanizerstvo je v Dobrniču v občini Trebnje. Za pot nas lahko poiščete na zemljevidu ali pokličete.</p>
+        <div class="addr">
+          <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>8211 Dobrnič</b><small>Občina Trebnje, Dolenjska</small></span></div>
+          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38641523019">041 523 019</a></b><small>pokličite za termin</small></span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Vulkanizerstvo+Koncilja+Dobrni%C4%8D" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg>Odpri v Google Zemljevidih</a>
+        </div>
+      </div>
+      <a class="mapcard rv d1" href="https://www.google.com/maps/search/?api=1&amp;query=Vulkanizerstvo+Koncilja+Dobrni%C4%8D" target="_blank" rel="noopener" aria-label="Dobrnič na Google Zemljevidih">
+        <svg class="roads" viewBox="0 0 400 320" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-10 250 C 80 220, 150 170, 232 148 S 360 90, 420 60" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="10"/>
+          <path d="M-10 250 C 80 220, 150 170, 232 148 S 360 90, 420 60" fill="none" stroke="rgba(255,192,107,.35)" stroke-width="1.5" stroke-dasharray="8 8"/>
+          <path d="M232 148 C 250 200, 230 260, 260 340" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="6"/>
+          <path d="M120 -10 C 140 60, 200 110, 232 148" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="5"/>
+        </svg>
+        <div class="pin"><svg aria-hidden="true"><use href="#pinico"/></svg></div>
+        <div class="label"><span><b>Dobrnič</b><small>shematski prikaz · odpri zemljevid</small></span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="eyebrow rv">Kontakt</div>
+      <h2 class="rv d1">Pokličite za <em>termin.</em></h2>
+      <p class="lead rv d2">En klic in dogovorjeno. Povejte, kaj potrebujete, in skupaj najdemo čas, ki vam ustreza.</p>
+      <a class="bignum rv d2" href="tel:+38641523019">041 523 019</a>
+      <div class="cta-row rv d3">
+        <a class="btn btn-amb pulse" href="tel:+38641523019"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite zdaj</a>
+        <a class="btn btn-ghost" href="mailto:bostjan.koncilja@amis.net">bostjan.koncilja@amis.net</a>
+      </div>
+      <p class="hours rv"><b>Delovni čas:</b> po dogovoru — pokličite</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>VULKANIZERSTVO Boštjan Koncilja s.p. · 8211 Dobrnič · <a href="tel:+38641523019">041 523 019</a></span>
+    <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
+    <span class="disc">Fotografije na tej strani so ilustrativne (ustvarjene z umetno inteligenco) in ne prikazujejo dejanske delavnice podjetja.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-amb" href="tel:+38641523019"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 041 523 019</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  ['contextmenu','dragstart','selectstart','copy'].forEach(function(e){
+    document.addEventListener(e,function(ev){ev.preventDefault();});
+  });
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // winter-equipment countdown, derived from today's date (15 Nov - 15 Mar)
+  var d=new Date(),y=d.getFullYear(),today=new Date(y,d.getMonth(),d.getDate());
+  var start=new Date(y,10,15),end=new Date(y,2,15),days=document.getElementById('days'),lbl=document.getElementById('countlbl');
+  if(today>=start||today<=end){
+    var e=today>=start?new Date(y+1,2,15):end;
+    days.textContent=Math.round((e-today)/864e5);
+    lbl.textContent='dni še velja obvezna zimska oprema (do 15. marca)';
+  }else{
+    days.textContent=Math.round((start-today)/864e5);
+  }
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});}
+  else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el);});
+    var check=function(){var h=window.innerHeight;els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<h*0.94&&r.bottom>0)el.classList.add('in');}});};
+    window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+  }
+})();
+</script>
+
+<!--
+SOURCES (facts used on this page):
+- "VULKANIZERSTVO Boštjan Koncilja s.p.", Dobrnič 1, 8211 Dobrnič, tel 041523019, e-mail bostjan.koncilja@amis.net,
+  SKD 95.310, registered 8. 10. 2010: https://www.bizi.si/BOSTJAN-KONCILJA-S-P/ and
+  https://www.companywall.si/podjetje/bostjan-koncilja-sp/MMTDjn0 (both fetched 2026-10-16)
+- House number deliberately omitted (s.p. seat may be a home address). Map = Google Maps search URL only.
+- Dobrnič = settlement in Občina Trebnje.
+- Winter equipment 15 Nov - 15 Mar and min. 3 mm winter-tyre tread: ZPrCP (Slovenian road traffic rules act).
+- Not found: website, social profiles, opening hours, prices, reviews -> none shown; hours = "po dogovoru — pokličite".
+- Service list = general tyre-service categories, NOT confirmed by the owner (see NOTES.md).
+- All photos AI-generated (Higgsfield, gpt_image_2_5), labelled "ilustrativna slika".
+-->
+</body>
+</html>
