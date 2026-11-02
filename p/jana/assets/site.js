@@ -1,39 +1,117 @@
-/* Trgovina Jana – predogled · vanilla JS, brez knjižnic */
+/* Trgovina Jana – predogled v3 · vanilla JS, brez knjižnic */
 (function () {
   'use strict';
-  var d = document, w = window;
-  d.documentElement.classList.remove('no-js');
-  var reduce = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var d = document, w = window, html = d.documentElement;
+  html.classList.remove('no-js');
+  var mq = w.matchMedia ? w.matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
+  var reduce = mq.matches;
 
-  /* header: glass on scroll */
-  var header = d.querySelector('.site-header');
-  function onScroll() {
-    var y = w.scrollY || w.pageYOffset;
-    if (header && !header.classList.contains('solid')) header.classList.toggle('scrolled', y > 40);
-    if (!reduce) parallax(y);
+  /* Scroll-driven CSS where supported; otherwise (or with ?fallback=1) this
+     file drives the same --p variable from a passive rAF loop. */
+  var cssSD = !!(w.CSS && CSS.supports && CSS.supports('animation-timeline: view()')) && !/[?&]fallback=1/.test(location.search);
+  if (!cssSD) html.classList.add('sx-js');
+
+  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  var vh = w.innerHeight, lastY = 0;
+
+  /* ---------- engine ---------- */
+  // range: 'cover' = element enters at bottom (0) → leaves at top (1)
+  //        number x = from entering (0) until x of the cover range (1)
+  var KINDS = [['sx-par', 'cover'], ['sx-drift', 'cover'], ['sx-out', 'cover'], ['sx-zoom', .5], ['sx-head', .4], ['sx-fade', .3]];
+  var active = new Set(), all = [];
+  var io = 'IntersectionObserver' in w ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) active.add(e.target); else { active.delete(e.target); update(e.target); } });
+    queue();
+  }, { rootMargin: '30% 0px 30% 0px' }) : null;
+
+  function rangeOf(el) {
+    for (var i = 0; i < KINDS.length; i++) if (el.classList.contains(KINDS[i][0])) return KINDS[i][1];
+    return .3;
   }
-
-  /* parallax-lite for hero media */
-  var plx = [].slice.call(d.querySelectorAll('[data-parallax]'));
-  var ticking = false;
-  function parallax(y) {
-    if (!plx.length || ticking) return;
-    ticking = true;
-    w.requestAnimationFrame(function () {
-      plx.forEach(function (el) {
-        if (y < w.innerHeight * 1.2) el.style.transform = 'translate3d(0,' + (y * 0.28).toFixed(1) + 'px,0) scale(1.04)';
-      });
-      ticking = false;
+  function progress(r, range) {
+    if (range === 'cover') return clamp((vh - r.top) / (vh + r.height));
+    return clamp((vh - r.top) / (range * (vh + r.height)));
+  }
+  function update(el) {
+    var p = progress(el.getBoundingClientRect(), el._sxr);
+    if (el._sxp === undefined || Math.abs(el._sxp - p) > .0005) { el._sxp = p; el.style.setProperty('--p', p.toFixed(4)); }
+  }
+  function scan(root) {
+    if (cssSD) return;
+    [].forEach.call((root || d).querySelectorAll('.sx-par,.sx-drift,.sx-out,.sx-zoom,.sx-head,.sx-fade'), function (el) {
+      if (el._sxr !== undefined) return;
+      el._sxr = rangeOf(el); all.push(el);
+      if (io) io.observe(el); else active.add(el);
+      update(el);
     });
   }
-  w.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
-  /* hero video: never autoplay for reduced motion */
+  /* header progress bar (fallback), scene, counters run in both modes */
+  var bar = d.querySelector('.sx-bar');
+  var header = d.querySelector('.site-header');
+  var scene = d.querySelector('[data-scene]'), layers = [], caps = [], dots = [], countEl = null, curIdx = -1;
+  if (scene) {
+    layers = [].slice.call(scene.querySelectorAll('.scene-layer'));
+    caps = [].slice.call(scene.querySelectorAll('.scene-cap'));
+    dots = [].slice.call(scene.querySelectorAll('.scene-rail span'));
+    countEl = scene.querySelector('.scene-count');
+  }
+  var counters = [].slice.call(d.querySelectorAll('[data-count]'));
+  function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+
+  function frame() {
+    ticking = false;
+    var y = w.scrollY || w.pageYOffset;
+    if (header) header.classList.toggle('scrolled', y > 40);
+    if (!cssSD) {
+      if (Math.abs(y - lastY) > vh * .8) all.forEach(update);   // jumps skip IO events
+      lastY = y;
+      if (bar) { var max = html.scrollHeight - vh; bar.style.setProperty('--p', max > 0 ? clamp(y / max).toFixed(4) : 0); }
+      active.forEach(update);
+    }
+    if (scene) {
+      var r = scene.getBoundingClientRect(), n = layers.length;
+      var s = clamp(-r.top / (r.height - vh));
+      var f = s * n - .5;              // fractional slide position
+      for (var i = 0; i < n; i++) {
+        var o = clamp(1 - Math.abs(f - i) * 1.6);
+        if (i === 0 && f < 0) o = 1;
+        if (i === n - 1 && f > n - 1) o = 1;
+        var L = layers[i];
+        L.style.opacity = o.toFixed(3);
+        if (!reduce) L.firstElementChild.style.setProperty('--k', (1.16 - .16 * clamp((f - i + 1) / 2)).toFixed(4));
+      }
+      var idx = Math.max(0, Math.min(n - 1, Math.round(f)));
+      if (idx !== curIdx) {
+        curIdx = idx;
+        caps.forEach(function (c, k) { c.classList.toggle('on', k === idx); });
+        dots.forEach(function (c, k) { c.classList.toggle('on', k === idx); });
+        if (countEl) countEl.textContent = String(idx + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0');
+      }
+    }
+    counters.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.bottom < -200 || r.top > vh + 200) return;
+      var p = clamp((vh - r.top) / (.55 * (vh + r.height)));
+      p = 1 - Math.pow(1 - p, 3);
+      var from = +el.getAttribute('data-from') || 0, to = +el.getAttribute('data-count');
+      var v = Math.round(from + (to - from) * p);
+      if (el._v !== v) { el._v = v; el.textContent = (el.getAttribute('data-fmt') === 'plain' ? String(v) : fmt(v)) + (el.getAttribute('data-suffix') || ''); }
+    });
+  }
+  var ticking = false;
+  function queue() { if (!ticking) { ticking = true; w.requestAnimationFrame(frame); } }
+  w.addEventListener('scroll', queue, { passive: true });
+  w.addEventListener('resize', function () { vh = w.innerHeight; queue(); }, { passive: true });
+  if (mq.addEventListener) mq.addEventListener('change', function (e) { reduce = e.matches; queue(); });
+  scan(); queue();
+  w.addEventListener('load', queue);
+
+  /* hero video: pause for reduced motion */
   var vid = d.querySelector('.hero video');
   if (vid && reduce) { vid.removeAttribute('autoplay'); try { vid.pause(); } catch (e) {} }
 
-  /* mobile menu */
+  /* ---------- mobile menu ---------- */
   var mbtn = d.querySelector('.menu-btn'), mnav = d.getElementById('mobile-nav');
   if (mbtn && mnav) {
     var closeBtn = mnav.querySelector('.close');
@@ -45,14 +123,23 @@
     [].forEach.call(mnav.querySelectorAll('a'), function (a) { a.addEventListener('click', function () { d.body.style.overflow = ''; }); });
   }
 
-  /* scroll reveal */
-  var io = ('IntersectionObserver' in w && !reduce) ? new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }) : null;
-  function observe(root) {
-    [].forEach.call((root || d).querySelectorAll('.reveal:not(.in)'), function (el) { io ? io.observe(el) : el.classList.add('in'); });
+  /* ---------- department nav scrollspy (ponudba) ---------- */
+  var dnav = d.querySelector('[data-dnav]');
+  if (dnav && io) {
+    var links = {};
+    [].forEach.call(dnav.querySelectorAll('a'), function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var a = links[e.target.id]; if (!a) return;
+        [].forEach.call(dnav.querySelectorAll('a.on'), function (x) { x.classList.remove('on'); });
+        a.classList.add('on');
+        var sc = dnav.querySelector('.scroller');
+        sc.scrollTo({ left: a.offsetLeft - 16, behavior: reduce ? 'auto' : 'smooth' });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    [].forEach.call(d.querySelectorAll('.dsec'), function (s) { spy.observe(s); });
   }
-  observe();
 
   /* ---------- catalog ---------- */
   var cat = d.querySelector('[data-catalog]');
@@ -69,9 +156,9 @@
     var G = data.groups[p.g], tagLabels = (G.tags || {});
     var pills = (p.k || []).filter(function (t) { return tagLabels[t]; }).map(function (t) { return '<span class="pill">' + esc(tagLabels[t]) + '</span>'; }).join('');
     var media = p.i
-      ? '<img src="' + base + p.i + '" alt="' + esc(p.bn + ' ' + p.n) + '" loading="lazy" decoding="async" width="600" height="600">'
+      ? '<img class="sx-zoom" src="' + base + p.i + '" alt="' + esc(p.bn + ' ' + p.n) + '" loading="lazy" decoding="async" width="600" height="600">'
       : '<div class="noimg" aria-hidden="true"><div><b>' + esc(p.bn.charAt(0)) + '</b><span>Slika v spletni trgovini</span></div></div>';
-    return '<article class="card reveal">' +
+    return '<article class="card sx-fade">' +
       (p.x ? '<span class="badge aqua">Razstavni eksponat</span>' : '') +
       '<div class="ph">' + media + '</div>' +
       '<div class="body"><span class="brandname">' + esc(p.bn) + '</span>' +
@@ -97,42 +184,43 @@
 
   function renderGroupChrome() {
     var G = data.groups[state.g], list = items(state.g);
-    bannerEl.innerHTML = '<div class="group-banner"><img src="' + base + G.banner + '" alt="" loading="lazy" decoding="async">' +
-      '<div class="gb-body"><span class="eyebrow">' + esc(G.eyebrow) + '</span><h2>' + esc(G.title) + '</h2><p>' + esc(G.intro) + '</p>' +
+    bannerEl.innerHTML = '<div class="group-banner"><img class="sx-par" src="' + base + G.banner + '" alt="" loading="lazy" decoding="async">' +
+      '<div class="gb-body sx-head"><span class="eyebrow">' + esc(G.eyebrow) + '</span><h2>' + esc(G.title) + '</h2><p>' + esc(G.intro) + '</p>' +
       '<a class="shoplink" href="' + esc(G.shop) + '" target="_blank" rel="noopener">Kategorija v spletni trgovini ↗</a></div></div>';
-    var html = '';
+    var h = '';
     if (G.tags) {
-      html += '<div class="frow" role="group" aria-label="' + esc(G.tagLabel) + '"><span class="flabel">' + esc(G.tagLabel) + '</span><button class="chip" data-tag="all" aria-pressed="' + (state.tag === 'all') + '">Vse</button>';
+      h += '<div class="frow" role="group" aria-label="' + esc(G.tagLabel) + '"><span class="flabel">' + esc(G.tagLabel) + '</span><button class="chip" data-tag="all" aria-pressed="' + (state.tag === 'all') + '">Vse</button>';
       Object.keys(G.tags).forEach(function (t) {
         var n = list.filter(function (p) { return (p.k || []).indexOf(t) > -1; }).length;
-        if (n) html += '<button class="chip" data-tag="' + t + '" aria-pressed="' + (state.tag === t) + '">' + esc(G.tags[t]) + '</button>';
+        if (n) h += '<button class="chip" data-tag="' + t + '" aria-pressed="' + (state.tag === t) + '">' + esc(G.tags[t]) + '</button>';
       });
-      html += '</div>';
+      h += '</div>';
     }
     var brands = [];
     list.forEach(function (p) { if (brands.indexOf(p.bn) < 0) brands.push(p.bn); });
     if (brands.length > 1) {
-      html += '<div class="frow" role="group" aria-label="Znamka"><span class="flabel">Znamka</span><button class="chip" data-brand="all" aria-pressed="' + (state.brand === 'all') + '">Vse</button>';
-      brands.forEach(function (b) { html += '<button class="chip" data-brand="' + esc(b) + '" aria-pressed="' + (state.brand === b) + '">' + esc(b) + '</button>'; });
-      html += '</div>';
+      h += '<div class="frow" role="group" aria-label="Znamka"><span class="flabel">Znamka</span><button class="chip" data-brand="all" aria-pressed="' + (state.brand === 'all') + '">Vse</button>';
+      brands.forEach(function (b) { h += '<button class="chip" data-brand="' + esc(b) + '" aria-pressed="' + (state.brand === b) + '">' + esc(b) + '</button>'; });
+      h += '</div>';
     }
-    html += '<div class="frow"><label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr-only">Iskanje po modelu</span><input type="search" placeholder="Iskanje po modelu …" value="' + esc(state.q) + '" data-q autocomplete="off"></label></div>';
-    filtEl.innerHTML = html;
+    h += '<div class="frow"><label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="sr-only">Iskanje po modelu</span><input type="search" placeholder="Iskanje po modelu …" value="' + esc(state.q) + '" data-q autocomplete="off"></label></div>';
+    filtEl.innerHTML = h;
+    scan(bannerEl);
   }
 
   function renderGrid() {
     var q = state.q.trim().toLowerCase();
-    var all = items(state.g);
-    var list = all.filter(function (p) {
+    var allItems = items(state.g);
+    var list = allItems.filter(function (p) {
       if (state.tag !== 'all' && (p.k || []).indexOf(state.tag) < 0) return false;
       if (state.brand !== 'all' && p.bn !== state.brand) return false;
       if (q && (p.bn + ' ' + p.n + ' ' + p.t).toLowerCase().indexOf(q) < 0) return false;
       return true;
     });
-    metaEl.innerHTML = '<span>Prikazanih izdelkov: <b>' + list.length + '</b> od ' + all.length + '</span><span>Cene in zaloga so v spletni trgovini.</span>';
+    metaEl.innerHTML = '<span>Prikazanih izdelkov: <b>' + list.length + '</b> od ' + allItems.length + '</span><span>Cene in zaloga so v spletni trgovini.</span>';
     gridEl.innerHTML = list.length ? list.map(card).join('') : '<div class="empty">Ni zadetkov za izbrane filtre. <button class="chip" data-reset>Počisti filtre</button></div>';
     gridEl.className = list.length ? 'grid' : '';
-    observe(gridEl);
+    scan(gridEl); queue();
   }
 
   function selectGroup(g, push) {
@@ -168,7 +256,7 @@
 
   fetch(cat.getAttribute('data-src')).then(function (r) { return r.json(); }).then(function (j) {
     data = j;
-    cat.querySelector('[data-loading]').remove();
+    var l = cat.querySelector('[data-loading]'); if (l) l.remove();
     selectGroup(location.hash.slice(1), false);
   }).catch(function () {
     gridEl.innerHTML = '<div class="empty">Katalog se ni naložil. Vse izdelke najdete v <a href="https://trgovina-jana.si/" target="_blank" rel="noopener">spletni trgovini</a>.</div>';
