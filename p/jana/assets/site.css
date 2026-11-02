@@ -355,10 +355,7 @@ section{position:relative}
   .btn{min-height:48px;padding:0 20px}
   .hero-ctas .btn{flex:1 1 auto}
 }
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{transition-duration:.01ms!important}
-}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;overflow:clip;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .refs figure.w{grid-row:span 2}
 .refs.even figure{grid-column:span 3;aspect-ratio:3/2}
@@ -376,9 +373,9 @@ section{position:relative}
 @property --p{syntax:'<number>';inherits:false;initial-value:0}
 @keyframes sxp{from{--p:0}to{--p:1}}
 :root{--oy:-160px;--par:120px;--ps:1.2;--z:.15;--dx:80px;--hy:48px;--fy:36px;--fs:.94}
-@media (max-width:640px){:root{--oy:-110px;--par:70px;--ps:1.14;--z:.1;--dx:36px;--hy:30px;--fy:26px;--fs:.95}}
+@media (max-width:640px){:root{--oy:-140px;--par:130px;--ps:1.22;--z:.22;--dx:110px;--hy:56px;--fy:60px;--fs:.86}}
 /* reduced motion: no big parallax / drift, but gentle fades still move */
-@media (prefers-reduced-motion:reduce){:root{--oy:-24px;--par:0px;--ps:1;--z:.04;--dx:0px;--hy:16px;--fy:14px;--fs:.985}}
+@media (prefers-reduced-motion:reduce){:root{--oy:-120px;--par:110px;--ps:1.2;--z:.18;--dx:90px;--hy:48px;--fy:50px;--fs:.88}}
 
 .sx-par{translate:0 calc((var(--p) - .5) * var(--par));scale:var(--ps);will-change:translate}
 .sx-zoom{scale:calc(1 + var(--z) * (1 - var(--p)))}

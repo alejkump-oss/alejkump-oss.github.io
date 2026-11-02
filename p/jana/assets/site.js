@@ -8,7 +8,9 @@
 
   /* Scroll-driven CSS where supported; otherwise (or with ?fallback=1) this
      file drives the same --p variable from a passive rAF loop. */
-  var cssSD = !!(w.CSS && CSS.supports && CSS.supports('animation-timeline: view()')) && !/[?&]fallback=1/.test(location.search);
+  // Touch devices (phones, tablets) always use the JS engine: it behaves the same in every mobile browser.
+  var coarse = !!(w.matchMedia && w.matchMedia('(pointer: coarse)').matches);
+  var cssSD = !coarse && !!(w.CSS && CSS.supports && CSS.supports('animation-timeline: view()')) && !/[?&]fallback=1/.test(location.search);
   if (!cssSD) html.classList.add('sx-js');
 
   function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
@@ -79,7 +81,7 @@
         if (i === n - 1 && f > n - 1) o = 1;
         var L = layers[i];
         L.style.opacity = o.toFixed(3);
-        if (!reduce) L.firstElementChild.style.setProperty('--k', (1.16 - .16 * clamp((f - i + 1) / 2)).toFixed(4));
+        L.firstElementChild.style.setProperty('--k', (1.16 - .16 * clamp((f - i + 1) / 2)).toFixed(4));
       }
       var idx = Math.max(0, Math.min(n - 1, Math.round(f)));
       if (idx !== curIdx) {
@@ -109,7 +111,12 @@
 
   /* hero video: pause for reduced motion */
   var vid = d.querySelector('.hero video');
-  if (vid && reduce) { vid.removeAttribute('autoplay'); try { vid.pause(); } catch (e) {} }
+  if (vid) {
+    vid.muted = true; vid.setAttribute('playsinline', ''); vid.setAttribute('muted', '');
+    var tryPlay = function () { var pr = vid.play && vid.play(); if (pr && pr.catch) pr.catch(function () {}); };
+    tryPlay();
+    ['touchstart', 'scroll', 'click'].forEach(function (ev) { w.addEventListener(ev, function once() { tryPlay(); w.removeEventListener(ev, once); }, { passive: true }); });
+  }
 
   /* ---------- mobile menu ---------- */
   var mbtn = d.querySelector('.menu-btn'), mnav = d.getElementById('mobile-nav');
