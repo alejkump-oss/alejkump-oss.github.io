@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="googlebot" content="noindex,nofollow">
 <title>MPE Mihelič · Električar Kočevje</title>
-<meta name="description" content="MPE, Mitja Mihelič s.p., Griček pri Željnah 11, Kočevje. Elektroinštalacije in elektro projektiranje. Pokličite 031 616 332.">
+<meta name="description" content="MPE, Mitja Mihelič s.p., Griček pri Željnah 11, Kočevje. Elektroinštalacije in elektro projektiranje za domove, novogradnje, prenove in podjetja. Pokličite 031 616 332.">
 <meta name="theme-color" content="#070d1a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +48,9 @@ h2 em,h1 em{font-style:normal;color:var(--volt);text-shadow:0 0 28px rgba(255,21
   box-shadow:0 0 0 0 rgba(255,214,10,.6);animation:zap 3.4s ease-in-out infinite}
 .logo .bolt svg{width:20px;height:20px}
 @keyframes zap{0%,100%{box-shadow:0 0 0 0 rgba(255,214,10,.0)}50%{box-shadow:0 0 22px 2px rgba(255,214,10,.55)}}
+.navlinks{display:none;gap:26px;font-weight:700;font-size:14px;color:var(--ink2)}
+.navlinks a:hover{color:#fff}
+@media(min-width:1020px){.navlinks{display:flex}}
 .nav-call{display:none;align-items:center;gap:8px;background:var(--volt);color:var(--navy);padding:10px 18px;border-radius:99px;font-weight:800;font-size:14px}
 .nav-call svg{width:16px;height:16px}
 @media(min-width:760px){.nav-call{display:inline-flex}}
@@ -90,8 +93,8 @@ h2 em,h1 em{font-style:normal;color:var(--volt);text-shadow:0 0 28px rgba(255,21
 @media(min-width:900px){.bulbbox{width:190px;right:12%}.bulb-glow{width:420px;height:420px}}
 
 .hero-inner{padding-bottom:clamp(48px,9vh,100px);padding-top:120px;width:100%}
-.hero h1{font-size:clamp(52px,14vw,128px);margin:.14em 0 .2em;max-width:12ch;color:#fff}
-.hero p.sub{max-width:46ch;color:#d3dcec;font-size:clamp(16px,2.4vw,19px)}
+.hero h1{font-size:clamp(44px,10.5vw,100px);margin:.18em 0 .24em;max-width:13ch;color:#fff}
+.hero p.sub{max-width:48ch;color:#d3dcec;font-size:clamp(16px,2.4vw,20px)}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:99px;
   font-weight:800;font-size:16px;transition:transform .25s,box-shadow .3s,background .3s;text-align:center}
@@ -100,7 +103,7 @@ h2 em,h1 em{font-style:normal;color:var(--volt);text-shadow:0 0 28px rgba(255,21
 @keyframes shine{50%{background-position:100% 0}}
 .btn-volt:hover{transform:translateY(-2px)}
 .btn-big{min-height:64px;font-size:19px;padding:0 30px}
-.btn-ghost{border:1.5px solid rgba(125,234,255,.5);color:#fff}
+.btn-ghost{border:1.5px solid rgba(125,234,255,.5);color:#fff;background:rgba(7,13,26,.35);backdrop-filter:blur(6px)}
 .btn-ghost:hover{background:rgba(34,211,238,.1)}
 .btn svg{width:22px;height:22px;flex:none}
 .pulse{position:relative}
@@ -108,13 +111,17 @@ h2 em,h1 em{font-style:normal;color:var(--volt);text-shadow:0 0 28px rgba(255,21
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,214,10,.55)}70%,100%{box-shadow:0 0 0 18px rgba(255,214,10,0)}}
 @media(max-width:480px){.cta-row .btn{width:100%}}
 .hero>.ill{bottom:36px}
+.trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;list-style:none}
+.trust li{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#e3eaf6;padding:7px 13px;border-radius:99px;
+  background:rgba(7,13,26,.55);border:1px solid rgba(125,234,255,.28);backdrop-filter:blur(6px)}
+.trust li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--volt);box-shadow:0 0 8px var(--volt)}
 
 /* marquee */
 .strip{background:var(--volt);color:var(--navy);overflow:hidden;padding:15px 0;transform:rotate(-1.4deg);margin:-14px -10px 0;position:relative;z-index:2;
   box-shadow:0 10px 40px -10px rgba(255,214,10,.55)}
 .strip.alt{background:var(--cyan);transform:rotate(1.2deg);margin:0 -10px;box-shadow:0 10px 40px -10px rgba(34,211,238,.5)}
-.track{display:flex;gap:30px;width:max-content;animation:roll 28s linear infinite}
-.strip.alt .track{animation-direction:reverse;animation-duration:34s}
+.track{display:flex;gap:30px;width:max-content;animation:roll 32s linear infinite}
+.strip.alt .track{animation-direction:reverse;animation-duration:38s}
 .track span{font-family:var(--head);font-size:23px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:30px;letter-spacing:-.01em;text-transform:uppercase}
 .track span::after{content:"";width:16px;height:16px;flex:none;
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23070d1a' d='M13 2 4 14h7l-1 8 9-12h-7z'/%3E%3C/svg%3E") center/contain no-repeat}
@@ -122,33 +129,78 @@ h2 em,h1 em{font-style:normal;color:var(--volt);text-shadow:0 0 28px rgba(255,21
 
 /* sections */
 section{padding:clamp(76px,12vw,130px) 0;position:relative}
+.sec-head{display:grid;gap:6px}
+@media(min-width:900px){.sec-head.split{grid-template-columns:1.1fr 1fr;align-items:end;gap:60px}.sec-head.split .lead{margin-bottom:.9em}}
+
+/* za koga */
+.aud{display:grid;gap:14px;margin-top:34px;grid-template-columns:1fr 1fr}
+@media(min-width:900px){.aud{grid-template-columns:repeat(4,1fr);gap:18px}}
+.aud div{border-radius:18px;padding:22px 18px;background:var(--graph);border:1px solid var(--line);transition:border-color .3s,transform .3s}
+.aud div:hover{border-color:rgba(255,214,10,.5);transform:translateY(-3px)}
+.aud svg{width:34px;height:34px;color:var(--volt);margin-bottom:12px}
+.aud h3{font-size:20px;color:#fff}
+.aud p{color:var(--ink2);font-size:14px;margin-top:6px;line-height:1.5}
+@media(max-width:420px){.aud{grid-template-columns:1fr}}
+
+/* services */
+.svc-sec{background:linear-gradient(180deg,var(--navy),var(--navy2))}
 .svc-grid{display:grid;gap:18px;margin-top:40px}
-@media(min-width:760px){.svc-grid{grid-template-columns:1fr 1fr}}
-.svc{position:relative;border-radius:var(--r);overflow:hidden;background:var(--graph);border:1px solid var(--line);transition:transform .4s,border-color .4s}
+@media(min-width:680px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1020px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{position:relative;border-radius:var(--r);overflow:hidden;background:var(--graph);border:1px solid var(--line);transition:transform .4s,border-color .4s;display:flex;flex-direction:column}
 .svc::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;z-index:4;
   background:conic-gradient(from var(--a,0deg),transparent 0 70%,var(--cyan) 80%,var(--volt) 88%,transparent 96%);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:edge 5s linear infinite}
 @property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
 @keyframes edge{to{--a:360deg}}
 .svc:hover{transform:translateY(-5px)}
-.svc .pic{position:relative;aspect-ratio:4/3;overflow:hidden}
+.svc .pic{position:relative;aspect-ratio:16/11;overflow:hidden}
 .svc .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s;filter:saturate(.9)}
 .svc .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(20,28,44,.9))}
 .svc:hover .pic img{transform:scale(1.06)}
 .svc .txt{padding:6px 22px 24px;position:relative}
 .svc .num{font-family:var(--head);font-size:13px;color:var(--cyan);letter-spacing:.2em;font-weight:700}
-.svc h3{font-size:clamp(26px,6vw,32px);margin-top:4px;color:#fff}
+.svc h3{font-size:clamp(24px,5.4vw,28px);margin-top:4px;color:#fff}
 .svc p{color:var(--ink2);font-size:15px;margin-top:6px}
+.svc.plain{background:radial-gradient(400px 220px at 100% 0%,rgba(255,214,10,.12),transparent 70%),var(--graph)}
+.svc.plain .big-ico{margin:26px 22px 10px;width:72px;height:72px;border-radius:20px;display:grid;place-items:center;background:var(--volt);color:var(--navy);box-shadow:0 12px 34px -10px rgba(255,214,10,.7)}
+.svc.plain .big-ico svg{width:38px;height:38px}
+.svc.plain .txt{padding-top:12px}
 .tag{position:absolute;left:12px;top:12px;z-index:3;background:var(--volt);color:var(--navy);font-size:12px;font-weight:800;padding:6px 11px;border-radius:99px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
-.ph-card{border-radius:var(--r);border:2px dashed rgba(125,234,255,.3);padding:24px 22px;display:flex;gap:16px;align-items:center;background:rgba(34,211,238,.04)}
-.ph-card .ico{width:58px;height:58px;flex:none;border-radius:16px;display:grid;place-items:center;background:rgba(34,211,238,.12);color:var(--cyan)}
-.ph-card .ico svg{width:30px;height:30px}
-.ph-card h3{font-size:22px;color:#fff}
-.ph-card p{color:var(--ink2);font-size:14px}
-@media(min-width:760px){.ph-card{grid-column:1/-1}}
+.list-note{margin-top:20px;font-size:13px;color:var(--mute);display:flex;gap:8px;align-items:center}
+.list-note::before{content:"";width:16px;height:1px;background:var(--mute)}
+
+/* iz ene roke */
+.oneh{display:grid;gap:34px;align-items:center}
+@media(min-width:900px){.oneh{grid-template-columns:1fr 1fr;gap:64px}}
+.checks{list-style:none;margin-top:24px;display:grid;gap:12px}
+.checks li{display:flex;gap:12px;align-items:flex-start;color:#dfe7f4;font-weight:600}
+.checks li::before{content:"";flex:none;width:24px;height:24px;margin-top:1px;border-radius:50%;
+  background:var(--volt) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23070d1a' stroke-width='3' d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/16px no-repeat}
+.plan{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid rgba(125,234,255,.25);aspect-ratio:5/4;
+  background:repeating-linear-gradient(0deg,rgba(125,234,255,.07) 0 1px,transparent 1px 24px),repeating-linear-gradient(90deg,rgba(125,234,255,.07) 0 1px,transparent 1px 24px),linear-gradient(160deg,#0c2140,#081428)}
+.plan svg{position:absolute;inset:0;width:100%;height:100%}
+.plan .wall{fill:none;stroke:#cfe9ff;stroke-width:4}
+.plan .wire{fill:none;stroke:var(--volt);stroke-width:2;stroke-dasharray:6 5}
+.plan .wire.draw{stroke-dasharray:600;stroke-dashoffset:600;animation:drawl 5s ease-in-out infinite}
+@keyframes drawl{0%{stroke-dashoffset:600}55%,100%{stroke-dashoffset:0}}
+.plan .sym{fill:#081428;stroke:var(--cyan);stroke-width:2}
+.plan text{fill:#9fc4e8;font:600 11px var(--sans);letter-spacing:.12em}
+.plan .stamp{position:absolute;right:14px;bottom:14px;left:14px;display:flex;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9fc4e8;font-weight:800;
+  border-top:1px solid rgba(125,234,255,.25);padding-top:10px}
+
+/* zakaj */
+.why-sec{background:var(--navy2)}
+.why{display:grid;gap:16px;margin-top:38px}
+@media(min-width:680px){.why{grid-template-columns:1fr 1fr}}
+@media(min-width:1020px){.why{grid-template-columns:repeat(4,1fr)}}
+.why div{padding:26px 22px;border-radius:var(--r);background:var(--graph);border:1px solid var(--line);position:relative;overflow:hidden}
+.why div::after{content:"";position:absolute;left:22px;right:22px;top:0;height:3px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,var(--volt),var(--cyan))}
+.why b{display:block;font-family:var(--head);font-size:clamp(30px,6vw,40px);line-height:1;color:var(--volt);letter-spacing:-.02em}
+.why h3{font-size:20px;color:#fff;margin-top:12px}
+.why p{color:var(--ink2);font-size:14px;margin-top:6px}
 
 /* steps */
-.steps-sec{background:linear-gradient(180deg,var(--navy),var(--navy2))}
 .steps{list-style:none;margin-top:40px;position:relative;display:grid;gap:22px;padding-left:46px}
 .steps::before{content:"";position:absolute;left:17px;top:10px;bottom:10px;width:2px;background:rgba(125,234,255,.16)}
 .steps::after{content:"";position:absolute;left:16px;top:10px;width:4px;height:70px;border-radius:4px;background:linear-gradient(transparent,var(--volt),transparent);
@@ -181,6 +233,19 @@ section{padding:clamp(76px,12vw,130px) 0;position:relative}
 .callcard small{display:block;color:var(--ink2);font-size:14px;font-weight:700}
 .callcard .n{display:block;font-family:var(--head);font-weight:700;font-size:clamp(40px,11.5vw,68px);white-space:nowrap;line-height:1;margin:12px 0 18px;color:var(--volt);letter-spacing:-.02em;text-shadow:0 0 30px rgba(255,214,10,.4)}
 .callcard .btn{width:100%}
+.callcard .btn+.btn{margin-top:10px}
+
+/* faq */
+.faq{display:grid;gap:12px;margin-top:34px;max-width:860px}
+.faq details{border-radius:18px;background:var(--graph);border:1px solid var(--line);transition:border-color .3s}
+.faq details[open]{border-color:rgba(255,214,10,.45)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 58px 20px 22px;position:relative;font-family:var(--head);font-weight:700;font-size:clamp(18px,3.6vw,21px);color:#fff;line-height:1.25}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,214,10,.14);color:var(--volt);font-size:20px;transition:transform .3s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{padding:0 22px 20px;color:var(--ink2)}
+.faq details p a{color:var(--volt);font-weight:800}
 
 /* location */
 .loc{display:grid;gap:28px;align-items:stretch}
@@ -217,8 +282,9 @@ footer{background:#04080f;color:var(--mute);padding:40px 0 30px;font-size:13px;b
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
 footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
 
-.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
-.sticky a{flex:1;min-height:58px;font-size:17px}
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex;gap:8px}
+.sticky .btn-volt{flex:1;min-height:58px;font-size:17px}
+.sticky .mailbtn{flex:none;width:58px;min-height:58px;padding:0;border-radius:50%;background:rgba(7,13,26,.92);border:1.5px solid rgba(125,234,255,.5);color:#fff;backdrop-filter:blur(8px)}
 @media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
 
 .badge{position:fixed;top:74px;left:10px;z-index:60;font-size:11px;letter-spacing:.06em;padding:6px 11px;border-radius:99px;
@@ -233,6 +299,7 @@ footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
   .rv{opacity:1;transform:none}
   .hero-img img{transform:none}
   .bulb-glow,.bulb-lit,.filament.on{opacity:1}
+  .plan .wire.draw{stroke-dashoffset:0}
 }
 :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
 </style>
@@ -247,6 +314,11 @@ footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
     <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
     <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
     <symbol id="boltico" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M12.5 11.5 10 15h3l-1.5 3.5"/></g></symbol>
+    <symbol id="crane" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 21V3h3v18"/><path d="M3 21h9"/><path d="M9 4h12l-3 3H9"/><path d="M17 7v5"/><rect x="15" y="12" width="4" height="3"/><path d="M6 3 3 6"/></g></symbol>
+    <symbol id="tools" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3.6 17.2a1.6 1.6 0 0 0 2.3 2.3l5.7-5.7a4 4 0 0 0 5.2-5.4l-2.5 2.5-2.1-.6-.6-2.1z"/></g></symbol>
+    <symbol id="shop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 9 5.5 4h13L20 9"/><path d="M4 9h16a0 0 0 0 1 0 0 2.7 2.7 0 0 1-5.3 0 2.7 2.7 0 0 1-5.4 0A2.7 2.7 0 0 1 4 9z"/><path d="M5 12v8h14v-8"/><path d="M10 20v-5h4v5"/></g></symbol>
+    <symbol id="plug" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v5M15 2v5"/><path d="M6 7h12v4a6 6 0 0 1-12 0z"/><path d="M12 17v5"/></g></symbol>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
 </svg>
@@ -257,6 +329,9 @@ footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
       <span class="bolt"><svg aria-hidden="true"><use href="#boltico"/></svg></span>
       <span><small>Električar · Kočevje</small>MPE Mihelič</span>
     </a>
+    <nav class="navlinks" aria-label="Glavni meni">
+      <a href="#storitve">Storitve</a><a href="#projektiranje">Projektiranje</a><a href="#vprasanja">Vprašanja</a><a href="#kontakt">Kontakt</a>
+    </nav>
     <a class="nav-call" href="tel:+38631616332"><svg aria-hidden="true"><use href="#tel"/></svg>031 616 332</a>
   </div>
 </header>
@@ -270,10 +345,10 @@ footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
       </picture>
     </div>
     <svg class="circuit" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path class="base" id="c1" d="M-10 120 H90 Q100 120 100 130 V250 Q100 260 110 260 H230"/>
-      <path class="base" id="c2" d="M410 300 H330 Q320 300 320 310 V420 Q320 430 310 430 H180 Q170 430 170 440 V560"/>
-      <path class="base" id="c3" d="M-10 470 H40 Q50 470 50 480 V620 Q50 630 60 630 H160"/>
-      <path class="base" id="c4" d="M410 640 H300 Q290 640 290 650 V810"/>
+      <path class="base" d="M-10 120 H90 Q100 120 100 130 V250 Q100 260 110 260 H230"/>
+      <path class="base" d="M410 300 H330 Q320 300 320 310 V420 Q320 430 310 430 H180 Q170 430 170 440 V560"/>
+      <path class="base" d="M-10 470 H40 Q50 470 50 480 V620 Q50 630 60 630 H160"/>
+      <path class="base" d="M410 640 H300 Q290 640 290 650 V810"/>
       <path class="flow" d="M-10 120 H90 Q100 120 100 130 V250 Q100 260 110 260 H230"/>
       <path class="flow y d1" d="M410 300 H330 Q320 300 320 310 V420 Q320 430 310 430 H180 Q170 430 170 440 V560"/>
       <path class="flow d2" d="M-10 470 H40 Q50 470 50 480 V620 Q50 630 60 630 H160"/>
@@ -296,67 +371,153 @@ footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
     </div>
     <span class="ill">Ilustrativna fotografija</span>
     <div class="wrap hero-inner">
-      <div><span class="eyebrow rv" style="color:var(--volt)">Električar · Kočevje</span></div>
-      <h1 class="rv d1">Mitja <em>Mihelič.</em></h1>
-      <p class="sub rv d2">Elektroinštalacije in elektro projektiranje v Kočevju. MPE, Mitja Mihelič s.p., Griček pri Željnah 11. Pokličite in povejte, kaj potrebujete.</p>
+      <div><span class="eyebrow rv" style="color:var(--volt)">MPE · Mitja Mihelič s.p.</span></div>
+      <h1 class="rv d1">Od načrta do <em>zadnje vtičnice.</em></h1>
+      <p class="sub rv d2">Elektroinštalacije in elektro projektiranje za domove, novogradnje, prenove in podjetja v Kočevju in okolici.</p>
       <div class="cta-row rv d3">
         <a class="btn btn-volt btn-big pulse" href="tel:+38631616332"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 616 332</a>
-        <a class="btn btn-ghost" href="#storitve">Storitve</a>
+        <a class="btn btn-ghost" href="mailto:mitja.mihelic@gmail.com"><svg aria-hidden="true"><use href="#mail"/></svg>Pišite</a>
       </div>
+      <ul class="trust rv d3" aria-label="Na kratko">
+        <li>Kočevje</li><li>od 2012</li><li>elektroinštalacije in projektiranje</li>
+      </ul>
     </div>
   </section>
 
   <div class="strip" aria-hidden="true">
     <div class="track">
-      <span>Elektroinštalacije</span><span>Elektro projektiranje</span><span>Električar</span><span>Kočevje</span>
-      <span>Elektroinštalacije</span><span>Elektro projektiranje</span><span>Električar</span><span>Kočevje</span>
+      <span>Elektroinštalacije</span><span>Elektro projektiranje</span><span>Razsvetljava</span><span>Razdelilne omarice</span><span>Kočevje</span>
+      <span>Elektroinštalacije</span><span>Elektro projektiranje</span><span>Razsvetljava</span><span>Razdelilne omarice</span><span>Kočevje</span>
     </div>
   </div>
 
-  <section id="storitve">
+  <section id="za-koga">
+    <div class="wrap">
+      <div class="sec-head split">
+        <div><div class="eyebrow rv">Za koga</div>
+        <h2 class="rv d1">Za vaš dom, gradnjo <em>ali posel.</em></h2></div>
+        <p class="lead rv d2">Ne glede na to, ali gradite, prenavljate ali potrebujete eno novo vtičnico – za elektriko pokličete na isto številko.</p>
+      </div>
+      <div class="aud">
+        <div class="rv"><svg aria-hidden="true"><use href="#home"/></svg><h3>Dom</h3><p>Vtičnice in stikala, svetila, priklop štedilnika, okvare.</p></div>
+        <div class="rv d1"><svg aria-hidden="true"><use href="#crane"/></svg><h3>Novogradnje</h3><p>Elektro projekt in napeljava od začetka.</p></div>
+        <div class="rv d2"><svg aria-hidden="true"><use href="#tools"/></svg><h3>Prenove</h3><p>Nova napeljava in razdelilna omarica, ko obnavljate.</p></div>
+        <div class="rv d3"><svg aria-hidden="true"><use href="#shop"/></svg><h3>Podjetja in lokali</h3><p>Razsvetljava, napeljave in priklop naprav v poslovnih prostorih.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-sec" id="storitve">
     <div class="wrap">
       <div class="eyebrow rv">Storitve</div>
-      <h2 class="rv d1">Kaj <em>delamo.</em></h2>
-      <p class="lead rv d2">Elektroinštalacije in elektro projektiranje v Kočevju in okolici — pokličite in povejte, kaj potrebujete. Natančen seznam del dopolnimo skupaj z vami.</p>
+      <h2 class="rv d1">Kaj <em>naredimo.</em></h2>
+      <p class="lead rv d2">Elektroinštalacije so glavna dejavnost MPE – od prve napeljave v novi hiši do priklopa štedilnika.</p>
       <div class="svc-grid">
         <article class="svc rv">
           <div class="pic">
-            <img src="assets/instalacije.webp" alt="Vodniki v podometni razdelilni omarici med deli" loading="lazy" width="1200" height="900">
-            <span class="tag">Glavna dejavnost</span>
+            <img src="assets/novogradnja.webp" alt="Kabli in instalacijske cevi v surovi novogradnji" loading="lazy" width="1100" height="828">
+            <span class="tag">Novogradnje</span>
+            <span class="ill">Ilustrativna slika</span>
+          </div>
+          <div class="txt"><div class="num">01</div><h3>Napeljave v novogradnjah</h3><p>Električna napeljava za novo hišo ali objekt: kabli, doze, vtičnice, stikala in priključki.</p></div>
+        </article>
+        <article class="svc rv d1">
+          <div class="pic">
+            <img src="assets/vticnice.webp" alt="Priklop kabla v novo dozo med prenovo" loading="lazy" width="1100" height="828">
+            <span class="tag">Prenove</span>
+            <span class="ill">Ilustrativna slika</span>
+          </div>
+          <div class="txt"><div class="num">02</div><h3>Napeljave pri prenovah</h3><p>Zamenjava stare napeljave ter nove vtičnice in stikala, ko prenavljate stanovanje ali hišo.</p></div>
+        </article>
+        <article class="svc rv d2">
+          <div class="pic">
+            <img src="assets/razsvetljava.webp" alt="Stropna in podelementna LED razsvetljava v kuhinji" loading="lazy" width="1100" height="828">
+            <span class="ill">Ilustrativna slika</span>
+          </div>
+          <div class="txt"><div class="num">03</div><h3>Razsvetljava</h3><p>Notranja in zunanja: stropna in vgradna svetila, kuhinja, vhod, dvorišče.</p></div>
+        </article>
+        <article class="svc rv">
+          <div class="pic">
+            <img src="assets/instalacije.webp" alt="Vodniki v podometni razdelilni omarici" loading="lazy" width="1200" height="900">
             <span class="ill">Ilustrativna fotografija</span>
           </div>
-          <div class="txt"><div class="num">01</div><h3>Elektroinštalacije</h3><p>Napeljave in električne inštalacije. Seznam del dopolnimo skupaj.</p></div>
+          <div class="txt"><div class="num">04</div><h3>Razdelilne omarice</h3><p>Postavitev, zamenjava in preureditev razdelilnih omaric.</p></div>
         </article>
         <article class="svc rv d1">
           <div class="pic">
             <img src="assets/meritve.webp" alt="Merilne klešče, kabli in razvodna doza" loading="lazy" width="1200" height="900">
             <span class="ill">Ilustrativna fotografija</span>
           </div>
-          <div class="txt"><div class="num">02</div><h3>Elektro projektiranje</h3><p>Načrtovanje električnih inštalacij. Seznam del dopolnimo skupaj.</p></div>
+          <div class="txt"><div class="num">05</div><h3>Iskanje in odprava okvar</h3><p>Ko izpada varovalka ali ne dela vtičnica ali luč: iskanje vzroka in odprava okvare.</p></div>
         </article>
-        <div class="ph-card rv">
-          <div class="ico"><svg aria-hidden="true"><use href="#boltico"/></svg></div>
-          <div><h3>Kaj še delate?</h3><p>Tu dodamo vaše storitve, kot jih opišete vi. Seznam del dopolnimo skupaj.</p></div>
-        </div>
+        <article class="svc plain rv d2">
+          <div class="big-ico"><svg aria-hidden="true"><use href="#plug"/></svg></div>
+          <div class="txt"><div class="num">06</div><h3>Priklop naprav in štedilnikov</h3><p>Priklop štedilnika, kuhalne plošče, pečice in drugih električnih naprav.</p></div>
+        </article>
       </div>
+      <p class="list-note">Predlog seznama – Mitja ga potrdi ali dopolni.</p>
     </div>
   </section>
 
   <div class="strip alt" aria-hidden="true">
     <div class="track">
-      <span>Griček pri Željnah 11</span><span>031 616 332</span><span>Elektroinštalacije</span><span>Elektro projektiranje</span>
-      <span>Griček pri Željnah 11</span><span>031 616 332</span><span>Elektroinštalacije</span><span>Elektro projektiranje</span>
+      <span>Kočevje in okolica</span><span>Od 2012</span><span>031 616 332</span><span>Projektiranje in izvedba</span>
+      <span>Kočevje in okolica</span><span>Od 2012</span><span>031 616 332</span><span>Projektiranje in izvedba</span>
     </div>
   </div>
 
-  <section class="steps-sec" id="kako">
+  <section id="projektiranje">
+    <div class="wrap oneh">
+      <div class="rv">
+        <div class="eyebrow">Elektro projektiranje</div>
+        <h2>Načrt in izvedba <em>iz ene roke.</em></h2>
+        <p class="lead">MPE ima v nazivu oboje: elektroinštalacije in elektro projektiranje. Načrt električnih inštalacij in njegovo izvedbo tako uredite pri istem podjetju.</p>
+        <ul class="checks">
+          <li>Elektro projekt za novogradnjo ali prenovo</li>
+          <li>Izvedba inštalacij pri istem podjetju</li>
+          <li>En kontakt za vse: 031 616 332</li>
+        </ul>
+      </div>
+      <div class="plan rv d1" aria-hidden="true">
+        <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet">
+          <path class="wall" d="M40 40 H360 V260 H40 Z M200 40 V150 M200 190 V260 M40 160 H140 M170 160 H200"/>
+          <path class="wire" d="M120 100 H200 M260 100 H300 V200 M90 210 H150"/>
+          <path class="wire draw" d="M70 60 H180 V130 H260 V90 H330 V230 H230 V210 H120 V190"/>
+          <rect class="sym" x="62" y="52" width="16" height="16"/>
+          <circle class="sym" cx="180" cy="130" r="9"/><path d="M174 124l12 12M186 124l-12 12" stroke="#22d3ee" stroke-width="2"/>
+          <circle class="sym" cx="330" cy="90" r="9"/><path d="M324 84l12 12M336 84l-12 12" stroke="#22d3ee" stroke-width="2"/>
+          <path class="sym" d="M222 200 a8 8 0 0 1 16 0 v6 h-16 z"/>
+          <path class="sym" d="M112 184 a8 8 0 0 1 16 0 v6 h-16 z"/>
+          <circle class="sym" cx="330" cy="230" r="6"/>
+          <text x="52" y="292">PRITLIČJE · ELEKTRO</text>
+          <text x="248" y="292">M 1:50</text>
+        </svg>
+        <div class="stamp"><span>Shematski prikaz</span><span>MPE</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-sec" id="zakaj">
     <div class="wrap">
-      <div class="eyebrow rv">Kako do električarja</div>
+      <div class="eyebrow rv">Zakaj MPE</div>
+      <h2 class="rv d1">Električar, <em>ki je blizu.</em></h2>
+      <div class="why">
+        <div class="rv"><b>Kočevje</b><h3>Lokalno podjetje</h3><p>Sedež na naslovu Griček pri Željnah 11, 1330 Kočevje.</p></div>
+        <div class="rv d1"><b>2012</b><h3>Registrirano od leta 2012</h3><p>MPE, Mitja Mihelič s.p., je vpisan v register od 9. 11. 2012.</p></div>
+        <div class="rv d2"><b>Iz ene roke</b><h3>Projekt in izvedba</h3><p>Elektro projektiranje in elektroinštalacije pri istem podjetju.</p></div>
+        <div class="rv d3"><b>1 klic</b><h3>Do električarja</h3><p>Pokličite <a href="tel:+38631616332">031 616 332</a> in povejte, kaj potrebujete.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kako">
+    <div class="wrap">
+      <div class="eyebrow rv">Kako poteka</div>
       <h2 class="rv d1">Trije koraki. <em>Prvi je klic.</em></h2>
       <ol class="steps">
-        <li class="rv" data-n="1"><h3>Pokličite</h3><p><a href="tel:+38631616332">031 616 332</a> in se dogovorite za čas.</p></li>
-        <li class="rv d1" data-n="2"><h3>Opišite težavo</h3><p>Povejte, kje ste in kaj potrebujete.</p></li>
-        <li class="rv d2" data-n="3"><h3>Dogovorite se</h3><p>Skupaj se dogovorite za nadaljnje korake.</p></li>
+        <li class="rv" data-n="1"><h3>Pokličite ali pišite</h3><p><a href="tel:+38631616332">031 616 332</a> – povejte, kje ste in kaj potrebujete.</p></li>
+        <li class="rv d1" data-n="2"><h3>Dogovor za termin</h3><p>Ob klicu se dogovorimo, kdaj.</p></li>
+        <li class="rv d2" data-n="3"><h3>Načrt in izvedba</h3><p>Projekt, napeljava ali popravilo – kar vaše delo potrebuje.</p></li>
       </ol>
     </div>
   </section>
@@ -365,26 +526,40 @@ footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
     <div class="wrap">
       <div class="rv">
         <div class="eyebrow">Najhitreje po telefonu</div>
-        <h2>Vprašanje? <em>Pokličite.</em></h2>
-        <p class="lead">Za vprašanja o elektroinštalacijah in projektiranju pokličite.</p>
+        <h2>Vprašanje o elektriki? <em>Pokličite.</em></h2>
+        <p class="lead">Elektroinštalacije in elektro projektiranje v Kočevju in okolici.</p>
       </div>
       <div class="callcard rv d1">
         <small>MPE · Mitja Mihelič s.p.</small>
         <a class="n" href="tel:+38631616332">031 616 332</a>
         <a class="btn btn-volt btn-big pulse" href="tel:+38631616332"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite zdaj</a>
+        <a class="btn btn-line" href="mailto:mitja.mihelic@gmail.com"><svg aria-hidden="true"><use href="#mail"/></svg>Pišite po e-pošti</a>
       </div>
     </div>
   </section>
 
-  <section id="lokacija">
+  <section id="vprasanja">
+    <div class="wrap">
+      <div class="eyebrow rv">Pogosta vprašanja</div>
+      <h2 class="rv d1">Preden <em>pokličete.</em></h2>
+      <div class="faq">
+        <details class="rv"><summary>Ali pridete tudi v okolico Kočevja?</summary><p>Pokličite na <a href="tel:+38631616332">031 616 332</a> in povejte, kje ste – dogovorimo se.</p></details>
+        <details class="rv d1"><summary>Kako hitro lahko pridete?</summary><p>Ob klicu se dogovorimo za termin.</p></details>
+        <details class="rv d2"><summary>Ali naredite tudi elektro projekt?</summary><p>Da, elektro projektiranje je del dejavnosti MPE. Za projekt in za izvedbo pokličete na isto številko.</p></details>
+        <details class="rv d3"><summary>Koliko stane?</summary><p>Cena je odvisna od dela. Opišite, kaj potrebujete, in se pogovorimo.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="lokacija" style="padding-top:0">
     <div class="wrap loc">
       <div class="rv">
         <div class="eyebrow">Lokacija</div>
         <h2>Griček pri Željnah, <em>Kočevje.</em></h2>
-        <p class="lead">Za pot nas poiščite na Google Zemljevidih.</p>
+        <p class="lead">Sedež podjetja MPE, Mitja Mihelič s.p.</p>
         <div class="addr">
           <div><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Griček pri Željnah 11</b><small>1330 Kočevje</small></span></div>
-          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38631616332">031 616 332</a></b><small>mobilni telefon</small></span></div>
+          <div><svg aria-hidden="true"><use href="#tel"/></svg><span><b><a href="tel:+38631616332">031 616 332</a></b><small>telefon</small></span></div>
           <div><svg aria-hidden="true"><use href="#mail"/></svg><span><b><a href="mailto:mitja.mihelic@gmail.com">mitja.mihelic@gmail.com</a></b><small>e-pošta</small></span></div>
         </div>
         <div class="cta-row">
@@ -407,12 +582,12 @@ footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
   <section class="contact" id="kontakt">
     <div class="wrap">
       <div class="eyebrow rv">Kontakt</div>
-      <h2 class="rv d1">Se slišimo <em>po telefonu.</em></h2>
-      <p class="lead rv d2">Pokličite ali pišite na mitja.mihelic@gmail.com.</p>
+      <h2 class="rv d1">Kaj <em>potrebujete?</em></h2>
+      <p class="lead rv d2">Pokličite ali pišite – povejte, kje ste in kaj potrebujete, in dogovorimo se za termin.</p>
       <a class="bignum rv d2" href="tel:+38631616332">031 616 332</a>
       <div class="cta-row rv d3">
         <a class="btn btn-volt btn-big pulse" href="tel:+38631616332"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 616 332</a>
-        <a class="btn btn-line" href="mailto:mitja.mihelic@gmail.com">Pišite nam</a>
+        <a class="btn btn-line" href="mailto:mitja.mihelic@gmail.com"><svg aria-hidden="true"><use href="#mail"/></svg>Pišite</a>
       </div>
     </div>
   </section>
@@ -420,13 +595,16 @@ footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
 
 <footer>
   <div class="wrap">
-    <span>MPE, Mitja Mihelič s.p. · Griček pri Željnah 11, 1330 Kočevje · <a href="tel:+38631616332">031 616 332</a></span>
+    <span>MPE, elektroinštalacije in elektro projektiranje, Mitja Mihelič s.p. · Griček pri Željnah 11, 1330 Kočevje · <a href="tel:+38631616332">031 616 332</a></span>
     <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
-    <span class="disc">Fotografije na tej strani so ilustrativne (Unsplash, licenca Unsplash) in ne prikazujejo dejanskih del, opreme ali prostorov MPE, Mitja Mihelič s.p. Naziv, naslov, dejavnost in telefon: bizi.si in companywall.si, 2. 11. 2026. E-poštni naslov: companywall.si, 2. 11. 2026 (lastnik ga še ni potrdil). Delovni čas in ocene strank javno niso objavljeni.</span>
+    <span class="disc">Slike na tej strani so ilustrativne in ne prikazujejo dejanskih del, opreme ali prostorov MPE, Mitja Mihelič s.p.: fotografije na vrhu strani ter pri razdelilnih omaricah in okvarah so z Unsplash (licenca Unsplash), slike pri novogradnjah, prenovah in razsvetljavi so ustvarjene z umetno inteligenco. Naziv, naslov, dejavnost, datum vpisa in telefon: bizi.si in companywall.si, 2. 11. 2026. E-poštni naslov: companywall.si, 2. 11. 2026 (lastnik ga še ni potrdil). Seznam storitev je predlog, ki ga lastnik še ni potrdil. Delovni čas in ocene strank javno niso objavljeni.</span>
   </div>
 </footer>
 
-<div class="sticky"><a class="btn btn-volt" href="tel:+38631616332"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 616 332</a></div>
+<div class="sticky">
+  <a class="btn btn-volt" href="tel:+38631616332"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 031 616 332</a>
+  <a class="btn mailbtn" href="mailto:mitja.mihelic@gmail.com" aria-label="Pišite po e-pošti"><svg aria-hidden="true"><use href="#mail"/></svg></a>
+</div>
 
 <script>
 (function(){
@@ -471,11 +649,13 @@ footer .disc{flex-basis:100%;font-size:12px;opacity:.9}
 
 <!--
 SOURCES: see NOTES.md (not deployed). Facts: registered name, address, activity ("Elektroinštalacije" + "elektro
-projektiranje" in the firm name), matična/davčna številka, phone from bizi.si and companywall.si (2. 11. 2026).
-E-mail from companywall.si only, not independently confirmed — ask owner before relying on it.
+projektiranje" in the firm name), registration date 9. 11. 2012, phone from bizi.si and companywall.si (2. 11. 2026).
+E-mail from companywall.si only. Service list is a proposal within SKD 43.210 — owner to confirm.
 No Google Business listing, rating, reviews or working hours found public; none are shown or claimed on this page.
-Photos: Unsplash License, reused from agency/sales/previews/elektro-novak (same industry, already verified).
-No specific prices, years in business, certificates, guarantees, emergency/24-7 service or service area claimed.
+Photos: Unsplash License (hero, instalacije, meritve, via elektro-novak) and AI-generated (novogradnja, vticnice,
+razsvetljava, via aem-elektrik); all labelled illustrative and disclosed in the footer.
+No prices, years of experience, certificates, meritve, guarantees, emergency/24-7 service, response times or
+completed projects claimed.
 -->
 </body>
 </html>
