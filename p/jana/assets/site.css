@@ -496,10 +496,10 @@ html.leaving main,html.leaving .site-footer{opacity:0;translate:0 -12px;transiti
 @keyframes pagein{from{opacity:0;translate:0 18px}}
 
 /* intro (once per session) */
-.intro{position:fixed;inset:0;z-index:300;display:grid;place-items:center;background:var(--navy-900);color:#fff;pointer-events:none;animation:intro-out .45s .5s cubic-bezier(.7,0,.2,1) forwards}
-.intro div{text-align:center;animation:intro-lift .6s cubic-bezier(.2,.7,.2,1) both}
-.intro b{display:block;font-family:var(--serif);font-size:clamp(2.2rem,6vw,3.6rem);font-weight:600;letter-spacing:.01em}
-.intro small{display:block;margin-top:8px;font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--aqua-200);font-weight:700}
+
+
+
+
 @keyframes intro-lift{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
 @keyframes intro-out{to{opacity:0;visibility:hidden;translate:0 -3%}}
 html.intro-seen .intro{display:none}
@@ -631,5 +631,12 @@ video.lazyvid{background:var(--navy-900)}
 /* larger radii everywhere */
 .card,.tile,.group-banner,.cta-band,.refs figure,.svc-card,.shop-card,.call,.form-link,.part,.sub,.step,.kitchen,.stats,.why-media,.kband-media{border-radius:var(--radius)}
 
-@media (prefers-reduced-motion:reduce){.intro{animation-duration:.3s;animation-delay:.2s}.skel i{animation-duration:2.4s}}
+@media (prefers-reduced-motion:reduce){.skel i{animation-duration:2.4s}}
 .media-frame,.kvis{min-width:0}
+
+/* 3 s logo intro video (once per session) */
+.intro{position:fixed;inset:0;z-index:300;background:#0c162e;transition:opacity .8s cubic-bezier(.7,0,.2,1),visibility .8s,transform .9s cubic-bezier(.7,0,.2,1)}
+.intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.intro.out{opacity:0;visibility:hidden;transform:scale(1.04);pointer-events:none}
+.intro-skip{position:absolute;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:2;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;font:600 .78rem/1 var(--sans,system-ui);letter-spacing:.12em;text-transform:uppercase;padding:10px 16px;border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);cursor:pointer}
+.intro{animation:intro-kill 0s 6s forwards}@keyframes intro-kill{to{visibility:hidden;opacity:0;pointer-events:none}}

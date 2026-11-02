@@ -59,7 +59,7 @@
     if (R === 'cover') return clamp((vh - r.top) / (vh + r.height));
     return clamp((vh - r.top) / (R * (vh + r.height)));
   }
-  var introUntil = html.classList.contains('intro-seen') ? 0 : performance.now() + 650;
+  var introUntil = html.classList.contains('intro-seen') ? 0 : performance.now() + 3400;
   function register(el) {
     if (el._sxr !== undefined) return;
     el._sxr = rangeOf(el);

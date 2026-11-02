@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="assets/site.css?v=5">
+<link rel="stylesheet" href="assets/site.css?v=6">
 </head><body>
-<div class="intro" aria-hidden="true"><div><b>Trgovina Jana</b><small>SPA · masažni stoli · vse za dom</small></div></div>
+<div class="intro" aria-hidden="true"><video class="intro-v" muted playsinline preload="auto"><source media="(orientation: portrait)" src="assets/video/intro-port.webm" type="video/webm"><source media="(orientation: portrait)" src="assets/video/intro-port.mp4" type="video/mp4"><source src="assets/video/intro-land.webm" type="video/webm"><source src="assets/video/intro-land.mp4" type="video/mp4"></video><button class="intro-skip" type="button">Preskoči</button></div><script>(function(d){var h=d.documentElement,i=d.querySelector(".intro");if(!i)return;if(h.classList.contains("intro-seen")){i.remove();return}var v=i.querySelector("video"),done=false;try{var s0=v.querySelector("source").src,base=s0.slice(0,s0.lastIndexOf("/")+1),ext=v.canPlayType("video/webm")?"webm":"mp4",o=(window.innerHeight>window.innerWidth)?"port":"land";v.innerHTML="";v.src=base+"intro-"+o+"."+ext;v.load()}catch(e){}h.style.overflow="hidden";function out(){if(done)return;done=true;i.classList.add("out");h.classList.add("intro-done");h.style.overflow="";setTimeout(function(){i.remove()},900)}i.querySelector(".intro-skip").addEventListener("click",out);v.addEventListener("ended",out);v.addEventListener("error",function(){setTimeout(out,600)},true);var p=v.play&&v.play();if(p&&p.catch)p.catch(function(){setTimeout(out,1200)});setTimeout(out,4200)})(document)</script>
 <a class="skip" href="#main">Preskoči na vsebino</a>
 <div class="pv-badge" aria-label="Predogled spletne strani, pripravila AK agencija">Predogled · AK agencija</div>
 <header class="site-header">
@@ -343,6 +343,6 @@
   <a class="c1" href="tel:+38670700801"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> Pokličite</a>
   <a class="c2" href="mailto:spa@jjana.si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> Pišite</a>
 </div>
-<script src="assets/site.js?v=5" defer></script>
+<script src="assets/site.js?v=6" defer></script>
 </body>
 </html>
