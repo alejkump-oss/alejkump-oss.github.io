@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Avtotek Kavšek · Vulkanizerstvo, avtovleka, avtoelektrika · Ivančna Gorica</title>
+<meta name="description" content="Avtotek Kavšek d.o.o., Mrzlo Polje 3a, 1295 Ivančna Gorica. Vulkanizerstvo, avtovleka in asistenca, transport vozil, hidravlika, avtoelektrika. NON STOP 24 ur.">
+<meta name="theme-color" content="#16181b">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/vulkanizerstvo-hero.jpg">
+<style>
+:root{
+  --asph:#16181b; --asph2:#202327; --asph3:#2a2e33; --paper:#ffffff; --bg:#f2f2ef; --bg2:#e6e6e1;
+  --ink:#16181b; --ink2:#43474d; --mute:#6f737a; --line:rgba(22,24,27,.13);
+  --hot:#ff6a1a; --hot2:#ff8c4a; --hotd:#c94a06;
+  --disp:"Saira Condensed","Arial Narrow",system-ui,sans-serif;
+  --sans:"Manrope",system-ui,-apple-system,Segoe UI,sans-serif;
+  --pad:clamp(16px,5vw,64px);
+  --strip:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;padding-bottom:90px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:.95;letter-spacing:-.005em;text-transform:uppercase}
+h2{font-size:clamp(40px,9vw,80px);margin:.2em 0 .3em}
+h2 .hl{color:var(--hot)}
+.kick{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
+.kick b{flex:none;display:inline-grid;place-items:center;min-width:30px;height:22px;padding:0 6px;background:var(--ink);color:var(--hot);border-radius:4px;font-size:11px;letter-spacing:.06em}
+.lead{color:var(--ink2);font-size:clamp(16.5px,2.2vw,19px);max-width:58ch}
+
+/* preview strip */
+.strip{position:fixed;inset:0 0 auto 0;height:var(--strip);z-index:70;display:flex;align-items:center;justify-content:center;background:var(--hot);color:var(--asph);font-size:12px;font-weight:800;letter-spacing:.08em}
+
+/* nav */
+.nav{position:fixed;top:var(--strip);left:0;right:0;z-index:40;color:#fff;transition:background .3s,box-shadow .3s}
+.nav.solid{background:rgba(22,24,27,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;min-width:0}
+.logo .mk{flex:none;background:#fff;border-radius:6px;padding:4px 7px;height:38px;display:flex;align-items:center}
+.logo .mk img{height:28px;width:auto;max-width:110px;object-fit:contain}
+.logo small{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.8;white-space:nowrap}
+.logo b{display:block;font-family:var(--disp);font-weight:800;font-size:20px;letter-spacing:.04em;line-height:1;white-space:nowrap}
+@media(max-width:360px){.logo span{display:none}}
+.nav-call{display:none;align-items:center;gap:8px;background:var(--hot);color:var(--asph);padding:10px 18px;border-radius:6px;font-weight:800;font-size:15px}
+.nav-call svg{width:16px;height:16px}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+
+/* hero */
+.hero{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;padding:150px 0 0;color:#fff;background:var(--asph)}
+.hero .bg{position:absolute;inset:0;z-index:-2}
+.hero .bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);transform:scale(1.06);animation:settle 16s ease-out forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(22,24,27,.6) 0%,rgba(22,24,27,.25) 22%,rgba(22,24,27,.78) 52%,rgba(22,24,27,.98) 84%)}
+@media(min-width:900px){.hero::before{background:linear-gradient(90deg,rgba(22,24,27,.97) 0%,rgba(22,24,27,.82) 44%,rgba(22,24,27,.3) 100%)}}
+.hero .inner{padding-bottom:40px}
+@media(min-width:900px){.hero .inner{padding-bottom:76px}}
+.badge24{display:inline-flex;align-items:center;gap:10px;background:rgba(255,106,26,.14);border:1px solid rgba(255,106,26,.6);color:#fff;border-radius:999px;padding:6px 14px 6px 8px;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.badge24 i{width:10px;height:10px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 0 rgba(255,106,26,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 12px rgba(255,106,26,0)}100%{box-shadow:0 0 0 0 rgba(255,106,26,0)}}
+.hero h1{font-size:clamp(52px,14vw,132px);margin:.2em 0 .18em;max-width:11ch}
+.hero h1 span{color:var(--hot)}
+.hero .sub{max-width:48ch;color:#dcdcd8;font-size:clamp(17px,2.3vw,20px)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 26px;border-radius:6px;font-weight:800;font-size:16.5px;text-align:center;transition:transform .2s,background .2s,box-shadow .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-s{background:var(--hot);color:var(--asph);box-shadow:0 14px 28px -14px rgba(255,106,26,.9)}
+.btn-s:hover{background:var(--hot2);transform:translateY(-2px)}
+.btn-big{min-height:66px;font-size:19px;padding:0 30px}
+.btn-g{border:2px solid rgba(255,255,255,.55);color:#fff}
+.btn-g:hover{background:rgba(255,255,255,.1)}
+.btn-d{border:2px solid var(--ink);color:var(--ink)}
+.btn-d:hover{background:rgba(22,24,27,.06)}
+@media(max-width:480px){.cta .btn{width:100%}}
+.hfacts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin-top:30px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18);border-radius:8px;overflow:hidden;max-width:760px}
+.hfacts div:last-child{grid-column:1/-1}
+@media(min-width:700px){.hfacts{grid-template-columns:repeat(3,1fr)}.hfacts div:last-child{grid-column:auto}}
+.hfacts div{background:rgba(22,24,27,.66);backdrop-filter:blur(6px);padding:12px 14px}
+.hfacts small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hot2)}
+.hfacts b{display:block;font-weight:700;font-size:15px;color:#fff;margin-top:2px}
+
+/* ticker */
+.ticker{background:var(--hot);color:var(--asph);overflow:hidden;border-block:2px solid var(--asph)}
+.ticker .row{display:flex;width:max-content;animation:tick 40s linear infinite}
+.ticker ul{display:flex;list-style:none;flex:none}
+.ticker li{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(18px,2.8vw,24px);padding:12px 0 12px 22px;white-space:nowrap;display:flex;align-items:center;gap:22px}
+.ticker li::after{content:"";width:10px;height:10px;border:3px solid var(--asph);border-radius:50%}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section{padding:clamp(72px,11vw,128px) 0;position:relative}
+
+/* services */
+.svc-head{display:grid;gap:10px}
+@media(min-width:900px){.svc-head{grid-template-columns:1.2fr 1fr;align-items:end;gap:48px}}
+.svc-grid{display:grid;gap:16px;margin-top:40px}
+@media(min-width:700px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.svc-grid{grid-template-columns:repeat(3,1fr)}}
+.svc{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 24px 40px -26px rgba(22,24,27,.55)}
+.svc .pic{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg2)}
+.svc .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s}
+.svc:hover .pic img{transform:scale(1.05)}
+.svc .num{position:absolute;left:0;top:0;z-index:3;font-family:var(--disp);font-weight:800;font-size:16px;background:var(--hot);color:var(--asph);padding:6px 12px;border-bottom-right-radius:8px}
+.svc .txt{padding:20px 20px 22px}
+.svc h3{font-size:clamp(28px,3.4vw,34px)}
+.svc p{color:var(--ink2);font-size:15.5px;margin-top:8px}
+.svc ul{list-style:none;margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.svc li{font-size:13.5px;font-weight:600;color:var(--ink2);background:var(--bg);border:1px solid var(--line);padding:3px 9px;border-radius:4px}
+.svc.plain{background:var(--asph);color:#fff;border-color:var(--asph)}
+.svc.plain .pic{background:repeating-linear-gradient(135deg,#24272b 0 18px,#1d2023 18px 36px)}
+.svc.plain .pic svg{position:absolute;inset:0;margin:auto;width:40%;height:auto;color:var(--hot)}
+.svc.plain p{color:#c4c6c9}
+.svc.plain li{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#e2e3e5}
+.svc a.more{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-weight:800;font-size:14.5px;color:var(--hotd)}
+.svc a.more svg{width:16px;height:16px}
+.src{display:block;font-size:12.5px;color:var(--mute);margin-top:14px}
+
+/* tyres feature */
+.tyre{background:var(--asph);color:#fff;overflow:hidden}
+.tyre .kick{color:#c9cbcf}.tyre .kick b{background:var(--hot);color:var(--asph)}
+.tyre .lead{color:#c4c6c9}
+.tyre-grid{display:grid;gap:30px;margin-top:10px}
+@media(min-width:960px){.tyre-grid{grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}}
+.quote{font-family:var(--disp);font-weight:700;font-size:clamp(26px,4.4vw,38px);line-height:1.08;text-transform:none;border-left:5px solid var(--hot);padding-left:18px;margin:22px 0 26px;color:#fff}
+.ops{list-style:none;display:grid;gap:10px}
+.ops li{display:flex;gap:14px;align-items:center;background:var(--asph2);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:14px 16px;font-weight:700}
+.ops li svg{width:22px;height:22px;flex:none;color:var(--hot)}
+.vtypes{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.vtypes span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);padding:7px 12px;border-radius:4px;font-weight:600;font-size:14px}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gal figure{position:relative;border-radius:8px;overflow:hidden;background:var(--asph3);aspect-ratio:1/1}
+.gal figure.w{grid-column:1/-1;aspect-ratio:16/9}
+.gal img{width:100%;height:100%;object-fit:cover}
+
+/* tow */
+.tow-grid{display:grid;gap:30px}
+@media(min-width:960px){.tow-grid{grid-template-columns:1.05fr 1fr;gap:56px;align-items:start}}
+.checks{list-style:none;display:grid;gap:0;margin-top:24px;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.checks li{display:flex;gap:14px;align-items:flex-start;padding:15px 18px;border-top:1px solid var(--line);font-weight:600}
+.checks li:first-child{border-top:0}
+.checks li svg{width:22px;height:22px;flex:none;color:var(--hotd);margin-top:1px}
+.partners{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.partners span{font-family:var(--disp);font-weight:800;font-size:20px;letter-spacing:.06em;border:2px solid var(--ink);border-radius:6px;padding:4px 14px}
+.tow-pics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.tow-pics figure{border-radius:8px;overflow:hidden;background:var(--bg2);aspect-ratio:4/3}
+.tow-pics figure.w{grid-column:1/-1;aspect-ratio:16/9}
+.tow-pics img{width:100%;height:100%;object-fit:cover}
+.carry{margin-top:24px}
+.carry h3{font-size:24px}
+.carry p{color:var(--ink2);margin-top:6px}
+
+/* about */
+.about{background:var(--bg2)}
+.reg{display:grid;gap:30px}
+@media(min-width:900px){.reg{grid-template-columns:1fr 1.15fr;gap:60px;align-items:start}}
+.sheet{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sheet .hd{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:14px 18px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;letter-spacing:.04em}
+.sheet .hd span:last-child{color:var(--hot2);font-size:12px}
+.sheet dl div{display:grid;gap:2px;padding:13px 18px;border-top:1px solid var(--line)}
+@media(min-width:560px){.sheet dl div{grid-template-columns:150px 1fr;gap:14px}}
+.sheet dt{font-size:12.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding-top:2px}
+.sheet dd{font-weight:600;word-break:break-word}
+.about figure{border-radius:10px;overflow:hidden;margin-top:24px;aspect-ratio:16/10;background:var(--bg)}
+.about figure img{width:100%;height:100%;object-fit:cover}
+
+/* contact */
+.contact{display:grid;gap:16px;margin-top:10px}
+@media(min-width:900px){.contact{grid-template-columns:1.15fr 1fr}}
+.callp{position:relative;overflow:hidden;background:var(--hot);color:var(--asph);border-radius:10px;padding:30px 22px;border:2px solid var(--asph)}
+.callp::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;border:28px dashed rgba(22,24,27,.12)}
+.callp small{display:block;font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;position:relative;z-index:1}
+.callp .n{display:block;font-family:var(--disp);font-weight:800;font-size:clamp(40px,11vw,84px);line-height:1;margin:14px 0 22px;white-space:nowrap;position:relative;z-index:1}
+.callp .btn{width:100%;background:var(--asph);color:#fff;position:relative;z-index:1}
+.callp .btn:hover{background:#000}
+.callp .who{display:block;margin-top:14px;font-size:14.5px;font-weight:600;position:relative;z-index:1}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 20px}
+.crow{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}
+.crow:last-child{border-bottom:0}
+.crow svg{width:22px;height:22px;flex:none;margin-top:2px;color:var(--hotd)}
+.crow b{display:block;font-weight:700;word-break:break-word}
+.crow small{color:var(--mute);font-size:13.5px}
+.crow a b,a.crow b{text-decoration:underline;text-decoration-color:var(--hot);text-decoration-thickness:3px;text-underline-offset:3px}
+
+footer{background:var(--asph);color:#a6a9ad;padding:38px 0 30px;font-size:13px}
+footer .wrap{display:flex;flex-direction:column;gap:10px}
+footer .disc{font-size:12px;opacity:.85}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:60px;font-size:18px;border:2px solid var(--asph);box-shadow:0 12px 28px -10px rgba(22,24,27,.6)}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+.no-js .rv{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}.hero .bg img{transform:none}
+  .ticker .row{width:auto}.ticker ul+ul{display:none}.ticker ul{flex-wrap:wrap}
+}
+:focus-visible{outline:3px solid var(--hot);outline-offset:3px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="strip">Predogled – AK agencija</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M4 12.5l5 5L20 6.5"/></symbol>
+    <symbol id="wheel" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></g></symbol>
+    <symbol id="fax" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="9" rx="2"/><path d="M7 15h10v6H7z"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Avtotek Kavšek, na vrh">
+      <span class="mk"><img src="assets/logo.png" alt="Avtotek Kavšek logotip" width="200" height="60"></span>
+      <span><b>AVTOTEK KAVŠEK</b><small>Ivančna Gorica · Non stop</small></span>
+    </a>
+    <a class="nav-call" href="tel:+38641613551"><svg aria-hidden="true"><use href="#tel"/></svg>041 613 551</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="bg"><img src="assets/vulkanizerstvo-hero.jpg" alt="Vulkanizerska delavnica Avtotek Kavšek" width="500" height="375" fetchpriority="high"></div>
+    <div class="wrap inner">
+      <span class="badge24 rv"><i></i>Non stop 24 ur</span>
+      <h1 class="rv d1">Pnevmatike, vleka <span>in pomoč na cesti.</span></h1>
+      <p class="sub rv d2">Avtotek Kavšek iz Mrzlega Polja pri Ivančni Gorici: vulkanizerstvo, avtovleka in asistenca, transport vozil, hidravlika in avtoelektrika. Družinsko podjetje med Ljubljano in Novim mestom.</p>
+      <div class="cta rv d3">
+        <a class="btn btn-s btn-big" href="tel:+38641613551"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 041 613 551</a>
+        <a class="btn btn-g" href="#storitve">Storitve <svg aria-hidden="true" style="width:18px;height:18px"><use href="#arrow"/></svg></a>
+      </div>
+      <div class="hfacts rv d3">
+        <div><small>Delovni čas</small><b>NON STOP 24 ur</b></div>
+        <div><small>Telefon</small><b>01 7878 603</b></div>
+        <div><small>Naslov</small><b>Mrzlo Polje 3a, Ivančna Gorica</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="row">
+      <ul><li>Vulkanizerstvo</li><li>Lasersko centriranje</li><li>Avtovleka</li><li>Asistenca</li><li>Transport vozil</li><li>Hidravlične cevi</li><li>Avtoelektrika</li><li>Akumulatorji</li></ul>
+      <ul><li>Vulkanizerstvo</li><li>Lasersko centriranje</li><li>Avtovleka</li><li>Asistenca</li><li>Transport vozil</li><li>Hidravlične cevi</li><li>Avtoelektrika</li><li>Akumulatorji</li></ul>
+    </div>
+  </div>
+
+  <section id="storitve">
+    <div class="wrap">
+      <div class="svc-head">
+        <div>
+          <div class="kick rv"><b>01</b>Storitve</div>
+          <h2 class="rv d1">Vse za vozilo <span class="hl">na enem naslovu.</span></h2>
+        </div>
+        <p class="lead rv d2">Šest področij, s katerimi se podjetje predstavlja na svoji spletni strani.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc rv">
+          <div class="pic"><img src="assets/pnevmatike.jpg" alt="Pnevmatike v vulkanizerski delavnici" loading="lazy" width="640" height="400"><span class="num">01</span></div>
+          <div class="txt"><h3>Vulkanizerstvo</h3>
+            <p>Premontaža, montaža in lasersko centriranje pnevmatik.</p>
+            <a class="more" href="#pnevmatike">Več o pnevmatikah <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="svc rv d1">
+          <div class="pic"><img src="assets/avtovleka.jpg" alt="Vozilo za avtovleko Avtotek Kavšek" loading="lazy" width="640" height="400"><span class="num">02</span></div>
+          <div class="txt"><h3>Avtovleka in asistenca</h3>
+            <p>Reševanje vozil ob nesreči ali okvari, pomoč in manjša popravila na cesti.</p>
+            <a class="more" href="#avtovleka">Več o avtovleki <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="svc rv d2">
+          <div class="pic"><img src="assets/transport.jpg" alt="Tovorno vozilo za prevoz vozil" loading="lazy" width="640" height="400"><span class="num">03</span></div>
+          <div class="txt"><h3>Transport vozil</h3>
+            <p>Prevoz novih in rabljenih vozil doma in na trgu EU.</p>
+          </div>
+        </article>
+        <article class="svc plain rv">
+          <div class="pic" aria-hidden="true"><svg viewBox="0 0 120 80"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 40h22"/><rect x="32" y="30" width="16" height="20" rx="3"/><path d="M48 40c18 0 18-22 36-22h4"/><rect x="88" y="10" width="16" height="16" rx="3"/><path d="M48 40c18 0 18 22 36 22h4"/><rect x="88" y="54" width="16" height="16" rx="3"/></g></svg><span class="num">04</span></div>
+          <div class="txt"><h3>Hidravlika</h3>
+            <p>Izdelovanje in popravilo hidravličnih cevi vseh vrst.</p>
+          </div>
+        </article>
+        <article class="svc plain rv d1">
+          <div class="pic" aria-hidden="true"><svg viewBox="0 0 120 80"><path fill="currentColor" d="M66 4L34 46h22l-6 30 36-46H62z"/></svg><span class="num">05</span></div>
+          <div class="txt"><h3>Avtoelektrika</h3>
+            <ul><li>popravila alternatorjev</li><li>popravila zaganjačev</li><li>vgradnja opozorilnih komponent</li><li>pregled svetlobnih teles</li><li>testiranje akumulatorjev</li></ul>
+          </div>
+        </article>
+        <article class="svc plain rv d2">
+          <div class="pic" aria-hidden="true"><svg viewBox="0 0 120 80"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"><rect x="20" y="20" width="80" height="50" rx="5"/><path d="M34 20v-8h12v8M74 20v-8h12v8M34 45h14M41 38v14M74 45h14"/></g></svg><span class="num">06</span></div>
+          <div class="txt"><h3>Akumulatorji</h3>
+            <p>Pooblaščeni serviser za akumulatorje znamk:</p>
+            <ul><li>CIAK</li><li>Vesna</li><li>Yuasa</li><li>Varta</li><li>Start Power</li></ul>
+          </div>
+        </article>
+      </div>
+      <span class="src rv">Vir: avtotek.com, prebrano 2. 11. 2026.</span>
+    </div>
+  </section>
+
+  <section class="tyre" id="pnevmatike">
+    <div class="wrap tyre-grid">
+      <div>
+        <div class="kick rv"><b>02</b>Vulkanizerstvo</div>
+        <h2 class="rv d1">Pnevmatike <span class="hl">od motorja do traktorja.</span></h2>
+        <p class="quote rv d2">»Skrbimo za ustrezno opremljenost in varnost vaših vozil s pnevmatikami.«</p>
+        <ul class="ops rv d2">
+          <li><svg aria-hidden="true"><use href="#wheel"/></svg>Premontaža pnevmatik</li>
+          <li><svg aria-hidden="true"><use href="#wheel"/></svg>Montaža pnevmatik</li>
+          <li><svg aria-hidden="true"><use href="#wheel"/></svg>Lasersko centriranje</li>
+        </ul>
+        <div class="vtypes rv d3">
+          <span>osebna vozila</span><span>lahka tovorna vozila</span><span>kombinirana vozila</span><span>motorji</span><span>tovorne pnevmatike</span><span>traktorske pnevmatike</span><span>delovni stroji</span>
+        </div>
+      </div>
+      <div class="gal rv d1">
+        <figure class="w"><img src="assets/vulkanizerstvo-1.jpg" alt="Delo v vulkanizerski delavnici" loading="lazy" width="640" height="360"></figure>
+        <figure><img src="assets/vulkanizerstvo-2.jpg" alt="Vulkanizerska oprema" loading="lazy" width="400" height="400"></figure>
+        <figure><img src="assets/pnevmatika-traktor.jpg" alt="Traktorska pnevmatika" loading="lazy" width="400" height="400"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="avtovleka">
+    <div class="wrap tow-grid">
+      <div>
+        <div class="kick rv"><b>03</b>Avtovleka in asistenca</div>
+        <h2 class="rv d1">Obstali ste? <span class="hl">Pokličite.</span></h2>
+        <p class="lead rv d2">Avtovleka deluje non stop, 24 ur na dan.</p>
+        <ul class="checks rv d2">
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Reševanje vozil v primeru nesreče ali okvare</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Non-stop 24-urno delo</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Pomoč in manjša popravila na cesti</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Parkiranje vozil</li>
+          <li><svg aria-hidden="true"><use href="#check"/></svg>Nadomestno vozilo</li>
+        </ul>
+        <p class="lead rv" style="margin-top:22px;font-size:16px">Pogodbeni sodelavec asistenčnih služb:</p>
+        <div class="partners rv"><span>TRIGLAV</span><span>CORIS</span></div>
+        <div class="carry rv">
+          <h3>Kaj prepeljemo</h3>
+          <p>Poškodovana in pokvarjena vozila, kombiji, lahka tovorna vozila, počitniške prikolice, traktorji in mehanizacija do 5 ton. Na voljo je tudi avtoprikolica s prekucno nakladalno površino za prevoz kombijev in strojev do 2,5 tone.</p>
+        </div>
+      </div>
+      <div class="tow-pics rv d1">
+        <figure class="w"><img src="assets/avtovleka-2.jpg" alt="Vlečno vozilo Avtotek Kavšek" loading="lazy" width="640" height="360"></figure>
+        <figure><img src="assets/avtovleka-kombi.jpg" alt="Prevoz kombija na vlečnem vozilu" loading="lazy" width="400" height="300"></figure>
+        <figure><img src="assets/avtovleka-nakladanje.jpg" alt="Nakladanje vozila na vlečno vozilo" loading="lazy" width="400" height="300"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="podjetje">
+    <div class="wrap reg">
+      <div class="rv">
+        <div class="kick"><b>04</b>O podjetju</div>
+        <h2>Družinsko podjetje <span class="hl">ob cesti med Ljubljano in Novim mestom.</span></h2>
+        <p class="lead">Avtotek Kavšek se ukvarja s prevozom vozil doma in v Evropi, avtovleko, vulkanizerskimi in avtoelektričarskimi storitvami ter izdelavo in popravilom hidravličnih cevi.</p>
+        <figure><img src="assets/transport.jpg" alt="Tovorno vozilo Avtotek Kavšek" loading="lazy" width="640" height="400"></figure>
+      </div>
+      <div class="sheet rv d1">
+        <div class="hd"><span>Podatki o podjetju</span><span>stanje 2. 11. 2026</span></div>
+        <dl>
+          <div><dt>Firma</dt><dd>AVTOTEK KAVŠEK d.o.o.</dd></div>
+          <div><dt>Naslov</dt><dd>Mrzlo Polje 3a, 1295 Ivančna Gorica</dd></div>
+          <div><dt>Davčna št.</dt><dd>SI81248156</dd></div>
+          <div><dt>Delovni čas</dt><dd>NON STOP 24 ur</dd></div>
+          <div><dt>Telefon</dt><dd><a href="tel:+38617878603">01 7878 603</a></dd></div>
+          <div><dt>Faks</dt><dd>01 7877 820</dd></div>
+          <div><dt>E-pošta</dt><dd><a href="mailto:info@avtotek.com">info@avtotek.com</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="kick rv"><b>05</b>Kontakt</div>
+      <h2 class="rv d1">Dosegljivi <span class="hl">noč in dan.</span></h2>
+      <div class="contact">
+        <div class="callp rv">
+          <small>Mobilni · non stop</small>
+          <a class="n" href="tel:+38641613551">041 613 551</a>
+          <a class="btn btn-big" href="tel:+38641613551"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči zdaj</a>
+          <span class="who">Drugi mobilni: <a href="tel:+38640537342" style="text-decoration:underline">040 537 342</a></span>
+        </div>
+        <div class="panel rv d1">
+          <a class="crow" href="tel:+38617878603"><svg aria-hidden="true"><use href="#tel"/></svg><span><b>01 7878 603</b><small>telefon</small></span></a>
+          <a class="crow" href="tel:+38640537342"><svg aria-hidden="true"><use href="#tel"/></svg><span><b>040 537 342</b><small>mobilni</small></span></a>
+          <div class="crow"><svg aria-hidden="true"><use href="#fax"/></svg><span><b style="text-decoration:none">01 7877 820</b><small>faks</small></span></div>
+          <a class="crow" href="mailto:info@avtotek.com"><svg aria-hidden="true"><use href="#mail"/></svg><span><b>info@avtotek.com</b><small>e-pošta</small></span></a>
+          <a class="crow" href="https://www.google.com/maps/search/?api=1&amp;query=Mrzlo+Polje+3a%2C+1295+Ivan%C4%8Dna+Gorica" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Mrzlo Polje 3a, 1295 Ivančna Gorica</b><small>naslov · odpri v Google Zemljevidih</small></span></a>
+          <div class="crow"><svg aria-hidden="true"><use href="#clock"/></svg><span><b style="text-decoration:none">NON STOP 24 ur</b><small>delovni čas</small></span></div>
+        </div>
+      </div>
+      <div class="cta" style="margin-top:22px">
+        <a class="btn btn-d" href="https://www.google.com/maps/search/?api=1&amp;query=Mrzlo+Polje+3a%2C+1295+Ivan%C4%8Dna+Gorica" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg>Odpri v Google Zemljevidih</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>AVTOTEK KAVŠEK d.o.o. · Mrzlo Polje 3a, 1295 Ivančna Gorica · <a href="tel:+38617878603">01 7878 603</a> · <a href="mailto:info@avtotek.com">info@avtotek.com</a></span>
+    <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
+    <span class="disc">Predogled, ni javna spletna stran podjetja. Besedila, fotografije in logotip: <a href="https://www.avtotek.com/" style="text-decoration:underline">avtotek.com</a>; davčna številka: CompanyWall; prebrano 2. 11. 2026.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-s" href="tel:+38641613551"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 041 613 551</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>40);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el);});
+  var check=function(){var vh=window.innerHeight;els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<vh*0.94&&r.bottom>0)el.classList.add('in');}});};
+  window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+})();
+</script>
+</body>
+</html>
