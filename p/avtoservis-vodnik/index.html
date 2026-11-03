@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="googlebot" content="noindex,nofollow">
+<title>Avtoservis Vodnik · Servis osebnih in dostavnih vozil · Domžale</title>
+<meta name="description" content="Avtoservis Vodnik d.o.o., Kersnikova ulica 12, 1230 Domžale. Redni servisi, diagnostika, klima, zavore, podvozje, bencinski injektorji, vulkanizerstvo. Pokličite 01 722 06 00.">
+<meta name="theme-color" content="#0e1a23">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/hero.jpg">
+<style>
+:root{
+  --bg:#f2f4f5; --paper:#ffffff; --ink:#0e1a23; --ink2:#3d4a53; --mute:#6c7880;
+  --line:rgba(14,26,35,.13); --dk:#0e1a23; --dk2:#16262f; --acc:#e8452c; --acc2:#ff6a4f; --accd:#b92d17; --steel:#a9b8c1;
+  --disp:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --sans:"Inter",system-ui,-apple-system,Segoe UI,sans-serif;
+  --pad:clamp(16px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.6;padding-bottom:90px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-family:var(--disp);font-weight:900;line-height:1;letter-spacing:-.015em}
+h2{font-size:clamp(34px,7.6vw,68px);margin:.25em 0 .35em}
+h2 .hl{color:var(--acc)}
+.kick{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
+.kick b{flex:none;display:inline-grid;place-items:center;min-width:30px;height:22px;padding:0 6px;background:var(--acc);color:#fff;border-radius:3px;font-size:11px;letter-spacing:.06em}
+.lead{color:var(--ink2);font-size:clamp(16.5px,2.2vw,19px);max-width:58ch}
+
+/* ribbon */
+.ribbon{position:fixed;top:0;left:0;right:0;z-index:60;text-align:center;font-size:12px;font-weight:700;letter-spacing:.06em;padding:5px 10px;background:var(--acc);color:#fff}
+
+/* nav */
+.nav{position:fixed;left:0;right:0;top:28px;z-index:40;color:#fff;transition:background .3s,box-shadow .3s}
+.nav.solid{background:rgba(14,26,35,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;min-width:0}
+.logo .chip{background:#fff;border-radius:6px;padding:5px 8px;flex:none}
+.logo .chip img{height:30px;width:auto}
+.logo span{font-family:var(--disp);font-weight:800;font-size:15px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.logo small{display:block;font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
+.nav-call{display:none;align-items:center;gap:8px;background:var(--acc);color:#fff;padding:10px 18px;border-radius:5px;font-weight:700;font-size:15px}
+.nav-call svg{width:16px;height:16px}
+@media(min-width:760px){.nav-call{display:inline-flex}}
+@media(max-width:400px){.logo span{display:none}}
+
+/* hero */
+.hero{position:relative;min-height:min(100svh,880px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;padding:150px 0 0;color:#fff;background:var(--dk)}
+.hero .bg{position:absolute;inset:0;z-index:-2}
+.hero .bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:settle 16s ease-out forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,26,35,.6) 0%,rgba(14,26,35,.2) 26%,rgba(14,26,35,.78) 55%,rgba(14,26,35,.97) 84%)}
+@media(min-width:900px){.hero::before{background:linear-gradient(90deg,rgba(14,26,35,.95) 0%,rgba(14,26,35,.7) 45%,rgba(14,26,35,.15) 100%)}}
+.hero .inner{padding-bottom:40px}
+@media(min-width:900px){.hero .inner{padding-bottom:80px}}
+.hero .kick{color:#dfe6ea}
+.hero h1{font-size:clamp(42px,11.5vw,112px);text-transform:uppercase;margin:.22em 0 .22em;max-width:12ch}
+.hero h1 span{color:var(--acc2)}
+.hero .sub{max-width:48ch;color:#dbe2e6;font-size:clamp(17px,2.3vw,20px)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 26px;border-radius:5px;font-weight:700;font-size:16.5px;text-align:center;transition:transform .2s,background .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-s{background:var(--acc);color:#fff;box-shadow:0 14px 28px -14px rgba(232,69,44,.9)}
+.btn-s:hover{background:var(--acc2);transform:translateY(-2px)}
+.btn-big{min-height:64px;font-size:18.5px;padding:0 28px}
+.btn-g{border:2px solid rgba(255,255,255,.55);color:#fff}
+.btn-g:hover{background:rgba(255,255,255,.1)}
+.btn-d{border:2px solid var(--ink);color:var(--ink)}
+.btn-d:hover{background:rgba(14,26,35,.06)}
+@media(max-width:480px){.cta .btn{width:100%}}
+.hfacts{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:30px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18);border-radius:8px;overflow:hidden;max-width:760px}
+.hfacts div:last-child{grid-column:1/-1}
+@media(min-width:700px){.hfacts{grid-template-columns:repeat(3,1fr)}.hfacts div:last-child{grid-column:auto}}
+.hfacts div{background:rgba(14,26,35,.66);backdrop-filter:blur(6px);padding:12px 14px}
+.hfacts small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--acc2)}
+.hfacts b{display:block;font-weight:600;font-size:15px;color:#fff;margin-top:2px}
+
+/* ticker */
+.ticker{background:var(--dk2);color:#fff;overflow:hidden;border-top:4px solid var(--acc)}
+.ticker .row{display:flex;width:max-content;animation:tick 42s linear infinite}
+.ticker ul{display:flex;list-style:none;flex:none}
+.ticker li{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(15px,2.3vw,19px);padding:14px 0 14px 22px;white-space:nowrap;display:flex;align-items:center;gap:22px}
+.ticker li::after{content:"";width:8px;height:8px;background:var(--acc);border-radius:50%}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+section{padding:clamp(72px,11vw,124px) 0;position:relative}
+
+/* highlights */
+.hi-grid{display:grid;gap:16px;margin-top:38px}
+@media(min-width:760px){.hi-grid{grid-template-columns:repeat(3,1fr)}}
+.hi{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px 22px 26px;position:relative;overflow:hidden}
+.hi::before{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.6,0,.2,1) .2s}
+.hi.in::before{transform:none}
+.hi svg{width:40px;height:40px;color:var(--acc)}
+.hi h3{font-size:24px;margin:14px 0 6px}
+.hi p{color:var(--ink2);font-size:15.5px}
+
+/* services list */
+.svc{background:var(--dk);color:#fff}
+.svc .kick{color:#c4cfd5}
+.svc .lead{color:#b9c5cc}
+.svc-list{list-style:none;display:grid;gap:1px;margin-top:38px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden;counter-reset:s}
+@media(min-width:700px){.svc-list{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.svc-list{grid-template-columns:repeat(3,1fr)}}
+.svc-list li{background:var(--dk2);padding:18px 20px;display:flex;gap:14px;align-items:baseline;font-weight:600;font-size:16.5px;counter-increment:s}
+.svc-list li::before{content:counter(s,decimal-leading-zero);font-family:var(--disp);font-weight:800;font-size:14px;color:var(--acc2);flex:none}
+.src{display:block;font-size:12.5px;color:var(--mute);margin-top:16px}
+.svc .src{color:#8e9ca4}
+
+/* injectors feature */
+.feat{display:grid;gap:28px;align-items:center}
+@media(min-width:900px){.feat{grid-template-columns:1fr 1fr;gap:60px}}
+.feat .pic{border-radius:10px;overflow:hidden;background:#dde3e6;aspect-ratio:4/3;border:1px solid var(--line)}
+.feat .pic img{width:100%;height:100%;object-fit:cover}
+.feat ul{list-style:none;margin-top:18px;display:grid;gap:10px}
+.feat li{display:flex;gap:10px;align-items:flex-start;font-weight:600}
+.feat li svg{width:20px;height:20px;flex:none;color:var(--acc);margin-top:3px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:34px}
+@media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr);gap:12px}.gal figure:first-child{grid-column:span 2;grid-row:span 2}}
+.gal figure{border-radius:8px;overflow:hidden;background:#dde3e6;aspect-ratio:4/3}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.gal figure:hover img{transform:scale(1.05)}
+
+/* hours */
+.hours{display:grid;gap:16px;margin-top:10px}
+@media(min-width:900px){.hours{grid-template-columns:1.1fr 1fr}}
+.sheet{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sheet .hd{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:14px 18px;background:var(--ink);color:#fff;font-weight:700;font-size:14px;letter-spacing:.04em}
+.sheet .hd span:last-child{color:var(--acc2);font-size:12px}
+.sheet dl div{display:flex;justify-content:space-between;gap:14px;padding:14px 18px;border-top:1px solid var(--line)}
+.sheet dt{font-weight:600}
+.sheet dd{font-family:var(--disp);font-weight:800;font-size:18px;white-space:nowrap}
+.sheet dd.off{color:var(--accd)}
+.sheet dl div.mut dd{font-family:var(--sans);font-weight:600;font-size:15px;color:var(--mute)}
+@media(max-width:400px){.sheet dl div{flex-direction:column;gap:0}}
+
+/* contact */
+.contact{display:grid;gap:16px;margin-top:10px}
+@media(min-width:900px){.contact{grid-template-columns:1.1fr 1fr}}
+.callp{position:relative;overflow:hidden;background:var(--acc);color:#fff;border-radius:10px;padding:30px 22px}
+.callp::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border:28px solid rgba(255,255,255,.12);border-radius:50%}
+.callp small{display:block;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;position:relative;z-index:1}
+.callp .n{display:block;font-family:var(--disp);font-weight:900;font-size:clamp(40px,11.5vw,80px);line-height:1;margin:14px 0 8px;white-space:nowrap;position:relative;z-index:1}
+.callp .m{display:block;font-weight:700;font-size:18px;margin-bottom:22px;position:relative;z-index:1}
+.callp .btn{width:100%;background:var(--ink);color:#fff;position:relative;z-index:1}
+.callp .btn:hover{background:#000}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 20px}
+.crow{display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
+.crow:last-child{border-bottom:0}
+.crow svg{width:22px;height:22px;flex:none;margin-top:2px;color:var(--acc)}
+.crow b{display:block;font-weight:700;word-break:break-word}
+.crow small{color:var(--mute);font-size:13.5px}
+.crow a b,a.crow b{text-decoration:underline;text-decoration-color:var(--acc);text-decoration-thickness:2px;text-underline-offset:3px}
+
+footer{background:var(--dk);color:#9eacb4;padding:38px 0 30px;font-size:13px}
+footer .wrap{display:flex;flex-direction:column;gap:10px}
+footer a{color:#fff}
+footer .disc{font-size:12px;opacity:.85}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex}
+.sticky a{flex:1;min-height:60px;font-size:18px;box-shadow:0 12px 28px -10px rgba(14,26,35,.7)}
+@media(min-width:760px){.sticky{display:none}body{padding-bottom:0}}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .85s cubic-bezier(.2,.7,.2,1),transform .85s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+.no-js .rv{opacity:1;transform:none}.no-js .hi::before{transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}.hi::before{transform:none}.hero .bg img{transform:none}
+  .ticker .row{width:auto}.ticker ul+ul{display:none}.ticker ul{flex-wrap:wrap}
+}
+:focus-visible{outline:3px solid var(--acc2);outline-offset:3px}
+</style>
+</head>
+<body class="no-js">
+
+<div class="ribbon">Predogled – AK agencija</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="pinico" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="chk" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="wrench" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0 5 5L21 13a6 6 0 0 1-7.6 1.6L6 22l-4-4 7.4-7.4A6 6 0 0 1 11 3l1.7 1.3a4 4 0 0 0 2 2z"/></symbol>
+    <symbol id="snow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7"/><path d="M9 4l3 2 3-2M9 20l3-2 3 2"/></g></symbol>
+    <symbol id="doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5M9 12h8M9 16h8"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Avtoservis Vodnik, na vrh">
+      <span class="chip"><img src="assets/logo.png" alt="Avtoservis Vodnik" height="30"></span>
+      <span>Avtoservis Vodnik<small>Domžale</small></span>
+    </a>
+    <a class="nav-call" href="tel:+38617220600"><svg aria-hidden="true"><use href="#tel"/></svg>01 722 06 00</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding-bottom:0">
+    <div class="bg"><img src="assets/hero.jpg" alt="Avtoservis Vodnik v Domžalah" width="1024" height="614" fetchpriority="high"></div>
+    <div class="wrap inner">
+      <div class="kick rv"><b>d.o.o.</b>Avtoservis · Kersnikova ulica 12, Domžale</div>
+      <h1 class="rv d1">Servis za vaše <span>vozilo.</span></h1>
+      <p class="sub rv d2">Popravljamo in servisiramo osebna ter dostavna vozila. Redni servisi vozil vseh znamk, diagnostika, klima, zavore in ultrazvočno čiščenje bencinskih injektorjev.</p>
+      <div class="cta rv d3">
+        <a class="btn btn-s btn-big" href="tel:+38617220600"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 01 722 06 00</a>
+        <a class="btn btn-g" href="#storitve">Storitve <svg aria-hidden="true" style="width:18px;height:18px"><use href="#arrow"/></svg></a>
+      </div>
+      <div class="hfacts rv d3">
+        <div><small>Pon–čet</small><b>07:30–16:00</b></div>
+        <div><small>Petek</small><b>07:30–15:00</b></div>
+        <div><small>Naslov</small><b>Kersnikova ulica 12, Domžale</b></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="row">
+      <ul><li>Redni servis</li><li>Tehnični pregled</li><li>Diagnostika</li><li>Elektro popravila</li><li>Klima</li><li>Podvozje</li><li>Zavore</li><li>Bencinski injektorji</li><li>Vulkanizerstvo</li><li>Hramba pnevmatik</li><li>Kleparstvo in ličarstvo</li></ul>
+      <ul><li>Redni servis</li><li>Tehnični pregled</li><li>Diagnostika</li><li>Elektro popravila</li><li>Klima</li><li>Podvozje</li><li>Zavore</li><li>Bencinski injektorji</li><li>Vulkanizerstvo</li><li>Hramba pnevmatik</li><li>Kleparstvo in ličarstvo</li></ul>
+    </div>
+  </div>
+
+  <section id="na-enem-mestu">
+    <div class="wrap">
+      <div class="kick rv"><b>01</b>Vse na enem mestu</div>
+      <h2 class="rv d1">Servis, svetovanje, <span class="hl">zavarovanje.</span></h2>
+      <p class="lead rv d2">Skrb za vaše vozilo in vašo varnost je pri nas na prvem mestu.</p>
+      <div class="hi-grid">
+        <article class="hi rv"><svg aria-hidden="true"><use href="#wrench"/></svg><h3>Servisni pregledi</h3><p>Redni servisi vozil vseh znamk, v skladu z navodili proizvajalcev, vključno z zamenjavo olja.</p></article>
+        <article class="hi rv d1"><svg aria-hidden="true"><use href="#snow"/></svg><h3>Klimatske naprave</h3><p>Polnenje in servis klimatskih naprav. Vožnja mora biti ne le varna, temveč tudi udobna in zanesljiva.</p></article>
+        <article class="hi rv d2"><svg aria-hidden="true"><use href="#doc"/></svg><h3>Zavarovanje in registracija</h3><p>Svetovanje, avtomobilska zavarovanja Generali in Allianz ter registracija vozil.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc" id="storitve">
+    <div class="wrap">
+      <div class="kick rv"><b>02</b>Storitve</div>
+      <h2 class="rv d1">Kaj <span class="hl">opravimo.</span></h2>
+      <p class="lead rv d2">Za osebna in dostavna vozila. Originalni in originalom enakovredni rezervni deli.</p>
+      <ul class="svc-list">
+        <li class="rv">Redni servis na prevožene kilometre</li>
+        <li class="rv d1">Priprava vozil na tehnični pregled</li>
+        <li class="rv d2">Diagnostika vozil</li>
+        <li class="rv">Elektro popravila</li>
+        <li class="rv d1">Servisiranje in popravila klimatskega sistema</li>
+        <li class="rv d2">Popravila podvozja</li>
+        <li class="rv">Popravila zavornega sistema</li>
+        <li class="rv d1">Ultrazvočno čiščenje in popravila bencinskih injektorjev</li>
+        <li class="rv d2">Vulkanizerske storitve</li>
+        <li class="rv">Hramba pnevmatik</li>
+        <li class="rv d1">Kleparska in ličarska popravila</li>
+        <li class="rv d2">Avtomobilska zavarovanja Generali in Allianz</li>
+      </ul>
+      <span class="src rv">Seznam storitev, kot ga podjetje navaja na avtoservis-vodnik.si (pregledano 3. 11. 2026).</span>
+    </div>
+  </section>
+
+  <section id="injektorji">
+    <div class="wrap feat">
+      <div class="pic rv"><img src="assets/injektor.jpg" alt="Bencinski injektor Bosch" loading="lazy" width="1000" height="750"></div>
+      <div class="rv d1">
+        <div class="kick"><b>03</b>Bencinski injektorji</div>
+        <h2>Ultrazvočno <span class="hl">čiščenje.</span></h2>
+        <p class="lead">Bencinske injektorje očistimo z ultrazvokom in jih popravimo.</p>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#chk"/></svg>Ultrazvočno čiščenje bencinskih injektorjev</li>
+          <li><svg aria-hidden="true"><use href="#chk"/></svg>Popravila bencinskih injektorjev</li>
+        </ul>
+        <div class="cta"><a class="btn btn-d" href="tel:+38617220600"><svg aria-hidden="true"><use href="#tel"/></svg>Vprašajte za termin</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="delavnica" style="padding-top:0">
+    <div class="wrap">
+      <div class="kick rv"><b>04</b>Delavnica</div>
+      <h2 class="rv d1">Iz našega <span class="hl">servisa.</span></h2>
+      <div class="gal">
+        <figure class="rv"><img src="assets/servis-13.jpg" alt="Fotografija z Avtoservisa Vodnik" loading="lazy" width="1024" height="683"></figure>
+        <figure class="rv d1"><img src="assets/servis-12.jpg" alt="Fotografija z Avtoservisa Vodnik" loading="lazy" width="1024" height="683"></figure>
+        <figure class="rv d2"><img src="assets/servis-9.jpg" alt="Fotografija z Avtoservisa Vodnik" loading="lazy" width="1024" height="613"></figure>
+        <figure class="rv"><img src="assets/servis-17.jpg" alt="Fotografija z Avtoservisa Vodnik" loading="lazy" width="1024" height="614"></figure>
+        <figure class="rv d1"><img src="assets/servis-11.jpg" alt="Fotografija z Avtoservisa Vodnik" loading="lazy" width="1024" height="613"></figure>
+        <figure class="rv d2"><img src="assets/servis-10.jpg" alt="Fotografija z Avtoservisa Vodnik" loading="lazy" width="1024" height="613"></figure>
+        <figure class="rv"><img src="assets/servis-7.jpg" alt="Fotografija z Avtoservisa Vodnik" loading="lazy" width="1024" height="613"></figure>
+        <figure class="rv d1"><img src="assets/servis-4.jpg" alt="Fotografija z Avtoservisa Vodnik" loading="lazy" width="1024" height="768"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="cas" style="padding-top:0">
+    <div class="wrap">
+      <div class="kick rv"><b>05</b>Delovni čas</div>
+      <h2 class="rv d1">Kdaj smo <span class="hl">odprti.</span></h2>
+      <div class="hours">
+        <div class="sheet rv">
+          <div class="hd"><span>Delovni čas</span><span>objavljen na spletni strani</span></div>
+          <dl>
+            <div><dt>Ponedeljek – četrtek</dt><dd>07:30 – 16:00</dd></div>
+            <div><dt>Petek</dt><dd>07:30 – 15:00</dd></div>
+            <div class="mut"><dt>Malica</dt><dd>12:00 – 13:00</dd></div>
+            <div><dt>Sobota, nedelja, prazniki</dt><dd class="off">zaprto</dd></div>
+          </dl>
+        </div>
+        <div class="sheet rv d1">
+          <div class="hd"><span>Podjetje</span><span>poslovni register</span></div>
+          <dl>
+            <div><dt>Firma</dt><dd style="font-family:var(--sans);font-size:15px;white-space:normal;text-align:right">AVTOSERVIS VODNIK d.o.o.</dd></div>
+            <div><dt>Sedež</dt><dd style="font-family:var(--sans);font-size:15px;white-space:normal;text-align:right">Kersnikova ulica 12, 1230 Domžale</dd></div>
+            <div><dt>Matična št.</dt><dd style="font-family:var(--sans);font-size:15px">8227586000</dd></div>
+            <div><dt>ID za DDV</dt><dd style="font-family:var(--sans);font-size:15px">SI70232326</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding-top:0">
+    <div class="wrap">
+      <div class="kick rv"><b>06</b>Kontakt</div>
+      <h2 class="rv d1">Pokličite za <span class="hl">termin.</span></h2>
+      <div class="contact">
+        <div class="callp rv">
+          <small>Avtoservis Vodnik d.o.o.</small>
+          <a class="n" href="tel:+38617220600">01 722 06 00</a>
+          <a class="m" href="tel:+38641633075">mobilni: 041 633 075</a>
+          <a class="btn btn-big" href="tel:+38617220600"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči zdaj</a>
+        </div>
+        <div class="panel rv d1">
+          <a class="crow" href="tel:+38617220600"><svg aria-hidden="true"><use href="#tel"/></svg><span><b>01 722 06 00</b><small>telefon</small></span></a>
+          <a class="crow" href="tel:+38641633075"><svg aria-hidden="true"><use href="#tel"/></svg><span><b>041 633 075</b><small>mobilni telefon</small></span></a>
+          <a class="crow" href="mailto:avtoservis.vodnik@siol.net"><svg aria-hidden="true"><use href="#mail"/></svg><span><b>avtoservis.vodnik@siol.net</b><small>e-pošta</small></span></a>
+          <a class="crow" href="mailto:info@avtoservis-vodnik.si"><svg aria-hidden="true"><use href="#mail"/></svg><span><b>info@avtoservis-vodnik.si</b><small>e-pošta</small></span></a>
+          <a class="crow" href="https://www.google.com/maps/search/?api=1&amp;query=Avtoservis+Vodnik+Kersnikova+ulica+12+Dom%C5%BEale" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pinico"/></svg><span><b>Kersnikova ulica 12, 1230 Domžale</b><small>naslov · odpri v Google Zemljevidih</small></span></a>
+          <div class="crow"><svg aria-hidden="true"><use href="#clock"/></svg><span><b>Pon–čet 07:30–16:00 · pet 07:30–15:00</b><small>malica 12:00–13:00 · sobota, nedelja, prazniki zaprto</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>AVTOSERVIS VODNIK d.o.o. · Kersnikova ulica 12, 1230 Domžale · matična št. 8227586000 · <a href="tel:+38617220600">01 722 06 00</a> · <a href="mailto:avtoservis.vodnik@siol.net">avtoservis.vodnik@siol.net</a></span>
+    <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
+    <span class="disc">Predogled, ni javna spletna stran podjetja. Besedila, fotografije in logotip: avtoservis-vodnik.si; registrski podatki: bizi.si; pregledano 3. 11. 2026.</span>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-s" href="tel:+38617220600"><svg aria-hidden="true"><use href="#tel"/></svg>Pokliči 01 722 06 00</a></div>
+
+<script>
+(function(){
+  document.body.classList.remove('no-js');
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>window.innerHeight*0.55);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.rv');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){io.observe(el);});
+  var check=function(){var vh=window.innerHeight;els.forEach(function(el){if(!el.classList.contains('in')){var r=el.getBoundingClientRect();if(r.top<vh*0.94&&r.bottom>0)el.classList.add('in');}});};
+  window.addEventListener('scroll',check,{passive:true});window.addEventListener('load',check);setTimeout(check,400);
+})();
+</script>
+</body>
+</html>
