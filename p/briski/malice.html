@@ -14,7 +14,16 @@
 <style>
 .malice-day .dish{padding:.55rem 0;border-top:1px dashed rgba(0,0,0,.12)}
 .malice-day .dish:first-of-type{border-top:0}
-.malice-day .dish .djed,.malice-day .dish .dopis,.malice-day .dish .dcena{display:block}
+.malice-day .dish .drow{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.malice-day .dish .djed{flex:1}
+.malice-day .dish .dcena{white-space:nowrap}
+.malice-day .dish .dopis{display:block;margin-top:2px}
+.malice-tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none}
+.malice-tabs::-webkit-scrollbar{display:none}
+.malice-tabs button{flex:0 0 auto;border:1px solid rgba(0,0,0,.15);background:#fff;border-radius:999px;padding:8px 14px;font:600 14px/1 inherit;color:inherit;cursor:pointer}
+.malice-tabs button[aria-selected=true]{background:#d8432b;border-color:#d8432b;color:#fff}
+.malice-week.tabbed{grid-template-columns:1fr}
+.malice-day[hidden]{display:none!important}
 .malice-day .dtoday{font:600 .7rem/1 inherit;letter-spacing:.08em;text-transform:uppercase;color:#d8432b;margin-left:.4rem}
 .malice-every{background:#fbf3e4}
 </style>
@@ -138,7 +147,7 @@
   UREJANJE MALICE ZA LASTNIKA / HOW EDITING WORKS:
   Ta stran vsak teden samodejno prebere Google preglednico (brez gesla, samo za branje).
   Da se jedilnik prikaže, mora biti list preglednice deljen kot "Vsakdo s povezavo si lahko ogleda".
-  V preglednici so stolpci: dan, jed, opis, cena. Za VEC malic na isti dan dodaj novo vrstico z istim dnem (ali pusti "dan" prazen - velja dan zgoraj). Vrstica dan="Vsak dan" = jedi, ki so vsak dan. Prazno polje "jed"
+  V preglednici so stolpci: dan, jed, opis, cena. Za VEC malic na isti dan (tudi 15 ali vec) dodaj novo vrstico z istim dnem (ali pusti "dan" prazen - velja dan zgoraj). Vrstica dan="Vsak dan" = jedi, ki so vsak dan. Prazno polje "jed"
   pomeni, da se ta dan ne prikaže. Vrstica z dan="Opomba" se prikaže kot opomba pod jedilnikom (razen
   če gre za navodilo za urejanje -- to se nikoli ne prikaže na strani).
   CSV URL (gviz export, ne odpirajte v Chromu kot povezavo do urejanja -- to je samo izvoz za branje):
@@ -195,9 +204,9 @@
   }
 
   function dishHtml(d){
-    return '<div class="dish"><span class="djed">' + escapeHtml(d.jed) + '</span>' +
-      (d.opis ? '<span class="dopis">' + escapeHtml(d.opis) + '</span>' : '') +
-      (d.cena ? '<span class="dcena">' + escapeHtml(d.cena) + '</span>' : '') + '</div>';
+    return '<div class="dish"><div class="drow"><span class="djed">' + escapeHtml(d.jed) + '</span>' +
+      (d.cena ? '<span class="dcena">' + escapeHtml(d.cena) + '</span>' : '') + '</div>' +
+      (d.opis ? '<span class="dopis">' + escapeHtml(d.opis) + '</span>' : '') + '</div>';
   }
 
   function renderDays(byDay, opombaText, vsakDan){
@@ -219,6 +228,29 @@
       every.className = 'malice-day malice-every rv';
       every.innerHTML = '<span class="dname">Vsak dan</span>' + vsakDan.map(dishHtml).join('');
       gridEl.appendChild(every);
+    }
+    var many = WEEKDAYS.some(function(d){ return (byDay[norm(d)] || []).length > 3; });
+    if (many){
+      var tabs = document.createElement('div');
+      tabs.className = 'malice-tabs';
+      tabs.setAttribute('role','tablist');
+      var cards = gridEl.querySelectorAll('.malice-day:not(.malice-every)');
+      var start = tIdx > -1 ? tIdx : 0;
+      WEEKDAYS.forEach(function(day, i){
+        var bt = document.createElement('button');
+        bt.type = 'button'; bt.setAttribute('role','tab');
+        var n = (byDay[norm(day)] || []).length;
+        bt.textContent = day.slice(0,3) + (n ? ' · ' + n : '');
+        bt.addEventListener('click', function(){ select(i); });
+        tabs.appendChild(bt);
+      });
+      function select(i){
+        cards.forEach(function(c, k){ c.hidden = k !== i; });
+        tabs.querySelectorAll('button').forEach(function(bt, k){ bt.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+      }
+      gridEl.parentNode.insertBefore(tabs, gridEl);
+      gridEl.classList.add('tabbed');
+      select(start);
     }
     stateEl.hidden = true;
     gridEl.hidden = false;
