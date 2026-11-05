@@ -51,8 +51,9 @@
   }
 
   /* open/closed status, computed in Europe/Ljubljana time.
-     Hours: Mon-Fri 9-21, Sat-Sun 11-21. Holidays are not modelled. */
-  var OPEN={0:11,1:9,2:9,3:9,4:9,5:9,6:11}, CLOSE=21;
+     Hours (kocevje.com, 5. 11. 2026): Mon-Fri 9:30-21:00, weekends and holidays 12:00-21:00 (pizza; kitchen until 20:30). Holidays are not modelled. */
+  var OPEN={0:720,1:570,2:570,3:570,4:570,5:570,6:720}, CLOSE=21;
+  function hm(m){return Math.floor(m/60)+'.'+('0'+(m%60)).slice(-2);}
   var WD={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
   function nowParts(){
     try{
@@ -67,15 +68,15 @@
     if(!statusEls.length&&!weekEls.length)return;
     var t=nowParts();
     if(!t||t.d===undefined)return;
-    var open=OPEN[t.d]*60, close=CLOSE*60, text, cls;
+    var open=OPEN[t.d], close=CLOSE*60, text, cls;
     if(t.m>=open&&t.m<close){
       var left=close-t.m;
       cls='open';
       text=left<=60?('Odprto zdaj · zapremo čez '+left+' min'):'Odprto zdaj · do 21.00';
     }else if(t.m<open){
-      cls='closed';text='Zaprto · odpremo danes ob '+OPEN[t.d]+'.00';
+      cls='closed';text='Zaprto · odpremo danes ob '+hm(OPEN[t.d]);
     }else{
-      var n=(t.d+1)%7;cls='closed';text='Zaprto · odpremo jutri ob '+OPEN[n]+'.00';
+      var n=(t.d+1)%7;cls='closed';text='Zaprto · odpremo jutri ob '+hm(OPEN[n]);
     }
     statusEls.forEach(function(el){
       el.classList.remove('open','closed');el.classList.add(cls);

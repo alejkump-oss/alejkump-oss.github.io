@@ -11,6 +11,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<style>
+.malice-day .dish{padding:.55rem 0;border-top:1px dashed rgba(0,0,0,.12)}
+.malice-day .dish:first-of-type{border-top:0}
+.malice-day .dish .djed,.malice-day .dish .dopis,.malice-day .dish .dcena{display:block}
+.malice-day .dtoday{font:600 .7rem/1 inherit;letter-spacing:.08em;text-transform:uppercase;color:#d8432b;margin-left:.4rem}
+.malice-every{background:#fbf3e4}
+</style>
 </head>
 <body class="no-js">
 
@@ -131,7 +138,7 @@
   UREJANJE MALICE ZA LASTNIKA / HOW EDITING WORKS:
   Ta stran vsak teden samodejno prebere Google preglednico (brez gesla, samo za branje).
   Da se jedilnik prikaže, mora biti list preglednice deljen kot "Vsakdo s povezavo si lahko ogleda".
-  V preglednici so stolpci: dan, jed, opis, cena -- vrstice Ponedeljek..Petek. Prazno polje "jed"
+  V preglednici so stolpci: dan, jed, opis, cena. Za VEC malic na isti dan dodaj novo vrstico z istim dnem (ali pusti "dan" prazen - velja dan zgoraj). Vrstica dan="Vsak dan" = jedi, ki so vsak dan. Prazno polje "jed"
   pomeni, da se ta dan ne prikaže. Vrstica z dan="Opomba" se prikaže kot opomba pod jedilnikom (razen
   če gre za navodilo za urejanje -- to se nikoli ne prikaže na strani).
   CSV URL (gviz export, ne odpirajte v Chromu kot povezavo do urejanja -- to je samo izvoz za branje):
@@ -187,30 +194,32 @@
     fallbackEl.classList.add('rv','in');
   }
 
-  function renderDays(byDay, opombaText){
+  function dishHtml(d){
+    return '<div class="dish"><span class="djed">' + escapeHtml(d.jed) + '</span>' +
+      (d.opis ? '<span class="dopis">' + escapeHtml(d.opis) + '</span>' : '') +
+      (d.cena ? '<span class="dcena">' + escapeHtml(d.cena) + '</span>' : '') + '</div>';
+  }
+
+  function renderDays(byDay, opombaText, vsakDan){
     var tIdx = todayIndex();
-    var allEmpty = WEEKDAYS.every(function(d){ return !byDay[norm(d)] || !byDay[norm(d)].jed; });
+    var allEmpty = WEEKDAYS.every(function(d){ return !(byDay[norm(d)] || []).length; });
     if (allEmpty){ showFallback(); return; }
 
     gridEl.innerHTML = '';
     WEEKDAYS.forEach(function(day, i){
-      var row = byDay[norm(day)];
+      var list = byDay[norm(day)] || [];
       var card = document.createElement('div');
       card.className = 'malice-day rv' + (i === tIdx ? ' today' : '');
-      var jed = row && row.jed ? row.jed : '';
-      if (jed){
-        card.innerHTML =
-          '<span class="dname">' + day + '</span>' +
-          '<span class="djed">' + escapeHtml(jed) + '</span>' +
-          (row.opis ? '<span class="dopis">' + escapeHtml(row.opis) + '</span>' : '<span class="dopis"></span>') +
-          (row.cena ? '<span class="dcena">' + escapeHtml(row.cena) + '</span>' : '');
-      } else {
-        card.innerHTML =
-          '<span class="dname">' + day + '</span>' +
-          '<span class="dempty">Ta dan ni na jedilniku.</span>';
-      }
+      card.innerHTML = '<span class="dname">' + day + (i === tIdx ? ' <small class="dtoday">danes</small>' : '') + '</span>' +
+        (list.length ? list.map(dishHtml).join('') : '<span class="dempty">Ta dan ni na jedilniku.</span>');
       gridEl.appendChild(card);
     });
+    if (vsakDan.length){
+      var every = document.createElement('div');
+      every.className = 'malice-day malice-every rv';
+      every.innerHTML = '<span class="dname">Vsak dan</span>' + vsakDan.map(dishHtml).join('');
+      gridEl.appendChild(every);
+    }
     stateEl.hidden = true;
     gridEl.hidden = false;
     gridEl.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
@@ -243,22 +252,27 @@
     if (idxDan === -1 || idxJed === -1) { showFallback(); return; }
 
     var byDay = {};
+    var vsakDan = [];
     var opombaText = '';
+    var current = '';
     rows.slice(1).forEach(function(r){
       var dan = (r[idxDan] || '').trim();
-      if (!dan) return;
       var entry = {
         jed: (r[idxJed] || '').trim(),
         opis: idxOpis > -1 ? (r[idxOpis] || '').trim() : '',
         cena: idxCena > -1 ? (r[idxCena] || '').trim() : ''
       };
-      if (norm(dan) === 'opomba'){
+      if (dan) current = norm(dan);           // a row with an empty "dan" belongs to the day above it
+      if (!current) return;
+      if (current === 'opomba'){
         if (entry.jed) opombaText = entry.jed;
-      } else {
-        byDay[norm(dan)] = entry;
+        return;
       }
+      if (!entry.jed) return;                 // empty rows never show
+      if (current === norm('Vsak dan')) { vsakDan.push(entry); return; }
+      (byDay[current] = byDay[current] || []).push(entry);
     });
-    renderDays(byDay, opombaText);
+    renderDays(byDay, opombaText, vsakDan);
   }).catch(function(){
     showFallback();
   });
