@@ -17,8 +17,8 @@ oklepaju). Ostali stolpci so osnovna meritev pred kakršno koli spremembo.
 | veitteam | 70 | 100 | 100 | 66 | 100 | NE | 99 (99/99/99) |
 | car-spa | 80 | 100 | 96 | 66 | 100 | NE | 99 (99/99/89) |
 | barles | 81 | 100 | 96 | 66 | 100 | NE | 99 (98/99/99) |
-| avtolep | 85 | 100 | 100 | 66 | 100 | NE | 86 (86/86/85) |
-| jana | 86 | 90 | 100 | 66 | 100 | NE | 83 (83/82/83) |
+| avtolep | 85 | 100 | 100 | 66 | 100 | NE | 100 (97/100/100), po odobritvi lastnika |
+| jana | 86 | 90 | 100 | 66 | 100 | NE | 99 (100/99/98), po odobritvi lastnika |
 | fikabeautybar | 87 | 100 | 100 | 66 | 100 | NE | 91 (89/91/61/91/91) |
 | studeno | 90 | 96 | 96 | 66 | 100 | DA | – |
 | ac-andrejek | 91 | 96 | 100 | 66 | 100 | DA | – |
@@ -73,7 +73,7 @@ LCP je bil dvomodalen ne glede na to. Neto učinek nevtralen do negativen, zato 
 umaknjeno na vseh šestih straneh (avtolep, barles, jana obnovljeni bajt za bajt, sha256
 preverjen).
 
-## Še pod 90 in zakaj
+## Še pod 90 in zakaj (stanje pred odobritvijo lastnika; glej dopolnitev spodaj)
 
 | Stran | Perf. | Razlog |
 |---|---:|---|
@@ -90,3 +90,20 @@ preverjen).
 - Raztros iste strani med teki je bil do ±15 točk (en tek fikabeautybar: 61 zaradi
   počasnega odgovora Google Fonts, FCP 4,7 s). Zato so številke "po popravkih" mediane.
 - Commiti v `live-site`: `29fdb08`, `85f399b`, `9106c87`, `25f73ba`.
+
+## Dopolnitev, isti dan: avtolep in jana po odobritvi lastnika
+
+Lastnik je odobril spremembe na ravni dizajna, da obe strani dosežeta 90. Mediana treh
+živih tekov po objavi `3e800e6`: **avtolep 100** (97/100/100), **jana 99** (100/99/98);
+jana dostopnost ostaja 90 (nespremenjeno).
+
+- **avtolep** (`a4fd0ec`): Archivo in Inter Tight lastno gostovana kot WOFF2 podmnožici
+  (latinica + č, š, ž, ć, đ; OFL licenci v `assets/avtolep/fonts/`), samo uporabljeni
+  razponi (Archivo wght 700–800, wdth 88–110: 44 KB; Inter Tight 400–700: 24 KB), preload,
+  `font-display:swap`. Prej ~300 KB Google Fonts in blokirajoč CSS. Videz enak.
+- **jana** (`a4fd0ec`, `3e800e6`): naslov na domači strani je statično besedilo (kinetični
+  prikaz ostane na naslovih nižje); intro brez dvojnega prenosa webm+mp4, intro mp4
+  680 → 198 KB; hero video začne po intru (poster najprej), 685 → 390 KB; videi nad
+  600 KB (pergola, stol) zmanjšani na 271–350 KB; Playfair Display in Manrope lastno
+  gostovana (70 KB); 16 dekorativnih slik in 6 posterjev se naloži, ko se približajo
+  zaslonu. Lighthouse skupna teža 2740 KB → 466 KB.
