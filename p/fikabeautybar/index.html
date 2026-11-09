@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Fika Beauty Bar · Lepotni salon v Kranju</title>
+<meta name="description" content="Fika Beauty Bar, lepotni salon v Kranju: nohti, pedikura, trepalnice in obrvi, nega obraza, permanentni make-up in masaža. Cesta Staneta Žagarja 30, Kranj. Pokličite 040 887 870.">
+<meta name="theme-color" content="#f5ede3">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sl_SI">
+<meta property="og:title" content="Fika Beauty Bar · Lepotni salon v Kranju">
+<meta property="og:description" content="Vzemite si trenutek zase. Nohti, pedikura, trepalnice in obrvi, nega obraza, permanentni make-up in masaža v Kranju.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400&amp;family=Karla:wght@400;700&amp;display=swap">
+<link rel="preload" as="image" href="assets/salon-notranjost.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Fika Beauty Bar",
+  "legalName": "Urša Sirk s.p.",
+  "telephone": "+38640887870",
+  "email": "info@fikabeautybar.si",
+  "url": "https://fikabeautybar.si/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cesta Staneta Žagarja 30",
+    "postalCode": "4000",
+    "addressLocality": "Kranj",
+    "addressCountry": "SI"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "07:00", "closes": "19:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "07:00", "closes": "15:00"}
+  ]
+}
+</script>
+<style>
+:root{
+  --oat:#f5ede3; --oat2:#ece0d0; --milk:#fffaf4; --line:#e2d3c0;
+  --ink:#2b211c; --ink2:#5a4a40; --mute:#6b5a4f;
+  --cin:#8a4f2c; --cin-d:#6e3d21; --rose:#d9b8a6; --sage:#6f7d64; --crust:#c98a5a;
+  --espresso:#2b211c; --on-esp:#f5ede3; --on-esp2:#d8c9ba;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Karla",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(18px,5vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:96px}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--oat);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--ink);color:var(--oat);padding:10px 14px;border-radius:8px}
+.skip:focus{left:8px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.015em;color:var(--ink)}
+h2{font-size:clamp(32px,7.4vw,52px);margin:.2em 0 .4em}
+h2 em,h1 em{font-style:italic;font-weight:400;color:var(--cin)}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cin-d)}
+.lead{color:var(--ink2);font-size:clamp(17px,2.1vw,19px);max-width:56ch}
+section{padding:clamp(64px,10vw,112px) 0}
+.ill{display:block;font-size:13px;color:var(--mute);margin-top:6px}
+
+.ribbon{background:var(--espresso);color:var(--on-esp);text-align:center;font-size:14px;font-weight:700;letter-spacing:.04em;padding:7px 12px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(245,237,227,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.solid{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;text-decoration:none;min-height:44px}
+.brand img{width:132px;height:auto}
+.navlinks{display:none;gap:4px;list-style:none}
+.navlinks a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;text-decoration:none;font-weight:700;color:var(--ink2);border-radius:99px}
+.navlinks a:hover{background:var(--oat2);color:var(--ink)}
+.nav-book{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:99px;border:1.5px solid var(--ink);text-decoration:none;font-weight:700;font-size:15px}
+.nav-book:hover{background:var(--ink);color:var(--oat)}
+@media(min-width:940px){.navlinks{display:flex}}
+
+/* hero */
+.hero{padding:26px 0 56px}
+.hero .grid{display:grid;gap:28px}
+@media(min-width:900px){.hero{padding:56px 0 88px}.hero .grid{grid-template-columns:1fr 1fr;gap:56px;align-items:center}}
+.dict{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:10px 16px;border-radius:14px;background:var(--milk);border:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.dict b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:24px;color:var(--ink)}
+.dict i{font-style:normal;color:var(--mute)}
+.hero h1{font-size:clamp(40px,11vw,76px);margin:20px 0 0;max-width:11ch}
+.hero .sub{margin-top:16px;font-size:clamp(18px,2.3vw,20px);color:var(--ink2);max-width:40ch}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:0 28px;border-radius:99px;background:var(--cin);color:#fff;font-weight:700;font-size:18px;text-decoration:none;transition:background .2s,transform .2s}
+.btn:hover{background:var(--cin-d)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:20px;height:20px;flex:none}
+.link{display:inline-flex;align-items:center;min-height:44px;font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--crust);text-decoration-thickness:2px;text-underline-offset:6px}
+@media(max-width:520px){.cta .btn{width:100%}}
+.hero-pic{position:relative}
+.hero-pic .frame{border-radius:200px 200px 22px 22px;overflow:hidden;aspect-ratio:4/5;background:var(--oat2);box-shadow:0 30px 60px -40px rgba(43,33,28,.55)}
+.hero-pic img{width:100%;height:100%;object-fit:cover}
+.hero-pic .cup{position:absolute;left:-6px;bottom:22px;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;background:var(--milk);border-radius:99px;box-shadow:0 10px 30px -14px rgba(43,33,28,.5);font-size:14px;font-weight:700}
+.hero-pic .cup svg{width:28px;height:28px;color:var(--cin)}
+@media(max-width:899px){.hero-pic .frame{aspect-ratio:5/4;border-radius:160px 160px 20px 20px}}
+
+/* pause / story */
+.pause{background:var(--milk);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pause .grid{display:grid;gap:34px}
+@media(min-width:900px){.pause .grid{grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}}
+.pause figure{position:relative}
+.pause figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px}
+.pause figcaption{font-size:14px;color:var(--mute);margin-top:10px}
+.quote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(26px,5.6vw,38px);line-height:1.25;color:var(--ink);margin:12px 0 18px}
+.pause p+p{margin-top:14px}
+.pause .p{color:var(--ink2);max-width:52ch}
+
+/* menu of services */
+.menu{margin-top:34px;display:grid;gap:0;border-top:1.5px solid var(--ink)}
+@media(min-width:860px){.menu{grid-template-columns:1fr 1fr;column-gap:56px;border-top:0}.menu .item:nth-child(-n+2){border-top:1.5px solid var(--ink)}}
+.item{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:22px 0;border-bottom:1px dashed var(--crust)}
+.item img{width:72px;height:72px;border-radius:50%;object-fit:cover;background:var(--oat2)}
+.item h3{font-size:clamp(23px,4.6vw,27px)}
+.item .line{font-style:italic;color:var(--ink2);font-size:16px;margin-top:2px}
+.item ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.item li{font-size:14px;font-weight:700;padding:4px 11px;border-radius:99px;background:var(--milk);border:1px solid var(--line);color:var(--ink)}
+.note{margin-top:22px;font-size:15px;color:var(--ink2)}
+.note a{font-weight:700;color:var(--cin-d)}
+
+/* team */
+.team{background:var(--oat2)}
+.people{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,72%);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;margin-top:30px;overscroll-behavior-x:contain}
+@media(min-width:700px){.people{grid-auto-columns:minmax(220px,40%)}}
+@media(min-width:1040px){.people{grid-auto-flow:row;grid-template-columns:repeat(5,1fr);overflow:visible}}
+.person{scroll-snap-align:start;background:var(--milk);border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.person img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--rose)}
+.person div{padding:14px 16px 18px}
+.person h3{font-size:24px}
+.person p{font-size:15px;color:var(--ink2);margin-top:4px}
+.person.lead-p{border-color:var(--cin)}
+.person .role{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cin-d);margin-bottom:2px}
+.hint{font-size:14px;color:var(--mute)}
+@media(min-width:1040px){.hint{display:none}}
+
+/* steps */
+.steps{list-style:none;counter-reset:s;display:grid;gap:0;margin-top:30px;max-width:760px}
+.steps li{position:relative;padding:0 0 30px 64px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--milk);border:1.5px solid var(--cin);font-family:var(--serif);font-size:20px;color:var(--cin-d)}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:21px;top:50px;bottom:6px;width:2px;background:repeating-linear-gradient(var(--crust) 0 6px,transparent 6px 12px)}
+.steps h3{font-size:25px;padding-top:6px}
+.steps p{color:var(--ink2);margin-top:4px}
+.steps a{font-weight:700;color:var(--cin-d)}
+
+/* faq */
+.faq{display:grid;gap:10px;margin-top:28px;max-width:800px}
+.faq details{background:var(--milk);border:1px solid var(--line);border-radius:16px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:58px;padding:12px 20px;font-weight:700}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--serif);font-size:26px;color:var(--cin);flex:none}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding:0 20px 18px;color:var(--ink2)}
+.faq details p a{font-weight:700;color:var(--cin-d)}
+
+/* voucher */
+.voucher{padding-top:0}
+.ticket{position:relative;display:grid;gap:18px;padding:34px 26px;border-radius:24px;background:var(--cin);color:#fff;overflow:hidden}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:34px;height:34px;margin-top:-17px;border-radius:50%;background:var(--oat)}
+.ticket::before{left:-17px}.ticket::after{right:-17px}
+.ticket h2{color:#fff;margin:0}
+.ticket h2 em{color:#fde9d6}
+.ticket p{color:#fbeee2;max-width:52ch}
+.ticket .k{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fde9d6}
+.ticket a{color:#fff;font-weight:700}
+@media(min-width:860px){.ticket{grid-template-columns:1.3fr 1fr;align-items:center;padding:48px 56px}}
+
+/* contact */
+.contact{background:var(--espresso);color:var(--on-esp)}
+.contact h2{color:var(--on-esp)}
+.contact h2 em{color:#e8b48e}
+.contact .kicker{color:#e8b48e}
+.cgrid{display:grid;gap:28px;margin-top:10px}
+@media(min-width:900px){.cgrid{grid-template-columns:1fr 1fr;gap:56px;align-items:start}}
+.phone{display:block;font-family:var(--serif);font-size:clamp(42px,12vw,64px);line-height:1;text-decoration:none;color:var(--on-esp);margin:6px 0 22px;white-space:nowrap}
+.contact .btn{background:#e8b48e;color:var(--ink)}
+.contact .btn:hover{background:#f1c7a7}
+.rows{list-style:none;display:grid;gap:0;margin-top:26px;border-top:1px solid rgba(245,237,227,.18)}
+.rows li{padding:14px 0;border-bottom:1px solid rgba(245,237,227,.18)}
+.rows small{display:block;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--on-esp2)}
+.rows a{font-weight:700;color:var(--on-esp);text-decoration-color:#e8b48e;text-underline-offset:4px;word-break:break-word}
+.hours{width:100%;border-collapse:collapse;font-size:17px}
+.hours caption{text-align:left;font-family:var(--serif);font-size:28px;margin-bottom:10px}
+.hours th,.hours td{padding:12px 0;border-bottom:1px solid rgba(245,237,227,.18);text-align:left;font-weight:400}
+.hours td{text-align:right;font-weight:700;white-space:nowrap}
+.hours .off td{color:var(--on-esp2);font-weight:400}
+
+footer{background:#1f1814;color:var(--on-esp2);padding:36px 0 40px;font-size:14px}
+footer .wrap{display:grid;gap:10px}
+footer b{color:var(--on-esp)}
+footer a{color:var(--on-esp)}
+
+.sticky{position:sticky;bottom:0;z-index:50;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(245,237,227,.96);border-top:1px solid var(--line);display:flex;transition:transform .3s,opacity .3s}
+.sticky.hide{transform:translateY(110%);opacity:0;pointer-events:none}
+.sticky .btn{flex:1;min-height:52px}
+@media(min-width:761px){.sticky{display:none}}
+
+:focus-visible{outline:3px solid var(--cin);outline-offset:3px;border-radius:8px}
+.contact :focus-visible,.ticket :focus-visible,footer :focus-visible{outline-color:#f1c7a7}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#vsebina">Preskoči na vsebino</a>
+<div class="ribbon">Predogled – AK agencija</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="cup" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 13h18v6a8 8 0 0 1-8 8h-2a8 8 0 0 1-8-8z"/><path d="M23 15h2a3 3 0 0 1 0 6h-2.4"/><path d="M11 4c-1 1.5 1 2.5 0 4M16 4c-1 1.5 1 2.5 0 4"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Fika Beauty Bar, na vrh strani"><img src="assets/fika-logo.webp" alt="Fika Beauty Bar" width="400" height="160"></a>
+    <nav aria-label="Glavna navigacija">
+      <ul class="navlinks">
+        <li><a href="#storitve">Storitve</a></li>
+        <li><a href="#ekipa">Ekipa</a></li>
+        <li><a href="#kako">Kako poteka</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="nav-book" href="https://app.lime-booking.com/form/fikabeautybar" target="_blank" rel="noopener">Rezerviraj</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap grid">
+      <div id="vsebina">
+        <p class="dict"><b>fika</b> <i>[fee-ka], švedsko</i></p>
+        <h1 id="h1">Lepotni salon v&nbsp;<em>Kranju</em></h1>
+        <p class="sub">Trenutek, ko upočasnimo in uživamo v lepih stvareh. Nohti, pedikura, trepalnice in obrvi, nega obraza, permanentni make-up in masaža na Cesti Staneta Žagarja.</p>
+        <div class="cta">
+          <a class="btn" id="hero-call" href="tel:+38640887870"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 040 887 870</a>
+          <a class="link" href="https://app.lime-booking.com/form/fikabeautybar" target="_blank" rel="noopener">ali rezervirajte termin na spletu</a>
+        </div>
+      </div>
+      <div class="hero-pic">
+        <div class="frame"><img src="assets/salon-notranjost.webp" alt="Notranjost lepotnega salona Fika Beauty Bar v Kranju" width="1200" height="800" fetchpriority="high"></div>
+        <span class="cup"><svg aria-hidden="true"><use href="#cup"/></svg>Vzemite si trenutek zase.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pause" aria-labelledby="h-fika">
+    <div class="wrap grid">
+      <figure>
+        <img src="assets/izbira-barve-nohtov.webp" alt="Izbira barve za permanentno lakiranje nohtov v salonu Fika" width="900" height="1100" loading="lazy" decoding="async">
+        <figcaption>Izbira barve za permanentno lakiranje nohtov.</figcaption>
+      </figure>
+      <div>
+        <p class="kicker">Zakaj ime Fika</p>
+        <h2 id="h-fika">Švedska navada, <em>da se ustavimo.</em></h2>
+        <p class="quote">»Ker je najlepše darilo čas zase.«</p>
+        <p class="p">Fika je švedska navada, da se sredi dneva ustavimo, si vzamemo odmor in uživamo v majhnih lepih stvareh. Po tej misli se imenuje salon, ki ga je ustanovila Urša Sirk.</p>
+        <p class="p">Vsak tretma prilagodijo vam: vaši koži, vašim željam in vašemu slogu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="storitve" aria-labelledby="h-storitve">
+    <div class="wrap">
+      <p class="kicker">Storitve</p>
+      <h2 id="h-storitve">Kaj vas čaka <em>na meniju.</em></h2>
+      <p class="lead">Šest področij nege, od rok do stopal. Cene so objavljene v ceniku na njihovi sedanji strani.</p>
+      <div class="menu">
+        <article class="item">
+          <img src="assets/ikona-nohti.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+          <div><h3>Nega rok in nohtov</h3><p class="line">Majhen detajl, ki naredi veliko razliko.</p>
+            <ul><li>Gelish / permanentno lakiranje</li><li>BIAB</li><li>Gel</li><li>Podaljševanje nohtov</li></ul></div>
+        </article>
+        <article class="item">
+          <img src="assets/ikona-pedikura.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+          <div><h3>Nega nog in pedikura</h3><p class="line">Stopala si zaslužijo enako pozornost kot roke.</p>
+            <ul><li>Permanentno lakiranje nog</li><li>Klasična pedikura</li><li>Medicinska pedikura</li></ul></div>
+        </article>
+        <article class="item">
+          <img src="assets/ikona-trepalnice-obrvi.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+          <div><h3>Trepalnice in obrvi</h3><p class="line">Uokvirjajo obraz in odprejo pogled.</p>
+            <ul><li>Oblikovanje in barvanje obrvi</li><li>Laminacija obrvi</li><li>Barvanje trepalnic</li><li>Lash Filler</li><li>Korean Lash Lift</li></ul></div>
+        </article>
+        <article class="item">
+          <img src="assets/ikona-obraz.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+          <div><h3>Nega obraza</h3><p class="line">Vsaka koža ima svoje potrebe.</p>
+            <ul><li>Globinska čistilna nega</li><li>Anti-age nega s kolagenom</li><li>Vlažilna nega s hialuronom</li><li>Hranilna nega z vitaminom C</li></ul></div>
+        </article>
+        <article class="item">
+          <img src="assets/ikona-permanentni-make-up.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+          <div><h3>Permanentni make-up</h3><p class="line">Tehniko prilagodijo vašim obraznim potezam.</p>
+            <ul><li>Microblading</li><li>Powder Brows</li><li>Lip Blush</li><li>Korekcija</li></ul></div>
+        </article>
+        <article class="item">
+          <img src="assets/ikona-masaza.webp" alt="" width="200" height="200" loading="lazy" decoding="async">
+          <div><h3>Masaža</h3><p class="line">Ko telo potrebuje odmor.</p>
+            <ul><li>Klasična masaža celega telesa</li><li>Masaža hrbta</li></ul></div>
+        </article>
+      </div>
+      <p class="note">Ilustracije storitev: Fika Beauty Bar. Celoten cenik: <a href="https://fikabeautybar.si/cenik/" target="_blank" rel="noopener">fikabeautybar.si/cenik</a></p>
+    </div>
+  </section>
+
+  <section class="team" id="ekipa" aria-labelledby="h-ekipa">
+    <div class="wrap">
+      <p class="kicker">Ekipa</p>
+      <h2 id="h-ekipa">Kdo vas <em>sprejme.</em></h2>
+      <p class="lead">Pet obrazov salona. Vsaka ima svoje področje, skupaj pokrivajo vse storitve.</p>
+      <div class="people" tabindex="0" aria-label="Ekipa salona, podrsajte vstran">
+        <article class="person lead-p">
+          <img src="assets/ursa.webp" alt="Urša, lastnica in ustanoviteljica salona Fika Beauty Bar" width="600" height="750" loading="lazy" decoding="async">
+          <div><span class="role">Lastnica</span><h3>Urša</h3><p>Srce salona. Nohti in permanentni make-up, s pozornostjo do detajlov.</p></div>
+        </article>
+        <article class="person">
+          <img src="assets/nina.webp" alt="Nina, Fika Beauty Bar" width="600" height="750" loading="lazy" decoding="async">
+          <div><h3>Nina</h3><p>Pedikura, nega obraza in masaža.</p></div>
+        </article>
+        <article class="person">
+          <img src="assets/monika.webp" alt="Monika, Fika Beauty Bar" width="600" height="750" loading="lazy" decoding="async">
+          <div><h3>Monika</h3><p>Lash lift in nail art.</p></div>
+        </article>
+        <article class="person">
+          <img src="assets/ziva.webp" alt="Živa, Fika Beauty Bar" width="600" height="750" loading="lazy" decoding="async">
+          <div><h3>Živa</h3><p>Nega nohtov, obrvi in trepalnice.</p></div>
+        </article>
+        <article class="person">
+          <img src="assets/teja.webp" alt="Teja, Fika Beauty Bar" width="600" height="750" loading="lazy" decoding="async">
+          <div><span class="role">Najnovejša</span><h3>Teja</h3><p>Nohti, obrvi, nega kože in pedikura.</p></div>
+        </article>
+      </div>
+      <p class="hint">Podrsajte vstran za vso ekipo.</p>
+    </div>
+  </section>
+
+  <section id="kako" aria-labelledby="h-kako">
+    <div class="wrap">
+      <p class="kicker">Kako poteka</p>
+      <h2 id="h-kako">Od klica do <em>vašega trenutka.</em></h2>
+      <ol class="steps">
+        <li><h3>Rezervirajte ali pokličite</h3><p>Termin najlažje rezervirate prek <a href="https://app.lime-booking.com/form/fikabeautybar" target="_blank" rel="noopener">spletnega naročanja</a>. Z vprašanji pokličite <a href="tel:+38640887870">040 887 870</a> ali pišite na <a href="mailto:info@fikabeautybar.si">info@fikabeautybar.si</a>.</p></li>
+        <li><h3>Dogovor o tretmaju</h3><p>Tretma prilagodijo vaši koži, željam in slogu. Pri permanentnem make-upu je pred tretmajem vedno posvet, kjer skupaj izberete obliko in odtenek.</p></li>
+        <li><h3>Čas zase</h3><p>Pridete na Cesto Staneta Žagarja 30 v Kranju, se usedete in si vzamete odmor.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="vprasanja" aria-labelledby="h-faq" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">Permanentni make-up</p>
+      <h2 id="h-faq">Pogosta <em>vprašanja.</em></h2>
+      <div class="faq">
+        <details><summary>Kakšna je razlika med microbladingom in powder brows?</summary><p>Pri microbladingu z ročnim vrisovanjem ustvarijo dlačice za naraven videz. Powder brows je tehnika senčenja, ki da obrvem mehak, pudrast videz, podoben rahlo nanesenemu ličilu.</p></details>
+        <details><summary>Ali tretma boli?</summary><p>Za večje udobje uporabijo anestetično kremo, zato večina strank tretma doživlja kot zelo znosen.</p></details>
+        <details><summary>Koliko časa traja tretma obrvi?</summary><p>Približno uro in pol.</p></details>
+        <details><summary>Ali je korekcija potrebna?</summary><p>Da. Korekcija je del postopka in sledi po približno mesecu in pol. Osvežitev je priporočljiva vsakih 12 mesecev.</p></details>
+        <details><summary>Kako se naročim na permanentni make-up?</summary><p>Pokličite <a href="tel:+38640887870">040 887 870</a>, saj je pred tretmajem vedno potreben posvet.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="voucher" id="darilni-bon" aria-labelledby="h-bon">
+    <div class="wrap">
+      <div class="ticket">
+        <div>
+          <p class="k">Darilni bon</p>
+          <h2 id="h-bon">Podarite <em>trenutek.</em></h2>
+        </div>
+        <p>Podarite trenutek razvajanja, lepote in sprostitve: izberite eno od storitev ali bon v poljubni vrednosti. Za bon pokličite <a href="tel:+38640887870">040 887 870</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt" aria-labelledby="h-kontakt">
+    <div class="wrap">
+      <p class="kicker">Kontakt</p>
+      <h2 id="h-kontakt">Se vidimo <em>v Kranju.</em></h2>
+      <div class="cgrid">
+        <div>
+          <a class="phone" href="tel:+38640887870">040 887 870</a>
+          <a class="btn" id="contact-call" href="tel:+38640887870"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite salon</a>
+          <ul class="rows">
+            <li><small>Naslov</small><a href="https://www.google.com/maps/search/?api=1&amp;query=Fika+Beauty+Bar+Cesta+Staneta+%C5%BDagarja+30+Kranj" target="_blank" rel="noopener">Cesta Staneta Žagarja 30, 4000 Kranj</a></li>
+            <li><small>E-pošta</small><a href="mailto:info@fikabeautybar.si">info@fikabeautybar.si</a></li>
+            <li><small>Spletno naročanje</small><a href="https://app.lime-booking.com/form/fikabeautybar" target="_blank" rel="noopener">Rezervirajte termin</a></li>
+            <li><small>Sledite</small><a href="https://www.instagram.com/fika_beautybar/" target="_blank" rel="noopener">Instagram @fika_beautybar</a></li>
+          </ul>
+        </div>
+        <table class="hours">
+          <caption>Delovni čas</caption>
+          <tbody>
+            <tr><th scope="row">Ponedeljek – četrtek</th><td>7.00–19.00</td></tr>
+            <tr><th scope="row">Petek</th><td>7.00–15.00</td></tr>
+            <tr class="off"><th scope="row">Sobota, nedelja in prazniki</th><td>zaprto</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="noga">
+  <div class="wrap">
+    <span><b>Fika Beauty Bar</b> · Urša Sirk s.p. · Cesta Staneta Žagarja 30, 4000 Kranj · <a href="tel:+38640887870">040 887 870</a> · <a href="mailto:info@fikabeautybar.si">info@fikabeautybar.si</a></span>
+    <span>Fotografije in ilustracije: Fika Beauty Bar (fikabeautybar.si).</span>
+    <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
+  </div>
+</footer>
+
+<div class="sticky hide" id="sticky"><a class="btn" href="tel:+38640887870"><svg aria-hidden="true"><use href="#tel"/></svg>Pokličite 040 887 870</a></div>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>10);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var st=document.getElementById('sticky');
+  var watch=[document.getElementById('hero-call'),document.getElementById('contact-call'),document.getElementById('noga')];
+  if(st&&'IntersectionObserver' in window){
+    var vis=[true,false,false];
+    var upd=function(){st.classList.toggle('hide',vis[0]||vis[1]||vis[2]);};
+    watch.forEach(function(el,i){if(!el)return;new IntersectionObserver(function(en){en.forEach(function(e){vis[i]=e.isIntersecting;});upd();}).observe(el);});
+  }else if(st){st.classList.remove('hide');}
+})();
+</script>
+</body>
+</html>
