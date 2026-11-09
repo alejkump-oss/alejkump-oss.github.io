@@ -24,7 +24,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
 <link rel="preload" as="image" href="assets/hero.webp" type="image/webp" fetchpriority="high">
 <style>
 :root{
@@ -71,7 +71,7 @@ h2 em,h1 em{font-style:italic;color:var(--gold2)}
 .sweep::after{content:"";position:absolute;top:-50%;left:-60%;width:40%;height:200%;
   background:linear-gradient(100deg,transparent 0%,rgba(255,244,220,.0) 30%,rgba(255,244,220,.20) 50%,rgba(255,244,220,0) 70%,transparent 100%);
   transform:rotate(14deg);animation:sweep 6.5s cubic-bezier(.6,0,.2,1) 1.2s infinite}
-@keyframes sweep{0%{left:-60%}55%,100%{left:130%}}
+@keyframes sweep{0%{transform:translateX(0) rotate(14deg)}55%,100%{transform:translateX(475%) rotate(14deg)}}
 .hero-inner{padding-bottom:clamp(56px,10vh,110px);padding-top:120px;width:100%}
 .hero h1{font-size:clamp(48px,11.5vw,128px);margin:.18em 0 .22em;max-width:11ch}
 .hero h1 .shine{background:linear-gradient(100deg,var(--gold) 0%,var(--gold2) 40%,#fff 50%,var(--gold2) 60%,var(--gold) 100%);
