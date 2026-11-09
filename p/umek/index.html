@@ -6,453 +6,220 @@
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
 <meta name="googlebot" content="noindex, nofollow">
 <title>Mizarstvo Dejan Umek · Stara Cerkev</title>
-<meta name="description" content="Mizarstvo Dejan Umek s.p. iz Stare Cerkve pri Kočevju — pohištvo po meri, izdelano v domači delavnici. Predogled spletne strani.">
-<meta name="theme-color" content="#1f1b17">
+<meta name="description" content="Mizarstvo Dejan Umek s.p. iz Stare Cerkve pri Kočevju: pohištvo po meri iz domače delavnice. Predogled spletne strani.">
+<meta name="theme-color" content="#111111">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/kuhinja-hrast.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/kuhinja-hrast-s.webp" media="(max-width:899px)">
+<link rel="preload" as="image" href="assets/kuhinja-hrast.webp" media="(min-width:900px)">
 <style>
+/* ARHETIP: galerija (portfolio). Monokromno, en lesni poudarek. */
 :root{
-  --cream:#f6f0e6; --cream-2:#ede3d3; --paper:#fbf8f2;
-  --oak:#b98a55; --oak-2:#d4ad78; --walnut:#5a3b25; --walnut-2:#7a5236;
-  --char:#1f1b17; --char-2:#2c2621; --ink:#2a241f; --muted:#6f6357; --line:rgba(42,36,31,.14);
-  --serif:"Fraunces", Georgia, "Times New Roman", serif;
-  --sans:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --r:18px; --ease:cubic-bezier(.2,.7,.2,1);
-  --gutter:clamp(16px,5vw,64px); --max:1200px;
+  --ink:#111111; --ink2:#4a4a48; --paper:#f4f3f0; --white:#ffffff; --line:rgba(17,17,17,.14);
+  --wood:#8a5a2b; --wood-l:#c79a68;
+  --g:"Hanken Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --pad:clamp(16px,4vw,48px);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%}
 html,body{overflow-x:hidden;max-width:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--sans);
-  -webkit-font-smoothing:antialiased;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
-img{display:block;max-width:100%;height:auto;-webkit-user-drag:none;user-drag:none;pointer-events:none}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--g);-webkit-font-smoothing:antialiased;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+img{display:block;max-width:100%;height:auto;-webkit-user-drag:none;pointer-events:none}
 a{color:inherit}
-h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.08;margin:0}
-p{margin:0}
-.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
-.eyebrow{font:600 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--oak)}
-.eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:currentColor;vertical-align:middle;margin-right:12px}
-
-/* subtle wood grain — layered gradients, no image cost */
-.grain{position:relative;isolation:isolate}
-.grain::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;pointer-events:none;
-  background:
-   repeating-linear-gradient(92deg, rgba(122,82,54,.035) 0 2px, transparent 2px 9px),
-   repeating-linear-gradient(88deg, rgba(122,82,54,.03) 0 1px, transparent 1px 23px),
-   radial-gradient(120% 60% at 20% 0%, rgba(212,173,120,.18), transparent 60%)}
-
-/* ===== header ===== */
-.top{position:fixed;inset:0 0 auto 0;z-index:40;transition:background .4s var(--ease),box-shadow .4s}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{display:flex;flex-direction:column;text-decoration:none;color:#fff;line-height:1.1}
-.brand b{font:500 20px/1 var(--serif);letter-spacing:.01em}
-.brand span{font:500 10.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;opacity:.75;margin-top:6px}
-.top nav{display:none;gap:30px}
-.top nav a{color:#fff;text-decoration:none;font-size:14px;opacity:.85}
-.top nav a:hover{opacity:1}
-.top .call-sm{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;
-  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;text-decoration:none;font:600 14px/1 var(--sans);backdrop-filter:blur(8px)}
-.top.solid{background:rgba(31,27,23,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
-@media (min-width:900px){.top nav{display:flex}}
-@media (max-width:420px){.top .call-sm .t{display:none}.top .call-sm{padding:10px 12px}}
-
-/* ===== hero ===== */
-.hero{position:relative;min-height:100svh;min-height:100vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--char)}
-@supports (min-height:100svh){.hero{min-height:100svh}}
-.hero-media{position:absolute;inset:-8% 0 -8% 0;will-change:transform}
-.hero-media img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;transform:scale(1.06);animation:heroIn 2.4s var(--ease) both}
-@keyframes heroIn{from{transform:scale(1.16);filter:brightness(.6)}to{transform:scale(1.06);filter:brightness(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg, rgba(20,16,12,.55) 0%, rgba(20,16,12,.1) 30%, rgba(20,16,12,.35) 60%, rgba(20,16,12,.88) 100%)}
-.hero .wrap{position:relative;z-index:2;padding-bottom:clamp(96px,14vh,140px);padding-top:120px}
-.hero .eyebrow{color:var(--oak-2)}
-.hero h1{font-size:clamp(44px,11vw,112px);font-weight:300;margin:22px 0 22px;max-width:12ch}
-.hero h1 em{font-style:italic;color:var(--oak-2);font-weight:300}
-.hero p.lead{font-size:clamp(16px,2.2vw,19px);max-width:46ch;opacity:.9}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;
-  font:600 16px/1 var(--sans);text-decoration:none;transition:transform .3s var(--ease),background .3s,box-shadow .3s}
-.btn svg{width:18px;height:18px;flex:none}
-.btn-oak{background:var(--oak);color:#1b140e;box-shadow:0 10px 30px -10px rgba(185,138,85,.8)}
-.btn-oak:hover{transform:translateY(-2px);background:var(--oak-2)}
-.btn-ghost{border:1px solid rgba(255,255,255,.4);color:#fff}
-.btn-ghost:hover{background:rgba(255,255,255,.1)}
-.scroll-cue{position:absolute;z-index:2;left:50%;bottom:28px;transform:translateX(-50%);width:1px;height:48px;background:linear-gradient(rgba(255,255,255,0),rgba(255,255,255,.8));overflow:hidden}
-.scroll-cue::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:#fff;animation:cue 2.2s ease-in-out infinite}
-@keyframes cue{to{top:110%}}
-@media (max-width:600px){.scroll-cue{display:none}.cta-row .btn{flex:1 1 100%}}
-
-/* ===== intro ===== */
-section{position:relative}
-.intro{background:var(--cream);padding:clamp(80px,12vw,150px) 0}
-.intro .grid{display:grid;gap:48px}
-.intro h2{font-size:clamp(32px,6vw,58px);margin-top:20px}
-.intro h2 em{font-style:italic;color:var(--walnut-2)}
-.intro .body p{color:var(--muted);font-size:17px;max-width:56ch}
-.intro .body p + p{margin-top:16px}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:40px}
-.facts div{background:var(--cream);padding:22px 20px}
-.facts b{display:block;font:400 clamp(22px,4vw,30px)/1.1 var(--serif);color:var(--walnut)}
-.facts span{display:block;margin-top:8px;font-size:13px;color:var(--muted);line-height:1.4}
-@media (min-width:900px){.intro .grid{grid-template-columns:1.05fr 1fr;gap:90px;align-items:end}}
-
-/* ===== split image band ===== */
-.band{background:var(--char);color:var(--cream);overflow:hidden}
-.band .inner{display:grid}
-.band figure{margin:0;position:relative;min-height:420px;overflow:hidden}
-.band figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.band .txt{padding:clamp(56px,9vw,110px) var(--gutter)}
-.band blockquote{margin:22px 0 0;font:300 clamp(28px,4.6vw,46px)/1.15 var(--serif)}
-.band blockquote em{color:var(--oak-2)}
-.band p{margin-top:24px;color:rgba(246,240,230,.7);max-width:44ch}
-@media (min-width:900px){.band .inner{grid-template-columns:1fr 1fr}.band figure{min-height:640px}}
-
-/* ===== services ===== */
-.services{background:var(--paper);padding:clamp(80px,12vw,150px) 0}
-.sec-head{display:flex;flex-direction:column;gap:18px;margin-bottom:52px;max-width:720px}
-.sec-head h2{font-size:clamp(34px,6vw,60px)}
-.sec-head p{color:var(--muted);font-size:17px}
-.svc{display:grid;gap:14px}
-.svc article{position:relative;padding:30px 26px 28px;border-radius:var(--r);background:var(--cream);border:1px solid var(--line);overflow:hidden;
-  transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .5s}
-.svc article::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:linear-gradient(90deg,var(--oak),var(--walnut-2));transition:width .6s var(--ease)}
-.svc article:hover{transform:translateY(-4px);box-shadow:0 24px 50px -28px rgba(60,40,20,.45)}
-.svc article:hover::after{width:100%}
-.svc .n{font:italic 400 15px/1 var(--serif);color:var(--oak)}
-.svc h3{font-size:clamp(24px,3.4vw,30px);margin:14px 0 10px}
-.svc p{color:var(--muted);font-size:15.5px}
-.svc .ico{position:absolute;right:22px;top:24px;width:34px;height:34px;color:var(--walnut-2);opacity:.55}
-.svc article.feature{background:var(--char);color:var(--cream);border-color:transparent}
-.svc article.feature p{color:rgba(246,240,230,.72)}
-.svc article.feature .ico{color:var(--oak-2)}
-.note{margin-top:22px;font-size:13px;color:var(--muted)}
-@media (min-width:700px){.svc{grid-template-columns:1fr 1fr}.svc article.feature{grid-column:1 / -1}}
-@media (min-width:1050px){.svc{grid-template-columns:repeat(6,1fr)}.svc article{grid-column:span 2}.svc article.feature{grid-column:span 4}}
-
-/* ===== process ===== */
-.process{background:var(--cream-2);padding:clamp(80px,12vw,150px) 0}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s;position:relative}
-.steps li{position:relative;padding:0 0 44px 64px}
-.steps li:last-child{padding-bottom:0}
-.steps li::before{counter-increment:s;content:"0" counter(s);position:absolute;left:0;top:-4px;width:46px;height:46px;border-radius:50%;
-  display:grid;place-items:center;font:500 15px/1 var(--serif);background:var(--paper);border:1px solid var(--oak);color:var(--walnut)}
-.steps li::after{content:"";position:absolute;left:22.5px;top:48px;bottom:4px;width:1px;background:linear-gradient(var(--oak),rgba(185,138,85,.15))}
-.steps li:last-child::after{display:none}
-.steps h3{font-size:clamp(24px,3.4vw,30px);margin-bottom:8px}
-.steps p{color:var(--muted);max-width:46ch}
-@media (min-width:1000px){
-  .steps{grid-template-columns:repeat(4,1fr);gap:28px}
-  .steps li{padding:70px 0 0}
-  .steps li::after{left:56px;right:-22px;top:23px;bottom:auto;width:auto;height:1px;background:linear-gradient(90deg,var(--oak),rgba(185,138,85,.15))}
-}
-
-/* ===== gallery ===== */
-.gallery{background:var(--char);color:var(--cream);padding:clamp(80px,12vw,150px) 0}
-.gallery .sec-head p{color:rgba(246,240,230,.65)}
-.gallery .eyebrow{color:var(--oak-2)}
-.g{display:grid;gap:12px;grid-template-columns:1fr 1fr}
-.g figure{margin:0;position:relative;border-radius:14px;overflow:hidden;background:#2c2621}
-.g figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.g figure:hover img{transform:scale(1.05)}
-.g figcaption{position:absolute;inset:0;font-size:12px;background:linear-gradient(180deg,rgba(20,16,12,0) 55%,rgba(20,16,12,.55))}
-.g figcaption b{position:absolute;left:12px;right:12px;bottom:12px;font:400 16px/1.2 var(--serif);color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.6)}
-.tag{position:absolute;top:10px;left:10px;font:600 9.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;padding:6px 8px;border-radius:999px;background:rgba(20,16,12,.7);color:var(--oak-2);backdrop-filter:blur(6px)}
-.g .a{grid-column:1 / -1;aspect-ratio:16/10}
-.g .b,.g .c{aspect-ratio:4/5}
-.g .d{grid-column:1 / -1;aspect-ratio:16/10}
-.g .e{grid-column:1 / -1;aspect-ratio:1/1}
-@media (min-width:900px){
-  .g{grid-template-columns:repeat(12,1fr);grid-auto-rows:120px}
-  .g .a{grid-column:1 / 8;grid-row:span 4;aspect-ratio:auto}
-  .g .b{grid-column:8 / 13;grid-row:span 4;aspect-ratio:auto}
-  .g .c{grid-column:1 / 5;grid-row:span 4;aspect-ratio:auto}
-  .g .d{grid-column:5 / 10;grid-row:span 4;aspect-ratio:auto}
-  .g .e{grid-column:10 / 13;grid-row:span 4;aspect-ratio:auto}
-}
-.disclaim{margin-top:22px;font-size:13px;color:rgba(246,240,230,.55);max-width:70ch}
-
-/* ===== contact ===== */
-.contact{background:var(--cream);padding:clamp(80px,12vw,150px) 0}
-.contact .card{border-radius:28px;background:var(--paper);border:1px solid var(--line);padding:clamp(30px,6vw,72px);display:grid;gap:40px;box-shadow:0 40px 80px -60px rgba(60,40,20,.5)}
-.contact h2{font-size:clamp(36px,7vw,72px);margin-top:18px}
-.contact h2 em{font-style:italic;color:var(--walnut-2)}
-.bigtel{display:block;margin-top:26px;font:300 clamp(40px,10vw,84px)/1 var(--serif);color:var(--char);text-decoration:none;letter-spacing:-.02em;white-space:nowrap}
-.bigtel:hover{color:var(--walnut-2)}
-.contact .sub{color:var(--muted);margin-top:14px}
-.info{display:grid;gap:0;border-top:1px solid var(--line)}
-.info div{display:flex;justify-content:space-between;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);font-size:15.5px}
-.info dt{color:var(--muted)}
-.info dd{margin:0;text-align:right;font-weight:500;overflow-wrap:anywhere}
-.info a{text-decoration:none;border-bottom:1px solid var(--oak)}
-@media (min-width:900px){.contact .card{grid-template-columns:1.2fr 1fr;align-items:end}}
-
-/* ===== footer ===== */
-footer{background:var(--char);color:rgba(246,240,230,.6);padding:56px 0 120px;font-size:14px}
-footer .wrap{display:grid;gap:18px}
-footer b{font:400 22px/1.2 var(--serif);color:var(--cream)}
-footer a{color:var(--oak-2);text-decoration:none}
-@media (min-width:900px){footer{padding-bottom:56px}}
-
-/* ===== sticky mobile call + preview badge ===== */
-.sticky-call{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:flex;align-items:center;justify-content:center;gap:10px;
-  min-height:56px;border-radius:999px;background:var(--oak);color:#1b140e;text-decoration:none;font:600 16px/1 var(--sans);
-  box-shadow:0 18px 40px -12px rgba(0,0,0,.55);transform:translateY(140%);transition:transform .5s var(--ease)}
-.sticky-call svg{width:20px;height:20px}
-.sticky-call.show{transform:none}
-@media (min-width:900px){.sticky-call{display:none}}
-.badge{position:fixed;top:76px;right:10px;z-index:60;font:600 10.5px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;
-  padding:7px 10px;border-radius:999px;background:rgba(31,27,23,.82);color:var(--oak-2);border:1px solid rgba(212,173,120,.35);backdrop-filter:blur(6px);pointer-events:none}
-
-/* ===== reveal ===== */
-.rv{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
-.rv.in{opacity:1;transform:none}
-.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}.rv.d4{transition-delay:.32s}
-.no-js .rv{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
-  .hero-media{transform:none!important}
-}
-:focus-visible{outline:2px solid var(--oak);outline-offset:3px;border-radius:6px}
-@media (max-width:520px){.hide-sm{display:none}}
+h1,h2,h3,p,ol,dl,dd,figure{margin:0}
+ol{padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--wood);outline-offset:3px}
 .skip{position:absolute;left:-9999px}
 .skip:focus{left:12px;top:12px;z-index:100;background:#fff;padding:10px 14px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ribbon */
+.ribbon{background:var(--ink);color:#f4f3f0;font:500 11px/1 var(--g);letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:7px 12px}
+
+/* name bar */
+.bar{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:14px var(--pad) 12px;background:var(--paper)}
+.bar h1{font:500 15px/1.25 var(--g);letter-spacing:.01em}
+.bar h1 span{display:block;font-weight:400;color:var(--ink2);font-size:13px}
+.bar a{font:500 15px/1 var(--g);text-decoration:none;border-bottom:1px solid var(--wood);padding-bottom:2px;white-space:nowrap;font-variant-numeric:tabular-nums}
+@media (min-width:900px){.bar h1{font-size:17px}.bar h1 span{display:inline;margin-left:10px;font-size:15px}}
+
+/* mosaic: first screen */
+.mosaic{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;background:var(--paper)}
+.mosaic figure{position:relative;overflow:hidden;background:#d9d6d0}
+.mosaic img{width:100%;height:100%;object-fit:cover}
+.mosaic .a{grid-column:span 6;aspect-ratio:16/9}
+.mosaic .b,.mosaic .c{grid-column:span 3;aspect-ratio:4/5}
+.mosaic .d{grid-column:span 2;aspect-ratio:1/1}
+.mosaic .e{grid-column:span 4}
+.mosaic .e img{position:absolute;inset:0}
+.mosaic figcaption{position:absolute;left:8px;bottom:8px;background:rgba(17,17,17,.78);color:#fff;font:500 11.5px/1 var(--g);letter-spacing:.02em;padding:6px 8px}
+.mosaic figcaption i{font-style:normal;color:#d8d5cf}
+@media (min-width:900px){
+  .mosaic{grid-template-columns:repeat(12,1fr);grid-template-rows:repeat(2,calc((100svh - 110px)/2))}
+  .mosaic .a{grid-column:1/8;grid-row:1;aspect-ratio:auto}
+  .mosaic .b{grid-column:8/11;grid-row:1/3;aspect-ratio:auto}
+  .mosaic .c{grid-column:11/13;grid-row:1/3;aspect-ratio:auto}
+  .mosaic .d{grid-column:1/4;grid-row:2;aspect-ratio:auto}
+  .mosaic .e{grid-column:4/8;grid-row:2}
+}
+.disc{padding:10px var(--pad) 0;font-size:12.5px;line-height:1.5;color:var(--ink2);max-width:80ch}
+
+/* blocks */
+.blk{padding:clamp(56px,10vw,120px) var(--pad) 0}
+.lab{font:500 12px/1 var(--g);letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);display:flex;gap:12px;align-items:center}
+.lab::after{content:"";flex:1;height:1px;background:var(--line)}
+.lead{font:400 clamp(22px,4.4vw,40px)/1.25 var(--g);letter-spacing:-.015em;max-width:24ch;margin-top:22px}
+.lead b{font-weight:500;color:var(--wood)}
+
+/* index of work */
+.idx{margin-top:28px;border-top:1px solid var(--ink)}
+.idx li{display:grid;grid-template-columns:44px 1fr;gap:4px 10px;padding:16px 0;border-bottom:1px solid var(--line)}
+.idx .n{font:500 13px/1.6 var(--g);color:var(--wood);font-variant-numeric:tabular-nums}
+.idx h3{font:500 19px/1.3 var(--g);letter-spacing:-.005em}
+.idx p{grid-column:2;color:var(--ink2);font-size:15px;max-width:52ch}
+@media (min-width:900px){.idx li{grid-template-columns:60px 1fr 1.3fr;align-items:baseline}.idx p{grid-column:3}}
+.dej{margin-top:18px;font-size:14px;color:var(--ink2)}
+
+/* timeline */
+.tl-wrap{margin:28px calc(var(--pad) * -1) 0;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad);-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding:0 var(--pad) 18px}
+.tl{display:grid;grid-auto-flow:column;grid-auto-columns:78%;gap:14px;position:relative;width:max-content;min-width:100%}
+.tl li{scroll-snap-align:start;width:min(78vw,340px)}
+.tick{display:flex;align-items:center;gap:10px;font:500 13px/1 var(--g);font-variant-numeric:tabular-nums;padding-bottom:12px;position:relative}
+.tick::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--ink);flex:none}
+.tick::after{content:"";flex:1;height:1px;background:var(--ink)}
+.tl li:last-child .tick::after{background:linear-gradient(90deg,var(--ink),transparent)}
+.frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:#e7e5e0}
+.frame img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.frame.txt{background:var(--ink);color:#f4f3f0;display:flex;align-items:flex-end;padding:20px}
+.frame.txt p{font:400 20px/1.3 var(--g);letter-spacing:-.01em}
+.frame.draw{display:grid;place-items:center;background:#ebe9e4}
+.frame.draw svg{width:72%;height:auto}
+.frame small{position:absolute;right:8px;top:8px;background:rgba(17,17,17,.78);color:#fff;font-size:11px;padding:4px 7px}
+.tl h3{font:500 18px/1.3 var(--g);margin-top:12px}
+.tl p.c{color:var(--ink2);font-size:15px;margin-top:4px}
+@media (min-width:1000px){.tl-wrap{overflow:visible;margin:28px 0 0;padding:0}.tl{grid-auto-flow:row;grid-template-columns:repeat(4,1fr);width:auto}.tl li{width:auto}}
+.hint{font-size:12.5px;color:var(--ink2);margin-top:2px}
+@media (min-width:1000px){.hint{display:none}}
+
+/* facts */
+.facts{margin-top:28px;border-top:1px solid var(--ink)}
+.facts div{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.facts dt{color:var(--ink2)}
+.facts a{text-decoration:none;border-bottom:1px solid var(--wood)}
+.calltxt{display:inline-block;margin-top:34px;font:500 clamp(28px,7vw,56px)/1.1 var(--g);letter-spacing:-.02em;text-decoration:none;border-bottom:2px solid var(--wood);font-variant-numeric:tabular-nums}
+
+footer{margin-top:clamp(64px,10vw,120px);padding:28px var(--pad) 96px;border-top:1px solid var(--line);font-size:13px;line-height:1.6;color:var(--ink2);display:grid;gap:8px}
+footer b{color:var(--ink);font-weight:500;font-size:15px}
+footer a{text-decoration:none;border-bottom:1px solid var(--wood);color:var(--ink)}
+
+/* the call: one small round icon, always within thumb reach */
+.call{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:50;width:58px;height:58px;border-radius:50%;
+  background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 3px var(--paper),0 0 0 4px var(--wood-l),0 10px 24px -8px rgba(0,0,0,.5);text-decoration:none}
+.call svg{width:22px;height:22px}
 </style>
 </head>
-<body class="no-js">
-<a class="skip" href="#kontakt">Preskoči na kontakt</a>
-<div class="badge" aria-hidden="true">Predogled · Alej Kump</div>
+<body>
+<a class="skip" href="#podatki">Preskoči na kontakt</a>
+<div class="ribbon" role="note">Predogled – AK agencija</div>
 
-<header class="top" id="top">
-  <div class="wrap">
-    <a class="brand" href="#" aria-label="Mizarstvo Dejan Umek — na vrh">
-      <b>Mizarstvo Umek</b>
-      <span>Stara Cerkev</span>
-    </a>
-    <nav aria-label="Glavna navigacija">
-      <a href="#storitve">Storitve</a>
-      <a href="#postopek">Postopek</a>
-      <a href="#galerija">Navdih</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-    <a class="call-sm" href="tel:+38641708628" aria-label="Pokličite 041 708 628">
-      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-      <span class="t">041 708 628</span>
-    </a>
-  </div>
+<header class="bar">
+  <h1>Mizarstvo Dejan Umek <span>Stara Cerkev pri Kočevju</span></h1>
+  <a href="tel:+38641708628" aria-label="Pokličite 041 708 628">041 708 628</a>
 </header>
 
 <main>
-<section class="hero" aria-label="Uvod">
-  <div class="hero-media" id="heroMedia">
-    <img src="assets/kuhinja-hrast.jpg" alt="Ilustrativni prikaz: kuhinja iz lesa po meri" width="1600" height="900" fetchpriority="high" draggable="false">
+<section aria-label="Izbor del" id="dela">
+  <div class="mosaic">
+    <figure class="a"><img src="assets/kuhinja-hrast-s.webp" srcset="assets/kuhinja-hrast-s.webp 720w, assets/kuhinja-hrast.webp 1400w" sizes="(min-width:900px) 58vw, 100vw" width="720" height="407" alt="Ilustrativni prikaz: kuhinja iz lesa po meri z otokom" fetchpriority="high" draggable="false"><figcaption>01 Kuhinja <i>· ilustracija</i></figcaption></figure>
+    <figure class="b"><img src="assets/garderoba-oreh-s.webp" srcset="assets/garderoba-oreh-s.webp 720w, assets/garderoba-oreh.webp 1080w" sizes="(min-width:900px) 25vw, 50vw" width="720" height="900" alt="Ilustrativni prikaz: vgradna garderoba iz oreha" draggable="false"><figcaption>02 Garderoba <i>· ilustracija</i></figcaption></figure>
+    <figure class="c"><img src="assets/roke-oblic-s.webp" srcset="assets/roke-oblic-s.webp 720w, assets/roke-oblic.webp 1080w" sizes="(min-width:900px) 17vw, 50vw" width="720" height="900" alt="Ilustrativni prikaz: mizarjeve roke z obličem" draggable="false"><figcaption>03 Ročno delo <i>· ilustracija</i></figcaption></figure>
+    <figure class="d"><img src="assets/spoj-s.webp" width="720" height="720" alt="Ilustrativni prikaz: lesni lastovičji spoj" loading="lazy" draggable="false"><figcaption>04 Spoj <i>· ilustracija</i></figcaption></figure>
+    <figure class="e"><img src="assets/delavnica-s.webp" srcset="assets/delavnica-s.webp 720w, assets/delavnica.webp 1400w" sizes="(min-width:900px) 33vw, 66vw" width="720" height="407" alt="Ilustrativni prikaz: mizarska delavnica" loading="lazy" draggable="false"><figcaption>05 Delavnica <i>· ilustracija</i></figcaption></figure>
   </div>
-  <div class="wrap">
-    <div class="eyebrow rv">Mizarstvo · Stara Cerkev<span class="hide-sm"> pri Kočevju</span></div>
-    <h1 class="rv d1">Pohištvo, narejeno <em>za vaš prostor.</em></h1>
-    <p class="lead rv d2">Mizarstvo Dejan Umek izdeluje pohištvo po meri — od prvega pogovora in izmere do montaže pri vas doma.</p>
-    <div class="cta-row rv d3">
-      <a class="btn btn-oak" href="tel:+38641708628">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-        Pokličite 041 708 628
-      </a>
-      <a class="btn btn-ghost" href="#storitve">Kaj izdelujemo</a>
-    </div>
-  </div>
-  <div class="scroll-cue" aria-hidden="true"></div>
+  <p class="disc">Vse fotografije na tej strani so ilustrativni prikazi (ustvarjeni z umetno inteligenco) in ne prikazujejo izdelkov mizarstva Dejan Umek. Fotografije lastnih izdelkov bodo dodane po dogovoru.</p>
 </section>
 
-<section class="intro grain" aria-labelledby="intro-h">
-  <div class="wrap grid">
-    <div>
-      <div class="eyebrow rv">Domača mizarska delavnica</div>
-      <h2 id="intro-h" class="rv d1">Les, mera in <em>roka mojstra.</em></h2>
-    </div>
-    <div class="body">
-      <p class="rv d1">Vsak prostor je drugačen — zato pohištvo, ki zares pristane, nastane po meri. V mizarstvu Dejan Umek iz Stare Cerkve pri Kočevju se ukvarjamo z mizarstvom, stavbnim pohištvom ter pohištvom in opremo.</p>
-      <p class="rv d2">Povejte nam, kaj potrebujete. Skupaj pogledamo prostor, uskladimo želje in pripravimo rešitev, ki bo služila leta.</p>
-      <div class="facts rv d3">
-        <div><b>od 1997</b><span>registrirana dejavnost</span></div>
-        <div><b>Po meri</b><span>vsak kos za vaš prostor</span></div>
-        <div><b>Stara Cerkev</b><span>pri Kočevju</span></div>
-        <div><b>041 708 628</b><span>pokličite za dogovor</span></div>
-      </div>
-    </div>
-  </div>
+<section class="blk" id="delo" aria-labelledby="delo-h">
+  <h2 class="lab" id="delo-h">Delo</h2>
+  <p class="lead">Pohištvo po meri iz domače delavnice v Stari Cerkvi. Od prvega pogovora in izmere <b>do montaže</b> pri vas doma.</p>
+  <ol class="idx">
+    <li><span class="n">01</span><h3>Pohištvo po meri</h3><p>Prilagojeno točnim meram, nišam in poševninam vašega doma, tam, kjer serijsko pohištvo ne zadošča.</p></li>
+    <li><span class="n">02</span><h3>Kuhinje</h3><p>Kuhinja, zasnovana okoli vašega načina kuhanja in prostora, ki ga imate.</p></li>
+    <li><span class="n">03</span><h3>Omare in garderobe</h3><p>Vgradne omare in garderobe, ki izkoristijo vsak centimeter.</p></li>
+    <li><span class="n">04</span><h3>Notranja vrata</h3><p>Stavbno pohištvo, ki se ujema z vašim interierjem.</p></li>
+    <li><span class="n">05</span><h3>Obnova pohištva</h3><p>Pohištvu, na katerega ste navezani, vrnemo uporabnost in videz.</p></li>
+  </ol>
+  <p class="dej">Registrirane dejavnosti: mizarstvo, stavbno pohištvo, pohištvo in oprema.</p>
 </section>
 
-<section class="band" aria-label="Ročno delo">
-  <div class="inner">
-    <figure class="rv">
-      <img src="assets/roke-oblic.jpg" alt="Ilustrativni prikaz: mizarjeve roke z obličem" width="1080" height="1350" loading="lazy" draggable="false">
-    </figure>
-    <div class="txt">
-      <div class="eyebrow rv">Pristop</div>
-      <blockquote class="rv d1">Dobro pohištvo se ne kupi s police. <em>Naredi se.</em></blockquote>
-      <p class="rv d2">Mere, material, okovje in zaključna obdelava — vse se uskladi z vami in z vašim prostorom, preden se začne izdelava.</p>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="storitve" aria-labelledby="svc-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow rv">Storitve</div>
-      <h2 id="svc-h" class="rv d1">Kaj lahko izdelamo za vas</h2>
-      <p class="rv d2">Od posameznega kosa do opreme celotnega prostora.</p>
-    </div>
-    <div class="svc">
-      <article class="feature rv">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
-        <span class="n">01</span>
-        <h3>Pohištvo po meri</h3>
-        <p>Pohištvo, prilagojeno točnim meram, nišam in poševninam vašega doma — tam, kjer serijsko pohištvo ne zadošča.</p>
-      </article>
-      <article class="rv d1">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10h18M12 10v10M8 7h1M15 7h1"/></svg>
-        <span class="n">02</span>
-        <h3>Kuhinje</h3>
-        <p>Kuhinja, zasnovana okoli vašega načina kuhanja in prostora, ki ga imate.</p>
-      </article>
-      <article class="rv d2">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M10 12h.5M13.5 12h.5"/></svg>
-        <span class="n">03</span>
-        <h3>Omare in garderobe</h3>
-        <p>Vgradne omare in garderobe, ki izkoristijo vsak centimeter.</p>
-      </article>
-      <article class="w3 rv d1">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 21V3h12v18M3 21h18M15 12h.5"/></svg>
-        <span class="n">04</span>
-        <h3>Notranja vrata</h3>
-        <p>Stavbno pohištvo, ki se ujema z vašim interierjem.</p>
-      </article>
-      <article class="w3 rv d2">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4zM14 6l3 3"/></svg>
-        <span class="n">05</span>
-        <h3>Obnova pohištva</h3>
-        <p>Pohištvu, na katerega ste navezani, vrnemo uporabnost in videz.</p>
-      </article>
-    </div>
-    <p class="note rv">Za vaš konkreten projekt nas pokličite — dogovorimo se za ogled in izmero.</p>
-  </div>
-</section>
-
-<section class="process grain" id="postopek" aria-labelledby="proc-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow rv">Postopek</div>
-      <h2 id="proc-h" class="rv d1">Od ideje do montaže</h2>
-      <p class="rv d2">Jasen potek dela, da veste, kaj sledi na vsakem koraku.</p>
-    </div>
-    <ol class="steps">
-      <li class="rv"><h3>Posvet</h3><p>Pokličete nas in poveste, kaj potrebujete. Pogovorimo se o željah, namenu in prostoru.</p></li>
-      <li class="rv d1"><h3>Izmera</h3><p>Prostor natančno izmerimo, da se bo pohištvo prilegalo brez kompromisov.</p></li>
-      <li class="rv d2"><h3>Izdelava po meri</h3><p>Pohištvo nastane v delavnici — po dogovorjenih merah, materialu in obdelavi.</p></li>
-      <li class="rv d3"><h3>Montaža</h3><p>Izdelek pripeljemo in ga sestavimo na mestu, da je pripravljen za uporabo.</p></li>
+<section class="blk" id="potek" aria-labelledby="potek-h">
+  <h2 class="lab" id="potek-h">Od mere do montaže</h2>
+  <p class="hint" aria-hidden="true">Podrsajte vstran →</p>
+  <div class="tl-wrap" tabindex="0" aria-label="Časovnica: od mere do montaže">
+    <ol class="tl">
+      <li>
+        <div class="tick">01</div>
+        <div class="frame txt"><p>»Kaj potrebujete?«</p></div>
+        <h3>Posvet</h3><p class="c">Pokličete in poveste, kaj potrebujete. Pogovorimo se o željah, namenu in prostoru.</p>
+      </li>
+      <li>
+        <div class="tick">02</div>
+        <div class="frame draw" aria-hidden="true">
+          <svg viewBox="0 0 200 220" fill="none" stroke="#111" stroke-width="1.4">
+            <rect x="40" y="40" width="120" height="150"/><path d="M100 40v150M40 115h60"/>
+            <path d="M40 20h120M40 14v12M160 14v12" stroke="#8a5a2b"/><path d="M20 40v150M14 40h12M14 190h12" stroke="#8a5a2b"/>
+            <text x="100" y="12" font-size="10" text-anchor="middle" fill="#8a5a2b" stroke="none" font-family="Arial">mera</text>
+          </svg>
+        </div>
+        <h3>Izmera</h3><p class="c">Prostor natančno izmerimo, da se pohištvo prilega brez kompromisov.</p>
+      </li>
+      <li>
+        <div class="tick">03</div>
+        <div class="frame"><img src="assets/roke-oblic-s.webp" width="720" height="900" loading="lazy" alt="Ilustrativni prikaz: ročna obdelava lesa z obličem" draggable="false"><small>ilustracija</small></div>
+        <h3>Izdelava po meri</h3><p class="c">Pohištvo nastane v delavnici, po dogovorjenih merah, materialu in obdelavi.</p>
+      </li>
+      <li>
+        <div class="tick">04</div>
+        <div class="frame"><img src="assets/garderoba-oreh-s.webp" width="720" height="900" loading="lazy" alt="Ilustrativni prikaz: vgrajena garderoba po montaži" draggable="false"><small>ilustracija</small></div>
+        <h3>Montaža</h3><p class="c">Izdelek pripeljemo in ga sestavimo na mestu, pripravljen za uporabo.</p>
+      </li>
     </ol>
   </div>
 </section>
 
-<section class="gallery" id="galerija" aria-labelledby="gal-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow rv">Navdih</div>
-      <h2 id="gal-h" class="rv d1">Lepota lesa, izdelanega po meri</h2>
-      <p class="rv d2">Nekaj idej za to, kaj je mogoče izdelati po meri.</p>
-    </div>
-    <div class="g">
-      <figure class="a rv"><img src="assets/kuhinja-hrast.jpg" alt="Ilustrativni prikaz: kuhinja po meri" width="1600" height="900" loading="lazy" draggable="false"><figcaption><b>Kuhinja po meri</b><span class="tag">Ilustrativni prikaz</span></figcaption></figure>
-      <figure class="b rv d1"><img src="assets/garderoba-oreh.jpg" alt="Ilustrativni prikaz: vgradna garderoba" width="1080" height="1350" loading="lazy" draggable="false"><figcaption><b>Vgradna garderoba</b><span class="tag">Ilustrativni prikaz</span></figcaption></figure>
-      <figure class="c rv"><img src="assets/roke-oblic.jpg" alt="Ilustrativni prikaz: ročna obdelava lesa" width="1080" height="1350" loading="lazy" draggable="false"><figcaption><b>Ročna obdelava</b><span class="tag">Ilustrativni prikaz</span></figcaption></figure>
-      <figure class="d rv d1"><img src="assets/delavnica.jpg" alt="Ilustrativni prikaz: mizarska delavnica" width="1600" height="900" loading="lazy" draggable="false"><figcaption><b>Delavnica</b><span class="tag">Ilustrativni prikaz</span></figcaption></figure>
-      <figure class="e rv d2"><img src="assets/spoj.jpg" alt="Ilustrativni prikaz: lesni spoj" width="1200" height="1200" loading="lazy" draggable="false"><figcaption><b>Detajl spoja</b><span class="tag">Ilustrativni prikaz</span></figcaption></figure>
-    </div>
-    <p class="disclaim rv">Vse fotografije na tej strani so ilustrativni prikazi (ustvarjeni z umetno inteligenco) in ne prikazujejo izdelkov mizarstva Dejan Umek. Fotografije lastnih izdelkov bodo dodane po dogovoru.</p>
-  </div>
-</section>
-
-<section class="contact" id="kontakt" aria-labelledby="ct-h">
-  <div class="wrap">
-    <div class="card">
-      <div>
-        <div class="eyebrow rv">Kontakt</div>
-        <h2 id="ct-h" class="rv d1">Imate idejo? <em>Pokličite.</em></h2>
-        <a class="bigtel rv d2" href="tel:+38641708628">041 708 628</a>
-        <p class="sub rv d3">Pokličite za dogovor o ogledu, izmeri in ponudbi.</p>
-      </div>
-      <dl class="info rv d2">
-        <div><dt>Podjetje</dt><dd>Mizarstvo Dejan Umek s.p.</dd></div>
-        <div><dt>Kraj</dt><dd>Stara Cerkev</dd></div>
-        <div><dt>Telefon</dt><dd><a href="tel:+38641708628">041 708 628</a></dd></div>
-        <div><dt>Delovni čas</dt><dd>Pokličite za dogovor</dd></div>
-        <div><dt>Zemljevid</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Mizarstvo+Dejan+Umek+Stara+Cerkev" target="_blank" rel="noopener">Odpri v Google Maps</a></dd></div>
-      </dl>
-    </div>
-  </div>
+<section class="blk" id="podatki" aria-labelledby="podatki-h">
+  <h2 class="lab" id="podatki-h">Podatki</h2>
+  <dl class="facts">
+    <div><dt>Podjetje</dt><dd>Mizarstvo Dejan Umek s.p.</dd></div>
+    <div><dt>Kraj</dt><dd>Stara Cerkev pri Kočevju</dd></div>
+    <div><dt>Telefon</dt><dd><a href="tel:+38641708628">041 708 628</a></dd></div>
+    <div><dt>Od leta</dt><dd>1997, registrirana dejavnost</dd></div>
+    <div><dt>Delovni čas</dt><dd>Pokličite za dogovor</dd></div>
+    <div><dt>Zemljevid</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Mizarstvo+Dejan+Umek+Stara+Cerkev" target="_blank" rel="noopener">Odpri v Google Maps</a></dd></div>
+  </dl>
+  <a class="calltxt" href="tel:+38641708628">Pokličite 041 708 628</a>
 </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <b>Mizarstvo Dejan Umek s.p.</b>
-    <div>Stara Cerkev · <a href="tel:+38641708628">041 708 628</a></div>
-    <div>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje · <a href="https://alejkump.si" target="_blank" rel="noopener">alejkump.si</a></div>
-  </div>
+  <b>Mizarstvo Dejan Umek s.p.</b>
+  <span>Stara Cerkev · <a href="tel:+38641708628">041 708 628</a></span>
+  <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje · <a href="https://alejkump.si" target="_blank" rel="noopener">alejkump.si</a></span>
 </footer>
 
-<a class="sticky-call" id="stickyCall" href="tel:+38641708628">
+<a class="call" href="tel:+38641708628" aria-label="Pokličite Mizarstvo Dejan Umek: 041 708 628">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-  Pokliči 041 708 628
 </a>
 
 <script>
 (function(){
-  var d=document, b=d.body;
-  b.classList.remove('no-js');
-  var reduce=window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // preview protection — tel: links stay clickable
-  d.addEventListener('contextmenu',function(e){e.preventDefault();});
-  d.addEventListener('selectstart',function(e){e.preventDefault();});
-  d.addEventListener('dragstart',function(e){e.preventDefault();});
-  d.addEventListener('copy',function(e){e.preventDefault();});
-
-  // scroll reveal
-  var els=d.querySelectorAll('.rv');
-  if(reduce || !('IntersectionObserver' in window)){
-    els.forEach(function(el){el.classList.add('in');});
-  } else {
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
-    },{rootMargin:'0px 0px -8% 0px',threshold:.12});
-    els.forEach(function(el){io.observe(el);});
-  }
-
-  // header, sticky call, parallax
-  var top=d.getElementById('top'), sticky=d.getElementById('stickyCall'), hm=d.getElementById('heroMedia'), ticking=false;
-  function onScroll(){
-    var y=window.pageYOffset||0, h=window.innerHeight;
-    top.classList.toggle('solid', y>40);
-    sticky.classList.toggle('show', y>h*0.6);
-    if(!reduce && y<h*1.2){ hm.style.transform='translate3d(0,'+(y*0.28).toFixed(1)+'px,0)'; }
-    ticking=false;
-  }
-  window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(onScroll);} },{passive:true});
-  onScroll();
+  var d=document;
+  /* preview protection; tel: links stay clickable */
+  ['contextmenu','selectstart','dragstart','copy'].forEach(function(t){d.addEventListener(t,function(e){e.preventDefault();});});
 })();
 </script>
 
-<!--
-  VIRI DEJSTEV (preverjeno 2026-10-14):
-  - https://www.bizi.si/MIZARSTVO-DEJAN-UMEK-S-P/ — ime, Stara Cerkev, tel. 041 708628, datum registracije 1. 1. 1997,
-    dejavnosti "Mizarstvo; Stavbno pohištvo; Pohištvo in oprema".
-  - https://www.companywall.si/podjetje/mizarstvo-dejan-umek-sp/MM1KvnXC — proizvodnja pohištva, registracija 1. 1. 1997, tel. 041708628.
-  - Delovni čas: ni najden v javnih virih -> "Pokličite za dogovor".
-  - Storitve (kuhinje, omare/garderobe, notranja vrata, obnova) so splošne kategorije — POTRDI LASTNIK.
-  - Ulica namenoma ni prikazana. Vse fotografije: AI-generirani ilustrativni prikazi (Higgsfield), niso izdelki podjetja.
--->
 </body>
 </html>
