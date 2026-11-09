@@ -29,9 +29,8 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" as="image" href="/assets/avtolep/img/hero-pnevmatika-m.webp" media="(max-width: 760px)" fetchpriority="high">
 <link rel="preload" as="image" href="/assets/avtolep/img/hero-pnevmatika.webp" media="(min-width: 761px)" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,600..900&amp;family=Inter+Tight:wght@400;500;600&amp;display=swap">
+<link rel="preload" as="font" type="font/woff2" href="/assets/avtolep/fonts/archivo-sl-wght700-800-wdth88-110.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/avtolep/fonts/inter-tight-sl-wght400-700.woff2" crossorigin>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,6 +60,9 @@
 }
 </script>
 <style>
+/* self-hosted subsets (Latin + Slovene diacritics), OFL; see /assets/avtolep/fonts/OFL-*.txt */
+@font-face{font-family:"Archivo";src:url(/assets/avtolep/fonts/archivo-sl-wght700-800-wdth88-110.woff2) format("woff2");font-weight:700 800;font-stretch:88% 110%;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter Tight";src:url(/assets/avtolep/fonts/inter-tight-sl-wght400-700.woff2) format("woff2");font-weight:400 700;font-style:normal;font-display:swap}
 :root{
   --y:#F0C808; --y2:#FFD83A; --bg:#121417; --bg2:#181B1F; --card:#1D2126; --line:rgba(255,255,255,.09);
   --ink:#EDEEEF; --mute:#B4B9BF; --dark:#121417;

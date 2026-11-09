@@ -78,6 +78,7 @@
   /* ---------- kinetic headings: split into masked words ---------- */
   function splitWords(h) {
     if (h._split) return; h._split = true;
+    if (h.closest && h.closest('.hero')) return; // home headline stays static real text (LCP)
     var n = 0;
     (function walk(node) {
       [].slice.call(node.childNodes).forEach(function (c) {
@@ -238,8 +239,11 @@
   function play(v) { var p = v.play && v.play(); if (p && p.catch) p.catch(function () {}); }
   if (hero) {
     hero.muted = true; hero.setAttribute('playsinline', ''); hero.setAttribute('muted', '');
-    play(hero);
-    ['touchstart', 'scroll', 'click'].forEach(function (ev) { w.addEventListener(ev, function once() { play(hero); w.removeEventListener(ev, once); }, { passive: true }); });
+    // poster first; the video starts after load and after the intro has gone
+    var heroGo = function () { if (hero._go) return; hero._go = true; hero.preload = 'auto'; hero.autoplay = true; play(hero); };
+    var heroWait = function () { if (d.querySelector('.intro:not(.out)')) setTimeout(heroWait, 250); else heroGo(); };
+    if (d.readyState === 'complete') heroWait(); else { w.addEventListener('load', heroWait); setTimeout(heroWait, 4500); }
+    ['touchstart', 'scroll', 'click'].forEach(function (ev) { w.addEventListener(ev, function once() { if (hero._go) play(hero); w.removeEventListener(ev, once); }, { passive: true }); });
   }
   var lazyv = [].slice.call(d.querySelectorAll('video.lazyvid'));
   function loadV(v) {
