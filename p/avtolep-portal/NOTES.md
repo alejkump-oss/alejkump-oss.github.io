@@ -47,3 +47,11 @@ Reduced motion: brez videa (samo posterji), brez nagiba, takojšnji prehodi.
 
 ## Pred objavo na pravi domeni
 Prave fotografije/video delavnice od stranke, logotip, potrditev storitev in delovnega časa.
+
+## Preverjanje 10. 11. 2026 (rezultat dneva, ponovi z ukazom)
+- `node scripts/lighthouse-check.mjs https://alejkump.si/p/avtolep-portal/` (live-site), 3 zagoni, mobilno:
+  performance 99 / 100 / 86, accessibility 100 / 96 / 96, best-practices 100 ×3, SEO 63 ×3
+  (SEO samo zaradi noindex, namerno). Mediana: 99 / 96 / 100 / 63.
+- Python Playwright: WebKit iPhone 13 in Edge iPhone 13 emulacija: preloader, tap na okno → 02 → 03,
+  tel: v končnem oknu, brez napak v konzoli, brez vodoravnega drsenja; Edge 1440×900. Edge: video sličice
+  v oknu in ozadju se premikajo (currentTime raste).
