@@ -28,7 +28,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scrollbar-width:none;background:#000}
 html::-webkit-scrollbar{display:none}
-html,body{overflow-x:clip;max-width:100%}
+/* one screen: the experience never scrolls away; the details open as a sheet from Menu */
+html,body{overflow:hidden;max-width:100%;height:100%;overscroll-behavior:none}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -64,7 +65,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (min-width:641px){.call .t-short{display:none}}
 
 /* hero stage */
-.hero{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:#000}
+.hero{position:fixed;left:0;right:0;top:0;height:100vh;height:100dvh;overflow:hidden;background:#000;touch-action:manipulation}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .shade{position:absolute;inset:0;pointer-events:none;background:
   linear-gradient(180deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,0) 22%),
@@ -134,7 +135,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 @media (hover:none),(pointer:coarse){.cur{display:none}}
 
 /* info section below the hero */
-.info{position:relative;scroll-margin-top:60px;background:#0b0c0e;border-top:1px solid rgba(255,255,255,.1);padding:clamp(56px,9vw,104px) var(--g) 40px}
+.info{position:fixed;left:0;right:0;top:0;height:100vh;height:100dvh;z-index:65;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;background:#0b0c0e;padding:calc(var(--top) + 84px) var(--g) calc(40px + env(safe-area-inset-bottom));transform:translateY(100%);visibility:hidden;transition:transform .55s var(--ease),visibility 0s linear .55s}
+.info.open{transform:none;visibility:visible;transition:transform .55s var(--ease),visibility 0s}
+.shut{position:sticky;top:0;float:right;margin:-8px 0 8px 12px;min-height:44px;padding:0 16px;border-radius:99px;background:#fff;color:#0b0c0e;font-weight:600;font-size:14px;z-index:2}
+.sheet .hdr{background:rgba(11,12,14,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .info .in{max-width:1160px;margin:0 auto}
 .info h2{font-family:var(--disp);font-weight:400;font-size:clamp(40px,7vw,84px);line-height:.92;text-transform:uppercase}
 .info .lede{color:var(--soft);max-width:60ch;margin-top:16px;font-size:17px}
@@ -179,7 +183,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 }
 @media (prefers-reduced-motion:reduce){
   .rise{animation:none}
-  .chrome,.hdr-r,.list,.count,.pre,.panel{transition:none!important}
+  .chrome,.hdr-r,.list,.count,.panel{transition:none!important}
+  .info,.info.open{transition:visibility 0s!important}
   .logo.fly{transition:none}
 }
 </style>
@@ -203,7 +208,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <button type="button" role="menuitem" data-go="0">Pnevmatike <span>01</span></button>
   <button type="button" role="menuitem" data-go="1">Servis <span>02</span></button>
   <button type="button" role="menuitem" data-go="2">Pot do nas <span>03</span></button>
-  <a role="menuitem" href="#podatki">Vsi podatki <span>↓</span></a>
+  <button type="button" role="menuitem" id="openInfo" aria-controls="podatki">Vsi podatki in kontakt <span>↑</span></button>
   <a role="menuitem" class="pc" href="tel:+38631607346">Pokliči 031 607 346 <span style="color:inherit">→</span></a>
 </div>
 
@@ -231,8 +236,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   </div>
 </section>
 
-<section class="info" id="podatki" aria-labelledby="info-h">
+<section class="info" id="podatki" aria-labelledby="info-h" aria-hidden="true">
   <div class="in">
+    <button class="shut" id="shut" type="button">Zapri</button>
     <h2 id="info-h">Vulkanizerstvo in avtoservis</h2>
     <p class="lede">AVTOLEP, avtoservisne storitve, d.o.o. Vulkanizerstvo in avtoservis za Kočevje in okolico, od leta 2008.</p>
     <div class="cols">
@@ -318,6 +324,9 @@ function vid(name, loop){
     var revive = function(){ if (KEEP["v:"+name] && !document.hidden) setTimeout(function(){ if (v.paused && KEEP["v:"+name]) play(v); }, 60); };
     v.addEventListener("pause", revive); v.addEventListener("ended", function(){ try { v.currentTime = 0; } catch(e){} revive(); });
   }
+  v.setAttribute("webkit-playsinline", "");
+  /* a frame counts only once the video has really advanced: iOS can report readyState 4 and still paint nothing */
+  v.addEventListener("timeupdate", function(){ if (v.currentTime > 0) v._live = true; });
   v.style.cssText = "position:absolute;left:0;top:0;width:160px;height:90px;object-fit:cover";
   hold.appendChild(v);
   media["v:"+name] = v; return v;
@@ -325,7 +334,7 @@ function vid(name, loop){
 var playLog = window.__playLog = [];
 var KEEP = {};
 function play(v){
-  if (!v || RM) return;
+  if (!v) return;
   try { var p = v.play(); if (p && p.catch) p.catch(function(e){ playLog.push(v.src.split("/").pop() + ": " + e.name); }); } catch(e){}
 }
 /* only the visible background and the portal's video decode; everything else rests */
@@ -337,14 +346,14 @@ function settle(){
 }
 function ok(src){
   if (!src) return false;
-  if (src.tagName === "VIDEO") return src.readyState >= 2 && src.videoWidth > 0;
+  if (src.tagName === "VIDEO") return !!src._live && src.readyState >= 2 && src.videoWidth > 0;
   if (src.tagName === "CANVAS") return src.width > 0;
   return src.complete && src.naturalWidth > 0;
 }
 /* best drawable for a state's background */
 function bgOf(i){
   var v = media["v:"+S[i].bg];
-  if (v && ok(v) && !RM) return v;
+  if (v && ok(v)) return v;
   return img(S[i].bg);
 }
 function portalOf(i){
@@ -413,7 +422,7 @@ var $ = function(id){ return document.getElementById(id); };
 function easeIO(t){ return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2; }
 function tween(ms, fn, ease){
   return new Promise(function(res){
-    if (RM) ms = Math.min(ms, 1);
+    if (RM) ms = Math.min(ms, 280);
     var t0 = performance.now();
     (function step(now){
       var t = Math.min(1, (now - t0)/ms);
@@ -539,7 +548,7 @@ async function travel(){
   var to = cur + 1;
   hero.classList.add("out");
   var tv = media["v:"+S[cur].trans];
-  var useTv = tv && ok(tv) && !RM;
+  var useTv = tv && tv.readyState >= 2 && !RM;
   if (useTv){ try { tv.currentTime = 0; } catch(e){} tv.playbackRate = 1.3; play(tv); portalSrc = tv; }
   else { portalSrc = bgOf(to); play(media["v:"+S[to].bg]); }
   await tween(1100, function(t){ expansion = t; });
@@ -575,8 +584,8 @@ async function jump(to){
 function preloadAround(){
   /* later videos are fetched only after the hero is on screen */
   S.forEach(function(s, i){
-    if (Math.abs(i - cur) <= 1 || i === cur + 2){ img(s.bg); if (!RM) vid(s.bg, true); }
-    if (s.trans && i >= cur && i <= cur + 1 && !RM) vid(s.trans, false);
+    if (Math.abs(i - cur) <= 1 || i === cur + 2){ img(s.bg); vid(s.bg, true); }
+    if (s.trans && i >= cur && i <= cur + 1) vid(s.trans, false);
     if (s.still) img(s.still);
   });
 }
@@ -589,7 +598,7 @@ hit.addEventListener("click", function(e){
 });
 document.addEventListener("click", function(e){
   var b = e.target.closest("[data-go]");
-  if (b){ e.preventDefault(); jump(+b.dataset.go); }
+  if (b){ e.preventDefault(); sheet(false); jump(+b.dataset.go); }
 });
 var menuBtn = $("menuBtn"), panel = $("panel");
 function closeMenu(){ panel.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }
@@ -600,7 +609,15 @@ menuBtn.addEventListener("click", function(e){
 });
 document.addEventListener("click", function(e){ if (!e.target.closest("#panel") && !e.target.closest("#menuBtn")) closeMenu(); });
 panel.addEventListener("click", function(e){ if (e.target.closest("a")) closeMenu(); });
-document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeMenu(); });
+document.addEventListener("keydown", function(e){ if (e.key === "Escape"){ closeMenu(); sheet(false); } });
+var info = $("podatki");
+function sheet(o){
+  info.classList.toggle("open", o); info.setAttribute("aria-hidden", String(!o));
+  document.body.classList.toggle("sheet", o);
+  if (o){ info.scrollTop = 0; $("shut").focus({preventScroll:true}); }
+}
+$("openInfo").addEventListener("click", function(){ closeMenu(); sheet(true); });
+$("shut").addEventListener("click", function(){ sheet(false); });
 
 /* first touch on iOS low-power mode: start videos inside the gesture */
 document.addEventListener("pointerdown", function(){ if (started) settle(); }, {passive:true});
@@ -630,6 +647,7 @@ if (FINE){
   })();
 }
 
+window.__state = function(){ return {cur:cur, mask:+maskScale.toFixed(3), started:started, bgVideo:bgOf(cur).tagName, portal:portalOf(cur).tagName}; };
 /* ---------- preloader ---------- */
 var logo = $("logo"), count = $("count"), pre = $("pre"), introV = $("introV");
 function centreLogo(){
@@ -640,36 +658,43 @@ function centreLogo(){
 }
 async function boot(){
   size(); render();
-  addEventListener("resize", function(){ size(); });
-  var onScroll = function(){ document.body.classList.toggle("solid", scrollY > H - 90); };
-  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+  addEventListener("resize", size);
+  /* iOS Safari/Chrome resize the visual viewport when the address bar moves */
+  if (window.visualViewport) visualViewport.addEventListener("resize", size);
+  addEventListener("orientationchange", function(){ setTimeout(size, 250); });
   requestAnimationFrame(frame);
   logo.classList.add("big");
   centreLogo();
-  if (RM){ introV.removeAttribute("autoplay"); try { introV.pause(); } catch(e){} } else play(introV);
-  /* the first two backgrounds start loading during the preloader; nothing else yet */
+  play(introV);
+  /* the first two backgrounds start loading and playing during the preloader; nothing else yet */
   img(S[0].bg); img(S[1].bg);
-  if (!RM){ vid(S[0].bg, true); vid(S[1].bg, true); }
-  var DUR = RM ? 200 : 3000, t0 = performance.now(), firstReady = false;
+  vid(S[0].bg, true); vid(S[1].bg, true);
+  settle();
+  /* the counter runs on visible frame time, not wall time: a page opened in the background
+     (Gmail -> Chrome) must not find its preloader already finished */
+  var DUR = RM ? 1600 : 3000, el = 0, last0 = 0;
   await new Promise(function(res){
     (function tick(now){
-      var p = Math.min(1, (now - t0) / DUR);
-      if (p >= 1 && !(ok(bgOf(0)) && ok(portalOf(0))) && now - t0 < DUR + 2500) p = 0.99;
+      if (last0) el += Math.min(250, now - last0);
+      last0 = now;
+      var p = Math.min(1, el / DUR);
+      if (p >= 1 && !(ok(bgOf(0)) && ok(portalOf(0))) && el < DUR + 2500) p = 0.99;
       count.textContent = Math.round(p * 100) + "%";
       if (p >= 1) res(); else requestAnimationFrame(tick);
-    })(t0);
+    })(performance.now());
   });
   settle();
   count.classList.add("gone");
   await wait(250);
-  logo.classList.add("fly"); logo.style.transform = "";
+  if (!RM) logo.classList.add("fly");
+  logo.style.transform = "";
   document.body.classList.remove("loading");
   pre.classList.add("gone");
   started = true;
   hero.classList.add("ready");
   render();
   await reopen();
-  setTimeout(function(){ logo.classList.remove("big", "fly"); try { introV.pause(); } catch(e){} pre.style.display = "none"; }, 2100);
+  setTimeout(function(){ logo.classList.remove("big", "fly"); try { introV.pause(); } catch(e){} pre.style.display = "none"; }, RM ? 900 : 2100);
   /* lazy: transitions and the third state only after the hero is up */
   setTimeout(preloadAround, 600);
 }
