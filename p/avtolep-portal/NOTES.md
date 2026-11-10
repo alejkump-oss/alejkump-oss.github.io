@@ -55,3 +55,13 @@ Prave fotografije/video delavnice od stranke, logotip, potrditev storitev in del
 - Python Playwright: WebKit iPhone 13 in Edge iPhone 13 emulacija: preloader, tap na okno → 02 → 03,
   tel: v končnem oknu, brez napak v konzoli, brez vodoravnega drsenja; Edge 1440×900. Edge: video sličice
   v oknu in ozadju se premikajo (currentTime raste).
+
+## Popravek za iPhone (10. 11. 2026, po lastnikovem posnetku s pravega iPhona, Chrome iOS)
+Vzrok: na telefonu je vklopljeno "Zmanjšaj gibanje" (prefers-reduced-motion) — lastnikove sličice se ujemajo
+z WebKit + reduced_motion do piksla. Stran je v tem načinu skrajšala preloader na 0,2 s, ustavila vse videe
+(samo posterji) in okno je bilo statična slika. Poleg tega je bila stran dolga in se je drsala.
+Popravljeno: videi se predvajajo tudi pri zmanjšanem gibanju (gibanje je le krajše, brez nagiba, brez prehodnih
+posnetkov); preloader šteje čas vidnih sličic; video se riše šele, ko res teče, sicer poster; en zaslon
+(hero fixed, stran se ne drsa), podatki v listu iz Menu; visualViewport resize.
+Preverjeno: WebKit iPhone 13 (normalno, reduced motion, blokirani videi = posterji v oknu) in Edge iPhone 13,
+vse PASS. Lighthouse live 3 zagoni: performance 100/100/100, accessibility 100/100/96, BP 100, SEO 63 (noindex).
