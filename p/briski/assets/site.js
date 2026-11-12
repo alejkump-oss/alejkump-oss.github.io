@@ -51,8 +51,8 @@
   }
 
   /* open/closed status, computed in Europe/Ljubljana time.
-     Hours (kocevje.com, 5. 11. 2026): Mon-Fri 9:30-21:00, weekends and holidays 12:00-21:00 (pizza; kitchen until 20:30). Holidays are not modelled. */
-  var OPEN={0:720,1:570,2:570,3:570,4:570,5:570,6:720}, CLOSE=21;
+     Hours (kocevje.com, 5. 11. 2026): Mon-Fri 9:30-21:00, weekends 11:00-21:00 (owner via Alej, 12. 11. 2026) (pizza; kitchen until 20:30). Holidays are not modelled. */
+  var OPEN={0:660,1:570,2:570,3:570,4:570,5:570,6:660}, CLOSE=21;
   function hm(m){return Math.floor(m/60)+'.'+('0'+(m%60)).slice(-2);}
   var WD={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
   function nowParts(){
