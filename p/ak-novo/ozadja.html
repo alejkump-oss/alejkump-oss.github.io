@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Animirana ozadja</title>
+<meta name="description" content="Knjižnica animiranih ozadij AK agencija: osem ozadij, vsa delujejo v živo.">
+<meta name="theme-color" content="#0b1016">
+<link rel="icon" type="image/svg+xml" href="img/ak-mark.svg">
+<link rel="preload" as="font" type="font/woff2" href="fonts/instrument-serif-latin-400-normal.woff2" crossorigin>
+<link rel="stylesheet" href="bg/bg.css">
+<link rel="stylesheet" href="site.css">
+<style>
+header{padding:22px 0 8px}
+.back{font-size:14px;color:var(--d-soft);text-decoration:none}
+.back:hover{color:var(--d-ink)}
+h1{font:400 clamp(44px,11vw,88px)/1 var(--display);margin:28px 0 0;letter-spacing:-.015em}
+.sub{margin:16px 0 0;max-width:46ch;color:var(--d-soft)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:26px 0 0}
+.bar button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(238,240,243,.3);background:transparent;color:var(--d-ink);font:600 15px/1 var(--sans);cursor:pointer}
+.bar button[aria-pressed=true]{background:var(--glow);border-color:var(--glow);color:#1a0e08}
+.bar span{font-size:14px;color:var(--d-faint)}
+.grid{display:grid;gap:16px;margin:32px 0 80px}
+.card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--raised)}
+.card .bg{height:240px;display:flex;align-items:flex-end;padding:16px 18px}
+.card .bg b{font:400 40px/1 var(--display);color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.card .txt{padding:16px 18px 20px}
+.card p{margin:0;color:#d9dee5;font-size:15.5px}
+.card .fit{margin-top:8px;color:var(--d-faint);font-size:14px}
+.card code{font:500 12.5px/1.4 ui-monospace,Menlo,Consolas,monospace;color:var(--peach);display:block;margin-top:10px;overflow-wrap:anywhere}
+footer{padding:24px 0 48px;border-top:1px solid var(--line);font-size:13.5px;color:var(--d-faint)}
+@media (min-width:760px){:root{--gut:40px}.grid{grid-template-columns:1fr 1fr}.card .bg{height:300px}}
+@media (min-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div class="label" aria-hidden="true">Predogled · AK agencija</div>
+<header class="wrap">
+  <a class="back" href="index.html">← Nazaj na predogled</a>
+  <h1>Animirana ozadja</h1>
+  <p class="sub">Osem ozadij, vsako je ena majhna datoteka brez knjižnic. Ko je ozadje izven zaslona ali je zavihek skrit, se ustavi. Z vklopljeno možnostjo Zmanjšaj gibanje teče s 25 % hitrosti.</p>
+  <div class="bar">
+    <button type="button" id="slow" aria-pressed="false">Prikaži počasno hitrost (25 %)</button>
+    <span id="mode"></span>
+  </div>
+</header>
+<main class="wrap grid" id="main">
+  <article class="card"><div class="bg" data-bg="aurora"><b>Aurora</b></div><div class="txt"><p>Severni sij: mehke zavese svetlobe, ki valovijo pod nočnim nebom.</p><p class="fit">Za: nastanitve, wellness, fotografe, dogodke.</p><code>data-bg="aurora"</code></div></article>
+  <article class="card"><div class="bg" data-bg="silk"><b>Silk</b></div><div class="txt"><p>Svila: počasne gube satena z mehkim odsevom.</p><p class="fit">Za: salone, kozmetiko, poroke, modo.</p><code>data-bg="silk"</code></div></article>
+  <article class="card"><div class="bg" data-bg="mesh"><b>Mesh</b></div><div class="txt"><p>Barvna mreža: barvni madeži, ki se počasi prelivajo, z zrnatostjo filma.</p><p class="fit">Za: agencije, svetovalce, IT, ustvarjalce.</p><code>data-bg="mesh"</code></div></article>
+  <article class="card"><div class="bg" data-bg="flame"><b>Flame</b></div><div class="txt"><p>Plamen: topel sij, ki se dviga od spodaj, kot iz odprte peči.</p><p class="fit">Za: picerije, gostilne, peke, kamine, savne.</p><code>data-bg="flame"</code></div></article>
+  <article class="card"><div class="bg" data-bg="particles"><b>Particles</b></div><div class="txt"><p>Delci: mehke svetleče pike, ki se dvigajo kot žerjavica ali bokeh.</p><p class="fit">Za: gostinstvo, dogodke, praznovanja, glasbenike.</p><code>data-bg="particles"</code></div></article>
+  <article class="card"><div class="bg" data-bg="beams"><b>Beams</b></div><div class="txt"><p>Žarki: fina mreža, po kateri potujejo svetlobni žarki.</p><p class="fit">Za: obrtnike, elektro, gradbince, tehnična podjetja.</p><code>data-bg="beams"</code></div></article>
+  <article class="card"><div class="bg" data-bg="waves"><b>Waves</b></div><div class="txt"><p>Valovi: plasti prosojnih valov, ki se počasi kotalijo.</p><p class="fit">Za: bazene, vodovodarje, turizem ob vodi, čistilne servise.</p><code>data-bg="waves"</code></div></article>
+  <article class="card"><div class="bg" data-bg="dots"><b>Dots</b></div><div class="txt"><p>Pike: mreža pik, čez katero se širijo tihi valovi svetlobe.</p><p class="fit">Za: računovodje, pravnike, zdravstvo, poslovne storitve.</p><code>data-bg="dots"</code></div></article>
+</main>
+<footer class="wrap">Vsa ozadja so lastna izdelava AK agencija. Licence in viri: LICENSES.md v mapi assets/bg.</footer>
+<script>
+(function(){var b=document.getElementById("slow"),m=document.getElementById("mode");
+var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+m.textContent=rm?"Vaša naprava ima vklopljeno Zmanjšaj gibanje: ozadja že tečejo s 25 %.":"";
+b.addEventListener("click",function(){var on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",String(on));
+(window.AKBG&&AKBG.instances||[]).forEach(function(I){I.speed=on?0.25:1;});});})();
+</script>
+<script src="bg/bg.js" defer></script>
+</body>
+</html>
