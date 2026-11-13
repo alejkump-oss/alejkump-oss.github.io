@@ -1,4 +1,15 @@
-/* AK agencija · alejkump.si shared script: the mobile menu, then the constellation. */
+/* AK agencija · alejkump.si shared script: nav scroll state, the mobile menu, then the constellation. */
+
+/* ---------- nav: transparent at the top, a flat solid fill once the page scrolls ---------- */
+(() => {
+  "use strict";
+  const nav = document.querySelector(".nav");
+  if (!nav) return;
+  let raf = 0;
+  const update = () => { nav.classList.toggle("is-solid", window.scrollY > 8); raf = 0; };
+  addEventListener("scroll", () => { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+  update();
+})();
 
 /* ---------- mobile menu: the header nav becomes a full-screen list below 1200 px ---------- */
 (() => {
