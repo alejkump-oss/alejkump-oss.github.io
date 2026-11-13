@@ -1,0 +1,216 @@
+/* AK agencija · alejkump.si, shared stylesheet.
+   Reference lock: the owner-approved demo p/ak-dala (13. 11. 2026), Refero style
+   "Dala — constellation floating on black velvet". Pure black void, white type, two greys.
+   Violet #8052ff = the single primary pill per view and the logo mark only.
+   Amber #ffb829 = small uppercase labels and one emphasis. Teal #15846e = logo gradient
+   stop and particles only. No cards, borders, shadows or panels.
+   Inter (OFL, self-hosted, variable) substitutes the licensed PP Neue Montreal. */
+
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-wght-normal.woff2) format("woff2-variations"),url(fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/inter-latin-ext-wght-normal.woff2) format("woff2-variations"),url(fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --void:#000; --ink:#fff; --g1:#bdbdbd; --g2:#9a9a9a;
+  --violet:#8052ff; --violet-h:#9573ff; --amber:#ffb829;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:24px; --max:1280px;
+  --gap:clamp(60px,9vw,120px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--void);scroll-behavior:smooth}
+.rm{scroll-behavior:auto}
+body{margin:0;background:var(--void);color:var(--ink);font:200 18px/1.55 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+strong{font-weight:500}
+:focus-visible{outline:2px solid var(--amber);outline-offset:4px;border-radius:4px}
+::selection{background:var(--violet);color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.skip{position:absolute;left:16px;top:-60px;z-index:30;background:#fff;color:#000;padding:10px 14px;border-radius:24px;font-weight:600;font-size:14px;text-decoration:none}
+.skip:focus{top:12px}
+
+/* the constellation canvas sits behind everything */
+#sky{position:fixed;left:0;top:0;width:100%;height:100vh;height:100lvh;z-index:0;pointer-events:none;display:block}
+.rm .home #sky{position:absolute}
+main,.foot,.nav{position:relative;z-index:1}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+
+/* nav: no panel, a fade into the void so text stays legible over particles */
+.nav{position:fixed;inset:0 0 auto 0;z-index:10;background:linear-gradient(#000 0,rgba(0,0,0,.82) 55%,rgba(0,0,0,0) 100%);padding-top:env(safe-area-inset-top)}
+.nav-in{display:flex;align-items:center;gap:28px;height:76px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;letter-spacing:-.01em;flex:none}
+.mark{width:26px;height:26px;flex:none}
+.links{display:flex;gap:22px;margin-left:auto}
+.links a,.nav-tel{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.025em;text-decoration:none;color:var(--g1);transition:color .2s;white-space:nowrap}
+.links a:hover,.nav-tel:hover,.links a[aria-current="page"]{color:#fff}
+.links a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:8px;text-decoration-thickness:2px}
+.nav-tel{color:#fff;flex:none}
+.show-s{display:none}
+.burger{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-right:-10px;padding:0;background:none;border:0;color:#fff;cursor:pointer}
+.burger .bars{position:relative;display:block;width:22px;height:2px;background:currentColor;transition:background-color .2s}
+.burger .bars::before,.burger .bars::after{content:"";position:absolute;left:0;width:22px;height:2px;background:currentColor;transition:transform .2s}
+.burger .bars::before{top:-7px}.burger .bars::after{top:7px}
+.menu-open .burger .bars{background:transparent}
+.menu-open .burger .bars::before{transform:translateY(7px) rotate(45deg)}
+.menu-open .burger .bars::after{transform:translateY(-7px) rotate(-45deg)}
+
+/* type */
+.label{font-size:12px;font-weight:600;line-height:1.3;text-transform:uppercase;letter-spacing:.09em;color:var(--amber)}
+h1,h2{font-weight:400;letter-spacing:-.04em;line-height:1.02;text-wrap:balance}
+h1{font-size:clamp(44px,7.4vw,108px);margin-top:22px}
+h2{font-size:clamp(38px,5.6vw,80px);margin-top:20px}
+h2.h-m{font-size:clamp(32px,4vw,58px);line-height:1.05}
+h3{font-weight:400;letter-spacing:-.02em;line-height:1.2;font-size:24px}
+.lead,.body{color:var(--g1);max-width:34em;text-wrap:pretty}
+.lead{margin-top:28px}
+.lead + .lead{margin-top:16px}
+.body{margin-top:24px}
+.body a,.lead a,.steps a,.faq a,.small a{color:#fff;text-underline-offset:4px;text-decoration-color:rgba(255,255,255,.4)}
+.row > div > .body:first-child{margin-top:0}
+.meta{margin-top:24px;font-size:14px;color:var(--g2)}
+.note{margin-top:48px;font-size:14px;line-height:1.6;color:var(--g2);max-width:60em}
+.note a{color:#fff;text-underline-offset:3px}
+.small{font-size:15px;line-height:1.6;color:var(--g2)}
+
+/* actions: one violet pill per view; everything else is a plain text link */
+.acts{display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px;margin-top:40px}
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:24px;background:var(--violet);color:#fff;font-size:16px;font-weight:500;letter-spacing:-.005em;text-decoration:none;transition:background-color .2s}
+.pill:hover{background:var(--violet-h)}
+.tlink{display:inline;font-weight:400;font-size:16px;color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:6px;transition:text-decoration-color .2s}
+.tlink:hover{text-decoration-color:#fff}
+.tlink.sm{font-size:15px;display:inline-block;margin-top:16px}
+
+/* home hero */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:110px 0 60px}
+.hero-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;align-items:center;width:100%}
+.orbit{aspect-ratio:480/340;width:100%}
+
+/* subpage hero: the same type, no constellation, only the drifting dust behind */
+.phero{padding:clamp(150px,20vw,230px) 0 clamp(20px,4vw,48px)}
+.phero h1{font-size:clamp(44px,7vw,100px);max-width:13em}
+.phero .lead{max-width:38em}
+
+/* sections: spacious two-column zigzag */
+.sec{padding:var(--gap) 0}
+.row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,7vw,112px);align-items:center}
+.row.top{align-items:start}
+.row.rev > :first-child{order:2}
+.row.head{align-items:end}
+
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 32px;margin-top:56px}
+.facts dt{font-size:clamp(36px,3.6vw,52px);font-weight:400;letter-spacing:-.04em;line-height:1}
+.facts dt.em{color:var(--amber)}
+.facts dd{margin-top:10px;font-size:15px;line-height:1.45;color:var(--g2)}
+
+.ticks{display:grid;gap:12px;margin-top:32px;color:var(--g1);font-size:17px}
+.ticks li{display:flex;gap:14px;align-items:baseline}
+.ticks li::before{content:"";flex:none;width:7px;height:7px;transform:translateY(-2px) rotate(45deg);background:var(--g2)}
+
+.shot{border-radius:24px;overflow:hidden;background:#0b0b0b}
+.shot img{width:100%}
+.shot.crop img{aspect-ratio:4/3;object-fit:cover;object-position:top}
+
+.concepts{margin-top:var(--gap)}
+.concepts-head{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,7vw,112px);align-items:end}
+.concepts-head .body{margin-top:0}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 32px;margin-top:48px}
+.trio h3{margin-top:24px;font-size:22px}
+.trio p{margin-top:8px;color:var(--g1);font-size:16px;line-height:1.5}
+
+.steps{display:grid;gap:44px}
+.steps h3{margin-top:10px}
+.steps p{margin-top:8px;color:var(--g1);max-width:30em}
+.steps.wide{grid-template-columns:repeat(4,minmax(0,1fr));gap:44px 40px;margin-top:64px}
+
+.portrait{border-radius:24px;overflow:hidden;max-width:460px;width:100%;justify-self:center}
+.principles{display:grid;gap:22px;margin:40px 0 36px}
+.principles dd{margin-top:6px;color:var(--g1);font-size:16px;line-height:1.5}
+
+.prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px clamp(32px,4vw,64px);margin-top:72px}
+.amt{font-size:clamp(56px,6vw,88px);font-weight:400;letter-spacing:-.04em;line-height:1;margin-top:18px}
+.amt .from{font-size:.32em;letter-spacing:-.01em;color:var(--g2);margin-right:.3em}
+.price ul{margin-top:28px;display:grid;gap:10px;color:var(--g1);font-size:16px;line-height:1.45}
+.price li.dim,.price .dim{color:var(--g2)}
+.price .sub{margin-top:14px;font-size:15px;line-height:1.5;color:var(--g2)}
+.price p.txt{margin-top:22px;color:var(--g1);font-size:16px;line-height:1.55}
+.price dl{margin-top:28px;display:grid;gap:14px}
+.price dt{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:var(--g2)}
+.price dd{margin-top:4px;color:var(--g1);font-size:16px;line-height:1.45}
+.price .links-col{display:grid;justify-items:start;gap:2px;margin-top:12px}
+.price .flag{margin-left:10px;color:var(--g2)}
+
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px clamp(32px,4vw,64px);margin-top:72px}
+.cols3 h3{font-size:22px}
+.cols3 p{margin-top:12px;color:var(--g1);font-size:16px;line-height:1.6}
+.cols3 p a{color:#fff;text-underline-offset:4px}
+
+.offer{margin-top:64px;max-width:44em;font-size:clamp(20px,2vw,26px);line-height:1.45;letter-spacing:-.015em;color:var(--g1)}
+.offer strong{color:var(--amber);font-weight:500}
+
+/* FAQ: open space instead of rules; the marker is a plus that turns */
+.faq{display:grid;gap:8px;max-width:52em}
+.faq details{padding:18px 0}
+.faq summary{display:flex;justify-content:space-between;gap:24px;cursor:pointer;list-style:none;font-size:clamp(20px,2vw,26px);font-weight:400;letter-spacing:-.02em;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;color:var(--amber);font-weight:300;font-size:1.2em;line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:14px;color:var(--g1);max-width:40em}
+.faq details p + p{margin-top:12px}
+
+.dir{display:grid;gap:36px}
+.dir li{display:grid;gap:6px}
+.dir a{font-size:clamp(22px,2.2vw,30px);font-weight:400;letter-spacing:-.03em;text-decoration:none;width:fit-content}
+.dir a:hover{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.dir .v{color:var(--g2);font-size:15px}
+
+.trades{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:32px;font-size:clamp(20px,2vw,26px);letter-spacing:-.02em}
+.trades li{color:#fff}
+
+.legal-block{margin-top:72px;color:var(--g1);font-size:16px;line-height:1.7}
+.legal-block h3{margin-bottom:14px}
+
+.foot{padding:56px 0 calc(48px + env(safe-area-inset-bottom));color:var(--g2);font-size:13px;line-height:1.6}
+.foot p + p{margin-top:8px}
+.foot a{color:var(--g1);text-underline-offset:3px}
+.foot-links{display:flex;flex-wrap:wrap;gap:10px 24px;margin-bottom:36px;font-size:14px}
+.foot-links a{text-decoration:none;color:var(--g1)}
+.foot-links a:hover,.foot-links a[aria-current="page"]{color:#fff;text-decoration:underline}
+
+@media (max-width:1199px){
+  .burger{display:inline-flex}
+  .nav-tel{margin-left:auto}
+  .links{display:none}
+  .menu-open .links{display:flex;position:fixed;inset:0;z-index:-1;flex-direction:column;gap:6px;margin:0;padding:calc(96px + env(safe-area-inset-top)) var(--gut) 40px;background:#000;overflow-y:auto}
+  .menu-open .links a{font-size:clamp(28px,6vw,40px);font-weight:400;text-transform:none;letter-spacing:-.03em;color:#fff;padding:6px 0}
+  .menu-open{overflow:hidden}
+  .steps.wide{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:899px){
+  :root{--gut:16px}
+  .hero{padding:86px 0 40px;min-height:0}
+  .hero-in{grid-template-columns:1fr;gap:8px}
+  .orbit{order:-1;max-width:520px;margin:0 auto}
+  .row,.concepts-head{grid-template-columns:1fr}
+  .row.rev > :first-child{order:0}
+  .trio,.prices,.cols3{grid-template-columns:1fr}
+  .prices{gap:56px}
+  .portrait{justify-self:start}
+}
+@media (max-width:599px){
+  .hide-s{display:none}.show-s{display:inline}
+  body{font-size:17px}
+  .nav-in{height:64px;gap:20px}
+  .facts{gap:32px 20px;margin-top:40px}
+  .acts{margin-top:32px}
+  .pill{width:100%}
+  .shot.crop img{aspect-ratio:4/5}
+  .steps.wide{grid-template-columns:1fr}
+  .phero{padding-top:120px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
