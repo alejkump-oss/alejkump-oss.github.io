@@ -1,4 +1,9 @@
-/* AK agencija · alejkump.si shared script: nav scroll state, the mobile menu, then the constellation. */
+/* AK agencija · alejkump.si shared script: nav scroll state, the mobile menu, the scroll reveal,
+   then the constellation. */
+
+/* html.js: set here, not inline, so the entrance and reveal styles that hide content only ever
+   apply once this script is actually running; a blocked script leaves the page plainly visible */
+document.documentElement.classList.add("js");
 
 /* ---------- nav: transparent at the top, a flat solid fill once the page scrolls ---------- */
 (() => {
@@ -85,6 +90,23 @@ document.querySelectorAll(".car").forEach((car) => {
   show(0);
 });
 
+/* ---------- reveal: a section rises into place the first time it scrolls into view.
+   The html.js class (set inline in <head>) is what hides it beforehand, so without JS, or
+   with reduced motion, everything is simply visible. ---------- */
+(() => {
+  "use strict";
+  const els = document.querySelectorAll("[data-reveal]");
+  if (!els.length) return;
+  const all = () => els.forEach((el) => el.classList.add("is-in"));
+  if (!("IntersectionObserver" in window) || document.documentElement.classList.contains("rm")) { all(); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
+  els.forEach((el) => io.observe(el));
+  // printing or a full-page capture must never leave a section blank
+  addEventListener("beforeprint", all);
+})();
+
 /* AK agencija · constellation.
    On the homepage (an #orbit element exists) the triangles form the browser window;
    on every other page only the sparse ambient dust drifts behind the text.
@@ -92,8 +114,11 @@ document.querySelectorAll(".car").forEach((car) => {
    headline, text, button, picture). Scrolling past the hero releases them into drifting dust;
    a sparse field of ambient triangles drifts behind the whole page. Pointer and touch tilt
    the shape and push nearby triangles aside. Reduced motion: one static frame, no loop.
-   Canvas 2D, batched into one stroke per colour and alpha level. No dependencies. */
-(() => {
+   Canvas 2D, batched into one stroke per colour and alpha level. No dependencies.
+   Start is deferred: the point cloud is built and the loop started only after the window has
+   loaded and the main thread is idle (requestIdleCallback, 1.5 s cap), so the text, the
+   font and the first tap are never behind it. Until then the canvas is simply black. */
+function bootSky() {
   "use strict";
   const cv = document.getElementById("sky");
   const orbit = document.getElementById("orbit");
@@ -314,7 +339,14 @@ document.querySelectorAll(".car").forEach((car) => {
   if (RM) still(); else start();
 
   addEventListener("resize", () => { if (RM) { still(); return; } size(false); measure(); }, { passive: true });
-  addEventListener("load", () => { measure(); if (RM) still(); });
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measure(); if (RM) still(); });
   document.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+}
+
+(() => {
+  "use strict";
+  let booted = false;
+  const boot = () => { if (booted) return; booted = true; try { bootSky(); } catch (e) { /* the page is complete without the canvas */ } };
+  const idle = () => ("requestIdleCallback" in window ? requestIdleCallback(boot, { timeout: 1500 }) : setTimeout(boot, 250));
+  if (document.readyState === "complete") idle(); else addEventListener("load", idle, { once: true });
 })();
