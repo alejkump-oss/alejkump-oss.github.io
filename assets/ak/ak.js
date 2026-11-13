@@ -28,6 +28,63 @@
   addEventListener("resize", () => { if (innerWidth >= 1200) set(false); }, { passive: true });
 })();
 
+/* ---------- work carousel: native scroll-snap does the swiping; this only wires the dots,
+   prev/next and arrow keys, and keeps the active dot in step with the scroll. No autoplay. ---------- */
+document.querySelectorAll(".car").forEach((car) => {
+  "use strict";
+  const track = car.querySelector(".car-track");
+  const nav = car.querySelector(".car-nav");
+  if (!track || !nav) return;
+  const slides = [...track.children];
+  const dots = [...nav.querySelectorAll(".car-dots button")];
+  const [prev, next] = nav.querySelectorAll(".car-btn");
+  const rm = () => document.documentElement.classList.contains("rm");
+  let cur = 0, raf = 0;
+  const show = (i) => {
+    cur = i;
+    dots.forEach((d, k) => (k === i ? d.setAttribute("aria-current", "true") : d.removeAttribute("aria-current")));
+    prev.setAttribute("aria-disabled", i === 0 ? "true" : "false");
+    next.setAttribute("aria-disabled", i === slides.length - 1 ? "true" : "false");
+  };
+  // a button- or key-driven scroll shows its target at once; scroll events are ignored until it lands
+  let target = -1, guard = 0;
+  const go = (i) => {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    show(i);
+    const left = Math.min(slides[i].offsetLeft - slides[0].offsetLeft, track.scrollWidth - track.clientWidth);
+    if (Math.abs(left - track.scrollLeft) < 2) return;
+    target = i;
+    clearTimeout(guard);
+    guard = setTimeout(() => { target = -1; sync(); }, 900); // fallback where scrollend is missing
+    track.scrollTo({ left, behavior: rm() ? "auto" : "smooth" });
+  };
+  // the slide whose left edge is nearest the track's left edge; at the very end, the last one
+  const sync = () => {
+    raf = 0;
+    if (target >= 0) return;
+    const x = track.scrollLeft, max = track.scrollWidth - track.clientWidth;
+    let i = 0, best = Infinity;
+    slides.forEach((s, k) => { const d = Math.abs(s.offsetLeft - slides[0].offsetLeft - x); if (d < best) { best = d; i = k; } });
+    if (max > 0 && x >= max - 2) i = slides.length - 1;
+    if (i !== cur) show(i);
+  };
+  track.addEventListener("scroll", () => { if (target < 0 && !raf) raf = requestAnimationFrame(sync); }, { passive: true });
+  track.addEventListener("scrollend", () => { if (target >= 0) { clearTimeout(guard); target = -1; } });
+  // a finger on the track always wins over a programmatic scroll still in flight
+  track.addEventListener("pointerdown", () => { target = -1; }, { passive: true });
+  track.addEventListener("touchstart", () => { target = -1; }, { passive: true });
+  dots.forEach((d, k) => d.addEventListener("click", () => go(k)));
+  prev.addEventListener("click", () => go(cur - 1));
+  next.addEventListener("click", () => go(cur + 1));
+  car.addEventListener("keydown", (e) => {
+    if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+    e.preventDefault();
+    go(cur + (e.key === "ArrowRight" ? 1 : -1));
+  });
+  nav.hidden = false;
+  show(0);
+});
+
 /* AK agencija · constellation.
    On the homepage (an #orbit element exists) the triangles form the browser window;
    on every other page only the sparse ambient dust drifts behind the text.

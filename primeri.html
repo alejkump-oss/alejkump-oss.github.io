@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://alejkump.si/assets/img/og-town-1200.jpg">
 <link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-wght-normal.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-ext-wght-normal.woff2" crossorigin>
-<link rel="stylesheet" href="assets/ak/site.css?v=1">
+<link rel="stylesheet" href="assets/ak/site.css?v=2">
 <script>if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("rm");</script>
 </head>
 <body>
@@ -62,67 +62,68 @@
     </div>
   </section>
 
-  <section class="sec" id="izdelano" aria-label="Izdelano">
+  <section class="sec" id="primeri">
     <div class="wrap">
-      <div class="row">
-        <figure class="shot">
-          <img src="assets/ak/img/briski.webp" width="1120" height="972" alt="Posnetek zaslona spletne strani Gostilnice in picerije Briški v Kočevju" decoding="async">
-        </figure>
-        <div>
-          <p class="label">Izdelano</p>
-          <h2>Gostilnica in picerija Briški, Kočevje.</h2>
-          <p class="body">Spletna stran gostilne s pico iz krušne peči: jedilnik, tedenske malice, galerija in delovni čas, z gumbom za klic.</p>
-          <p class="meta">Izdelano · November 2026</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec" id="primeri" aria-labelledby="koncepti-h">
-    <div class="wrap">
-      <div class="concepts-head">
-        <div>
-          <p class="label">Koncepti · izmišljena podjetja</p>
-          <h2 id="koncepti-h">Trije koncepti.</h2>
-        </div>
-        <p class="body">Trije koncepti za podjetja, ki ne obstajajo. Pokažejo, kako bi lahko izgledala vaša stran.</p>
-      </div>
-      <ul class="trio">
-          <li>
+      <div class="car" role="region" aria-roledescription="carousel" aria-label="Izdelano in koncepti">
+        <div class="car-track">
+          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="1 od 4">
+            <figure class="shot crop">
+              <img src="assets/ak/img/briski.webp" width="1120" height="972" alt="Posnetek zaslona spletne strani Gostilnice in picerije Briški v Kočevju" decoding="async">
+            </figure>
+            <p class="label">Izdelano</p>
+            <h2 class="car-title">Gostilnica in picerija Briški, Kočevje.</h2>
+            <p class="car-text">Spletna stran gostilne s pico iz krušne peči: jedilnik, tedenske malice, galerija in delovni čas, z gumbom za klic.</p>
+            <p class="meta">Izdelano · November 2026</p>
+          </div>
+          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="2 od 4">
             <figure class="shot crop">
               <picture>
                 <source media="(max-width: 699px)" srcset="assets/ak/img/mizarstvo-mobile.webp" width="520" height="1125">
                 <img src="assets/ak/img/mizarstvo.webp" width="1120" height="2644" alt="Posnetek zaslona koncepta strani za izmišljeno Mizarstvo Hrast" loading="lazy" decoding="async">
               </picture>
             </figure>
-            <h3>Mizarstvo Hrast</h3>
-            <p>Koncept paketa Lokalni posel, z več podstranmi.</p>
+            <p class="label">Koncept · izmišljeno podjetje</p>
+            <h3 class="car-title">Mizarstvo Hrast</h3>
+            <p class="car-text">Koncept paketa Lokalni posel, z več podstranmi.</p>
             <a class="tlink sm" href="https://ak-primer-mizarstvo.pages.dev/" rel="noopener" target="_blank">Odpri koncept <span aria-hidden="true">↗</span></a>
-          </li>
-          <li>
+          </div>
+          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="3 od 4">
             <figure class="shot crop">
               <picture>
                 <source media="(max-width: 699px)" srcset="assets/ak/img/frizer-mobile.webp" width="520" height="1125">
                 <img src="assets/ak/img/frizer.webp" width="1120" height="2644" alt="Posnetek zaslona koncepta strani za izmišljeni Frizerski salon Lila" loading="lazy" decoding="async">
               </picture>
             </figure>
-            <h3>Frizerski salon Lila</h3>
-            <p>Koncept paketa Osnovna, ena stran z vsem bistvenim.</p>
+            <p class="label">Koncept · izmišljeno podjetje</p>
+            <h3 class="car-title">Frizerski salon Lila</h3>
+            <p class="car-text">Koncept paketa Osnovna, ena stran z vsem bistvenim.</p>
             <a class="tlink sm" href="https://ak-primer-frizer.pages.dev/" rel="noopener" target="_blank">Odpri koncept <span aria-hidden="true">↗</span></a>
-          </li>
-          <li>
+          </div>
+          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="4 od 4">
             <figure class="shot crop">
               <picture>
                 <source media="(max-width: 699px)" srcset="assets/ak/img/apartmaji-mobile.webp" width="520" height="1125">
                 <img src="assets/ak/img/apartmaji.webp" width="1120" height="2644" alt="Posnetek zaslona koncepta strani za izmišljene Apartmaje Ob jezeru" loading="lazy" decoding="async">
               </picture>
             </figure>
-            <h3>Apartmaji Ob jezeru</h3>
-            <p>Koncept paketa Lokalni posel za nastanitve, s povpraševanjem po e-pošti.</p>
+            <p class="label">Koncept · izmišljeno podjetje</p>
+            <h3 class="car-title">Apartmaji Ob jezeru</h3>
+            <p class="car-text">Koncept paketa Lokalni posel za nastanitve, s povpraševanjem po e-pošti.</p>
             <a class="tlink sm" href="https://ak-primer-apartmaji.pages.dev/" rel="noopener" target="_blank">Odpri koncept <span aria-hidden="true">↗</span></a>
-          </li>
-        </ul>
-        <p class="note">Posnetki zaslonov so resnični posnetki strani. Fotografije na konceptih so ilustracije, ustvarjene z UI, in so na samih straneh tudi tako označene.</p>
+          </div>
+        </div>
+        <div class="car-nav" hidden>
+          <button class="car-btn" type="button" data-dir="-1">← Nazaj</button>
+          <div class="car-dots">
+            <button type="button" aria-label="Prikaži 1 od 4" aria-current="true"></button>
+            <button type="button" aria-label="Prikaži 2 od 4"></button>
+            <button type="button" aria-label="Prikaži 3 od 4"></button>
+            <button type="button" aria-label="Prikaži 4 od 4"></button>
+          </div>
+          <button class="car-btn" type="button" data-dir="1">Naprej →</button>
+        </div>
+      </div>
+      <p class="note">Trije koncepti za podjetja, ki ne obstajajo. Pokažejo, kako bi lahko izgledala vaša stran. Posnetki zaslonov so resnični posnetki strani. Fotografije na konceptih so ilustracije, ustvarjene z UI, in so na samih straneh tudi tako označene.</p>
     </div>
   </section>
 
@@ -187,7 +188,7 @@
   </div>
 </footer>
 
-<script src="assets/ak/ak.js?v=1" defer></script>
+<script src="assets/ak/ak.js?v=2" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>

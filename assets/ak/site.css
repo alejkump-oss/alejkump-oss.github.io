@@ -177,6 +177,30 @@ h3{font-weight:var(--font-weight-regular);letter-spacing:var(--ls-heading-2xs);l
 .trio h3{margin-top:24px;font-size:22px}
 .trio p{margin-top:8px;color:var(--g1);font-size:16px;line-height:1.5}
 
+/* work carousel: native scroll-snap (touch swipe for free), Dala navigation dots, ghost prev/next.
+   One slide plus a peek of the next, so it is obvious the row scrolls. No autoplay. */
+.car{position:relative}
+.car-track{display:flex;gap:var(--spacing-30);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car-track::-webkit-scrollbar{display:none}
+.rm .car-track{scroll-behavior:auto}
+.car-slide{flex:0 0 58%;min-width:0;scroll-snap-align:start}
+.car-slide .shot.crop img{aspect-ratio:16/10}
+.car-slide .label{margin-top:var(--spacing-24)}
+.car-title{margin-top:12px;font-size:var(--fs-heading-xs);font-weight:var(--font-weight-regular);line-height:1.15;letter-spacing:-.02em;text-wrap:balance}
+.car-text{margin-top:10px;color:var(--g1);font-size:16px;line-height:1.5;max-width:34em}
+.car-slide .meta{margin-top:12px}
+.car-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:var(--spacing-30)}
+.car-nav[hidden]{display:none}
+.car-btn{appearance:none;background:none;border:0;padding:6px 0;font:inherit;font-size:14px;font-weight:var(--font-weight-regular);color:var(--g2);cursor:pointer;transition:color .2s}
+.car-btn:hover{color:#fff}
+.car-btn[aria-disabled="true"]{opacity:.35;cursor:default}
+.car-btn[aria-disabled="true"]:hover{color:var(--g2)}
+.car-dots{display:flex;align-items:center;justify-content:center;gap:4px}
+.car-dots button{appearance:none;width:20px;height:20px;padding:6px;border:0;border-radius:50%;background:rgba(255,255,255,.28);background-clip:content-box;cursor:pointer;transition:background-color .2s}
+.car-dots button:hover{background-color:rgba(255,255,255,.6)}
+.car-dots button[aria-current="true"]{background-color:var(--violet)}
+.car-dots button:focus-visible{outline-offset:0;border-radius:50%}
+
 .steps{display:grid;gap:var(--spacing-36)}
 .steps h3{margin-top:10px}
 .steps p{margin-top:8px;color:var(--g1);max-width:30em}
@@ -251,6 +275,8 @@ h3{font-weight:var(--font-weight-regular);letter-spacing:var(--ls-heading-2xs);l
   .hero-in{grid-template-columns:1fr;gap:8px}
   .orbit{order:-1;max-width:520px;margin:0 auto}
   .row,.concepts-head{grid-template-columns:1fr}
+  .car-slide{flex-basis:80%}
+  .car-track{gap:var(--spacing-18)}
   .row.rev > :first-child{order:0}
   .portrait-wrap{justify-self:start}
   .portrait-cap{justify-items:start;text-align:left}
@@ -260,7 +286,9 @@ h3{font-weight:var(--font-weight-regular);letter-spacing:var(--ls-heading-2xs);l
   .nav-in{height:64px;gap:20px}
   .facts{gap:32px 20px;margin-top:40px}
   .acts{margin-top:32px}
-  .shot.crop img{aspect-ratio:4/5}
+  .shot.crop img,.car-slide .shot.crop img{aspect-ratio:4/5}
+  .car-slide{flex-basis:86%}
+  .car-slide:first-child .shot.crop img{object-position:left top} /* Briški: no phone-size shot, keep its logo in frame */
   .phero{padding-top:120px}
 }
 @media (prefers-reduced-motion:reduce){
