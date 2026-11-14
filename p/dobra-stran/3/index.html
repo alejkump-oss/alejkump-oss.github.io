@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Kaj je dobra spletna stran? Predogled 3 · AK agencija</title>
+<meta name="description" content="Osem načel dobre spletne strani za lokalno podjetje, v osmih barvnih poglavjih s primerjavo tipična proti dobra stran, vsako z virom. Plakatni predogled, AK agencija, Kočevje.">
+<meta name="theme-color" content="#d9d9d9">
+<link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
+<link rel="preload" as="font" type="font/woff2" href="assets/intertight-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/intertight-latin-ext.woff2" crossorigin>
+<script>if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("rm");</script>
+<style>
+/* BRAND: ime, kontakt in nogo zamenjate v .corner, #kontakt, #cene in <footer>. */
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:300 700;font-display:swap;src:url(assets/intertight-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:300 700;font-display:swap;src:url(assets/intertight-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --canvas:#d9d9d9;--ink:#1f1f1f;--yellow:#fbb833;--coral:#fa4d43;--green:#027b49;--pink:#f19ec8;
+  --sans:"Inter Tight","Inter",Arial,sans-serif;--inset:20px;
+  --display:clamp(3.2rem,14.5vw,13.4375rem);--h:clamp(2rem,4.2vw,3.75rem);--lead:clamp(1.15rem,1.8vw,1.625rem);--body:1.125rem;--cap:.9375rem;
+}
+*{box-sizing:border-box}
+html{background:var(--canvas);color:var(--ink);-webkit-text-size-adjust:100%}
+body{margin:0;font:400 var(--body)/1.1 var(--sans);letter-spacing:-.03em;overflow-x:clip}
+a{color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3,p,figure{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:8px;background:#1f1f1f;color:#d9d9d9;padding:8px 12px;z-index:50}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+.display{font-size:var(--display);line-height:.8;letter-spacing:-.06em;font-weight:400}
+.h{font-size:var(--h);line-height:1;letter-spacing:-.06em;font-weight:400;text-wrap:balance}
+.lead{font-size:var(--lead);line-height:1.1;letter-spacing:-.03em}
+.lead-em{font-size:var(--lead);line-height:1.1;letter-spacing:-.03em;font-weight:500}
+.cap{font-size:var(--cap);line-height:1.2;letter-spacing:-.03em}
+.label{font-size:var(--body);line-height:1;font-weight:500}
+.pill{display:inline-flex;align-items:center;justify-content:center;height:30px;padding:6px 14px;border-radius:30px;background:var(--ink);color:var(--canvas);font:400 var(--cap)/1.2 var(--sans);letter-spacing:-.03em;text-decoration:none;white-space:nowrap}
+.pill.out{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.pill:hover{opacity:.85}
+.fn{font-size:.65em;vertical-align:super;margin-left:.1em}
+.fn a{text-decoration:none}
+.prose p+p{margin-top:.8em}
+
+/* corner navigation */
+.corner{position:fixed;top:var(--inset);left:var(--inset);right:var(--inset);display:flex;justify-content:space-between;align-items:center;z-index:30;pointer-events:none}
+.corner>*{pointer-events:auto}
+.corner .wm{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--canvas);padding:6px 12px 6px 8px;border-radius:30px;text-decoration:none;font-size:var(--cap);font-weight:500}
+.corner .wm svg{width:18px;height:18px}
+.menu{position:relative}
+.menu button{width:42px;height:42px;border-radius:100px;background:var(--ink);border:0;cursor:pointer;display:grid;place-items:center;gap:0;padding:0}
+.menu button span{display:block;width:24px;height:1px;background:var(--canvas)}
+.menu button span+span{margin-top:7px}
+.menu ul{position:absolute;right:0;top:50px;background:var(--ink);color:var(--canvas);padding:10px;border-radius:0;display:none;min-width:200px}
+.menu.open ul{display:block}
+.menu ul a{display:block;padding:8px 10px;text-decoration:none;font-size:var(--cap)}
+.menu ul a:hover{background:#333}
+
+/* opening */
+.open{min-height:84vh;min-height:84svh;padding:90px var(--inset) 30px;display:grid;grid-template-rows:auto auto 1fr;gap:20px}
+.open .l1{text-align:right;line-height:.7}
+.open .l2{text-align:right}
+.open .desc{text-align:left;position:relative;height:1em;overflow:hidden}
+.open .desc span{position:absolute;left:0;top:0;white-space:nowrap;opacity:0;animation:cyc 9s infinite}
+.open .desc span:nth-child(2){animation-delay:3s}
+.open .desc span:nth-child(3){animation-delay:6s}
+@keyframes cyc{0%,30%{opacity:1;transform:none}36%,100%{opacity:0;transform:translateY(-6%)}}
+html.rm .open .desc span{animation:none}
+html.rm .open .desc span:first-child{opacity:1}
+.open .pitch{justify-self:end;align-self:end;width:min(336px,100%);display:grid;gap:10px}
+.open .pitch .ask{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--inset);padding:0 var(--inset)}
+.card{position:relative;height:385px;overflow:hidden;display:grid;align-content:end}
+.card .big{font-size:clamp(4rem,9vw,8rem);line-height:.8;letter-spacing:-.06em;padding:0 0 10px 14px;transform:translateY(10%)}
+.card.y{background:var(--yellow)}.card.c{background:var(--coral)}.card.g{background:var(--green);color:var(--canvas)}.card.p{background:var(--pink)}
+.card-cap{padding:10px 0 0;display:grid;gap:4px}
+@media (max-width:1000px){.strip{grid-template-columns:1fr 1fr}.card{height:300px}}
+@media (max-width:560px){.strip{grid-template-columns:1fr 1fr;gap:10px}.card{height:200px}.card .big{font-size:3.4rem}}
+
+/* offset proposition */
+.prop{padding:130px var(--inset) 0;display:grid;grid-template-columns:1fr 3fr;gap:var(--inset)}
+.prop .h{grid-column:2}
+.prop .ex{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:var(--inset);margin-top:100px}
+.prop .ex .lead{grid-column:2}
+.prop .ex .ask{grid-column:2;margin-top:30px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+@media (max-width:810px){.prop{grid-template-columns:1fr}.prop .h,.prop .ex,.prop .ex .lead,.prop .ex .ask{grid-column:1}.prop .ex{grid-template-columns:1fr;margin-top:40px}}
+
+/* numbered colour chapters */
+.q{padding:130px var(--inset) 40px}
+.chapters{position:relative}
+.chapters .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.pan{position:absolute;inset:0;padding:120px var(--inset) var(--inset);display:grid;grid-template-columns:auto minmax(240px,300px) minmax(0,1fr);grid-template-rows:1fr;gap:var(--inset) clamp(20px,3vw,48px);align-items:end;--q:0;--m:0;
+  transform:translate3d(calc((1 - var(--q))*100%),0,0);will-change:transform}
+.pan.c{background:var(--coral)}.pan.y{background:var(--yellow)}.pan.g{background:var(--green);color:var(--canvas)}.pan.p{background:var(--pink)}
+.pan .num{grid-column:1;grid-row:1;align-self:end;font-size:clamp(9rem,40vh,30rem);line-height:.8;letter-spacing:-.06em;margin-left:-.04em;margin-bottom:0;font-weight:400;pointer-events:none}
+.pan .ex{grid-column:2;grid-row:1;align-self:end;width:100%;border-top:1px solid currentColor;padding-top:10px;display:grid;gap:10px}
+.pan .ex .stat{font-size:clamp(2.6rem,6vw,4.5rem);line-height:.85;letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.pan .ex .stat small{font-size:.35em;letter-spacing:-.03em;display:block;margin-top:6px}
+.pan .ex p{font-size:var(--cap)}
+.pan .ex .fnl{font-size:.8rem;opacity:.85}
+.pan .cmp{grid-column:3;grid-row:1;align-self:center;justify-self:end;width:min(100%,640px);aspect-ratio:16/10;position:relative;overflow:hidden;background:var(--canvas);color:var(--ink)}
+.cmp .side{position:absolute;inset:0;padding:5%;font-size:clamp(9px,1.1vw,14px);line-height:1.2;display:flex;flex-direction:column;gap:.6em}
+.cmp .good{background:#fff;transform:translate3d(calc((1 - var(--m))*100%),0,0);will-change:transform}
+.cmp .div{position:absolute;top:0;bottom:0;left:calc((1 - var(--m))*100%);width:2px;background:var(--ink);transform:translateX(-1px)}
+.cmp .tag{position:absolute;top:8px;font-size:12px;font-weight:500;padding:3px 8px;border-radius:30px;background:var(--ink);color:var(--canvas)}
+.cmp .tag.l{left:8px;opacity:calc(1 - var(--m))}
+.cmp .tag.r{right:8px;opacity:var(--m)}
+.cmp .bar{height:.7em;background:#1f1f1f;width:40%}
+.cmp .ln{height:.6em;background:#bdbdbd;border-radius:0}
+.cmp .w9{width:90%}.cmp .w7{width:70%}.cmp .w4{width:40%}
+.cmp .img{background:#c4c4c4;aspect-ratio:16/7;width:100%}
+.cmp .btn{background:#1f1f1f;color:#fff;padding:.7em 1em;text-align:center;font-weight:500}
+.cmp .btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4em}
+.cmp .btns .btn{background:#777;padding:.5em}
+.cmp .t{font-size:1.6em;line-height:1;letter-spacing:-.04em;font-weight:500}
+.cmp .s{color:#444}
+.cmp .pop{position:absolute;inset:28% 18% auto;background:#fff;border:1px solid #1f1f1f;padding:1em;font-size:.95em;transform:translateY(calc((1 - var(--m))*-20px))}
+.cmp .cookie{position:absolute;left:5%;right:5%;bottom:5%;background:#1f1f1f;color:#fff;padding:.7em;font-size:.9em}
+.cmp .row{display:flex;gap:.6em;align-items:center}
+.cmp .av{width:2.2em;height:2.2em;border-radius:50%;background:#bdbdbd;flex:none}
+.cmp .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5em;font-size:.9em}
+.cmp .three div{background:#eee;padding:.6em}
+.cmp .good .three div{background:#f4f4f4;border:1px solid #1f1f1f}
+.cmp .mini{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.4em}
+.cmp .mini i{display:block;height:.3em;background:#bdbdbd}
+@media (min-width:810px) and (max-width:1100px){.pan .num{font-size:clamp(7rem,26vh,16rem)}.pan{grid-template-columns:auto minmax(200px,240px) minmax(0,1fr)}}
+@media (min-width:810px){
+  .chapters{height:var(--len,1000svh)}
+  .pan:first-child{--q:1}
+  html.rm .chapters{height:auto}
+  html.rm .chapters .stage{position:static;height:auto;overflow:visible}
+  html.rm .pan{position:relative;transform:none;min-height:100vh;--q:1;--m:.5}
+}
+@media (max-width:809px){
+  .chapters{height:auto}
+  .chapters .stage{position:static;height:auto;overflow:visible}
+  .pan{position:relative;transform:none;--q:1;grid-template-columns:1fr;grid-template-rows:auto auto auto;align-items:start;padding:84px var(--inset) var(--inset);min-height:100vh;min-height:100svh}
+  .pan .num{grid-row:1;grid-column:1;align-self:start;font-size:clamp(5rem,26vw,8rem);margin-bottom:0}
+  .pan .cmp{grid-column:1;grid-row:2;width:100%;justify-self:stretch;aspect-ratio:4/3}
+  .pan .ex{grid-column:1;grid-row:3;width:100%}
+  .pan .ex .stat{font-size:2.4rem}
+  .mscene{position:relative;height:190vh;height:190svh}
+  .mscene .pan{position:sticky;top:0;height:100vh;height:100svh;min-height:0;overflow:hidden}
+  html.rm .mscene{height:auto}
+  html.rm .mscene .pan{position:relative;height:auto;min-height:100svh;--m:.5}
+}
+html.rm .pan{--m:.5}
+
+/* sentence landscape with aperture */
+.land{padding:170px 0 0;position:relative}
+.land .frag{padding:0 var(--inset);display:block}
+.land .frag.r{text-align:right}
+.land .ap-scene{position:relative;height:260vh;height:260svh;margin-top:-10vh}
+.land .ap-stage{position:sticky;top:0;height:100vh;height:100svh;display:grid;place-items:center;overflow:hidden}
+.land .ap-stage .words{position:absolute;inset:0;display:grid;align-content:center;padding:0 var(--inset);pointer-events:none}
+.land .ap{width:min(92vw,1400px);height:min(80vh,900px);clip-path:circle(calc(16% + var(--p,0)*60%) at 50% 50%);position:relative;background:#1f1f1f}
+.land .ap img{width:100%;height:100%;object-fit:cover;object-position:top;filter:none}
+.land .ap figcaption{position:absolute;left:var(--inset);bottom:var(--inset);background:var(--ink);color:var(--canvas);padding:6px 10px;font-size:var(--cap);opacity:clamp(0,calc(var(--p,0)*3 - 1.5),1)}
+html.rm .land .ap-scene{height:auto;margin-top:40px}
+html.rm .land .ap-stage{position:static;height:auto}
+html.rm .land .ap{clip-path:none;height:auto;--p:1}
+html.rm .land .ap figcaption{opacity:1}
+.land .words .display{opacity:calc(1 - var(--p,0)*1.4)}
+
+/* contact chapter */
+.contact{margin-top:130px;padding:0 var(--inset)}
+.contact hr{border:0;border-top:1px solid var(--ink);margin:0 0 20px}
+.contact .grid{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:var(--inset);margin-top:40px;align-items:end}
+.contact .dir{display:grid;gap:14px}
+.contact .dir .label{display:block;margin-bottom:4px}
+.contact .dir a{text-decoration:none;border-bottom:1px solid var(--ink)}
+.contact .art{background:var(--green);color:var(--canvas);height:385px;position:relative;overflow:hidden;display:grid;align-content:end}
+.contact .art .big{font-size:clamp(5rem,10vw,9rem);line-height:.8;letter-spacing:-.06em;padding:0 0 10px 14px;transform:translateY(10%)}
+.contact .art .cap{position:absolute;left:14px;top:14px}
+@media (max-width:810px){.contact .grid{grid-template-columns:1fr}.contact .art{height:260px}}
+
+/* bright practical band: prices */
+.band{background:var(--yellow);margin-top:130px;padding:40px var(--inset) 40px}
+.band .three{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,750px) minmax(0,1fr);gap:var(--inset);margin-top:40px;align-items:start}
+.band .ident{display:grid;gap:14px;align-content:start}
+.band .diagram{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ink)}
+.band .col{padding:14px;border-left:1px solid var(--ink);display:grid;gap:10px;align-content:start;min-height:100%}
+.band .col:first-child{border-left:0}
+.band .col .amt{font-size:clamp(2rem,4.2vw,3.75rem);line-height:.85;letter-spacing:-.06em}
+.band .col .amt small{display:block;font-size:.3em;letter-spacing:-.03em;margin-top:8px;font-weight:500}
+.band .col ul li{font-size:var(--cap);padding:6px 0;border-top:1px solid rgba(31,31,31,.35)}
+.band .col ul li.em{font-weight:500}
+.band .col .pay{font-size:.8rem;opacity:.85}
+.band .expl{display:grid;gap:14px;border-top:1px solid var(--ink);padding-top:10px;font-size:var(--cap)}
+@media (max-width:1000px){.band .three{grid-template-columns:1fr}.band .diagram{grid-template-columns:1fr}.band .col{border-left:0;border-top:1px solid var(--ink)}.band .col:first-child{border-top:0}}
+
+/* sources: small index rows */
+.sources{padding:130px var(--inset) 0}
+.sources .rows{margin-top:30px;border-top:1px solid var(--ink)}
+.sources .row{display:grid;grid-template-columns:3ch 1fr;gap:10px;padding:8px 0;border-bottom:1px solid var(--ink);font-size:var(--cap)}
+.sources .row a{text-decoration:none;border-bottom:1px solid var(--ink);word-break:break-word}
+.sources .row b{font-weight:500}
+
+/* word sculpture + footer */
+.finale{padding:130px var(--inset) 0;position:relative;overflow:hidden;margin-top:60px}
+.finale .word{font-size:clamp(4rem,19.5vw,19rem);line-height:.8;letter-spacing:-.06em;font-weight:700;text-transform:uppercase;position:relative;z-index:1;word-break:keep-all}
+.finale .tiles{position:absolute;inset:0;pointer-events:none;z-index:2}
+.finale .tile{position:absolute;display:grid;align-content:end;padding:10px;font-size:clamp(1.4rem,3.2vw,3rem);line-height:.85;letter-spacing:-.06em}
+.finale .tile small{display:block;font-size:.4em;letter-spacing:-.03em;margin-top:6px;font-weight:500}
+.finale .tile.y{background:var(--yellow)}.finale .tile.c{background:var(--coral)}.finale .tile.g{background:var(--green);color:var(--canvas)}.finale .tile.p{background:var(--pink)}
+footer{padding:40px var(--inset) 20px}
+footer .cols{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+footer .label{display:block;margin-bottom:10px}
+footer a{text-decoration:none;border-bottom:1px solid var(--ink)}
+footer li+li{margin-top:6px}
+footer p{font-size:.85rem;line-height:1.25}
+footer p+p{margin-top:8px}
+@media (max-width:1000px){footer .cols{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){footer .cols{grid-template-columns:1fr}}
+
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+[data-reveal].in{opacity:1;transform:none}
+html.rm [data-reveal]{opacity:1;transform:none;transition:none}
+</style>
+</head>
+<body>
+<a class="skip" href="#vsebina">Preskoči na vsebino</a>
+
+<div class="corner">
+  <a class="wm" href="https://alejkump.si/" aria-label="AK agencija, domov"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 29 27H3Z" fill="none" stroke="#d9d9d9" stroke-width="2.6" stroke-linejoin="round"/><path d="M16 13 22 24H10Z" fill="#d9d9d9"/></svg>AK agencija</a>
+  <div class="menu" id="menu">
+    <button type="button" aria-expanded="false" aria-controls="menu-list" aria-label="Meni"><span></span><span></span></button>
+    <ul id="menu-list">
+      <li><a href="#nacela">Osem načel</a></li>
+      <li><a href="#cene">Cene</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="tel:+38670479188">Pokličite 070 479 188</a></li>
+      <li><a href="../">Druga predogleda</a></li>
+    </ul>
+  </div>
+</div>
+
+<main id="vsebina">
+
+<section class="open" id="open" aria-labelledby="h1" data-shot>
+  <h1 id="h1" class="sr">Kaj je dobra spletna stran? Hitra, za telefon, preverljiva.</h1>
+  <div aria-hidden="true">
+    <p class="display l1">Dobra stran</p>
+    <p class="display l2">je</p>
+  </div>
+  <p class="display desc" aria-hidden="true"><span>hitra.</span><span>za palec.</span><span>preverljiva.</span></p>
+  <div class="pitch">
+    <p class="label">Predogled 3 · plakatna različica</p>
+    <p class="cap">Osem načel, ki jih uporabljam pri vsaki strani, in razlog za vsako. Viri so na dnu, povezani in datirani.</p>
+    <p class="ask cap">Kaj vas zanima? <a class="pill" href="#nacela">Osem načel</a> <a class="pill out" href="#cene">Cene</a></p>
+  </div>
+</section>
+
+<section class="strip" id="strip" aria-label="Štiri številke" data-reveal data-shot>
+  <div><div class="card y"><p class="big">2,5 s</p></div><div class="card-cap"><span class="label">Hitrost</span><span class="cap">Googlova meja za prikaz glavne vsebine (LCP).<span class="fn"><a href="#v1">1</a></span></span></div></div>
+  <div><div class="card c"><p class="big">9/10</p></div><div class="card-cap"><span class="label">Telefon</span><span class="cap">Prebivalcev Slovenije dostopa do interneta prek telefona.<span class="fn"><a href="#v4">4</a></span></span></div></div>
+  <div><div class="card g"><p class="big">10 s</p></div><div class="card-cap"><span class="label">Pet sekund</span><span class="cap">Toliko časa imate, da poveste, kdo ste, kaj delate in kje.<span class="fn"><a href="#v7">7</a></span></span></div></div>
+  <div><div class="card p"><p class="big">0 €</p></div><div class="card-cap"><span class="label">Predogled</span><span class="cap">Svojo stran vidite, preden plačate. Če ni všeč, ne plačate nič.</span></div></div>
+</section>
+
+<section class="prop" id="prop" aria-labelledby="h-prop" data-shot>
+  <h2 id="h-prop" class="h">Dobra stran ni lepa stran. Je stran, ki jo nekdo odpre na telefonu, v nekaj sekundah razume, kdo ste, in vas pokliče.</h2>
+  <div class="ex">
+    <p class="lead">Spodaj ni okusa in ni mode. Vsako od osmih načel ima razlog, ki ga je nekdo izmeril: Google, Nielsen Norman Group, Stanford, Statistični urad RS. Primeri na primerjavah kažejo izmišljeno Mizarstvo Hrast; nič na njih ni resnična stranka.</p>
+    <p class="ask cap">Kako to vidite v praksi? <a class="pill out" href="#primer">Izdelana stran ↓</a></p>
+  </div>
+</section>
+
+<section class="q" aria-labelledby="h-q" id="nacela">
+  <h2 id="h-q" class="h">Zakaj prav tako? Osem razlogov, s primerjavo.</h2>
+  <p class="cap" style="margin-top:14px;max-width:48ch">Na vsaki plošči primerjava: levo tipična stran, desno dobra. Z drsenjem se meja premakne. Z vklopljenim zmanjšanim gibanjem sta obe polovici vidni hkrati.</p>
+</section>
+
+<section class="chapters" id="chapters" data-chapters data-shots="8" data-shot-off="0.75" style="--len:1100svh" aria-label="Osem načel">
+  <div class="stage">
+
+    <article class="pan c" id="c1-pan" data-pan data-shot aria-labelledby="c1">
+      <p class="num" aria-hidden="true">1</p>
+      <div class="cmp" role="img" aria-label="Primerjava: tipična stran se nalaga postopoma s pasico za piškotke; dobra stran je prikazana takoj">
+        <div class="side bad"><div class="bar"></div><div class="img" style="background:linear-gradient(90deg,#c4c4c4 0,#c4c4c4 40%,#e0e0e0 40%)"></div><div class="ln w9"></div><div class="ln w7"></div><div class="ln w4"></div><div class="ln w9"></div><div class="cookie">Ta stran uporablja piškotke. Sprejmi vse.</div></div>
+        <div class="side good"><div class="bar"></div><p class="t">Mizarstvo Hrast, Kočevje</p><p class="s">Kuhinje in omare po meri. Pon–pet 7–16.</p><div class="btn">Pokliči</div><div class="img" style="aspect-ratio:16/5"></div></div>
+        <div class="div"></div><span class="tag l">tipična</span><span class="tag r">dobra</span>
+      </div>
+      <div class="ex">
+        <p class="stat"><span data-count="8.4" data-dec="1">0,0</span> %<small>več konverzij po izboljšanju mobilne hitrosti za 0,1 s (Deloitte za Google, 2020)<span class="fn"><a href="#v3">3</a></span></small></p>
+        <p class="label" id="c1">Hitrost: vsaka desetinka se šteje</p>
+        <p>Google šteje stran za hitro pri LCP do 2,5 s, INP do 200 ms in CLS do 0,1.<span class="fn"><a href="#v1">1</a></span> BBC je izgubil 10 % uporabnikov za vsako dodatno sekundo.<span class="fn"><a href="#v2">2</a></span> Strani so počasne zaradi slik v izvirni velikosti in skript iz petih virov, ne zaradi vsebine.</p>
+      </div>
+    </article>
+
+    <article class="pan y" id="c2-pan" data-pan data-shot aria-labelledby="c2">
+      <p class="num" aria-hidden="true">2</p>
+      <div class="cmp" role="img" aria-label="Primerjava: namizna stran, stisnjena na telefon, proti strani, oblikovani za telefon">
+        <div class="side bad"><div style="transform:scale(.55);transform-origin:top left;width:182%;display:grid;gap:.6em"><div class="row" style="justify-content:space-between"><div class="bar" style="width:20%"></div><div class="mini" style="width:50%"><i></i><i></i><i></i></div></div><div class="img" style="aspect-ratio:21/6"></div><div class="three"><div><div class="ln w9"></div><div class="ln w7" style="margin-top:.4em"></div></div><div><div class="ln w9"></div><div class="ln w7" style="margin-top:.4em"></div></div><div><div class="ln w9"></div><div class="ln w7" style="margin-top:.4em"></div></div></div><div class="ln w9"></div><div class="ln w9"></div></div><div class="cookie" style="background:#fff;color:#1f1f1f;border:1px solid #1f1f1f">Približajte za branje · besedilo 6 px</div></div>
+        <div class="side good"><div class="row" style="justify-content:space-between"><div class="bar"></div><div class="btn" style="padding:.4em .8em">Pokliči</div></div><p class="t">Kuhinje po meri, iz Kočevja.</p><p class="s">Mizarstvo Hrast · Pon–pet 7–16</p><div class="btn" style="padding:1em">Pokliči mizarja</div><p class="s" style="text-align:center;text-decoration:underline">ali pišite po e-pošti</p></div>
+        <div class="div"></div><span class="tag l">tipična</span><span class="tag r">dobra</span>
+      </div>
+      <div class="ex">
+        <p class="stat"><span data-count="9" data-dec="0">0</span> od 10<small>prebivalcev Slovenije dostopa do interneta prek telefona (SURS, 2025)<span class="fn"><a href="#v4">4</a></span></small></p>
+        <p class="label" id="c2">Najprej telefon, namizje zraven</p>
+        <p>Google uporablja mobilno različico strani za indeksiranje in razvrščanje.<span class="fn"><a href="#v6">6</a></span> Po Statcounterju se dobra polovica ogledov v Sloveniji še zgodi na namizju (oktober 2026),<span class="fn"><a href="#v5">5</a></span> zato stran dela obojestransko. A oblikuje se za palec: gumbi, ki jih zadenete, številka, ki jo tapnete.</p>
+      </div>
+    </article>
+
+    <article class="pan g" id="c3-pan" data-pan data-shot aria-labelledby="c3">
+      <p class="num" aria-hidden="true">3</p>
+      <div class="cmp" role="img" aria-label="Primerjava: šest enakih gumbov proti enemu gumbu Pokliči">
+        <div class="side bad"><div class="bar"></div><div class="img" style="aspect-ratio:16/6"></div><p class="s">Dobrodošli! Oglejte si našo ponudbo.</p><div class="btns"><div class="btn">Ponudba</div><div class="btn">Galerija</div><div class="btn">O nas</div><div class="btn">Novice</div><div class="btn">Kontakt</div><div class="btn">Prijava</div></div></div>
+        <div class="side good"><div class="bar"></div><p class="t">Mizarstvo Hrast, Kočevje</p><p class="s">Kuhinje in omare po meri.</p><div class="btn" style="padding:1.1em;font-size:1.15em">Pokliči 0X0 XXX XXX</div><p class="s" style="text-align:center;text-decoration:underline">ali rezervirajte ogled</p></div>
+        <div class="div"></div><span class="tag l">tipična</span><span class="tag r">dobra</span>
+      </div>
+      <div class="ex">
+        <p class="stat"><span data-count="1" data-from="6" data-dec="0">6</span><small>gumb nad prelomom. Ne šest. Klic ali rezervacija, vidna, preden kdo podrsa.</small></p>
+        <p class="label" id="c3">Ena jasna akcija</p>
+        <p>Stran lokalnega podjetja ima eno nalogo: pozornost spremeniti v klic ali obisk. Vsak dodatni gumb si vzame kos pozornosti in doda odločitev. Drug način stika je besedilna povezava pod gumbom, ne drugi gumb iste velikosti.</p>
+      </div>
+    </article>
+
+    <article class="pan p" id="c4-pan" data-pan data-shot aria-labelledby="c4">
+      <p class="num" aria-hidden="true">4</p>
+      <div class="cmp" role="img" aria-label="Primerjava: splošen pozdrav proti stavku, ki pove kdo, kaj in kje">
+        <div class="side bad"><div class="bar"></div><div class="img" style="aspect-ratio:16/6"></div><p class="t" style="font-size:1.3em">Dobrodošli na naši spletni strani!</p><p class="s">Smo mlado in dinamično podjetje z dolgoletno tradicijo. Kakovost in zanesljivost sta naši vodili. Vaše zadovoljstvo je naša prioriteta …</p></div>
+        <div class="side good"><div class="bar"></div><p class="t">Mizarstvo Hrast,<br>Kočevje.</p><p class="s">Kuhinje, vgradne omare in stopnice po meri. Izmera na domu, brezplačno.</p><div class="btn">Pokliči</div><p class="s" style="font-size:.85em">kdo: Hrast · kaj: kuhinje · kje: Kočevje</p></div>
+        <div class="div"></div><span class="tag l">tipična</span><span class="tag r">dobra</span>
+      </div>
+      <div class="ex">
+        <p class="stat"><span data-count="10" data-dec="0">0</span> s<small>v katerih mora biti jasno, kaj ponujate; sicer uporabniki odidejo v 10–20 s (Nielsen, NN/g)<span class="fn"><a href="#v7">7</a></span></small></p>
+        <p class="label" id="c4">Test petih sekund: kdo, kaj, kje</p>
+        <p>Pokažite stran nekomu za pet sekund in jo skrijte. Če ne zna povedati, kdo ste, kaj delate in kje, prvi zaslon ne dela. »Dobrodošli na naši spletni strani« ne pove ničesar, kar bi bilo vaše.</p>
+      </div>
+    </article>
+
+    <article class="pan c" id="c5-pan" data-pan data-shot aria-labelledby="c5">
+      <p class="num" aria-hidden="true">5</p>
+      <div class="cmp" role="img" aria-label="Primerjava: fotografija iz banke slik in prazen obrazec proti naslovu, delovnemu času, osebi in računu">
+        <div class="side bad"><div class="bar"></div><div class="img" style="display:grid;place-items:center;color:#666;font-size:.9em">stisk rok iz banke slik</div><p class="t" style="font-size:1.2em">Kontaktirajte nas</p><div class="ln w9" style="height:1.6em;background:#f1f1f1;border:1px solid #999"></div><div class="ln w9" style="height:1.6em;background:#f1f1f1;border:1px solid #999"></div><div class="btn" style="background:#777">Pošlji</div></div>
+        <div class="side good"><div class="bar"></div><div class="row"><div class="av"></div><div><b>Ime in priimek</b><br><span class="s">mizar, lastnik, dvigne telefon</span></div></div><div class="row"><span>⌖</span><div><b>Ulica in številka 00, 1330 Kočevje</b><br><span class="s">naslov, ki ga najde navigacija</span></div></div><div class="row"><span>◷</span><div><b>Pon–pet 7–16, sob 8–12</b></div></div><div class="row"><span>▣</span><div><b>Davčno potrjen račun</b><br><span class="s">matična in davčna številka v nogi</span></div></div></div>
+        <div class="div"></div><span class="tag l">tipična</span><span class="tag r">dobra</span>
+      </div>
+      <div class="ex">
+        <p class="stat"><span data-count="4500" data-dec="0" data-grp="1">0</span><small>ljudi v treh letih Stanfordovih raziskav verodostojnosti; deset smernic<span class="fn"><a href="#v9">9</a></span></small></p>
+        <p class="label" id="c5">Zaupanje: preverljivi podatki</p>
+        <p>Stanford: pokažite resnično organizacijo in poštene ljudi za njo, omogočite preprost stik, izogibajte se napakam, tudi majhnim.<span class="fn"><a href="#v9">9</a></span> Konkretno: naslov, delovni čas, vaša fotografija, ime osebe, ki dvigne telefon, davčna številka v nogi, davčno potrjen račun.</p>
+      </div>
+    </article>
+
+    <article class="pan y" id="c6-pan" data-pan data-shot aria-labelledby="c6">
+      <p class="num" aria-hidden="true">6</p>
+      <div class="cmp" role="img" aria-label="Primerjava: trije zapisi podjetja z različnimi podatki proti trem enakim">
+        <div class="side bad"><div class="bar"></div><p class="s">Ime · naslov · telefon na treh mestih</p><div class="three"><div><b>Stran</b><br>Mizarstvo Hrast<br>Ul. heroja 00<br>041 000 000</div><div><b>Google</b><br>Hrast mizarstvo d.o.o.<br>Ulica heroja 00<br>01 000 00 00</div><div><b>Imenik</b><br>MIZARSTVO HRAST s.p.<br>Kočevje<br>—</div></div><p class="s">tri različice = trije dvomi</p></div>
+        <div class="side good"><div class="bar"></div><p class="s">Ime · naslov · telefon na treh mestih</p><div class="three"><div><b>Stran</b><br>Mizarstvo Hrast<br>Ulica heroja 00, 1330 Kočevje<br>041 000 000</div><div><b>Google</b><br>Mizarstvo Hrast<br>Ulica heroja 00, 1330 Kočevje<br>041 000 000</div><div><b>Imenik</b><br>Mizarstvo Hrast<br>Ulica heroja 00, 1330 Kočevje<br>041 000 000</div></div><p class="s">ena različica = en odgovor</p></div>
+        <div class="div"></div><span class="tag l">tipična</span><span class="tag r">dobra</span>
+      </div>
+      <div class="ex">
+        <p class="stat"><span data-count="3" data-dec="0">0</span><small>merila lokalne uvrstitve: ustreznost, razdalja, prepoznavnost. Plačati zanjo ni mogoče (Google)<span class="fn"><a href="#v10">10</a></span></small></p>
+        <p class="label" id="c6">Lokalna vidnost: povsod enako</p>
+        <p>Podjetja s popolnimi in točnimi podatki se pogosteje prikažejo v lokalnih rezultatih.<span class="fn"><a href="#v10">10</a></span> Isto ime, isti naslov, ista številka na strani, v Googlovem profilu in v imenikih. Profil pripelje klic z zemljevida; stran pove, zakaj poklicati vas.</p>
+      </div>
+    </article>
+
+    <article class="pan g" id="c7-pan" data-pan data-shot aria-labelledby="c7">
+      <p class="num" aria-hidden="true">7</p>
+      <div class="cmp" role="img" aria-label="Primerjava: zid besedila s pojavnim oknom in pasico proti členjeni strani z naslovi in seznamom">
+        <div class="side bad" style="gap:.35em"><div class="bar"></div><div class="ln w9"></div><div class="ln w9"></div><div class="ln w9"></div><div class="ln w7"></div><div class="ln w9"></div><div class="ln w9"></div><div class="ln w4"></div><div class="ln w9"></div><div class="ln w9"></div><div class="ln w7"></div><div class="pop"><b>Prijavite se na novice!</b><br>Vpišite e-pošto in prejmite 10 % …</div><div class="cookie">Ta stran uporablja piškotke.</div></div>
+        <div class="side good"><div class="bar"></div><p class="t">Kaj delamo</p><div><b>Kuhinje po meri</b><p class="s">Izmera, načrt, izdelava, montaža.</p></div><div><b>Vgradne omare</b><p class="s">Drsna in klasična vrata.</p></div><div><b>Stopnice in ograje</b><p class="s">Hrast, bukev, jesen.</p></div></div>
+        <div class="div"></div><span class="tag l">tipična</span><span class="tag r">dobra</span>
+      </div>
+      <div class="ex">
+        <p class="stat"><span data-count="79" data-dec="0">0</span> %<small>uporabnikov vsako novo stran preleti; 16 % bere besedo za besedo (Nielsen, NN/g)<span class="fn"><a href="#v8">8</a></span></small></p>
+        <p class="label" id="c7">Jasnost pred dekoracijo</p>
+        <p>Naslovi, ki povedo bistvo. Kratki odstavki, seznami, en poudarek na zaslon. Nobene pasice in pojavnega okna, ki tekmujeta z vašim gumbom. Ta stran se premika, a vsak premik nekaj razloži; z zmanjšanim gibanjem je vse berljivo brez animacij.</p>
+      </div>
+    </article>
+
+    <article class="pan p" id="c8-pan" data-pan data-shot aria-labelledby="c8">
+      <p class="num" aria-hidden="true">8</p>
+      <div class="cmp" role="img" aria-label="Primerjava: najeta stran na platformi proti strani v lasti podjetja">
+        <div class="side bad" style="justify-content:center;text-align:center;gap:1em"><p style="font-size:2.4em">🔒</p><p class="t" style="font-size:1.3em">Najem na platformi</p><p class="s">Domena v lasti ponudnika. Datoteke na njegovem strežniku. Mesečna naročnina.<br><b>Prenehate plačevati → strani ni več.</b></p></div>
+        <div class="side good" style="justify-content:center;text-align:center;gap:1em"><p style="font-size:2.4em">🔑</p><p class="t" style="font-size:1.3em">mizarstvo-hrast.si</p><p class="s">Domena na vaše ime. Datoteke, ki jih odnesete kamorkoli. Gostovanje, ki ga lahko zamenjate.<br><b>Vzdrževanje po želji, ne po prisili.</b></p></div>
+        <div class="div"></div><span class="tag l">tipična</span><span class="tag r">dobra</span>
+      </div>
+      <div class="ex">
+        <p class="stat">vaše<small>lastništvo strani, besedil in slik preide na vas, ko je paket plačan; domena je od prvega dne na vaše ime<span class="fn"><a href="#v11">11</a></span></small></p>
+        <p class="label" id="c8">Lastništvo in vzdrževanje</p>
+        <p>Najeta stran je naročnina: ko prenehate plačevati, strani ni več. Stran iz navadnih datotek gostite kjerkoli. Statična stran nima vtičnikov, ki bi zastarali, in baze, ki bi jo kdo vdrl; potrebuje nov delovni čas in novo fotografijo, uro na mesec.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- sentence landscape + aperture -->
+<section class="land" id="primer" aria-labelledby="h-land">
+  <h2 id="h-land" class="sr">Izdelana stran: Gostilnica in picerija Briški</h2>
+  <p class="display frag r" aria-hidden="true">Stran, ki jo</p>
+  <div class="ap-scene" data-scene data-shot-at="0.7">
+    <div class="ap-stage stage">
+      <div class="words" aria-hidden="true"><p class="display">nekdo odpre</p><p class="display" style="text-align:right">in pokliče.</p></div>
+      <figure class="ap">
+        <img src="assets/briski.webp" width="1120" height="972" alt="Posnetek zaslona spletne strani Gostilnice in picerije Briški v Kočevju" loading="lazy" decoding="async">
+        <figcaption>Izdelano · Gostilnica in picerija Briški, Kočevje · november 2026 · posnetek zaslona je resničen</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt" aria-labelledby="h-kontakt" data-shot>
+  <hr>
+  <h2 id="h-kontakt" class="display">Pokličite.</h2>
+  <div class="grid">
+    <div class="prose">
+      <p class="lead">Iz javnih podatkov vašega podjetja pripravim predogled strani. Odprete ga na telefonu. Če vam je všeč, dobite pisno ponudbo s fiksno ceno. Če ni, ne plačate ničesar. Če rečete »ne«, vas ne kontaktiram več.</p>
+      <p class="cap" style="margin-top:30px">Danes, jutri, kadarkoli: <a class="pill" href="mailto:alej.kump@gmail.com?subject=Predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20">Brezplačen predogled</a></p>
+    </div>
+    <ul class="dir">
+      <li><span class="label">Telefon</span><a href="tel:+38670479188">070 479 188</a><br><span class="cap">Klic ali SMS. Vsak klic in SMS dobim jaz.</span></li>
+      <li><span class="label">Termin</span><a href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">15-minutni klic ↗</a><br><span class="cap">Izberete termin, jaz vas pokličem. Brez obveznosti.</span></li>
+      <li><span class="label">E-pošta</span><a href="mailto:alej.kump@gmail.com?subject=Povpra%C5%A1evanje%20za%20spletno%20stran">alej.kump@gmail.com</a><br><span class="cap">Napišite dejavnost in paket, ki vas zanima.</span></li>
+      <li><span class="label">Instagram</span><a href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">@alej_kump ↗</a><br><span class="cap">V sporočilo napišite STRAN.</span></li>
+    </ul>
+    <div class="art" aria-hidden="true"><span class="cap">predogled</span><p class="big">0 €</p></div>
+  </div>
+</section>
+
+<section class="band" id="cene" aria-labelledby="h-cene" data-shot>
+  <h2 id="h-cene" class="display">Cene.</h2>
+  <div class="three">
+    <div class="ident">
+      <p class="label">Tri paketi, ena cena, zapisana vnaprej</p>
+      <p class="cap">Vsak paket vključuje vseh osem načel s te strani. Animirana stran, kakršno pravkar berete, je na voljo samo v paketu Premium.</p>
+      <p><a class="pill" href="mailto:alej.kump@gmail.com?subject=Povpra%C5%A1evanje%20za%20spletno%20stran">Vprašam za paket</a></p>
+    </div>
+    <div class="diagram" aria-label="Paketi">
+      <div class="col"><p class="label">Osnovna</p><p class="amt">450 €<small>ali 10 × 45 €</small></p><ul><li class="em">1 stran, razdeljena na sekcije</li><li>1 krog popravkov</li><li>Rok izdelave 7 delovnih dni</li><li>Neobvezno 15 €/mesec za gostovanje in vzdrževanje</li></ul></div>
+      <div class="col"><p class="label">Lokalni posel</p><p class="amt">690 €<small>ali 10 × 69 €</small></p><ul><li class="em">Do 5 podstrani</li><li>2 kroga popravkov</li><li>Rok izdelave 10 delovnih dni</li><li>Neobvezno 25 €/mesec za gostovanje in vzdrževanje</li></ul></div>
+      <div class="col"><p class="label">Premium</p><p class="amt">990 €<small>ali 10 × 99 €</small></p><ul><li class="em">Do 5 podstrani, s prilagojenimi slikami in besedilom</li><li class="em">Animirana stran, samo v tem paketu</li><li>2 kroga popravkov</li><li>Rok izdelave 14 delovnih dni</li><li>Neobvezno 29 €/mesec za gostovanje in vzdrževanje</li></ul></div>
+    </div>
+    <div class="expl">
+      <p>Cene so končne: DDV ni obračunan (94. člen ZDDV-1). Domena ni vključena; kupite jo sami pri registrarju.</p>
+      <p>S kartico (Stripe) ali na TRR. V celoti ali v 2, 5, 7 ali 10 enakih mesečnih obrokih brez obresti. Davčno potrjen račun po e-pošti v enem delovnem dnevu.</p>
+      <p>Rok izdelave teče od dneva, ko prejmem vsebino in prvo plačilo. Noben paket ne vključuje spletne trgovine ali rezervacijskega sistema (razen povezave na obstoječo storitev) in nobene obljube o uvrstitvi na iskalnikih. Rezultatov ne obljubljam.</p>
+      <p><a href="https://alejkump.si/cene.html" style="border-bottom:1px solid var(--ink);text-decoration:none">Vse o paketih in plačilu ↗</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sources" aria-labelledby="h-viri">
+  <h2 id="h-viri" class="h">Viri. Preverjeni 14. 11. 2026.</h2>
+  <div class="rows">
+    <div class="row" id="v1"><b>1</b><span>web.dev (Google), <a href="https://web.dev/articles/vitals" rel="noopener">Web Vitals</a>: LCP do 2,5 s, INP do 200 ms, CLS do 0,1.</span></div>
+    <div class="row" id="v2"><b>2</b><span>web.dev (Google), <a href="https://web.dev/articles/why-speed-matters" rel="noopener">Why does speed matter?</a>: BBC je izgubil dodatnih 10 % uporabnikov za vsako dodatno sekundo nalaganja.</span></div>
+    <div class="row" id="v3"><b>3</b><span>Deloitte Ireland za Google, <a href="https://www.deloitte.com/ie/en/services/consulting/research/milliseconds-make-millions.html" rel="noopener">Milliseconds Make Millions</a>, 2020: izboljšanje mobilne hitrosti za 0,1 s; trgovina na drobno +8,4 % konverzij; strani za zbiranje povpraševanj: stopnja odboja izboljšana za 8,3 %.</span></div>
+    <div class="row" id="v4"><b>4</b><span>Statistični urad RS, <a href="https://www.stat.si/StatWeb/News/Index/13908" rel="noopener">Uporaba interneta v gospodinjstvih in pri posameznikih, 2025</a> (9. 10. 2025): devet od desetih prebivalcev je do interneta dostopalo prek mobilnega ali pametnega telefona.</span></div>
+    <div class="row" id="v5"><b>5</b><span>Statcounter GlobalStats, <a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet/slovenia" rel="noopener">Desktop vs Mobile vs Tablet Market Share, Slovenia</a>, oktober 2026: namizje 56,01 %, mobilni 43,02 %, tablice 0,97 %. Delež se mesečno spreminja.</span></div>
+    <div class="row" id="v6"><b>6</b><span>Google Search Central, <a href="https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing" rel="noopener">Mobile-first indexing</a>: Google uporablja mobilno različico vsebine za indeksiranje in razvrščanje.</span></div>
+    <div class="row" id="v7"><b>7</b><span>Nielsen Norman Group, Jakob Nielsen, <a href="https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/" rel="noopener">How Long Do Users Stay on Web Pages?</a>, 2011: uporabniki pogosto zapustijo stran v 10–20 sekundah; vrednost mora biti jasna v 10 sekundah.</span></div>
+    <div class="row" id="v8"><b>8</b><span>Nielsen Norman Group, Jakob Nielsen, <a href="https://www.nngroup.com/articles/how-users-read-on-the-web/" rel="noopener">How Users Read on the Web</a>, 1997: 79 % testnih uporabnikov je stran vedno preletelo, 16 % je bralo besedo za besedo.</span></div>
+    <div class="row" id="v9"><b>9</b><span>Stanford Web Credibility Project, <a href="https://credibility.stanford.edu/guidelines/index.html" rel="noopener">Stanford Guidelines for Web Credibility</a>: deset smernic na podlagi treh let raziskav z več kot 4.500 ljudmi.</span></div>
+    <div class="row" id="v10"><b>10</b><span>Google, pomoč za Poslovni profil, <a href="https://support.google.com/business/answer/7091" rel="noopener">How to improve your local ranking on Google</a>: ustreznost, razdalja, prepoznavnost; popolni in točni podatki; za boljšo lokalno uvrstitev ni mogoče plačati.</span></div>
+    <div class="row" id="v11"><b>11</b><span>AK agencija, <a href="https://alejkump.si/cene.html" rel="noopener">Cene</a>: lastništvo strani, besedil in slik preide na vas, ko je paket v celoti plačan; domeno kupite na svoje ime; gostovanje in vzdrževanje sta neobvezna.</span></div>
+  </div>
+</section>
+
+<section class="finale" id="finale" aria-hidden="true" data-shot>
+  <p class="word">Dobra stran</p>
+  <div class="tiles">
+    <div class="tile y" style="left:6%;top:8%;width:clamp(120px,16vw,240px);height:clamp(110px,14vw,210px)">2,5 s<small>hitrost</small></div>
+    <div class="tile c" style="left:38%;top:44%;width:clamp(110px,14vw,210px);height:clamp(100px,12vw,180px)">9/10<small>telefon</small></div>
+    <div class="tile g" style="right:12%;top:4%;width:clamp(120px,18vw,260px);height:clamp(110px,15vw,220px)">10 s<small>pet sekund</small></div>
+    <div class="tile p" style="right:2%;top:52%;width:clamp(100px,13vw,200px);height:clamp(90px,11vw,170px)">0 €<small>predogled</small></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="cols">
+    <div><span class="label">Kontakt</span><ul><li><a href="tel:+38670479188">070 479 188</a></li><li><a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></li><li><a href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">Termin ↗</a></li><li><a href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">@alej_kump ↗</a></li></ul></div>
+    <div><span class="label">Strani</span><ul><li><a href="https://alejkump.si/">Domov</a></li><li><a href="https://alejkump.si/cene.html">Cene</a></li><li><a href="https://alejkump.si/primeri.html">Primeri</a></li><li><a href="https://alejkump.si/kako-poteka.html">Kako poteka</a></li><li><a href="https://alejkump.si/zasebnost.html">Varstvo podatkov</a></li><li><a href="../">Druga predogleda</a></li></ul></div>
+    <div><span class="label">Ta stran</span><p><strong>To je komercialna stran.</strong> Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja. Predogled ni javno objavljen v iskalnikih.</p><p>Pisava Inter Tight, OFL. Primerjave so narisane v kodi; Mizarstvo Hrast je izmišljeno.</p></div>
+    <div><span class="label">Podjetje</span><p><strong>AK agencija, računalniško programiranje, Alej Kump s.p.</strong> · vpisano v Poslovni register Slovenije (AJPES) 15. septembra 2026 · dejavnost 62.100 · <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>sedež Ulica heroja Marinclja 3, 1330 Kočevje, Slovenija · matična številka 7585942000 · davčna številka 67735509</p></div>
+    <div><span class="label">Zasebnost</span><p>Ta stran ne shranjuje ničesar v vašem brskalniku in ne nastavlja piškotkov. Slike, pisava, slog (CSS) in skript na tej strani so gostovani tukaj. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Ni obrazcev.</p></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement, rm=doc.classList.contains('rm');
+  function clamp(v){return v<0?0:v>1?1:v;}
+  function fmt(el,v){var dec=+el.getAttribute('data-dec')||0,grp=el.getAttribute('data-grp');var s=v.toFixed(dec).replace('.',',');if(grp){s=s.replace(/\B(?=(\d{3})+(?!\d))/g,'.');}el.textContent=s;}
+  // menu
+  var menu=document.getElementById('menu'),mb=menu.querySelector('button');
+  mb.addEventListener('click',function(){var o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o?'true':'false');});
+  document.addEventListener('click',function(e){if(!menu.contains(e.target)){menu.classList.remove('open');mb.setAttribute('aria-expanded','false');}});
+  // chapters
+  var ch=document.querySelector('[data-chapters]'), stage=ch.querySelector('.stage'), pans=[].slice.call(ch.querySelectorAll('[data-pan]')), n=pans.length;
+  var counters=pans.map(function(p){return [].slice.call(p.querySelectorAll('[data-count]'));});
+  var wide=function(){return window.innerWidth>=810;};
+  // counters finish in the first quarter of the hold, so any resting state shows the true number
+  function setM(i,m){pans[i].style.setProperty('--m',m.toFixed(4));var k=clamp(m*4);counters[i].forEach(function(c){var to=+c.getAttribute('data-count'),from=c.hasAttribute('data-from')?+c.getAttribute('data-from'):0;fmt(c,from+(to-from)*k);});}
+  var scenes=[].slice.call(document.querySelectorAll('[data-scene]')).map(function(s){return {el:s,stage:s.querySelector('.stage'),p:-1};});
+  var mode=null, ticking=false, last=-1;
+  function wideUpdate(){
+    var r=ch.getBoundingClientRect(), total=ch.offsetHeight-stage.offsetHeight; if(total<=0) total=1;
+    var p=clamp(-r.top/total); if(Math.abs(p-last)<0.0004) return; last=p;
+    for(var i=0;i<n;i++){var t=p*n-i; var q=i===0?1:clamp(t/0.4); var m=clamp((t-0.4)/0.6); pans[i].style.setProperty('--q',q.toFixed(4)); setM(i,m);}
+  }
+  function narrowUpdate(){
+    var vh=window.innerHeight;
+    for(var i=0;i<n;i++){var sc=pans[i].parentNode; if(!sc.classList.contains('mscene')) continue; var r=sc.getBoundingClientRect(); if(r.bottom<-vh||r.top>vh*2) continue; var total=sc.offsetHeight-pans[i].offsetHeight; if(total<=0) total=1; setM(i,clamp(-r.top/total));}
+  }
+  function scenesUpdate(){
+    var vh=window.innerHeight;
+    scenes.forEach(function(sc){var r=sc.el.getBoundingClientRect(); if(r.bottom<-vh||r.top>vh*2) return; var sh=sc.stage?sc.stage.offsetHeight:vh,total=sc.el.offsetHeight-sh; if(total<=0) total=1; var p=clamp(-r.top/total); if(Math.abs(p-sc.p)<0.0005) return; sc.p=p; sc.el.style.setProperty('--p',p.toFixed(4));});
+  }
+  function update(){ticking=false; if(rm) return; if(wide()) wideUpdate(); else narrowUpdate(); scenesUpdate();}
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+  function layout(){
+    var w=wide()?'wide':'narrow'; if(w===mode) return; mode=w;
+    pans.forEach(function(p){var par=p.parentNode; if(w==='narrow'&&!par.classList.contains('mscene')){var wrap=document.createElement('div');wrap.className='mscene';par.insertBefore(wrap,p);wrap.appendChild(p);} else if(w==='wide'&&par.classList.contains('mscene')){par.parentNode.insertBefore(p,par);par.parentNode.removeChild(par);}});
+    if(rm){pans.forEach(function(p,i){setM(i,0.5);p.style.setProperty('--q','1');});}
+    last=-1; req();
+  }
+  layout(); addEventListener('resize',function(){layout();req();}); addEventListener('scroll',req,{passive:true});
+  var rv=[].slice.call(document.querySelectorAll('[data-reveal]'));
+  if(!rm&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});rv.forEach(function(e){io.observe(e);});}
+  else rv.forEach(function(e){e.classList.add('in');});
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
+</body>
+</html>
