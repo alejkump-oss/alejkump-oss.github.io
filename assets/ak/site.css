@@ -310,6 +310,7 @@ h3{font-weight:var(--font-weight-regular);letter-spacing:var(--ls-heading-2xs);l
   .car-slide{flex-basis:86%}
   .car-slide:first-child .shot.crop img{object-position:left top} /* Briški: no phone-size shot, keep its logo in frame */
   .phero{padding-top:120px}
+  .acts .pill{white-space:normal;text-align:center} /* a long call to action wraps on a phone instead of overflowing */
 }
 @media (max-width:899px){
   .strip .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -335,3 +336,163 @@ h3{font-weight:var(--font-weight-regular);letter-spacing:var(--ls-heading-2xs);l
 [data-reveal] > .steps > :nth-child(4),[data-reveal] .facts > :nth-child(4),[data-reveal] .dir > :nth-child(4){transition-delay:.24s}
 /* owner 14. 11. 2026: motion runs on every device, the phone included, so the
    prefers-reduced-motion override was removed on his instruction. */
+
+/* ---------- page types, 14. 11. 2026 ----------
+   The remaining public pages (articles, legal documents, the GOOGLE / MARKETING / MARKET offers,
+   the referral page, the English review cluster) share this file. Same vocabulary: amber labels,
+   white headings, silver body, no cards, panels or shadows. The only rules drawn anywhere are the
+   hairlines inside tables and price lists, which are tabular typography, not boxes. */
+
+/* a fixed header must never cover the target of an in-page link */
+main [id]{scroll-margin-top:100px}
+
+/* hero variants: a two-line h1 (sentence-case kicker, then the headline); silver two-tone em */
+.phero h1 .h1-seo{display:block;font-size:clamp(17px,1.45vw,21px);font-weight:var(--font-weight-regular);letter-spacing:-.01em;line-height:1.4;color:var(--g1);margin-bottom:18px;max-width:34em;text-wrap:pretty}
+.phero h1 .h1-big{display:block}
+h1 em,h2 em,.grad{font-style:normal;color:var(--g1)}
+.phero .meta{margin-top:20px}
+
+/* prose: long-form reading (.article) and legal documents (.legal). One measure, a normal body
+   weight (the 200 display weight is for short copy only), open space between sections. */
+.prose{max-width:40em;color:var(--g1);font-weight:300;font-size:18px;line-height:1.6;text-wrap:pretty}
+.prose > p{margin-top:22px}
+.prose > :first-child{margin-top:0}
+.prose h2{font-size:clamp(26px,2.6vw,34px);line-height:1.2;letter-spacing:-.03em;margin-top:72px;color:#fff}
+.prose h3{margin-top:44px;font-size:22px;letter-spacing:-.02em;color:#fff}
+.prose h2 + p,.prose h2 + ul,.prose h2 + ol,.prose h2 + .tbl-scroll,.prose h2 + .panel,.prose h2 + .disclosure,.prose h2 + blockquote{margin-top:22px}
+.prose h3 + p,.prose h3 + ul{margin-top:12px}
+.prose ul{display:grid;gap:12px;margin-top:22px}
+.prose ul li{position:relative;padding-left:24px}
+.prose ul li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;transform:rotate(45deg);background:var(--g2)}
+.prose ol{list-style:decimal;padding-left:1.5em;display:grid;gap:12px;margin-top:22px}
+.prose ol li::marker{color:var(--amber);font-weight:var(--font-weight-semibold)}
+.prose strong{color:#fff}
+.prose a{color:#fff;text-underline-offset:4px;text-decoration-color:rgba(255,255,255,.4)}
+.prose a:hover{text-decoration-color:#fff}
+.prose code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;color:#fff;overflow-wrap:anywhere}
+.prose pre{margin-top:28px;padding:24px;border-radius:var(--radius-3xl);background:#0b0b0b;overflow-x:auto;font-size:14px;line-height:1.55;color:var(--g1)}
+.prose pre code{font-size:inherit;color:inherit}
+.prose blockquote{margin:40px 0 0;padding:0;font-size:clamp(20px,2vw,26px);line-height:1.45;letter-spacing:-.015em}
+.prose blockquote p{margin:0;font-size:inherit}
+.prose hr{border:0;height:1px;background:rgba(255,255,255,.12);margin:64px 0 0}
+.prose .lead{margin-top:28px;max-width:none}
+.prose .meta{margin-top:0}
+.prose .small{margin-top:16px;font-size:var(--fs-base);line-height:var(--lh-base);color:var(--g2)}
+.prose .small strong{color:var(--g1)}
+/* the author's disclosure: a quiet paragraph whose lead-in is the page's one amber emphasis */
+.prose .disclosure{margin-top:40px;font-size:16px;line-height:1.6;color:var(--g2);max-width:38em}
+.prose .disclosure strong{color:var(--amber)}
+.prose .disclosure em{color:var(--g1);font-style:normal}
+/* a checklist item or a report excerpt: an open block, no box */
+.prose .panel{margin-top:40px}
+.prose .panel + .panel{margin-top:48px}
+.prose .panel h3{margin-top:0}
+.prose .panel p{margin-top:10px;font-size:17px}
+.prose .panel ol,.prose .panel ul{margin-top:14px}
+.prose .panel .small{margin-top:14px}
+.prose .warn{margin-top:40px;font-size:16px;line-height:1.6;color:var(--g2);max-width:38em}
+.prose .warn strong{color:var(--amber)}
+.prose .acts{margin-top:40px}
+.prose .acts + .hint{margin-top:16px}
+/* legal: a slightly tighter measure and size, numbered sections, the withdrawal form as a sheet */
+.legal{max-width:42em;font-size:17px;line-height:1.65}
+.legal > p{margin-top:18px}
+.legal h2{font-size:clamp(22px,2.2vw,28px);margin-top:56px;letter-spacing:-.02em}
+.legal h2 + p,.legal h2 + ul,.legal h2 + ol{margin-top:16px}
+.legal ul,.legal ol{gap:10px;margin-top:16px}
+.legal .disclosure{margin-top:16px;padding:24px;border-radius:var(--radius-3xl);background:#0b0b0b;color:var(--g1);font-size:16px;line-height:1.75;max-width:none}
+.legal .disclosure strong{color:#fff}
+.legal .back{margin-top:56px}
+
+/* tables: hairline rows, amber column labels, no outer box */
+.tbl-scroll{position:relative;overflow-x:auto;margin-top:28px;-webkit-overflow-scrolling:touch} /* position:relative: WebKit otherwise lets a wide collapsed-border table add 2px to the page's scroll width */
+.tbl{width:100%;border-collapse:collapse;font-size:16px;line-height:1.45;color:var(--g1);text-align:left}
+.tbl th,.tbl td{padding:14px 20px 14px 0;vertical-align:top;border-bottom:1px solid rgba(255,255,255,.12)}
+.tbl th:last-child,.tbl td:last-child{padding-right:0}
+.tbl thead th{padding-top:0;font-size:var(--fs-xs-3);font-weight:var(--font-weight-semibold);line-height:var(--lh-xs-3);text-transform:uppercase;letter-spacing:var(--ls-xs-3);color:var(--amber)}
+.tbl tbody th{color:#fff;font-weight:var(--font-weight-regular)}
+.tbl.rows th{width:32%}
+.tbl caption{caption-side:bottom;text-align:left;padding:14px 0 0;font-size:14px;line-height:1.5;color:var(--g2)}
+.tbl tr.is-today th,.tbl tr.is-today td{color:#fff}
+.tbl tr.is-today td:first-child{color:var(--amber)}
+.cmp{min-width:720px;text-align:center}
+.cmp th:first-child,.cmp td:first-child{text-align:left}
+.cmp td{color:var(--g1)}
+.cmp td.na{color:var(--g2)}
+.cmp td.hi{color:#fff}
+.cmp-h{margin-top:72px;font-size:22px;letter-spacing:-.02em;font-weight:var(--font-weight-regular)}
+.cmp-note{margin-top:20px}
+
+/* amounts with a period or a smaller size */
+.amt .per{font-size:.3em;letter-spacing:-.01em;color:var(--g2);margin-left:.25em}
+.amt.sm{font-size:clamp(40px,3.6vw,52px)}
+.cols3 h3.label,.cols3 h4.label,.prices h4.label,.offers h4.label{font-size:var(--fs-nav-label);line-height:var(--lh-nav-label);letter-spacing:var(--ls-nav-label)}
+.prices.many{margin-top:48px}
+@media (min-width:1000px){.prices.many{gap:72px 48px;max-width:none}}
+.price .tlink.sm{margin-top:var(--spacing-24)}
+.price .tlink.sm + .sub{margin-top:var(--spacing-18)}
+/* a smaller offer grid (packages by purpose): names as labels, a mid-size amount, a line of text */
+.offers{display:grid;grid-template-columns:1fr;gap:var(--spacing-36);margin-top:48px;max-width:640px}
+@media (min-width:1000px){.offers{grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 48px;max-width:none}}
+.offers .amt{margin-top:var(--spacing-12)}
+.offers p{margin-top:12px;color:var(--g1);font-size:16px;line-height:1.55}
+.offers .tlink.sm{margin-top:12px}
+
+/* package groups (MARKETING): a details element whose summary is the section head */
+.grp{margin-top:var(--gap)}
+.grp summary{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:24px;row-gap:8px;align-items:baseline;cursor:pointer;list-style:none}
+.grp summary::-webkit-details-marker{display:none}
+.grp-h{grid-column:1;font-size:clamp(28px,3.4vw,44px);font-weight:var(--font-weight-regular);letter-spacing:-.03em;line-height:1.1;text-wrap:balance}
+.grp-hint{grid-column:1;font-size:15px;color:var(--g2)}
+.grp summary::after{content:"+";grid-column:2;grid-row:1;justify-self:end;color:var(--amber);font-weight:300;font-size:clamp(28px,3vw,40px);line-height:1;transition:transform .2s}
+.grp[open] summary::after{transform:rotate(45deg)}
+.grp-nav{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:40px;font-size:15px}
+.grp-nav a{color:var(--g1);text-decoration:none;transition:color .2s}
+.grp-nav a:hover{color:#fff;text-decoration:underline;text-underline-offset:6px}
+
+/* a two-column price list: name left, amount right, hairlines between rows */
+.plist{display:grid;margin-top:28px;max-width:720px}
+.plist li{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:17px}
+.plist li:first-child{border-top:1px solid rgba(255,255,255,.12)}
+.plist .pl-name{color:#fff}
+.plist .pl-name small{display:block;margin-top:4px;font-size:14px;line-height:1.45;color:var(--g2)}
+.plist .pl-price{color:var(--g1);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* the order block that google.js and market.js render into (their class names are kept) */
+.row > *{min-width:0} /* a grid cell never grows past its track for a long unbreakable child */
+.mk-today{display:grid;justify-items:start;max-width:100%}
+.mk-today .btn{white-space:normal;text-align:center;max-width:100%} /* google.js writes a long label into the pill */
+.mk-today .mk-day{font-size:var(--fs-nav-label);font-weight:var(--font-weight-semibold);line-height:var(--lh-nav-label);text-transform:uppercase;letter-spacing:var(--ls-nav-label);color:var(--amber)}
+.mk-today .mk-price{display:flex;align-items:baseline;gap:.15em;margin-top:var(--spacing-18);line-height:1}
+.mk-today .mk-amount{font-size:clamp(56px,6vw,88px);font-weight:var(--font-weight-regular);letter-spacing:-.04em;line-height:1}
+.mk-today .mk-cur{font-size:clamp(18px,1.8vw,26px);letter-spacing:-.01em;color:var(--g2)}
+.mk-today .mk-sub{margin-top:var(--spacing-18);font-size:16px;line-height:1.5;color:var(--g1);max-width:30em}
+.mk-today .mk-list{display:grid;gap:var(--spacing-12);margin-top:var(--spacing-24);color:var(--g1);font-size:16px}
+.mk-today .mk-list li{display:flex;gap:14px;align-items:baseline}
+.mk-today .mk-list li::before{content:"";flex:none;width:7px;height:7px;transform:translateY(-2px) rotate(45deg);background:var(--g2)}
+.mk-today .mk-tomorrow{margin-top:20px;font-size:15px;line-height:1.5;color:var(--g2);max-width:30em}
+.mk-today .btn{margin-top:var(--spacing-30)}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:14.4px 16px;border-radius:22.5px;background:var(--violet);color:#fff;font-size:14px;font-weight:var(--font-weight-semibold);text-transform:uppercase;letter-spacing:.025em;text-decoration:none;white-space:nowrap;transition:background-color .2s}
+.btn-primary:hover{background:var(--violet-h)}
+.mk-today .mk-note{margin-top:var(--spacing-18);font-size:14px;line-height:1.5;color:var(--g2);max-width:34em}
+.mk-note:empty{display:none}
+.mk-alt{display:inline-block;margin-top:14px;font-size:15px;color:#fff;text-underline-offset:5px;text-decoration-color:rgba(255,255,255,.35)}
+.mk-alt:hover{text-decoration-color:#fff}
+.mk-terms{margin-top:var(--spacing-30);font-size:14px;color:var(--g2)}
+.mk-terms a{color:#fff;text-underline-offset:4px;text-decoration-color:rgba(255,255,255,.4)}
+/* feature steps: the included / not-included state market.js sets on the day */
+.steps li.is-off{opacity:.45}
+.mk-inc{display:block;margin-top:10px;font-size:var(--fs-xs-3);font-weight:var(--font-weight-semibold);line-height:var(--lh-xs-3);text-transform:uppercase;letter-spacing:var(--ls-xs-3);color:var(--amber)}
+.mk-inc:empty{display:none}
+.is-off .mk-inc{color:var(--g2)}
+
+/* steps whose label is a word ("1. korak"), not a two-digit number: the label sits above the heading */
+.steps.named li{padding-left:0}
+.steps.named li > .label{position:static;display:block;margin-bottom:10px}
+
+/* two-column reading blocks and small helpers */
+.row .label + .lead{margin-top:22px}
+.sec .lead{margin-top:28px}
+.sec .lead:first-child,.sec .label:first-child + .lead{margin-top:28px}
+.body + .body{margin-top:18px}
+.ticks.wide{max-width:none}

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MARKET, 1 mesec upravljanja vašega Instagrama | Alej Kump</title>
 <meta name="description" content="Agent tedna MARKET: 1 mesec vaš Instagram vodijo naši AI agenti: reeli in objave, zgodbe, odgovori na komentarje in DM, tedenski načrt in poročilo. Vi samo povežete Instagram. Od 19. do 23. 10. 2026, vsak dan manjši paket in nižja cena.">
-<meta name="theme-color" content="#0b1016">
+<meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://alejkump.si/market.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
@@ -13,131 +13,149 @@
 <meta property="og:title" content="MARKET, 1 mesec upravljanja vašega Instagrama">
 <meta property="og:description" content="Vi povežete Instagram, naši AI agenti ga vodijo 1 mesec. Pon 100 €, tor 80 €, sre 60 €, čet 40 €, pet 20 € za prvi mesec: vsak dan manj funkcij.">
 <meta property="og:locale" content="sl_SI">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="premium.css">
-<script>document.documentElement.classList.add('js');</script>
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-ext-wght-normal.woff2" crossorigin>
+<link rel="stylesheet" href="assets/ak/site.css?v=6">
 </head>
-<body class="home market">
-
+<body>
 <a class="skip" href="#vsebina">Preskoči na vsebino</a>
 
-<header class="site site-home">
-  <div class="wrap">
-    <a class="mark" href="./"><span class="mark-badge" aria-hidden="true">AK</span><span class="mark-text">AK agencija <span class="mark-sub">agent tedna</span></span></a>
-    <nav aria-label="Glavna navigacija">
-      <a href="market.html" aria-current="page">Agent tedna</a>
-      <a href="#funkcije">Funkcije</a>
-      <a href="#cene">Cene po dnevih</a>
-      <a href="#kako">Kako poteka</a>
-      <a href="#vprasanja">Vprašanja</a>
-      <a href="./">Spletne strani</a>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="./" aria-label="AK agencija, domov">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8052ff"/><stop offset="1" stop-color="#15846e"/></linearGradient></defs>
+        <path d="M16 3 29 27H3Z" fill="none" stroke="url(#mk)" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M16 13 22 24H10Z" fill="url(#mk)"/>
+      </svg>
+      <span>AK agencija</span>
+    </a>
+    <nav class="links" id="glavni-meni" aria-label="Glavni meni">
+      <a href="storitve.html">Storitve</a>
+      <a href="primeri.html">Primeri</a>
+      <a href="cene.html">Cene</a>
+      <a href="kako-poteka.html">Kako poteka</a>
+      <a href="o-meni.html">O meni</a>
+      <a href="google.html">GOOGLE</a>
+      <a href="marketing.html">MARKETING</a>
+      <a href="kontakt.html">Kontakt</a>
     </nav>
-    <a class="head-call" href="#narocilo">Naročilo</a>
+    <a class="nav-tel pill" href="tel:+38670479188">Pokličite</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="glavni-meni"><span class="bars" aria-hidden="true"></span><span class="sr">Meni</span></button>
   </div>
 </header>
 
-<section class="mk-hero" aria-labelledby="naslov">
-  <div class="wrap wide">
-    <div>
-      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Agent tedna &middot; 19.&ndash;23. 10. 2026</p>
+<main id="vsebina">
+<section class="phero" aria-labelledby="naslov">
+    <div class="wrap">
+      <p class="label">Agent tedna &middot; 19.&ndash;23. 10. 2026</p>
       <h1 id="naslov">
         <span class="h1-seo">MARKET: 1 mesec upravljanja vašega Instagrama</span>
         <span class="h1-big">Vaš Instagram <em>vodimo mi.</em></span>
       </h1>
-      <p class="hero-lede">MARKET je <strong>1 mesec upravljanja vašega Instagrama</strong>. Vi
+      <p class="lead">MARKET je <strong>1 mesec upravljanja vašega Instagrama</strong>. Vi
       povežete svoj Instagram z našim sistemom prek varne povezave, ki vam jo pošljemo: prijavite se
       na strani Instagrama, gesla nikoli ne dobimo. Naši AI agenti nato mesec dni pripravljajo in
       objavljajo vsebine ter odgovarjajo, s funkcijami paketa dneva, ko naročite. Ne potrebujete
       nobenega orodja in ne plačujete nobene naročnine.</p>
-      <p class="hero-note">Na svojem računu
+      <p class="lead">Na svojem računu
       <a href="https://www.instagram.com/alej_kump/" rel="noopener">@alej_kump</a> tako od 14. 10.
       2026 objavljamo reele in zgodbe. Ta teden sprejmemo <strong>največ 5 strank</strong>: toliko
       jih zmore ena oseba z agenti.</p>
     </div>
+  </section>
 
-    <div>
-      <div class="mk-today" data-market-today="full">
-        <p class="mk-day">Cena po dnevih, za prvi mesec</p>
-        <p class="mk-sub">pon 100&nbsp;&euro; &middot; tor 80&nbsp;&euro; &middot; sre 60&nbsp;&euro; &middot; čet 40&nbsp;&euro; &middot; pet 20&nbsp;&euro;. Vsak dan je paket manjši. Ob sobotah in nedeljah prodaje ni.</p>
-        <a class="btn btn-primary" href="mailto:alej.kump@gmail.com?subject=MARKET">Naročite po e-pošti</a>
+  <section class="sec" id="danes" aria-label="Paket dneva">
+    <div class="wrap row top" data-reveal>
+      <div>
+        <div class="mk-today" data-market-today="full">
+          <p class="mk-day">Cena po dnevih, za prvi mesec</p>
+          <p class="mk-sub">pon 100&nbsp;&euro; &middot; tor 80&nbsp;&euro; &middot; sre 60&nbsp;&euro; &middot; čet 40&nbsp;&euro; &middot; pet 20&nbsp;&euro;. Vsak dan je paket manjši. Ob sobotah in nedeljah prodaje ni.</p>
+          <a class="btn btn-primary" href="mailto:alej.kump@gmail.com?subject=MARKET">Naročite po e-pošti</a>
+        </div>
+        <p class="mk-terms"><a href="pogoji-market.html">Pogoji prodaje in pravica do odstopa</a></p>
       </div>
-      <p class="mk-terms"><a href="pogoji-market.html">Pogoji prodaje in pravica do odstopa</a></p>
-    </div>
-  </div>
-</section>
-
-<main id="vsebina">
-
-  <section class="honest" aria-label="Kdo to piše">
-    <div class="wrap">
-      <div class="disclosure honest-card" data-reveal>
-        <strong>Kdo to piše.</strong> Sem Alej Kump, Alej Kump s.p. Ta stran prodaja mojo
-        storitev, zato je komercialna. MARKET je nov izdelek: do danes ga nisem opravil še
-        nobeni stranki. Na svojem računu @alej_kump naši agenti od 14. 10. 2026 objavljajo reele
-        in zgodbe. Vsebine in odgovori nastajajo z umetno inteligenco.
-        <strong>Ne obljubljam sledilcev, ogledov, komentarjev ali prodaje.</strong>
+      <div class="prose">
+        <div class="disclosure" style="margin-top:0">
+          <strong>Kdo to piše.</strong> Sem Alej Kump, Alej Kump s.p. Ta stran prodaja mojo
+          storitev, zato je komercialna. MARKET je nov izdelek: do danes ga nisem opravil še
+          nobeni stranki. Na svojem računu @alej_kump naši agenti od 14. 10. 2026 objavljajo reele
+          in zgodbe. Vsebine in odgovori nastajajo z umetno inteligenco.
+          <strong>Ne obljubljam sledilcev, ogledov, komentarjev ali prodaje.</strong>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="band" id="funkcije" aria-labelledby="funkcije-h">
-    <div class="wrap wide">
-      <p class="kicker" data-reveal>Funkcije</p>
-      <h2 id="funkcije-h" class="display" data-reveal>Pet funkcij, <span class="grad">ki jih mesec dni opravljamo mi.</span></h2>
-      <p class="section-lede" data-reveal>Katere dobite, je odvisno od dneva naročila. V ponedeljek vseh pet,
+  <section class="sec" id="funkcije" aria-labelledby="funkcije-h">
+    <div class="wrap" data-reveal>
+      <div class="row head">
+        <div>
+          <p class="label">Funkcije</p>
+          <h2 id="funkcije-h">Pet funkcij, <span class="grad">ki jih mesec dni opravljamo mi.</span></h2>
+        </div>
+        <p class="body">Katere dobite, je odvisno od dneva naročila. V ponedeljek vseh pet,
       v petek samo tedenski načrt s kratkim poročilom.</p>
-      <div class="mk-features">
-        <article class="mk-feature" data-market-feature="1" data-reveal>
-          <span class="mk-n">01</span>
+      </div>
+      <ol class="steps wide">
+        <li data-market-feature="1">
+          <span class="label">01</span>
           <h3>Reeli in objave</h3>
           <p>Pripravimo in objavimo 3 reele na teden (12 v mesecu), v vašem tonu in o vaših temah.
           Kaj pride, vidite vnaprej v tedenskem načrtu.</p>
           <span class="mk-inc"></span>
-        </article>
-        <article class="mk-feature" data-market-feature="2" data-reveal>
-          <span class="mk-n">02</span>
+        </li>
+        <li data-market-feature="2">
+          <span class="label">02</span>
           <h3>Dnevne zgodbe</h3>
           <p>Vsak delavnik objavimo 1 zgodbo, na primer opozorilo na novo objavo, vprašanje za
           sledilce ali utrinek iz vašega dela.</p>
           <span class="mk-inc"></span>
-        </article>
-        <article class="mk-feature" data-market-feature="3" data-reveal>
-          <span class="mk-n">03</span>
+        </li>
+        <li data-market-feature="3">
+          <span class="label">03</span>
           <h3>Odgovori na komentarje</h3>
           <p>Odgovore pripravi in objavi naš AI agent, v 24 urah ob delavnikih. Pritožbe in vse, kar
           zahteva vašo odločitev, vam posredujemo in nanje ne odgovarjamo namesto vas.</p>
           <span class="mk-inc"></span>
-        </article>
-        <article class="mk-feature" data-market-feature="4" data-reveal>
-          <span class="mk-n">04</span>
+        </li>
+        <li data-market-feature="4">
+          <span class="label">04</span>
           <h3>Odgovori na DM</h3>
           <p>Ljudem, ki vam pišejo prvi, odgovorimo v 24 urah ob delavnikih. Neznancem nikoli ne
           pišemo prvi. Ko pogovor zahteva vas (naročilo, cena po meri, pritožba), ga predamo vam.</p>
           <span class="mk-inc"></span>
-        </article>
-        <article class="mk-feature" data-market-feature="5" data-reveal>
-          <span class="mk-n">05</span>
+        </li>
+        <li data-market-feature="5">
+          <span class="label">05</span>
           <h3>Tedenski načrt + kratko poročilo</h3>
           <p>Vsak teden dobite načrt za naslednji teden (kaj in kdaj objavimo) in kratko poročilo o
           številkah vaših objav: ogledi, všečki, komentarji, novi sledilci.</p>
           <span class="mk-inc"></span>
-        </article>
-      </div>
-      <p class="small" data-reveal>Tedenski načrt lahko pregledate in spremenite, preden ga objavimo.
+        </li>
+      </ol>
+      <p class="note">Tedenski načrt lahko pregledate in spremenite, preden ga objavimo.
       Katero koli objavo na vašo zahtevo odstranimo. Vsebine in odgovori nastajajo z umetno
       inteligenco.</p>
     </div>
   </section>
 
-  <section class="band band-tint" id="cene" aria-labelledby="cene-h">
-    <div class="wrap">
-      <p class="kicker" data-reveal>Cene po dnevih</p>
-      <h2 id="cene-h" class="display" data-reveal>Vsak dan <span class="grad">manjši paket.</span></h2>
-      <p class="section-lede" data-reveal>Cena in funkcije veljajo za dan naročila po slovenskem času. Cena je
+  <section class="sec" id="cene" aria-labelledby="cene-h">
+    <div class="wrap" data-reveal>
+      <div class="row head">
+        <div>
+          <p class="label">Cene po dnevih</p>
+          <h2 id="cene-h">Vsak dan <span class="grad">manjši paket.</span></h2>
+        </div>
+        <p class="body">Cena in funkcije veljajo za dan naročila po slovenskem času. Cena je
       plačilo za prvi mesec. Po mesecu se odločite sami: nadaljujete z mesečno naročnino (79 € na mesec za vseh
       5 funkcij, DDV ni obračunan) ali končate, brez obveznosti.</p>
-      <table class="mk-ladder" data-reveal>
-        <caption class="small" style="caption-side: bottom; text-align: left; padding: .8rem .9rem;">Cene so končne, za prvi mesec. DDV ni obračunan na podlagi 1. odstavka 94. člena ZDDV-1.</caption>
+      </div>
+      <div class="tbl-scroll">
+      <table class="tbl">
+        <caption>Cene so končne, za prvi mesec. DDV ni obračunan na podlagi 1. odstavka 94. člena ZDDV-1.</caption>
         <thead><tr><th scope="col">Dan</th><th scope="col">Cena</th><th scope="col">Kaj 1 mesec opravljamo</th></tr></thead>
         <tbody>
           <tr data-market-date="2026-10-19"><td>pon 19. 10.</td><td>100&nbsp;&euro;</td><td>Reeli in objave, dnevne zgodbe, odgovori na komentarje, odgovori na DM, tedenski načrt + poročilo</td></tr>
@@ -148,38 +166,39 @@
           <tr><td>sob, ned</td><td>&ndash;</td><td>Prodaje ni. Vsak teden nov agent tedna.</td></tr>
         </tbody>
       </table>
-      <p class="small" data-reveal>Ta teden sprejmemo največ 5 strank. To je resnična meja dela ene osebe z
+      </div>
+      <p class="note">Ta teden sprejmemo največ 5 strank. To je resnična meja dela ene osebe z
       agenti, ne trik. Ko so mesta zasedena, to napišemo tukaj. Na vsako naročilo odgovorimo, plačila pa
       ne zahtevamo, če mesta ni več.</p>
     </div>
   </section>
 
-  <section class="band" id="kako" aria-labelledby="kako-h">
-    <div class="wrap wide">
-      <p class="kicker" data-reveal>Kako poteka</p>
-      <h2 id="kako-h" class="display" data-reveal>Štirje koraki. <span class="grad">Gesla ne pošiljate.</span></h2>
-      <ol class="steps-big">
-        <li data-reveal>
-          <span class="step-n">01</span>
+  <section class="sec" id="kako" aria-labelledby="kako-h">
+    <div class="wrap" data-reveal>
+      <p class="label">Kako poteka</p>
+      <h2 id="kako-h">Štirje koraki. <span class="grad">Gesla ne pošiljate.</span></h2>
+      <ol class="steps wide">
+        <li>
+          <span class="label">01</span>
           <h3>Naročilo in plačilo</h3>
           <p>Naročite po e-pošti; odgovorimo s potrdilom in navodili za plačilo na TRR. Po plačilu
           dobite potrdilo z vsemi podatki o naročilu in račun.</p>
         </li>
-        <li data-reveal>
-          <span class="step-n">02</span>
+        <li>
+          <span class="label">02</span>
           <h3>Kratek vprašalnik</h3>
           <p>Po e-pošti dobite vprašalnik (približno 10 minut): kaj delate, komu je Instagram namenjen,
           ton, teme, barve, poziv k dejanju in česa ne smemo trditi.</p>
         </li>
-        <li data-reveal>
-          <span class="step-n">03</span>
+        <li>
+          <span class="label">03</span>
           <h3>Povezava Instagrama</h3>
           <p>Pošljemo vam varno povezavo. Prijavite se na strani Instagrama in potrdite dostop; gesla
           nikoli ne dobimo. Dostop lahko kadar koli prekličete v nastavitvah Instagrama. Potrebujete
           račun vrste Business ali Creator (preklop je v nastavitvah Instagrama brezplačen).</p>
         </li>
-        <li data-reveal>
-          <span class="step-n">04</span>
+        <li>
+          <span class="label">04</span>
           <h3>Mesec upravljanja</h3>
           <p>Prvo objavo dobite najpozneje v 3 delovnih dneh po povezavi in izpolnjenem vprašalniku
           (če zahtevate začetek pred iztekom roka za odstop). Nato 30 dni delamo po paketu, vsak teden
@@ -189,11 +208,13 @@
     </div>
   </section>
 
-  <section class="band band-tint" id="vprasanja" aria-labelledby="vprasanja-h">
-    <div class="wrap">
-      <p class="kicker" data-reveal>Pogosta vprašanja</p>
-      <h2 id="vprasanja-h" class="display" data-reveal>Kar vas verjetno zanima.</h2>
-      <div class="faq" data-reveal>
+  <section class="sec" id="vprasanja" aria-labelledby="vprasanja-h">
+    <div class="wrap row top" data-reveal>
+      <div>
+        <p class="label">Pogosta vprašanja</p>
+        <h2 id="vprasanja-h">Kar vas verjetno zanima.</h2>
+      </div>
+      <div class="faq">
         <details>
           <summary>Kaj potrebujem?</summary>
           <p>Samo Instagram račun vrste Business ali Creator (osebni račun v nastavitvah Instagrama
@@ -252,15 +273,17 @@
     </div>
   </section>
 
-  <section class="final" id="narocilo" aria-labelledby="narocilo-h">
-    <div class="final-glow" aria-hidden="true"></div>
-    <div class="wrap">
-      <p class="kicker light" data-reveal>Naročilo</p>
-      <h2 id="narocilo-h" class="display" data-reveal>MARKET, <span class="grad">paket današnjega dne.</span></h2>
-      <p class="final-lede" data-reveal>1 mesec upravljanja vašega Instagrama z vključenimi funkcijami
+  <section class="sec" id="narocilo" aria-labelledby="narocilo-h">
+    <div class="wrap row top" data-reveal>
+      <div>
+        <p class="label">Naročilo</p>
+        <h2 id="narocilo-h">MARKET, <span class="grad">paket današnjega dne.</span></h2>
+        <p class="body">1 mesec upravljanja vašega Instagrama z vključenimi funkcijami
       spodaj. Brez orodij in naročnine, po mesecu brez obveznosti. Ta teden največ 5 strank.
       Rezultatov ne obljubljam.</p>
-      <div class="mk-final">
+        <p class="note">Naročite po e-pošti; odgovorimo s potrdilom in navodili za plačilo na TRR.</p>
+      </div>
+      <div>
         <div class="mk-today" data-market-today="full">
           <p class="mk-day">Cena po dnevih, za prvi mesec</p>
           <p class="mk-sub">pon 100&nbsp;&euro; &middot; tor 80&nbsp;&euro; &middot; sre 60&nbsp;&euro; &middot; čet 40&nbsp;&euro; &middot; pet 20&nbsp;&euro;. Ob sobotah in nedeljah prodaje ni.</p>
@@ -270,32 +293,36 @@
       </div>
     </div>
   </section>
-
 </main>
 
-<footer class="site">
+<footer class="foot">
   <div class="wrap">
-    <p><strong>To je komercialna stran.</strong> Oglašuje plačljivo storitev
-    in jo je napisala oseba, ki jo opravlja.</p>
-    <p class="legal">
-      <strong>Alej Kump</strong> (AK agencija, računalniško programiranje, Alej Kump s.p.) &middot;
-      vpisano v Poslovni register Slovenije (AJPES) 15. septembra 2026
-      &middot; dejavnost 62.100 &middot;
-      <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a> &middot;
-      <a href="tel:+38670479188">070 479 188</a><br>
-      <span>sedež Ulica heroja Marinclja 3, 1330 Kočevje, Slovenija &middot;
-      matična številka 7585942000 &middot;
-      davčna številka 67735509 &middot; nisem zavezanec za DDV</span>
-    </p>
-    <p class="legal"><a href="pogoji-market.html">Pogoji prodaje MARKET</a> &middot; <a href="./">Spletne strani</a></p>
-    <p class="legal">Ta stran ne shranjuje ničesar v vašem brskalniku in ne
-    nastavlja piškotkov. Slog (CSS) in skripta sta gostovana tukaj. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Ni obrazcev.
-    Naročite po e-pošti; odgovorimo s potrdilom in navodili za plačilo na TRR.</p>
+    <nav class="foot-links" aria-label="Strani">
+      <a href="./">Domov</a>
+      <a href="storitve.html">Storitve</a>
+      <a href="cene.html">Cene</a>
+      <a href="primeri.html">Primeri</a>
+      <a href="kako-poteka.html">Kako poteka</a>
+      <a href="google.html">GOOGLE</a>
+      <a href="marketing.html">MARKETING</a>
+      <a href="o-meni.html">O meni</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="clanki-koliko-stane-spletna-stran.html">Koliko stane spletna stran</a>
+      <a href="clanki-facebook-ali-spletna-stran.html">Facebook ali lastna stran</a>
+      <a href="clanki-google-profil-podjetja.html">Google profil podjetja</a>
+      <a href="clanki-spletna-stran-za-obrtnike.html">Spletna stran za obrtnike</a>
+      <a href="zasebnost.html">Varstvo podatkov</a>
+      <a href="en.html" hreflang="en" lang="en">English</a>
+    </nav>
+    <p><strong>To je komercialna stran.</strong> Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja.</p>
+    <p><strong>AK agencija, računalniško programiranje, Alej Kump s.p.</strong> · vpisano v Poslovni register Slovenije (AJPES) 15. septembra 2026 · dejavnost 62.100 · <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
+    sedež Ulica heroja Marinclja 3, 1330 Kočevje, Slovenija · matična številka 7585942000 · davčna številka 67735509</p>
+    <p>Ta stran ne shranjuje ničesar v vašem brskalniku in ne nastavlja piškotkov. Slike, pisava, slog (CSS) in skript na tej strani so gostovani tukaj. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Ni obrazcev.</p>
   </div>
 </footer>
 
 <script src="market.js" defer></script>
-<script src="premium.js" defer></script>
+<script src="assets/ak/ak.js?v=5" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>

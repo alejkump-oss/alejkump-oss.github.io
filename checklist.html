@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The n8n workflow reliability checklist — 18 checks you can run yourself</title>
 <meta name="description" content="Eighteen checks for an n8n workflow that runs green and still loses records. What to look for, why it matters, how to check it, and what a bad answer looks like. Free, no signup.">
+<meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://alejkump.si/checklist.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://alejkump.si/checklist.html">
 <meta property="og:title" content="The n8n workflow reliability checklist">
@@ -14,29 +16,51 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The n8n workflow reliability checklist">
 <meta name="twitter:description" content="Eighteen checks you can run on your own workflow in an afternoon.">
-<link rel="stylesheet" href="style.css">
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-ext-wght-normal.woff2" crossorigin>
+<link rel="stylesheet" href="assets/ak/site.css?v=6">
 </head>
 <body>
+<a class="skip" href="#vsebina">Skip to content</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="mark" href="n8n-review.html">Workflow reliability reviews</a>
-    <nav>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="./" aria-label="AK agencija, home">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8052ff"/><stop offset="1" stop-color="#15846e"/></linearGradient></defs>
+        <path d="M16 3 29 27H3Z" fill="none" stroke="url(#mk)" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M16 13 22 24H10Z" fill="url(#mk)"/>
+      </svg>
+      <span>AK agencija</span>
+    </a>
+    <nav class="links" id="glavni-meni" aria-label="Main menu">
       <a href="n8n-review.html">The review</a>
       <a href="teardown.html">A worked example</a>
-      <a href="checklist.html">Checklist</a>
+      <a href="checklist.html" aria-current="page">Checklist</a>
       <a href="sample-report.html">Sample report</a>
+      <a href="./" hreflang="sl" lang="sl">Slovensko</a>
     </nav>
+    <a class="nav-tel pill" href="tel:+38670479188">Call</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="glavni-meni"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
   </div>
 </header>
 
-<main class="wrap">
-
-  <h1>The n8n workflow reliability checklist</h1>
-
-  <p class="lede">Eighteen checks for the failure that doesn&rsquo;t turn a run
+<main id="vsebina">
+<section class="phero" aria-labelledby="naslov">
+    <div class="wrap">
+      <p class="label">Workflow reliability reviews</p>
+      <h1 id="naslov">The n8n workflow reliability checklist</h1>
+      <p class="lead">Eighteen checks for the failure that doesn&rsquo;t turn a run
   red. Free, no signup, no email, nothing gated. Work through it on your own
   workflow in an afternoon.</p>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="Checklist">
+    <div class="wrap" data-reveal>
+      <article class="prose article">
 
   <div class="disclosure">
     <strong>Who wrote this, and why.</strong> I&rsquo;m Alej Kump, and I sell
@@ -307,37 +331,33 @@
   workflow</a>, where every finding states what it does not prove, and the list of
   what I did not check is as plain as the list of what I did.</p>
 
-  <p class="cta-row">
-    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhich%20checklist%20items%20made%20you%20uncomfortable%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Tell me which items made you uncomfortable &rarr;</a>
-    <span class="cta-note">Email. No form, no signup.</span>
-  </p>
+  <div class="acts">
+    <a class="pill" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhich%20checklist%20items%20made%20you%20uncomfortable%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Tell me which items made you uncomfortable &rarr;</a>
+  </div>
+  <p class="hint">Email. No form, no signup.</p>
 
   <p class="warn"><strong>And whatever you do, don&rsquo;t send secrets.</strong>
   Not to me, not to anyone. See item 17 &mdash; check your export before it leaves
   your machine.</p>
 
+      </article>
+    </div>
+  </section>
 </main>
 
-<footer class="site">
+<footer class="foot">
   <div class="wrap">
-    <p><strong>This is a commercial page.</strong> It advertises a paid service
-    and is written by the person who provides it.</p>
-    <p class="legal">
-      AK agencija, računalniško programiranje, Alej Kump s.p. &middot;
-      entered in the Poslovni register Slovenije (AJPES), 15 September 2026
-      &middot; activity 62.100 &middot;
-      <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
-      <span>registered seat Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia &middot;
-      matična številka 7585942000 &middot;
-      davčna številka 67735509</span>
-    </p>
-    <p class="legal">This site stores nothing in your browser and sets no cookie.
-    Visits are counted by Cloudflare Web Analytics, without cookies and without
-    tracking individual visitors; fonts, images and styles are hosted here.
-    There is no form.</p>
+    <nav class="foot-links" aria-label="Pages">
+      <a href="./" hreflang="sl" lang="sl">Slovensko</a>
+      <a href="zasebnost.html" hreflang="sl" lang="sl">Varstvo podatkov</a>
+    </nav>
+    <p>This is a commercial page. It advertises a paid service and was written by the person who provides it.</p>
+    <p>Alej Kump · Websites (AK agencija, računalniško programiranje, Alej Kump s.p.), registered in the Slovenian Business Register (AJPES) on 15 September 2026, activity 62.100. Registered office: Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia. Registration no. (matična številka) 7585942000, tax no. (davčna številka) 67735509. <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></p>
+    <p>This page stores nothing in your browser and sets no cookies. Visits are counted by Cloudflare Web Analytics, without cookies and without tracking individual visitors. There are no forms.</p>
   </div>
 </footer>
 
+<script src="assets/ak/ak.js?v=5" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>

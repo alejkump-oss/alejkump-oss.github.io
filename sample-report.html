@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>What the report looks like — a full sample review</title>
 <meta name="description" content="A complete sample of the Single-Workflow Failure Review, run against a synthetic workflow. The executive summary in full, one finding in full, and the NOT CHECKED discipline. No real client.">
+<meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://alejkump.si/sample-report.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://alejkump.si/sample-report.html">
 <meta property="og:title" content="What the report actually looks like">
@@ -14,29 +16,51 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="What the report actually looks like">
 <meta name="twitter:description" content="A full sample review on a synthetic workflow. No real client.">
-<link rel="stylesheet" href="style.css">
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-ext-wght-normal.woff2" crossorigin>
+<link rel="stylesheet" href="assets/ak/site.css?v=6">
 </head>
 <body>
+<a class="skip" href="#vsebina">Skip to content</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="mark" href="n8n-review.html">Workflow reliability reviews</a>
-    <nav>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="./" aria-label="AK agencija, home">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8052ff"/><stop offset="1" stop-color="#15846e"/></linearGradient></defs>
+        <path d="M16 3 29 27H3Z" fill="none" stroke="url(#mk)" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M16 13 22 24H10Z" fill="url(#mk)"/>
+      </svg>
+      <span>AK agencija</span>
+    </a>
+    <nav class="links" id="glavni-meni" aria-label="Main menu">
       <a href="n8n-review.html">The review</a>
       <a href="teardown.html">A worked example</a>
-      <a href="checklist.html">Free checklist</a>
-      <a href="sample-report.html">Sample report</a>
+      <a href="checklist.html">Checklist</a>
+      <a href="sample-report.html" aria-current="page">Sample report</a>
+      <a href="./" hreflang="sl" lang="sl">Slovensko</a>
     </nav>
+    <a class="nav-tel pill" href="tel:+38670479188">Call</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="glavni-meni"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
   </div>
 </header>
 
-<main class="wrap">
-
-  <h1>What the report actually looks like</h1>
-
-  <p class="lede">Most people asking about a review want to know one thing:
+<main id="vsebina">
+<section class="phero" aria-labelledby="naslov">
+    <div class="wrap">
+      <p class="label">Workflow reliability reviews</p>
+      <h1 id="naslov">What the report actually looks like</h1>
+      <p class="lead">Most people asking about a review want to know one thing:
   what do I get at the end of it? This is the answer, at full length, on a
   workflow built for the purpose.</p>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="Sample report">
+    <div class="wrap" data-reveal>
+      <article class="prose article">
 
   <div class="disclosure">
     <strong>SAMPLE &mdash; NOT A REAL CLIENT.</strong> Nothing here is
@@ -112,17 +136,17 @@
   <h2>2. What the full report contains</h2>
 
   <div class="tbl-scroll">
-  <table>
-    <tr><th>Executive summary</th><td>The above. Business terms, no jargon</td></tr>
-    <tr><th>Scope</th><td>Exactly what was reviewed, and what was not</td></tr>
-    <tr><th>Method</th><td>What static analysis means here, and the statement that your workflow was never executed</td></tr>
-    <tr><th>Findings</th><td>Ranked by <em>business impact</em>, which is not the tool's severity order &mdash; and where the two differ, the reason is argued</td></tr>
-    <tr><th>CHECKED and NOT CHECKED</th><td>Stated as plainly as each other</td></tr>
-    <tr><th>Remediation plan</th><td>Kept in its own section, because a finding is observed and a recommendation is judgement</td></tr>
-    <tr><th>Test plan</th><td>What to check after fixing, with pass conditions</td></tr>
-    <tr><th>Limitations</th><td>What evidence would change the answers, and why execution history is the only thing that can</td></tr>
-    <tr><th>Next actions</th><td>With an owner and a date against each</td></tr>
-    <tr><th>Appendix</th><td>How to reproduce the report yourself against your own export</td></tr>
+  <table class="tbl rows">
+    <tr><th scope="row">Executive summary</th><td>The above. Business terms, no jargon</td></tr>
+    <tr><th scope="row">Scope</th><td>Exactly what was reviewed, and what was not</td></tr>
+    <tr><th scope="row">Method</th><td>What static analysis means here, and the statement that your workflow was never executed</td></tr>
+    <tr><th scope="row">Findings</th><td>Ranked by <em>business impact</em>, which is not the tool's severity order &mdash; and where the two differ, the reason is argued</td></tr>
+    <tr><th scope="row">CHECKED and NOT CHECKED</th><td>Stated as plainly as each other</td></tr>
+    <tr><th scope="row">Remediation plan</th><td>Kept in its own section, because a finding is observed and a recommendation is judgement</td></tr>
+    <tr><th scope="row">Test plan</th><td>What to check after fixing, with pass conditions</td></tr>
+    <tr><th scope="row">Limitations</th><td>What evidence would change the answers, and why execution history is the only thing that can</td></tr>
+    <tr><th scope="row">Next actions</th><td>With an owner and a date against each</td></tr>
+    <tr><th scope="row">Appendix</th><td>How to reproduce the report yourself against your own export</td></tr>
   </table>
   </div>
 
@@ -191,38 +215,34 @@
   <p>Tell me what the workflow does and what you think is going wrong. If it is
   not something I can genuinely help with, I will say so in the first reply.</p>
 
-  <p class="cta-row">
-    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
-    <span class="cta-note">Email. No form, no signup.</span>
-  </p>
+  <div class="acts">
+    <a class="pill" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
+  </div>
+  <p class="hint">Email. No form, no signup.</p>
 
   <p class="warn"><strong>And before you send any export anywhere</strong> &mdash;
   to me or to anyone &mdash; open it and search it for keys. Finding 1 above is
   the most common real problem in this whole category, and it is the one that
   costs something outside your own systems.</p>
 
+      </article>
+    </div>
+  </section>
 </main>
 
-<footer class="site">
+<footer class="foot">
   <div class="wrap">
-    <p><strong>This is a commercial page.</strong> It advertises a paid service
-    and is written by the person who provides it.</p>
-    <p class="legal">
-      AK agencija, računalniško programiranje, Alej Kump s.p. &middot;
-      entered in the Poslovni register Slovenije (AJPES), 15 September 2026
-      &middot; activity 62.100 &middot;
-      <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
-      <span>registered seat Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia &middot;
-      matična številka 7585942000 &middot;
-      davčna številka 67735509</span>
-    </p>
-    <p class="legal">This site stores nothing in your browser and sets no cookie.
-    Visits are counted by Cloudflare Web Analytics, without cookies and without
-    tracking individual visitors; fonts, images and styles are hosted here.
-    There is no form.</p>
+    <nav class="foot-links" aria-label="Pages">
+      <a href="./" hreflang="sl" lang="sl">Slovensko</a>
+      <a href="zasebnost.html" hreflang="sl" lang="sl">Varstvo podatkov</a>
+    </nav>
+    <p>This is a commercial page. It advertises a paid service and was written by the person who provides it.</p>
+    <p>Alej Kump · Websites (AK agencija, računalniško programiranje, Alej Kump s.p.), registered in the Slovenian Business Register (AJPES) on 15 September 2026, activity 62.100. Registered office: Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia. Registration no. (matična številka) 7585942000, tax no. (davčna številka) 67735509. <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></p>
+    <p>This page stores nothing in your browser and sets no cookies. Visits are counted by Cloudflare Web Analytics, without cookies and without tracking individual visitors. There are no forms.</p>
   </div>
 </footer>
 
+<script src="assets/ak/ak.js?v=5" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>

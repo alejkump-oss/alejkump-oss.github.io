@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The dedupe that passed every test and was never a dedupe</title>
 <meta name="description" content="An n8n lead-intake dedupe built on $getWorkflowStaticData passed every sequential test, then lost dedupe keys under concurrency. Worked end to end from n8n's own source.">
+<meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://alejkump.si/teardown.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://alejkump.si/teardown.html">
 <meta property="og:title" content="The dedupe that passed every test and was never a dedupe">
@@ -14,26 +16,49 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The dedupe that passed every test and was never a dedupe">
 <meta name="twitter:description" content="Predicted from n8n 2.33.7 source, then reproduced on the first attempt.">
-<link rel="stylesheet" href="style.css">
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-ext-wght-normal.woff2" crossorigin>
+<link rel="stylesheet" href="assets/ak/site.css?v=6">
 </head>
 <body>
+<a class="skip" href="#vsebina">Skip to content</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="mark" href="n8n-review.html">Workflow reliability reviews</a>
-    <nav>
-      <a href="checklist.html">Free checklist</a>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="./" aria-label="AK agencija, home">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8052ff"/><stop offset="1" stop-color="#15846e"/></linearGradient></defs>
+        <path d="M16 3 29 27H3Z" fill="none" stroke="url(#mk)" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M16 13 22 24H10Z" fill="url(#mk)"/>
+      </svg>
+      <span>AK agencija</span>
+    </a>
+    <nav class="links" id="glavni-meni" aria-label="Main menu">
+      <a href="n8n-review.html">The review</a>
+      <a href="teardown.html" aria-current="page">A worked example</a>
+      <a href="checklist.html">Checklist</a>
       <a href="sample-report.html">Sample report</a>
-      <a href="n8n-review.html">Back to the review</a>
+      <a href="./" hreflang="sl" lang="sl">Slovensko</a>
     </nav>
+    <a class="nav-tel pill" href="tel:+38670479188">Call</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="glavni-meni"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
   </div>
 </header>
 
-<main class="wrap">
+<main id="vsebina">
+<section class="phero" aria-labelledby="naslov">
+    <div class="wrap">
+      <p class="label">Workflow reliability reviews</p>
+      <h1 id="naslov">The dedupe that passed every test and was never a dedupe</h1>
+      <p class="meta">16 September 2026 &middot; a worked example, on one of my own workflows</p>
+    </div>
+  </section>
 
-  <h1>The dedupe that passed every test and was never a dedupe</h1>
-
-  <p class="meta">16 September 2026 &middot; a worked example, on one of my own workflows</p>
+  <section class="sec" aria-label="Article">
+    <div class="wrap" data-reveal>
+      <article class="prose article">
 
   <div class="disclosure">
     <strong>Disclosure.</strong> I sell reliability reviews of n8n workflows,
@@ -172,31 +197,29 @@
   findings, what each one does not prove, and the NOT CHECKED list. If there is
   nothing worth reporting, I will say so.</p>
 
-  <p><a class="cta" href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a>
-  &nbsp; <a href="n8n-review.html">or read what the review covers &rarr;</a></p>
+  <div class="acts">
+    <a class="pill" href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a>
+    <a class="tlink" href="n8n-review.html">or read what the review covers &rarr;</a>
+  </div>
 
+      </article>
+    </div>
+  </section>
 </main>
 
-<footer class="site">
+<footer class="foot">
   <div class="wrap">
-    <p><strong>This is a commercial page.</strong> It advertises a paid service
-    and is written by the person who provides it.</p>
-    <p class="legal">
-      AK agencija, računalniško programiranje, Alej Kump s.p. &middot;
-      entered in the Poslovni register Slovenije (AJPES), 15 September 2026
-      &middot; activity 62.100 &middot;
-      <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
-      <span>registered seat Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia &middot;
-      matična številka 7585942000 &middot;
-      davčna številka 67735509</span>
-    </p>
-    <p class="legal">This site stores nothing in your browser and sets no cookie.
-    Visits are counted by Cloudflare Web Analytics, without cookies and without
-    tracking individual visitors; fonts, images and styles are hosted here.
-    There is no form.</p>
+    <nav class="foot-links" aria-label="Pages">
+      <a href="./" hreflang="sl" lang="sl">Slovensko</a>
+      <a href="zasebnost.html" hreflang="sl" lang="sl">Varstvo podatkov</a>
+    </nav>
+    <p>This is a commercial page. It advertises a paid service and was written by the person who provides it.</p>
+    <p>Alej Kump · Websites (AK agencija, računalniško programiranje, Alej Kump s.p.), registered in the Slovenian Business Register (AJPES) on 15 September 2026, activity 62.100. Registered office: Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia. Registration no. (matična številka) 7585942000, tax no. (davčna številka) 67735509. <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></p>
+    <p>This page stores nothing in your browser and sets no cookies. Visits are counted by Cloudflare Web Analytics, without cookies and without tracking individual visitors. There are no forms.</p>
   </div>
 </footer>
 
+<script src="assets/ak/ak.js?v=5" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>

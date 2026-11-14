@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>n8n workflow reliability review — when every step is green and nothing landed</title>
 <meta name="description" content="A fixed-scope reliability review of one exported n8n workflow. Static analysis plus manual judgement, every finding stating what it does not prove, and a NOT CHECKED list as plain as what was checked.">
+<meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://alejkump.si/n8n-review.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alejkump.si/n8n-review.html">
 <meta property="og:title" content="Every step was green. Nothing landed.">
@@ -14,7 +16,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Every step was green. Nothing landed.">
 <meta name="twitter:description" content="A reliability review of one exported n8n workflow. Every finding states what it does not prove.">
-<link rel="stylesheet" href="style.css">
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-ext-wght-normal.woff2" crossorigin>
+<link rel="stylesheet" href="assets/ak/site.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,39 +41,54 @@
 </script>
 </head>
 <body>
+<a class="skip" href="#vsebina">Skip to content</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="mark" href="n8n-review.html">Workflow reliability reviews</a>
-    <nav>
-      <a href="./">Slovenščina: spletne strani</a>
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="./" aria-label="AK agencija, home">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8052ff"/><stop offset="1" stop-color="#15846e"/></linearGradient></defs>
+        <path d="M16 3 29 27H3Z" fill="none" stroke="url(#mk)" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M16 13 22 24H10Z" fill="url(#mk)"/>
+      </svg>
+      <span>AK agencija</span>
+    </a>
+    <nav class="links" id="glavni-meni" aria-label="Main menu">
+      <a href="n8n-review.html" aria-current="page">The review</a>
       <a href="teardown.html">A worked example</a>
-      <a href="checklist.html">Free checklist</a>
+      <a href="checklist.html">Checklist</a>
       <a href="sample-report.html">Sample report</a>
-      <a href="#what">What it is</a>
-      <a href="#limits">What it isn't</a>
-      <a href="#faq">FAQ</a>
+      <a href="./" hreflang="sl" lang="sl">Slovensko</a>
     </nav>
+    <a class="nav-tel pill" href="tel:+38670479188">Call</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="glavni-meni"><span class="bars" aria-hidden="true"></span><span class="sr">Menu</span></button>
   </div>
 </header>
 
-<main class="wrap">
-
-  <h1>Every step was green. Nothing landed.</h1>
-
-  <p class="lede">And you found out eleven days later, because a customer asked.
+<main id="vsebina">
+<section class="phero" aria-labelledby="naslov">
+    <div class="wrap">
+      <p class="label">Workflow reliability reviews</p>
+      <h1 id="naslov">Every step was green. Nothing landed.</h1>
+      <p class="lead">And you found out eleven days later, because a customer asked.
   I review <strong>one exported n8n workflow</strong> and tell you which of its
   silent failure paths actually matter &mdash; then show you what I checked, what
   I didn&rsquo;t, and what each finding does <em>not</em> prove.</p>
-
-  <p class="who">For teams already running n8n in production &mdash; agencies,
+      <p class="lead">For teams already running n8n in production &mdash; agencies,
   operations teams, and the person who owns the automations but not the time to
   re-read them.</p>
+      <div class="acts">
+        <a class="pill" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
+      </div>
+      <p class="hint">Email. No form, no signup, no newsletter.</p>
+    </div>
+  </section>
 
-  <p class="cta-row">
-    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
-    <span class="cta-note">Email. No form, no signup, no newsletter.</span>
-  </p>
+  <section class="sec" aria-label="The review">
+    <div class="wrap" data-reveal>
+      <article class="prose article">
 
   <div class="disclosure">
     <strong>Who is writing this.</strong> I&rsquo;m Alej Kump. I registered this
@@ -111,7 +130,7 @@
   <h2 id="what">What it is, in three lines</h2>
 
   <div class="panel">
-    <ol class="steps">
+    <ol>
       <li><strong>You send</strong> the workflow export and say what it&rsquo;s for.</li>
       <li><strong>I review it</strong> &mdash; deterministic static analysis of the
       export, plus judgement about your business.</li>
@@ -175,15 +194,15 @@
   <h2 id="who">Who this is for &mdash; and who it isn&rsquo;t</h2>
 
   <div class="tbl-scroll">
-  <table>
+  <table class="tbl rows">
     <tr>
-      <th>A good fit</th>
+      <th scope="row">A good fit</th>
       <td>You run n8n in production. Something has gone quietly wrong at least
       once, or you are about to put more volume through a workflow than it has
       carried before. Someone can approve a small fixed-price piece of work.</td>
     </tr>
     <tr>
-      <th>Not a fit &mdash; and I&rsquo;ll say so</th>
+      <th scope="row">Not a fit &mdash; and I&rsquo;ll say so</th>
       <td>You are on Make, Zapier or Power Automate only. I have not built the
       evidence to review those and will not pretend otherwise. You want the
       workflow fixed rather than reviewed &mdash; that is a different job. You want
@@ -226,7 +245,7 @@
   that passed every test for a full session and was never a dedupe at all. It
   ends at the finding, not at an offer.</p>
 
-  <p><a class="cta" href="teardown.html">Read the teardown &rarr;</a></p>
+  <p><a class="tlink" href="teardown.html">Read the teardown &rarr;</a></p>
 
   <h2 id="faq">Questions people actually ask</h2>
 
@@ -277,37 +296,33 @@
   not something I can genuinely help with, I will say so in the first reply
   &mdash; that is the outcome that makes the rest of this page credible.</p>
 
-  <p class="cta-row">
-    <a class="cta" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
-    <span class="cta-note">Opens your mail app with the questions pre-filled.</span>
-  </p>
+  <div class="acts">
+    <a class="pill" href="mailto:alej.kump@gmail.com?subject=Workflow%20review%20enquiry&amp;body=What%20the%20workflow%20does%3A%0A%0AWhat%20should%20happen%20vs%20what%20you%20think%20is%20happening%3A%0A%0AAnything%20odd%20you%27ve%20noticed%20(or%20%22nothing%20we%20know%20of%22)%3A%0A%0A---%0APlease%20do%20NOT%20paste%20credentials%2C%20API%20keys%2C%20tokens%20or%20passwords%20in%20this%20email.%0ADescribe%20the%20workflow%20first%20-%20the%20export%20comes%20later%2C%20with%20secrets%20stripped.%0A">Describe your workflow &rarr;</a>
+  </div>
+  <p class="hint">Opens your mail app with the questions pre-filled.</p>
 
   <p class="warn"><strong>Please don&rsquo;t send secrets.</strong> No credentials,
   API keys, tokens or passwords &mdash; not in the first email and not in the
   export. There is nothing I need that requires them.</p>
 
+      </article>
+    </div>
+  </section>
 </main>
 
-<footer class="site">
+<footer class="foot">
   <div class="wrap">
-    <p><strong>This is a commercial page.</strong> It advertises a paid service
-    and is written by the person who provides it.</p>
-    <p class="legal">
-      AK agencija, računalniško programiranje, Alej Kump s.p. &middot;
-      entered in the Poslovni register Slovenije (AJPES), 15 September 2026
-      &middot; activity 62.100 &middot;
-      <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
-      <span>registered seat Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia &middot;
-      matična številka 7585942000 &middot;
-      davčna številka 67735509</span>
-    </p>
-    <p class="legal">This site stores nothing in your browser and sets no cookie.
-    Visits are counted by Cloudflare Web Analytics, without cookies and without
-    tracking individual visitors; fonts, images and styles are hosted here.
-    There is no form.</p>
+    <nav class="foot-links" aria-label="Pages">
+      <a href="./" hreflang="sl" lang="sl">Slovensko</a>
+      <a href="zasebnost.html" hreflang="sl" lang="sl">Varstvo podatkov</a>
+    </nav>
+    <p>This is a commercial page. It advertises a paid service and was written by the person who provides it.</p>
+    <p>Alej Kump · Websites (AK agencija, računalniško programiranje, Alej Kump s.p.), registered in the Slovenian Business Register (AJPES) on 15 September 2026, activity 62.100. Registered office: Ulica heroja Marinclja 3, 1330 Kočevje, Slovenia. Registration no. (matična številka) 7585942000, tax no. (davčna številka) 67735509. <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></p>
+    <p>This page stores nothing in your browser and sets no cookies. Visits are counted by Cloudflare Web Analytics, without cookies and without tracking individual visitors. There are no forms.</p>
   </div>
 </footer>
 
+<script src="assets/ak/ak.js?v=5" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>
