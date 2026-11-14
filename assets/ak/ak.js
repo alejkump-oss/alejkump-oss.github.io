@@ -130,7 +130,7 @@ function bootSky() {
 
   const RM = document.documentElement.classList.contains("rm");
   const small = Math.min(window.innerWidth, screen.width || 9999) < 760 || (navigator.hardwareConcurrency || 8) <= 4;
-  const N = !SHAPE ? 0 : small ? 900 : 3400; // shape triangles (capped on phones / weak CPUs)
+  const N = !SHAPE ? 0 : small ? 1600 : 3400; // shape triangles (capped on phones / weak CPUs)
   const NA = small ? 60 : 150;        // ambient triangles
   // phones and weak CPUs: a lighter canvas and ~30 fps, so no single frame blocks input
   const DPR = Math.min(window.devicePixelRatio || 1, small ? 1.25 : 2);

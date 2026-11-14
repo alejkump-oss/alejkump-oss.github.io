@@ -333,7 +333,5 @@ h3{font-weight:var(--font-weight-regular);letter-spacing:var(--ls-heading-2xs);l
 [data-reveal] > .steps > :nth-child(2),[data-reveal] .prices > :nth-child(2),[data-reveal] .facts > :nth-child(2),[data-reveal] .cols3 > :nth-child(2),[data-reveal] .dir > :nth-child(2){transition-delay:.08s}
 [data-reveal] > .steps > :nth-child(3),[data-reveal] .prices > :nth-child(3),[data-reveal] .facts > :nth-child(3),[data-reveal] .cols3 > :nth-child(3),[data-reveal] .dir > :nth-child(3){transition-delay:.16s}
 [data-reveal] > .steps > :nth-child(4),[data-reveal] .facts > :nth-child(4),[data-reveal] .dir > :nth-child(4){transition-delay:.24s}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{transition:none!important;animation:none!important}
-  [data-reveal],[data-reveal] *{opacity:1!important;transform:none!important}
-}
+/* owner 14. 11. 2026: motion runs on every device, the phone included, so the
+   prefers-reduced-motion override was removed on his instruction. */
