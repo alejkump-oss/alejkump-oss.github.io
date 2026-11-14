@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Darfis d.o.o. · Računovodstvo in davčno svetovanje v Mariboru</title>
+<meta name="description" content="Darfis d.o.o., Trg Leona Štuklja 5, Maribor: računovodske storitve, davčno in poslovno svetovanje ter pomoč podjetjem v težavah. Pokličite 02 25 23 304.">
+<meta name="theme-color" content="#f7f1e6">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sl_SI">
+<meta property="og:title" content="Darfis d.o.o. · Računovodstvo in davčno svetovanje v Mariboru">
+<meta property="og:description" content="Vprašanja, ki jih stranke zastavijo računovodstvu, in odgovori Darfisa. Trg Leona Štuklja 5, Maribor. Pokličite 02 25 23 304.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Source+Sans+3:wght@400;600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "Darfis d.o.o.",
+  "legalName": "DARFIS družba za računovodstvo in davčno svetovanje d.o.o.",
+  "url": "https://darfis.si/",
+  "telephone": "+38622523304",
+  "email": "darfis@darfis.si",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Trg Leona Štuklja 5",
+    "postalCode": "2000",
+    "addressLocality": "Maribor",
+    "addressCountry": "SI"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "07:00",
+    "closes": "15:00"
+  },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Trg+Leona+%C5%A0tuklja+5+2000+Maribor"
+}
+</script>
+<style>
+:root{
+  --paper:#f7f1e6; --sand:#efe5d3; --paper-2:#fbf7ef;
+  --ink:#241c14; --body:#4a4036; --muted:#6f6253;
+  --rule:rgba(36,28,20,.13); --rule-strong:rgba(36,28,20,.4);
+  --teal:#1e6b7a; --teal-deep:#17596a; --teal-brand:#52a0b2; --teal-tint:#e2eef0;
+  --on-teal:#f7f1e6;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Source Sans Pro",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(20px,4.5vw,56px);
+  --w:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--paper);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.6;padding-bottom:56px}
+@media(min-width:900px){body{padding-bottom:0}}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:-.02em;line-height:1.05;font-variation-settings:"opsz" 144;text-wrap:balance}
+p{text-wrap:pretty}
+.wrap{width:100%;max-width:var(--w);margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--ink);color:var(--paper);padding:10px 14px}
+.skip:focus{left:8px}
+:focus-visible{outline:2px solid var(--teal);outline-offset:4px;border-radius:2px}
+
+/* preview strip */
+.strip{background:var(--ink);color:var(--paper);text-align:center;font-size:14px;letter-spacing:.02em;font-weight:600;padding:9px var(--pad)}
+
+/* eyebrow + rules */
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.eyebrow b{color:var(--teal);font-weight:600}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--rule-strong)}
+.eyebrow.who{color:var(--teal)}
+.eyebrow.who::before{background:var(--teal)}
+.lead{font-size:clamp(17px,1.45vw,19.5px);line-height:1.6;color:var(--body);max-width:60ch}
+.lead a,.ans a,.cell a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--teal);text-decoration-thickness:2px;text-underline-offset:4px}
+.lead a:hover,.ans a:hover,.cell a:hover{color:var(--teal)}
+.src{font-size:13.5px;color:var(--muted);margin-top:14px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(247,241,230,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.solid{border-bottom-color:var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:66px}
+.brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap}
+.brand b{font-family:var(--serif);font-weight:500;font-size:26px;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.brand small{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+@media(max-width:420px){.brand small{display:none}}
+.links{display:none;list-style:none;gap:4px}
+.links a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;text-decoration:none;color:var(--body);font-weight:600;font-size:15px;border-bottom:2px solid transparent}
+.links a:hover{color:var(--ink);border-bottom-color:var(--teal)}
+@media(min-width:960px){.links{display:flex}}
+.call{display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:0 4px;text-decoration:none;color:var(--ink);font-weight:600;font-size:16px;white-space:nowrap}
+.call svg{width:20px;height:20px;color:var(--teal);flex:none}
+.call span{border-bottom:2px solid var(--teal);padding-bottom:1px}
+@media(max-width:480px){.call span{display:none}.call{padding:0 10px}}
+
+/* hero: the first exchange */
+.hero{padding:clamp(44px,7vw,110px) 0 clamp(48px,6vw,90px)}
+.hero .grid{display:grid;gap:44px}
+@media(min-width:960px){.hero .grid{grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(48px,6vw,96px);align-items:start}}
+.hero h1{font-size:clamp(34px,5.6vw,70px);margin:18px 0 0;max-width:19ch}
+.ans{margin-top:clamp(28px,3.5vw,44px);padding-left:22px;border-left:2px solid var(--teal);display:grid;gap:12px}
+.ans .eyebrow::before{display:none}
+.ans p{max-width:58ch}
+.hero-call{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px}
+.hero-call a{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);min-height:44px}
+.hero-call .num{font-family:var(--serif);font-size:clamp(26px,3vw,36px);letter-spacing:-.02em;font-weight:500;border-bottom:2px solid var(--teal);line-height:1.15}
+.hero-call .num:hover{color:var(--teal)}
+.hero-call .alt{font-weight:600;font-size:16px;text-decoration:underline;text-decoration-color:var(--teal);text-decoration-thickness:2px;text-underline-offset:4px}
+.hero-call .alt:hover{color:var(--teal)}
+.hero-call svg{width:22px;height:22px;color:var(--teal)}
+
+/* index of the conversation */
+.index{border-top:1px solid var(--rule-strong)}
+.index .eyebrow{padding:16px 0 6px}
+.index ol{list-style:none}
+.index li{border-bottom:1px solid var(--rule)}
+.index a{display:grid;grid-template-columns:40px 1fr auto;align-items:baseline;gap:12px;padding:13px 0;text-decoration:none;color:var(--ink);font-weight:600;font-size:16px;transition:transform .4s cubic-bezier(.32,.72,0,1)}
+.index a:hover{transform:translateX(6px);color:var(--teal)}
+.index .n{font-family:var(--serif);font-size:17px;color:var(--teal);font-weight:500;letter-spacing:0}
+.index .arr{width:14px;height:14px;color:var(--teal);align-self:center}
+
+section{position:relative}
+.sec{padding:clamp(64px,9vw,140px) 0}
+.sec h2{font-size:clamp(30px,4.2vw,56px);margin:16px 0 0}
+.sec .ans{margin-top:clamp(22px,2.6vw,34px)}
+
+/* 02 who: photo + argument */
+.who-grid{display:grid;gap:36px}
+@media(min-width:900px){.who-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,6vw,96px);align-items:start}}
+.figure{position:relative;border-radius:12px;overflow:hidden;background:var(--sand);aspect-ratio:4/5;max-width:520px}
+.figure img{width:100%;height:100%;object-fit:cover}
+.figure.photo{aspect-ratio:3/4}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:48px 18px 16px;color:#fff;font-size:14px;font-weight:600;background:radial-gradient(125% 100% at 0 100%,rgba(20,12,6,.7) 0,rgba(20,12,6,.46) 30%,rgba(20,12,6,.14) 56%,rgba(20,12,6,0) 74%)}
+.cap small{display:block;font-weight:400;opacity:.9;font-size:13px}
+.ill{position:absolute;top:12px;left:12px;font-size:11.5px;font-weight:600;letter-spacing:.04em;color:#fff;background:rgba(36,28,20,.72);padding:4px 9px;border-radius:3px}
+.values{list-style:none;margin-top:26px;border-top:1px solid var(--rule-strong)}
+.values li{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--rule);color:var(--ink);font-weight:600;font-size:16.5px}
+.values .n{font-family:var(--serif);color:var(--teal);font-weight:500;font-size:16px}
+
+/* 03 services: rail + matrix */
+.svc{background:var(--paper-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.svc-grid{display:grid;gap:40px}
+@media(min-width:1000px){.svc-grid{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(40px,5vw,80px);align-items:start}}
+.rail .figure{aspect-ratio:4/3;margin-top:34px;max-width:560px}
+@media(min-width:1000px){.rail{position:sticky;top:90px}}
+.matrix{display:grid;grid-template-columns:1fr;border-top:1px solid var(--rule-strong);border-left:1px solid var(--rule-strong)}
+@media(min-width:720px){.matrix{grid-template-columns:1fr 1fr}}
+.cell{display:flex;flex-direction:column;gap:14px;padding:clamp(22px,2.6vw,36px);border-right:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong);background:var(--paper)}
+.cell .n{font-family:var(--serif);font-size:14px;color:var(--muted);letter-spacing:.04em}
+.cell h3{font-size:clamp(24px,2.1vw,30px);margin-top:10px}
+.cell ul{list-style:none;display:grid;gap:6px;color:var(--body);font-size:15.5px;line-height:1.5}
+.cell li{position:relative;padding-left:16px}
+.cell li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--teal-brand)}
+.cell p{font-size:15.5px;line-height:1.55}
+
+/* 04–07: ruled exchanges */
+.qa-list{margin-top:clamp(36px,5vw,64px);border-top:1px solid var(--rule-strong)}
+.qa{display:grid;gap:14px;padding:clamp(26px,3.5vw,44px) 0;border-bottom:1px solid var(--rule)}
+@media(min-width:900px){.qa{grid-template-columns:150px minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,3.5vw,56px);align-items:start}}
+.qa .eyebrow{padding-top:6px}
+.qa h3{font-size:clamp(24px,2.4vw,32px)}
+.qa p{font-size:16.5px}
+.qa p+p{margin-top:10px}
+
+/* 08 place: statement over photo */
+.place{background:var(--sand)}
+.place-grid{display:grid;gap:34px}
+@media(min-width:960px){.place-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,5vw,80px);align-items:end}}
+.place .figure{aspect-ratio:4/3;max-width:none}
+@media(min-width:960px){.place .figure{aspect-ratio:16/10}}
+.facts{list-style:none;margin-top:28px;border-top:1px solid var(--rule-strong)}
+.facts li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:16.5px}
+.facts dt,.facts .k{font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.facts .v{color:var(--ink);font-weight:600}
+.facts .v a{text-decoration:underline;text-decoration-color:var(--teal);text-decoration-thickness:2px;text-underline-offset:4px}
+.facts .v a:hover{color:var(--teal)}
+.facts small{display:block;font-weight:400;color:var(--body);font-size:15px}
+
+/* 09 contact: teal closing field */
+.close{background:var(--teal);color:var(--on-teal)}
+.close .eyebrow,.close .eyebrow b{color:var(--on-teal)}
+.close .eyebrow::before{background:var(--on-teal)}
+.close h2{color:var(--on-teal);font-size:clamp(26px,3vw,36px);font-weight:400;margin-top:16px}
+.contact-grid{display:grid;gap:34px}
+@media(min-width:900px){.contact-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,96px);align-items:start}}
+.bignum{display:inline-block;margin-top:22px;font-family:var(--serif);font-weight:500;font-size:clamp(38px,8.2vw,84px);letter-spacing:-.03em;line-height:1;color:var(--on-teal);text-decoration:none;border-bottom:3px solid rgba(247,241,230,.5);padding-bottom:6px;white-space:nowrap;max-width:100%}
+.bignum:hover{border-bottom-color:var(--on-teal)}
+.close .lead{color:var(--on-teal);margin-top:22px}
+.crows{list-style:none;border-top:1px solid rgba(247,241,230,.35)}
+.crows li{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid rgba(247,241,230,.25);font-size:16.5px}
+.crows .k{font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding-top:4px}
+.crows .v{font-weight:600;word-break:break-word}
+.crows a{text-decoration:underline;text-decoration-color:rgba(247,241,230,.5);text-decoration-thickness:2px;text-underline-offset:4px}
+.crows a:hover{text-decoration-color:var(--on-teal)}
+.crows small{display:block;font-weight:400;font-size:15px}
+
+footer{background:var(--teal);color:var(--on-teal);position:relative;overflow:hidden}
+footer .cols{border-top:1px solid rgba(247,241,230,.35);padding:40px 0 28px;display:grid;gap:24px;font-size:15px}
+@media(min-width:760px){footer .cols{grid-template-columns:1.4fr 1fr 1fr;gap:40px}}
+footer .ft{font-size:12.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}
+footer ul{list-style:none;display:grid;gap:4px}
+footer a{display:inline-block;padding:4px 0;color:var(--on-teal);text-decoration:underline;text-decoration-color:rgba(247,241,230,.45);text-decoration-thickness:1.5px;text-underline-offset:3px}
+footer a:hover{text-decoration-color:var(--on-teal)}
+.stamp{font-family:var(--serif);font-weight:500;letter-spacing:-.04em;line-height:.74;font-size:clamp(96px,27vw,400px);color:var(--teal-deep);text-align:center;margin:36px auto -0.22em;user-select:none;pointer-events:none;white-space:nowrap;opacity:.9}
+.credit{position:relative;z-index:1;background:var(--teal);border-top:1px solid rgba(247,241,230,.35);padding:16px 0 calc(22px + env(safe-area-inset-bottom));font-size:13.5px;line-height:1.55;display:grid;gap:6px}
+
+/* thin call line on phones */
+.line{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;justify-content:center;align-items:center;gap:10px;min-height:48px;padding:0 16px calc(0px + env(safe-area-inset-bottom));background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;font-size:16px;transition:transform .3s,opacity .3s}
+.line svg{width:18px;height:18px;color:var(--teal-brand)}
+.line b{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:-.01em}
+.line.hide{transform:translateY(110%);opacity:0;pointer-events:none}
+@media(min-width:900px){.line{display:none}}
+
+.rise{animation:rise .9s cubic-bezier(.16,1,.3,1) both}
+.rise.d1{animation-delay:.1s}.rise.d2{animation-delay:.22s}.rise.d3{animation-delay:.34s}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#vsebina">Preskoči na vsebino</a>
+<div class="strip">Predogled – AK agencija</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-arr" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.5" d="M3 13 13 3M5 3h8v8"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#vsebina" class="brand" aria-label="Darfis, na vrh strani"><b>Darfis</b><small>računovodstvo · Maribor</small></a>
+    <nav aria-label="Glavna navigacija">
+      <ul class="links">
+        <li><a href="#kdo">Kdo</a></li>
+        <li><a href="#kaj">Storitve</a></li>
+        <li><a href="#vprasanja">Vprašanja</a></li>
+        <li><a href="#kje">Kje</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="call" href="tel:+38622523304" aria-label="Pokličite 02 25 23 304"><svg aria-hidden="true"><use href="#i-tel"/></svg><span>02 25 23 304</span></a>
+  </div>
+</header>
+
+<main id="vsebina">
+
+  <section class="hero" aria-labelledby="q1">
+    <div class="wrap grid">
+      <div>
+        <p class="eyebrow rise">Vprašanje <b>01</b> · stranka</p>
+        <h1 id="q1" class="rise d1">Iščem računovodstvo v Mariboru, ki se bo mojemu podjetju zares posvetilo. Kje naj začnem?</h1>
+        <div class="ans rise d2">
+          <p class="eyebrow who">Odgovor · Darfis d.o.o.</p>
+          <p class="lead">S pogovorom. V Darfisu se vsaki stranki posvetimo individualno in ji pomagamo do premišljenih odločitev. Računovodstvo, davčno in poslovno svetovanje vodimo za podjetja in samostojne podjetnike že več kot 20 let, vse na enem mestu, na Trgu Leona Štuklja 5 v Mariboru.</p>
+          <div class="hero-call">
+            <a href="tel:+38622523304" aria-label="Pokličite 02 25 23 304"><svg aria-hidden="true"><use href="#i-tel"/></svg><span class="num">02 25 23 304</span></a>
+            <a class="alt" href="mailto:darfis@darfis.si">darfis@darfis.si</a>
+          </div>
+        </div>
+      </div>
+      <nav class="index rise d3" aria-label="Kazalo pogovora">
+        <p class="eyebrow">Kazalo pogovora</p>
+        <ol>
+          <li><a href="#kdo"><span class="n">02</span><span>Kdo mi bo odgovarjal?</span><svg class="arr" aria-hidden="true"><use href="#i-arr"/></svg></a></li>
+          <li><a href="#kaj"><span class="n">03</span><span>Kaj vse lahko prepustim vam?</span><svg class="arr" aria-hidden="true"><use href="#i-arr"/></svg></a></li>
+          <li><a href="#q4"><span class="n">04</span><span>Lahko preidem k vam sredi leta?</span><svg class="arr" aria-hidden="true"><use href="#i-arr"/></svg></a></li>
+          <li><a href="#q5"><span class="n">05</span><span>Kaj, če je moje podjetje v težavah?</span><svg class="arr" aria-hidden="true"><use href="#i-arr"/></svg></a></li>
+          <li><a href="#q6"><span class="n">06</span><span>Koliko to stane?</span><svg class="arr" aria-hidden="true"><use href="#i-arr"/></svg></a></li>
+          <li><a href="#q7"><span class="n">07</span><span>So moji podatki pri vas varni?</span><svg class="arr" aria-hidden="true"><use href="#i-arr"/></svg></a></li>
+          <li><a href="#kje"><span class="n">08</span><span>Kje vas najdem in kdaj?</span><svg class="arr" aria-hidden="true"><use href="#i-arr"/></svg></a></li>
+          <li><a href="#kontakt"><span class="n">09</span><span>Kako vas dosežem?</span><svg class="arr" aria-hidden="true"><use href="#i-arr"/></svg></a></li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section class="sec" id="kdo" aria-labelledby="q2">
+    <div class="wrap who-grid">
+      <figure class="figure photo">
+        <img src="assets/direktorica.webp" alt="Dragica Janežič, direktorica podjetja Darfis d.o.o." width="600" height="800" loading="lazy" decoding="async">
+        <figcaption class="cap">Dragica Janežič, direktorica<small>fotografija z darfis.si</small></figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow">Vprašanje <b>02</b> · stranka</p>
+        <h2 id="q2">Kdo mi bo odgovarjal, ko pokličem?</h2>
+        <div class="ans">
+          <p class="eyebrow who">Odgovor · Darfis d.o.o.</p>
+          <p class="lead">Direktorica Dragica Janežič in ekipa, v kateri so vsi zaposleni strokovnjaki z dolgoletnimi izkušnjami. Vsaki stranki se posvetimo individualno, pomagamo pri odločitvah in poskrbimo, da je računovodstvo urejeno zanesljivo in pravočasno.</p>
+          <p class="lead">Pri delu nas vodijo vrednote, ki jih tudi javno zapišemo:</p>
+        </div>
+        <ol class="values">
+          <li><span class="n">I</span><span>poštenost in zaupanje</span></li>
+          <li><span class="n">II</span><span>ustvarjalnost in učinkovitost</span></li>
+          <li><span class="n">III</span><span>odgovornost in gospodarnost</span></li>
+          <li><span class="n">IV</span><span>spoštovanje in sodelovanje</span></li>
+          <li><span class="n">V</span><span>skrb za stranke in zaposlene</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec svc" id="kaj" aria-labelledby="q3">
+    <div class="wrap svc-grid">
+      <div class="rail">
+        <p class="eyebrow">Vprašanje <b>03</b> · stranka</p>
+        <h2 id="q3">Kaj vse lahko prepustim vam?</h2>
+        <div class="ans">
+          <p class="eyebrow who">Odgovor · Darfis d.o.o.</p>
+          <p class="lead">Celotno računovodstvo, od knjig in plač do letnih poročil, pa davčno in poslovno svetovanje. Vse storitve opravimo na eni lokaciji, obseg pa prilagodimo vašemu podjetju.</p>
+        </div>
+        <figure class="figure">
+          <img src="assets/miza.webp" alt="Kalkulator, dokumenti in skodelica kave na pisalni mizi" width="1200" height="900" loading="lazy" decoding="async">
+          <span class="ill">Ilustrativna fotografija</span>
+        </figure>
+      </div>
+      <div class="matrix">
+        <article class="cell">
+          <span class="n">01</span>
+          <h3>Knjigovodstvo</h3>
+          <ul>
+            <li>vodenje glavne knjige</li>
+            <li>spremljanje terjatev in obveznosti</li>
+            <li>vodenje blagajne</li>
+            <li>register osnovnih sredstev z amortizacijo</li>
+            <li>obračun obresti</li>
+          </ul>
+        </article>
+        <article class="cell">
+          <span class="n">02</span>
+          <h3>Davčne evidence in DDV</h3>
+          <ul>
+            <li>evidence izdanih in prejetih računov</li>
+            <li>obračun davka na dodano vrednost</li>
+          </ul>
+        </article>
+        <article class="cell">
+          <span class="n">03</span>
+          <h3>Plače in pogodbe</h3>
+          <ul>
+            <li>obračun plač in nadomestil</li>
+            <li>obračun prispevkov</li>
+            <li>podjemne in avtorske pogodbe</li>
+          </ul>
+        </article>
+        <article class="cell">
+          <span class="n">04</span>
+          <h3>Letna poročila in davčni obračuni</h3>
+          <ul>
+            <li>letna poročila</li>
+            <li>davčni obračuni</li>
+            <li>medletne bilance na vašo željo</li>
+          </ul>
+        </article>
+        <article class="cell">
+          <span class="n">05</span>
+          <h3>Poročanje institucijam</h3>
+          <ul>
+            <li>Banka Slovenije</li>
+            <li>AJPES</li>
+            <li>FURS</li>
+            <li>ZPIZ</li>
+          </ul>
+        </article>
+        <article class="cell">
+          <span class="n">06</span>
+          <h3>Davčno svetovanje</h3>
+          <p>Davčno svetovanje za podjetja in samostojne podjetnike, na isti lokaciji kot računovodstvo. Pokličite in opišite, kar vas zanima.</p>
+        </article>
+        <article class="cell">
+          <span class="n">07</span>
+          <h3>Poslovno svetovanje</h3>
+          <p>Pomoč pri poslovnih odločitvah za mala, srednja in velika podjetja ter samostojne podjetnike.</p>
+        </article>
+        <article class="cell" id="tezave">
+          <span class="n">08</span>
+          <h3>Podjetja v težavah</h3>
+          <p>Svetovanje ob likvidaciji, prisilni poravnavi in stečaju. Več v <a href="#q5">vprašanju 05</a>.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="vprasanja" aria-labelledby="h-vpr">
+    <div class="wrap">
+      <p class="eyebrow">Pogovor se nadaljuje</p>
+      <h2 id="h-vpr">Štiri vprašanja, ki jih slišimo najpogosteje.</h2>
+      <div class="qa-list">
+        <article class="qa" id="q4" aria-labelledby="h-q4">
+          <p class="eyebrow">Vprašanje <b>04</b></p>
+          <h3 id="h-q4">Imam že računovodstvo. Lahko preidem k vam sredi leta?</h3>
+          <div>
+            <p class="eyebrow who" style="margin-bottom:8px">Odgovor</p>
+            <p>Da, kadarkoli med letom. Prehod iz obstoječega računovodskega servisa je hiter in enostaven, uredimo ga mi. Po potrebi uredimo knjige tudi za nazaj, zato ni treba čakati na zaključek bilance.</p>
+          </div>
+        </article>
+        <article class="qa" id="q5" aria-labelledby="h-q5">
+          <p class="eyebrow">Vprašanje <b>05</b></p>
+          <h3 id="h-q5">Moje podjetje je v težavah. Kaj zdaj?</h3>
+          <div>
+            <p class="eyebrow who" style="margin-bottom:8px">Odgovor</p>
+            <p>Niste edini. Pomagamo presoditi, kdaj in kako podjetje prostovoljno preneha z likvidacijo in kaj pomenita prisilna poravnava ali stečaj. Razložimo prve znake insolventnosti, obveznosti poslovodstva in nadzornega sveta ter potek postopkov.</p>
+            <p>Čim prej pokličete, več možnosti ostane odprtih.</p>
+          </div>
+        </article>
+        <article class="qa" id="q6" aria-labelledby="h-q6">
+          <p class="eyebrow">Vprašanje <b>06</b></p>
+          <h3 id="h-q6">Koliko to stane?</h3>
+          <div>
+            <p class="eyebrow who" style="margin-bottom:8px">Odgovor</p>
+            <p>Cen na tej strani ne objavljamo, ker je obseg dela pri vsakem podjetju drugačen. Poslujemo s korektnimi cenami in brez skritih stroškov. O ponudbi se dogovorimo po pogovoru na <a href="tel:+38622523304">02 25 23 304</a>.</p>
+          </div>
+        </article>
+        <article class="qa" id="q7" aria-labelledby="h-q7">
+          <p class="eyebrow">Vprašanje <b>07</b></p>
+          <h3 id="h-q7">So moji podatki pri vas varni?</h3>
+          <div>
+            <p class="eyebrow who" style="margin-bottom:8px">Odgovor</p>
+            <p>Zanesljivost in varovanje zaupnih podatkov sta del našega dela. Dokumenti in podatki vašega podjetja ostanejo med nami.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec place" id="kje" aria-labelledby="q8">
+    <div class="wrap place-grid">
+      <div>
+        <p class="eyebrow">Vprašanje <b>08</b> · stranka</p>
+        <h2 id="q8">Kje vas najdem in kdaj?</h2>
+        <div class="ans">
+          <p class="eyebrow who">Odgovor · Darfis d.o.o.</p>
+          <p class="lead">Na Trgu Leona Štuklja 5 v Mariboru. Poslovni prostori so na dostopni lokaciji z možnostjo parkiranja, odprti pa smo od ponedeljka do petka.</p>
+        </div>
+        <ul class="facts">
+          <li><span class="k">Naslov</span><span class="v"><a href="https://www.google.com/maps/search/?api=1&amp;query=Trg+Leona+%C5%A0tuklja+5+2000+Maribor" target="_blank" rel="noopener">Trg Leona Štuklja 5, 2000 Maribor</a><small>odpri v Google Zemljevidih</small></span></li>
+          <li><span class="k">Delovni čas</span><span class="v">Pon.–pet. 7.00–15.00</span></li>
+          <li><span class="k">Parkiranje</span><span class="v">Možnost parkiranja<small>podrobnosti po telefonu</small></span></li>
+        </ul>
+      </div>
+      <figure class="figure">
+        <img src="assets/maribor.webp" alt="Mestne stavbe s stolpom v Mariboru" width="1400" height="933" loading="lazy" decoding="async">
+        <span class="ill">Ilustrativna fotografija</span>
+        <figcaption class="cap">Maribor<small>ilustrativna fotografija, ne prikazuje poslovnih prostorov podjetja</small></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec close" id="kontakt" aria-labelledby="q9">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Vprašanje <b>09</b> · stranka</p>
+        <h2 id="q9">Kako vas dosežem?</h2>
+        <a class="bignum" href="tel:+38622523304" aria-label="Pokličite 02 25 23 304">02 25 23 304</a>
+        <p class="lead">Pokličite v delovnem času ali pišite. Pogovor je prvi korak, vse drugo uredimo skupaj.</p>
+      </div>
+      <ul class="crows">
+        <li><span class="k">Mobilni</span><span class="v"><a href="tel:+38641220079">041 220 079</a></span></li>
+        <li><span class="k">E-pošta</span><span class="v"><a href="mailto:darfis@darfis.si">darfis@darfis.si</a></span></li>
+        <li><span class="k">Naslov</span><span class="v">Trg Leona Štuklja 5<small>2000 Maribor</small></span></li>
+        <li><span class="k">Odprto</span><span class="v">Pon.–pet. 7.00–15.00</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <p class="ft">Podjetje</p>
+        <p>DARFIS družba za računovodstvo in davčno svetovanje d.o.o.<br>Trg Leona Štuklja 5, 2000 Maribor<br>Matična št. 3321444000</p>
+      </div>
+      <div>
+        <p class="ft">Pogovor</p>
+        <ul>
+          <li><a href="#kdo">Kdo mi bo odgovarjal?</a></li>
+          <li><a href="#kaj">Kaj lahko prepustim vam?</a></li>
+          <li><a href="#vprasanja">Pogosta vprašanja</a></li>
+          <li><a href="#kje">Kje vas najdem?</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="ft">Kontakt</p>
+        <ul>
+          <li><a href="tel:+38622523304">02 25 23 304</a></li>
+          <li><a href="tel:+38641220079">041 220 079</a></li>
+          <li><a href="mailto:darfis@darfis.si">darfis@darfis.si</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="stamp" aria-hidden="true">Darfis</div>
+    <div class="credit">
+      <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
+      <span>Fotografija direktorice je z darfis.si. Fotografiji pisalne mize in Maribora sta ilustrativni (Unsplash) in ne prikazujeta prostorov ali dela podjetja Darfis.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="line" id="line" href="tel:+38622523304" aria-label="Pokličite Darfis, 02 25 23 304"><svg aria-hidden="true"><use href="#i-tel"/></svg>Pokličite <b>02 25 23 304</b></a>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('solid',window.scrollY>10);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var line=document.getElementById('line'),k=document.getElementById('kontakt'),f=document.querySelector('footer');
+  if(line&&k&&'IntersectionObserver'in window){
+    var vis={k:false,f:false};
+    var upd=function(){line.classList.toggle('hide',vis.k||vis.f);};
+    new IntersectionObserver(function(en){en.forEach(function(e){vis.k=e.isIntersecting;});upd();}).observe(k);
+    if(f)new IntersectionObserver(function(en){en.forEach(function(e){vis.f=e.isIntersecting;});upd();}).observe(f);
+  }
+})();
+</script>
+</body>
+</html>
