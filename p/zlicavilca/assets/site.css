@@ -91,8 +91,8 @@ main{padding-top:var(--head-h)}
 .hero .utensil.spoon{left:52%}
 .hero .utensil.fork{left:66%}
 .hero .plate{position:absolute;right:-8%;bottom:-18%;width:46vw;max-width:620px;color:var(--red);opacity:.9;will-change:transform}
-.hero .pocket{position:relative;z-index:1;padding:clamp(80px,12vh,140px) 0 clamp(40px,7vh,80px)}
-.hero h1{font-size:clamp(46px,8.4vw,112px);line-height:.98;max-width:12ch;font-weight:400}
+.hero .pocket{position:relative;z-index:1;width:100%;padding:clamp(80px,12vh,140px) 0 clamp(40px,7vh,80px)}
+.hero h1{font-size:clamp(46px,8.4vw,112px);line-height:.98;max-width:14ch;font-weight:400}
 .hero .meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 28px;font-size:16px}
 .hero .meta a{text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px}
 .hero .acts{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px}
@@ -255,6 +255,10 @@ footer .tiny{margin-top:12px;font-size:13px;opacity:.65}
 .legal li{margin-bottom:8px}
 .legal p+p{margin-top:12px}
 .legal .box{border:2px solid var(--ink);padding:24px;margin-top:20px;max-width:68ch;background:var(--paper)}
+
+/* "Zakaj rabljeno": same three-column grid as .facts, on paper instead of white */
+.facts.why{background:var(--paper)}
+.facts.why .f .n{color:var(--olive)}
 
 /* Checker edge strip (Roberta's borrow) */
 .strip{height:23px;background:repeating-conic-gradient(var(--ink) 0 25%,var(--paper) 0 50%) 0 0/24px 24px}
