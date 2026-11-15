@@ -258,3 +258,6 @@ footer .tiny{margin-top:12px;font-size:13px;opacity:.65}
 
 /* Checker edge strip (Roberta's borrow) */
 .strip{height:23px;background:repeating-conic-gradient(var(--ink) 0 25%,var(--paper) 0 50%) 0 0/24px 24px}
+
+/* fix 15. 11.: section paddings (X 0 Y) were wiping the .wrap side gutter */
+.wrap{padding-left:var(--pad)!important;padding-right:var(--pad)!important}
