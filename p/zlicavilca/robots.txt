@@ -1,0 +1,12 @@
+# ŽlicaVilca — staging. All pages carry <meta name="robots" content="noindex, nofollow">.
+# NOTE: a robots.txt is only honoured at a domain root. This file takes effect once the
+# site is served from its own domain (e.g. https://zlicavilca.si/). On alejkump.si/p/... it is inert.
+#
+# Staging (now):
+User-agent: *
+Disallow: /
+
+# Production (swap in when the domain is connected and noindex is removed):
+# User-agent: *
+# Allow: /
+# Sitemap: https://zlicavilca.si/sitemap.xml
