@@ -8,247 +8,130 @@
 <title>Pohištvo Jereb · Pohištvo po meri, Škofja Loka</title>
 <meta name="description" content="Pohištvo Jereb, Matej Jereb s.p., Trata 12, Škofja Loka. Kuhinje, kopalnice, otroške sobe, notranja vrata, predsobe, dnevne sobe in spalnice po meri iz masivnega lesa. Pokličite 040 415 792.">
 <meta name="theme-color" content="#f4f0e8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap" rel="stylesheet">
-<style>
-/* ARHETIP: revija (editorial). Papir, črnilo, en rdeč poudarek. */
-:root{
-  --paper:#f4f0e8; --paper2:#ebe5d9; --ink:#161412; --ink2:#4b453f; --rule:#161412; --hair:rgba(22,20,18,.18);
-  --red:#a3241b;
-  --serif:"Newsreader", Georgia, "Times New Roman", serif;
-  --mono:ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --pad:clamp(16px,5vw,56px); --max:1180px;
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sl_SI">
+<meta property="og:site_name" content="Pohištvo Jereb">
+<meta property="og:title" content="Pohištvo Jereb · Pohištvo po meri, Škofja Loka">
+<meta property="og:description" content="Pohištvo Jereb, Matej Jereb s.p., Trata 12, Škofja Loka. Kuhinje, kopalnice, otroške sobe, notranja vrata, predsobe, dnevne sobe in spalnice po meri iz masivnega lesa. Pokličite 040 415 792.">
+<meta property="og:url" content="https://alejkump.si/p/pohistvo-jereb/">
+<meta property="og:image" content="https://alejkump.si/p/pohistvo-jereb/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FurnitureStore",
+ "name": "Pohištvo Jereb",
+ "legalName": "Matej Jereb s.p., izdelava pohištva",
+ "description": "Izdelava pohištva po meri: kuhinje, kopalnice, otroške sobe, notranja vrata, predsobe, dnevne sobe in spalnice.",
+ "url": "https://pohistvojereb.si/",
+ "telephone": "+386 40 415 792",
+ "email": "info@pohistvojereb.si",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "Trata 12",
+  "postalCode": "4220",
+  "addressLocality": "Škofja Loka",
+  "addressCountry": "SI"
+ }
 }
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-html,body{overflow-x:hidden;max-width:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.55 var(--serif);padding-bottom:52px;-webkit-font-smoothing:antialiased}
-h1,h2,h3,p,figure,blockquote,dl,dd,ol{margin:0}
-ol{padding:0;list-style:none}
-img{display:block;max-width:100%;height:auto}
-a{color:inherit}
-button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
-:focus-visible{outline:2px solid var(--red);outline-offset:3px}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.mono{font:500 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase}
-
-/* ribbon */
-.ribbon{border-bottom:1px solid var(--hair);text-align:center;padding:6px 12px;font:500 11px/1.3 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
-
-/* masthead */
-.mast{padding-top:14px}
-.mast .row{display:flex;justify-content:space-between;gap:12px;color:var(--ink2)}
-.mast h1{font:500 clamp(40px,12.5vw,104px)/.95 var(--serif);font-variation-settings:"opsz" 72;letter-spacing:-.02em;text-align:center;
-  border-top:3px solid var(--rule);border-bottom:1px solid var(--rule);padding:12px 0 10px;margin-top:10px}
-.mast .dl{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:7px 0;border-bottom:3px double var(--rule);color:var(--ink2)}
-
-/* cover */
-.cover{padding-top:clamp(22px,5vw,56px);padding-bottom:clamp(40px,7vw,80px)}
-.giant{font:400 clamp(86px,27vw,300px)/.82 var(--serif);font-variation-settings:"opsz" 72;letter-spacing:-.045em;margin-left:-.04em}
-.giant span{color:var(--red)}
-.cover-grid{display:grid;gap:18px;margin-top:clamp(18px,3vw,34px)}
-.deck{font:italic 400 clamp(20px,3.2vw,28px)/1.3 var(--serif);max-width:30ch}
-.callline{display:inline-block;font:400 clamp(30px,7.4vw,60px)/1.05 var(--serif);letter-spacing:-.02em;text-decoration:none;
-  border-bottom:3px solid var(--red);padding-bottom:4px;font-variant-numeric:lining-nums}
-.callline b{font-weight:400;color:var(--red)}
-.mailline{display:block;margin-top:12px;font-size:17px;color:var(--ink2)}
-.mailline a{color:var(--ink);text-decoration-color:var(--red);text-underline-offset:3px}
-@media (min-width:900px){.cover-grid{grid-template-columns:1fr 1fr;align-items:end}}
-
-/* contents */
-.toc{padding-top:14px}
-.toc .in{border-top:1px solid var(--rule);padding-top:14px}
-.toc ol{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;margin-top:10px}
-.toc li a{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--hair);text-decoration:none;font-size:17px}
-.toc li a span{font:500 13px/1.9 var(--mono);color:var(--red)}
-@media (min-width:900px){.toc ol{grid-template-columns:repeat(4,1fr)}}
-
-/* sections */
-.sec{padding-top:clamp(52px,9vw,110px)}
-.sec-h{display:flex;align-items:baseline;gap:14px;border-top:3px solid var(--rule);padding-top:10px}
-.sec-h .no{font:400 clamp(44px,10vw,88px)/.9 var(--serif);color:var(--red);font-variant-numeric:lining-nums}
-.sec-h h2{font:500 clamp(26px,5vw,44px)/1.05 var(--serif);letter-spacing:-.015em}
-.kicker{display:block;margin-bottom:4px;color:var(--ink2)}
-
-/* editorial */
-.photo figcaption{font:italic 400 14.5px/1.4 var(--serif);color:var(--ink2);margin-top:8px;border-left:2px solid var(--red);padding-left:10px}
-.photo img{width:100%}
-.body{margin-top:22px}
-.cols{column-gap:36px}
-.cols p+p{margin-top:12px}
-.drop::first-letter{float:left;font:400 4.1em/.8 var(--serif);color:var(--red);margin:6px 8px 0 0}
-@media (min-width:760px){.cols{columns:2}}
-.pull{margin:30px 0;padding:18px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font:italic 400 clamp(26px,5.4vw,46px)/1.15 var(--serif);letter-spacing:-.01em}
-.pull::before{content:"»";color:var(--red)}
-.pull .q{color:var(--red)}
-.pull cite{display:block;margin-top:10px;font:500 12px/1.3 var(--mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
-.ed-grid{display:grid;gap:26px;margin-top:24px}
-@media (min-width:900px){.ed-grid{grid-template-columns:1.1fr 1fr;gap:48px;align-items:start}}
-
-/* program index */
-.prog{margin-top:22px;border-top:1px solid var(--rule)}
-.prog button{display:grid;grid-template-columns:34px 1fr 92px;gap:4px 12px;align-items:center;width:100%;padding:14px 0;border-bottom:1px solid var(--hair)}
-.prog .n{font:500 13px/1 var(--mono);color:var(--red);align-self:start;padding-top:8px}
-.prog .t{display:block;font:500 clamp(24px,5vw,36px)/1.05 var(--serif);letter-spacing:-.01em}
-.prog .l{display:block;font:italic 400 15.5px/1.35 var(--serif);color:var(--ink2);margin-top:4px}
-.prog .c{display:block;font:500 11.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;margin-top:6px;color:var(--ink)}
-.prog img{width:92px;height:92px;object-fit:cover}
-.prog button:hover .t{color:var(--red)}
-@media (min-width:760px){.prog button{grid-template-columns:60px 1fr 160px}.prog img{width:160px;height:110px}}
-
-/* how we work: prose with run-in heads */
-.runin p{margin-bottom:14px}
-.runin b{font-weight:600}
-.runin b::after{content:" ·";color:var(--red)}
-
-/* numbers */
-.nums{margin-top:22px}
-.big1300{font:400 clamp(96px,30vw,300px)/.85 var(--serif);letter-spacing:-.05em;font-variant-numeric:lining-nums}
-.big1300 small{display:block;font:italic 400 clamp(20px,3vw,28px)/1.2 var(--serif);letter-spacing:0;color:var(--ink2);margin-top:8px}
-.nrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule);margin-top:24px}
-.nrow div{padding:12px 10px 0 0;border-right:1px solid var(--hair)}
-.nrow div+div{padding-left:10px}
-.nrow div:last-child{border-right:0}
-.nrow b{display:block;font:400 clamp(34px,8vw,68px)/1 var(--serif);font-variant-numeric:lining-nums;letter-spacing:-.02em}
-.nrow span{display:block;font-size:15px;color:var(--ink2);margin-top:4px}
-.fn{margin-top:16px;font-size:14px;color:var(--ink2);font-style:italic}
-
-/* kitchen spread */
-.spread{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.spread .w{grid-column:span 2}
-.spread button{display:block;width:100%}
-.spread img{width:100%;height:100%;object-fit:cover}
-.spread .p img{aspect-ratio:3/4}
-.more{display:inline-block;margin-top:18px;font:500 13px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;border-bottom:2px solid var(--red);padding-bottom:3px}
-
-/* gallery essay */
-.essay{columns:2;column-gap:12px;margin-top:22px}
-.essay figure{break-inside:avoid;margin-bottom:16px}
-.essay button{display:block;width:100%}
-.essay figcaption{font:italic 400 13.5px/1.35 var(--serif);color:var(--ink2);margin-top:5px}
-@media (min-width:900px){.essay{columns:4;column-gap:18px}}
-
-/* contact / colophon */
-.colo{margin-top:24px;border-top:1px solid var(--rule)}
-.colo div{display:grid;grid-template-columns:110px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--hair);font-size:17px}
-.colo dt{font:500 12px/1.9 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
-.colo dd{overflow-wrap:anywhere}
-.colo a{text-decoration-color:var(--red);text-underline-offset:3px}
-
-footer{margin-top:clamp(60px,9vw,110px);border-top:3px double var(--rule);padding:18px 0 28px;font-size:14.5px;line-height:1.5;color:var(--ink2)}
-footer .wrap{display:grid;gap:6px}
-footer a{color:var(--ink)}
-
-/* slim text bar, always within thumb reach */
-.tbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top:1px solid var(--rule);
-  display:flex;justify-content:space-between;align-items:center;padding:0 var(--pad) env(safe-area-inset-bottom);height:calc(48px + env(safe-area-inset-bottom))}
-.tbar a{font:400 19px/48px var(--serif);text-decoration:none}
-.tbar a b{font-weight:400;border-bottom:2px solid var(--red)}
-.tbar a.m{font:500 12px/48px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
-
-/* lightbox */
-.lb{position:fixed;inset:0;z-index:100;background:rgba(16,14,12,.97);display:none;flex-direction:column;color:#fff}
-.lb.open{display:flex}
-.lb-top{display:flex;align-items:center;justify-content:space-between;padding:calc(10px + env(safe-area-inset-top)) 14px 8px;gap:12px}
-.lb-title{font:500 20px/1.2 var(--serif)}
-.lb-count{font:500 12px/1 var(--mono);color:rgba(255,255,255,.7);margin-left:10px}
-.lb-x,.lb-nav{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;color:#fff}
-.lb-stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;min-height:0;padding:0 8px}
-.lb-stage img{max-width:100%;max-height:100%;object-fit:contain}
-.lb-nav{position:absolute;top:50%;transform:translateY(-50%)}
-.lb-prev{left:10px}.lb-next{right:10px}
-.lb-cap{padding:10px 18px calc(16px + env(safe-area-inset-bottom));text-align:center;font:italic 400 15px/1.4 var(--serif);color:rgba(255,255,255,.85);min-height:48px}
-.lb svg{width:20px;height:20px}
-</style>
+</script>
 </head>
 <body>
+<a class="skip" href="#vsebina">Preskoči na vsebino</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/img/logo-mark.png" width="26" height="23" alt="">Pohištvo Jereb</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><i aria-hidden="true"></i><span class="ml">Meni</span></button>
+    <nav class="nav" id="nav" aria-label="Glavni meni"><ul><li class="home"><a href="./" aria-current="page">Domov<span>00</span></a></li><li><a href="kuhinje/">Kuhinje<span>01</span></a></li><li><a href="kopalnice/">Kopalnice<span>02</span></a></li><li><a href="otroske-sobe/">Otroške sobe<span>03</span></a></li><li><a href="vrata/">Vrata<span>04</span></a></li><li><a href="predsobe/">Predsobe<span>05</span></a></li><li><a href="dnevne-sobe/">Dnevne sobe<span>06</span></a></li><li><a href="spalnice/">Spalnice<span>07</span></a></li><li><a href="detajli/">Detajli<span>08</span></a></li><li><a href="kako-delamo/">Kako delamo<span>09</span></a></li><li><a href="o-nas/">O nas<span>10</span></a></li><li><a href="kontakt/">Kontakt<span>11</span></a></li></ul></nav>
+  </div>
+</header>
 
-<div class="ribbon" role="note">Predogled – AK agencija</div>
-
-<header class="wrap mast">
+<div class="wrap mast">
   <div class="row mono"><span>Izdelava pohištva po meri</span><span>Škofja Loka</span></div>
   <h1>Pohištvo Jereb</h1>
   <div class="dl mono"><span>Matej Jereb s.p.</span><span>Trata 12, 4220 Škofja Loka</span></div>
-</header>
+</div>
 
-<main id="top">
+<main id="vsebina">
   <section class="wrap cover" aria-label="Naslovnica">
-    <p class="giant">Masivni<br>les<span>.</span></p>
+    <p class="giant" aria-hidden="true">Masivni<br>les<span>.</span></p>
     <div class="cover-grid">
-      <p class="deck">Pohištvo po meri za najbolj zahtevne. Oblikujemo prostor, ki vam je pisan na kožo.</p>
+      <p class="deck">Izdelava pohištva po meri za najbolj zahtevne. Oblikujemo prostor, ki vam je pisan na kožo.</p>
       <div>
         <a class="callline" href="tel:+38640415792">Pokličite: <b>040 415 792</b></a>
-        <span class="mailline">ali pišite na <a href="mailto:info@pohistvojereb.si?subject=Povpra%C5%A1evanje%20%E2%80%93%20pohi%C5%A1tvo%20po%20meri">info@pohistvojereb.si</a></span>
+        <span class="mailline">ali pišite na <a href="mailto:info@pohistvojereb.si?subject=Povpra%C5%A1evanje%20%E2%80%93%20pohi%C5%A1tvo%20po%20meri&amp;body=Ime%20in%20priimek%3A%20%0ATelefonska%20%C5%A1tevilka%3A%20%0APovpra%C5%A1evanje%3A%20">info@pohistvojereb.si</a></span>
       </div>
     </div>
   </section>
 
-  <nav class="wrap toc" aria-label="Vsebina"><div class="in">
-    <span class="mono">V tej številki</span>
-    <ol>
-      <li><a href="#uvodnik"><span>01</span>Uvodnik</a></li>
-      <li><a href="#program"><span>02</span>Program</a></li>
-      <li><a href="#kako"><span>03</span>Kako delamo</a></li>
-      <li><a href="#stevilke"><span>04</span>V številkah</a></li>
-      <li><a href="#kuhinje"><span>05</span>Kuhinje</a></li>
-      <li><a href="#galerija"><span>06</span>Galerija</a></li>
-      <li><a href="#kontakt"><span>07</span>Kontakt</a></li>
-    </ol>
-  </div></nav>
-
-  <section class="wrap sec" id="uvodnik" aria-labelledby="h1-uv">
-    <div class="sec-h"><span class="no" aria-hidden="true">01</span><h2 id="h1-uv"><span class="kicker mono">Uvodnik</span>Vsak dom je na svoj način edinstven.</h2></div>
+  <section class="wrap sec" id="uvodnik" aria-labelledby="h-uv" style="padding-top:0">
+    <div class="sec-h"><span class="no" aria-hidden="true">01</span><h2 id="h-uv"><span class="kicker mono">Zakaj izbrati nas?</span>Vsak dom je na svoj način edinstven.</h2></div>
     <div class="ed-grid">
       <figure class="photo">
         <picture>
-          <source media="(max-width:760px)" srcset="assets/hero-m.webp" width="900" height="1452">
-          <img src="assets/hero.webp" width="1600" height="1062" alt="Kuhinja po meri z otokom, belimi frontami in hrastovim lesom" loading="lazy" decoding="async">
+          <source media="(max-width:760px)" srcset="assets/img/hero-m.webp" width="900" height="1452">
+          <img src="assets/img/f/2104-dsc0693.webp" width="1600" height="1062" alt="Bela kuhinja s hrastovo nišo in sivim pultom" fetchpriority="high" decoding="async">
         </picture>
-        <figcaption>Kuhinja z otokom in hrastovimi elementi. Fotografija: Pohištvo Jereb.</figcaption>
+        <figcaption>Bela kuhinja s hrastovo nišo in sivim pultom.</figcaption>
       </figure>
       <div>
         <div class="cols">
-          <p class="drop">Zato je tudi vsak kos, ki ga izdelamo, narejen samo zanj. Pri Pohištvu Jereb vas vodimo skozi celoten postopek, da ste samozavestni pri vsaki odločitvi.</p>
-          <p>Pohištvo skrbno načrtujemo tako, da pridobite čim več uporabnih površin za odlaganje, shranjevanje in udobje.</p>
+          <p class="drop">V podjetju Pohištvo Jereb vam omogočamo, da uresničite želje in ustvarite idealno pohištvo po meri vašega doma. Vemo, da je vsak dom na svoj način edinstven, kar lahko oteži opremljanje.</p>
+          <p>Zato vas vodimo skozi celoten postopek in poskrbimo, da se pri vsaki odločitvi počutite samozavestno. Pohištvo po meri skrbno načrtujemo in oblikujemo tako, da povečamo uporabne površine za odlaganje, shranjevanje in udobje.</p>
         </div>
-        <blockquote class="pull">Oblikujemo prostor, ki vam je pisan na kožo.<span class="q">«</span><cite>pohistvojereb.si</cite></blockquote>
+        <blockquote class="pull">Oblikujemo prostor, ki vam je pisan na kožo.<span class="q">«</span><cite>Pohištvo Jereb</cite></blockquote>
+        <a class="more" href="o-nas/">Več o nas →</a>
       </div>
+    </div>
+  </section>
+
+  <section class="wrap sec" id="izpostavljeno" aria-labelledby="h-iz">
+    <div class="sec-h"><span class="no" aria-hidden="true">02</span><h2 id="h-iz"><span class="kicker mono">Izpostavljeno · detajl</span>Les, ukrivljen v vogal.</h2></div>
+    <div data-lb data-title="Galerija detajlov">
+      <div class="feat">
+        <a class="gi ph" href="assets/img/hi/2210-lp03764.webp" data-w="2560" data-h="1707">
+          <img src="assets/img/f/2210-lp03764.webp" srcset="assets/img/f/2210-lp03764.webp 1600w, assets/img/hi/2210-lp03764.webp 2560w" sizes="(min-width:1000px) 62vw, 100vw" width="1600" height="1067" alt="Hrastov predalnik z zaobljenim vogalom iz upognjenega lesa in izvlečenim predalom" loading="lazy" decoding="async">
+          <span class="zoom" aria-hidden="true">Povečaj ↗</span>
+        </a>
+        <div>
+          <blockquote class="pull" style="margin-top:0">Posvečamo posebno pozornost majhnim detajlom, vašo idejo nadgradimo in ustvarimo mojstrovino, ki ni le lepa, ampak tudi funkcionalna.<span class="q">«</span><cite>Pohištvo Jereb</cite></blockquote>
+          <a class="more" href="detajli/">Galerija detajlov · 29 fotografij →</a>
+        </div>
+      </div>
+      <ul class="grid" aria-label="Iz iste serije fotografij"><li><a class="gi" href="assets/img/f/2210-lp03728.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03728.webp" width="600" height="400" alt="Hrastov element z zaobljenim vogalom ob balkonskih vratih" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03729.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03729.webp" width="600" height="400" alt="Hrastove letvice na steni, detajl" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03759.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03759.webp" width="600" height="400" alt="Hrastov predalnik z upognjenim zaobljenim vogalom" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03766.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03766.webp" width="600" height="400" alt="Stenski obešalnik iz hrastovih letvic z lesenimi kljukicami" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03768.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03768.webp" width="600" height="400" alt="Odprta hrastova niša v beli steni" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03776.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03776.webp" width="600" height="400" alt="Odpiranje fronte brez ročaja s pritiskom, detajl" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03786.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03786.webp" width="600" height="400" alt="Hrastova miza z ozkim robom, detajl" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03789.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03789.webp" width="600" height="400" alt="Hrastove fronte in svetel kamniti pult z vgradnim koritom" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03795.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03795.webp" width="600" height="400" alt="Bele visoke omare in hrastovi spodnji elementi s kamnitim pultom" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03803.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03803.webp" width="600" height="400" alt="Hrastov predalnik z ročaji, vrezanimi v fronto" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-lp03805.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2210-lp03805.webp" width="600" height="400" alt="Hrastov pult ob okroglem ogledalu" loading="lazy" decoding="async"></a></li></ul>
     </div>
   </section>
 
   <section class="wrap sec" id="program" aria-labelledby="h-prog">
-    <div class="sec-h"><span class="no" aria-hidden="true">02</span><h2 id="h-prog"><span class="kicker mono">Program</span>Za vsak prostor vašega doma.</h2></div>
-    <div class="prog">
-      <button type="button" data-g="kuhinje"><span class="n">a</span><span><span class="t">Kuhinje</span><span class="l">Kuhinja je pomembna za vso družino, zato mora biti enako elegantna kot funkcionalna.</span><span class="c">10 fotografij →</span></span><img src="assets/kuh-otok-s.webp" width="720" height="478" loading="lazy" decoding="async" alt=""></button>
-      <button type="button" data-g="kopalnice"><span class="n">b</span><span><span class="t">Kopalnice</span><span class="l">Ravno prav velika za shranjevanje, ravno prav majhna za prostor.</span><span class="c">4 fotografije →</span></span><img src="assets/kop-umivalnik-s.webp" width="478" height="720" loading="lazy" decoding="async" alt=""></button>
-      <button type="button" data-g="otroske"><span class="n">c</span><span><span class="t">Otroške sobe</span><span class="l">Več funkcionalnosti na omejenem prostoru, tudi za najstnike.</span><span class="c">6 fotografij →</span></span><img src="assets/otr-galerija-s.webp" width="720" height="480" loading="lazy" decoding="async" alt=""></button>
-      <button type="button" data-g="vrata"><span class="n">d</span><span><span class="t">Notranja vrata</span><span class="l">Masivni les, skriti tečaji in nevidni podboji.</span><span class="c">3 fotografije →</span></span><img src="assets/vra-furnir-s.webp" width="480" height="720" loading="lazy" decoding="async" alt=""></button>
-      <button type="button" data-g="predsobe"><span class="n">e</span><span><span class="t">Predsobe</span><span class="l">Prostor, ki ustvari prvi vtis vašega doma.</span><span class="c">5 fotografij →</span></span><img src="assets/pre-hodnik-s.webp" width="480" height="720" loading="lazy" decoding="async" alt=""></button>
-      <button type="button" data-g="dnevne"><span class="n">f</span><span><span class="t">Dnevne sobe</span><span class="l">Za družinske trenutke in sprostitev.</span><span class="c">3 fotografije →</span></span><img src="assets/dne-police-s.webp" width="480" height="720" loading="lazy" decoding="async" alt=""></button>
-      <button type="button" data-g="spalnice"><span class="n">g</span><span><span class="t">Spalnice</span><span class="l">Funkcionalne in udobne, za kakovosten počitek.</span><span class="c">3 fotografije →</span></span><img src="assets/spa-predali-s.webp" width="480" height="720" loading="lazy" decoding="async" alt=""></button>
-    </div>
+    <div class="sec-h"><span class="no" aria-hidden="true">03</span><h2 id="h-prog"><span class="kicker mono">Program</span>Za vsak prostor vašega doma.</h2></div>
+    <nav class="prog" aria-label="Program"><a href="kuhinje/"><span class="n">a</span><span><span class="t">Kuhinje</span><span class="l">Kuhinja je pomembna za vso družino, zato mora biti enako elegantna kot funkcionalna.</span><span class="c">176 fotografij →</span></span><img src="assets/img/t/2104-kuhinja-po-meri-53ee5.webp" width="600" height="400" loading="lazy" decoding="async" alt=""></a><a href="kopalnice/"><span class="n">b</span><span><span class="t">Kopalnice</span><span class="l">Ravno prav velika za shranjevanje, ravno prav majhna za prostor.</span><span class="c">98 fotografij →</span></span><img src="assets/img/t/2110-dsc0408.webp" width="600" height="399" loading="lazy" decoding="async" alt=""></a><a href="otroske-sobe/"><span class="n">c</span><span><span class="t">Otroške sobe</span><span class="l">Več funkcionalnosti na omejenem prostoru, tudi za najstnike.</span><span class="c">51 fotografij →</span></span><img src="assets/img/t/2105-dsc9769.webp" width="600" height="400" loading="lazy" decoding="async" alt=""></a><a href="vrata/"><span class="n">d</span><span><span class="t">Notranja vrata</span><span class="l">Masivni les, skriti tečaji in nevidni podboji.</span><span class="c">65 fotografij →</span></span><img src="assets/img/t/2104-crna-presdoba-vgradna-eeaa2.webp" width="398" height="600" loading="lazy" decoding="async" alt=""></a><a href="predsobe/"><span class="n">e</span><span><span class="t">Predsobe</span><span class="l">Prostor, ki ustvari prvi vtis vašega doma.</span><span class="c">91 fotografij →</span></span><img src="assets/img/t/2104-dsc9652.webp" width="600" height="400" loading="lazy" decoding="async" alt=""></a><a href="dnevne-sobe/"><span class="n">f</span><span><span class="t">Dnevne sobe</span><span class="l">Za družinske trenutke in sprostitev.</span><span class="c">34 fotografij →</span></span><img src="assets/img/t/2202-dnevna-soba-trebnje-16e63.webp" width="600" height="400" loading="lazy" decoding="async" alt=""></a><a href="spalnice/"><span class="n">g</span><span><span class="t">Spalnice</span><span class="l">Funkcionalne in udobne, za kakovosten počitek.</span><span class="c">30 fotografij →</span></span><img src="assets/img/t/2305-lp06848.webp" width="600" height="400" loading="lazy" decoding="async" alt=""></a><a href="detajli/"><span class="n">h</span><span><span class="t">Detajli</span><span class="l">Poiščite navdih v galeriji detajlov.</span><span class="c">29 fotografij →</span></span><img src="assets/img/t/2210-lp03764.webp" width="600" height="400" loading="lazy" decoding="async" alt=""></a></nav>
   </section>
 
   <section class="wrap sec" id="kako" aria-labelledby="h-kako">
-    <div class="sec-h"><span class="no" aria-hidden="true">03</span><h2 id="h-kako"><span class="kicker mono">Kako delamo</span>Dovršeno, edinstveno in uporabno.</h2></div>
+    <div class="sec-h"><span class="no" aria-hidden="true">04</span><h2 id="h-kako"><span class="kicker mono">Kako delamo</span>Dovršeno, edinstveno in uporabno.</h2></div>
     <div class="ed-grid">
-      <div class="body runin cols" style="margin-top:0">
-        <p class="drop">Uresničimo vaše želje in ustvarimo idealno pohištvo po meri vašega doma, ne glede na velikost ali obseg projekta.</p>
-        <p><b>Posvet s strokovnjakom</b> Ekipa z znanjem in izkušnjami iz mizarske industrije vam pomaga izbrati oblike, materiale in barve.</p>
-        <p><b>3D izris</b> Po začetnem posvetu se lotimo natančnega oblikovanja. Za lažjo predstavo in umestitev elementov v prostor pripravimo 3D izris.</p>
-        <p><b>Vrhunski materiali</b> Pohištvo izdelujemo iz masivnega lesa, ki prinaša občutek domačnosti in topline.</p>
-        <p><b>Po meri prostora</b> Vsak kos temelji na prostoru, v katerem bo stal, in mu doda značaj in globino. Pohištvo se brezhibno vključi v vaš prostor in izboljša vaše vsakdanje življenje.</p>
+      <div class="runin cols">
+        <p><b>Posvet s strokovnjakom</b> Naša strokovna ekipa z znanjem in izkušnjami iz mizarske industrije vam pomaga izbrati oblike, materiale in barve, najprimernejše za vaš dom.</p>
+        <p><b>3D izris</b> Po začetnem posvetu se ekipa loti natančnega oblikovanja. Za lažjo predstavo in umestitev elementov v prostor pripravimo 3D izris.</p>
+        <p><b>Vrhunski materiali</b> Organski, naravni materiali so prijetni na dotik in pričarajo občutek domačnosti in topline, zato pohištvo izdelujemo iz masivnega lesa.</p>
+        <p><b>Po meri prostora</b> Vsak kos pohištva temelji na prostoru, v katerem bo uporabljen, in mu doda značaj in globino.</p>
+        <a class="more" href="kako-delamo/">Kako delamo, korak za korakom →</a>
       </div>
       <figure class="photo">
-        <img src="assets/mat-rob-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Detajl roba lesenega delovnega pulta">
+        <img src="assets/img/f/2104-dsc0948.webp" srcset="assets/img/t/2104-dsc0948.webp 398w, assets/img/f/2104-dsc0948.webp 1062w" sizes="(min-width:900px) 45vw, 100vw" width="1062" height="1600" alt="Leseni predali z izrazito teksturo, detajl" loading="lazy" decoding="async">
         <figcaption>Masivni les: organski, naravni materiali, prijetni na dotik.</figcaption>
       </figure>
     </div>
   </section>
 
   <section class="wrap sec" id="stevilke" aria-labelledby="h-st">
-    <div class="sec-h"><span class="no" aria-hidden="true">04</span><h2 id="h-st"><span class="kicker mono">V številkah</span>Pohištvo Jereb v številkah.</h2></div>
+    <div class="sec-h"><span class="no" aria-hidden="true">05</span><h2 id="h-st"><span class="kicker mono">V številkah</span>Pohištvo Jereb v številkah.</h2></div>
     <div class="nums">
       <p class="big1300">+1300<small>3D izrisov</small></p>
       <div class="nrow">
@@ -256,69 +139,53 @@ footer a{color:var(--ink)}
         <div><b>+300</b><span>projektov</span></div>
         <div><b>+1000</b><span>unikatnih kosov</span></div>
       </div>
-      <p class="fn">Številke, kot jih navaja Pohištvo Jereb na pohistvojereb.si.</p>
+      <p class="fn">Številke, kot jih navaja Pohištvo Jereb.</p>
     </div>
   </section>
 
   <section class="wrap sec" id="kuhinje" aria-labelledby="h-kuh">
-    <div class="sec-h"><span class="no" aria-hidden="true">05</span><h2 id="h-kuh"><span class="kicker mono">Čas je za novo kuhinjo</span>Sanjska kuhinja.</h2></div>
+    <div class="sec-h"><span class="no" aria-hidden="true">06</span><h2 id="h-kuh"><span class="kicker mono">Čas je za novo kuhinjo</span>Sanjska kuhinja.</h2></div>
     <div class="ed-grid">
-      <div class="spread">
-        <button class="w" type="button" data-g="kuhinje" data-i="1" aria-label="Odpri galerijo kuhinj, fotografija 2"><img src="assets/kuh-bela-s.webp" width="720" height="480" loading="lazy" decoding="async" alt="Bela kuhinja v obliki črke L z leseno zadnjo steno"></button>
-        <button class="p" type="button" data-g="kuhinje" data-i="3" aria-label="Odpri galerijo kuhinj, fotografija 4"><img src="assets/kuh-temna-s.webp" width="478" height="720" loading="lazy" decoding="async" alt="Kuhinja s temnim pultom in lesenim stropom"></button>
-        <button class="p" type="button" data-g="kuhinje" data-i="6" aria-label="Odpri galerijo kuhinj, fotografija 7"><img src="assets/kuh-detajl1-s.webp" width="478" height="720" loading="lazy" decoding="async" alt="Detajl kuhinjskega otoka z leseno nišo"></button>
+      <div class="spread" data-lb data-title="Kuhinje">
+        <a class="gi w" href="assets/img/f/2104-kuhinja-po-meri-53ee5.webp" data-w="1600" data-h="1066"><img src="assets/img/t/2104-kuhinja-po-meri-53ee5.webp" width="600" height="400" loading="lazy" decoding="async" alt="Bela kuhinja s hrastovo zadnjo steno in policami"></a>
+        <a class="gi p" href="assets/img/f/2210-pohistvojereb-cerknica-18-51066.webp" data-w="1600" data-h="1066"><img src="assets/img/t/2210-pohistvojereb-cerknica-18-51066.webp" width="600" height="400" loading="lazy" decoding="async" alt="Hrastova kuhinja z belim otokom in steklenimi zgornjimi omaricami"></a>
+        <a class="gi p" href="assets/img/f/2211-lp08521.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2211-lp08521.webp" width="600" height="400" loading="lazy" decoding="async" alt="Antracitna kuhinja v obliki črke L s hrastovimi zgornjimi elementi"></a>
       </div>
       <div>
-        <blockquote class="pull" style="margin-top:0">Kuhinja je pomembna za vašo celotno družino, zato mora biti omarica enako elegantna kot funkcionalna.<span class="q">«</span><cite>pohistvojereb.si / kuhinje po meri</cite></blockquote>
+        <blockquote class="pull" style="margin-top:0">Kuhinja je pomembna za vašo celotno družino, zato mora biti omarica enako elegantna kot funkcionalna.<span class="q">«</span><cite>Pohištvo Jereb · kuhinje po meri</cite></blockquote>
         <div class="cols" style="columns:1">
-          <p>Vaša vizija, naše strokovno znanje in vrhunska izdelava. Ne glede na to, ali imate radi trend ali tradicijo, zagotovimo natančen slog in rešitve za shranjevanje, ki jih želite.</p>
+          <p>Postopek se začne z vašo vizijo, našim strokovnim znanjem in vrhunsko izdelavo. Ne glede na to, ali imate radi trend ali tradicijo, vam zagotovimo natančen slog in rešitve za shranjevanje, ki jih želite.</p>
           <p>Kmalu boste kuhali v čudovitem prostoru, ki vam je pisan na kožo.</p>
         </div>
-        <button class="more" type="button" data-g="kuhinje">Vseh 10 fotografij kuhinj →</button>
+        <a class="more" href="kuhinje/">Vse kuhinje · 176 fotografij →</a>
       </div>
     </div>
   </section>
 
   <section class="wrap sec" id="galerija" aria-labelledby="h-gal">
-    <div class="sec-h"><span class="no" aria-hidden="true">06</span><h2 id="h-gal"><span class="kicker mono">Galerija</span>Izdelano pri nas.</h2></div>
-    <div class="essay">
-      <figure><button type="button" data-g="galerija" data-i="0" aria-label="Povečaj: Kuhinja z otokom in hrastovimi elementi"><img src="assets/kuh-otok-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Kuhinja z otokom in hrastovimi elementi"></button><figcaption>Kuhinja z otokom in hrastovimi elementi.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="1" aria-label="Povečaj: Dnevni prostor z lesenimi policami pod poševnino"><img src="assets/dne-prostor-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Dnevni prostor z lesenimi policami pod poševnino"></button><figcaption>Dnevni prostor z lesenimi policami pod poševnino.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="2" aria-label="Povečaj: Mladinska soba z leseno posteljo"><img src="assets/otr-postelja-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Mladinska soba z leseno posteljo"></button><figcaption>Mladinska soba z leseno posteljo.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="3" aria-label="Povečaj: Lesen pult z umivalnikom in okroglim ogledalom"><img src="assets/kop-ogledalo-s.webp" width="478" height="720" loading="lazy" decoding="async" alt="Lesen pult z umivalnikom in okroglim ogledalom"></button><figcaption>Lesen pult z umivalnikom in okroglim ogledalom.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="4" aria-label="Povečaj: Notranja vrata v lesenem furnirju"><img src="assets/vra-furnir-s.webp" width="478" height="720" loading="lazy" decoding="async" alt="Notranja vrata v lesenem furnirju"></button><figcaption>Notranja vrata v lesenem furnirju.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="5" aria-label="Povečaj: Spalnica z osvetljeno garderobno omaro in mizo"><img src="assets/spa-garderoba-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Spalnica z osvetljeno garderobno omaro in mizo"></button><figcaption>Spalnica z osvetljeno garderobno omaro in mizo.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="6" aria-label="Povečaj: Kuhinja s šankom in barskimi stoli"><img src="assets/kuh-sank-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Kuhinja s šankom in barskimi stoli"></button><figcaption>Kuhinja s šankom in barskimi stoli.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="7" aria-label="Povečaj: Vgradna omara in obešalnik v predsobi"><img src="assets/pre-omara-s.webp" width="478" height="720" loading="lazy" decoding="async" alt="Vgradna omara in obešalnik v predsobi"></button><figcaption>Vgradna omara in obešalnik v predsobi.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="8" aria-label="Povečaj: Visoka omara in lesena zgornja vrsta"><img src="assets/kuh-detajl2-s.webp" width="478" height="720" loading="lazy" decoding="async" alt="Visoka omara in lesena zgornja vrsta"></button><figcaption>Visoka omara in lesena zgornja vrsta.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="9" aria-label="Povečaj: Stopnice s policami za igrače"><img src="assets/otr-stopnice-s.webp" width="478" height="720" loading="lazy" decoding="async" alt="Stopnice s policami za igrače"></button><figcaption>Stopnice s policami za igrače.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="10" aria-label="Povečaj: Pogled skozi dnevni prostor"><img src="assets/dne-pogled-s.webp" width="478" height="720" loading="lazy" decoding="async" alt="Pogled skozi dnevni prostor"></button><figcaption>Pogled skozi dnevni prostor.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="11" aria-label="Povečaj: Lesen pult in odprte police v kopalnici"><img src="assets/kop-pult-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Lesen pult in odprte police v kopalnici"></button><figcaption>Lesen pult in odprte police v kopalnici.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="12" aria-label="Povečaj: Omare brez ročajev pod stopnicami"><img src="assets/pre-stopnice-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Omare brez ročajev pod stopnicami"></button><figcaption>Omare brez ročajev pod stopnicami.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="13" aria-label="Povečaj: Kuhinja v visokem sijaju z lesenimi poudarki"><img src="assets/kuh-sijaj-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Kuhinja v visokem sijaju z lesenimi poudarki"></button><figcaption>Kuhinja v visokem sijaju z lesenimi poudarki.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="14" aria-label="Povečaj: Omara z izvlečnimi predali"><img src="assets/spa-omara-s.webp" width="478" height="720" loading="lazy" decoding="async" alt="Omara z izvlečnimi predali"></button><figcaption>Omara z izvlečnimi predali.</figcaption></figure>
-      <figure><button type="button" data-g="galerija" data-i="15" aria-label="Povečaj: Stopnice z vgrajenimi omarami"><img src="assets/otr-omara-s.webp" width="720" height="478" loading="lazy" decoding="async" alt="Stopnice z vgrajenimi omarami"></button><figcaption>Stopnice z vgrajenimi omarami.</figcaption></figure>
-    </div>
-  </section>
-
-  <section class="wrap sec" id="kontakt" aria-labelledby="h-kon">
-    <div class="sec-h"><span class="no" aria-hidden="true">07</span><h2 id="h-kon"><span class="kicker mono">Kontakt</span>Začnimo projekt danes.</h2></div>
-    <p class="deck" style="margin-top:18px">Le en korak do pohištva po meri.</p>
-    <p style="margin-top:22px"><a class="callline" href="tel:+38640415792">Pokličite: <b>040 415 792</b></a></p>
-    <dl class="colo">
-      <div><dt>Podjetje</dt><dd>Pohištvo Jereb, Matej Jereb s.p., izdelava pohištva</dd></div>
-      <div><dt>Naslov</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Trata%2012%2C%204220%20%C5%A0kofja%20Loka" target="_blank" rel="noopener">Trata 12, 4220 Škofja Loka</a></dd></div>
-      <div><dt>Telefon</dt><dd><a href="tel:+38640415792">+386 (0) 40 415 792</a></dd></div>
-      <div><dt>E-pošta</dt><dd><a href="mailto:info@pohistvojereb.si?subject=Povpra%C5%A1evanje%20%E2%80%93%20pohi%C5%A1tvo%20po%20meri">info@pohistvojereb.si</a></dd></div>
-    </dl>
+    <div class="sec-h"><span class="no" aria-hidden="true">07</span><h2 id="h-gal"><span class="kicker mono">Galerija</span>Izdelano pri nas.</h2></div>
+    <ul class="grid" data-lb data-title="Galerija"><li><a class="gi" href="assets/img/f/2104-dsc0693.webp" data-w="1600" data-h="1062"><img src="assets/img/t/2104-dsc0693.webp" width="600" height="398" alt="Bela kuhinja s hrastovo nišo in sivim pultom" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2202-dnevna-soba-trebnje-16e63.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2202-dnevna-soba-trebnje-16e63.webp" width="600" height="400" alt="Mansardni dnevni prostor z osvetljenimi hrastovimi policami" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2105-otroske-sobe-mladinske-821b2.webp" data-w="1600" data-h="1062"><img src="assets/img/t/2105-otroske-sobe-mladinske-821b2.webp" width="600" height="398" alt="Hrastova postelja s predalom in pisalna miza" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2110-dsc0408.webp" data-w="1600" data-h="1063"><img src="assets/img/t/2110-dsc0408.webp" width="600" height="399" alt="Dolga hrastova viseča omarica z osvetljenim ogledalom" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2104-crna-presdoba-vgradna-eeaa2.webp" data-w="1062" data-h="1600"><img src="assets/img/t/2104-crna-presdoba-vgradna-eeaa2.webp" width="398" height="600" alt="Temno modra vrata brez vidnega podboja v leseni steni" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2305-lp06848.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2305-lp06848.webp" width="600" height="400" alt="Spalnica z odprto hrastovo garderobo" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2104-pohistvo-jereb-oprema-c479f.webp" data-w="1600" data-h="1068"><img src="assets/img/t/2104-pohistvo-jereb-oprema-c479f.webp" width="600" height="401" alt="Šank v lesnem dekorju z belimi barskimi stoli" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2104-pohistvo-jereb-oprema-a89d5.webp" data-w="1116" data-h="1600"><img src="assets/img/t/2104-pohistvo-jereb-oprema-a89d5.webp" width="418" height="600" alt="Bele vgradne omare s hrastovo nišo v predsobi" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2111-kuhinje-po-meri-ebfb4.webp" data-w="1063" data-h="1600"><img src="assets/img/t/2111-kuhinje-po-meri-ebfb4.webp" width="399" height="600" alt="Kuhinja s temno zelenimi spodnjimi in hrastovimi zgornjimi omaricami" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2105-dsc9752.webp" data-w="1066" data-h="1600"><img src="assets/img/t/2105-dsc9752.webp" width="400" height="600" alt="Hrastove stopnice-police v otroški sobi" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2202-pj-trebnje-58-4ddf5.webp" data-w="1067" data-h="1600"><img src="assets/img/t/2202-pj-trebnje-58-4ddf5.webp" width="400" height="600" alt="Visok hrastov regal z osvetljenimi policami" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2104-masivna-natur-les-f6cf3.webp" data-w="1600" data-h="1062"><img src="assets/img/t/2104-masivna-natur-les-f6cf3.webp" width="600" height="398" alt="Masivna hrastova kopalniška omarica s predali" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2104-dsc0428.webp" data-w="1600" data-h="1062"><img src="assets/img/t/2104-dsc0428.webp" width="600" height="398" alt="Bele omare pod hrastovimi stopnicami" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2211-lp08528.webp" data-w="1600" data-h="1067"><img src="assets/img/t/2211-lp08528.webp" width="600" height="400" alt="Kuhinja z otokom in kuhalno ploščo, hrastove zgornje omarice" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2210-jereb-skofja-loka-e5fb1.webp" data-w="1066" data-h="1600"><img src="assets/img/t/2210-jereb-skofja-loka-e5fb1.webp" width="400" height="600" alt="Garderobna omara z obešalnikom in izvlečnimi predali" loading="lazy" decoding="async"></a></li><li><a class="gi" href="assets/img/f/2305-lp06921.webp" data-w="1067" data-h="1600"><img src="assets/img/t/2305-lp06921.webp" width="400" height="600" alt="Hrastova niša s klopjo in kljukicami v beli omari" loading="lazy" decoding="async"></a></li></ul>
+    <p style="margin-top:16px;color:var(--ink2)">Na strani je skupaj 553 fotografij, razvrščenih po prostorih.</p>
   </section>
 </main>
-
+<section class="wrap" aria-label="Kontakt">
+  <div class="cta">
+    <div><h2>Začnimo projekt danes.</h2><p class="deck" style="margin-top:8px">Le en korak do pohištva po meri.</p></div>
+    <div><span class="kicker mono">Posvetujte se z nami</span><a class="callline" href="tel:+38640415792">Pokličite: <b>040 415 792</b></a>
+    <span class="mailline">ali pišite na <a href="mailto:info@pohistvojereb.si?subject=Povpra%C5%A1evanje%20%E2%80%93%20pohi%C5%A1tvo%20po%20meri&amp;body=Ime%20in%20priimek%3A%20%0ATelefonska%20%C5%A1tevilka%3A%20%0APovpra%C5%A1evanje%3A%20">info@pohistvojereb.si</a></span></div>
+  </div>
+</section>
 <footer>
   <div class="wrap">
-    <span>Pohištvo Jereb, Matej Jereb s.p., izdelava pohištva · Trata 12, 4220 Škofja Loka · <a href="tel:+38640415792">040 415 792</a> · <a href="mailto:info@pohistvojereb.si">info@pohistvojereb.si</a></span>
-    <span>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</span>
-    <span>Fotografije: Pohištvo Jereb (pohistvojereb.si).</span>
+    <div class="fg">
+      <div>
+        <p class="fb"><img src="assets/img/logo-mark.png" width="28" height="25" alt="">Pohištvo Jereb</p>
+        <p style="margin-top:10px">Matej Jereb s.p., izdelava pohištva<br>Trata 12, 4220 Škofja Loka<br>
+        <a href="tel:+38640415792">040 415 792</a> · <a href="mailto:info@pohistvojereb.si?subject=Povpra%C5%A1evanje%20%E2%80%93%20pohi%C5%A1tvo%20po%20meri">info@pohistvojereb.si</a></p>
+      </div>
+      <nav aria-label="Noga"><ul><li><a href="./">Domov</a></li><li><a href="kuhinje/">Kuhinje</a></li><li><a href="kopalnice/">Kopalnice</a></li><li><a href="otroske-sobe/">Otroške sobe</a></li><li><a href="vrata/">Vrata</a></li><li><a href="predsobe/">Predsobe</a></li><li><a href="dnevne-sobe/">Dnevne sobe</a></li><li><a href="spalnice/">Spalnice</a></li><li><a href="detajli/">Detajli</a></li><li><a href="kako-delamo/">Kako delamo</a></li><li><a href="o-nas/">O nas</a></li><li><a href="kontakt/">Kontakt</a></li></ul></nav>
+    </div>
+    <p class="cp" style="margin-top:18px">© 2026 Pohištvo Jereb, Matej Jereb s.p., izdelava pohištva. Vse pravice pridržane.</p>
   </div>
 </footer>
 
@@ -326,58 +193,6 @@ footer a{color:var(--ink)}
   <a href="tel:+38640415792">Pokličite <b>040 415 792</b></a>
   <a class="m" href="mailto:info@pohistvojereb.si?subject=Povpra%C5%A1evanje%20%E2%80%93%20pohi%C5%A1tvo%20po%20meri">Pišite</a>
 </div>
-
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lbTitle" aria-hidden="true">
-  <div class="lb-top">
-    <div class="lb-title"><span id="lbTitle">Galerija</span><span class="lb-count" id="lbCount"></span></div>
-    <button class="lb-x" id="lbX" type="button" aria-label="Zapri galerijo"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg></button>
-  </div>
-  <div class="lb-stage" id="lbStage">
-    <img id="lbImg" alt="">
-    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Prejšnja fotografija"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
-    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Naslednja fotografija"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-  </div>
-  <div class="lb-cap" id="lbCap" aria-live="polite"></div>
-</div>
-
-<script>
-(function(){
-  var doc=document.documentElement;
-  /* galleries: only the client's own photos, sorted by room (see NOTES.md) */
-  var G={
-    kuhinje:{t:'Kuhinje',i:[['kuh-otok','Kuhinja z otokom in hrastovimi elementi'],['kuh-bela','Bela kuhinja v obliki črke L z leseno zadnjo steno'],['kuh-sijaj','Kuhinja v visokem sijaju z lesenimi poudarki'],['kuh-temna','Kuhinja s temnim pultom in lesenim stropom'],['kuh-sank','Kuhinja s šankom in barskimi stoli'],['kuh-nisa','Odprta lesena niša med zgornjimi elementi'],['kuh-detajl1','Kuhinjski otok z leseno nišo'],['kuh-detajl2','Visoka omara in lesena zgornja vrsta'],['kuh-detajl3','Predali brez ročajev in vgradna pečica'],['kuh-pogled','Pogled v kuhinjo iz dnevnega prostora']]},
-    kopalnice:{t:'Kopalnice',i:[['kop-umivalnik','Lesena kopalniška omarica z umivalnikom'],['kop-mozaik','Viseča lesena omarica ob mozaiku'],['kop-ogledalo','Lesen pult z umivalnikom in okroglim ogledalom'],['kop-pult','Lesen pult in odprte police v kopalnici']]},
-    otroske:{t:'Otroške sobe',i:[['otr-galerija','Otroška soba z lesenimi stopnicami in pisalno mizo'],['otr-postelja','Mladinska soba z leseno posteljo'],['otr-masiva','Postelja in predalnik iz masivnega lesa'],['otr-omara','Stopnice z vgrajenimi omarami'],['otr-stopnice','Stopnice s policami za igrače'],['otr-delo','Delovni kotiček v mladinski sobi']]},
-    vrata:{t:'Notranja vrata',i:[['vra-furnir','Notranja vrata v lesenem furnirju'],['vra-drsna','Drsna steklena vrata'],['vra-skrita','Vrata s skritimi tečaji']]},
-    predsobe:{t:'Predsobe',i:[['pre-hodnik','Predsoba s klopjo in hodnikom'],['pre-omara','Vgradna omara in obešalnik v predsobi'],['pre-obloga','Lesena stenska obloga z obešalnikom'],['pre-vhod','Vhod z lesenim okvirjem'],['pre-stopnice','Omare brez ročajev pod stopnicami']]},
-    dnevne:{t:'Dnevne sobe',i:[['dne-prostor','Dnevni prostor z lesenimi policami pod poševnino'],['dne-police','Osvetljene lesene police'],['dne-pogled','Pogled skozi dnevni prostor']]},
-    spalnice:{t:'Spalnice',i:[['spa-garderoba','Spalnica z osvetljeno garderobno omaro in mizo'],['spa-predali','Garderobna omara z drsnimi vrati in predali'],['spa-omara','Omara z izvlečnimi predali']]}
-  };
-  var all={};Object.keys(G).forEach(function(k){G[k].i.forEach(function(it){all[it[0]]=it[1];});});
-  G.galerija={t:'Galerija',i:['kuh-otok','dne-prostor','otr-postelja','kop-ogledalo','vra-furnir','spa-garderoba','kuh-sank','pre-omara','kuh-detajl2','otr-stopnice','dne-pogled','kop-pult','pre-stopnice','kuh-sijaj','spa-omara','otr-omara'].map(function(n){return [n,all[n]];})};
-
-  var lb=document.getElementById('lb'), img=document.getElementById('lbImg'), cap=document.getElementById('lbCap'),
-      title=document.getElementById('lbTitle'), count=document.getElementById('lbCount');
-  var cur=null, idx=0, last=null;
-  function show(n){ var L=cur.i; idx=(n+L.length)%L.length; var it=L[idx];
-    img.src='assets/'+it[0]+'.webp'; img.alt=it[1]; cap.textContent=it[1]; count.textContent=(idx+1)+' / '+L.length; }
-  function open(k,n){ cur=G[k]; if(!cur) return; last=document.activeElement; title.textContent=cur.t;
-    lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); doc.style.overflow='hidden'; show(n||0); document.getElementById('lbX').focus(); }
-  function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); doc.style.overflow=''; if(last) last.focus(); }
-  document.addEventListener('click',function(e){ var t=e.target.closest?e.target.closest('[data-g]'):null; if(t) open(t.getAttribute('data-g'),+(t.getAttribute('data-i')||0)); });
-  document.getElementById('lbX').addEventListener('click',close);
-  document.getElementById('lbPrev').addEventListener('click',function(){show(idx-1);});
-  document.getElementById('lbNext').addEventListener('click',function(){show(idx+1);});
-  document.getElementById('lbStage').addEventListener('click',function(e){ if(e.target===this) close(); });
-  document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open')) return;
-    if(e.key==='Escape') close(); else if(e.key==='ArrowRight') show(idx+1); else if(e.key==='ArrowLeft') show(idx-1);
-    else if(e.key==='Tab'){ var f=lb.querySelectorAll('button'), a=f[0], z=f[f.length-1];
-      if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();} else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();} } });
-  var sx=0,sy=0;
-  lb.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
-  lb.addEventListener('touchend',function(e){ var dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy;
-    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)) show(idx+(dx<0?1:-1)); else if(dy>90&&Math.abs(dy)>Math.abs(dx)*1.5) close(); },{passive:true});
-})();
-</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
