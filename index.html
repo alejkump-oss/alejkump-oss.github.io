@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="sl">
 <head>
-<meta name="google-site-verification" content="AtaibKQKaaNP735suTDmKEj8WBIYSNLdrYqujGc9Aqk" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="google-site-verification" content="AtaibKQKaaNP735suTDmKEj8WBIYSNLdrYqujGc9Aqk" />
 <title>Izdelava spletnih strani Kočevje in Dolenjska | AK agencija, Alej Kump</title>
 <meta name="description" content="Izdelava spletnih strani za lokalna podjetja v Kočevju, po Dolenjski in Sloveniji. Brezplačen konceptni predogled, nato pisna ponudba s ceno po dogovoru, brez obveznosti.">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#0e0f12">
+<meta name="color-scheme" content="dark">
 <link rel="canonical" href="https://alejkump.si/">
 <link rel="alternate" hreflang="sl" href="https://alejkump.si/">
 <link rel="alternate" hreflang="en" href="https://alejkump.si/en.html">
@@ -20,9 +21,6 @@
 <meta property="og:image:alt" content="Telefon v temnem studiu, na zaslonu spletna stran: ilustracija, ustvarjena z UI">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://alejkump.si/prenova/assets/film-end.jpg">
-<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-wght-normal.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-ext-wght-normal.woff2" crossorigin>
-<link rel="stylesheet" href="assets/ak/site.css?v=6">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,274 +54,296 @@
   ]
 }
 </script>
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-wght-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/ak/fonts/geist-latin-ext-wght-normal.woff2" crossorigin>
+<style>
+@font-face{font-family:Geist;src:url(assets/ak/fonts/geist-latin-wght-normal.woff2) format("woff2-variations"),url(assets/ak/fonts/geist-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Geist;src:url(assets/ak/fonts/geist-latin-ext-wght-normal.woff2) format("woff2-variations"),url(assets/ak/fonts/geist-latin-ext-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{
+  --bg:#0e0f12;--bg2:#16171c;--card:#1b1c22;--line:rgba(255,255,255,.12);
+  --ink:#f4f1ec;--mute:#bdb7af;--dim:#8f8a83;--or:#ff8a3d;--or2:#ffb27a;--onor:#1a0d03;
+  --r:22px;--g:16px;
+}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Geist,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.5;padding-bottom:calc(92px + env(safe-area-inset-bottom));overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--g)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--or);color:var(--onor);padding:10px 14px;border-radius:10px;z-index:9}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--or2);outline-offset:3px;border-radius:8px}
+
+/* top */
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0 4px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;letter-spacing:-.01em}
+.brand svg{width:26px;height:26px}
+.top .home{color:var(--mute);font-size:15px;text-decoration:none;padding:10px 0}
+
+/* hero */
+.hero{position:relative;padding:28px 0 36px;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:120px;width:420px;height:420px;background:radial-gradient(closest-side,rgba(255,138,61,.28),transparent 70%);pointer-events:none;z-index:-1}
+.pill{display:inline-block;border:2px solid var(--or);color:var(--or);border-radius:40px;padding:6px 14px;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase}
+h1{font-size:clamp(40px,11vw,76px);line-height:1.02;font-weight:800;letter-spacing:-.035em;margin:20px 0 0}
+h1 em{font-style:normal;color:var(--or)}
+.lead{color:#ddd7cf;font-size:18px;margin-top:18px;max-width:34em}
+.who{color:var(--mute);font-size:15px;margin-top:14px}
+.chips{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0 0;max-width:560px}
+.chips li{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px;font-size:15px;line-height:1.3}
+.chips b{display:block;color:var(--or);font-size:17px;margin-bottom:2px}
+.cta{display:flex;flex-direction:column;gap:12px;margin-top:26px;max-width:560px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;border-radius:999px;padding:14px 22px;font-weight:700;font-size:18px;text-decoration:none;text-align:center;line-height:1.2}
+.btn svg{width:22px;height:22px;flex:none}
+.btn.pri{background:var(--or);color:var(--onor);box-shadow:0 10px 40px rgba(255,138,61,.35)}
+.btn.ghost{border:2px solid var(--line);color:var(--ink)}
+.btn.pri:active,.btn.ghost:active{transform:scale(.98)}
+.small{color:var(--dim);font-size:14px;margin-top:10px}
+
+/* sections */
+.sec{padding:44px 0;border-top:1px solid var(--line)}
+.lbl{color:var(--or);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+h2{font-size:clamp(30px,7.4vw,48px);line-height:1.06;letter-spacing:-.03em;font-weight:800;margin-top:10px}
+.intro{color:var(--mute);margin-top:12px;max-width:36em}
+
+/* examples */
+.ex{list-style:none;padding:0;display:grid;gap:28px;margin-top:28px}
+.ex li{display:grid;grid-template-columns:132px 1fr;gap:18px;align-items:center}
+.phone{position:relative;border-radius:26px;padding:6px;background:#2a2b31;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 18px 40px rgba(0,0,0,.5)}
+.phone img{border-radius:20px;aspect-ratio:520/886;object-fit:cover;object-position:top;width:100%;background:#222}
+.phone::before{content:"";position:absolute;left:50%;top:11px;width:38px;height:9px;border-radius:9px;background:#0b0b0d;transform:translateX(-50%);z-index:1}
+.tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:4px 10px}
+.tag.done{background:var(--or);color:var(--onor)}
+.tag.prev{border:1.5px solid var(--mute);color:var(--mute)}
+.ex h3{font-size:20px;line-height:1.2;letter-spacing:-.01em;margin-top:8px}
+.ex p{color:var(--mute);font-size:15px;margin-top:6px}
+.ex a.open{display:inline-flex;align-items:center;min-height:44px;color:var(--or2);font-weight:700;font-size:16px;margin-top:4px}
+.note{color:var(--dim);font-size:14px;margin-top:24px;max-width:40em}
+
+/* steps */
+.steps{list-style:none;padding:0;display:grid;gap:12px;margin-top:26px;counter-reset:s}
+.steps li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 18px 70px;position:relative;counter-increment:s}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:18px;top:18px;width:38px;height:38px;border-radius:12px;background:rgba(255,138,61,.14);color:var(--or);font-weight:800;font-size:15px;display:grid;place-items:center}
+.steps h3{font-size:19px;line-height:1.25}
+.steps p{color:var(--mute);font-size:15px;margin-top:4px}
+
+/* faq */
+.faq{margin-top:22px;display:grid;gap:10px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:18px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 52px 18px 18px;font-weight:700;font-size:17px;position:relative;min-height:56px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--or);font-size:26px;font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 18px 18px;color:var(--mute);font-size:16px}
+
+.also{margin-top:22px;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:16px 18px;font-size:15px;color:var(--mute)}
+.also a{color:var(--or2);font-weight:700}
+.note a,.also a,.foot p a{display:inline-block;padding:12px 0;margin:-12px 0}
+.brand{min-height:44px}
+
+/* final */
+.final{text-align:left}
+.final .cta{margin-top:22px}
+
+/* footer */
+.foot{border-top:1px solid var(--line);padding:30px 0 20px;color:var(--dim);font-size:13px;line-height:1.6}
+.foot nav{display:flex;flex-wrap:wrap;gap:4px 18px;margin-bottom:14px}
+.foot nav a{color:var(--mute);font-size:15px;display:inline-flex;min-height:40px;align-items:center}
+.foot p+p{margin-top:8px}
+
+/* sticky bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:5;background:rgba(14,15,18,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px var(--g) calc(10px + env(safe-area-inset-bottom))}
+.bar .in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr;gap:10px}
+.bar .btn{min-height:54px;font-size:16px;padding:10px 14px}
+
+@media (min-width:760px){
+  body{font-size:18px}
+  .hero{padding:56px 0 64px}
+  .cta{flex-direction:row;max-width:none}
+  .cta .btn{flex:none;white-space:nowrap}
+  .ex{grid-template-columns:repeat(3,1fr);gap:28px}
+  .ex li{grid-template-columns:1fr;align-items:start}
+  .ex .phone{max-width:240px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .faq{max-width:760px}
+  .sec{padding:72px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:active{transform:none}}
+</style>
 </head>
-<body class="home">
+<body>
 <a class="skip" href="#vsebina">Preskoči na vsebino</a>
 
-<canvas id="sky" aria-hidden="true"></canvas>
-
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="AK agencija, na vrh">
-      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-        <defs><linearGradient id="mk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8052ff"/><stop offset="1" stop-color="#15846e"/></linearGradient></defs>
-        <path d="M16 3 29 27H3Z" fill="none" stroke="url(#mk)" stroke-width="2.4" stroke-linejoin="round"/>
-        <path d="M16 13 22 24H10Z" fill="url(#mk)"/>
-      </svg>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./" aria-label="AK agencija, domača stran">
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3 29 27H3Z" fill="none" stroke="#ff8a3d" stroke-width="2.4" stroke-linejoin="round"/><path d="M16 13 22 24H10Z" fill="#ff8a3d"/></svg>
       <span>AK agencija</span>
     </a>
-    <nav class="links" id="glavni-meni" aria-label="Glavni meni">
-      <a href="storitve.html">Storitve</a>
-      <a href="primeri.html">Primeri</a>
-      <a href="cene.html">Cene</a>
-      <a href="kako-poteka.html">Kako poteka</a>
-      <a href="o-meni.html">O meni</a>
-      <a href="google.html">GOOGLE</a>
-      <a href="marketing.html">MARKETING</a>
-      <a href="kontakt.html">Kontakt</a>
-    </nav>
-    <a class="nav-tel pill" href="tel:+38670479188">Pokličite</a>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="glavni-meni"><span class="bars" aria-hidden="true"></span><span class="sr">Meni</span></button>
-  </div>
-</header>
+    <a class="home" href="./">alejkump.si</a>
+  </header>
+</div>
 
 <main id="vsebina">
-<section class="hero" id="top">
-    <div class="wrap hero-in">
-      <div class="hero-txt">
-        <p class="label">Spletne strani za lokalna podjetja · Kočevje, Dolenjska, Slovenija</p>
-        <h1>Svojo novo stran vidite, preden plačate.</h1>
-        <p class="lead">Iz javnih podatkov vašega podjetja pripravim predogled spletne strani. Odprete ga na telefonu. Če vam je všeč, dobite pisno ponudbo s ceno, dogovorjeno vnaprej. Če ni, ne plačate ničesar.</p>
-        <div class="acts">
-          <a class="pill" href="mailto:alej.kump@gmail.com?subject=Predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20">Brezplačen predogled</a>
-          <a class="tlink" href="tel:+38670479188">Pokličite 070 479 188</a>
-        </div>
-        <p class="hint">Povezava odpre vaš poštni program z že izpolnjenim vprašanjem. Brez obveznosti.</p>
+  <section class="hero">
+    <div class="wrap">
+      <span class="pill">Spletne strani za lokalna podjetja</span>
+      <h1>Svojo novo stran vidite, <em>preden plačate.</em></h1>
+      <p class="lead">Za vaše podjetje pripravim brezplačen predogled spletne strani. Odprete ga na svojem telefonu. Šele nato se odločite.</p>
+      <p class="who">Alej Kump · AK agencija · Kočevje</p>
+      <ul class="chips" aria-label="Na kratko">
+        <li><b>0 €</b>predogled pred naročilom</li>
+        <li><b>Po dogovoru</b>cena, zapisana v ponudbi</li>
+        <li><b>Domena</b>prvo leto vključena</li>
+        <li><b>Brez DDV</b>možni obroki</li>
+      </ul>
+      <div class="cta">
+        <a class="btn pri" href="https://www.instagram.com/alej_kump/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.3A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+          Napiši STRAN na Instagramu
+        </a>
+        <a class="btn ghost" href="tel:+38670479188">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
+          Pokliči 070 479 188
+        </a>
       </div>
-      <div class="orbit" id="orbit" role="img" aria-label="Animacija: tisoče drobnih trikotnikov se sestavi v okno spletne strani"></div>
+      <p class="small">V sporočilo napišite STRAN in ime podjetja. Brez obveznosti.</p>
     </div>
   </section>
 
-  <section class="strip" aria-label="Na kratko">
-    <div class="wrap" data-reveal>
-      <dl class="facts">
-        <div><dt class="em">0 €</dt><dd>predogled pred naročilom</dd></div>
-        <div><dt>Po dogovoru</dt><dd>cena, zapisana v ponudbi vnaprej</dd></div>
-        <div><dt>7–14</dt><dd>delovnih dni od naročila do objave</dd></div>
-        <div><dt>Račun</dt><dd>davčno potrjen, za vsako plačilo</dd></div>
-      </dl>
+  <section class="sec" id="primeri" aria-labelledby="primeri-h">
+    <div class="wrap">
+      <p class="lbl">Primeri</p>
+      <h2 id="primeri-h">Tako izgleda na telefonu.</h2>
+      <p class="intro">Posnetki zaslonov so resnični posnetki strani na telefonu. Pri vsakem piše, ali gre za izdelano stran ali za primer predloga.</p>
+      <ul class="ex">
+        <li>
+          <a class="phone" href="p/briski/" aria-label="Odpri stran Gostilnice in picerije Briški">
+            <img src="ig/assets/briski.webp" width="520" height="886" alt="Posnetek zaslona strani Gostilnice in picerije Briški na telefonu" loading="lazy" decoding="async">
+          </a>
+          <div>
+            <span class="tag done">Izdelana stran</span>
+            <h3>Gostilnica in picerija Briški, Kočevje</h3>
+            <p>Jedilnik, tedenske malice, galerija in delovni čas, z gumbom za klic.</p>
+            <a class="open" href="p/briski/">Odpri stran ↗</a>
+          </div>
+        </li>
+        <li>
+          <a class="phone" href="p/pohistvo-jereb/" aria-label="Odpri primer predloga za Pohištvo Jereb">
+            <img src="ig/assets/jereb.webp" width="520" height="886" alt="Posnetek zaslona predloga strani za Pohištvo Jereb na telefonu" loading="lazy" decoding="async">
+          </a>
+          <div>
+            <span class="tag prev">Primer predloga</span>
+            <h3>Pohištvo Jereb, Škofja Loka</h3>
+            <p>Predogled, pripravljen za podjetje: več podstrani in galerije po prostorih.</p>
+            <a class="open" href="p/pohistvo-jereb/">Odpri predogled ↗</a>
+          </div>
+        </li>
+        <li>
+          <a class="phone" href="p/fitnes-no-1/1/" aria-label="Odpri primer predloga za Fitnes No 1">
+            <img src="ig/assets/fitnes.webp" width="520" height="886" alt="Posnetek zaslona predloga strani za Fitnes No 1 na telefonu" loading="lazy" decoding="async">
+          </a>
+          <div>
+            <span class="tag prev">Primer predloga</span>
+            <h3>Fitnes No 1, Kočevje</h3>
+            <p>Primer predloga s samostojnim naročanjem na termin.</p>
+            <a class="open" href="p/fitnes-no-1/1/">Odpri predogled ↗</a>
+          </div>
+        </li>
+      </ul>
+      <p class="note">»Primer predloga« je predogled, ki sem ga pripravil za podjetje pred naročilom. To ne pomeni, da je podjetje moja stranka. Več primerov: <a href="primeri.html">Primeri ↗</a></p>
     </div>
   </section>
 
-  <section class="sec" id="dela">
-    <div class="wrap" data-reveal>
-      <div class="car" role="region" aria-roledescription="carousel" aria-label="Izdelano in koncepti">
-        <div class="car-track">
-          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="1 od 4">
-            <figure class="shot crop">
-              <img src="assets/ak/img/briski.webp" width="1120" height="972" alt="Posnetek zaslona spletne strani Gostilnice in picerije Briški v Kočevju" loading="lazy" decoding="async">
-            </figure>
-            <p class="label">01 · Izdelano</p>
-            <h2 class="car-title">Gostilnica in picerija Briški, Kočevje.</h2>
-            <p class="car-text">Spletna stran gostilne s pico iz krušne peči: jedilnik, tedenske malice, galerija in delovni čas, z gumbom za klic.</p>
-            <p class="meta">Izdelano · November 2026</p>
-          </div>
-          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="2 od 4">
-            <figure class="shot crop">
-              <picture>
-                <source media="(max-width: 699px)" srcset="assets/ak/img/mizarstvo-mobile.webp" width="520" height="1125">
-                <img src="assets/ak/img/mizarstvo.webp" width="1120" height="2644" alt="Posnetek zaslona koncepta strani za izmišljeno Mizarstvo Hrast" loading="lazy" decoding="async">
-              </picture>
-            </figure>
-            <p class="label">Koncept · izmišljeno podjetje</p>
-            <h3 class="car-title">Mizarstvo Hrast</h3>
-            <p class="car-text">Koncept paketa Lokalni posel, z več podstranmi.</p>
-            <a class="tlink sm" href="https://ak-primer-mizarstvo.pages.dev/" rel="noopener" target="_blank">Odpri koncept <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="3 od 4">
-            <figure class="shot crop">
-              <picture>
-                <source media="(max-width: 699px)" srcset="assets/ak/img/frizer-mobile.webp" width="520" height="1125">
-                <img src="assets/ak/img/frizer.webp" width="1120" height="2644" alt="Posnetek zaslona koncepta strani za izmišljeni Frizerski salon Lila" loading="lazy" decoding="async">
-              </picture>
-            </figure>
-            <p class="label">Koncept · izmišljeno podjetje</p>
-            <h3 class="car-title">Frizerski salon Lila</h3>
-            <p class="car-text">Koncept paketa Osnovna, ena stran z vsem bistvenim.</p>
-            <a class="tlink sm" href="https://ak-primer-frizer.pages.dev/" rel="noopener" target="_blank">Odpri koncept <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="car-slide" role="group" aria-roledescription="slide" aria-label="4 od 4">
-            <figure class="shot crop">
-              <picture>
-                <source media="(max-width: 699px)" srcset="assets/ak/img/apartmaji-mobile.webp" width="520" height="1125">
-                <img src="assets/ak/img/apartmaji.webp" width="1120" height="2644" alt="Posnetek zaslona koncepta strani za izmišljene Apartmaje Ob jezeru" loading="lazy" decoding="async">
-              </picture>
-            </figure>
-            <p class="label">Koncept · izmišljeno podjetje</p>
-            <h3 class="car-title">Apartmaji Ob jezeru</h3>
-            <p class="car-text">Koncept paketa Lokalni posel za nastanitve, s povpraševanjem po e-pošti.</p>
-            <a class="tlink sm" href="https://ak-primer-apartmaji.pages.dev/" rel="noopener" target="_blank">Odpri koncept <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-        <div class="car-nav" hidden>
-          <button class="car-btn" type="button" data-dir="-1">← Nazaj</button>
-          <div class="car-dots">
-            <button type="button" aria-label="Prikaži 1 od 4" aria-current="true"></button>
-            <button type="button" aria-label="Prikaži 2 od 4"></button>
-            <button type="button" aria-label="Prikaži 3 od 4"></button>
-            <button type="button" aria-label="Prikaži 4 od 4"></button>
-          </div>
-          <button class="car-btn" type="button" data-dir="1">Naprej →</button>
-        </div>
-      </div>
-      <p class="note">Trije koncepti za podjetja, ki ne obstajajo. Pokažejo, kako bi lahko izgledala vaša stran. Posnetki zaslonov so resnični posnetki strani. Fotografije na konceptih so ilustracije, ustvarjene z UI, in so na samih straneh tudi tako označene. <a href="primeri.html">Vsi primeri ↗</a></p>
-    </div>
-  </section>
-
-  <section class="sec" id="proces">
-    <div class="wrap row top" data-reveal>
-      <div>
-        <p class="label">02 · Kako poteka</p>
-        <h2>Najprej predogled. Potem odločitev.</h2>
-        <p class="body">Predogled je narejen za vaše podjetje, z vašim imenom, storitvami in kontaktom. Pogledate ga v miru. Ponudba, ki sledi, ima zapisano ceno in rok, zato ni presenečenj.</p>
-        <ul class="ticks">
-          <li>Storitve in delovni čas</li>
-          <li>Gumb Pokliči in zemljevid</li>
-          <li>Prilagojeno telefonu, že v najcenejšem paketu</li>
-        </ul>
-        <p class="body">Če vam predogled ni všeč, ne plačate ničesar. Če rečete »ne«, vas ne kontaktiram več.</p>
-        <div class="acts"><a class="tlink" href="kako-poteka.html">Kako poteka, podrobno <span aria-hidden="true">↗</span></a></div>
-      </div>
+  <section class="sec" id="kako" aria-labelledby="kako-h">
+    <div class="wrap">
+      <p class="lbl">Kako poteka</p>
+      <h2 id="kako-h">Najprej predogled. Potem odločitev.</h2>
       <ol class="steps">
-        <li><span class="label">01</span><h3>Brezplačen predogled</h3><p>Iz vaših javnih podatkov pripravim predogled strani. Odprete ga na telefonu.</p></li>
-        <li><span class="label">02</span><h3>Pisna ponudba</h3><p>Fiksna cena in rok. Odločite se brez pritiska.</p></li>
-        <li><span class="label">03</span><h3>Izdelava</h3><p>7–14 delovnih dni, z vašimi popravki vmes.</p></li>
-        <li><span class="label">04</span><h3>Objava</h3><p>Stran gre na splet na vaši domeni. Za vsako plačilo davčno potrjen račun.</p></li>
+        <li><h3>Brezplačen predogled</h3><p>Ogledate si ga na telefonu, brez obveznosti in brez plačila.</p></li>
+        <li><h3>Pisna ponudba</h3><p>S ceno, dogovorjeno vnaprej, in z rokom izdelave.</p></li>
+        <li><h3>Plačilo v celoti ali na obroke</h3><p>Kot se dogovoriva v ponudbi. Za vsako plačilo davčno potrjen račun.</p></li>
+        <li><h3>Stran v 7–14 delovnih dneh</h3><p>Odvisno od paketa. Rok teče, ko prejmem vsebino in prvo plačilo.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="sec" id="kdo">
-    <div class="wrap row" data-reveal>
-      <div class="portrait-wrap">
-        <figure class="portrait">
-          <img src="assets/ak/img/alej-portret-760.webp" srcset="assets/ak/img/alej-portret-480.webp 480w, assets/ak/img/alej-portret-760.webp 760w" sizes="(min-width: 900px) 460px, calc(100vw - 32px)" width="760" height="950" alt="Alej Kump, AK agencija" loading="lazy" decoding="async">
-        </figure>
-        <p class="portrait-cap">
-          <span class="role">Ustanovitelj · izdelava spletnih strani</span>
-          <span class="name">Alej Kump</span>
-          <a class="ig" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank" aria-label="Alej Kump na Instagramu">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
-          </a>
-        </p>
+  <section class="sec" id="vprasanja" aria-labelledby="vprasanja-h">
+    <div class="wrap">
+      <p class="lbl">Vprašanja</p>
+      <h2 id="vprasanja-h">Kar vas verjetno zanima.</h2>
+      <div class="faq">
+        <details>
+          <summary>Koliko stane?</summary>
+          <p>Po dogovoru, odvisno od tega, kaj potrebujete. Ceno dogovoriva po brezplačnem predogledu in jo zapišem v pisno ponudbo, preden karkoli plačate. Nisem zavezanec za DDV, zato se DDV ne obračuna (čl. 94 ZDDV-1). Plačate lahko v celoti ali na obroke.</p>
+        </details>
+        <details>
+          <summary>Ali moram kaj plačati za predogled?</summary>
+          <p>Ne. Predogled je brezplačen in brez obveznosti. Če vam ni všeč, ne plačate ničesar. Če rečete »ne«, vas ne kontaktiram več.</p>
+        </details>
+        <details>
+          <summary>Kaj, če že imam spletno stran?</summary>
+          <p>Potem pripravim predogled prenovljene strani, ki ga primerjate s sedanjo. Odločite se, ko vidite oboje.</p>
+        </details>
+        <details>
+          <summary>Je domena vključena?</summary>
+          <p>Da, prvo leto. Domena je na vaše ime, zato je ves čas vaša. Podaljšanje po prvem letu plačate sami pri registrarju.</p>
+        </details>
+        <details>
+          <summary>Komu pripada stran?</summary>
+          <p>Vam. Stran, besedila in slike so vaši, ko je v celoti plačana.</p>
+        </details>
       </div>
-      <div>
-        <p class="label">03 · Kdo</p>
-        <h2>Sem Alej Kump iz Kočevja.</h2>
-        <p class="body">Želim, da imajo podjetja iz naših krajev enako dobre strani kot velika podjetja. Zato najprej pokažem, potem prosim za naročilo.</p>
-        <dl class="principles">
-          <div><dt class="label">Ena številka</dt><dd>Vsak klic, SMS in sporočilo dobim jaz.</dd></div>
-          <div><dt class="label">Cena vnaprej</dt><dd>Trije paketi, cena po dogovoru v pisni ponudbi, jasno, kaj ni vključeno.</dd></div>
-          <div><dt class="label">Iskreno</dt><dd>Če presodim, da vam ne morem pošteno pomagati, vam to povem v prvem odgovoru.</dd></div>
-        </dl>
-        <a class="tlink" href="o-meni.html">Več o meni <span aria-hidden="true">↗</span></a>
-      </div>
+      <p class="also" id="google-line" data-until="2026-11-22">Imate Google profil podjetja? <a href="google.html">GOOGLE ↗</a>: odgovori na ocene in objava, vsak teden, 22 € na mesec, brez vezave. Naročila do 22. 11. 2026.</p>
     </div>
   </section>
 
-  <section class="sec" id="cene">
-    <div class="wrap" data-reveal>
-      <div class="row head">
-        <div>
-          <p class="label">04 · Cene</p>
-          <h2>Cena po dogovoru, napisana vnaprej.</h2>
-        </div>
-        <p class="body">Ceno dogovoriva po brezplačnem predogledu in jo zapišem v pisno ponudbo. DDV ni obračunan (94. člen ZDDV-1). Domena je za prvo leto vključena v ceno. Plačate v celoti ali na obroke.</p>
+  <section class="sec final" aria-labelledby="final-h">
+    <div class="wrap">
+      <h2 id="final-h">Napišite STRAN. Pripravim vam predogled.</h2>
+      <p class="intro">V najslabšem primeru dobite brezplačen predogled svoje strani.</p>
+      <div class="cta">
+        <a class="btn pri" href="https://www.instagram.com/alej_kump/">Napiši STRAN na Instagramu</a>
+        <a class="btn ghost" href="mailto:alej.kump@gmail.com?subject=STRAN%20-%20predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20">alej.kump@gmail.com</a>
       </div>
-      <div class="prices">
-        <div class="price">
-          <h3 class="label">Osnovna</h3>
-          <p class="amt sm">Cena po dogovoru</p>
-          <ul><li>1 stran, razdeljena na sekcije</li><li>1 krog popravkov</li><li>Rok izdelave 7 delovnih dni</li><li class="dim">Neobvezno gostovanje in vzdrževanje, mesečno, po dogovoru</li></ul>
-          <a class="tlink sm" href="mailto:alej.kump@gmail.com?subject=Paket%20Osnovna">Vprašam za Osnovno <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="price">
-          <h3 class="label">Lokalni posel <span class="flag">Priporočam</span></h3>
-          <p class="amt sm">Cena po dogovoru</p>
-          <ul><li>Do 5 podstrani za vaše storitve</li><li>2 kroga popravkov</li><li>Rok izdelave 10 delovnih dni</li><li class="dim">Neobvezno gostovanje in vzdrževanje, mesečno, po dogovoru</li></ul>
-          <a class="tlink sm" href="mailto:alej.kump@gmail.com?subject=Paket%20Lokalni%20posel">Vprašam za Lokalni posel <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="price">
-          <h3 class="label">Premium</h3>
-          <p class="amt sm">Cena po dogovoru</p>
-          <ul><li>Do 5 podstrani, s pripravljenimi besedili in slikami</li><li>Na voljo tudi animirana stran</li><li>2 kroga popravkov, rok 14 delovnih dni</li><li class="dim">Neobvezno gostovanje in vzdrževanje, mesečno, po dogovoru</li></ul>
-          <a class="tlink sm" href="mailto:alej.kump@gmail.com?subject=Paket%20Premium">Vprašam za Premium <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <p class="note">Vse o paketih in plačilu: <a href="cene.html">Cene ↗</a></p>
-    </div>
-  </section>
-
-  <section class="sec" id="vec" aria-labelledby="vec-h">
-    <div class="wrap" data-reveal>
-      <p class="label">Poleg spletnih strani</p>
-      <h2 id="vec-h" class="sr">Druge storitve</h2>
-      <div class="cols3">
-        <div><h3><a class="tlink" href="google.html">GOOGLE <span aria-hidden="true">↗</span></a></h3><p>Odgovori na ocene in objava, vsak teden. 22 € na mesec, brez vezave. Naročila do 22. 11. 2026.</p></div>
-        <div><h3><a class="tlink" href="marketing.html">MARKETING <span aria-hidden="true">↗</span></a></h3><p>Videi, objave, oglasi. Od 59 € na mesec, prvi video brezplačno, brez vezave.</p></div>
-        <div><h3><a class="tlink" href="storitve.html">Vse storitve <span aria-hidden="true">↗</span></a></h3><p>Spletne trgovine in prodajni sestanki, vse s ceno na dlani.</p></div>
-      </div>
-      <p class="note">Rezultatov ne obljubljam.</p>
-    </div>
-  </section>
-
-  <section class="sec" id="kontakt" aria-labelledby="kontakt-h">
-    <div class="wrap row top" data-reveal>
-      <div>
-        <p class="label">05 · Kontakt</p>
-        <h2 id="kontakt-h">Povejte, s čim se ukvarjate.</h2>
-        <p class="body">Pripravim predogled vaše strani in vam pošljem povezavo. Če vam je všeč, se dogovoriva. Če ni, ostane pri tem. V najslabšem primeru dobite brezplačen predogled.</p>
-        <div class="acts">
-          <a class="pill" href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">Rezervirajte termin</a>
-        </div>
-      </div>
-      <ul class="dir">
-        <li><span class="label">Telefon</span><a href="tel:+38670479188">070 479 188</a><span class="v">Klic ali SMS. Vsak klic in SMS dobim jaz.</span></li>
-        <li><span class="label">Termin</span><a href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">15-minutni klic <span aria-hidden="true">↗</span></a><span class="v">Izberete termin, jaz vas pokličem. Brez obveznosti.</span></li>
-        <li><span class="label">E-pošta</span><a href="mailto:alej.kump@gmail.com?subject=Povpra%C5%A1evanje%20za%20spletno%20stran">alej.kump@gmail.com</a><span class="v">Napišite dejavnost in paket, ki vas zanima.</span></li>
-        <li><span class="label">Instagram</span><a href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">@alej_kump <span aria-hidden="true">↗</span></a><span class="v">V sporočilo napišite STRAN.</span></li>
-      </ul>
     </div>
   </section>
 </main>
 
 <footer class="foot">
   <div class="wrap">
-    <nav class="foot-links" aria-label="Strani">
+    <nav aria-label="Strani">
       <a href="./">Domov</a>
-      <a href="storitve.html">Storitve</a>
       <a href="cene.html">Cene</a>
-      <a href="primeri.html">Primeri</a>
       <a href="kako-poteka.html">Kako poteka</a>
-      <a href="google.html">GOOGLE</a>
-      <a href="marketing.html">MARKETING</a>
+      <a href="primeri.html">Primeri</a>
       <a href="o-meni.html">O meni</a>
       <a href="kontakt.html">Kontakt</a>
-      <a href="clanki-koliko-stane-spletna-stran.html">Koliko stane spletna stran</a>
-      <a href="clanki-facebook-ali-spletna-stran.html">Facebook ali lastna stran</a>
-      <a href="clanki-google-profil-podjetja.html">Google profil podjetja</a>
-      <a href="clanki-spletna-stran-za-obrtnike.html">Spletna stran za obrtnike</a>
       <a href="zasebnost.html">Varstvo podatkov</a>
-      <a href="en.html" hreflang="en" lang="en">English</a>
+      <a href="storitve.html">Vse storitve</a>
+      <a href="google.html">Google profil</a>
+      <a href="marketing.html">Marketing</a>
+      <a href="clanki-koliko-stane-spletna-stran.html">Koliko stane spletna stran</a>
+      <a href="clanki-facebook-ali-spletna-stran.html">Facebook ali spletna stran</a>
+      <a href="clanki-google-profil-podjetja.html">Google profil podjetja</a>
+      <a href="clanki-spletna-stran-za-obrtnike.html">Stran za obrtnike</a>
+      <a href="en.html" hreflang="en">English</a>
     </nav>
-    <p><strong>To je komercialna stran.</strong> Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja.</p>
-    <p><strong>AK agencija, računalniško programiranje, Alej Kump s.p.</strong> · vpisano v Poslovni register Slovenije (AJPES) 15. septembra 2026 · dejavnost 62.100 · <a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a><br>
-    sedež Ulica heroja Marinclja 3, 1330 Kočevje, Slovenija · matična številka 7585942000 · davčna številka 67735509</p>
-    <p>Ta stran ne shranjuje ničesar v vašem brskalniku in ne nastavlja piškotkov. Slike, pisava, slog (CSS) in skript na tej strani so gostovani tukaj. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Ni obrazcev.</p>
+    <p><strong>To je komercialna stran.</strong> Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja. Rezultatov ne obljubljam.</p>
+    <p><strong>AK agencija, računalniško programiranje, Alej Kump s.p.</strong>, Kočevje · matična številka 7585942000 · davčna številka 67735509 · nisem zavezanec za DDV · <a href="kontakt.html">sedež in vsi podatki</a></p>
+    <p>Ta stran ne nastavlja piškotkov. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem.</p>
   </div>
 </footer>
 
-<script src="assets/ak/ak.js?v=5" defer></script>
+<nav class="bar" aria-label="Hitri kontakt">
+  <div class="in">
+    <a class="btn pri" href="https://www.instagram.com/alej_kump/">Napiši STRAN</a>
+    <a class="btn ghost" href="tel:+38670479188">Pokliči</a>
+  </div>
+</nav>
+
+<script>
+(function(){var e=document.getElementById("google-line");if(!e)return;var u=new Date(e.getAttribute("data-until")+"T23:59:59+01:00");if(Date.now()>u.getTime())e.remove();})();
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>
