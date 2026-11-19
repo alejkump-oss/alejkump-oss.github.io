@@ -163,7 +163,49 @@ footer.site a{color:#8d887f}
 .callbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:999px;font-weight:700;text-decoration:none}
 .callbar .c{background:var(--or);color:#140800}
 .callbar .c svg{width:18px;height:18px}
-.callbar .m{flex:0 0 34%;border:1.5px solid #4a4a4a;color:var(--tx)}
+.callbar .m{flex:0 0 22%;border:1.5px solid #4a4a4a;color:var(--tx)}
+.callbar .r{background:var(--tx);color:#111}
+.bk,.bk .col{display:grid;gap:14px;min-width:0}
+.bk fieldset{margin:0;padding:20px 18px;border:1px solid var(--line);border-radius:18px;background:var(--bg2);min-width:0}
+.bk legend{float:left;width:100%;padding:0;margin:0 0 12px;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--or)}
+.bk legend+*{clear:both}
+.bk label{position:relative;display:block}
+.sr{position:absolute;top:0;left:0;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;padding:0}
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;margin:0 -2px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.days label{flex:0 0 auto;scroll-snap-align:start}
+.days label span{display:flex;flex-direction:column;align-items:center;justify-content:center;width:62px;min-height:78px;border:1.5px solid var(--line);border-radius:14px;background:var(--bg);cursor:pointer;line-height:1.1}
+.days small{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx2)}
+.days b{font:400 1.7rem/1.05 var(--head);color:var(--tx);margin:3px 0 1px}
+.days em{font-style:normal;font-size:.74rem;color:var(--tx2)}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.slots label span,.kind label span{display:flex;align-items:center;justify-content:center;min-height:46px;border:1.5px solid var(--line);border-radius:999px;background:var(--bg);font-weight:600;font-size:.98rem;cursor:pointer;color:var(--tx)}
+.kind{display:grid;gap:8px}
+.kind label span{justify-content:flex-start;padding:0 18px}
+.bk input:checked+span{background:var(--or);border-color:var(--or);color:#140800}
+.bk input:checked+span small,.bk input:checked+span em,.bk input:checked+span b{color:#140800}
+.bk input:focus-visible+span{outline:3px solid var(--or);outline-offset:3px}
+.bk input:disabled+span{opacity:.32;cursor:not-allowed;text-decoration:line-through}
+.slots .none{grid-column:1/-1;margin:0;color:var(--tx2)}
+.fld{display:block;margin:0 0 14px}
+.fld:last-child{margin-bottom:0}
+.fld>span{display:block;font-weight:600;margin:0 0 6px}
+.fld>span small{font-weight:400;color:var(--tx2)}
+.fld input,.fld textarea{width:100%;min-height:50px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--tx);font:400 1rem/1.4 var(--body)}
+.fld textarea{min-height:90px;resize:vertical}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--or)}
+.sum{border-radius:18px;background:linear-gradient(120deg,#ff6a2b,#ff8a55);color:#140800;padding:22px 18px}
+.sum h3{font:400 1.7rem/1.12 var(--head);text-transform:uppercase;margin:0 0 6px}
+.sum .pick{margin:0 0 16px;font-weight:600}
+.sum .btns a,.sum .btns button{flex:1 1 180px}
+.btn.d{background:#140800;color:#fff}
+.btn.d svg{width:20px;height:20px}
+.btn.o{border:1.5px solid #140800;color:#140800}
+.sum .ok{margin:14px 0 0;font-weight:700}
+.sum .err{margin:12px 0 0;padding:10px 14px;border-radius:12px;background:#140800;color:#ffb38f;font-weight:600}
+.sum .err:empty{display:none}
+.sum .alt{margin:10px 0 0;font-size:.9rem}
+.sum .alt a{color:#140800;font-weight:700}
+.sum .alt button{background:none;border:0;padding:0;font:inherit;color:#140800;font-weight:700;text-decoration:underline;cursor:pointer}
 @media (min-width:640px){
   .strip{grid-template-columns:repeat(4,1fr)}
   .cards{grid-template-columns:repeat(3,1fr)}
@@ -188,6 +230,11 @@ footer.site a{color:#8d887f}
   .revs{grid-template-columns:repeat(3,1fr)}
   .revs .rev:first-child{grid-column:span 2}
   .kont{grid-template-columns:1.1fr 1fr 1fr}
+  .bk{grid-template-columns:1.25fr 1fr;align-items:start}
+  .bk .side{position:sticky;top:80px}
+  .slots{grid-template-columns:repeat(6,1fr)}
+  .days{display:grid;grid-template-columns:repeat(7,1fr);overflow:visible;padding:2px;margin:0}
+  .days label span{width:auto}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gal img{transition:none}}
 </style>
@@ -197,7 +244,7 @@ footer.site a{color:#8d887f}
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#vrh" aria-label="Fitnes No 1, na vrh"><b>FITNES</b><i>No 1</i></a>
-    <nav aria-label="Glavni meni"><a href="#vadba">Vadba</a><a href="#o-nas">O nas</a><a href="#galerija">Galerija</a><a href="#mnenja">Mnenja</a><a href="#kontakt">Kontakt</a></nav>
+    <nav aria-label="Glavni meni"><a href="#vadba">Vadba</a><a href="#o-nas">O nas</a><a href="#galerija">Galerija</a><a href="#termin">Rezerviraj termin</a><a href="#mnenja">Mnenja</a><a href="#kontakt">Kontakt</a></nav>
     <a class="pill" href="tel:+38631833448"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>031 833 448</a>
   </div>
 </header>
@@ -215,7 +262,7 @@ footer.site a{color:#8d887f}
         <span class="open" id="odprto">Odprto vsak dan od 6.00 do 22.00</span>
         <div class="btns">
           <a class="btn p" href="tel:+38631833448"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Pokličite 031 833 448</a>
-          <a class="btn s" href="https://www.google.com/maps?cid=17494252017037248687" target="_blank" rel="noopener">Pot do fitnesa</a>
+          <a class="btn s" href="#termin">Rezerviraj termin</a>
         </div>
       </div>
       <div class="chips" aria-hidden="true"><span>Proste uteži</span><span>Naprave za moč</span><span>Kardio</span></div>
@@ -291,6 +338,51 @@ footer.site a{color:#8d887f}
   </div>
 </section>
 
+<section id="termin" aria-labelledby="h-ter">
+  <div class="wrap">
+    <p class="eyb">Rezerviraj termin</p>
+    <h2 id="h-ter">Izberite dan <i>in uro</i></h2>
+    <p class="lead">Izberite dan in uro, ki vam ustreza. Iz izbire pripravimo SMS za 031 833 448, ki ga pošljete s svojega telefona.</p>
+    <form class="bk" id="bk" novalidate>
+      <div class="col">
+        <fieldset>
+          <legend>1 · Dan</legend>
+          <div class="days" id="bk-days"></div>
+        </fieldset>
+        <fieldset>
+          <legend>2 · Ura</legend>
+          <div class="slots" id="bk-slots"></div>
+        </fieldset>
+      </div>
+      <div class="col side">
+        <fieldset>
+          <legend>3 · Vaši podatki</legend>
+          <label class="fld"><span>Ime</span><input id="bk-name" name="ime" type="text" autocomplete="given-name" maxlength="60" required></label>
+          <div class="fld"><span id="bk-kind-l">Kaj želite</span>
+            <div class="kind" role="radiogroup" aria-labelledby="bk-kind-l">
+              <label><input class="sr" type="radio" name="kaj" value="Prvi obisk" checked><span>Prvi obisk</span></label>
+              <label><input class="sr" type="radio" name="kaj" value="Trening"><span>Trening</span></label>
+              <label><input class="sr" type="radio" name="kaj" value="Vprašanje o članarini"><span>Vprašanje o članarini</span></label>
+            </div>
+          </div>
+          <label class="fld"><span>Opomba <small>(neobvezno)</small></span><textarea id="bk-note" name="opomba" maxlength="300" rows="3"></textarea></label>
+        </fieldset>
+        <div class="sum">
+          <h3>Vaš termin</h3>
+          <p class="pick" id="bk-pick" aria-live="polite">Izberite dan in uro.</p>
+          <div class="btns">
+            <a class="btn d" id="bk-sms" href="sms:+38631833448"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></svg>Pošlji SMS</a>
+            <a class="btn o" href="tel:+38631833448">Pokliči</a>
+          </div>
+          <p class="err" id="bk-err" role="alert"></p>
+          <p class="ok">Termin je potrjen, ko vam odgovorimo.</p>
+          <p class="alt">Na računalniku? <button type="button" id="bk-copy">Kopirajte sporočilo</button> in nam pišite na <a href="https://ig.me/m/fitnes_no1_kocevje" target="_blank" rel="noopener">Instagramu</a>.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
 <section id="mnenja" aria-labelledby="h-mn">
   <div class="wrap">
     <p class="eyb">Mnenja</p>
@@ -355,7 +447,7 @@ footer.site a{color:#8d887f}
   <div class="wrap">
     <div class="fl">
       <a class="logo" href="#vrh"><b>FITNES</b><i>No 1</i></a>
-      <nav aria-label="Noga"><a href="#vadba">Vadba</a><a href="#o-nas">O nas</a><a href="#galerija">Galerija</a><a href="#mnenja">Mnenja</a><a href="#kontakt">Kontakt</a></nav>
+      <nav aria-label="Noga"><a href="#vadba">Vadba</a><a href="#o-nas">O nas</a><a href="#galerija">Galerija</a><a href="#termin">Termin</a><a href="#mnenja">Mnenja</a><a href="#kontakt">Kontakt</a></nav>
     </div>
     <p>FITNES NO 1 JASMIN ZAHIROVIĆ S.P. · Reška cesta 23, 1330 Kočevje · matična št. 9629840000 · ID za DDV SI29127017</p>
     <p>Predogled spletne strani, ki ga je AK agencija pripravila brez naročila iz javnih virov: Googlov profil fitnesa, njegov Instagram profil in poslovni register. Fotografije so z Googlovega profila in Instagrama fitnesa. Stran ni objavljena v iskalnikih.</p>
@@ -365,6 +457,7 @@ footer.site a{color:#8d887f}
 
 <nav class="callbar" aria-label="Hitri stik">
   <a class="c" href="tel:+38631833448"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>Pokličite</a>
+  <a class="r" href="#termin">Termin</a>
   <a class="m" href="https://www.google.com/maps?cid=17494252017037248687" target="_blank" rel="noopener">Pot</a>
 </nav>
 
@@ -382,6 +475,76 @@ footer.site a{color:#8d887f}
   });
   d.querySelector('button').addEventListener('click',function(){d.close();});
   d.addEventListener('click',function(e){if(e.target===d)d.close();});
+})();
+(function(){
+  var f=document.getElementById('bk'); if(!f) return;
+  var TEL='+38631833448',FIRST=6,LAST=21,N=14;
+  var DS=['ned','pon','tor','sre','čet','pet','sob'],DL=['nedelja','ponedeljek','torek','sreda','četrtek','petek','sobota'];
+  var MS=['jan','feb','mar','apr','maj','jun','jul','avg','sep','okt','nov','dec'];
+  var daysEl=document.getElementById('bk-days'),slotsEl=document.getElementById('bk-slots');
+  var nameEl=document.getElementById('bk-name'),noteEl=document.getElementById('bk-note');
+  var pickEl=document.getElementById('bk-pick'),errEl=document.getElementById('bk-err'),smsEl=document.getElementById('bk-sms');
+  var ua=navigator.userAgent||'',apple=/iPad|iPhone|iPod|Macintosh/.test(ua);
+  var now=new Date(),t0=new Date(now.getFullYear(),now.getMonth(),now.getDate()),days=[];
+  function hhmm(h){return h+'.00';}
+  function el(tag,attrs,html){var e=document.createElement(tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(html!=null)e.innerHTML=html;return e;}
+  function freeHours(i){var hs=[];for(var h=FIRST;h<=LAST;h++){if(i===0&&h<=now.getHours())continue;hs.push(h);}return hs;}
+  for(var i=0;i<N;i++){
+    var dt=new Date(t0.getFullYear(),t0.getMonth(),t0.getDate()+i);days.push(dt);
+    var free=freeHours(i).length>0;
+    var top=i===0?'danes':i===1?'jutri':DS[dt.getDay()];
+    var lab=el('label');
+    var inp=el('input',{'class':'sr',type:'radio',name:'dan',value:String(i),'aria-label':DL[dt.getDay()]+', '+dt.getDate()+'. '+(dt.getMonth()+1)+'.'+(free?'':' (ni več prostih ur)')});
+    if(!free) inp.disabled=true;
+    lab.appendChild(inp);
+    lab.appendChild(el('span',{'aria-hidden':'true'},'<small>'+top+'</small><b>'+dt.getDate()+'.</b><em>'+MS[dt.getMonth()]+'</em>'));
+    daysEl.appendChild(lab);
+  }
+  function sel(name){var x=f.querySelector('input[name="'+name+'"]:checked');return x?x.value:null;}
+  function renderSlots(){
+    var di=sel('dan'),keep=sel('ura');slotsEl.innerHTML='';
+    if(di===null){slotsEl.appendChild(el('p',{'class':'none'},'Najprej izberite dan.'));return;}
+    var i=+di,hs=freeHours(i);
+    for(var h=FIRST;h<=LAST;h++){
+      var lab=el('label'),inp=el('input',{'class':'sr',type:'radio',name:'ura',value:String(h)});
+      if(hs.indexOf(h)<0){inp.disabled=true;inp.setAttribute('aria-label',hhmm(h)+' (minilo)');}
+      else if(keep===String(h)) inp.checked=true;
+      lab.appendChild(inp);lab.appendChild(el('span',null,hhmm(h)));slotsEl.appendChild(lab);
+    }
+  }
+  function when(){var di=sel('dan'),h=sel('ura');if(di===null||h===null)return null;var dt=days[+di];
+    return DL[dt.getDay()]+', '+dt.getDate()+'. '+(dt.getMonth()+1)+'. '+dt.getFullYear()+', ob '+hhmm(+h);}
+  function body(){
+    var w=when(),nm=nameEl.value.trim(),nt=noteEl.value.trim();
+    var s='Pozdravljeni, želim rezervirati termin v Fitnes No 1.\nKaj: '+sel('kaj')+'\nTermin: '+(w||'(izberite)')+'\nIme: '+(nm||'(vpišite)');
+    if(nt) s+='\nOpomba: '+nt;
+    return s+'\nProsim za potrditev. Hvala!';
+  }
+  function update(){
+    var w=when();
+    pickEl.textContent=w?(sel('kaj')+' · '+w):'Izberite dan in uro.';
+    smsEl.setAttribute('href','sms:'+TEL+(apple?'&':'?')+'body='+encodeURIComponent(body()));
+    if(errEl.textContent&&check(true)) errEl.textContent='';
+  }
+  function check(quiet){
+    var msg='',focus=null;
+    if(sel('dan')===null){msg='Izberite dan.';focus=daysEl.querySelector('input:not(:disabled)');}
+    else if(sel('ura')===null){msg='Izberite uro.';focus=slotsEl.querySelector('input:not(:disabled)');}
+    else if(!nameEl.value.trim()){msg='Vpišite ime.';focus=nameEl;}
+    if(!quiet){errEl.textContent=msg;if(focus)focus.focus();}
+    return !msg;
+  }
+  f.addEventListener('change',function(e){if(e.target.name==='dan')renderSlots();update();});
+  f.addEventListener('input',update);
+  f.addEventListener('submit',function(e){e.preventDefault();if(check())location.href=smsEl.getAttribute('href');});
+  smsEl.addEventListener('click',function(e){update();if(!check())e.preventDefault();});
+  document.getElementById('bk-copy').addEventListener('click',function(){
+    if(!check())return;var txt=body(),b=this;
+    function done(ok){errEl.textContent='';b.textContent=ok?'Sporočilo kopirano':'Kopiranje ni uspelo, pokličite nas';}
+    try{navigator.clipboard.writeText(txt).then(function(){done(true);},function(){done(false);});}catch(x){done(false);}
+  });
+  var first=daysEl.querySelector('input:not(:disabled)');if(first)first.checked=true;
+  renderSlots();update();
 })();
 </script>
 </body>

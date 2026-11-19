@@ -59,6 +59,18 @@ in @apivakuf_no.1 → fitnes očitno vodita dva (Jasmin + Simona?). NI na strani
 2. **Dve leti najinega fitnesa** — zgodba/ljudje; krem + roza; Instrument Serif + Figtree.
 3. **Pred prvim treningom** — vprašanja in odgovori z viri, ponazoritev članske kartice; modra; IBM Plex Mono + Source Sans 3.
 
+## Rezerviraj termin (1/, dodano 19. 11. 2026 na željo lastnika agencije)
+
+Sekcija `#termin` (povezave: meni, gumb v vrhu, spodnja vrstica na telefonu, noga). Brez strežnika in brez
+plačljive storitve: 14 dni naprej, ure 6.00–21.00 po objavljenem delovnem času (pon–ned 6–22, Google), današnje
+pretekle ure onemogočene; Ime, Kaj želite (Prvi obisk / Trening / Vprašanje o članarini), neobvezna opomba.
+**Rezervacija je SMS-zahteva s predizpolnjenim besedilom** na 031 833 448 (iOS/Mac `sms:+386…&body=`,
+drugje `?body=`), plus "Pokliči" (tel:) in "Kopirajte sporočilo" + Instagram DM (ig.me/m/fitnes_no1_kocevje;
+IG je izvoren). Ni e-pošte/WhatsAppa, ker nista objavljena. Stran ne trdi, da je termin potrjen:
+"Termin je potrjen, ko vam odgovorimo." Nič se ne pošlje samodejno; SMS pošlje obiskovalec s svojega telefona.
+Ko postanejo stranka: povezati s pravim koledarjem za rezervacije (npr. Google Calendar appointment schedule
+na NJIHOVEM računu) ali obdržati SMS, če jim tako ustreza.
+
 ## Preverjanje (19. 11. 2026)
 
 `check.py` (scratchpad; Playwright WebKit iPhone 13 390 px + 1280×900): izbirnik + 1/2/3 brez vodoravnega
