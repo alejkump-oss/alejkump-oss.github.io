@@ -1,0 +1,16 @@
+# Self-booking API for the Fitnes No 1 preview (https://alejkump.si/p/fitnes-no-1/1/).
+# Workers Free + D1 free. No secrets in this file: ADMIN_KEY is a Worker secret
+# (npx wrangler secret put ADMIN_KEY), given to the owner out-of-band.
+name = "ak-booking-fitnes-no-1"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ak-booking-fitnes-no-1"
+database_id = "f18d96ed-ff2c-488e-98ca-80aa7397a8c7"
+
+# Daily purge of expired bookings and rate-limit rows (free-plan cron trigger).
+[triggers]
+crons = ["17 3 * * *"]

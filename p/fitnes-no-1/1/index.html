@@ -206,6 +206,21 @@ footer.site a{color:#8d887f}
 .sum .alt{margin:10px 0 0;font-size:.9rem}
 .sum .alt a{color:#140800;font-weight:700}
 .sum .alt button{background:none;border:0;padding:0;font:inherit;color:#140800;font-weight:700;text-decoration:underline;cursor:pointer}
+[hidden]{display:none!important}
+button.btn{border:0;font-family:inherit;cursor:pointer}
+button.btn:disabled{opacity:.6;cursor:progress}
+.st{margin:0 0 10px;color:var(--tx2);font-size:.92rem}
+.slots label.tk span{flex-direction:column;line-height:1.05;text-decoration:none;opacity:.45}
+.slots label.tk span small{font-size:.66rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.fine{margin:12px 2px 0;font-size:.85rem;color:var(--tx2)}
+.done{border-radius:18px;background:linear-gradient(120deg,#ff6a2b,#ff8a55);color:#140800;padding:24px 20px;max-width:640px}
+.done .eyb{color:#140800}
+.done h3{font:400 1.9rem/1.1 var(--head);text-transform:uppercase;margin:0 0 8px}
+.done p{margin:0 0 12px}
+.done .pick{font-weight:700;font-size:1.1rem}
+.done a:not(.btn){color:#140800;font-weight:700}
+.done:focus{outline:none}
+.done{scroll-margin-top:96px}
 @media (min-width:640px){
   .strip{grid-template-columns:repeat(4,1fr)}
   .cards{grid-template-columns:repeat(3,1fr)}
@@ -342,7 +357,15 @@ footer.site a{color:#8d887f}
   <div class="wrap">
     <p class="eyb">Rezerviraj termin</p>
     <h2 id="h-ter">Izberite dan <i>in uro</i></h2>
-    <p class="lead">Izberite dan in uro, ki vam ustreza. Iz izbire pripravimo SMS za 031 833 448, ki ga pošljete s svojega telefona.</p>
+    <p class="lead">Izberite prost dan in uro ter termin rezervirajte sami. Potrditev dobite takoj na zaslonu, termin pa je nato zaseden za vse ostale.</p>
+    <div class="done" id="bk-done" hidden tabindex="-1">
+      <p class="eyb">Potrjeno</p>
+      <h3 id="bk-done-h">Termin je rezerviran</h3>
+      <p class="pick" id="bk-done-t"></p>
+      <p id="bk-done-k"></p>
+      <p>Če ne morete priti, nas pokličite na <a href="tel:+38631833448">031 833 448</a> in termin sprostimo.</p>
+      <div class="btns"><button class="btn d" type="button" id="bk-again">Rezerviraj še en termin</button><a class="btn o" href="tel:+38631833448">Pokliči</a></div>
+    </div>
     <form class="bk" id="bk" novalidate>
       <div class="col">
         <fieldset>
@@ -351,13 +374,15 @@ footer.site a{color:#8d887f}
         </fieldset>
         <fieldset>
           <legend>2 · Ura</legend>
+          <p class="st" id="bk-st" aria-live="polite">Nalagam proste termine …</p>
           <div class="slots" id="bk-slots"></div>
         </fieldset>
       </div>
       <div class="col side">
         <fieldset>
           <legend>3 · Vaši podatki</legend>
-          <label class="fld"><span>Ime</span><input id="bk-name" name="ime" type="text" autocomplete="given-name" maxlength="60" required></label>
+          <label class="fld"><span>Ime in priimek</span><input id="bk-name" name="ime" type="text" autocomplete="name" maxlength="60" required></label>
+          <label class="fld"><span>Telefon</span><input id="bk-phone" name="telefon" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="031 123 456" required></label>
           <div class="fld"><span id="bk-kind-l">Kaj želite</span>
             <div class="kind" role="radiogroup" aria-labelledby="bk-kind-l">
               <label><input class="sr" type="radio" name="kaj" value="Prvi obisk" checked><span>Prvi obisk</span></label>
@@ -371,13 +396,18 @@ footer.site a{color:#8d887f}
           <h3>Vaš termin</h3>
           <p class="pick" id="bk-pick" aria-live="polite">Izberite dan in uro.</p>
           <div class="btns">
-            <a class="btn d" id="bk-sms" href="sms:+38631833448"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></svg>Pošlji SMS</a>
+            <button class="btn d" type="submit" id="bk-go">Rezerviraj termin</button>
+            <a class="btn d" id="bk-sms" href="sms:+38631833448" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></svg>Pošlji SMS</a>
             <a class="btn o" href="tel:+38631833448">Pokliči</a>
           </div>
           <p class="err" id="bk-err" role="alert"></p>
-          <p class="ok">Termin je potrjen, ko vam odgovorimo.</p>
-          <p class="alt">Na računalniku? <button type="button" id="bk-copy">Kopirajte sporočilo</button> in nam pišite na <a href="https://ig.me/m/fitnes_no1_kocevje" target="_blank" rel="noopener">Instagramu</a>.</p>
+          <div id="bk-fb" hidden>
+            <p class="ok">Spletna rezervacija trenutno ne deluje. Pošljite nam SMS z izbranim terminom ali pokličite; termin je potrjen, ko vam odgovorimo.</p>
+            <p class="alt">Na računalniku? <button type="button" id="bk-copy">Kopirajte sporočilo</button> in nam pišite na <a href="https://ig.me/m/fitnes_no1_kocevje" target="_blank" rel="noopener">Instagramu</a>.</p>
+          </div>
         </div>
+        <p class="fine">Ime in telefon uporabimo samo za to rezervacijo in ju izbrišemo po terminu (najpozneje v dveh dneh).</p>
+        <p class="fine">Predogled: rezervacije se ob zagonu povežejo z vašim koledarjem in obvestili.</p>
       </div>
     </form>
   </div>
@@ -478,45 +508,61 @@ footer.site a{color:#8d887f}
 })();
 (function(){
   var f=document.getElementById('bk'); if(!f) return;
+  var API='https://ak-booking-fitnes-no-1.alejkump.workers.dev';
   var TEL='+38631833448',FIRST=6,LAST=21,N=14;
   var DS=['ned','pon','tor','sre','čet','pet','sob'],DL=['nedelja','ponedeljek','torek','sreda','četrtek','petek','sobota'];
   var MS=['jan','feb','mar','apr','maj','jun','jul','avg','sep','okt','nov','dec'];
-  var daysEl=document.getElementById('bk-days'),slotsEl=document.getElementById('bk-slots');
-  var nameEl=document.getElementById('bk-name'),noteEl=document.getElementById('bk-note');
-  var pickEl=document.getElementById('bk-pick'),errEl=document.getElementById('bk-err'),smsEl=document.getElementById('bk-sms');
+  var $=function(id){return document.getElementById(id);};
+  var daysEl=$('bk-days'),slotsEl=$('bk-slots'),stEl=$('bk-st');
+  var nameEl=$('bk-name'),phoneEl=$('bk-phone'),noteEl=$('bk-note');
+  var pickEl=$('bk-pick'),errEl=$('bk-err'),smsEl=$('bk-sms'),goEl=$('bk-go'),fbEl=$('bk-fb');
+  var doneEl=$('bk-done');
   var ua=navigator.userAgent||'',apple=/iPad|iPhone|iPod|Macintosh/.test(ua);
   var now=new Date(),t0=new Date(now.getFullYear(),now.getMonth(),now.getDate()),days=[];
+  var taken={},online=null,busy=false,reqId=null;
+  function p2(n){return (n<10?'0':'')+n;}
+  function ymd(d){return d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate());}
   function hhmm(h){return h+'.00';}
   function el(tag,attrs,html){var e=document.createElement(tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(html!=null)e.innerHTML=html;return e;}
-  function freeHours(i){var hs=[];for(var h=FIRST;h<=LAST;h++){if(i===0&&h<=now.getHours())continue;hs.push(h);}return hs;}
-  for(var i=0;i<N;i++){
-    var dt=new Date(t0.getFullYear(),t0.getMonth(),t0.getDate()+i);days.push(dt);
-    var free=freeHours(i).length>0;
-    var top=i===0?'danes':i===1?'jutri':DS[dt.getDay()];
-    var lab=el('label');
-    var inp=el('input',{'class':'sr',type:'radio',name:'dan',value:String(i),'aria-label':DL[dt.getDay()]+', '+dt.getDate()+'. '+(dt.getMonth()+1)+'.'+(free?'':' (ni več prostih ur)')});
-    if(!free) inp.disabled=true;
-    lab.appendChild(inp);
-    lab.appendChild(el('span',{'aria-hidden':'true'},'<small>'+top+'</small><b>'+dt.getDate()+'.</b><em>'+MS[dt.getMonth()]+'</em>'));
-    daysEl.appendChild(lab);
-  }
+  function rid(){try{if(crypto.randomUUID)return crypto.randomUUID();}catch(x){}return 'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,12);}
+  function isTaken(i,h){return !!taken[ymd(days[i])+'|'+h];}
+  function past(i,h){return i===0&&h<=now.getHours();}
+  function freeHours(i){var hs=[];for(var h=FIRST;h<=LAST;h++){if(past(i,h)||isTaken(i,h))continue;hs.push(h);}return hs;}
+  for(var i=0;i<N;i++) days.push(new Date(t0.getFullYear(),t0.getMonth(),t0.getDate()+i));
   function sel(name){var x=f.querySelector('input[name="'+name+'"]:checked');return x?x.value:null;}
+  function renderDays(){
+    var keep=sel('dan');daysEl.innerHTML='';
+    for(var i=0;i<N;i++){
+      var dt=days[i],free=freeHours(i).length>0;
+      var top=i===0?'danes':i===1?'jutri':DS[dt.getDay()];
+      var lab=el('label');
+      var inp=el('input',{'class':'sr',type:'radio',name:'dan',value:String(i),'aria-label':DL[dt.getDay()]+', '+dt.getDate()+'. '+(dt.getMonth()+1)+'.'+(free?'':' (ni prostih ur)')});
+      if(!free) inp.disabled=true; else if(keep===String(i)) inp.checked=true;
+      lab.appendChild(inp);
+      lab.appendChild(el('span',{'aria-hidden':'true'},'<small>'+top+'</small><b>'+dt.getDate()+'.</b><em>'+MS[dt.getMonth()]+'</em>'));
+      daysEl.appendChild(lab);
+    }
+    if(sel('dan')===null){var first=daysEl.querySelector('input:not(:disabled)');if(first)first.checked=true;}
+  }
   function renderSlots(){
     var di=sel('dan'),keep=sel('ura');slotsEl.innerHTML='';
     if(di===null){slotsEl.appendChild(el('p',{'class':'none'},'Najprej izberite dan.'));return;}
-    var i=+di,hs=freeHours(i);
+    var i=+di;
     for(var h=FIRST;h<=LAST;h++){
       var lab=el('label'),inp=el('input',{'class':'sr',type:'radio',name:'ura',value:String(h)});
-      if(hs.indexOf(h)<0){inp.disabled=true;inp.setAttribute('aria-label',hhmm(h)+' (minilo)');}
+      var tk=!past(i,h)&&isTaken(i,h);
+      if(past(i,h)){inp.disabled=true;inp.setAttribute('aria-label',hhmm(h)+' (minilo)');}
+      else if(tk){inp.disabled=true;inp.setAttribute('aria-label',hhmm(h)+' (zasedeno)');lab.className='tk';}
       else if(keep===String(h)) inp.checked=true;
-      lab.appendChild(inp);lab.appendChild(el('span',null,hhmm(h)));slotsEl.appendChild(lab);
+      lab.appendChild(inp);lab.appendChild(el('span',tk?{'aria-hidden':'true'}:null,tk?hhmm(h)+'<small>zasedeno</small>':hhmm(h)));slotsEl.appendChild(lab);
     }
   }
   function when(){var di=sel('dan'),h=sel('ura');if(di===null||h===null)return null;var dt=days[+di];
     return DL[dt.getDay()]+', '+dt.getDate()+'. '+(dt.getMonth()+1)+'. '+dt.getFullYear()+', ob '+hhmm(+h);}
   function body(){
-    var w=when(),nm=nameEl.value.trim(),nt=noteEl.value.trim();
+    var w=when(),nm=nameEl.value.trim(),ph=phoneEl.value.trim(),nt=noteEl.value.trim();
     var s='Pozdravljeni, želim rezervirati termin v Fitnes No 1.\nKaj: '+sel('kaj')+'\nTermin: '+(w||'(izberite)')+'\nIme: '+(nm||'(vpišite)');
+    if(ph) s+='\nTelefon: '+ph;
     if(nt) s+='\nOpomba: '+nt;
     return s+'\nProsim za potrditev. Hvala!';
   }
@@ -526,25 +572,86 @@ footer.site a{color:#8d887f}
     smsEl.setAttribute('href','sms:'+TEL+(apple?'&':'?')+'body='+encodeURIComponent(body()));
     if(errEl.textContent&&check(true)) errEl.textContent='';
   }
+  function phoneOk(v){var d=v.replace(/\D/g,'');return /^\+?[0-9 ()\/.-]+$/.test(v)&&d.length>=8&&d.length<=15;}
   function check(quiet){
     var msg='',focus=null;
     if(sel('dan')===null){msg='Izberite dan.';focus=daysEl.querySelector('input:not(:disabled)');}
     else if(sel('ura')===null){msg='Izberite uro.';focus=slotsEl.querySelector('input:not(:disabled)');}
-    else if(!nameEl.value.trim()){msg='Vpišite ime.';focus=nameEl;}
+    else if(nameEl.value.trim().length<2){msg='Vpišite ime in priimek.';focus=nameEl;}
+    else if(!phoneOk(phoneEl.value.trim())){msg='Vpišite telefonsko številko (npr. 031 123 456).';focus=phoneEl;}
     if(!quiet){errEl.textContent=msg;if(focus)focus.focus();}
     return !msg;
   }
-  f.addEventListener('change',function(e){if(e.target.name==='dan')renderSlots();update();});
+  function fallback(why){
+    online=false;fbEl.hidden=false;smsEl.hidden=false;goEl.hidden=true;
+    stEl.textContent=why||'Prostih terminov trenutno ne moremo preveriti. Izberite želeni termin in nam ga pošljite po SMS-u.';
+  }
+  function req(method,path,data,ms){
+    var c=window.AbortController?new AbortController():null,t=c?setTimeout(function(){c.abort();},ms||8000):0;
+    var o={method:method,mode:'cors',cache:'no-store',signal:c?c.signal:undefined};
+    if(data){o.headers={'Content-Type':'application/json'};o.body=JSON.stringify(data);}
+    return fetch(API+path,o).then(function(r){clearTimeout(t);return r.json().catch(function(){return {};}).then(function(j){j._s=r.status;return j;});},function(e){clearTimeout(t);throw e;});
+  }
+  function load(){
+    return req('GET','/slots?from='+ymd(t0),null,7000).then(function(j){
+      if(j._s!==200||!j.ok) throw new Error('slots');
+      taken={};(j.taken||[]).forEach(function(s){taken[s.date+'|'+s.hour]=true;});
+      online=true;fbEl.hidden=true;smsEl.hidden=true;goEl.hidden=false;
+      stEl.textContent='Zasedene ure so označene. Termin traja eno uro.';
+    }).catch(function(){fallback();}).then(function(){renderDays();renderSlots();update();});
+  }
+  function confirmDone(j){
+    var dt=days[+sel('dan')],h=+sel('ura');
+    if(j.date){var a=j.date.split('-');dt=new Date(+a[0],+a[1]-1,+a[2]);h=j.hour;}
+    var t=$('bk-done-t'),nb=document.createElement('span');nb.style.whiteSpace='nowrap';nb.textContent=String(j.id);
+    t.textContent='Termin je rezerviran: '+DL[dt.getDay()]+', '+dt.getDate()+'. '+(dt.getMonth()+1)+'., ob '+hhmm(h)+' – številka rezervacije ';t.appendChild(nb);
+    $('bk-done-k').textContent=sel('kaj')+' · '+nameEl.value.trim();
+    taken[ymd(dt)+'|'+h]=true;
+    f.hidden=true;doneEl.hidden=false;doneEl.focus();
+    try{doneEl.scrollIntoView({block:'start'});}catch(x){}
+  }
+  function submitApi(retried){
+    if(!reqId) reqId=rid();
+    var di=sel('dan'),h=+sel('ura');
+    var data={req:reqId,date:ymd(days[+di]),time:p2(h)+':00',name:nameEl.value.trim(),phone:phoneEl.value.trim(),kind:sel('kaj'),note:noteEl.value.trim()};
+    busy=true;goEl.disabled=true;goEl.textContent='Rezerviram …';errEl.textContent='';
+    req('POST','/book',data,10000).then(function(j){
+      busy=false;goEl.disabled=false;goEl.textContent='Rezerviraj termin';
+      if((j._s===201||j._s===200)&&j.ok&&j.id){reqId=null;confirmDone(j);return;}
+      reqId=null;
+      if(j._s===409){taken[data.date+'|'+h]=true;var x=f.querySelector('input[name="ura"]:checked');if(x)x.checked=false;renderDays();renderSlots();update();errEl.textContent='To uro je pravkar rezerviral nekdo drug. Izberite drugo uro.';return;}
+      if(j.error==='closed'){load().then(function(){errEl.textContent='Ta ura ni več na voljo. Izberite drugo.';});return;}
+      if(j.field==='phone'){errEl.textContent='Vpišite veljavno telefonsko številko.';phoneEl.focus();return;}
+      if(j.field==='name'){errEl.textContent='Vpišite ime in priimek.';nameEl.focus();return;}
+      if(j._s===429){errEl.textContent='S te naprave je bilo preveč rezervacij. Pokličite nas na 031 833 448.';return;}
+      fallback('Spletna rezervacija trenutno ne deluje.');errEl.textContent='Rezervacija ni uspela. Pošljite SMS ali nas pokličite.';
+    },function(){
+      // Delivery state unknown: retry once with the SAME request id, so the server can never store it twice.
+      if(!retried){submitApi(true);return;}
+      busy=false;goEl.disabled=false;goEl.textContent='Poskusi znova';
+      errEl.textContent='Povezava ni uspela. Poskusite znova (rezervacija se ne bo podvojila) ali pošljite SMS.';
+      smsEl.hidden=false;fbEl.hidden=false;
+    });
+  }
+  f.addEventListener('change',function(e){if(e.target.name==='dan')renderSlots();if(e.target.name==='dan'||e.target.name==='ura')reqId=null;update();});
   f.addEventListener('input',update);
-  f.addEventListener('submit',function(e){e.preventDefault();if(check())location.href=smsEl.getAttribute('href');});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();if(busy||!check())return;
+    if(online) submitApi(false); else location.href=smsEl.getAttribute('href');
+  });
   smsEl.addEventListener('click',function(e){update();if(!check())e.preventDefault();});
-  document.getElementById('bk-copy').addEventListener('click',function(){
+  $('bk-copy').addEventListener('click',function(){
     if(!check())return;var txt=body(),b=this;
     function done(ok){errEl.textContent='';b.textContent=ok?'Sporočilo kopirano':'Kopiranje ni uspelo, pokličite nas';}
     try{navigator.clipboard.writeText(txt).then(function(){done(true);},function(){done(false);});}catch(x){done(false);}
   });
-  var first=daysEl.querySelector('input:not(:disabled)');if(first)first.checked=true;
-  renderSlots();update();
+  $('bk-again').addEventListener('click',function(){
+    doneEl.hidden=true;f.hidden=false;noteEl.value='';
+    var x=f.querySelector('input[name="ura"]:checked');if(x)x.checked=false;
+    load();
+  });
+  document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&online&&!busy&&doneEl.hidden)load();});
+  renderDays();renderSlots();update();load();
 })();
 </script>
 </body>

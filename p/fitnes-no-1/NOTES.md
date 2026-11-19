@@ -59,7 +59,35 @@ in @apivakuf_no.1 → fitnes očitno vodita dva (Jasmin + Simona?). NI na strani
 2. **Dve leti najinega fitnesa** — zgodba/ljudje; krem + roza; Instrument Serif + Figtree.
 3. **Pred prvim treningom** — vprašanja in odgovori z viri, ponazoritev članske kartice; modra; IBM Plex Mono + Source Sans 3.
 
-## Rezerviraj termin (1/, dodano 19. 11. 2026 na željo lastnika agencije)
+## Samonaročanje (1/, 19. 11. 2026 popoldne — nadomešča SMS-različico spodaj)
+
+Lastnik: "rekel sem, da narediš, da se bodo lahko stranke same naročale na termin." Zdaj prava rezervacija:
+stranka izbere prosto uro, vpiše ime + telefon, dobi potrditev na zaslonu ("Termin je rezerviran: petek, 20. 11.,
+ob 18.00 – številka rezervacije FN-XXXXX"), ura pa je takoj "zasedeno" za vse ostale.
+
+- **Strežnik**: Cloudflare Worker `ak-booking-fitnes-no-1` (https://ak-booking-fitnes-no-1.alejkump.workers.dev) +
+  D1 baza `ak-booking-fitnes-no-1`, oboje na brezplačnem paketu (0 €; ob preseženi kvoti zahteve zavrne, ne zaračuna).
+  Izvorna koda: `booking-worker/` (`worker.js`, `schema.sql`, `wrangler.toml`). Objava:
+  `cd p/fitnes-no-1/booking-worker && npx wrangler deploy`; shema: `npx wrangler d1 execute ak-booking-fitnes-no-1 --remote --file=schema.sql`.
+- **API**: `GET /slots?from=` (samo zasedene ure, brez osebnih podatkov), `POST /book` (preveri Origin =
+  https://alejkump.si, vnose, okno 14 dni, 6.00–21.00, ne preteklih ur; kapaciteta `CAPACITY = 1` v enem SQL-stavku,
+  zato dva hkratna klika ne dobita iste ure; `req` = ključ idempotence, ponovljen klic vrne isto rezervacijo),
+  omejitev 10 poskusov/uro na IP (v bazi le HMAC IP-ja, ne IP).
+- **Seznam za fitnes**: `/admin?key=…` (tabela po dnevih, telefon kot povezava, "Prekliči" sprosti uro). Ključ je
+  samo Worker secret `ADMIN_KEY` (ni v Gitu); lastnik agencije ga dobi posebej in ga preda fitnesu po dogovoru.
+  Nov ključ: `npx wrangler secret put ADMIN_KEY`.
+- **Hramba**: vrstica se izbriše 2 dni po terminu (dnevni cron 03.17 UTC + ob vsaki rezervaciji/odprtju seznama).
+  Na strani: "Ime in telefon uporabimo samo za to rezervacijo in ju izbrišemo po terminu (najpozneje v dveh dneh)."
+  in "Predogled: rezervacije se ob zagonu povežejo z vašim koledarjem in obvestili."
+- **Če API ni dosegljiv**: stran samodejno preklopi na staro SMS-pot (spodaj) z jasnim sporočilom.
+- **Česar še NI**: obvestila fitnesu ob novi rezervaciji (ni push kanala; gledajo seznam), povezave s koledarjem,
+  potrditve stranki po SMS/e-pošti. To je delo ob zagonu za stranko.
+- Preverjeno 19. 11.: Playwright WebKit iPhone 13 (390) + 1280 — rezervacija, potrditev, ponovno nalaganje,
+  "zasedeno" v drugem brskalniku, seznam, preklic sprosti uro, napačen ključ 403, preklop na SMS; brez prelivanja in
+  konzolnih napak. API: 5 hkratnih rezervacij iste ure → natanko 1 uspe; mutacijski test (brez preverjanja kapacitete
+  na začasnem workerju) → 3 rezervacije iste ure, torej test res lovi napako. Testne rezervacije izbrisane.
+
+## Rezerviraj termin — prvotna SMS-različica (1/, 19. 11. 2026 dopoldne; zdaj le rezerva)
 
 Sekcija `#termin` (povezave: meni, gumb v vrhu, spodnja vrstica na telefonu, noga). Brez strežnika in brez
 plačljive storitve: 14 dni naprej, ure 6.00–21.00 po objavljenem delovnem času (pon–ned 6–22, Google), današnje
