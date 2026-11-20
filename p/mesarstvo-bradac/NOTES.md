@@ -40,12 +40,17 @@ Na strani je podpisana ("Foto: Andrijana Bradač, Googlov profil mesnice").
 
 | Datoteka | Izvor / obdelava |
 |---|---|
-| hero-1400.webp, hero-2400.webp | izrez (0,500)–(2988,2490) za namizje |
-| hero-tall-720.webp, hero-tall-1080.webp | izrez zgornjih 2988×4482 za telefon |
-| mesnica-zima-600.webp, mesnica-zima-1400.webp | cela fotografija (sekcija O mesariji + povečava) |
+| mesnica-zima-600.webp, mesnica-zima-1400.webp | cela fotografija (uokvirjena v vrhu strani + povečava) |
 | og.jpg | izrez 1200×630 za deljenje |
 
-Pisave: Instrument Serif + Geist (OFL, kopija iz p/ak-razgled/rz/fonts, licenci v `assets/fonts/`).
+## Oblika
+
+Lastnik 20. 11.: "ne da bodo spletne strani vse iste oblike". Zato NE vzorec Razgled (alejkump.si, Fitnes No 1,
+Tattoo Pigment), ampak **plakat / tržnica**: kraft papir (CSS pike), rdeč trak z "odprto zdaj", žig-logotip,
+deljen vrh s fotografijo v okvirju z lepilnim trakom, črn trak z dejstvi, tabla s kredo za ponudbo, naročilnica
+z luknjičastim robom in žigom PREJETO, mnenja kot pripeti listki, oglata gumba s senco.
+Pisave: Barlow Condensed 600/800 + Barlow 400/600 + Zilla Slab 500 italic (OFL, @fontsource prek jsDelivr,
+licence v `assets/fonts/`).
 
 ## Naročilo za prevzem (pravo, ne SMS-maketa)
 
