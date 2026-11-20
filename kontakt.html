@@ -4,12 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kontakt: 070 479 188, Instagram @alej_kump | AK agencija</title>
-<meta name="description" content="Pokličite ali pošljite SMS na 070 479 188, napišite STRAN na Instagramu @alej_kump ali rezervirajte 15-minutni klic. Brezplačen predogled vaše strani.">
-<meta name="theme-color" content="#0e0c0a">
+<meta name="description" content="Pokličite ali pošljite SMS na 070 479 188, ali na Instagramu napišite STRAN in ime podjetja. AK agencija, Alej Kump s.p., Kočevje.">
 <link rel="canonical" href="https://alejkump.si/kontakt.html">
 <link rel="alternate" hreflang="sl" href="https://alejkump.si/kontakt.html">
 <link rel="alternate" hreflang="en" href="https://alejkump.si/en.html">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alejkump.si/kontakt.html">
 <meta property="og:title" content="Kontakt: 070 479 188, Instagram @alej_kump | AK agencija">
@@ -19,118 +17,106 @@
 <meta property="og:image:alt" content="Prenosnik in telefon s spletno stranjo Gostilnice in picerije Briški v Kočevju">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://alejkump.si/rz/img/og-razgled.jpg">
-<link rel="preload" as="font" type="font/woff2" href="rz/fonts/instrument-serif-latin-400-normal.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="rz/fonts/geist-latin-wght-normal.woff2" crossorigin>
-<link rel="stylesheet" href="rz/razgled.css?v=1">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-latin-800-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-latin-300-normal.woff2" crossorigin>
+<link rel="stylesheet" href="dw.css?v=1">
+<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/examples/jsm/"}}</script>
 </head>
-<body>
+<body data-page="kontakt.html">
 <a class="skip" href="#vsebina">Preskoči na vsebino</a>
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="./" aria-label="AK agencija, domov"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3 29 27H3Z" fill="none" stroke="#ff9f5a" stroke-width="2.6" stroke-linejoin="round"/><path d="M16 13 22 24H10Z" fill="#ff9f5a"/></svg><span>AK agencija</span></a>
-    <nav class="links" aria-label="Glavni meni">
-        <a href="./">Domov</a>
-        <a href="storitve.html">Storitve</a>
-        <a href="primeri.html">Primeri</a>
-        <a href="kako-poteka.html">Kako poteka</a>
-        <a href="cene.html">Cene</a>
-        <a href="o-meni.html">O meni</a>
-        <a href="kontakt.html" aria-current="page">Kontakt</a>
-    </nav>
-    <a class="tel-pill" href="tel:+38670479188"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>070 479 188</a>
-    <button class="burger" type="button" aria-expanded="false" aria-controls="meni"><i aria-hidden="true"></i>Meni</button>
+<section class="hero hero--sub" id="hero" data-lines='[["Napišite","STRAN"]]' data-counter="static">
+  <canvas id="scene" aria-label="Steklena kocka, ki jo lahko zavrtite. Povlecite vstran za vrtenje."></canvas>
+  <p class="fallback-title" aria-hidden="true">Napišite<br>STRAN</p>
+  <div class="ui">
+    <h1 class="sr-only">Kontakt AK agencija: 070 479 188, Instagram @alej_kump</h1>
+    <p class="sr-only" id="hero-live" aria-live="polite">Napišite STRAN</p>
+    <header class="nav">
+      <a class="logo" href="./" aria-label="AK agencija, domov"><i class="logo-mark" aria-hidden="true"></i><b>AK</b><span>agencija</span></a>
+      <ul class="nav-links"><li><a href="./">Domov</a></li><li><a href="storitve.html">Storitve</a></li><li><a href="primeri.html">Primeri</a></li><li><a href="kako-poteka.html">Kako poteka</a></li><li><a href="cene.html">Cene</a></li><li><a href="o-meni.html">O meni</a></li><li><a href="kontakt.html" aria-current="page">Kontakt</a></li></ul>
+      <button class="menu-btn" id="menu-open" type="button" aria-controls="menu" aria-expanded="false"><i aria-hidden="true"></i>Meni</button>
+    </header>
+    <div class="arrows">
+      <button class="arrow" id="prev" type="button" aria-label="Zavrti kocko v levo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <button class="arrow" id="next" type="button" aria-label="Zavrti kocko v desno"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+    
+    <p class="tagline">Klic ali SMS:<br>070 479 188.<strong>Ali napišite STRAN.</strong></p>
+    <div class="cta-row">
+      <a class="cta" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Brezplačen predogled</a>
+      <span class="cta-line" aria-hidden="true"></span>
+      <span class="count" aria-hidden="true">07</span>
+    </div>
+    <div class="loader" id="loader" aria-hidden="true">Nalagam</div>
   </div>
-</header>
-<div class="menu" id="meni" role="dialog" aria-modal="true" aria-label="Meni" hidden>
-  <div class="menu-top"><span class="brand"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3 29 27H3Z" fill="none" stroke="#ff9f5a" stroke-width="2.6" stroke-linejoin="round"/><path d="M16 13 22 24H10Z" fill="#ff9f5a"/></svg><span>AK agencija</span></span><button class="menu-close" type="button">Zapri</button></div>
-  <nav aria-label="Meni">
-    <a href="./">Domov</a>
-        <a href="storitve.html">Storitve</a>
-        <a href="primeri.html">Primeri</a>
-        <a href="kako-poteka.html">Kako poteka</a>
-        <a href="cene.html">Cene</a>
-        <a href="o-meni.html">O meni</a>
-        <a href="kontakt.html" aria-current="page">Kontakt</a>
-  </nav>
-  <div class="acts"><a class="btn btn-solid" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>Napiši STRAN na Instagramu</a><a class="btn btn-line" href="tel:+38670479188"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Pokliči 070 479 188</a></div>
-</div>
+</section>
 <main id="vsebina">
-  <section class="hero" style="--pos:88% 40%">
-    <picture class="hero-img">
-      <source media="(max-width: 699px)" type="image/webp" srcset="rz/img/kontakt-tall-720.webp 720w, rz/img/kontakt-tall-1080.webp 1080w" sizes="100vw">
-      <img src="rz/img/kontakt-1400.webp" srcset="rz/img/kontakt-1400.webp 1400w, rz/img/kontakt-2400.webp 2400w" sizes="100vw" width="2400" height="1350" alt="Prenosnik in telefon s stranjo alejkump.si" fetchpriority="high" decoding="async">
-    </picture>
-    <div class="hero-floor" aria-hidden="true"></div>
-    <div class="wrap hero-in">
-      <div>
-        <p class="kicker">Kontakt</p>
-        <h1>Poglejte, kako bi izgledala <em>vaša</em> stran.</h1>
-        <p class="lead">Najhitreje: pokličite ali pošljite SMS na 070 479 188. Ali pa na Instagramu napišite STRAN in ime podjetja.</p>
-        <div class="acts"><a class="btn btn-solid" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>Napiši STRAN na Instagramu</a><a class="btn btn-line" href="tel:+38670479188"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Pokliči 070 479 188</a></div>
-      </div>
-      <p class="hero-cap">Na sliki: sedanja stran alejkump.si.</p>
+<section class="sec" id="kje" aria-labelledby="kje-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>01</b> Kje me dobite</p>
+    <h2 class="h2" id="kje-h">Pokličete mene. <em>Ne klicnega centra.</em></h2>
+    <p class="lead">Napišite, za kakšno dejavnost gre in kateri paket vas zanima. Če presodim, da vam ne morem pošteno pomagati, vam to povem v prvem odgovoru.</p><div class="contact">
+  <a href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank"><small>Instagram</small><strong>@alej_kump ↗</strong><span>V sporočilo napišite STRAN.</span></a>
+  <a href="tel:+38670479188"><small>Telefon</small><strong>070 479 188</strong><span>Klic ali SMS. Vsak klic in SMS dobim jaz.</span></a>
+  <a href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank"><small>Termin</small><strong>15-minutni klic ↗</strong><span>Izberete termin, jaz vas pokličem. Brez obveznosti.</span></a>
+  <a href="mailto:alej.kump@gmail.com?subject=STRAN%20-%20predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20"><small>E-pošta</small><strong>alej.kump@gmail.com</strong><span>Povezava odpre vaš poštni program z že izpolnjenim vprašanjem.</span></a>
+</div>
+
+  </div>
+</section>
+<section class="sec" id="podjetje" aria-labelledby="podjetje-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>02</b> Podatki o podjetju</p>
+    <h2 class="h2" id="podjetje-h">Kdo stoji <em>za stranjo.</em></h2>
+    <div class="company">
+  <p><strong>AK agencija, računalniško programiranje, Alej Kump s.p.</strong></p>
+  <p>sedež: Ulica heroja Marinclja 3, 1330 Kočevje, Slovenija<br>matična številka 7585942000 · davčna številka 67735509<br>vpisano v Poslovni register Slovenije (AJPES) 15. septembra 2026 · dejavnost 62.100 · nisem zavezanec za DDV (čl. 94 ZDDV-1)</p>
+  <p><a class="link" href="/zasebnost.html">Varstvo osebnih podatkov</a></p>
+</div>
+  </div>
+</section>
+<section class="final" aria-labelledby="final-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>Brez obveznosti</b></p>
+    <h2 class="big" id="final-h">Napišite STRAN. <span>Pripravim vam predogled.</span></h2>
+    <p class="lead">V sporočilo napišite STRAN in ime podjetja. V najslabšem primeru dobite brezplačen predogled svoje strani.</p>
+    <div class="btn-row">
+      <a class="btn btn--solid" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Napiši STRAN na Instagramu</a>
+      <a class="btn" href="tel:+38670479188">Pokliči 070 479 188</a>
+      <a class="btn" href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">Rezervirajte 15-minutni klic</a>
     </div>
-  </section>
-  <section class="sec first" aria-labelledby="c-h">
-    <div class="wrap split">
-      <div><p class="eyebrow"><b>01</b> Kje me dobite</p><h2 class="h2" id="c-h">Pokličete mene. Ne <em>klicnega centra</em>.</h2>
-        <p class="body">Napišite, za kakšno dejavnost gre in kateri paket vas zanima. Če presodim, da vam ne morem pošteno pomagati, vam to povem v prvem odgovoru.</p></div>
-      <ul class="dir">
-        <li><span class="k">Instagram</span><a class="main" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">@alej_kump ↗</a><span class="v">V sporočilo napišite STRAN.</span></li>
-        <li><span class="k">Telefon</span><a class="main" href="tel:+38670479188">070 479 188</a><span class="v">Klic ali SMS. Vsak klic in SMS dobim jaz.</span></li>
-        <li><span class="k">Termin</span><a class="main" href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">15-minutni klic ↗</a><span class="v">Izberete termin, jaz vas pokličem. Brez obveznosti.</span></li>
-        <li><span class="k">E-pošta</span><a class="main" href="mailto:alej.kump@gmail.com?subject=STRAN%20-%20predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20">alej.kump@gmail.com</a><span class="v">Povezava odpre vaš poštni program z že izpolnjenim vprašanjem.</span></li>
-      </ul>
-    </div>
-  </section>
-  <section class="sec" id="podjetje" aria-labelledby="pd-h">
-    <div class="wrap split">
-      <div><p class="eyebrow"><b>02</b> Podatki o podjetju</p><h2 class="h2" id="pd-h">Kdo stoji za <em>stranjo</em>.</h2></div>
-      <div class="idbox">
-        <p><strong>AK agencija, računalniško programiranje, Alej Kump s.p.</strong></p>
-        <p>sedež: Ulica heroja Marinclja 3, 1330 Kočevje, Slovenija<br>matična številka 7585942000 · davčna številka 67735509</p>
-        <p>vpisano v Poslovni register Slovenije (AJPES) 15. septembra 2026 · dejavnost 62.100 · nisem zavezanec za DDV (čl. 94 ZDDV-1)</p>
-        <p style="margin-bottom:0"><a href="/zasebnost.html">Varstvo osebnih podatkov ↗</a></p>
-      </div>
-    </div>
-  </section>
-  <section class="cta" aria-labelledby="cta-h">
-    <div class="wrap">
-      <p class="eyebrow">Brez obveznosti</p>
-      <h2 class="h2" id="cta-h">Napišite STRAN. Pripravim vam <em>predogled</em>.</h2>
-      <p class="body">V sporočilo napišite STRAN in ime podjetja. V najslabšem primeru dobite brezplačen predogled svoje strani.</p>
-      <div class="acts"><a class="btn btn-solid" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>Napiši STRAN na Instagramu</a><a class="btn btn-line" href="tel:+38670479188"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Pokliči 070 479 188</a><a class="btn btn-line" href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">Rezervirajte 15-minutni klic</a></div>
-      <p class="note">Raje po e-pošti? <a href="mailto:alej.kump@gmail.com?subject=STRAN%20-%20predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20">alej.kump@gmail.com</a></p>
-    </div>
-  </section>
+    <p class="muted small" style="margin-top:22px">Raje po e-pošti? <a class="link" href="mailto:alej.kump@gmail.com?subject=STRAN%20-%20predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20">alej.kump@gmail.com</a></p>
+  </div>
+</section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <nav class="foot-links" aria-label="Vse strani">
-      <a href="./">Domov</a>
-      <a href="storitve.html">Storitve</a>
-      <a href="primeri.html">Primeri</a>
-      <a href="kako-poteka.html">Kako poteka</a>
-      <a href="cene.html">Cene</a>
-      <a href="o-meni.html">O meni</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a href="/google.html">Google profil</a>
-      <a href="/marketing.html">Marketing</a>
-      <a href="/clanki-koliko-stane-spletna-stran.html">Koliko stane spletna stran</a>
-      <a href="/clanki-facebook-ali-spletna-stran.html">Facebook ali spletna stran</a>
-      <a href="/clanki-google-profil-podjetja.html">Google profil podjetja</a>
-      <a href="/clanki-spletna-stran-za-obrtnike.html">Stran za obrtnike</a>
-      <a href="/zasebnost.html">Varstvo podatkov</a>
-      <a href="/en.html" hreflang="en" lang="en">English</a>
-    </nav>
-    <p><strong>To je komercialna stran.</strong> Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja. Rezultatov ne obljubljam.</p>
-    <p><strong>AK agencija, računalniško programiranje, Alej Kump s.p.</strong>, Kočevje · matična številka 7585942000 · davčna številka 67735509 · nisem zavezanec za DDV · <a href="kontakt.html#podjetje">sedež in vsi podatki</a></p>
-    <p>Ta stran ne nastavlja piškotkov. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Pisave in slike so gostovane tukaj.</p>
-    <p class="preview-note">Predogled nove podobe strani · ni objavljeno v iskalnikih</p>
+    <ul class="foot-links">
+      <li><a href="./">Domov</a></li><li><a href="storitve.html">Storitve</a></li><li><a href="primeri.html">Primeri</a></li><li><a href="kako-poteka.html">Kako poteka</a></li><li><a href="cene.html">Cene</a></li><li><a href="o-meni.html">O meni</a></li><li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="/google.html">Google profil</a></li>
+      <li><a href="/marketing.html">Marketing</a></li>
+      <li><a href="/clanki-koliko-stane-spletna-stran.html">Koliko stane spletna stran</a></li>
+      <li><a href="/clanki-facebook-ali-spletna-stran.html">Facebook ali spletna stran</a></li>
+      <li><a href="/clanki-google-profil-podjetja.html">Google profil podjetja</a></li>
+      <li><a href="/clanki-spletna-stran-za-obrtnike.html">Stran za obrtnike</a></li>
+      <li><a href="/zasebnost.html">Varstvo podatkov</a></li>
+      <li><a href="/en.html" lang="en">English</a></li>
+    </ul>
+    <p class="notice">To je komercialna stran. Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja. Rezultatov ne obljubljam.</p>
+    <p>AK agencija, računalniško programiranje, Alej Kump s.p., Kočevje · matična številka 7585942000 · davčna številka 67735509 · nisem zavezanec za DDV · <a class="link" href="kontakt.html#podjetje">sedež in vsi podatki</a></p>
+    <p>Ta stran ne nastavlja piškotkov. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Vse, kar stran potrebuje — pisave, slike, knjižnica three.js in 3D model kocke — je gostovano tukaj, na alejkump.si.</p>
+    <p>Predogled nove podobe strani · ni objavljeno v iskalnikih</p>
   </div>
 </footer>
-<div class="bar" aria-label="Hitri kontakt"><a class="btn btn-accent" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Napiši STRAN</a><a class="btn btn-line" href="tel:+38670479188">Pokliči</a></div>
-<script src="rz/razgled.js?v=1" defer></script>
+<div class="bar" aria-label="Hiter kontakt"><a href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Napiši STRAN</a><a href="tel:+38670479188">Pokliči</a></div>
+<div class="menu" id="menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Meni">
+  <div class="menu-top"><a class="logo" href="./" aria-label="AK agencija, domov"><i class="logo-mark" aria-hidden="true"></i><b>AK</b><span>agencija</span></a><button class="menu-btn menu-close" id="menu-close" type="button"><i aria-hidden="true"></i>Zapri</button></div>
+  <nav aria-label="Glavni meni"><a href="./">Domov</a><a href="storitve.html">Storitve</a><a href="primeri.html">Primeri</a><a href="kako-poteka.html">Kako poteka</a><a href="cene.html">Cene</a><a href="o-meni.html">O meni</a><a href="kontakt.html" aria-current="page">Kontakt</a></nav>
+  <div class="btn-row"><a class="btn btn--solid" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Napiši STRAN na Instagramu</a><a class="btn" href="tel:+38670479188">Pokliči 070 479 188</a></div>
+</div>
+<script src="site.js?v=1" defer></script>
+<script type="module" src="hero.js?v=1"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>
