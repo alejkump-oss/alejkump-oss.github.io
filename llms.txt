@@ -12,7 +12,7 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 
 ## Kako poteka
 
-- [Kako poteka](https://alejkump.si/kako-poteka.html): brezplačen predogled, pisna ponudba s ceno po dogovoru, 50 % akontacija, izdelava, predaja.
+- [Kako poteka](https://alejkump.si/kako-poteka.html): brezplačen predogled, pisna ponudba s ceno po dogovoru, plačilo v celoti ali na obroke, objava v 7–14 delovnih dneh.
 - [Primeri](https://alejkump.si/primeri.html): primeri strani za izmišljena podjetja (jasno označeni).
 
 ## Članki
@@ -21,5 +21,12 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Facebook ali lastna spletna stran](https://alejkump.si/clanki-facebook-ali-spletna-stran.html)
 - [Google profil podjetja: kako ga urediti](https://alejkump.si/clanki-google-profil-podjetja.html)
 - [Spletna stran za obrtnika: 7 stvari](https://alejkump.si/clanki-spletna-stran-za-obrtnike.html)
+- [Spletna stran za frizerski salon](https://alejkump.si/clanki-spletna-stran-za-frizerje.html)
+- [Spletna stran za rokodelca in izdelovalca suhe robe](https://alejkump.si/clanki-spletna-stran-za-rokodelce-suha-roba.html)
+
+## Kraji
+
+- [Izdelava spletnih strani Kočevje](https://alejkump.si/izdelava-spletnih-strani-kocevje.html)
+- [Izdelava spletnih strani Ribnica](https://alejkump.si/izdelava-spletnih-strani-ribnica.html)
 
 Opomba: nobena storitev ne vključuje obljube o uvrstitvi na iskalnikih.
