@@ -45,3 +45,29 @@ JSON-LD veljaven, noindex, brez "predlogov". Popravljeno po posnetkih: v 1/ je `
 dalo citatu v "Kako so to opisali sami" sivo ozadje in 44 px spodnjega odmika; v 3/ je bil gumb
 "Odpri v Google Zemljevidih" v modrem mehurčku bel na belem (specifičnost `.msg.a .b a`).
 `assets/og.jpg` = posnetek vrha 1/ (1200×630), ni fotografija.
+
+## Prava stran (20. 11. 2026, lastnik: "obedve ideji dej skupaj")
+
+Koren `index.html` je zdaj prava stran: MotionSites **Quantum Core** (temni hero z videom, steklena
+navigacija, steklena kartica) + **Freight Services** (sticky scena: avto pripelje, velike črke
+"AVTOPRALNICA" drsijo za njim, trak kartic z razkritjem barva → bela, odčitek "NN KM/H").
+Specifikacije: `AI-AGENCY-shift/agency/design/motionsites/freight-and-quantum-specs.md`.
+Stari izbirnik je v `predlogi/`, predlogi 1/2/3 ostanejo na istih naslovih (povezave ne razpadejo).
+
+- Pisave (vse OFL, lokalno): Anton, Archivo, JetBrains Mono, **Inter Tight namesto Suisse Intl**
+  (komercialna).
+- Video `assets/video/hero.mp4`: MotionSites/Quantum Core posnetek (abstraktno nevihtno morje z rdečim
+  žarkom), prekodiran 1280p H.264 brez zvoka; ni fotografija pralnice. Rdeča (#ff3d2e) = žarek + rdeča
+  cev pištole za peno.
+- Avto je SVG ilustracija (ne fotografija; na Google profilu ni fotografij lastnika).
+- Kartica v heroju: 24 enakih stolpcev = odprto vsako uro (ni podatek o obisku).
+- Ready2Wash obvestilo izpuščeno (zastarela okvara ne sodi na njihovo stran).
+
+| Trditev na strani | Vir |
+|---|---|
+| Odprto 24 ur, 4,2 (20 mnenj), naslov, tel., JVW3+PP, koordinate 45.6468386, 14.8543328 | Google profil, Chrome 20. 11. 2026 |
+| »Vse dela kot je treba.« – Marjan Kastelic (5★); »Hitro in dobro opran avto!« – Matjaž K. (5★) | Google mnenja, Chrome 20. 11. 2026 (dobesedno) |
+| Aktivna pena v boksih 1 in 2, 70 s / žeton, gumb na dnu plošče, rdeča cev, citat »Enostavno …« | FB objava 20. 3. 2025 (glej zgoraj) |
+| Programi Pranje, Voskanje, Aktivna pena, Pranje s krtačo, Izpiranje, Stop | FB fotografija komandne plošče 20. 3. 2025 |
+| E-pošta ales.plemenitas@gmail.com | lastnik (Alej), 20. 11. 2026 |
+| "ASP; avtopralnica, storitve in posredništvo – Aleš Plemenitaš s.p." (mat. 6081371000) | e-creditreform.si; ujemanje z imenom kontakta, naslov pralnice v viru ni potrjen — ob primopredaji preveriti s strankom |
