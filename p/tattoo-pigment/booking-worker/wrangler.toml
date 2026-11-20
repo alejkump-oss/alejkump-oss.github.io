@@ -1,0 +1,16 @@
+# Self-booking API for the Tattoo Pigment Kočevje site (https://alejkump.si/p/tattoo-pigment/).
+# Workers Free + D1 free. No secrets in this file: ADMIN_KEY is a Worker secret
+# (npx wrangler secret put ADMIN_KEY), given to the owner out-of-band.
+name = "ak-booking-tattoo-pigment"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ak-booking-tattoo-pigment"
+database_id = "d3118275-66c9-4bd5-a63f-5772471ac340"
+
+# Daily purge of expired bookings and rate-limit rows (free-plan cron trigger).
+[triggers]
+crons = ["23 3 * * *"]
