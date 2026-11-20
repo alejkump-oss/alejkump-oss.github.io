@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mesarstvo Bradač, Kočevje · naročilo mesa za prevzem</title>
+<meta name="description" content="Mesarstvo Bradač, mesnica in delikatesa na Ljubljanski cesti 45 v Kočevju. Delovni čas, mnenja kupcev in naročilo mesa za prevzem.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#140e0b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mesarstvo Bradač, Kočevje">
+<meta property="og:description" content="Mesnica in delikatesa na Ljubljanski cesti 45. Naročite meso za prevzem.">
+<meta property="og:image" content="https://alejkump.si/p/mesarstvo-bradac/assets/img/og.jpg">
+<meta property="og:locale" content="sl_SI">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238e2a1f'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='17' fill='%23f4ece1' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/instrument-serif-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/geist-latin-wght-normal.woff2" crossorigin>
+<style>
+@font-face{font-family:"Geist";font-style:normal;font-weight:100 900;font-display:swap;src:url(assets/fonts/geist-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Geist";font-style:normal;font-weight:100 900;font-display:swap;src:url(assets/fonts/geist-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/instrument-serif-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/instrument-serif-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/instrument-serif-latin-400-italic.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/instrument-serif-latin-ext-400-italic.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{
+  --night:#140e0b;--night-2:#1d1511;--nline:rgba(244,236,225,.14);
+  --paper:#f4ece1;--paper-2:#ebdfcf;--card:#fbf6ef;--line:rgba(40,22,14,.14);
+  --ink:#21150f;--ink-2:#5e4a3e;--ink-3:#8a7466;
+  --cream:#f4ece1;--cream-2:#cdbfb0;--cream-3:#9c8c7e;
+  --oxblood:#8e2a1f;--ember:#f08a5d;
+  --serif:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:clamp(16px,4.2vw,56px);--max:1200px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans);overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--cream);color:var(--night);padding:10px 16px;border-radius:99px;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.dark{background:var(--night);color:var(--cream)}
+
+/* nav */
+.nav{position:absolute;top:0;left:0;right:0;z-index:30;color:#fff}
+.nav-in{display:flex;align-items:center;gap:18px;height:72px}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;margin-right:auto;text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.brand b{font:400 25px/1 var(--serif);letter-spacing:-.01em}
+.brand span{font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.links{display:none;gap:2px}
+.links a{text-decoration:none;font-size:14.5px;padding:8px 12px;border-radius:99px;color:rgba(255,255,255,.9);text-shadow:0 1px 10px rgba(0,0,0,.45)}
+.links a:hover{background:rgba(255,255,255,.12)}
+.pill{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font:550 14.5px var(--sans);padding:9px 16px;border-radius:99px;background:rgba(20,14,11,.4);border:1px solid rgba(255,255,255,.3);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);white-space:nowrap;color:#fff;cursor:pointer}
+.pill svg{width:15px;height:15px}
+.tel-pill{display:none}
+.burger i{display:block;width:16px;height:1.6px;background:currentColor;position:relative}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;width:16px;height:1.6px;background:currentColor}
+.burger i::before{top:-5px}.burger i::after{top:5px}
+@media (min-width:1000px){.links{display:flex}.tel-pill{display:inline-flex}.burger{display:none}}
+.menu{position:fixed;inset:0;z-index:60;background:var(--night);color:var(--cream);display:flex;flex-direction:column;padding:0 var(--gut) 28px;overflow-y:auto}
+.menu[hidden]{display:none}
+.menu-top{display:flex;align-items:center;justify-content:space-between;height:72px;flex:none}
+.menu nav{display:flex;flex-direction:column;margin:10px 0 28px}
+.menu nav a{font:400 clamp(34px,9vw,50px)/1.2 var(--serif);text-decoration:none;padding:4px 0;border-bottom:1px solid var(--nline)}
+.menu .acts{margin-top:auto}
+body.menu-open{overflow:hidden}
+
+/* hero: photo undimmed, blurred fading floor */
+.hero{position:relative;min-height:max(640px,min(100svh,960px));display:flex;align-items:flex-end;isolation:isolate;overflow:hidden;background:var(--night);color:#fff}
+.hero-img,.hero-img img{position:absolute;inset:0;width:100%;height:100%}
+.hero-img{z-index:-3}
+.hero-img img{object-fit:cover;object-position:30% 40%}
+.hero::before{content:"";position:absolute;left:0;right:0;top:0;height:140px;z-index:-1;background:linear-gradient(rgba(10,7,5,.45),rgba(10,7,5,0))}
+.hero-floor{position:absolute;left:0;right:0;bottom:0;height:60%;z-index:-2;-webkit-backdrop-filter:blur(22px) saturate(1.05);backdrop-filter:blur(22px) saturate(1.05);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 45%);mask-image:linear-gradient(to bottom,transparent 0%,#000 45%);background:linear-gradient(to bottom,rgba(20,14,11,0) 0%,rgba(20,14,11,.4) 52%,rgba(20,14,11,.8) 82%,var(--night) 100%)}
+.hero-in{width:100%;padding-top:120px;padding-bottom:clamp(36px,7vh,72px)}
+.kicker{font:600 12px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.86);margin:0 0 16px}
+.hero h1{font:400 clamp(48px,6.6vw,98px)/.98 var(--serif);letter-spacing:-.02em;margin:0;max-width:13ch;text-shadow:0 2px 30px rgba(0,0,0,.3)}
+h1 em,.h2 em{font-style:italic;color:var(--ember)}
+.paper .h2 em,.order-sec .h2 em{color:var(--oxblood)}
+[hidden]{display:none!important}
+.lead{max-width:34rem;margin:20px 0 0;font-size:clamp(16.5px,1.5vw,19px);color:rgba(255,255,255,.9)}
+.hero .acts{margin-top:28px}
+.now{display:inline-flex;align-items:center;gap:8px;margin:20px 0 0;font-size:14px;color:rgba(255,255,255,.82)}
+.now i{width:8px;height:8px;border-radius:50%;background:#9a8f86}
+.now.on i{background:#7fd38a;box-shadow:0 0 0 4px rgba(127,211,138,.18)}
+.hero-cap{margin:22px 0 0;font-size:12.5px;color:rgba(255,255,255,.62);max-width:20rem}
+@media (min-width:900px){.hero-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);align-items:end;gap:40px}.hero-in>div{grid-column:2;grid-row:1}.hero-cap{grid-column:1;grid-row:1;margin:0}}
+@media (max-width:699px){
+  .hero{display:block;min-height:0;--ih:calc(100vw * 1.5)}
+  .hero-img{bottom:auto;height:var(--ih)}
+  .hero-img img{object-position:50% 0}
+  .hero-floor{bottom:auto;top:calc(var(--ih) - 330px);height:330px;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 40%);mask-image:linear-gradient(to bottom,transparent 0%,#000 40%);background:linear-gradient(to bottom,rgba(20,14,11,0) 0%,rgba(20,14,11,.5) 40%,rgba(20,14,11,.88) 72%,var(--night) 100%)}
+  .hero-in{padding-top:calc(var(--ih) - 170px);padding-bottom:40px}
+  .hero h1{font-size:clamp(46px,12.6vw,60px)}
+}
+
+/* buttons */
+.acts{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:99px;text-decoration:none;font:600 16px/1.2 var(--sans);border:0;cursor:pointer;transition:transform .15s,background .2s,border-color .2s;text-align:center}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:active{transform:scale(.98)}
+.btn-solid{background:#fff;color:#1c120d}
+.btn-solid:hover{background:#f1e7dc}
+.btn-line{border:1.5px solid rgba(255,255,255,.62);color:#fff;background:rgba(20,14,11,.16)}
+.btn-line:hover{border-color:#fff}
+.btn-red{background:var(--oxblood);color:#fff}
+.btn-red:hover{background:#7a2219}
+.btn-red[disabled]{opacity:.6;cursor:progress}
+.btn-ink{border:1.5px solid rgba(33,21,15,.5);color:var(--ink);background:transparent}
+.btn-ink:hover{border-color:var(--ink)}
+@media (max-width:520px){.acts .btn{flex:1 1 100%}}
+
+/* sections */
+.sec{padding:clamp(64px,10vw,124px) 0}
+.paper{background:var(--paper);color:var(--ink)}
+.paper+.paper{border-top:1px solid var(--line)}
+.eyebrow{display:flex;gap:14px;align-items:baseline;font:600 12px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;margin:0 0 18px;color:var(--ink-3)}
+.dark .eyebrow{color:var(--cream-3)}
+.eyebrow b{font-weight:600;color:var(--oxblood)}
+.dark .eyebrow b{color:var(--ember)}
+.h2{font:400 clamp(38px,5.4vw,66px)/1.02 var(--serif);letter-spacing:-.015em;margin:0;max-width:17ch}
+.body{color:var(--ink-2);max-width:38rem;margin:18px 0 0}
+.dark .body{color:var(--cream-2)}
+.note{font-size:14px;color:var(--ink-3);max-width:46rem;margin:24px 0 0}
+.dark .note{color:var(--cream-3)}
+.note a{text-underline-offset:3px}
+.split{display:grid;gap:36px}
+@media (min-width:900px){.split{grid-template-columns:5fr 6fr;gap:72px;align-items:center}}
+
+/* facts strip (dark) */
+.facts-sec{padding:clamp(28px,5vw,56px) 0 clamp(48px,7vw,80px)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin:0;border-top:1px solid var(--nline)}
+.facts div{padding:20px 0;border-bottom:1px solid var(--nline)}
+.facts div:nth-child(odd){padding-right:16px}
+.facts dt{font:400 clamp(28px,3.4vw,40px)/1.05 var(--serif)}
+.facts dd{margin:6px 0 0;color:var(--cream-3);font-size:14.5px;line-height:1.4}
+@media (min-width:900px){.facts{grid-template-columns:repeat(4,1fr)}.facts div{padding-right:24px}.facts div+div{padding-left:24px;border-left:1px solid var(--nline)}}
+
+/* o mesariji */
+.photo{margin:0;border-radius:22px;overflow:hidden;background:#000;max-width:460px;position:relative}
+.photo a{display:block;cursor:zoom-in}
+.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:30% 25%;transition:transform .4s}
+.photo a:hover img{transform:scale(1.02)}
+.photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:12.5px;color:rgba(255,255,255,.82);background:linear-gradient(transparent,rgba(0,0,0,.7))}
+.zoom-hint{position:absolute;top:12px;right:12px;font:600 12px var(--sans);padding:7px 11px;border-radius:99px;background:rgba(20,14,11,.55);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.list{margin:28px 0 0;padding:0;list-style:none;border-top:1px solid var(--nline)}
+.list li{display:grid;grid-template-columns:8.5rem 1fr;gap:4px 18px;padding:15px 0;border-bottom:1px solid var(--nline);color:var(--cream-2)}
+.list b{font:400 21px/1.25 var(--serif);color:var(--cream)}
+@media (max-width:520px){.list li{grid-template-columns:1fr}}
+
+/* ponudba */
+.cards{display:grid;gap:18px;margin-top:44px}
+@media (min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid var(--line);border-radius:22px;padding:26px 24px 24px;background:var(--card)}
+.card .n{font:400 italic 30px/1 var(--serif);color:var(--oxblood)}
+.card h3{font:400 32px/1.08 var(--serif);margin:16px 0 8px}
+.card p{margin:0;color:var(--ink-2);font-size:15.5px}
+.card small{display:block;margin-top:14px;font-size:12.5px;color:var(--ink-3)}
+.pull{margin:40px 0 0;padding:28px 0 0;border-top:1px solid var(--line);display:grid;gap:10px}
+.pull p{margin:0;font:400 clamp(28px,3.6vw,44px)/1.15 var(--serif);max-width:26ch}
+.pull cite{font-style:normal;font-size:14px;color:var(--ink-3)}
+
+/* naročilo */
+.order-sec{background:var(--paper-2)}
+.ord{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:40px}
+.ord>*{min-width:0}
+@media (min-width:960px){.ord{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:start}}
+.box{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,3vw,28px)}
+fieldset{border:0;margin:0 0 22px;padding:0;min-width:0}
+legend{font:600 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 12px;padding:0}
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.days label{flex:none;scroll-snap-align:start}
+.days label,.wins label{position:relative}
+.days span{display:flex;flex-direction:column;align-items:center;justify-content:center;width:66px;height:78px;border:1px solid var(--line);border-radius:16px;background:#fff;cursor:pointer;line-height:1.1;transition:border-color .15s,background .15s}
+.days small{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3)}
+.days b{font:400 28px/1.05 var(--serif)}
+.days em{font-style:normal;font-size:12px;color:var(--ink-3)}
+.days input:checked+span{background:var(--oxblood);border-color:var(--oxblood);color:#fff}
+.days input:checked+span small,.days input:checked+span em{color:rgba(255,255,255,.85)}
+.days input:disabled+span{opacity:.42;cursor:not-allowed;background:transparent}
+.days input:focus-visible+span,.wins input:focus-visible+span{outline:2px solid var(--oxblood);outline-offset:2px}
+.wins{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.wins span{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff;cursor:pointer}
+.wins b{font-weight:600}
+.wins small{font-size:12.5px;color:var(--ink-3)}
+.wins input:checked+span{background:var(--oxblood);border-color:var(--oxblood);color:#fff}
+.wins input:checked+span small{color:rgba(255,255,255,.85)}
+.wins input:disabled+span{opacity:.45;cursor:not-allowed;background:transparent}
+.st{margin:0 0 10px;font-size:14px;color:var(--ink-3)}
+.none{margin:0;color:var(--ink-3);font-size:15px}
+.fld{display:block;margin:0 0 14px}
+.fld>span{display:block;font-size:14px;font-weight:600;margin:0 0 6px}
+.fld small{font-weight:400;color:var(--ink-3)}
+.fld input,.fld textarea{width:100%;border:1px solid rgba(40,22,14,.25);border-radius:14px;background:#fff;padding:13px 14px;font-size:16px;line-height:1.4}
+.fld textarea{resize:vertical;min-height:110px}
+.fld input:focus,.fld textarea:focus{outline:2px solid var(--oxblood);outline-offset:0;border-color:transparent}
+.sum h3{font:400 28px/1.1 var(--serif);margin:0 0 6px}
+.pick{margin:0 0 16px;color:var(--ink-2)}
+.sum .acts .btn{flex:1 1 auto}
+.err{color:#a3271b;font-weight:600;margin:12px 0 0;min-height:1px}
+.err:empty{margin:0}
+.fine{font-size:13px;color:var(--ink-3);margin:14px 0 0}
+.fb{margin:14px 0 0;padding:14px;border-radius:14px;background:#fff3e8;border:1px solid #f0d2b8;font-size:14.5px}
+.fb p{margin:0 0 6px}.fb p:last-child{margin:0}
+.done{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,4vw,36px);margin-top:40px}
+.done:focus{outline:none}
+.done h3{font:400 clamp(32px,4vw,46px)/1.05 var(--serif);margin:0 0 10px}
+.done .no{display:inline-block;font:600 15px var(--sans);letter-spacing:.04em;padding:6px 12px;border-radius:99px;background:var(--oxblood);color:#fff;white-space:nowrap}
+.done p{color:var(--ink-2);margin:10px 0 0}
+.done .big{font-size:18px;color:var(--ink)}
+.done .acts{margin-top:22px}
+
+/* mnenja */
+.score{display:flex;align-items:center;gap:18px;margin-top:34px}
+.score b{font:400 64px/1 var(--serif)}
+.score .stars{color:var(--oxblood);letter-spacing:2px;font-size:18px}
+.score small{display:block;color:var(--ink-3);font-size:14px}
+.revs{display:grid;gap:16px;margin-top:34px}
+@media (min-width:760px){.revs{grid-template-columns:repeat(3,1fr)}}
+.rev{margin:0;padding:24px;border:1px solid var(--line);border-radius:22px;background:var(--card);display:flex;flex-direction:column;justify-content:space-between;gap:18px}
+.rev p{margin:0;font:400 24px/1.25 var(--serif)}
+.rev footer{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--ink-3)}
+.rev .stars{color:var(--oxblood);letter-spacing:1px}
+
+/* lokacija + kontakt */
+.loc{display:grid;gap:18px;margin-top:40px}
+@media (min-width:900px){.loc{grid-template-columns:7fr 5fr}}
+.map{position:relative;border-radius:22px;overflow:hidden;min-height:340px;background:var(--night-2) radial-gradient(60% 80% at 30% 30%,rgba(240,138,93,.16),transparent 70%);color:var(--cream);display:flex;align-items:flex-end}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map-in{position:relative;padding:24px}
+.map-in p{margin:0 0 14px;color:var(--cream-2);font-size:14.5px;max-width:28rem}
+.map-in .addr{font:400 clamp(30px,3.6vw,42px)/1.08 var(--serif);color:var(--cream);margin:0 0 12px}
+.kbox{border:1px solid var(--line);border-radius:22px;padding:24px;background:var(--card)}
+.kbox h3{font:600 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px}
+.kbox+.kbox{margin-top:18px}
+.kbox .big{font:400 32px/1.15 var(--serif);margin:0 0 6px;overflow-wrap:anywhere}
+.kbox .big a{text-decoration:none}
+.kbox .mail{font:400 clamp(20px,2.4vw,24px)/1.25 var(--serif);overflow-wrap:anywhere}
+.kbox p{margin:0 0 8px;color:var(--ink-2)}
+.ure{width:100%;border-collapse:collapse}
+.ure td{padding:8px 0;border-bottom:1px solid var(--line)}
+.ure td+td{text-align:right}
+.ure tr.today td{font-weight:700;color:var(--oxblood)}
+.ure tr:last-child td{border-bottom:0}
+
+/* footer + bar */
+.foot{background:var(--night);color:var(--cream-3);padding:56px 0 40px;font-size:14px}
+.foot .brand{text-shadow:none;color:var(--cream);margin-bottom:22px}
+.foot p{margin:0 0 12px;max-width:62rem}
+.foot strong{color:var(--cream-2);font-weight:600}
+.foot a{color:var(--cream-2)}
+.preview-note{display:inline-block;margin-top:8px;padding:6px 12px;border:1px dashed var(--nline);border-radius:99px;font-size:12.5px}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(20,14,11,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--nline);transform:translateY(110%);transition:transform .3s}
+.bar.on{transform:none}
+.bar .btn{flex:1;min-height:46px;font-size:15px;padding:0 12px}
+@media (min-width:900px){.bar{display:none}}
+@media (max-width:899px){body{padding-bottom:72px}}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(96vw,900px);max-height:94vh;overflow:visible}
+dialog.lb::backdrop{background:rgba(10,7,5,.88)}
+dialog.lb img{max-height:86vh;width:auto;margin:0 auto;border-radius:14px}
+dialog.lb p{color:#e8dccf;font-size:13px;text-align:center;margin:10px 0 0}
+dialog.lb button{position:fixed;top:14px;right:14px;font:600 15px var(--sans);color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:9px 16px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#vsebina">Preskoči na vsebino</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#vrh" aria-label="Mesarstvo Bradač, na vrh"><b>Mesarstvo Bradač</b><span>Kočevje</span></a>
+    <nav class="links" aria-label="Glavni meni">
+      <a href="#o-mesariji">O mesariji</a><a href="#ponudba">Ponudba</a><a href="#narocilo">Naročilo</a><a href="#mnenja">Mnenja</a><a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="pill tel-pill" href="tel:+38641441356"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>041 441 356</a>
+    <button class="pill burger" type="button" aria-expanded="false" aria-controls="meni"><i aria-hidden="true"></i>Meni</button>
+  </div>
+</header>
+<div class="menu" id="meni" role="dialog" aria-modal="true" aria-label="Meni" hidden>
+  <div class="menu-top"><span class="brand"><b>Mesarstvo Bradač</b></span><button class="pill menu-close" type="button">Zapri</button></div>
+  <nav aria-label="Meni"><a href="#o-mesariji">O mesariji</a><a href="#ponudba">Ponudba</a><a href="#narocilo">Naročilo</a><a href="#mnenja">Mnenja</a><a href="#kontakt">Kontakt</a></nav>
+  <div class="acts"><a class="btn btn-solid" href="#narocilo">Naroči za prevzem</a><a class="btn btn-line" href="tel:+38641441356">Pokliči 041 441 356</a></div>
+</div>
+
+<main id="vsebina">
+  <section class="hero" id="vrh" aria-labelledby="h1">
+    <picture class="hero-img">
+      <source media="(max-width: 699px)" type="image/webp" srcset="assets/img/hero-tall-720.webp 720w, assets/img/hero-tall-1080.webp 1080w" sizes="100vw">
+      <img src="assets/img/hero-1400.webp" srcset="assets/img/hero-1400.webp 1400w, assets/img/hero-2400.webp 2400w" sizes="100vw" width="2400" height="1598" alt="Hiša Mesarstva Bradač na Ljubljanski cesti 45 ponoči, s prazničnimi lučkami in snegom" fetchpriority="high" decoding="async">
+    </picture>
+    <div class="hero-floor" aria-hidden="true"></div>
+    <div class="wrap hero-in">
+      <div>
+        <p class="kicker">Mesnica in delikatesa · Ljubljanska cesta 45 · Kočevje</p>
+        <h1 id="h1">Meso za vašo mizo, <em>naročeno</em> vnaprej.</h1>
+        <p class="lead">Naročite na spletu, izberite dan in uro prevzema, mi vas pokličemo in naročilo potrdimo. Ali pa se kar oglasite.</p>
+        <div class="acts"><a class="btn btn-solid" href="#narocilo">Naroči za prevzem</a><a class="btn btn-line" href="tel:+38641441356"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>041 441 356</a></div>
+        <p class="now" id="odprto"><i aria-hidden="true"></i><span>pon–pet 8–19 · sob 7–13 · ned zaprto</span></p>
+      </div>
+      <p class="hero-cap">Na sliki: mesnica na Ljubljanski cesti 45, januar 2016. Foto: Andrijana Bradač, Googlov profil mesnice.</p>
+    </div>
+  </section>
+
+  <section class="dark facts-sec" aria-label="Na kratko">
+    <div class="wrap">
+      <dl class="facts">
+        <div><dt>4,8 ★</dt><dd>42 mnenj kupcev na Googlu</dd></div>
+        <div><dt>8–19</dt><dd>od ponedeljka do petka</dd></div>
+        <div><dt>7–13</dt><dd>v soboto, nedelja zaprto</dd></div>
+        <div><dt>Od 1994</dt><dd>v poslovnem registru</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="dark sec" id="o-mesariji" aria-labelledby="h-o" style="padding-top:clamp(24px,4vw,48px)">
+    <div class="wrap split">
+      <figure class="photo">
+        <a href="assets/img/mesnica-zima-1400.webp" data-zoom data-cap="Mesnica na Ljubljanski cesti 45, januar 2016. Foto: Andrijana Bradač (Googlov profil mesnice).">
+          <img src="assets/img/mesnica-zima-600.webp" srcset="assets/img/mesnica-zima-600.webp 600w, assets/img/mesnica-zima-1400.webp 1400w" sizes="(min-width: 900px) 460px, calc(100vw - 32px)" width="600" height="1067" alt="Mesnica Bradač pozimi, ponoči, z lučkami na balkonu" loading="lazy" decoding="async">
+          <span class="zoom-hint">Povečaj</span>
+        </a>
+        <figcaption>Januar 2016 · foto Andrijana Bradač</figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow"><b>01</b> O mesariji</p>
+        <h2 class="h2" id="h-o">Mesnica ob <em>Ljubljanski</em> cesti.</h2>
+        <p class="body">Mesarstvo Bradač je mesnica in delikatesa na Ljubljanski cesti 45 v Kočevju. Nosilec je Marjan Bradač s.p., v poslovnem registru od 1. junija 1994, z dejavnostjo meso in mesni izdelki.</p>
+        <ul class="list">
+          <li><b>Plačilo</b><span>debetne in kreditne kartice ter mobilno plačilo (NFC)</span></li>
+          <li><b>Dostop</b><span>parkirišče in vhod sta dostopna z invalidskim vozičkom</span></li>
+          <li><b>Naročilo</b><span>po telefonu ali na tej strani, s prevzemom v mesnici</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="paper sec" id="ponudba" aria-labelledby="h-p">
+    <div class="wrap">
+      <p class="eyebrow"><b>02</b> Ponudba</p>
+      <h2 class="h2" id="h-p">Sveže meso in <em>mesni</em> izdelki.</h2>
+      <p class="body">Kaj je ta dan v vitrini in po kakšni ceni, vam povemo po telefonu ali ko vas pokličemo glede naročila.</p>
+      <div class="cards">
+        <article class="card"><span class="n">i</span><h3>Sveže meso</h3><p>Za kosilo, žar ali praznično mizo. Povejte, koliko oseb in kaj pripravljate.</p></article>
+        <article class="card"><span class="n">ii</span><h3>Mesni izdelki</h3><p>Kupci v mnenjih omenjajo krvavice in pečenice.</p></article>
+        <article class="card"><span class="n">iii</span><h3>Delikatesa</h3><p>Na Googlu je mesarstvo vpisano kot mesnica in delikatesa.</p></article>
+      </div>
+      <blockquote class="pull"><p>»Odlične krvavice,pečenice,kožarce skratka vse je ukusno.«</p><cite>Anton Brunec, mnenje na Googlu</cite></blockquote>
+    </div>
+  </section>
+
+  <section class="order-sec sec" id="narocilo" aria-labelledby="h-n">
+    <div class="wrap">
+      <p class="eyebrow"><b>03</b> Naročilo za prevzem</p>
+      <h2 class="h2" id="h-n">Naročite zdaj, <em>prevzemite</em> pri nas.</h2>
+      <p class="body">Izberite dan in čas prevzema ter napišite, kaj želite. Pokličemo vas, potrdimo naročilo in povemo ceno. Plačate ob prevzemu.</p>
+
+      <div class="done" id="ok" hidden tabindex="-1">
+        <p class="eyebrow"><b>Oddano</b></p>
+        <h3>Hvala, naročilo smo prejeli.</h3>
+        <p class="big" id="ok-t"></p>
+        <p>Številka naročila: <span class="no" id="ok-no"></span></p>
+        <p><strong>Naročilo je potrjeno, ko vas pokličemo.</strong> Če se do prevzema ne oglasimo ali želite kaj spremeniti, pokličite <a href="tel:+38641441356">041 441 356</a>.</p>
+        <div class="acts"><button class="btn btn-red" type="button" id="ok-again">Novo naročilo</button><a class="btn btn-ink" href="tel:+38641441356">Pokliči</a></div>
+      </div>
+
+      <form class="ord" id="ord" novalidate>
+        <div class="box">
+          <fieldset>
+            <legend>1 · Dan prevzema</legend>
+            <div class="days" id="o-days"></div>
+          </fieldset>
+          <fieldset>
+            <legend>2 · Čas prevzema</legend>
+            <p class="st" id="o-st" aria-live="polite">Nalagam proste termine …</p>
+            <div class="wins" id="o-wins"></div>
+          </fieldset>
+          <fieldset style="margin:0">
+            <legend>3 · Kaj želite</legend>
+            <label class="fld"><span>Vrsta mesa in količina</span><textarea id="o-items" name="narocilo" maxlength="600" rows="4" placeholder="npr. 1 kg mletega mešanega mesa, 4 svinjski zrezki, 6 krvavic" required></textarea></label>
+          </fieldset>
+        </div>
+        <div class="box sum">
+          <fieldset>
+            <legend>4 · Vaši podatki</legend>
+            <label class="fld"><span>Ime in priimek</span><input id="o-name" name="ime" type="text" autocomplete="name" maxlength="60" required></label>
+            <label class="fld"><span>Telefon</span><input id="o-phone" name="telefon" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="041 123 456" required></label>
+          </fieldset>
+          <h3>Vaš prevzem</h3>
+          <p class="pick" id="o-pick" aria-live="polite">Izberite dan in čas.</p>
+          <div class="acts">
+            <button class="btn btn-red" type="submit" id="o-go">Oddaj naročilo</button>
+            <a class="btn btn-red" id="o-sms" href="sms:+38641441356" hidden>Pošlji SMS</a>
+            <a class="btn btn-ink" href="tel:+38641441356">Pokliči</a>
+          </div>
+          <p class="err" id="o-err" role="alert"></p>
+          <div class="fb" id="o-fb" hidden>
+            <p>Spletno naročanje trenutno ne deluje. Pošljite nam naročilo po SMS-u ali nas pokličite na 041 441 356. Naročilo je potrjeno, ko vas pokličemo.</p>
+          </div>
+          <p class="fine">Ime, telefon in naročilo uporabimo samo za to naročilo in jih izbrišemo najpozneje dva dni po prevzemu. Upravljavec podatkov: Marjan Bradač s.p., Ljubljanska cesta 45, Kočevje.</p>
+          <p class="fine">Predogled: naročila se ob zagonu povežejo z vašimi obvestili.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="paper sec" id="mnenja" aria-labelledby="h-m">
+    <div class="wrap">
+      <p class="eyebrow"><b>04</b> Mnenja</p>
+      <h2 class="h2" id="h-m">Kaj pravijo <em>kupci</em>.</h2>
+      <div class="score"><b>4,8</b><div><span class="stars" aria-hidden="true">★★★★★</span><small>42 mnenj na Googlu, stanje 20. 11. 2026</small></div></div>
+      <div class="revs">
+        <blockquote class="rev"><p>»Vedno dobim dobro in kvalitetno meso. ...pa tudi prijazen nasmeh«</p><footer><span>Ljuba Južnič, Google</span><span class="stars" aria-label="5 zvezdic">★★★★★</span></footer></blockquote>
+        <blockquote class="rev"><p>»Odlična izbira, profesionalen odnos.«</p><footer><span>Tatjana, Google</span><span class="stars" aria-label="5 zvezdic">★★★★★</span></footer></blockquote>
+        <blockquote class="rev"><p>»Odlicno, okusno, kvalitetno meso!«</p><footer><span>Matej Marolt, Google</span><span class="stars" aria-label="5 zvezdic">★★★★★</span></footer></blockquote>
+        <blockquote class="rev"><p>»Najboljše meso!!«</p><footer><span>Gregor Pugelj, Google</span><span class="stars" aria-label="5 zvezdic">★★★★★</span></footer></blockquote>
+        <blockquote class="rev"><p>»Odlično meso!«</p><footer><span>Alex TzL, Google</span><span class="stars" aria-label="5 zvezdic">★★★★★</span></footer></blockquote>
+        <blockquote class="rev"><p>»Kvaliteta,prijaznost.«</p><footer><span>Dušan Čihal, Google</span><span class="stars" aria-label="5 zvezdic">★★★★★</span></footer></blockquote>
+      </div>
+      <p class="note">Citirano dobesedno, z izvirnim zapisom, z Googlovega profila mesnice. Google mnenj ne preverja. <a href="https://www.google.com/maps/place/?q=place_id:ChIJ101NV0HuZEcRfeusN8kJPOo" target="_blank" rel="noopener">Vsa mnenja na Googlu</a></p>
+    </div>
+  </section>
+
+  <section class="paper sec" id="kontakt" aria-labelledby="h-k">
+    <div class="wrap">
+      <p class="eyebrow"><b>05</b> Lokacija in kontakt</p>
+      <h2 class="h2" id="h-k">Na Ljubljanski <em>45</em>.</h2>
+      <div class="loc">
+        <div class="map" id="map">
+          <div class="map-in">
+            <p class="addr">Ljubljanska cesta 45<br>1330 Kočevje</p>
+            <p>Zemljevid se naloži z Googla šele, ko ga odprete.</p>
+            <div class="acts"><button class="btn btn-solid" type="button" id="map-go">Prikaži zemljevid</button><a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=45.6439067,14.8535392" target="_blank" rel="noopener">Navodila za pot</a></div>
+          </div>
+        </div>
+        <div>
+          <div class="kbox">
+            <h3>Delovni čas</h3>
+            <table class="ure">
+              <tr data-d="1"><td>ponedeljek</td><td>8.00–19.00</td></tr>
+              <tr data-d="2"><td>torek</td><td>8.00–19.00</td></tr>
+              <tr data-d="3"><td>sreda</td><td>8.00–19.00</td></tr>
+              <tr data-d="4"><td>četrtek</td><td>8.00–19.00</td></tr>
+              <tr data-d="5"><td>petek</td><td>8.00–19.00</td></tr>
+              <tr data-d="6"><td>sobota</td><td>7.00–13.00</td></tr>
+              <tr data-d="0"><td>nedelja</td><td>zaprto</td></tr>
+            </table>
+          </div>
+          <div class="kbox">
+            <h3>Telefon in e-pošta</h3>
+            <p class="big"><a href="tel:+38641441356">041 441 356</a></p>
+            <p class="mail"><a href="mailto:mesarstvobradac.kocevje@gmail.com">mesarstvobradac.kocevje@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#vrh"><b>Mesarstvo Bradač</b><span>Kočevje</span></a>
+    <p><strong>MARJAN BRADAČ S.P.</strong> · Ljubljanska cesta 45, 1330 Kočevje · matična številka 5548592000 · ID za DDV SI56824211</p>
+    <p>Predogled spletne strani, ki ga je AK agencija pripravila iz javnih virov: Googlov profil mesnice in poslovni register (AJPES prek bizi.si). Fotografija je z Googlovega profila mesnice. Stran ni objavljena v iskalnikih in ne nastavlja piškotkov.</p>
+    <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Kočevje · <a href="https://alejkump.si/">alejkump.si</a></p>
+    <p class="preview-note">Predogled · ni objavljeno v iskalnikih</p>
+  </div>
+</footer>
+
+<div class="bar" id="bar" aria-label="Hitri stik"><a class="btn btn-line" href="tel:+38641441356">Pokliči</a><a class="btn btn-solid" href="#narocilo">Naroči</a></div>
+<dialog class="lb" id="lb" aria-label="Povečana fotografija"><img alt=""><p></p><button type="button">Zapri</button></dialog>
+
+<script>
+(function(){
+  // menu
+  var b=document.querySelector('.burger'),m=document.getElementById('meni');
+  function close(){m.hidden=true;b.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');}
+  b.addEventListener('click',function(){m.hidden=false;b.setAttribute('aria-expanded','true');document.body.classList.add('menu-open');m.querySelector('.menu-close').focus();});
+  m.querySelector('.menu-close').addEventListener('click',close);
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close();});
+  // sticky bar after hero
+  var bar=document.getElementById('bar'),hero=document.querySelector('.hero');
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){bar.classList.toggle('on',!es[0].isIntersecting);}).observe(hero);}else bar.classList.add('on');
+  // hours: today + open now (Europe/Ljubljana)
+  var H={0:null,1:[8,19],2:[8,19],3:[8,19],4:[8,19],5:[8,19],6:[7,13]};
+  var p={};try{new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Ljubljana',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value;});}catch(e){}
+  var wd={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[p.weekday];if(wd==null)wd=new Date().getDay();
+  var t=(+p.hour||0)+(+p.minute||0)/60,row=document.querySelector('tr[data-d="'+wd+'"]');if(row)row.className='today';
+  var o=document.getElementById('odprto'),h=H[wd];
+  if(o&&h&&t>=h[0]&&t<h[1]){o.classList.add('on');o.querySelector('span').textContent='Zdaj odprto · do '+h[1]+'.00';}
+  else if(o){o.querySelector('span').textContent='Zdaj zaprto · pon–pet 8–19, sob 7–13';}
+  // lightbox
+  var d=document.getElementById('lb');
+  document.querySelectorAll('[data-zoom]').forEach(function(a){a.addEventListener('click',function(e){
+    if(!d.showModal)return;e.preventDefault();var im=d.querySelector('img'),s=a.querySelector('img');im.src=a.getAttribute('href');im.alt=s?s.alt:'';d.querySelector('p').textContent=a.getAttribute('data-cap')||'';d.showModal();});});
+  d.querySelector('button').addEventListener('click',function(){d.close();});
+  d.addEventListener('click',function(e){if(e.target===d)d.close();});
+  // click-to-load map
+  document.getElementById('map-go').addEventListener('click',function(){
+    var f=document.createElement('iframe');f.title='Zemljevid: Mesarstvo Bradač, Ljubljanska cesta 45, Kočevje';f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';
+    f.src='https://www.google.com/maps?q=Mesarstvo+Brada%C4%8D,+Ljubljanska+cesta+45,+1330+Ko%C4%8Devje&ll=45.6439067,14.8535392&z=16&output=embed';
+    var mp=document.getElementById('map');mp.innerHTML='';mp.appendChild(f);});
+})();
+(function(){
+  var f=document.getElementById('ord');if(!f)return;
+  var API='https://ak-booking-mesarstvo-bradac.alejkump.workers.dev',TEL='+38641441356';
+  var DS=['ned','pon','tor','sre','čet','pet','sob'],DL=['nedelja','ponedeljek','torek','sreda','četrtek','petek','sobota'];
+  var MS=['jan','feb','mar','apr','maj','jun','jul','avg','sep','okt','nov','dec'];
+  var $=function(id){return document.getElementById(id);};
+  var daysEl=$('o-days'),winsEl=$('o-wins'),stEl=$('o-st'),itemsEl=$('o-items'),nameEl=$('o-name'),phoneEl=$('o-phone');
+  var pickEl=$('o-pick'),errEl=$('o-err'),smsEl=$('o-sms'),goEl=$('o-go'),fbEl=$('o-fb'),okEl=$('ok');
+  var apple=/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent||'');
+  var days=[],online=null,busy=false,reqId=null;
+  function p2(n){return (n<10?'0':'')+n;}
+  function el(tag,attrs,html){var e=document.createElement(tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(html!=null)e.innerHTML=html;return e;}
+  function rid(){try{if(crypto.randomUUID)return crypto.randomUUID();}catch(x){}return 'r'+Date.now().toString(36)+Math.random().toString(36).slice(2,12);}
+  function dparts(s){var a=s.split('-');return {y:+a[0],m:+a[1],d:+a[2]};}
+  function ymd(dt){return dt.getFullYear()+'-'+p2(dt.getMonth()+1)+'-'+p2(dt.getDate());}
+  // offline fallback calendar: next 14 days, published hours, Sunday closed (same rules as the server)
+  var WEEK=[[],[['08-12',8,12],['12-15',12,15],['15-19',15,19]],[['08-12',8,12],['12-15',12,15],['15-19',15,19]],[['08-12',8,12],['12-15',12,15],['15-19',15,19]],[['08-12',8,12],['12-15',12,15],['15-19',15,19]],[['08-12',8,12],['12-15',12,15],['15-19',15,19]],[['07-10',7,10],['10-13',10,13]]];
+  function localDays(){var n=new Date(),t0=new Date(n.getFullYear(),n.getMonth(),n.getDate()),out=[],mins=n.getHours()*60+n.getMinutes();
+    for(var i=0;i<14;i++){var dt=new Date(t0.getFullYear(),t0.getMonth(),t0.getDate()+i),wd=dt.getDay();
+      out.push({date:ymd(dt),wd:wd,closed:!WEEK[wd].length,wins:WEEK[wd].map(function(w){return {id:w[0],from:w[1],to:w[2],open:!(i===0&&w[1]*60<mins+120),full:false};})});}
+    return out;}
+  function sel(n){var x=f.querySelector('input[name="'+n+'"]:checked');return x?x.value:null;}
+  function day(){var i=sel('dan');return i===null?null:days[+i];}
+  function win(){var dd=day(),w=sel('cas');if(!dd||w===null)return null;for(var i=0;i<dd.wins.length;i++)if(dd.wins[i].id===w)return dd.wins[i];return null;}
+  function usable(dd){return dd.wins.some(function(w){return w.open&&!w.full;});}
+  function renderDays(){
+    var keep=sel('dan');daysEl.innerHTML='';
+    days.forEach(function(dd,i){var q=dparts(dd.date),ok=usable(dd);
+      var top=i===0?'danes':i===1?'jutri':DS[dd.wd];
+      var lab=el('label'),inp=el('input',{'class':'sr',type:'radio',name:'dan',value:String(i),'aria-label':DL[dd.wd]+', '+q.d+'. '+q.m+'.'+(dd.closed?' (zaprto)':ok?'':' (ni prostih terminov)')});
+      if(!ok)inp.disabled=true;else if(keep===String(i))inp.checked=true;
+      lab.appendChild(inp);lab.appendChild(el('span',{'aria-hidden':'true'},'<small>'+top+'</small><b>'+q.d+'.</b><em>'+(dd.closed?'zaprto':MS[q.m-1])+'</em>'));daysEl.appendChild(lab);});
+    if(sel('dan')===null){var first=daysEl.querySelector('input:not(:disabled)');if(first)first.checked=true;}
+  }
+  function renderWins(){
+    var dd=day(),keep=sel('cas');winsEl.innerHTML='';
+    if(!dd){winsEl.appendChild(el('p',{'class':'none'},'V naslednjih 14 dneh ni prostih terminov. Pokličite nas.'));return;}
+    dd.wins.forEach(function(w){var lab=el('label'),inp=el('input',{'class':'sr',type:'radio',name:'cas',value:w.id});
+      var txt=w.from+'.00–'+w.to+'.00',sub=w.full?'zasedeno':!w.open?'ni več mogoče':(w.from<12?'dopoldan':'popoldan');
+      if(!w.open||w.full){inp.disabled=true;inp.setAttribute('aria-label',txt+' ('+sub+')');}else if(keep===w.id)inp.checked=true;
+      lab.appendChild(inp);lab.appendChild(el('span',null,'<b>'+txt+'</b><small>'+sub+'</small>'));winsEl.appendChild(lab);});
+  }
+  function when(){var dd=day(),w=win();if(!dd||!w)return null;var q=dparts(dd.date);return DL[dd.wd]+', '+q.d+'. '+q.m+'. '+q.y+', med '+w.from+'.00 in '+w.to+'.00';}
+  function smsBody(){var w=when(),s='Pozdravljeni, naročam meso za prevzem v Mesarstvu Bradač.\nPrevzem: '+(w||'(izberite)')+'\nNaročilo: '+(itemsEl.value.trim()||'(vpišite)')+'\nIme: '+(nameEl.value.trim()||'(vpišite)');
+    if(phoneEl.value.trim())s+='\nTelefon: '+phoneEl.value.trim();return s+'\nProsim za potrditev. Hvala!';}
+  function update(){var w=when();pickEl.textContent=w?('Prevzem: '+w):'Izberite dan in čas.';
+    smsEl.setAttribute('href','sms:'+TEL+(apple?'&':'?')+'body='+encodeURIComponent(smsBody()));
+    if(errEl.textContent&&check(true))errEl.textContent='';}
+  function phoneOk(v){var d=v.replace(/\D/g,'');return /^\+?[0-9 ()\/.-]+$/.test(v)&&d.length>=8&&d.length<=15;}
+  function check(quiet){var msg='',focus=null;
+    if(!day()){msg='Izberite dan prevzema.';focus=daysEl.querySelector('input:not(:disabled)');}
+    else if(!win()){msg='Izberite čas prevzema.';focus=winsEl.querySelector('input:not(:disabled)');}
+    else if(itemsEl.value.trim().length<3){msg='Napišite, kaj želite (vrsta mesa in količina).';focus=itemsEl;}
+    else if(nameEl.value.trim().length<2){msg='Vpišite ime in priimek.';focus=nameEl;}
+    else if(!phoneOk(phoneEl.value.trim())){msg='Vpišite telefonsko številko (npr. 041 123 456).';focus=phoneEl;}
+    if(!quiet){errEl.textContent=msg;if(focus)focus.focus();}return !msg;}
+  function fallback(why){online=false;fbEl.hidden=false;smsEl.hidden=false;goEl.hidden=true;
+    if(!days.length)days=localDays();stEl.textContent=why||'Prostih terminov trenutno ne moremo preveriti. Naročilo nam pošljite po SMS-u.';}
+  function req(method,path,data,ms){
+    var c=window.AbortController?new AbortController():null,t=c?setTimeout(function(){c.abort();},ms||8000):0;
+    var o={method:method,mode:'cors',cache:'no-store',signal:c?c.signal:undefined};
+    if(data){o.headers={'Content-Type':'application/json'};o.body=JSON.stringify(data);}
+    return fetch(API+path,o).then(function(r){clearTimeout(t);return r.json().catch(function(){return {};}).then(function(j){j._s=r.status;return j;});},function(e){clearTimeout(t);throw e;});}
+  function load(){
+    return req('GET','/windows',null,7000).then(function(j){
+      if(j._s!==200||!j.ok||!j.days)throw new Error('windows');
+      days=j.days;online=true;fbEl.hidden=true;smsEl.hidden=true;goEl.hidden=false;
+      stEl.textContent='Prevzem je mogoč v delovnem času. Zasedeni termini so označeni.';
+    }).catch(function(){fallback();}).then(function(){renderDays();renderWins();update();});}
+  function done(j){
+    $('ok-t').textContent='Prevzem: '+(j.label||when()||'');$('ok-no').textContent=String(j.id);
+    f.hidden=true;okEl.hidden=false;okEl.focus();try{okEl.scrollIntoView({block:'start'});}catch(x){}}
+  function submitApi(retried){
+    if(!reqId)reqId=rid();
+    var dd=day(),w=win();
+    var data={req:reqId,date:dd.date,win:w.id,items:itemsEl.value.trim(),name:nameEl.value.trim(),phone:phoneEl.value.trim()};
+    busy=true;goEl.disabled=true;goEl.textContent='Oddajam …';errEl.textContent='';
+    req('POST','/order',data,10000).then(function(j){
+      busy=false;goEl.disabled=false;goEl.textContent='Oddaj naročilo';
+      if((j._s===201||j._s===200)&&j.ok&&j.id){reqId=null;done(j);return;}
+      reqId=null;
+      if(j._s===409){w.full=true;var x=f.querySelector('input[name="cas"]:checked');if(x)x.checked=false;renderDays();renderWins();update();errEl.textContent='Ta termin se je pravkar zapolnil. Izberite drug čas.';return;}
+      if(j.error==='closed'){load().then(function(){errEl.textContent='Ta termin ni več mogoč. Izberite drugega.';});return;}
+      if(j.field==='phone'){errEl.textContent='Vpišite veljavno telefonsko številko.';phoneEl.focus();return;}
+      if(j.field==='name'){errEl.textContent='Vpišite ime in priimek.';nameEl.focus();return;}
+      if(j.field==='items'){errEl.textContent='Napišite, kaj želite.';itemsEl.focus();return;}
+      if(j._s===429){errEl.textContent='S te naprave je bilo oddanih preveč naročil. Pokličite nas na 041 441 356.';return;}
+      fallback('Spletno naročanje trenutno ne deluje.');errEl.textContent='Naročilo ni bilo oddano. Pošljite SMS ali nas pokličite.';
+    },function(){
+      // Delivery state unknown: retry once with the SAME request id, so the server can never store it twice.
+      if(!retried){submitApi(true);return;}
+      busy=false;goEl.disabled=false;goEl.textContent='Poskusi znova';
+      errEl.textContent='Povezava ni uspela. Poskusite znova (naročilo se ne bo podvojilo) ali pošljite SMS.';
+      smsEl.hidden=false;fbEl.hidden=false;});}
+  f.addEventListener('change',function(e){if(e.target.name==='dan')renderWins();if(e.target.name==='dan'||e.target.name==='cas')reqId=null;update();});
+  f.addEventListener('input',function(e){if(e.target!==itemsEl&&e.target!==nameEl&&e.target!==phoneEl)return;update();});
+  f.addEventListener('submit',function(e){e.preventDefault();if(busy||!check())return;if(online)submitApi(false);else location.href=smsEl.getAttribute('href');});
+  smsEl.addEventListener('click',function(e){update();if(!check())e.preventDefault();});
+  $('ok-again').addEventListener('click',function(){okEl.hidden=true;f.hidden=false;itemsEl.value='';var x=f.querySelector('input[name="cas"]:checked');if(x)x.checked=false;load();});
+  document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible'&&online&&!busy&&okEl.hidden)load();});
+  load();
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
+</body>
+</html>

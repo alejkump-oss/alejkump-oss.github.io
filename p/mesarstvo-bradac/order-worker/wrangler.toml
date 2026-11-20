@@ -1,0 +1,16 @@
+# "Naročilo za prevzem" API for the Mesarstvo Bradač preview (https://alejkump.si/p/mesarstvo-bradac/).
+# Workers Free + D1 free. No secrets in this file: ADMIN_KEY is a Worker secret
+# (npx wrangler secret put ADMIN_KEY), given to the owner out-of-band.
+name = "ak-booking-mesarstvo-bradac"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ak-booking-mesarstvo-bradac"
+database_id = "63e32eac-51fd-4d6e-9a99-9c73d5a2b1b2"
+
+# Daily purge of expired orders and rate-limit rows (free-plan cron trigger).
+[triggers]
+crons = ["23 3 * * *"]
