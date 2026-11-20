@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Izdelava spletnih strani Kočevje in Dolenjska | AK agencija, Alej Kump</title>
+<meta name="description" content="Izdelava spletnih strani za lokalna podjetja v Kočevju, po Dolenjski in Sloveniji. Brezplačen predogled, nato pisna ponudba s ceno po dogovoru, brez obveznosti.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-latin-800-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-latin-300-normal.woff2" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" crossorigin>
+<link rel="stylesheet" href="dw.css?v=1">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+</head>
+<body data-page="index.html">
+<a class="skip" href="#vsebina">Preskoči na vsebino</a>
+<section class="hero" id="hero" data-lines='[["Vaša","nova","stran"],["Najprej","vidite","stran"],["Cena","po","dogovoru"]]' data-counter="index">
+  <canvas id="scene" aria-label="Steklena kocka, ki jo lahko zavrtite. Povlecite vstran za vrtenje."></canvas>
+  <p class="fallback-title" aria-hidden="true">Vaša<br>nova<br>stran</p>
+  <div class="ui">
+    <h1 class="sr-only">Spletne strani za lokalna podjetja – AK agencija, Kočevje</h1>
+    <p class="sr-only" id="hero-live" aria-live="polite">Vaša nova stran</p>
+    <header class="nav">
+      <a class="logo" href="./" aria-label="AK agencija, domov"><i class="logo-mark" aria-hidden="true"></i><b>AK</b><span>agencija</span></a>
+      <ul class="nav-links"><li><a href="./" aria-current="page">Domov</a></li><li><a href="storitve.html">Storitve</a></li><li><a href="primeri.html">Primeri</a></li><li><a href="kako-poteka.html">Kako poteka</a></li><li><a href="cene.html">Cene</a></li><li><a href="o-meni.html">O meni</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
+      <button class="menu-btn" id="menu-open" type="button" aria-controls="menu" aria-expanded="false"><i aria-hidden="true"></i>Meni</button>
+    </header>
+    <div class="arrows">
+      <button class="arrow" id="prev" type="button" aria-label="Zavrti kocko v levo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <button class="arrow" id="next" type="button" aria-label="Zavrti kocko v desno"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+    <nav class="dots" aria-label="Sporočila v naslovu"><button class="dot active" type="button" aria-pressed="true" aria-label="Sporočilo 1: Vaša nova stran"></button><button class="dot" type="button" aria-pressed="false" aria-label="Sporočilo 2: Najprej vidite stran, brezplačen predogled"></button><button class="dot" type="button" aria-pressed="false" aria-label="Sporočilo 3: Cena po dogovoru"></button></nav>
+    <p class="tagline">Spletne strani za<br>lokalna podjetja.<strong>Kočevje in vsa Slovenija.</strong></p>
+    <div class="cta-row">
+      <a class="cta" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Brezplačen predogled</a>
+      <span class="cta-line" aria-hidden="true"></span>
+      <span class="count" aria-hidden="true">01</span>
+    </div>
+    <div class="loader" id="loader" aria-hidden="true">Nalagam</div>
+  </div>
+</section>
+<main id="vsebina">
+<div class="wrap" style="padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(40px,6vw,72px)">
+  <div class="facts">
+    <div class="fact"><b>0 €</b><span>predogled pred naročilom</span></div>
+    <div class="fact"><b>Po dogovoru</b><span>cena, zapisana v ponudbi vnaprej</span></div>
+    <div class="fact"><b>Domena</b><span>prvo leto vključena, na vaše ime</span></div>
+    <div class="fact"><b>Brez DDV</b><span>plačilo v celoti ali na obroke</span></div>
+  </div>
+</div>
+<section class="sec" id="storitve" aria-labelledby="storitve-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>01</b> Kaj delam</p>
+    <h2 class="h2" id="storitve-h">Stran, Google profil <em>in video.</em></h2>
+    <div class="services">
+  <div class="svc"><span class="num">i</span><h3>Spletne strani</h3><p class="price">Cena po dogovoru · najprej brezplačen predogled</p><p>Za lokalna podjetja, ki še nimajo svoje strani ali imajo zastarelo. Trije paketi, od ene strani do pet podstrani.</p><a class="link" href="cene.html">Paketi in cene</a></div>
+  <div class="svc"><span class="num">ii</span><h3>Google profil</h3><p class="price">22 € na mesec · brez vezave</p><p>Vsak teden pripravljeni odgovori na nove ocene in ena objava za vaš Google profil. Objavite sami.</p><a class="link" href="/google.html">Vse o storitvi GOOGLE</a></div>
+  <div class="svc"><span class="num">iii</span><h3>Marketing</h3><p class="price">Prvi video brezplačno · brez vezave</p><p>Kratki videi, objave in oglasi. Posnamete s telefonom, jaz zmontiram.</p><a class="link" href="/marketing.html">Vse o storitvi MARKETING</a></div>
+</div>
+
+  </div>
+</section>
+<section class="sec" id="primeri" aria-labelledby="primeri-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>02</b> Primeri</p>
+    <h2 class="h2" id="primeri-h">Tako izgleda <em>na telefonu.</em></h2>
+    <div class="work">
+  <article class="card">
+    <a class="shot" href="/p/briski/" rel="noopener" target="_blank"><img src="img/zaslon-briski-m.webp" width="600" height="923" alt="Posnetek zaslona strani Gostilnice in picerije Briški na telefonu" loading="lazy" decoding="async"><span class="tag">Izdelana stran</span></a>
+    <h3>Gostilnica in picerija Briški, Kočevje</h3>
+    <p>Jedilnik, tedenske malice, galerija in delovni čas, z gumbom za klic. Izdelano novembra 2026.</p>
+    <a class="more" href="/p/briski/" rel="noopener" target="_blank">Odpri stran ↗</a>
+  </article>
+  <article class="card">
+    <a class="shot" href="/p/pohistvo-jereb/" rel="noopener" target="_blank"><img src="img/zaslon-jereb-m.webp" width="600" height="923" alt="Posnetek zaslona predogleda za Pohištvo Jereb na telefonu" loading="lazy" decoding="async"><span class="tag tag--outline">Primer predloga</span></a>
+    <h3>Pohištvo Jereb, Škofja Loka</h3>
+    <p>Predogled, pripravljen za podjetje: več podstrani in galerije po prostorih.</p>
+    <a class="more" href="/p/pohistvo-jereb/" rel="noopener" target="_blank">Odpri predogled ↗</a>
+  </article>
+  <article class="card">
+    <a class="shot" href="/p/fitnes-no-1/1/" rel="noopener" target="_blank"><img src="img/zaslon-fit-m.webp" width="600" height="923" alt="Posnetek zaslona predogleda za Fitnes No 1 na telefonu" loading="lazy" decoding="async"><span class="tag tag--outline">Primer predloga</span></a>
+    <h3>Fitnes No 1, Kočevje</h3>
+    <p>Primer predloga s samostojnim naročanjem na termin.</p>
+    <a class="more" href="/p/fitnes-no-1/1/" rel="noopener" target="_blank">Odpri predogled ↗</a>
+  </article>
+</div>
+<p class="disclaimer">»Primer predloga« je predogled, ki sem ga pripravil za podjetje pred naročilom. To ne pomeni, da je podjetje moja stranka. Posnetki zaslonov so resnični posnetki strani na telefonu.</p>
+<div class="btn-row"><a class="btn" href="primeri.html">Vsi primeri</a></div>
+  </div>
+</section>
+<section class="sec" id="kako" aria-labelledby="kako-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>03</b> Kako poteka</p>
+    <h2 class="h2" id="kako-h">Najprej predogled. <em>Potem odločitev.</em></h2>
+    <div class="steps">
+  <div class="step"><span class="n" aria-hidden="true">01</span><h3>Brezplačen predogled</h3><p>Iz javnih podatkov vašega podjetja pripravim predogled strani. Ogledate si ga na telefonu, brez obveznosti in brez plačila.</p></div>
+  <div class="step"><span class="n" aria-hidden="true">02</span><h3>Pisna ponudba</h3><p>S ceno, dogovorjeno vnaprej, in z rokom izdelave. Odločite se brez pritiska.</p></div>
+  <div class="step"><span class="n" aria-hidden="true">03</span><h3>Plačilo v celoti ali na obroke</h3><p>Kot se dogovoriva v ponudbi. Za vsako plačilo prejmete davčno potrjen račun.</p></div>
+  <div class="step"><span class="n" aria-hidden="true">04</span><h3>Objava in stran je vaša</h3><p>Stran v 7–14 delovnih dneh, odvisno od paketa. Stran, besedila in slike so vaši, ko je v celoti plačana.</p></div>
+</div>
+<div class="btn-row"><a class="btn" href="kako-poteka.html">Kako poteka, podrobno</a></div>
+  </div>
+</section>
+<section class="sec" id="cene" aria-labelledby="cene-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>04</b> Cene</p>
+    <h2 class="h2" id="cene-h">Cena po dogovoru, <em>zapisana vnaprej.</em></h2>
+    <p class="lead">Najprej prejmete brezplačen predogled, nato pisno ponudbo s ceno, ki jo dogovoriva vnaprej. DDV ni obračunan. Domena je za prvo leto vključena. Plačilo v celoti ali na obroke.</p><div class="packs">
+  <div class="pack"><h3>Osnovna</h3><p class="price">Cena po dogovoru</p><dl><dt>Obseg</dt><dd>1 stran, razdeljena na sekcije</dd><dt>Popravki</dt><dd>1 krog popravkov</dd><dt>Rok izdelave</dt><dd>7 delovnih dni</dd><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></dl><a class="btn" href="mailto:alej.kump@gmail.com?subject=Paket%20Osnovna">Vprašam za paket Osnovna</a></div>
+  <div class="pack pack--rec"><h3>Lokalni posel</h3><p class="price">Cena po dogovoru · priporočam</p><dl><dt>Obseg</dt><dd>do 5 podstrani</dd><dt>Popravki</dt><dd>2 kroga popravkov</dd><dt>Rok izdelave</dt><dd>10 delovnih dni</dd><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></dl><a class="btn btn--solid" href="mailto:alej.kump@gmail.com?subject=Paket%20Lokalni%20posel">Vprašam za paket Lokalni posel</a></div>
+  <div class="pack"><h3>Premium</h3><p class="price">Cena po dogovoru</p><dl><dt>Obseg</dt><dd>do 5 podstrani, s prilagojenimi slikami in besedilom</dd><dt>Popravki</dt><dd>2 kroga popravkov</dd><dt>Rok izdelave</dt><dd>14 delovnih dni</dd><dt>Animacija</dt><dd>animirana stran je na voljo samo v tem paketu</dd><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></dl><a class="btn" href="mailto:alej.kump@gmail.com?subject=Paket%20Premium">Vprašam za paket Premium</a></div>
+</div>
+<div class="btn-row"><a class="btn" href="cene.html">Plačilo in pogoji</a><a class="btn" href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">Ne veste, kateri paket? Rezervirajte klic</a></div>
+  </div>
+</section>
+<section class="sec" id="kdo" aria-labelledby="kdo-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>05</b> Kdo</p>
+    <h2 class="h2" id="kdo-h">Sem Alej Kump <em>iz Kočevja.</em></h2>
+    <div class="about">
+  <img src="img/alej-portret-760.webp" width="760" height="950" alt="Alej Kump" loading="lazy" decoding="async">
+  <div>
+    <p class="lead">Želim, da imajo podjetja iz naših krajev enako dobre strani kot velika podjetja. Zato najprej pokažem, potem prosim za naročilo.</p><div class="points">
+  <div><b>Ena številka</b><span>Vsak klic, SMS in sporočilo dobim jaz.</span></div>
+  <div><b>Cena vnaprej</b><span>Cena po dogovoru, zapisana v pisni ponudbi, jasno, kaj ni vključeno.</span></div>
+  <div><b>Iskreno</b><span>Če presodim, da vam ne morem pošteno pomagati, vam to povem v prvem odgovoru.</span></div>
+</div>
+<div class="btn-row"><a class="btn" href="o-meni.html">Več o meni</a></div>
+  </div>
+</div>
+
+  </div>
+</section>
+<section class="sec" id="vprasanja" aria-labelledby="vprasanja-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>06</b> Vprašanja</p>
+    <h2 class="h2" id="vprasanja-h">Kar vas <em>verjetno zanima.</em></h2>
+    <div class="faq">
+  <details><summary>Koliko stane?</summary><p>Po dogovoru, odvisno od tega, kaj potrebujete. Ceno dogovoriva po brezplačnem predogledu in jo zapišem v pisno ponudbo, preden karkoli plačate. Nisem zavezanec za DDV, zato se DDV ne obračuna (čl. 94 ZDDV-1). Plačate lahko v celoti ali na obroke.</p></details>
+  <details><summary>Ali moram kaj plačati za predogled?</summary><p>Ne. Predogled je brezplačen in brez obveznosti. Če vam ni všeč, ne plačate ničesar. Če rečete »ne«, vas ne kontaktiram več.</p></details>
+  <details><summary>Kaj, če že imam spletno stran?</summary><p>Potem pripravim predogled prenovljene strani, ki ga primerjate s sedanjo. Odločite se, ko vidite oboje.</p></details>
+  <details><summary>Je domena vključena?</summary><p>Da, prvo leto. Domeno registriram na vaše ime, zato je ves čas vaša. Podaljšanje po prvem letu plačate sami pri registrarju.</p></details>
+  <details><summary>Komu pripada stran?</summary><p>Vam. Stran, besedila in slike so vaši, ko je v celoti plačana.</p></details>
+  <details><summary>Mi obljubite prvo mesto na Googlu?</summary><p>Ne. Noben paket ne vključuje obljube o uvrstitvi na iskalnikih. Tega vam pošteno ne more obljubiti nihče.</p></details>
+</div>
+
+  </div>
+</section>
+<section class="sec" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>07</b> Kontakt</p>
+    <h2 class="h2" id="kontakt-h">Pokličete mene. <em>Ne klicnega centra.</em></h2>
+    <div class="contact">
+  <a href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank"><small>Instagram</small><strong>@alej_kump ↗</strong><span>V sporočilo napišite STRAN.</span></a>
+  <a href="tel:+38670479188"><small>Telefon</small><strong>070 479 188</strong><span>Klic ali SMS. Vsak klic in SMS dobim jaz.</span></a>
+  <a href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank"><small>Termin</small><strong>15-minutni klic ↗</strong><span>Izberete termin, jaz vas pokličem. Brez obveznosti.</span></a>
+  <a href="mailto:alej.kump@gmail.com?subject=STRAN%20-%20predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20"><small>E-pošta</small><strong>alej.kump@gmail.com</strong><span>Povezava odpre vaš poštni program z že izpolnjenim vprašanjem.</span></a>
+</div>
+
+  </div>
+</section>
+<section class="final" aria-labelledby="final-h">
+  <div class="wrap">
+    <p class="eyebrow"><b>Brez obveznosti</b></p>
+    <h2 class="big" id="final-h">Napišite STRAN. <span>Pripravim vam predogled.</span></h2>
+    <p class="lead">V sporočilo napišite STRAN in ime podjetja. V najslabšem primeru dobite brezplačen predogled svoje strani.</p>
+    <div class="btn-row">
+      <a class="btn btn--solid" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Napiši STRAN na Instagramu</a>
+      <a class="btn" href="tel:+38670479188">Pokliči 070 479 188</a>
+      <a class="btn" href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">Rezervirajte 15-minutni klic</a>
+    </div>
+    <p class="muted small" style="margin-top:22px">Raje po e-pošti? <a class="link" href="mailto:alej.kump@gmail.com?subject=STRAN%20-%20predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20">alej.kump@gmail.com</a></p>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <ul class="foot-links">
+      <li><a href="./">Domov</a></li><li><a href="storitve.html">Storitve</a></li><li><a href="primeri.html">Primeri</a></li><li><a href="kako-poteka.html">Kako poteka</a></li><li><a href="cene.html">Cene</a></li><li><a href="o-meni.html">O meni</a></li><li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="/google.html">Google profil</a></li>
+      <li><a href="/marketing.html">Marketing</a></li>
+      <li><a href="/clanki-koliko-stane-spletna-stran.html">Koliko stane spletna stran</a></li>
+      <li><a href="/clanki-facebook-ali-spletna-stran.html">Facebook ali spletna stran</a></li>
+      <li><a href="/clanki-google-profil-podjetja.html">Google profil podjetja</a></li>
+      <li><a href="/clanki-spletna-stran-za-obrtnike.html">Stran za obrtnike</a></li>
+      <li><a href="/zasebnost.html">Varstvo podatkov</a></li>
+      <li><a href="/en.html" lang="en">English</a></li>
+    </ul>
+    <p class="notice">To je komercialna stran. Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja. Rezultatov ne obljubljam.</p>
+    <p>AK agencija, računalniško programiranje, Alej Kump s.p., Kočevje · matična številka 7585942000 · davčna številka 67735509 · nisem zavezanec za DDV · <a class="link" href="kontakt.html#podjetje">sedež in vsi podatki</a></p>
+    <p>Ta stran ne nastavlja piškotkov. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Pisave in slike so gostovane tukaj; knjižnica three.js (cdn.jsdelivr.net) in 3D model kocke (cloudfront.net) se naložita od zunanjih ponudnikov.</p>
+    <p>Predogled nove podobe strani · ni objavljeno v iskalnikih</p>
+  </div>
+</footer>
+<div class="bar" aria-label="Hiter kontakt"><a href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Napiši STRAN</a><a href="tel:+38670479188">Pokliči</a></div>
+<div class="menu" id="menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Meni">
+  <div class="menu-top"><a class="logo" href="./" aria-label="AK agencija, domov"><i class="logo-mark" aria-hidden="true"></i><b>AK</b><span>agencija</span></a><button class="menu-btn menu-close" id="menu-close" type="button"><i aria-hidden="true"></i>Zapri</button></div>
+  <nav aria-label="Glavni meni"><a href="./" aria-current="page">Domov</a><a href="storitve.html">Storitve</a><a href="primeri.html">Primeri</a><a href="kako-poteka.html">Kako poteka</a><a href="cene.html">Cene</a><a href="o-meni.html">O meni</a><a href="kontakt.html">Kontakt</a></nav>
+  <div class="btn-row"><a class="btn btn--solid" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Napiši STRAN na Instagramu</a><a class="btn" href="tel:+38670479188">Pokliči 070 479 188</a></div>
+</div>
+<script src="site.js?v=1" defer></script>
+<script type="module" src="hero.js?v=1"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
+</body>
+</html>
