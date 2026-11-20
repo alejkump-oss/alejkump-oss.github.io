@@ -578,7 +578,7 @@ dialog.lb button{position:fixed;top:14px;right:14px;font:600 17px/1 var(--poster
     }).catch(function(){fallback();}).then(function(){renderDays();renderWins();update();});}
   function done(j){
     $('ok-t').textContent='Prevzem: '+(j.label||when()||'');$('ok-no').textContent=String(j.id);
-    slipEl.hidden=true;okEl.hidden=false;okEl.focus();try{okEl.scrollIntoView({block:'start'});}catch(x){}}
+    slipEl.hidden=true;okEl.hidden=false;try{okEl.focus({preventScroll:true});}catch(x){okEl.focus();}requestAnimationFrame(function(){window.scrollTo(0,okEl.getBoundingClientRect().top+window.pageYOffset-12);});}
   function submitApi(retried){
     if(!reqId)reqId=rid();
     var dd=day(),w=win();
