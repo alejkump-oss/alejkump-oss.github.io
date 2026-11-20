@@ -766,8 +766,9 @@ table.ure tr.today td{color:var(--acc2)}
     var t=$('bk-done-t'),nb=document.createElement('span');nb.style.whiteSpace='nowrap';nb.textContent=String(j.id);
     t.textContent=DL[dt.getDay()]+', '+dt.getDate()+'. '+(dt.getMonth()+1)+'., ob '+hhmm(h)+' · številka ';t.appendChild(nb);
     taken[ymd(dt)+'|'+h]=true;
-    f.hidden=true;doneEl.hidden=false;doneEl.focus();
-    try{doneEl.scrollIntoView({block:'start'});}catch(x){}
+    f.hidden=true;doneEl.hidden=false;
+    try{doneEl.focus({preventScroll:true});}catch(x){doneEl.focus();}
+    try{doneEl.scrollIntoView({block:'start',behavior:'instant'});}catch(x){try{doneEl.scrollIntoView(true);}catch(y){}}
   }
   function submitApi(retried){
     if(!reqId) reqId=rid();
