@@ -1,3 +1,36 @@
+# Tattoo Pigment Kočevje — odstranitev samonaročanja, socialna omrežja (20. 11. 2026, pozno)
+
+Naročilo Jureta Hočevarja (prek lastnika, 20. 11. 2026): "Termine odstranimo. Hoče, da so linki
+povezani – vsa njegova socialna omrežja namesto terminov." Odstranjeno iz `index.html`: razdelek
+samonaročanja (`#termin`, obrazec `.bk`), vsi gumbi "Naroči termin/posvet" (glava, meni, hero,
+lepljiva vrstica, CTA), JS logika naročanja (drugi `<script>` IIFE, klici na
+`ak-booking-tattoo-pigment.alejkump.workers.dev`) in GDPR/"Predogled: rezervacije …" vrstici. CSS
+razreda `.bk/.days/.slots/.sum/.done/.fine/.btn-dark/.btn-ol/.kindrow/.fld/.st` odstranjen (bil
+uporabljen samo v odstranjenem razdelku). Besedilo "Kako poteka" (05) in CTA prilagojeno (brez
+besede "termin"/"rezerv").
+
+**Cloudflare Worker/D1 NISTA izbrisana** (`booking-worker/`, worker `ak-booking-tattoo-pigment`,
+D1 `ak-booking-tattoo-pigment`) — po navodilu ostajata v repozitoriju kot infrastruktura, a sta od
+20. 11. 2026 (pozno) **neuporabljena** s te strani; noben del `index.html` jih več ne kliče.
+
+Namesto naročanja nov razdelek `#sledite` ("Sledite nam") + spremenjena lepljiva vrstica
+("Pokliči" + "Instagram"). Povezave, preverjene 20. 11. 2026 (pozno), vse vrnejo 200:
+| Kanal | Povezava | Vir/preverjeno |
+|---|---|---|
+| Telefon | tel:+38641560623 | že na strani |
+| Instagram | https://www.instagram.com/tattoopigment/ | Juretov; zaseben račun, bio "Jure Hočevar ( Tattoo pigment Kočevje )", 910 sledilcev, 375 objav; preverjeno v Chromu |
+| Facebook | https://www.facebook.com/groups/134261293256135/ | javna skupina "TATTOO PIGMENT Kočevje", 134 članov, vizitka "Tetoviranje in lasersko odstranjevanje tetovaž", naslovnica "KONTAKT: 041 560 623 – Jure"; ustanovil Jure Hočevar (objava 21. 4. 2021); preverjeno v Chromu |
+| E-pošta | mailto:tattoopigment@gmail.com | že na strani |
+| Zemljevid | https://www.google.com/maps?cid=16634749326793929743 | že na strani (Google Business profil) |
+
+**Odprto vprašanje (NI povezano na strani):** `https://www.facebook.com/jure.hocevar` — Juretov
+**osebni** FB profil. Tako stara stran (links.php: "Facebook profil Jure Tattooist Hocevar") kot
+njegov Instagram bio ga navajata kot kontakt, a gre za osebni profil, ne stran studia — po navodilu
+briefa ni povezan. Če lastnik/Jure potrdi, da naj se vseeno doda, ga dodamo.
+Iskano in NI najdeno: ločena Facebook stran (Page, ne skupina) za studio, TikTok, YouTube.
+
+---
+
 # Tattoo Pigment Kočevje — polna stran (20. 11. 2026)
 
 Lastnik 20. 11.: "Jure Hočevar se je strinjal, da mu pošljem spletno stran … uporabi Pindrop … da se mu stranke same naročijo."
