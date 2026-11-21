@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Kleparstvo - krovstvo Alojz Kavaš s.p., Bakovci | Strehe, kleparstvo, lesene konstrukcije</title>
+<meta name="description" content="Kleparstvo - krovstvo Alojz Kavaš s.p. iz Bakovcev pri Murski Soboti: pokrivanje streh, kleparski izdelki, lesene in kovinske konstrukcije, frčade, dimniki, napušči.">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+:root{--bg:#1b1e21;--panel:#24282c;--panel2:#2c3136;--zinc:#aeb6bd;--white:#f2f3f4;--tile:#c2502f;--tile2:#e0663f;--line:#373d43;--mute:#8a929a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font:16px/1.6 "Public Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.ribbon{position:fixed;top:14px;right:-42px;transform:rotate(45deg);background:var(--tile);color:#fff;font:600 11px/1 "Public Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:8px 48px;z-index:50;pointer-events:none}
+.wrap{width:min(100% - 32px,1180px);margin-inline:auto}
+h1,h2,h3{font-family:"Big Shoulders Display","Arial Narrow",sans-serif;font-weight:800;line-height:.95;margin:0;letter-spacing:.01em;text-transform:uppercase}
+/* top bar */
+.bar{border-bottom:1px solid var(--line);background:var(--bg)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:46px;height:24px;object-fit:contain}
+.brand b{font:700 15px/1.1 "Big Shoulders Display",sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.brand small{display:block;font:400 11px/1.2 "Public Sans",sans-serif;color:var(--mute);letter-spacing:.04em}
+.nav{display:none;gap:28px;font:600 13px/1 "Public Sans",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.nav a{text-decoration:none;color:var(--zinc)}
+.nav a:hover{color:var(--white)}
+.call{display:inline-flex;align-items:center;gap:8px;background:var(--tile);color:#fff;text-decoration:none;font:600 13px/1 "Public Sans",sans-serif;letter-spacing:.06em;padding:12px 16px;border-radius:2px;white-space:nowrap}
+.call:hover{background:var(--tile2)}
+/* hero */
+.hero{position:relative;min-height:78vh;display:grid;align-items:end;isolation:isolate}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,30,33,.25) 0%,rgba(27,30,33,.55) 45%,rgba(27,30,33,.97) 100%);z-index:-1}
+.hero .wrap{padding:120px 0 40px}
+.kick{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 "Public Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--tile2);margin-bottom:18px}
+.kick::before{content:"";width:28px;height:2px;background:var(--tile2)}
+.hero h1{font-size:clamp(52px,11vw,132px);max-width:14ch}
+.hero p{max-width:52ch;color:var(--zinc);font-size:17px;margin:22px 0 0}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.ghost{display:inline-flex;align-items:center;border:1px solid var(--zinc);color:var(--white);text-decoration:none;font:600 13px/1 "Public Sans",sans-serif;letter-spacing:.06em;padding:12px 16px;border-radius:2px}
+.ghost:hover{border-color:var(--white)}
+/* fact strip */
+.facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
+.facts .wrap{display:grid;grid-template-columns:1fr;gap:0}
+.fact{padding:22px 0;border-bottom:1px solid var(--line)}
+.fact:last-child{border-bottom:0}
+.fact b{display:block;font:800 40px/1 "Big Shoulders Display",sans-serif;color:var(--white)}
+.fact span{display:block;font-size:13px;color:var(--mute);letter-spacing:.04em;text-transform:uppercase;margin-top:6px}
+/* sections */
+section{padding:72px 0}
+.sh{display:grid;gap:14px;margin-bottom:36px}
+.sh h2{font-size:clamp(40px,7vw,80px)}
+.sh p{margin:0;color:var(--zinc);max-width:60ch}
+.num{font:700 13px/1 "Public Sans",sans-serif;letter-spacing:.2em;color:var(--tile2);text-transform:uppercase}
+/* services ledger */
+.ledger{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:48px 1fr;gap:12px 16px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.row i{font:800 28px/1 "Big Shoulders Display",sans-serif;color:var(--tile2);font-style:normal;padding-top:2px}
+.row h3{font-size:30px;font-weight:700;letter-spacing:.02em}
+.row p{margin:8px 0 0;color:var(--zinc);max-width:62ch}
+.row .img{grid-column:1 / -1;aspect-ratio:16/9;overflow:hidden;border-radius:2px}
+.row .img img{width:100%;height:100%;object-fit:cover}
+/* about split */
+.about{background:var(--panel)}
+.about .grid{display:grid;gap:28px}
+.about blockquote{margin:0;font:400 italic 22px/1.4 "Public Sans",sans-serif;color:var(--white);border-left:3px solid var(--tile);padding-left:18px}
+.about blockquote cite{display:block;font:600 12px/1 "Public Sans",sans-serif;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:14px}
+.about .txt p{color:var(--zinc);margin:0 0 14px}
+.about .pics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.about .pics img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:2px}
+.about .pics img:first-child{grid-column:1 / -1;aspect-ratio:16/9}
+/* references */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gal figure{margin:0;position:relative;overflow:hidden;border-radius:2px;background:var(--panel)}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.gal figcaption{position:absolute;left:0;bottom:0;right:0;padding:26px 12px 10px;background:linear-gradient(180deg,transparent,rgba(27,30,33,.9));font:600 12px/1 "Public Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.gal .tall img{aspect-ratio:3/4}
+.cats{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.cats span{border:1px solid var(--line);color:var(--zinc);font:600 12px/1 "Public Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:10px 12px;border-radius:2px}
+/* contact */
+.contact{background:var(--tile);color:#fff}
+.contact .grid{display:grid;gap:28px}
+.contact h2{font-size:clamp(44px,8vw,96px)}
+.contact a{color:#fff}
+.cl{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.cl li{display:grid;gap:3px;border-top:1px solid rgba(255,255,255,.35);padding-top:12px}
+.cl small{font:600 11px/1 "Public Sans",sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+.cl a{font:800 26px/1.1 "Big Shoulders Display",sans-serif;text-decoration:none;letter-spacing:.02em}
+.cl a:hover{text-decoration:underline}
+.cl .addr a{font:400 16px/1.5 "Public Sans",sans-serif;text-decoration:underline}
+.contact .note{font-size:14px;opacity:.9;max-width:48ch;margin:0}
+/* footer */
+footer{padding:40px 0;color:var(--mute);font-size:13px}
+footer .wrap{display:grid;gap:10px}
+footer p{margin:0}
+@media (max-width:759px){.ribbon{top:auto;bottom:14px;transform:rotate(-45deg)}}
+@media (min-width:760px){
+  .nav{display:flex}
+  .facts .wrap{grid-template-columns:repeat(3,1fr)}
+  .fact{border-bottom:0;border-right:1px solid var(--line);padding:28px 24px}
+  .fact:first-child{padding-left:0}
+  .fact:last-child{border-right:0}
+  .row{grid-template-columns:64px 1fr 300px;align-items:center}
+  .row .img{grid-column:auto;aspect-ratio:4/3}
+  .about .grid{grid-template-columns:1.1fr 1fr;align-items:center}
+  .gal{grid-template-columns:repeat(4,1fr)}
+  .gal .wide{grid-column:span 2}
+  .contact .grid{grid-template-columns:1fr 1fr;align-items:start}
+  .cl{grid-template-columns:1fr 1fr}
+  .cl .addr{grid-column:1 / -1}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">Predogled</div>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="../assets/img/logo.png" alt="" width="230" height="120"><span><b>Kleparstvo - krovstvo Kavaš</b><small>Bakovci, Murska Sobota</small></span></a>
+    <nav class="nav"><a href="#storitve">Storitve</a><a href="#o-nas">O nas</a><a href="#reference">Reference</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="call" href="tel:+38641688559">041 688 559</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img src="../assets/img/kritina-rdeca.jpg" alt="Rdeča jeklena kritina na strehi, izvedba Kleparstvo - krovstvo Kavaš" width="1280" height="960">
+  <div class="wrap">
+    <div class="kick">Bakovci pri Murski Soboti</div>
+    <h1>Streha, kleparstvo in lesene konstrukcije</h1>
+    <p>Kleparstvo - krovstvo Alojz Kavaš s.p. pokriva strehe, izdeluje in montira kleparske izdelke ter postavlja lesene in kovinske konstrukcije. Pri izbiri strehe in konstrukcije svetujemo.</p>
+    <div class="acts"><a class="call" href="tel:+38641688559">Pokličite 041 688 559</a><a class="ghost" href="#reference">Oglejte si reference</a></div>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>2003</b><span>v poslovnem registru</span></div>
+    <div class="fact"><b>Bakovci</b><span>Partizanska ulica 58, Murska Sobota</span></div>
+    <div class="fact"><b>Streha + kleparstvo + les</b><span>iz ene delavnice</span></div>
+  </div>
+</div>
+
+<section id="storitve">
+  <div class="wrap">
+    <div class="sh"><span class="num">01 / Storitve</span><h2>Kaj delamo</h2><p>Od kritine do žlebov in ostrešja. Vse spodaj navedeno je iz opisa storitev podjetja.</p></div>
+    <div class="ledger">
+      <div class="row"><i>01</i><div><h3>Strehe in kritine</h3><p>Strehe pokrivamo z jeklenimi kritinami, opečno kritino, tegolo, valovitimi salonitkami in drugimi kritinami.</p></div><div class="img"><img src="../assets/img/kritina-temna.jpg" alt="Temna profilirana kritina" width="1280" height="960" loading="lazy"></div></div>
+      <div class="row"><i>02</i><div><h3>Kleparski izdelki</h3><p>Izdelava in montaža žlebov, raznih obrob, oblačenje napušča, strelovodi in podobno.</p></div><div class="img"><img src="../assets/img/plocevina-falc.jpg" alt="Pločevinasta streha s stoječim falcem" width="1280" height="960" loading="lazy"></div></div>
+      <div class="row"><i>03</i><div><h3>Lesene in kovinske konstrukcije</h3><p>Izdelava lesenih in kovinskih konstrukcij ter ravnih streh.</p></div><div class="img"><img src="../assets/img/ostresje.jpg" alt="Leseno ostrešje v gradnji" width="1280" height="960" loading="lazy"></div></div>
+      <div class="row"><i>04</i><div><h3>Pergole in napušči</h3><p>Izdelava pergol in raznih napuščev, vključno z oblaganjem napušča.</p></div><div class="img"><img src="../assets/img/pergola.jpg" alt="Lesena pergola" width="1280" height="960" loading="lazy"></div></div>
+      <div class="row"><i>05</i><div><h3>Frčade</h3><p>Izdelava in obloga frčad, usklajena s kritino in napuščem.</p></div><div class="img"><img src="../assets/img/frcada-temna.jpg" alt="Frčada s temno pločevinasto oblogo" width="1280" height="960" loading="lazy"></div></div>
+      <div class="row"><i>06</i><div><h3>Dimniki</h3><p>Pločevinaste obloge dimnikov, usklajene z barvo kritine.</p></div><div class="img"><img src="../assets/img/dimnik-siv.jpg" alt="Siva pločevinasta obloga dimnika" width="1280" height="960" loading="lazy"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="o-nas">
+  <div class="wrap grid">
+    <div class="txt">
+      <div class="sh"><span class="num">02 / O podjetju</span><h2>Iz Bakovcev</h2></div>
+      <p>Podjetje Kleparstvo - krovstvo Alojz Kavaš s.p. je po navedbah podjetja ustanovljeno leta 1989 (v poslovnem registru od leta 2003) in pokriva strehe v severovzhodni Sloveniji.</p>
+      <p>Poleg prekrivanja streh izdelujemo tudi različne kleparske izdelke iz različnih materialov, za katere nudimo tudi montažo. Opravljamo različne lesene in kovinske konstrukcije.</p>
+      <blockquote>Naš namen je, da so stranke zadovoljne, zato jim pri izbiri streh in konstrukcij svetujemo.<cite>Iz predstavitve podjetja</cite></blockquote>
+    </div>
+    <div class="pics">
+      <img src="../assets/img/lesena-konstrukcija.jpg" alt="Lesena strešna konstrukcija v notranjosti objekta" width="1280" height="960" loading="lazy">
+      <img src="../assets/img/dimnik-rdec.jpg" alt="Rdeča obloga dimnika na rdeči kritini" width="1280" height="960" loading="lazy">
+      <img src="../assets/img/napusc-temen.jpg" alt="Temna obloga napušča" width="1280" height="960" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="reference">
+  <div class="wrap">
+    <div class="sh"><span class="num">03 / Reference</span><h2>Izvedena dela</h2><p>Fotografije so lastne fotografije podjetja z izvedenih objektov.</p></div>
+    <div class="gal">
+      <figure class="wide"><img src="../assets/img/hisa-siva.jpg" alt="Hiša s sivo kritino in napuščem" width="1280" height="960" loading="lazy"><figcaption>Streha in napušč</figcaption></figure>
+      <figure><img src="../assets/img/frcada-rdeca.jpg" alt="Frčada na rdeči kritini" width="1280" height="960" loading="lazy"><figcaption>Frčada</figcaption></figure>
+      <figure><img src="../assets/img/napusc-kolektorji.jpg" alt="Temna kritina z obloženim napuščem" width="1280" height="960" loading="lazy"><figcaption>Napušč</figcaption></figure>
+      <figure><img src="../assets/img/hisa-rumena.jpg" alt="Rumena hiša s temno kritino" width="1280" height="960" loading="lazy"><figcaption>Streha</figcaption></figure>
+      <figure><img src="../assets/img/novogradnja.jpg" alt="Novogradnja s pokrito streho" width="1172" height="739" loading="lazy"><figcaption>Novogradnja</figcaption></figure>
+      <figure class="wide"><img src="../assets/img/hisa-rjava.jpg" alt="Hiša z rjavo kritino" width="1280" height="960" loading="lazy"><figcaption>Streha</figcaption></figure>
+      <figure><img src="../assets/img/frcada-detajl.jpg" alt="Obloga frčade, detajl" width="1280" height="960" loading="lazy"><figcaption>Frčada</figcaption></figure>
+      <figure><img src="../assets/img/hisa-bela.jpg" alt="Bela hiša s temno kritino in frčado" width="1280" height="960" loading="lazy"><figcaption>Streha</figcaption></figure>
+      <figure><img src="../assets/img/hisa-oker.jpg" alt="Hiša s frčado in opečno kritino" width="1280" height="960" loading="lazy"><figcaption>Frčada</figcaption></figure>
+      <figure><img src="../assets/img/hisa-rdeca.jpg" alt="Hiša z rdečo kritino" width="1280" height="960" loading="lazy"><figcaption>Streha</figcaption></figure>
+    </div>
+    <div class="cats"><span>Strehe</span><span>Nadstreški</span><span>Dimniki</span><span>Napušč</span><span>Frčade</span><span>Lesene konstrukcije</span></div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap grid">
+    <div><h2>Pokličite ali pišite</h2><p class="note">Kleparstvo - krovstvo Alojz Kavaš s.p., Bakovci. Za ogled in svetovanje pri izbiri strehe ali konstrukcije.</p></div>
+    <ul class="cl">
+      <li><small>Mobilni telefon</small><a href="tel:+38641688559">041 688 559</a></li>
+      <li><small>Telefon</small><a href="tel:+38625439000">(02) 543 90 00</a></li>
+      <li><small>Telefon 2</small><a href="tel:+38625439001">(02) 543 90 01</a></li>
+      <li><small>E-pošta</small><a href="mailto:info@krovstvo-kavas.com">info@krovstvo-kavas.com</a></li>
+      <li class="addr"><small>Naslov</small><a href="https://www.openstreetmap.org/search?query=Partizanska%20ulica%2058%2C%20Bakovci%2C%209000%20Murska%20Sobota" rel="noopener">Partizanska ulica 58, Bakovci, 9000 Murska Sobota</a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Kleparstvo-krovstvo Kavaš Alojz s.p., Partizanska ulica 58, Bakovci, 9000 Murska Sobota. Matična številka 1794396000, ID za DDV SI33777128.</p>
+    <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p>
+  </div>
+</footer>
+</body>
+</html>
