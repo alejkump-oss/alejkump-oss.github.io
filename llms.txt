@@ -34,6 +34,9 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Spletna stran za čistilni servis](https://alejkump.si/clanki-spletna-stran-za-cistilni-servis.html)
 - [Spletna stran za računovodski servis](https://alejkump.si/clanki-spletna-stran-za-racunovodski-servis.html)
 - [Spletna stran za fotografa](https://alejkump.si/clanki-spletna-stran-za-fotografa.html)
+- [Spletna stran za kmetijo](https://alejkump.si/clanki-spletna-stran-za-kmetijo.html)
+- [Spletna stran za društvo](https://alejkump.si/clanki-spletna-stran-za-drustvo.html)
+- [Spletna stran za prevoznika](https://alejkump.si/clanki-spletna-stran-za-prevoznika.html)
 
 ## Kraji
 
@@ -51,5 +54,7 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Izdelava spletnih strani Dolenjske Toplice](https://alejkump.si/izdelava-spletnih-strani-dolenjske-toplice.html)
 - [Izdelava spletnih strani Loški Potok](https://alejkump.si/izdelava-spletnih-strani-loski-potok.html)
 - [Izdelava spletnih strani Žužemberk](https://alejkump.si/izdelava-spletnih-strani-zuzemberk.html)
+- [Izdelava spletnih strani Loška dolina in Bloke](https://alejkump.si/izdelava-spletnih-strani-loska-dolina.html)
+- [Izdelava spletnih strani Semič](https://alejkump.si/izdelava-spletnih-strani-semic.html)
 
 Opomba: nobena storitev ne vključuje obljube o uvrstitvi na iskalnikih.
