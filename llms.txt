@@ -26,6 +26,7 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Spletna stran za avtoservis](https://alejkump.si/clanki-spletna-stran-za-avtoservis.html)
 - [Domena za podjetje: kdo jo ima, kdaj poteče in kako preverite, da deluje](https://alejkump.si/clanki-domena-za-podjetje.html)
 - [Spletna stran za nastanitve in turistične kmetije](https://alejkump.si/clanki-spletna-stran-za-nastanitve.html)
+- [Spletna stran za inštalaterje](https://alejkump.si/clanki-spletna-stran-za-instalaterje.html)
 
 ## Kraji
 
@@ -33,5 +34,8 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Izdelava spletnih strani Ribnica](https://alejkump.si/izdelava-spletnih-strani-ribnica.html)
 - [Izdelava spletnih strani Novo mesto](https://alejkump.si/izdelava-spletnih-strani-novo-mesto.html)
 - [Izdelava spletnih strani Trebnje](https://alejkump.si/izdelava-spletnih-strani-trebnje.html)
+- [Izdelava spletnih strani Grosuplje](https://alejkump.si/izdelava-spletnih-strani-grosuplje.html)
+- [Izdelava spletnih strani Metlika](https://alejkump.si/izdelava-spletnih-strani-metlika.html)
+- [Izdelava spletnih strani Črnomelj](https://alejkump.si/izdelava-spletnih-strani-crnomelj.html)
 
 Opomba: nobena storitev ne vključuje obljube o uvrstitvi na iskalnikih.
