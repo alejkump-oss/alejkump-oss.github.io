@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Restavracija Štorman, Šempeter v Savinjski dolini: predlog 2</title>
+<meta name="description" content="Predlog prenovljene spletne strani za Restavracijo Štorman, Šempeter v Savinjski dolini: večerna različica z jedilnim listom, vinsko karto in sezonskimi meniji.">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+:root{--plum:#1b1216;--plum2:#261a20;--plum3:#33242c;--line:#4a3a42;--cream:#f1e9df;--cream2:#d9ccc0;--mute:#a4928c;--copper:#c9803f;--copper2:#e09a56;--serif:"Literata",Georgia,serif;--sans:"Public Sans",Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--plum);color:var(--cream);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.12}
+h2{font-size:clamp(1.9rem,4.2vw,2.9rem)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+.kicker{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--copper2);margin:0 0 12px;font-weight:600}
+.mute{color:var(--mute)}
+section{padding:80px 0}
+.btn{display:inline-block;padding:14px 24px;text-decoration:none;font-weight:600;font-size:.9rem;letter-spacing:.04em;border:1px solid var(--copper);color:var(--cream);border-radius:2px}
+.btn.fill{background:var(--copper);color:#1b1216}
+.btn.fill:hover{background:var(--copper2)}
+.btn:hover{border-color:var(--copper2)}
+
+/* header */
+header{position:absolute;top:0;left:0;right:0;z-index:5}
+.bar{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:40px;height:40px}
+.brand span{font-family:var(--serif);font-size:1.4rem;letter-spacing:.06em;text-transform:uppercase}
+nav{display:none;gap:26px;font-size:.86rem;letter-spacing:.04em}
+nav a{text-decoration:none;color:var(--cream2)}
+nav a:hover{color:var(--copper2)}
+@media(min-width:900px){nav{display:flex}}
+.phone{text-decoration:none;font-weight:600;font-size:.92rem;white-space:nowrap;border-bottom:1px solid var(--copper)}
+
+/* hero */
+.hero{position:relative;min-height:92vh;display:grid;align-items:end;padding:140px 0 70px;overflow:hidden}
+.hero .bg{position:absolute;inset:0;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,18,22,.55) 0%,rgba(27,18,22,.25) 35%,rgba(27,18,22,.92) 100%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.5rem,7.5vw,5.4rem);max-width:12em;letter-spacing:-.01em}
+.hero p{max-width:40em;color:var(--cream2);font-size:1.1rem;margin:22px 0 30px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero .cap{position:absolute;right:16px;bottom:14px;font-size:.74rem;color:var(--mute);z-index:1}
+
+/* four ways */
+.ways{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid}
+.ways article{padding:30px 0;border-top:1px solid var(--line)}
+.ways article:first-child{border-top:0}
+.ways i{font-style:normal;font-family:var(--serif);font-size:2.4rem;color:var(--copper);display:block;line-height:1;margin-bottom:12px}
+.ways h3{font-size:1.25rem;margin-bottom:8px}
+.ways p{margin:0;color:var(--cream2);font-size:.95rem}
+@media(min-width:760px){.ways{grid-template-columns:repeat(4,1fr)}.ways article{border-top:0;border-left:1px solid var(--line);padding:34px 26px}.ways article:first-child{border-left:0;padding-left:0}}
+
+/* bands */
+.band{display:grid;gap:34px;align-items:center}
+@media(min-width:900px){.band{grid-template-columns:1fr 1fr;gap:64px}.band.flip>figure{order:2}}
+.band figure{margin:0;position:relative}
+.band figure img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.band figcaption{font-size:.76rem;color:var(--mute);margin-top:8px}
+.band h2{margin-bottom:16px}
+.band p{color:var(--cream2)}
+.dots{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:8px;color:var(--cream2)}
+.dots li{padding-left:22px;position:relative}
+.dots li::before{content:"";position:absolute;left:0;top:.65em;width:8px;height:8px;background:var(--copper);transform:rotate(45deg)}
+.stack{display:grid;gap:34px}
+.stack>.band+.band{padding-top:34px;border-top:1px solid var(--line)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.pair img{aspect-ratio:1/1;object-fit:cover;width:100%}
+
+/* tasting list */
+.list-wrap{background:var(--plum2)}
+.tasting{max-width:760px;margin:0 auto}
+.tasting h2{text-align:center}
+.tasting .kicker{text-align:center}
+.tasting p.intro{text-align:center;color:var(--mute);max-width:52ch;margin:14px auto 40px}
+.group{margin-top:34px}
+.group h3{font-family:var(--sans);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--copper2);text-align:center;margin-bottom:14px}
+.group ul{list-style:none;margin:0;padding:0}
+.group li{display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:1.12rem}
+.group li span.fill{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-5px)}
+.group li small{font-family:var(--sans);font-size:.8rem;color:var(--mute);white-space:nowrap}
+.group li em{font-style:italic;color:var(--cream2);font-size:.95rem;display:block;flex-basis:100%}
+.tradi{font-family:var(--sans);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--plum);background:var(--copper);padding:2px 6px;white-space:nowrap}
+@media(max-width:640px){.group li{flex-wrap:wrap;gap:6px 10px}.group li span.fill{display:none}.group li small{white-space:normal;flex-basis:100%}}
+
+/* wine */
+.wine .cellars{display:grid;gap:14px;margin-top:30px}
+@media(min-width:600px){.wine .cellars{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.wine .cellars{grid-template-columns:repeat(5,1fr)}}
+.wine .cellars div{border:1px solid var(--line);padding:18px 16px;font-size:.9rem;color:var(--cream2)}
+.wine .cellars b{display:block;font-family:var(--serif);font-weight:400;font-size:1.1rem;color:var(--cream);margin-bottom:4px}
+
+/* timeline */
+.timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 22px 30px}
+.timeline li::before{content:"";position:absolute;left:0;top:9px;width:11px;height:11px;background:var(--copper);transform:rotate(45deg)}
+.timeline b{font-family:var(--serif);font-weight:400;font-size:1.2rem;display:block}
+.timeline span{color:var(--mute);font-size:.92rem}
+.season .grid{display:grid;gap:40px}
+@media(min-width:880px){.season .grid{grid-template-columns:1fr 1fr}}
+.week{border:1px solid var(--line);padding:26px}
+.week h3{font-size:1.2rem;margin-bottom:6px}
+.week ol{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.week li{display:grid;grid-template-columns:34px 1fr;gap:10px;font-size:.93rem;color:var(--cream2)}
+.week li b{font-family:var(--serif);font-weight:400;color:var(--copper2)}
+
+/* contact */
+.contact{background:var(--plum3)}
+.contact .grid{display:grid;gap:40px}
+@media(min-width:880px){.contact .grid{grid-template-columns:1.1fr .9fr}}
+.hours{display:grid;gap:12px;margin:22px 0 28px}
+.hours div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.hours b{font-family:var(--serif);font-weight:400;font-size:1.5rem;white-space:nowrap}
+address{font-style:normal;line-height:1.8;color:var(--cream2)}
+address a{word-break:break-word}
+form{display:grid;gap:12px;border:1px solid var(--line);padding:24px}
+label{display:grid;gap:6px;font-size:.84rem;color:var(--mute)}
+input,textarea{font:inherit;padding:11px 12px;border:1px solid var(--line);background:var(--plum);color:var(--cream);width:100%;border-radius:2px}
+textarea{min-height:120px;resize:vertical}
+.chk{display:flex;gap:10px;align-items:start;font-size:.84rem}
+.chk input{width:auto;margin-top:4px}
+
+footer.site{padding:34px 0;font-size:.84rem;color:var(--mute);border-top:1px solid var(--line)}
+footer.site p{margin:4px 0}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#"><img src="../assets/img/logo-storman.png" alt="Logotip Štorman"><span>Štorman</span></a>
+    <nav>
+      <a href="#restavracija">Restavracija</a>
+      <a href="#jedilni-list">Jedilni list</a>
+      <a href="#vina">Vinska karta</a>
+      <a href="#sezona">Aktualno</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="phone" href="tel:+38637038300">03 703 83 00</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="bg"><img src="../assets/img/RIZ_3668.jpg" alt="Restavracija Štorman zvečer, osvetljen vhod in ptica na pročelju" width="1600" height="1067"></div>
+  <div class="wrap">
+    <p class="kicker">Šempeter v Savinjski dolini</p>
+    <h1>Restavracija Štorman</h1>
+    <p>Gostilna v osrčju Savinjske doline, dva kilometra od avtocestnega izvoza. Po navedbah podjetja je tu gostinstvo Štorman doma od poletja 1980, od toplih dopoldanskih obrokov do slavnostnih menijev.</p>
+    <div class="cta">
+      <a class="btn fill" href="#jedilni-list">Jedilni list</a>
+      <a class="btn" href="tel:+38637038300">Rezervacija po telefonu</a>
+    </div>
+  </div>
+  <span class="cap">Fotografija z njihove strani</span>
+</section>
+
+<div class="wrap">
+  <div class="ways">
+    <article><i>01</i><h3>Malice med tednom</h3><p>Tri dnevne malice in dodatne malice vsak delovni dan, postrežene do 14. ure.</p></article>
+    <article><i>02</i><h3>Dnevna kosila</h3><p>Dva dnevna menija med tednom do 16. ure in trije sestavljeni meniji ob sobotah in nedeljah.</p></article>
+    <article><i>03</i><h3>Jedilni list</h3><p>Jedi po naročilu, nekatere z oznako "S tradicijo". Jedilni list tudi v angleščini, nemščini in italijanščini.</p></article>
+    <article><i>04</i><h3>Meniji in catering</h3><p>Mesni, ribji in vegetarijanski sestavljeni meniji; catering za poroke, jubileje in proslave, po navedbah na njihovi strani.</p></article>
+  </div>
+</div>
+
+<section id="restavracija">
+  <div class="wrap stack">
+    <div class="band">
+      <figure>
+        <img src="../assets/img/IMG_3034.jpg" alt="Jedilnica restavracije Štorman s pogrnjenimi mizami in zelenimi prti" loading="lazy">
+        <figcaption>Jedilnica. Fotografija z njihove strani.</figcaption>
+      </figure>
+      <div>
+        <p class="kicker">Restavracija</p>
+        <h2>Ob stari magistralni cesti, v dolini zelenega zlata</h2>
+        <p>Prijetna gostilna v osrčju Savinjske doline, doline hmelja. Lokale so, kot pišejo sami, opremljali tako, da se v njih vse skupine ljudi počutijo prijetno, jedilne liste pa pripravljali tako, da vsak za vsako priložnost najde nekaj zase.</p>
+        <ul class="dots">
+          <li>Dva kilometra od avtocestnega izvoza</li>
+          <li>Parkirišče in prostor za avtobus</li>
+          <li>Dostop urejen za invalide, brezžični internet</li>
+        </ul>
+      </div>
+    </div>
+    <div class="band flip">
+      <figure>
+        <img src="../assets/img/otroski-koticek.jpg" alt="Otroški kotiček z gugalnim konjičkom, mizicami in poslikano steno" loading="lazy">
+        <figcaption>Otroški kotiček Dežela Mačka Murija. Fotografija z njihove strani.</figcaption>
+      </figure>
+      <div>
+        <p class="kicker">Za družine</p>
+        <h2>Dežela Mačka Murija</h2>
+        <p>Restavracijo krasijo cvetje, drevje in prostor za otroško igro. Otroški kotiček so malim obiskovalcem uredili tudi v notranjosti.</p>
+        <div class="pair">
+          <img src="../assets/img/streha-velika-terasa-800.jpg" alt="Terasa pod trto" loading="lazy">
+          <img src="../assets/img/vhod-nova-800.jpg" alt="Vhod v restavracijo poleti s cvetličnimi koriti" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="list-wrap" id="jedilni-list">
+  <div class="wrap tasting">
+    <p class="kicker">Jedilni list</p>
+    <h2>Iz jedilnega lista</h2>
+    <p class="intro">Izbor jedi, kot so zapisane na njihovem jedilnem listu. Oznaka "S tradicijo" je njihova: nosijo jo jedi iz začetkov. Cene na predogledu niso navedene.</p>
+    <div class="group">
+      <h3>Predjedi in juhe</h3>
+      <ul>
+        <li>Hišni trojček<span class="fill"></span><small>kraški pršut, rakovi repki, beli sir</small></li>
+        <li>Hobotnica v solati s češnjevim paradižnikom in zelenim poprom<span class="fill"></span></li>
+        <li>Tatarski beefsteak<span class="fill"></span><small>za 2 osebi</small></li>
+        <li>Domača gobova juha v kruhovi skodelici<span class="fill"></span></li>
+        <li>Francoska čebulna juha s popečenim sirovim kruhkom<span class="fill"></span></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Tople predjedi in pripravljene jedi</h3>
+      <ul>
+        <li>Popečeni žlikrofi s kraško panceto in strganim parmezanom<span class="fill"></span></li>
+        <li>Kaneloni s tatarsko omako<span class="fill"></span><span class="tradi">S tradicijo</span></li>
+        <li>Vampi na tržaški način<span class="fill"></span></li>
+        <li>Ciganski golaž<span class="fill"></span><span class="tradi">S tradicijo</span></li>
+        <li>Telečja obara z vodnimi žličniki<span class="fill"></span></li>
+      </ul>
+    </div>
+    <div class="group">
+      <h3>Ribe in meso</h3>
+      <ul>
+        <li>Postrv po tržaško<span class="fill"></span></li>
+        <li>File kovača z zelenjavnimi trakci<span class="fill"></span><small>balzamična glazura z zelenim čajem in limeto</small></li>
+        <li>File lososa v omaki z mascarponom in kaprami<span class="fill"></span></li>
+        <li>Beefsteak "Štorman"<span class="fill"></span></li>
+        <li>Puranov file "Hawai"<span class="fill"></span><span class="tradi">S tradicijo</span></li>
+        <li>Rižota iz divjega riža s kurkumo, gamberi in kraljevim škampom<span class="fill"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wine" id="vina">
+  <div class="wrap">
+    <p class="kicker">Vinska karta</p>
+    <h2>Buteljčna in peneča vina slovenskih kleti</h2>
+    <p class="mute" style="max-width:60ch;margin-top:14px">Kleti, ki jih navaja njihova vinska karta. Na novi strani vsaka buteljka dobi svojo vrstico z letnikom in okolišem, tako kot na njihovi karti.</p>
+    <div class="cellars">
+      <div><b>Puklavec Family Wines</b>Ormož, Ljutomersko-Ormoške gorice</div>
+      <div><b>Vinarstvo Erzetič</b>Višnjevik, Goriška Brda</div>
+      <div><b>Santomas</b>Šmarje pri Kopru, Koprski okoliš</div>
+      <div><b>Radgonske gorice</b>Gornja Radgona, penine</div>
+      <div><b>Istenič</b>Stara vas, Bizeljsko, penina Desiree</div>
+      <div><b>Prinčič</b>Dobrovo v Brdih</div>
+      <div><b>Vinogradi Horvat</b>Počehova, Mariborski okoliš</div>
+      <div><b>Hiša vin Emino</b>Imeno, Šmarje-Virštanj</div>
+      <div><b>Vinakoper</b>Koper</div>
+      <div><b>Dar sonca, Koželj</b>Štajerska Slovenija, predikatno</div>
+    </div>
+  </div>
+</section>
+
+<section class="season" id="sezona" style="background:var(--plum2)">
+  <div class="wrap grid">
+    <div>
+      <p class="kicker">Aktualno</p>
+      <h2>Sezonske ponudbe v letu 2026</h2>
+      <ul class="timeline">
+        <li><b>Valentinovo</b><span>februar</span></li>
+        <li><b>Pomladna čemaževa ponudba</b><span>marec, skupaj z velikonočnim odpiralnim časom</span></li>
+        <li><b>Mesec špargljevih jedi</b><span>april</span></li>
+        <li><b>Poletna ponudba '26</b><span>junij</span></li>
+        <li><b>Martinovo</b><span>meniji 11. 11. ter 14. in 15. 11. 2026</span></li>
+      </ul>
+    </div>
+    <div class="week">
+      <h3>Kosila za vikend</h3>
+      <p class="mute" style="margin:0;font-size:.88rem">Primer: sobota in nedelja, 21. in 22. 11. 2026, kot objavljeno na storman.si</p>
+      <ol>
+        <li><b>I.</b><span>Goveja juha z zakuho ali gobova juha, svinjski medaljon v gorčični omaki s kraškim pršutom in sušenimi paradižniki, ocvrto piščančje stegno v polnozrnati paniri, korenčkov štrukelj, krompirjev rosti, kuhan brokoli, solata, sladica</span></li>
+        <li><b>II.</b><span>Goveja juha z zakuho ali gobova juha, file lososa v kaprni omaki, krompirjev rosti, solata, sladica</span></li>
+        <li><b>III.</b><span>Kraški pršut z olivami in mladim sirom, juha, svinjska ribica v gorčični omaki s kraškim pršutom in sušenimi paradižniki, korenčkov štrukelj, solata, sladica</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap grid">
+    <div>
+      <p class="kicker">Kontakt</p>
+      <h2>Veselimo se vašega obiska</h2>
+      <div class="hours">
+        <div><span>Ponedeljek do petek</span><b>7:00 do 22:00</b></div>
+        <div><span>Sobota, nedelja in prazniki</span><b>8:00 do 22:00</b></div>
+      </div>
+      <address>
+        Štorman, gostinstvo in storitve, d.o.o.<br>
+        <a href="https://www.openstreetmap.org/search?query=Rimska%20cesta%2010%2C%20%C5%A0empeter%20v%20Savinjski%20dolini" rel="noopener">Rimska cesta 10, 3311 Šempeter v Savinjski dolini</a><br>
+        T: <a href="tel:+38637038300">03 703 83 00</a>, <a href="tel:+38637038306">03 703 83 06</a><br>
+        E: <a href="mailto:info@storman.si">info@storman.si</a>
+      </address>
+    </div>
+    <form onsubmit="return false">
+      <label>Ime<input type="text" name="ime" autocomplete="name"></label>
+      <label>Vaš e-naslov<input type="email" name="email" autocomplete="email"></label>
+      <label>Vaše sporočilo ali vprašanje<textarea name="sporocilo"></textarea></label>
+      <label class="chk"><input type="checkbox" name="pogoji"><span>Strinjam se s splošnimi pogoji</span></label>
+      <button class="btn fill" type="submit">Pošlji</button>
+      <p class="mute" style="margin:0;font-size:.82rem">Obrazec je v predogledu izklopljen.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Štorman, gostinstvo in storitve, d.o.o., Rimska cesta 10, 3311 Šempeter v Savinjski dolini. V registru od 8. 3. 2013.</p>
+    <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p>
+  </div>
+</footer>
+</body>
+</html>
