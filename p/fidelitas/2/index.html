@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Fidelitas, zobna ambulanta Postojna (predogled 2)</title>
+<meta name="description" content="Predogled prenovljene spletne strani zobne ambulante Fidelitas d.o.o., Mateja Cep dr.dent.med., Cankarjeva ulica 6, Postojna. Različica 2: jasna, modularna.">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+:root{--bg:#f1f3ee;--tile:#ffffff;--ink:#1f2a24;--ink2:#5b665f;--olive:#55682b;--olive2:#3f4f1f;--moss:#dfe6cf;--sage:#c6d1b0;--line:#d8ddd0}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Albert Sans",system-ui,sans-serif;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--olive)}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:800;line-height:1;margin:0;letter-spacing:-.02em}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.ribbon{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+.ribbon a{color:#fff}
+header{padding:16px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:24px;text-decoration:none;color:var(--ink);letter-spacing:-.02em}
+.brand small{display:block;font-family:"Albert Sans",sans-serif;font-weight:500;font-size:12px;color:var(--ink2);letter-spacing:.08em;text-transform:uppercase}
+.nav ul{list-style:none;margin:0;padding:0;display:none;gap:22px;font-weight:500;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--ink)}
+.pill{background:var(--olive);color:#fff;text-decoration:none;padding:12px 18px;border-radius:12px;font-weight:700;font-size:15px;white-space:nowrap}
+.hero{padding:28px 0 20px}
+.hero h1{font-size:clamp(44px,10vw,112px);text-transform:uppercase}
+.hero h1 span{color:var(--olive)}
+.hero .sub{display:grid;gap:18px;margin-top:22px;align-items:start}
+.hero .sub p{margin:0;font-size:19px;max-width:30em;color:var(--ink2)}
+.hero .sub .meta{font-weight:500;font-size:15px}
+.hero .sub .meta b{display:block;font-weight:700;color:var(--ink)}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px}
+.bento{display:grid;gap:12px;margin-top:12px}
+.tile{background:var(--tile);border-radius:18px;padding:24px;border:1px solid var(--line)}
+.tile.olive{background:var(--olive);color:#fff;border-color:var(--olive)}
+.tile.moss{background:var(--moss)}
+.tile .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--olive)}
+.tile.olive .k{color:#d7e3b8}
+.tile h3{font-size:30px;margin:8px 0 10px}
+.tile p{margin:0;font-size:16px;color:var(--ink2)}
+.tile.olive p{color:#eef3e2}
+section{padding:60px 0 0}
+.h2row{display:grid;gap:12px;margin-bottom:26px}
+.h2row h2{font-size:clamp(34px,6vw,64px);text-transform:uppercase}
+.h2row p{margin:0;color:var(--ink2);max-width:40em}
+.grid9{display:grid;grid-template-columns:1fr;gap:10px}
+.svc{background:var(--tile);border:1px solid var(--line);border-radius:16px;padding:20px 20px 18px;display:flex;gap:16px;align-items:baseline;font-size:18px;font-weight:500}
+.svc b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;color:var(--olive);font-size:26px;min-width:40px;line-height:1}
+.note{margin-top:14px;font-size:15px;color:var(--ink2)}
+.how{display:grid;gap:12px}
+.how .tile h3{font-size:24px}
+.team{display:grid;gap:12px}
+.pcard{background:var(--tile);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.pcard img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.pcard div{padding:20px}
+.pcard h3{font-size:26px}
+.pcard .role{color:var(--olive);font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.08em;margin:4px 0 10px}
+.pcard p{margin:0;color:var(--ink2);font-size:16px}
+.quote{background:var(--moss);border-radius:18px;padding:26px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(22px,3.4vw,32px);line-height:1.15;letter-spacing:-.01em}
+.urnik{display:grid;gap:10px}
+.day{background:var(--tile);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.day b{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px}
+.day span{font-weight:500;text-align:right}
+.day small{display:block;color:var(--ink2);font-size:13px;font-weight:400}
+.zzzs .tile p{color:var(--ink);font-size:17px;margin-bottom:10px}
+.zzzs .tile .src{font-size:13px;color:var(--ink2);margin:0}
+.kontakt{background:var(--ink);color:#fff;margin-top:60px;padding:56px 0 60px}
+.kontakt h2{font-size:clamp(34px,6vw,64px);text-transform:uppercase}
+.kontakt .cols{display:grid;gap:22px;margin-top:26px}
+.kontakt a{color:#fff}
+.kontakt .k{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b9c79a;margin-bottom:6px}
+.kontakt .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:32px;text-decoration:none;display:block;line-height:1.15}
+.kontakt p{margin:0;color:#d6dccb}
+.kontakt .pill{display:inline-block;margin-top:12px;background:#fff;color:var(--ink)}
+footer{padding:26px 0 90px;font-size:13px;color:var(--ink2)}
+footer p{margin:0 0 6px}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--olive);color:#fff;text-align:center;padding:14px 16px;font-weight:700;text-decoration:none;font-size:17px;z-index:5}
+@media(min-width:760px){
+  .nav ul{display:flex}
+  .hero .sub{grid-template-columns:1.4fr 1fr 1fr}
+  .bento{grid-template-columns:repeat(4,1fr)}
+  .grid9{grid-template-columns:repeat(3,1fr)}
+  .how{grid-template-columns:repeat(3,1fr)}
+  .team{grid-template-columns:1fr 1fr 1.2fr;align-items:start}
+  .urnik{grid-template-columns:repeat(5,1fr)}
+  .day{grid-template-columns:1fr}
+  .day span{text-align:left}
+  .kontakt .cols{grid-template-columns:repeat(3,1fr)}
+  .h2row{grid-template-columns:1fr 1fr;align-items:end}
+  .sticky{display:none}
+  footer{padding-bottom:36px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">Predogled prenove spletne strani · to ni uradna stran ambulante · vsebina je povzeta z <a href="https://www.fidelitas.si/">fidelitas.si</a></div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#vrh">Fidelitas<small>zobna ambulanta · Postojna</small></a>
+    <ul>
+      <li><a href="#storitve">Storitve</a></li>
+      <li><a href="#ambulanta">Ambulanta</a></li>
+      <li><a href="#urnik">Urnik</a></li>
+      <li><a href="#kontakt">Naročanje</a></li>
+    </ul>
+    <a class="pill" href="tel:+38631450625">Pokliči</a>
+  </div>
+</header>
+
+<main id="vrh">
+<div class="wrap hero">
+  <h1>Zobna<br>ambulanta <span>Fidelitas</span></h1>
+  <div class="sub">
+    <p>Naša ambulanta želi s sodobnimi metodami, tehnikami in aparaturami pacientu omogočiti celotno zobozdravstveno oskrbo v najkrajšem realnem času.</p>
+    <div class="meta"><b>Mateja Cep dr.dent.med.</b>zasebna zobna ambulanta</div>
+    <div class="meta"><b>Cankarjeva ulica 6</b>6230 Postojna</div>
+  </div>
+  <div class="strip">
+    <img src="../assets/img/g1.webp" width="662" height="1000" alt="Stavba ambulante">
+    <img src="../assets/img/g5.webp" width="662" height="1000" alt="Zobozdravstveni stol">
+    <img src="../assets/img/g3.webp" width="662" height="1000" alt="Hodnik ambulante">
+  </div>
+  <div class="bento">
+    <div class="tile olive"><div class="k">Zavarovanci ZZZS</div><h3>Čakalni seznam</h3><p>Ambulanta vodi čakalni seznam za storitve ZZZS in objavlja čakalne dobe.</p></div>
+    <div class="tile"><div class="k">Oprema</div><h3>Digitalni rentgen</h3><p>Slikanje zob z računalniško podprtim rentgenskim aparatom (RVG).</p></div>
+    <div class="tile moss"><div class="k">Nosilka ambulante</div><h3>Mateja Cep dr.dent.med.</h3><p>Strokovni izpit leta 2005, kmalu zatem delo v ambulanti Fidelitas.</p></div>
+    <div class="tile"><div class="k">Podjetje</div><h3>V registru od 2003</h3><p>Fidelitas d.o.o., datum vpisa 6. 5. 2003.</p></div>
+  </div>
+</div>
+
+<section id="storitve">
+  <div class="wrap">
+    <div class="h2row"><h2>Storitve</h2><p>Nudimo naslednje zobozdravstvene storitve. V naši praksi uporabljamo sodobno zobozdravstveno opremo.</p></div>
+    <div class="grid9">
+      <div class="svc"><b>1</b>pregled zob in obzobnih tkiv</div>
+      <div class="svc"><b>2</b>odstranjevanje zobnih oblog</div>
+      <div class="svc"><b>3</b>plombiranje in zalivanje zob</div>
+      <div class="svc"><b>4</b>endodontsko zdravljenje zob</div>
+      <div class="svc"><b>5</b>dograjevanje zobnih struktur</div>
+      <div class="svc"><b>6</b>fiksna protetična oskrba zob</div>
+      <div class="svc"><b>7</b>oskrba brezzobih čeljusti (snemne proteze)</div>
+      <div class="svc"><b>8</b>puljenje zob</div>
+      <div class="svc"><b>9</b>digitalni rentgen</div>
+    </div>
+    <p class="note">Na vašo željo oziroma kadar sodimo, da je to potrebno, vam ponudimo lokalno anestezijo.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="h2row"><h2>Kako delamo</h2><p>Uporabljamo sodobno opremo.</p></div>
+    <div class="how">
+      <div class="tile"><div class="k">RVG</div><h3>Digitalni rentgen</h3><p>Natančnejšo sliko posameznega zoba in obzobnih tkiv naredimo z aparatom RVG (radioviziografijo). To je tehnika slikanja zob z računalniško podprtim rentgenskim aparatom. Slika je takoj na zaslonu in jo shranimo v pomnilnik računalnika.</p></div>
+      <div class="tile"><div class="k">S specialistom</div><h3>Implantati</h3><p>V sodelovanju s specialistom vam pri nas vsadimo tudi implantate.</p></div>
+      <div class="tile"><div class="k">Instrumenti</div><h3>Sterilizacija</h3><p>Vse, kar uporabimo pri delu, je ali sterilizirano ali se po prvi uporabi odvrže.</p></div>
+    </div>
+    <div class="strip">
+      <img src="../assets/img/g12.webp" width="1000" height="662" alt="Kompozitni materiali in polimerizacijska lučka" loading="lazy">
+      <img src="../assets/img/g13.webp" width="662" height="1000" alt="Endodontski instrumenti" loading="lazy">
+      <img src="../assets/img/g9.webp" width="1000" height="662" alt="Pladenj z materiali" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="ambulanta">
+  <div class="wrap">
+    <div class="h2row"><h2>Ambulanta</h2><p>Kdo vas sprejme.</p></div>
+    <div class="team">
+      <div class="pcard"><img src="../assets/img/mateja-cep.webp" width="700" height="700" alt="Mateja Cep dr.dent.med." loading="lazy"><div><h3>Mateja Cep</h3><div class="role">dr.dent.med.</div><p>Po končanem študiju dentalne medicine na Medicinski fakulteti v Ljubljani sem leta 2005 opravila strokovni izpit, slabo leto kasneje pa sem začela delati v zobozdravstveni ambulanti Fidelitas. Svoje znanje redno nadgrajujem na različnih strokovnih srečanjih.</p></div></div>
+      <div class="pcard"><img src="../assets/img/klara-lampe.webp" width="700" height="700" alt="Klara Lampe, zobna asistentka" loading="lazy"><div><h3>Klara Lampe</h3><div class="role">zobna asistentka</div></div></div>
+      <div class="quote">Vsako leto podpiramo Festival postojnskega pračloveka v izvedbi Zavoda Furman.</div>
+    </div>
+  </div>
+</section>
+
+<section class="zzzs">
+  <div class="wrap two">
+    <div>
+      <div class="h2row"><h2>ZZZS</h2></div>
+      <div class="tile"><p>Čakalne dobe za ZZZS konzervativo znašajo 2 meseca, za protetiko pa 3 mesece. Število evidentiranih zavarovanih oseb na dan 27. 7. 2025 je 1631.</p><p>Pooblaščena oseba za vodenje čakalnega seznama je Mateja Cep dr.dent.med., dosegljiva v času ordinacijskih ur ambulante.</p><p class="src">Podatki, kot so objavljeni na fidelitas.si (preverjeno 21. 11. 2026).</p></div>
+    </div>
+    <div id="urnik">
+      <div class="h2row"><h2>Urnik</h2></div>
+      <div class="urnik">
+        <div class="day"><b>Pon</b><span>7.30 do 12.30</span></div>
+        <div class="day"><b>Tor</b><span>12.00 do 19.15</span></div>
+        <div class="day"><b>Sre</b><span>7.00 do 11.00</span></div>
+        <div class="day"><b>Čet</b><span>7.30 do 19.15<small>malica 12.30 do 13.00</small></span></div>
+        <div class="day"><b>Pet</b><span>7.30 do 12.30</span></div>
+      </div>
+      <p class="note">Ordinacijski čas, kot je objavljen na fidelitas.si (preverjeno 21. 11. 2026). Pred obiskom preverite morebitne spremembe.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="kontakt">
+  <div class="wrap">
+    <h2>Naročanje</h2>
+    <p style="margin-top:12px;max-width:40em">Naročite se lahko neposredno v ambulanti v ordinacijskem času ali pa nas pokličete, oziroma nam pišete na e-naslov.</p>
+    <div class="cols">
+      <div><div class="k">Telefon</div><a class="big" href="tel:+38631450625">031 450 625</a><a class="big" href="tel:+38657540110">05 754 01 10</a></div>
+      <div><div class="k">E-pošta</div><a class="big" href="mailto:narocanje@fidelitas.si" style="font-size:22px">narocanje@fidelitas.si</a></div>
+      <div><div class="k">Naslov</div><p>Fidelitas d.o.o.<br>Cankarjeva ulica 6, 6230 Postojna</p><a class="pill" href="https://www.openstreetmap.org/search?query=Cankarjeva%20ulica%206%2C%206230%20Postojna">Zemljevid</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Fidelitas d.o.o., zasebna zobna ambulanta, Mateja Cep dr.dent.med., Cankarjeva ulica 6, 6230 Postojna</p>
+    <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p>
+  </div>
+</footer>
+<a class="sticky" href="tel:+38631450625">Pokliči 031 450 625</a>
+</body>
+</html>
