@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Meli Bar · pozdrav iz Štalcerjev</title>
+<meta name="description" content="Meli Bar, Štalcerji 10, Kočevska Reka. Bar ob cesti med Kočevjem in mejo, odprt od 6h. Google 4,8 pri 214 mnenjih. 059 798 760.">
+<meta name="theme-color" content="#2b5d8c">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Libre+Franklin:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#d8ecf5;--card:#fbf5e6;--ink:#22313a;--post:#2b5d8c;--stamp:#b3261e;--mute:#66737c;--line:rgba(34,49,58,.16)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sky);color:var(--ink);font:16.5px/1.55 "Libre Franklin",system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+.top{max-width:1080px;margin:0 auto;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.top a{text-decoration:none;color:var(--post);font-weight:700;white-space:nowrap;font-size:14px}
+.wrap{max-width:1080px;margin:0 auto;padding:6px 16px 0}
+.hand{font-family:Caveat,cursive}
+.card{background:var(--card);border-radius:6px;box-shadow:0 14px 40px rgba(34,49,58,.18),0 1px 0 rgba(255,255,255,.6) inset;position:relative}
+.front{padding:18px;transform:rotate(-1.2deg)}
+.front .photo{aspect-ratio:3/2;border:1px solid var(--line);background:repeating-linear-gradient(135deg,#ece3d2 0 10px,#f3ecdd 10px 20px);display:grid;place-items:start center;text-align:center;color:var(--mute);font-size:13px;padding:18px 10px 10px;position:relative;overflow:hidden}
+.front .photo img{width:100%;height:100%;object-fit:cover;display:block}
+.front .photo::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(180deg,rgba(34,49,58,0) 0%,rgba(34,49,58,.72) 100%);pointer-events:none}
+.front .photo b{display:block;font:700 26px Caveat,cursive;color:var(--ink)}
+.front h1{position:absolute;left:18px;right:18px;bottom:28px;margin:0;font:700 clamp(40px,10vw,96px)/.95 Caveat,cursive;color:#fff;text-shadow:0 2px 0 var(--ink),0 0 24px rgba(34,49,58,.55);pointer-events:none}
+.front h1 span{display:block;font-size:.42em;letter-spacing:.02em}
+.back{margin-top:26px;padding:22px 18px 20px;transform:rotate(.8deg);display:grid;gap:22px}
+.back::before{content:"";position:absolute;top:18px;bottom:18px;left:50%;width:1px;background:var(--line);display:none}
+.msg{font:500 clamp(21px,3.2vw,27px)/1.3 Caveat,cursive}
+.msg p{margin:0 0 10px}
+.msg .date{font-size:.8em;color:var(--mute)}
+.addr{display:grid;gap:14px;align-content:start}
+.stamp{justify-self:end;width:112px;padding:8px;background:#fff;border:1px dashed var(--stamp);outline:4px solid #fff;outline-offset:-1px;transform:rotate(3deg);text-align:center;color:var(--stamp);position:relative;z-index:1}
+.stamp b{display:block;font:700 46px/1 Caveat,cursive}
+.stamp small{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:2px}
+.mark{justify-self:end;width:92px;height:92px;border:2px solid var(--post);border-radius:50%;display:grid;place-content:center;text-align:center;color:var(--post);font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;line-height:1.3;transform:rotate(-8deg);opacity:.75;margin-top:-22px;margin-right:112px;position:relative;z-index:0}
+.mark b{display:block;font-size:13px}
+.lines{display:grid;gap:14px;margin-top:6px}
+.lines div{border-bottom:1px solid var(--ink);padding:0 4px 2px;font:500 22px/1 Caveat,cursive}
+section{max-width:1080px;margin:0 auto;padding:34px 16px 0}
+h2{font:700 clamp(30px,5vw,44px)/1.05 Caveat,cursive;color:var(--post);margin:0 0 12px}
+.hours{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.hours div{background:#fff;border:1px solid var(--line);border-radius:4px;padding:8px 2px}
+.hours b{display:block;color:var(--stamp);font-size:11px;letter-spacing:.06em}
+.hours span{font-size:13px;white-space:nowrap}
+.list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+.list li{padding-left:22px;position:relative}
+.list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--post);font-weight:700}
+.minis{display:grid;gap:12px}
+.mini{margin:0;background:var(--card);border-radius:4px;padding:18px 18px 14px;box-shadow:0 8px 24px rgba(34,49,58,.14);position:relative}
+.mini p{margin:0;font:500 clamp(20px,3vw,25px)/1.3 Caveat,cursive}
+.mini small{display:block;margin-top:8px;color:var(--mute);font-size:13px;font-family:"Libre Franklin",sans-serif}
+.mini::after{content:"";position:absolute;top:10px;right:10px;width:34px;height:40px;border:1px dashed var(--line)}
+.note{color:var(--mute);font-size:13px;margin:12px 0 0}
+.cta{max-width:1080px;margin:30px auto 0;padding:0 16px;display:grid;gap:10px}
+.cta a{display:block;text-align:center;text-decoration:none;padding:14px;border-radius:4px;font-weight:700;font-size:16px}
+.cta .p{background:var(--post);color:#fff}
+.cta .s{border:2px solid var(--post);color:var(--post)}
+footer{padding:30px 16px 36px;text-align:center;font-size:13.5px;color:var(--mute);max-width:760px;margin:0 auto}
+@media(min-width:760px){
+  .wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;padding-top:18px}
+  .back{margin-top:0;grid-template-columns:1.1fr .9fr;padding:28px 26px 24px}
+  .back::before{display:block}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1080px;margin:0 auto}
+  .minis{grid-template-columns:1fr 1fr}
+  .cta{grid-template-columns:1fr 1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="top"><span>Štalcerji 10 · 1338 Kočevska Reka</span><a href="tel:+38659798760">059 798 760</a></div>
+
+<header class="wrap">
+  <div class="card front">
+    <div class="photo"><div><b>Terasa</b>prostor za vašo fotografijo (mize na prostem, Google vizitka)</div></div>
+    <h1>Pozdrav iz Štalcerjev<span>Meli Bar, ob cesti proti Kočevski Reki</span></h1>
+  </div>
+
+  <div class="card back">
+    <div class="msg">
+      <p class="date">Štalcerji, ob kavi</p>
+      <p>Bar ob cesti med Kočevjem in mejnim prehodom Petrina. Odprt že ob šestih zjutraj, ob sobotah ob sedmih, ob nedeljah ob osmih.</p>
+      <p>Na Googlu izpostavljata kavo in Pizzo Mexicano; gostje sporočajo 5 do 10 € na osebo. Parkirišče je brezplačno in veliko, mize so tudi zunaj.</p>
+      <p>Pridite na kavo, pizzo ali pivo. Meli Bar, Štalcerji 10</p>
+      <p><em>Predlog besedila: AK agencija. Lastnica ga lahko spremeni.</em></p>
+    </div>
+    <div class="addr">
+      <div class="stamp"><b>4,8</b><small>Google · 214 mnenj</small></div>
+      <div class="mark" aria-hidden="true"><b>Štalcerji</b>1338<br>Kočevska Reka</div>
+      <div class="lines">
+        <div>Meli Bar, Melita Miklič s.p.</div>
+        <div>Štalcerji 10</div>
+        <div>1338 Kočevska Reka</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="two">
+<section>
+  <h2>Odprto</h2>
+  <div class="hours">
+    <div><b>PON</b><span>6–21</span></div><div><b>TOR</b><span>6–21</span></div><div><b>SRE</b><span>6–21</span></div><div><b>ČET</b><span>6–21</span></div><div><b>PET</b><span>6–22</span></div><div><b>SOB</b><span>7–22</span></div><div><b>NED</b><span>8–21</span></div>
+  </div>
+  <p class="note">Delovni čas z Googlovega profila. Ob sobotah je največ gostov okrog 14h.</p>
+</section>
+<section>
+  <h2>Pri nas</h2>
+  <ul class="list">
+    <li>Mize na prostem</li><li>Brezplačni Wi-Fi</li><li>Brezplačno parkirišče</li><li>Pivo in koktajli</li><li>Šport</li><li>Primerno za otroke</li><li>Skupine in turisti</li><li>Dostava</li><li>Debetne kartice, NFC</li><li>Dostop z vozičkom</li>
+  </ul>
+  <p class="note">Vse z Googlove vizitke. O psih profil ne piše nič.</p>
+</section>
+</div>
+
+<section>
+  <h2>Kar so napisali gostje</h2>
+  <div class="minis">
+    <blockquote class="mini"><p>»Zelo dobra lokacija in ambient / Zelo prijazna lastnica in ostalo osebje / Zelo priporočam«</p><small>Tomaž S., Google, pred 4 meseci</small></blockquote>
+    <blockquote class="mini"><p>»Vedno zelo prijazno osebje in smo lepo postreženi.«</p><small>Lidija L., Google, pred 3 meseci</small></blockquote>
+  </div>
+  <p class="note">Citati so dobesedni z Googla. Lastnica na mnenja odgovarja (»Najlepša hvala lp.«).</p>
+</section>
+
+<div class="cta">
+  <a class="p" href="tel:+38659798760">Pokliči 059 798 760</a>
+  <a class="s" href="https://www.google.com/maps?cid=1224326178452087171" rel="noopener">Pot na Googlu</a>
+  <a class="s" href="../">Nazaj na izbor</a>
+</div>
+
+<footer><p>Predogled pripravila AK agencija (alejkump.si). To ni uradna stran podjetja.</p><p>Besedilo razglednice je iz javnih podatkov sestavila AK agencija, ne lastnica. Podatki: Googlov profil Meli Bar, Melita Miklič s.p. (21. 11. 2026), bizi.si. Okvir za fotografijo je prazen namenoma; ob dogovoru dodamo vašo.</p></footer>
+</body>
+</html>
