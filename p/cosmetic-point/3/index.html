@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Cosmetic Point, Benedikt: salon dobrega počutja</title>
+<meta name="description" content="Cosmetic Point, kozmetični salon Sandre Prelec na Čolnikovem trgu 9 v Benediktu. Pedikura, nega obraza, depilacija, masaža, maderoterapija in manikura. Termin po dogovoru.">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+:root{--oat:#efe6da;--oat2:#f6efe6;--espresso:#2a1c17;--peach:#e8956f;--peach-soft:#f6d9c7;--mute:#6b5a52;--rule:#2a1c17}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--oat);color:var(--espresso);font-family:"Work Sans",system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:"Syne",Verdana,sans-serif;font-weight:800;margin:0;line-height:.95;letter-spacing:-.03em;text-transform:uppercase}
+.ribbon{position:fixed;left:0;top:0;z-index:50;background:var(--espresso);color:var(--oat);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;text-decoration:none}
+.ribbon:hover{background:var(--peach);color:var(--espresso)}
+.page{width:min(1280px,100% - 32px);margin:60px auto 0;border:2px solid var(--rule)}
+.cell{border-bottom:2px solid var(--rule);padding:26px}
+.cell:last-child{border-bottom:0}
+/* top */
+.top{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:18px 26px}
+.top img{height:34px;width:auto}
+.top ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.top ul a{text-decoration:none}
+.top ul a:hover{color:var(--peach)}
+/* hero grid */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;padding:0}
+.hero .h{padding:54px 26px 40px;border-right:2px solid var(--rule);display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.hero h1{font-size:clamp(52px,7vw,104px)}
+.hero h1 span{color:var(--peach)}
+.hero .sub{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:flex-end;justify-content:space-between}
+.hero .sub p{margin:0;max-width:42ch;font-size:17px}
+.hero .pic{position:relative;min-height:420px}
+.hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%}
+.hero .pic .tag{position:absolute;left:0;bottom:0;background:var(--espresso);color:var(--oat);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:10px 14px}
+/* button */
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--espresso);color:var(--oat);text-decoration:none;padding:16px 24px;font-family:"Syne",sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--espresso);transition:background .2s,color .2s}
+.btn:hover{background:var(--peach);border-color:var(--peach);color:var(--espresso)}
+.btn.o{background:transparent;color:var(--espresso)}
+.btn.o:hover{background:var(--espresso);color:var(--oat)}
+/* info strip */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);padding:0}
+.strip div{padding:22px 26px;border-right:2px solid var(--rule)}
+.strip div:last-child{border-right:0}
+.strip small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.strip b{font-family:"Syne",sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em}
+.strip a{text-decoration:none}
+.strip a:hover{color:var(--peach)}
+/* services table */
+.label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute);margin-bottom:18px;display:flex;justify-content:space-between;gap:20px}
+.svc{list-style:none;margin:0;padding:0;border-top:2px solid var(--rule)}
+.svc li{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:20px;padding:0;border-bottom:2px solid var(--rule);transition:background .15s}
+.svc li:last-child{border-bottom:0}
+.svc li:hover{background:var(--peach-soft)}
+.svc .i{font-family:"Syne",sans-serif;font-weight:700;font-size:14px;padding:22px 0 22px 26px;color:var(--mute)}
+.svc .t{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(17px,4.6vw,54px);text-transform:uppercase;letter-spacing:-.03em;line-height:1;padding:18px 0}
+.svc .c{font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding-right:26px;color:var(--mute)}
+/* brands */
+.brands{padding:0;display:grid;grid-template-columns:1fr 1fr}
+.brands .q{padding:34px 26px;border-right:2px solid var(--rule);font-size:clamp(19px,2vw,24px);line-height:1.4;font-weight:400;display:flex;flex-direction:column;justify-content:space-between;gap:26px}
+.brands .q cite{font-style:normal;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.brands .list{padding:26px;font-family:"Syne",sans-serif;font-weight:700;font-size:clamp(20px,2.4vw,30px);line-height:1.35;letter-spacing:-.01em}
+.brands .list span{display:inline-block}
+.brands .list span::after{content:" / ";color:var(--peach)}
+.brands .list span:last-child::after{content:""}
+/* gallery */
+.gal{padding:0;display:grid;grid-template-columns:1fr 1fr 1fr}
+.gal figure{margin:0;border-right:2px solid var(--rule)}
+.gal figure:last-child{border-right:0}
+.gal img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.gal figcaption{padding:12px 16px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-top:2px solid var(--rule)}
+.gal .ph{aspect-ratio:4/5;background:repeating-linear-gradient(135deg,var(--oat) 0 14px,var(--oat2) 14px 28px);display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;font-family:"Syne",sans-serif;font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.02em;color:var(--mute)}
+/* contact */
+.contact{padding:0;display:grid;grid-template-columns:1fr 1fr}
+.contact .l{padding:40px 26px;border-right:2px solid var(--rule)}
+.contact h2{font-size:clamp(28px,4.2vw,56px);margin-bottom:26px}
+.contact .tel{font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,56px);letter-spacing:-.03em;text-decoration:none;display:inline-block;border-bottom:4px solid var(--peach);line-height:1.1}
+.contact .tel:hover{color:var(--peach)}
+.contact .r{display:flex;flex-direction:column}
+.contact .r div{padding:22px 26px;border-bottom:2px solid var(--rule)}
+.contact .r div:last-child{border-bottom:0;flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px;align-items:flex-start;background:var(--peach-soft)}
+.contact small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+.contact .r a:not(.btn){text-decoration:none;border-bottom:2px solid var(--peach)}
+.contact .r a:not(.btn):hover{color:var(--peach)}
+.social{display:flex;gap:18px;margin-top:30px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.social a{text-decoration:none;border-bottom:2px solid var(--peach)}
+.social a:hover{color:var(--peach)}
+footer{width:min(1280px,100% - 32px);margin:0 auto;padding:22px 0 40px;font-size:12.5px;color:var(--mute);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer p{margin:0}
+@media (max-width:900px){
+  .page{margin-top:52px}
+  .hero,.brands,.contact{grid-template-columns:1fr}
+  .hero .h,.brands .q,.contact .l{border-right:0;border-bottom:2px solid var(--rule)}
+  .hero .pic{min-height:360px}
+  .strip{grid-template-columns:1fr}
+  .strip div{border-right:0;border-bottom:2px solid var(--rule)}
+  .strip div:last-child{border-bottom:0}
+  .gal{grid-template-columns:1fr 1fr}
+  .gal figure{border-bottom:2px solid var(--rule)}
+  .gal figure:nth-child(2){border-right:0}
+  .gal figure:last-child{grid-column:1/-1;border-bottom:0}
+  .gal figure:last-child .ph{aspect-ratio:3/1}
+  .top ul{display:none}
+  .svc .c{display:none}
+  .svc li{grid-template-columns:56px 1fr}
+}
+@media (max-width:600px){
+  .hero h1{font-size:42px}
+}
+@media (max-width:480px){
+  .page{width:min(1280px,100% - 24px)}
+  .cell,.hero .h,.contact .l,.brands .q,.brands .list{padding-left:18px;padding-right:18px}
+  .hero h1{font-size:36px}
+  .svc li{grid-template-columns:44px 1fr;gap:14px}
+  .svc .i{padding-left:18px}
+  .gal{grid-template-columns:1fr}
+  .gal figure{border-right:0}
+  .gal figure:last-child .ph{aspect-ratio:2/1}
+  .contact .r div{padding:18px}
+  .top{padding:14px 18px}
+}
+</style>
+</head>
+<body>
+<a class="ribbon" href="../">Predogled prenove, različica 3</a>
+
+<div class="page">
+  <header class="cell top">
+    <a href="#"><img src="../assets/img/logo-dark.png" width="1000" height="367" alt="Cosmetic Point, salon dobrega počutja"></a>
+    <ul>
+      <li><a href="#storitve">Storitve</a></li>
+      <li><a href="#znamke">Znamke</a></li>
+      <li><a href="#galerija">Galerija</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </header>
+
+  <section class="cell hero">
+    <div class="h">
+      <h1>Salon <span>dobrega</span> počutja</h1>
+      <div class="sub">
+        <p>Pedikura, nega obraza, depilacija, masaža, maderoterapija in manikura. Čolnikov trg 9, Benedikt. Termin po dogovoru.</p>
+        <a class="btn" href="https://form.lime-booking.com/sl/cosmeticpoint/service">Naroči se</a>
+      </div>
+    </div>
+    <div class="pic">
+      <img src="../assets/img/laki.jpg" width="1100" height="1401" alt="Sandra Prelec izbira barvo laka ob polici z laki za nohte" fetchpriority="high">
+      <span class="tag">Cosmetic Point, Benedikt</span>
+    </div>
+  </section>
+
+  <div class="cell strip">
+    <div><small>Salon</small><b><a href="https://www.openstreetmap.org/search?query=%C4%8Colnikov%20trg%209%2C%20Benedikt">Čolnikov trg 9, 2234 Benedikt</a></b></div>
+    <div><small>Delovni čas</small><b>Po dogovoru</b></div>
+    <div><small>Telefon</small><b><a href="tel:+38670666023">070 666 023</a></b></div>
+  </div>
+
+  <section id="storitve" class="cell" style="padding-left:0;padding-right:0">
+    <div class="label" style="padding:0 26px"><span>Storitve</span><span>Izbira tretmaja ob naročilu</span></div>
+    <ul class="svc">
+      <li><span class="i">01</span><span class="t">Pedikura</span><span class="c">Stopala</span></li>
+      <li><span class="i">02</span><span class="t">Nega obraza</span><span class="c">Obraz</span></li>
+      <li><span class="i">03</span><span class="t">Depilacija</span><span class="c">Telo</span></li>
+      <li><span class="i">04</span><span class="t">Masaža</span><span class="c">Telo</span></li>
+      <li><span class="i">05</span><span class="t">Maderoterapija</span><span class="c">Telo</span></li>
+      <li><span class="i">06</span><span class="t">Manikura</span><span class="c">Roke</span></li>
+    </ul>
+  </section>
+
+  <section id="znamke" class="cell brands">
+    <blockquote class="q">
+      <span>»Ker za stranke želimo le najboljše, pri svojem delu uporabljamo preverjene in visoko kakovostne materiale ter profesionalne izdelke priznanih blagovnih znamk.«</span>
+      <cite>Cosmetic Point, besedilo z obstoječe strani</cite>
+    </blockquote>
+    <div class="list">
+      <span>Afrodita Professional</span> <span>Doctor Babor</span> <span>Babor</span> <span>ItalWax</span> <span>Gehwol</span> <span>Pedibaehr</span> <span>Yavatop</span> <span>Credo Solingen</span> <span>Podiatech</span> <span>Fresco</span> <span>Deramed footcare</span>
+    </div>
+  </section>
+
+  <section id="galerija" class="cell gal">
+    <figure><img src="../assets/img/sandra.jpg" width="1600" height="1067" alt="Sandra Prelec v ogledalu salona Cosmetic Point" loading="lazy"><figcaption>Sandra</figcaption></figure>
+    <figure><img src="../assets/img/trgovinica.jpg" width="900" height="1800" alt="Vitrina z izdelki Afrodita v salonu" loading="lazy"><figcaption>Trgovinica</figcaption></figure>
+    <figure><div class="ph">Prostor za vašo naslednjo fotografijo</div><figcaption>Dodamo po vaši izbiri</figcaption></figure>
+  </section>
+
+  <section id="kontakt" class="cell contact">
+    <div class="l">
+      <h2>Pokličite</h2>
+      <a class="tel" href="tel:+38670666023">070 666 023</a>
+      <div class="social">
+        <a href="https://www.facebook.com/cosmeticpoint">Facebook</a>
+        <a href="https://www.instagram.com/Cosmetic_point_benedikt/">Instagram</a>
+        <a href="https://www.youtube.com/@cosmeticpoint3319">YouTube</a>
+      </div>
+    </div>
+    <div class="r">
+      <div><small>E-pošta</small><a href="mailto:info@cosmeticpoint.si">info@cosmeticpoint.si</a></div>
+      <div><small>Salon</small><a href="https://www.openstreetmap.org/search?query=%C4%8Colnikov%20trg%209%2C%20Benedikt">Čolnikov trg 9, 2234 Benedikt</a></div>
+      <div><small>Podjetje</small>COSMETIC POINT, kozmetične storitve Sandra Prelec s.p., Zbigovci 69, 9250 Gornja Radgona</div>
+      <div><small>Spletno naročanje</small><a class="btn" href="https://form.lime-booking.com/sl/cosmeticpoint/service">Izberi termin</a></div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>Cosmetic Point, salon dobrega počutja</p>
+  <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p>
+</footer>
+</body>
+</html>

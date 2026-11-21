@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Tiskarna Grafos · katalog tiskovin · Ljubljana</title>
+<meta name="description" content="Tiskarna Grafos d.o.o., Draveljska ulica 21, Ljubljana: od vabil in etiket do škatel za prospekte. Ofset, digitalni tisk, dodelava, oblikovanje. 01 510 83 06.">
+<meta name="theme-color" content="#121417">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+:root{--bg:#121417;--panel:#1b1f24;--lime:#8ab333;--txt:#edf0e8;--mute:#9aa39a;--line:rgba(237,240,232,.14)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.55 "IBM Plex Sans",system-ui,sans-serif;overflow-x:hidden;padding-bottom:64px}
+@media(min-width:700px){body{padding-bottom:0}}
+a{color:inherit}
+.ribbon{background:var(--lime);color:#121417;text-align:center;font-size:13px;font-weight:500;padding:7px 12px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0}
+.mark{font:800 20px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;text-transform:uppercase;text-decoration:none}
+.mark span{color:var(--lime)}
+.nav{display:flex;gap:16px;font-size:14px;font-weight:500;color:var(--mute)}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--txt)}
+@media(max-width:640px){.nav{display:none}}
+.hero{display:grid;gap:26px;padding:34px 0 40px;grid-template-columns:1fr}
+@media(min-width:860px){.hero{grid-template-columns:1.25fr 1fr;align-items:end}}
+.hero h1{font:800 clamp(40px,8.2vw,96px)/.92 "Bricolage Grotesque",sans-serif;letter-spacing:-.035em;margin:0 0 18px;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{margin:0;max-width:52ch;color:var(--mute);font-size:17px}
+.hero p b{color:var(--txt);font-weight:500}
+.stack{position:relative;height:280px}
+.stack div{position:absolute;inset:0;border:1px solid var(--line);background:var(--panel);display:grid;place-items:center;text-align:center;padding:16px;color:var(--mute);font-size:13px}
+.stack div:nth-child(1){transform:rotate(-4deg) translate(-8px,10px)}
+.stack div:nth-child(2){transform:rotate(2deg) translate(10px,-4px)}
+.stack div:nth-child(3){transform:none}
+.stack b{display:block;color:var(--txt);font:800 20px "Bricolage Grotesque",sans-serif;margin-bottom:4px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}
+.tags span{border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:13px;color:var(--mute)}
+h2{font:800 clamp(26px,4.4vw,44px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;margin:0 0 6px}
+.sub{color:var(--mute);margin:0 0 22px;max-width:60ch}
+section{padding:40px 0 10px;border-top:1px solid var(--line)}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(4,1fr)}}
+.cell{aspect-ratio:5/4;background:var(--panel);border:1px solid var(--line);position:relative;padding:12px;display:flex;flex-direction:column;justify-content:space-between}
+.cell::before{content:"";position:absolute;inset:10px;border:1px dashed rgba(237,240,232,.22);pointer-events:none}
+.cell small{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.cell b{font:800 clamp(16px,2.2vw,22px)/1.05 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.cell.big{grid-column:span 2;aspect-ratio:auto;min-height:200px}
+.cell.big b{font-size:clamp(22px,3.4vw,34px)}
+.more{margin:14px 0 0;font-size:14px;color:var(--mute)}
+.serv{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:700px){.serv{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.serv{grid-template-columns:repeat(4,1fr)}}
+.serv div{background:var(--bg);padding:20px 16px 22px}
+.serv .n{display:block;font:800 36px/1 "Bricolage Grotesque",sans-serif;color:var(--lime);margin-bottom:12px}
+.serv h3{margin:0 0 6px;font:500 18px/1.2 "IBM Plex Sans",sans-serif}
+.serv p{margin:0;font-size:14px;color:var(--mute)}
+.about{display:grid;gap:20px;grid-template-columns:1fr}
+@media(min-width:860px){.about{grid-template-columns:1fr 1fr}}
+.about p{margin:0;font-size:18px;line-height:1.6}
+.about .box{background:var(--panel);border:1px solid var(--line);padding:22px}
+.about .box p{font-size:15px;color:var(--mute)}
+.about .box b{display:block;color:var(--txt);font:800 22px "Bricolage Grotesque",sans-serif;margin-bottom:6px}
+.contact{display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:700px){.contact{grid-template-columns:repeat(3,1fr)}}
+.contact a{display:block;background:var(--panel);border:1px solid var(--line);padding:18px 16px;text-decoration:none}
+.contact a:hover{border-color:var(--lime)}
+.contact small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.contact span{font:800 clamp(18px,2.2vw,24px)/1.15 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;word-break:break-word}
+.dock{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line);z-index:9}
+.dock a{background:var(--lime);color:#121417;text-align:center;padding:16px 10px;font:800 16px "Bricolage Grotesque",sans-serif;text-decoration:none}
+.dock a:last-child{background:var(--panel);color:var(--txt)}
+@media(min-width:700px){.dock{display:none}}
+.src{font-size:13px;color:var(--mute);padding:26px 0 10px;border-top:1px solid var(--line)}
+footer{padding:12px 0 40px;font-size:13px;color:var(--mute)}
+footer p{margin:0}
+</style>
+</head>
+<body>
+<div class="ribbon">Predogled spletne strani, pripravila AK agencija. To ni uradna stran podjetja.</div>
+<div class="wrap">
+<header class="head">
+<a class="mark" href="#">Tiskarna <span>Grafos</span></a>
+<nav class="nav" aria-label="Glavna navigacija"><a href="#katalog">Katalog</a><a href="#storitve">Storitve</a><a href="#podjetje">O podjetju</a><a href="#kontakt">Kontakt</a></nav>
+</header>
+
+<div class="hero">
+<div>
+<h1>Od vabil do škatel za prospekte. <em>Ena tiskarna v Dravljah.</em></h1>
+<p><b>Seznam je dolg.</b> Tako ste zapisali na svoji prejšnji strani in pokazali 27 fotografij tiskovin. Spodaj so njihovi napisi, pripravljeni za vaše nove posnetke.</p>
+<div class="tags"><span>Ofset tisk</span><span>Digitalni tisk</span><span>Sitotisk</span><span>Dodelava</span><span>Oblikovanje</span><span>Priprava za tisk</span><span>Svetovanje</span></div>
+</div>
+<div class="stack" aria-hidden="true"><div></div><div></div><div><b>Vaše fotografije</b>Trije prazni listi čakajo na vaše tiskovine. Brez tujih in brez računalniško ustvarjenih slik.</div></div>
+</div>
+
+<section id="katalog">
+<h2>Katalog</h2>
+<p class="sub">Napisi so prepisani iz galerije Reference na vaši prejšnji strani (arhiv 2019). Vsako polje je prazno, dokler ne dobimo vaše fotografije.</p>
+<div class="grid">
+<div class="cell big"><small>Vaša fotografija</small><b>Etikete, zlatotisk in slepi tisk</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Škatlice</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Vabila</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Vrečke</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Etikete za vino</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Knjiga</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Katalog</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Koledar, blok v spirali</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Mape</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Rokovniki</b></div>
+<div class="cell"><small>Vaša fotografija</small><b>Letaki</b></div>
+<div class="cell big"><small>Vaša fotografija</small><b>Škatla za prospekte, stojalo, puzzle stojalo</b></div>
+</div>
+<p class="more">Še v galeriji: bloki v spirali, cenik, nalepka za vino, ogledni karton, predstavitveni katalog, predstavitvene mape, priročnik, promocijski material, razdelilnik.</p>
+</section>
+
+<section id="storitve">
+<h2>Storitve</h2>
+<p class="sub">Imena so z vaše prejšnje strani. Opise dopišemo z vami.</p>
+<div class="serv">
+<div><span class="n">01</span><h3>Ofset tisk</h3><p>Razdelek Storitve, arhiv 2019.</p></div>
+<div><span class="n">02</span><h3>Digitalni tisk</h3><p>Razdelek Storitve, arhiv 2019.</p></div>
+<div><span class="n">03</span><h3>Sitotisk</h3><p>Naslov vaše prejšnje strani, arhiv 2022.</p></div>
+<div><span class="n">04</span><h3>Dodelava tiskovin</h3><p>Razdelek Storitve, arhiv 2019.</p></div>
+<div><span class="n">05</span><h3>Grafično oblikovanje</h3><p>Razdelek Storitve, arhiv 2019.</p></div>
+<div><span class="n">06</span><h3>Grafična priprava za tisk</h3><p>Razdelek Storitve, arhiv 2019.</p></div>
+<div><span class="n">07</span><h3>Svetovanje</h3><p>O konceptualni zasnovi marketinških materialov, oblikovanju vsebin, ustrezni pripravi materialov za tisk.</p></div>
+<div><span class="n">08</span><h3>Vaša osma storitev</h3><p>Prostor za to, kar danes delate in na stari strani še ni bilo.</p></div>
+</div>
+</section>
+
+<section id="podjetje">
+<h2>O podjetju</h2>
+<div class="about">
+<p>Grafos je podjetje s tradicijo. Tiskarna s srcem. V svetu, ki mu vlada virtualnost, verjamemo v otipljivost, v kombinaciji z dovršeno vizualnostjo.</p>
+<div class="box"><b>Dejstva iz registra</b><p>TISKARNA GRAFOS d.o.o., Draveljska ulica 21, 1000 Ljubljana. Glavna dejavnost C18.120 Drugo tiskanje. Vpis 12. 7. 1995. Vir: bizi.si, preverjeno 21. 11. 2026.</p></div>
+</div>
+</section>
+
+<section id="kontakt">
+<h2>Za ponudbo</h2>
+<p class="sub">Vaše navodilo s prejšnje strani: za ponudbo nam pišite ali zazvonite po telefonu. Osebno nas lahko obiščete na Draveljski ulici 21 v Ljubljani.</p>
+<div class="contact">
+<a href="tel:+38615108306"><small>Telefon</small><span>01 510 83 06</span></a>
+<a href="mailto:info@tiskarnagrafos.si"><small>E-pošta</small><span>info@tiskarnagrafos.si</span></a>
+<a href="https://www.openstreetmap.org/search?query=Draveljska%20ulica%2021%2C%201000%20Ljubljana"><small>Naslov, OpenStreetMap</small><span>Draveljska ulica 21, Ljubljana</span></a>
+</div>
+</section>
+
+<p class="src">Viri: bizi.si (TISKARNA GRAFOS d.o.o.), arhiv vaše strani web.archive.org/web/2019*/tiskarnagrafos.si in web.archive.org/web/2022*/tiskarnagrafos.si. Preverjeno 21. 11. 2026. Brez fotografij, cen in delovnega časa. Zelena je z vaše prejšnje strani (stil.css, #8ab333).</p>
+<footer><p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p></footer>
+</div>
+<div class="dock"><a href="tel:+38615108306">Pokliči</a><a href="mailto:info@tiskarnagrafos.si">Piši</a></div>
+</body>
+</html>

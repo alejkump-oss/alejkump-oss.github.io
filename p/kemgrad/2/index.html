@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>KEMGRAD d.o.o. | Računovodstvo, Žiri</title>
+<meta name="description" content="Predogled spletne strani za KEMGRAD, računovodske storitve d.o.o., Žiri. Vodenje knjig, DDV, prejeti računi, stroški in kilometrina. V registru od 1991.">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+:root{--bg:#121416;--bg2:#1a1d20;--line:#2c3034;--bone:#ebe8e1;--muted:#9a978f;--sand:#cdbb95}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--bone);font:400 16px/1.6 "Manrope",system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.ribbon{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:8px 16px;background:var(--sand);color:var(--bg)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.top .brand{font-weight:700;letter-spacing:.02em}
+.top .brand span{color:var(--muted);font-weight:400}
+.top nav{display:flex;gap:22px;font-size:14px}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--bone)}
+.top nav a.tel{color:var(--sand)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));border-left:1px solid var(--line);border-top:1px solid var(--line);margin-top:48px}
+.cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 24px;min-width:0}
+.cell .mono{display:block;margin-bottom:10px}
+.c12{grid-column:span 12}.c8{grid-column:span 8}.c6{grid-column:span 6}.c4{grid-column:span 4}.c3{grid-column:span 3}
+.hero-cell{padding:56px 32px 60px}
+h1,h2,h3{margin:0;font-weight:500;letter-spacing:-0.02em;overflow-wrap:anywhere}
+h1{font-size:clamp(38px,6vw,78px);line-height:1;}
+h1 .dim{color:var(--muted)}
+.hero-cell p{max-width:40em;color:var(--muted);font-size:18px;margin:26px 0 0}
+.val{font-size:clamp(20px,2.2vw,28px);font-weight:500;line-height:1.2;overflow-wrap:anywhere}
+.val small{display:block;font-size:14px;color:var(--muted);font-weight:400;margin-top:6px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.btn{display:inline-block;padding:14px 20px;text-decoration:none;font-weight:700;font-size:14px;border:1px solid var(--bone)}
+.btn.solid{background:var(--bone);color:var(--bg)}
+.btn.ghost:hover{background:var(--bg2)}
+.frame{background:var(--bg2);min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center;border:1px dashed var(--sand);color:var(--sand)}
+.frame .mono{color:var(--sand);display:block;margin-top:8px}
+section{padding-top:72px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-size:clamp(26px,3vw,36px)}
+.ledger{list-style:none;margin:0;padding:0}
+.ledger li{display:grid;grid-template-columns:72px minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+.ledger .n{font-family:"JetBrains Mono",monospace;color:var(--sand);font-size:14px}
+.ledger h3{font-size:22px;font-weight:500}
+.ledger .kw{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--muted);text-align:right}
+.note{color:var(--muted);font-size:14px;margin:18px 0 0;max-width:62em}
+.about{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px;margin-top:40px}
+.about .text{grid-column:span 7}
+.about .side{grid-column:span 5}
+.about p{font-size:19px;margin:0 0 18px;line-height:1.55}
+.about p.big{font-size:clamp(22px,2.4vw,30px);font-weight:500;letter-spacing:-0.01em}
+.slot{border:1px dashed var(--sand);color:var(--sand);padding:16px 18px;font-size:14px;background:var(--bg2)}
+.table{width:100%;border-collapse:collapse;margin-top:36px}
+.table th,.table td{text-align:left;padding:18px 0;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+.table th{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:400;width:200px}
+.table td{font-size:20px;font-weight:500}
+.table td a{text-decoration:none;border-bottom:1px solid var(--line)}
+.table td a:hover{border-color:var(--sand)}
+.table td small{display:block;font-size:14px;color:var(--muted);font-weight:400;margin-top:4px}
+footer{margin-top:72px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer p{margin:0 0 8px}
+@media (max-width:900px){
+  .c8,.c6,.c4,.c3{grid-column:span 12}
+  .c6.half{grid-column:span 6}
+  .hero-cell{padding:40px 22px 44px}
+  .ledger li{grid-template-columns:48px 1fr}
+  .ledger .kw{grid-column:2;text-align:left}
+  .about .text,.about .side{grid-column:span 12}
+  .top nav a:not(.tel){display:none}
+  .table th{width:120px}
+  .table td{font-size:17px}
+  section{padding-top:56px}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">Predogled spletne strani · ni javno objavljeno</div>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">KEMGRAD d.o.o. <span>/ računovodske storitve / Žiri</span></div>
+    <nav aria-label="Glavna navigacija">
+      <a href="#storitve">Storitve</a>
+      <a href="#podjetje">Podjetje</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="tel" href="tel:+38645105610">04 510 56 10</a>
+    </nav>
+  </header>
+
+  <div class="grid">
+    <div class="cell c8 hero-cell">
+      <span class="mono">Računovodska pisarna · Žiri</span>
+      <h1>Računovodstvo.<br>Žiri.<br><span class="dim">Od leta 1991.</span></h1>
+      <p>Vodenje poslovnih knjig, knjigovodski servis, obračun DDV, prejeti računi, stroški in kilometrina. Starovaška cesta 25.</p>
+      <div class="cta">
+        <a class="btn solid" href="tel:+38645105610">04 510 56 10</a>
+        <a class="btn ghost" href="mailto:info@kemgrad.si">info@kemgrad.si</a>
+      </div>
+    </div>
+    <div class="cell c4 frame"><div>Vaša fotografija<span class="mono">pisarna, 1200 × 900</span></div></div>
+    <div class="cell c3 c6 half"><span class="mono">Vpis v register</span><div class="val">10. 05. 1991</div></div>
+    <div class="cell c3 c6 half"><span class="mono">Zaposleni</span><div class="val">3 do 4<small>razred po registru</small></div></div>
+    <div class="cell c3 c6 half"><span class="mono">Dejavnost SKD</span><div class="val">N69.200<small>računovodske, knjigovodske in revizijske dejavnosti, davčno svetovanje</small></div></div>
+    <div class="cell c3 c6 half"><span class="mono">Sedež</span><div class="val">Starovaška c. 25<small>4226 Žiri</small></div></div>
+  </div>
+
+  <section id="storitve">
+    <div class="sec-head">
+      <h2>Storitve</h2>
+      <span class="mono">vir: kemgrad.si, 2007</span>
+    </div>
+    <ol class="ledger">
+      <li><span class="n">01</span><h3>Vodenje poslovnih knjig</h3><span class="kw">vodenje knjig · knjigovodenje</span></li>
+      <li><span class="n">02</span><h3>Knjigovodski servis</h3><span class="kw">knjigovodstvo · knjigovodske storitve</span></li>
+      <li><span class="n">03</span><h3>Obračun DDV</h3><span class="kw">ddv · računi</span></li>
+      <li><span class="n">04</span><h3>Prejeti računi in fakture</h3><span class="kw">prejeti računi · fakture</span></li>
+      <li><span class="n">05</span><h3>Stroški in kilometrina</h3><span class="kw">stroški · kilometrina</span></li>
+      <li><span class="n">06</span><h3>Računovodski servis</h3><span class="kw">računovodstvo · računovodske storitve</span></li>
+    </ol>
+    <p class="note">Področja so povzeta po ključnih besedah, s katerimi je podjetje opisalo dejavnost na svoji prejšnji strani kemgrad.si (arhivski posnetek 2007). Opise storitev dopolnimo z vami.</p>
+  </section>
+
+  <section id="podjetje">
+    <div class="sec-head">
+      <h2>Podjetje</h2>
+      <span class="mono">vir: javni register</span>
+    </div>
+    <div class="about">
+      <div class="text">
+        <p class="big">KEMGRAD, računovodske storitve d.o.o. je v sodni register vpisan 10. maja 1991. Sedež: Starovaška cesta 25, 4226 Žiri.</p>
+        <p>Registrirana dejavnost N69.200 obsega računovodske, knjigovodske in revizijske dejavnosti ter davčno svetovanje. Register navaja 3 do 4 zaposlene.</p>
+        <p>Prejšnja spletna stran podjetja je nosila naslov »KEMGRAD d.o.o. - Računovodske storitve« in opis »Celovite računovodske storitve«.</p>
+      </div>
+      <div class="side">
+        <div class="slot">Mesto za vaše besedilo: komu vodite knjige, kako poteka sodelovanje, kdo je v ekipi. Tu lahko stoji tudi druga fotografija.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="sec-head">
+      <h2>Kontakt</h2>
+      <span class="mono">Žiri</span>
+    </div>
+    <table class="table">
+      <tr><th>Telefon</th><td><a href="tel:+38645105610">04 510 56 10</a><small>faks 04 510 56 11</small></td></tr>
+      <tr><th>E-pošta</th><td><a href="mailto:info@kemgrad.si">info@kemgrad.si</a></td></tr>
+      <tr><th>Naslov</th><td><a href="https://www.openstreetmap.org/search?query=Starova%C5%A1ka%20cesta%2025%2C%204226%20%C5%BDiri" rel="noopener">Starovaška cesta 25, 4226 Žiri</a><small>odpre zemljevid OpenStreetMap</small></td></tr>
+      <tr><th>Podjetje</th><td>KEMGRAD, računovodske storitve d.o.o.<small>ID za DDV SI77600851 · matična št. 5515025000</small></td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>KEMGRAD, računovodske storitve d.o.o., Starovaška cesta 25, 4226 Žiri</p>
+    <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p>
+  </footer>
+</div>
+</body>
+</html>
