@@ -38,6 +38,7 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Spletna stran za društvo](https://alejkump.si/clanki-spletna-stran-za-drustvo.html)
 - [Spletna stran za prevoznika](https://alejkump.si/clanki-spletna-stran-za-prevoznika.html)
 - [Spletna stran za vulkanizerja](https://alejkump.si/clanki-spletna-stran-za-vulkanizerja.html)
+- [Spletna stran za pekarno in slaščičarno](https://alejkump.si/clanki-spletna-stran-za-pekarno-in-slascicarno.html)
 
 ## Kraji
 
@@ -57,5 +58,7 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Izdelava spletnih strani Žužemberk](https://alejkump.si/izdelava-spletnih-strani-zuzemberk.html)
 - [Izdelava spletnih strani Loška dolina in Bloke](https://alejkump.si/izdelava-spletnih-strani-loska-dolina.html)
 - [Izdelava spletnih strani Semič](https://alejkump.si/izdelava-spletnih-strani-semic.html)
+- [Izdelava spletnih strani Šentjernej](https://alejkump.si/izdelava-spletnih-strani-sentjernej.html)
+- [Izdelava spletnih strani Škofljica in Ig](https://alejkump.si/izdelava-spletnih-strani-skofljica-ig.html)
 
 Opomba: nobena storitev ne vključuje obljube o uvrstitvi na iskalnikih.
