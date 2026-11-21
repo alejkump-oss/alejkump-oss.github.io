@@ -19,7 +19,12 @@
 
   var bar = document.querySelector('.bar');
   var hero = document.getElementById('hero');
+  // The bar appears once most of the hero (which has its own CTA) has scrolled away.
   if (bar && hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (en) { bar.classList.toggle('show', !en[0].isIntersecting); }, { threshold: 0 }).observe(hero);
+    new IntersectionObserver(function (en) {
+      bar.classList.toggle('show', !en[0].isIntersecting || en[0].intersectionRatio < 0.25);
+    }, { threshold: [0, 0.25] }).observe(hero);
+  } else if (bar) {
+    bar.classList.add('show');
   }
 })();
