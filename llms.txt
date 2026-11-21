@@ -37,6 +37,7 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Spletna stran za kmetijo](https://alejkump.si/clanki-spletna-stran-za-kmetijo.html)
 - [Spletna stran za društvo](https://alejkump.si/clanki-spletna-stran-za-drustvo.html)
 - [Spletna stran za prevoznika](https://alejkump.si/clanki-spletna-stran-za-prevoznika.html)
+- [Spletna stran za vulkanizerja](https://alejkump.si/clanki-spletna-stran-za-vulkanizerja.html)
 
 ## Kraji
 
