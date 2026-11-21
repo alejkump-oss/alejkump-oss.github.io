@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Obnovi Dom | Fasade, pleskanje, suhomontaža | Ravne na Koroškem</title>
+<meta name="description" content="Obnovi Dom, Simo Marčeta s.p. iz Raven na Koroškem: toplotno izolacijske fasade, slikopleskarska dela, suhomontaža, adaptacije, gradbeni oder in hiša na ključ. Predogled prenovljene spletne strani.">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+:root{--white:#ffffff;--grid:#e6e6e3;--ink:#121212;--grey:#6b6b66;--lime:#c8f03c;--lime-deep:#9fc61a;--panel:#f4f4f1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--ink);font-family:"Space Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
+h1,h2,h3{margin:0;font-weight:700;letter-spacing:-.03em;line-height:1}
+h2{font-size:clamp(2rem,5vw,3.4rem)}
+p{margin:0}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.mono{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.04em;text-transform:uppercase}
+.wrap{width:min(1160px,100% - 32px);margin-inline:auto}
+.ribbon{background:var(--ink);color:var(--lime);font-family:"Space Mono",monospace;font-size:.72rem;text-align:center;padding:8px 16px;letter-spacing:.04em}
+
+/* top bar */
+.top{background:var(--white);border-bottom:2px solid var(--ink)}
+.top .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:-.02em;font-size:1.1rem}
+.mark i{display:inline-block;width:14px;height:14px;background:var(--lime);border:2px solid var(--ink)}
+.top nav{display:none;gap:22px}
+.top nav a{text-decoration:none;font-family:"Space Mono",monospace;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em}
+.top nav a:hover{background:var(--lime)}
+.btn{display:inline-block;text-decoration:none;background:var(--ink);color:#fff;padding:12px 18px;font-weight:700;font-size:.92rem;border:2px solid var(--ink);white-space:nowrap}
+.btn:hover{background:var(--lime);color:var(--ink)}
+.btn.lime{background:var(--lime);color:var(--ink)}
+.btn.lime:hover{background:var(--ink);color:#fff}
+.btn.out{background:#fff;color:var(--ink)}
+.btn.out:hover{background:var(--ink);color:#fff}
+
+/* hero sheet */
+.hero{padding:40px 0 48px}
+.sheet{background:var(--white);border:2px solid var(--ink);display:grid}
+.sheet > div{padding:26px 22px}
+.sheet .head{border-bottom:2px solid var(--ink);display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 22px}
+.sheet .head .mono span{background:var(--lime);padding:2px 6px}
+.sheet h1{font-size:clamp(2.5rem,8vw,5.4rem)}
+.sheet h1 u{text-decoration:none;box-shadow:inset 0 -.28em 0 var(--lime)}
+.sheet .lead{margin-top:18px;color:var(--grey);max-width:40ch;font-size:1.05rem}
+.specs{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--grid)}
+.specs li{display:grid;grid-template-columns:120px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--grid);font-size:.95rem}
+.specs .mono{color:var(--grey);padding-top:3px}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.photo{position:relative;border-top:2px solid var(--ink);padding:0 !important}
+.photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.photo .tag{position:absolute;left:14px;top:14px;background:var(--ink);color:var(--lime);padding:5px 9px}
+.photo .corner{position:absolute;width:18px;height:18px;border:2px solid var(--lime)}
+.photo .c1{left:0;top:0;border-right:0;border-bottom:0}
+.photo .c2{right:0;top:0;border-left:0;border-bottom:0}
+.photo .c3{left:0;bottom:0;border-right:0;border-top:0}
+.photo .c4{right:0;bottom:0;border-left:0;border-top:0}
+
+/* facts */
+.facts{display:grid;gap:0;border:2px solid var(--ink);background:#fff}
+.facts div{padding:22px;border-bottom:2px solid var(--ink)}
+.facts div:last-child{border-bottom:0}
+.facts b{display:block;font-size:1.25rem;letter-spacing:-.02em;margin:8px 0 6px}
+.facts p{color:var(--grey);font-size:.93rem}
+
+section{padding:56px 0}
+.sec{display:grid;gap:10px;margin-bottom:26px}
+.sec p{color:var(--grey);max-width:60ch}
+
+/* services table */
+.tbl{border:2px solid var(--ink);background:#fff}
+.tbl .r{display:grid;grid-template-columns:54px 1fr;border-bottom:1px solid var(--ink);padding:18px 16px;gap:10px}
+.tbl .r:last-child{border-bottom:0}
+.tbl .r:hover{background:var(--panel)}
+.tbl .r h3{font-size:1.25rem;margin-bottom:5px}
+.tbl .r p{color:var(--grey);font-size:.93rem}
+.tbl .n{font-family:"Space Mono",monospace;font-size:.8rem;padding-top:5px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gal figure{margin:0;border:2px solid var(--ink);background:#fff;padding:6px}
+.gal img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.gal figcaption{display:flex;justify-content:space-between;gap:8px;padding:8px 2px 2px}
+.gal figcaption .mono{color:var(--grey)}
+.gal figcaption b{font-size:.88rem}
+
+/* dark block */
+.dark{background:var(--ink);color:#fff;padding:40px 22px;display:grid;gap:26px;border:2px solid var(--ink)}
+.dark h2{color:#fff}
+.dark h2 span{color:var(--lime)}
+.dark p{color:#c9c9c4;max-width:56ch}
+.dark ul{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 14px;font-size:.92rem}
+.dark li{font-family:"Space Mono",monospace;font-size:.76rem;text-transform:uppercase;letter-spacing:.04em;padding:6px 0;border-bottom:1px solid #333}
+.dark li::before{content:"+ ";color:var(--lime)}
+
+/* contact */
+.kontakt{display:grid;gap:0;border:2px solid var(--ink);background:#fff}
+.kontakt > div{padding:28px 22px}
+.kontakt .left{border-bottom:2px solid var(--ink)}
+.kontakt .big{display:inline-block;text-decoration:none;font-weight:700;font-size:clamp(2rem,6vw,3.2rem);letter-spacing:-.03em;margin-top:14px;box-shadow:inset 0 -.3em 0 var(--lime)}
+.kontakt dl{margin:0;display:grid;gap:14px}
+.kontakt dt{font-family:"Space Mono",monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--grey)}
+.kontakt dd{margin:3px 0 0;font-size:1rem}
+.kontakt dd a{text-decoration:underline;text-decoration-thickness:2px;text-decoration-color:var(--lime);text-underline-offset:3px}
+.kontakt dd a:hover{text-decoration-color:var(--ink)}
+.note{color:var(--grey);font-size:.85rem;margin-top:14px}
+
+footer{padding:30px 0 44px;border-top:2px solid var(--ink);background:#fff;font-size:.8rem;color:var(--grey)}
+footer p{margin:0 0 8px}
+
+@media(min-width:760px){
+  .top nav{display:flex}
+  .hero{padding:56px 0}
+  .sheet{grid-template-columns:1.1fr .9fr}
+  .sheet .head{grid-column:1/-1}
+  .photo{border-top:0;border-left:2px solid var(--ink)}
+  .photo img{aspect-ratio:auto;min-height:100%}
+  .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .facts div{border-bottom:0;border-right:2px solid var(--ink)}
+  .facts div:last-child{border-right:0}
+  .tbl .r{grid-template-columns:70px 1fr 1.3fr;align-items:baseline}
+  .gal{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .dark{grid-template-columns:1.2fr 1fr;padding:56px 48px;align-items:center}
+  .kontakt{grid-template-columns:1.1fr 1fr}
+  .kontakt .left{border-bottom:0;border-right:2px solid var(--ink)}
+  .kontakt > div{padding:44px}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">Predogled prenovljene strani · vsebina povzeta z obnovidom.com in iz javnih registrov · ni objavljeno</div>
+
+<div class="top">
+  <div class="wrap row">
+    <a class="mark" href="#"><i></i>Obnovi Dom</a>
+    <nav>
+      <a href="#storitve">Storitve</a>
+      <a href="#dela">Dela</a>
+      <a href="#kljuc">Hiša na ključ</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn lime" href="tel:+38670820267">070 820 267</a>
+  </div>
+</div>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="sheet">
+      <div class="head">
+        <span class="mono">Tehnični list <span>Obnovi Dom</span></span>
+        <span class="mono">Ravne na Koroškem</span>
+      </div>
+      <div>
+        <h1>Fasade, <u>pleskanje</u>, suhomontaža.</h1>
+        <p class="lead">Zaključna gradbena dela na Koroškem: od toplotno izolacijske fasade do spuščenega stropa in zadnjega sloja barve.</p>
+        <ul class="specs">
+          <li><span class="mono">Dejavnost</span><span>Slikopleskarstvo, fasaderstvo, suhomontažna in adaptacijska dela</span></li>
+          <li><span class="mono">Posebnost</span><span>Lasten gradbeni oder, brezplačno svetovanje, hiša na ključ</span></li>
+          <li><span class="mono">Sedež</span><span>Čečovje 31, 2390 Ravne na Koroškem</span></li>
+          <li><span class="mono">Dosegljivi</span><span>Pon-Sob 7:00 - 17:00</span></li>
+        </ul>
+        <div class="acts">
+          <a class="btn" href="mailto:info@obnovidom.com">Pošljite povpraševanje</a>
+          <a class="btn out" href="#dela">Poglejte dela</a>
+        </div>
+      </div>
+      <div class="photo">
+        <img src="../assets/img/fasada-hisa-1.jpg" alt="Hiša z novo fasado in kamnitim podzidkom na Koroškem">
+        <span class="tag mono">Fasada · kamniti podzidek</span>
+        <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="facts">
+      <div><span class="mono">01 / svetovanje</span><b>Brezplačno, pred začetkom del</b><p>Naročnikom smo vedno na razpolago pri predhodnem brezplačnem svetovanju in predlagamo najboljšo rešitev.</p></div>
+      <div><span class="mono">02 / oder</span><b>Lasten gradbeni oder</b><p>Izposoja in montaža gradbenega odra ter zaščitne opreme, zato fasada ne čaka na tretjega izvajalca.</p></div>
+      <div><span class="mono">03 / na ključ</span><b>Hiša na ključ</b><p>Z regijskimi strokovnjaki za keramiko, vodovod in elektroinštalacije izpeljemo celotno obnovo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="storitve" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec">
+      <span class="mono">Storitve</span>
+      <h2>Kaj delamo</h2>
+      <p>Specializirani smo za vse vrste slikopleskarskih del, izdelavo toplotno izolacijskih fasad, adaptacijo domov in poslovnih prostorov ter suhomontažna dela.</p>
+    </div>
+    <div class="tbl">
+      <div class="r"><span class="n">01</span><h3>Slikopleskarstvo</h3><p>Vsa notranja in zunanja slikopleskarska dela.</p></div>
+      <div class="r"><span class="n">02</span><h3>Fasaderstvo</h3><p>Izdelava toplotno izolacijskih fasad po najnovejših standardih.</p></div>
+      <div class="r"><span class="n">03</span><h3>Suhomontažna dela</h3><p>Montažne predelne stene, spuščen strop, suhi estrihi in ostala suhomontažna dela.</p></div>
+      <div class="r"><span class="n">04</span><h3>Adaptacijska dela</h3><p>Adaptacija hiš, stanovanj ter poslovnih in nebivalnih prostorov.</p></div>
+      <div class="r"><span class="n">05</span><h3>Gradbeni oder</h3><p>Izposoja in montaža gradbenega odra ter zaščitne opreme.</p></div>
+      <div class="r"><span class="n">06</span><h3>Svetovanje</h3><p>Nudimo razna svetovanja s področja gradbenih del.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="dela" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec">
+      <span class="mono">Galerija</span>
+      <h2>Z naših gradbišč</h2>
+    </div>
+    <div class="gal">
+      <figure><img src="../assets/img/fasada-hisa-2.jpg" alt="Končana fasada hiše z lesenim napuščem"><figcaption><b>Fasada</b><span class="mono">zunaj</span></figcaption></figure>
+      <figure><img src="../assets/img/strop-led-crn.jpg" alt="Črn spuščen strop z LED trakom, slikopleskar pri delu"><figcaption><b>Spuščen strop</b><span class="mono">LED</span></figcaption></figure>
+      <figure><img src="../assets/img/fasada-oder-1.jpg" alt="Hiša v gradbenem odru med izdelavo fasade"><figcaption><b>Gradbeni oder</b><span class="mono">fasada</span></figcaption></figure>
+      <figure><img src="../assets/img/strop-koncan.jpg" alt="Prenovljen prostor s stropno nišo in posredno osvetlitvijo"><figcaption><b>Adaptacija</b><span class="mono">notranjost</span></figcaption></figure>
+      <figure><img src="../assets/img/pleskanje-strop.jpg" alt="Slikopleskar pleska strop z rozeto"><figcaption><b>Pleskanje</b><span class="mono">strop</span></figcaption></figure>
+      <figure><img src="../assets/img/stena-kamen.jpg" alt="Stenska obloga iz dekorativnega kamna v dnevnem prostoru"><figcaption><b>Stenska obloga</b><span class="mono">kamen</span></figcaption></figure>
+      <figure><img src="../assets/img/strop-knauf.jpg" alt="Podkonstrukcija spuščenega stropa iz mavčnih plošč"><figcaption><b>Suhomontaža</b><span class="mono">knauf</span></figcaption></figure>
+      <figure><img src="../assets/img/fasada-oder-2.jpg" alt="Gradbeni oder ob hiši med fasaderskimi deli"><figcaption><b>Fasaderska dela</b><span class="mono">oder</span></figcaption></figure>
+      <figure><img src="../assets/img/mansarda-izolacija.jpg" alt="Mansarda z izolacijo in podkonstrukcijo"><figcaption><b>Mansarda</b><span class="mono">izolacija</span></figcaption></figure>
+      <figure><img src="../assets/img/pleskanje-okno.jpg" alt="Slikopleskarja pri pleskanju prostora z balkonskimi vrati"><figcaption><b>Pleskanje</b><span class="mono">notranjost</span></figcaption></figure>
+      <figure><img src="../assets/img/strop-led-vijolicen.jpg" alt="Oblikovan spuščen strop z barvno osvetlitvijo"><figcaption><b>Spuščen strop</b><span class="mono">oblika</span></figcaption></figure>
+      <figure><img src="../assets/img/pleskanje-nisa.jpg" alt="Slikopleskar pri dokončevanju stropne niše"><figcaption><b>Dokončanje</b><span class="mono">niša</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="kljuc" style="padding-top:0">
+  <div class="wrap">
+    <div class="dark">
+      <div>
+        <span class="mono" style="color:var(--lime)">Hiša na ključ</span>
+        <h2 style="margin-top:12px">Ena ekipa, <span>celotna obnova</span></h2>
+        <p style="margin-top:16px">Naša ekipa že vrsto let sodeluje z najboljšimi strokovnjaki v regiji za izvedbo keramičarskih, vodovodarskih, elektroinštalacijskih in ostalih gradbenih del. Zagotovimo vam lahko hišo na ključ.</p>
+        <p style="margin-top:24px"><a class="btn lime" href="mailto:info@obnovidom.com">Dogovorite se za ogled</a></p>
+      </div>
+      <ul>
+        <li>Pleskanje</li><li>Fasade</li><li>Knauf</li><li>Tapete</li><li>Beljenje sten</li><li>Predelne stene</li><li>Adaptacija doma</li><li>Estrihi</li><li>Stenske obloge</li><li>Napušči</li><li>Keramičarstvo</li><li>Razne inštalacije</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="padding-top:0">
+  <div class="wrap">
+    <div class="kontakt">
+      <div class="left">
+        <span class="mono">Kontakt</span>
+        <h2 style="margin-top:10px">Želite obnoviti svoj dom?</h2>
+        <p style="color:var(--grey);margin-top:12px">Pokličite ali pišite. Pred začetkom del se z vami brezplačno posvetujemo.</p>
+        <a class="big" href="tel:+38670820267">070 820 267</a>
+        <p class="note">Po navedbi podjetja delajo z materiali KEMA, Baumit, Caparol, Weber, JUB in Knauf.</p>
+      </div>
+      <div>
+        <dl>
+          <div><dt>E-pošta</dt><dd><a href="mailto:info@obnovidom.com">info@obnovidom.com</a></dd></div>
+          <div><dt>Naslov</dt><dd><a href="https://www.openstreetmap.org/search?query=%C4%8Ce%C4%8Dovje%2031%2C%202390%20Ravne%20na%20Koro%C5%A1kem" rel="noopener">Čečovje 31, 2390 Ravne na Koroškem</a></dd></div>
+          <div><dt>Delovni čas</dt><dd>Ponedeljek do sobota, 7:00 - 17:00</dd></div>
+          <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/ZakljucnaGradbenaDelaNaKoroskem/" rel="noopener">Zaključna gradbena dela na Koroškem</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Obnovi Dom, zaključna gradbena dela, Simo Marčeta s.p., Čečovje 31, 2390 Ravne na Koroškem · matična št. 8165785000 · davčna št. 71170758 · v registru od 2018</p>
+    <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p>
+  </div>
+</footer>
+</body>
+</html>
