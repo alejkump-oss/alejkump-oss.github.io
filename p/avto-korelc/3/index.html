@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Avto Korelc Velenje: kleparstvo, ličarstvo, cenitve škod, vleka</title>
+<meta name="description" content="Avto Korelc, Marko Korelc s.p., Podkraj pri Velenju 10r. Avtokleparstvo na ravnalni mizi Spanesi, lakiranje z vodnimi laki, cenitve škod iz kaska, vleka vozil, vetrobranska stekla, klima. Predogled prenove spletne strani.">
+<style>
+@font-face{font-family:"Zilla Slab";font-weight:700;font-style:normal;font-display:swap;src:url("../assets/fonts/zilla-slab-latin-ext-700-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Zilla Slab";font-weight:700;font-style:normal;font-display:swap;src:url("../assets/fonts/zilla-slab-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Zilla Slab";font-weight:600;font-style:normal;font-display:swap;src:url("../assets/fonts/zilla-slab-latin-ext-600-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Zilla Slab";font-weight:600;font-style:normal;font-display:swap;src:url("../assets/fonts/zilla-slab-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Onest";font-weight:400;font-style:normal;font-display:swap;src:url("../assets/fonts/onest-latin-ext-400-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Onest";font-weight:400;font-style:normal;font-display:swap;src:url("../assets/fonts/onest-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Onest";font-weight:500;font-style:normal;font-display:swap;src:url("../assets/fonts/onest-latin-ext-500-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Onest";font-weight:500;font-style:normal;font-display:swap;src:url("../assets/fonts/onest-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Onest";font-weight:700;font-style:normal;font-display:swap;src:url("../assets/fonts/onest-latin-ext-700-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Onest";font-weight:700;font-style:normal;font-display:swap;src:url("../assets/fonts/onest-latin-700-normal.woff2") format("woff2")}
+
+:root{
+  --white:#ffffff; --grey:#eceef0; --grey2:#f6f7f8; --line:#1b1c1e;
+  --ink:#1b1c1e; --mute:#5b6168; --orange:#f05a14; --orange2:#c8460b;
+  --slab:"Zilla Slab",Georgia,serif; --sans:"Onest",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--ink)}
+h1,h2,h3{font-family:var(--slab);font-weight:700;line-height:1.05;margin:0}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.lbl{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--orange)}
+.btn{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;padding:.85rem 1.3rem;font-weight:700;border:2px solid var(--orange)}
+.btn:hover{background:var(--orange2);border-color:var(--orange2)}
+.btn.o{background:transparent;color:var(--ink);border-color:var(--ink)}
+
+/* bar */
+.bar{border-bottom:2px solid var(--line);background:var(--white);position:sticky;top:0;z-index:9}
+.bar .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.5rem;height:68px}
+.bar nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;font-size:.92rem;font-weight:500;justify-content:center}
+.bar nav a{text-decoration:none}
+.bar .tel{font-family:var(--slab);font-weight:700;font-size:1.25rem;text-decoration:none;white-space:nowrap}
+.bar .tel span{color:var(--orange)}
+@media (max-width:900px){.bar nav{display:none}.bar .wrap{grid-template-columns:auto auto;justify-content:space-between}}
+
+/* hero grid */
+.hero{display:grid;grid-template-columns:7fr 5fr;border-bottom:2px solid var(--line)}
+.hero .txt{padding:4rem 3rem 3rem 0;border-right:2px solid var(--line);display:grid;align-content:space-between;gap:2rem}
+.hero h1{font-size:clamp(2.5rem,6.2vw,5.2rem);letter-spacing:-.015em;max-width:14ch}
+.hero h1 span{color:var(--orange)}
+.hero p{font-size:1.1rem;color:var(--mute);max-width:52ch;margin:1rem 0 1.4rem}
+.hero .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero .meta{display:grid;grid-template-columns:repeat(3,auto);gap:1.5rem;font-size:.85rem;color:var(--mute);border-top:1px solid var(--grey);padding-top:1rem}
+.hero .meta b{display:block;color:var(--ink);font-family:var(--slab);font-size:1.15rem}
+.hero .pic{position:relative;min-height:420px;background:var(--grey)}
+.hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .pic .tag{position:absolute;top:1rem;left:1rem;background:var(--white);border:2px solid var(--line);padding:.35rem .7rem;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.hero .txt{border-right:0;padding:2.5rem 0 2rem}.hero .pic{min-height:300px;border-top:2px solid var(--line)}.hero .meta{grid-template-columns:1fr 1fr}}
+
+section{padding:4.5rem 0}
+.sh{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:baseline;border-bottom:2px solid var(--line);padding-bottom:1rem;margin-bottom:2rem}
+.sh h2{font-size:clamp(1.9rem,4vw,3rem)}
+.sh p{margin:0;color:var(--mute);justify-self:end;max-width:48ch;text-align:right}
+@media (max-width:760px){.sh{grid-template-columns:1fr;gap:.4rem}.sh p{justify-self:start;text-align:left}}
+
+/* service cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--line)}
+.card{border-right:2px solid var(--line);border-bottom:2px solid var(--line);display:grid;grid-template-rows:auto 1fr}
+.card:nth-child(3n){border-right:0}
+.card:nth-last-child(-n+3){border-bottom:0}
+.card figure{margin:0;aspect-ratio:3/2;background:var(--grey);position:relative;border-bottom:2px solid var(--line)}
+.card figure img{width:100%;height:100%;object-fit:cover}
+.card .empty{position:absolute;inset:12px;border:2px dashed #c3c8ce;display:grid;place-items:center;text-align:center;color:var(--mute);font-size:.85rem;padding:1rem}
+.card .b{padding:1.2rem 1.2rem 1.4rem}
+.card .n{font-family:var(--slab);font-weight:700;color:var(--orange);font-size:.95rem;letter-spacing:.06em}
+.card h3{font-size:1.45rem;margin:.2rem 0 .5rem}
+.card p{margin:0;color:var(--mute);font-size:.95rem}
+@media (max-width:900px){.cards{grid-template-columns:1fr 1fr}.card:nth-child(3n){border-right:2px solid var(--line)}.card:nth-child(2n){border-right:0}.card:nth-last-child(-n+3){border-bottom:2px solid var(--line)}.card:nth-last-child(-n+2){border-bottom:0}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}.card,.card:nth-child(3n),.card:nth-child(2n){border-right:0;border-bottom:2px solid var(--line)}.card:last-child{border-bottom:0}}
+
+/* equipment */
+.equip{background:var(--ink);color:#fff}
+.equip .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.equip h2{font-size:clamp(2rem,4.5vw,3.4rem);margin-bottom:1rem}
+.equip p{color:#c9ccd1}
+.equip ul{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:.9rem}
+.equip li{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;border-top:1px solid #3a3d42;padding-top:.9rem}
+.equip li b{font-family:var(--slab);font-size:1.2rem;color:var(--orange);min-width:3rem}
+.equip .pics{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.equip .pics img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.equip .pics img:first-child{grid-column:1/-1;aspect-ratio:16/9}
+@media (max-width:900px){.equip .wrap{grid-template-columns:1fr}}
+
+/* before after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:2px solid var(--line)}
+.ba figure{margin:0;background:var(--white);position:relative}
+.ba img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.ba figcaption{padding:.8rem 1rem;font-size:.9rem;color:var(--mute);border-top:2px solid var(--line)}
+.ba figcaption b{font-family:var(--slab);color:var(--ink);font-size:1.1rem;margin-right:.5rem}
+@media (max-width:640px){.ba{grid-template-columns:1fr}}
+
+/* about + tips */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.two p{color:var(--mute)}
+.two h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:1rem}
+.two blockquote{margin:1.4rem 0;padding-left:1.2rem;border-left:4px solid var(--orange);font-family:var(--slab);font-weight:600;font-size:1.35rem;line-height:1.3;color:var(--ink)}
+.tips{display:grid;gap:0;border:2px solid var(--line)}
+.tips article{padding:1.2rem 1.3rem;border-bottom:2px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:1rem}
+.tips article:last-child{border-bottom:0}
+.tips .n{font-family:var(--slab);font-weight:700;color:var(--orange);font-size:1.6rem;line-height:1}
+.tips h3{font-size:1.15rem;margin-bottom:.3rem}
+.tips p{margin:0;font-size:.93rem}
+@media (max-width:900px){.two{grid-template-columns:1fr}}
+
+/* work order */
+.order{background:var(--grey2);border-top:2px solid var(--line)}
+.order .ticket{background:var(--white);border:2px solid var(--line);display:grid;grid-template-columns:1.1fr 1fr;box-shadow:8px 8px 0 var(--orange)}
+.order .l{padding:2.2rem;border-right:2px solid var(--line)}
+.order .r{padding:2.2rem;display:grid;gap:1.1rem;align-content:start}
+.order h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:.8rem}
+.order .big{font-family:var(--slab);font-weight:700;font-size:clamp(1.7rem,4vw,2.5rem);text-decoration:none;display:block;line-height:1.15}
+.order .big span{color:var(--orange)}
+.order dt{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--mute)}
+.order dd{margin:.15rem 0 0}
+.order dl{margin:0}
+.order .stamp{display:inline-block;border:2px solid var(--orange);color:var(--orange);font-family:var(--slab);font-weight:700;padding:.2rem .6rem;transform:rotate(-2deg);font-size:.95rem;margin-top:.8rem}
+@media (max-width:900px){.order .ticket{grid-template-columns:1fr}.order .l{border-right:0;border-bottom:2px solid var(--line)}.order .l,.order .r{padding:1.5rem}}
+
+footer{padding:1.8rem 0;font-size:.86rem;color:var(--mute);border-top:2px solid var(--line)}
+footer p{margin:.2rem 0}
+.mobilecall{display:none}
+@media (max-width:900px){
+  .mobilecall{display:block;position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--orange);color:#fff;text-align:center;padding:.95rem;text-decoration:none;font-weight:700;border-top:2px solid var(--line)}
+  body{padding-bottom:58px}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a href="#"><img src="../assets/img/logo-avto-korelc.png" alt="Avto Korelc" width="125" height="40"></a>
+    <nav><ul>
+      <li><a href="#storitve">Storitve</a></li>
+      <li><a href="#oprema">Oprema</a></li>
+      <li><a href="#o-nas">O nas</a></li>
+      <li><a href="#nasveti">Nasveti</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul></nav>
+    <a class="tel" href="tel:+38641738125"><span>041</span> 738 125</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero" style="padding:0">
+    <div class="txt">
+      <div>
+        <span class="lbl">Avtokleparstvo, avtoličarstvo, cenitve. Podkraj pri Velenju.</span>
+        <h1 style="margin-top:.8rem">Pločevina, <span>barva</span> in papirji za zavarovalnico.</h1>
+        <p>Kleparska dela na ravnalni mizi Spanesi, lakiranje v komori USI-Italia z vodnimi laki DuPont. Smo pogodbeni izvajalec za večino znanih zavarovalnic: prijavo in cenitev škode iz kaska opravimo pri nas.</p>
+        <div class="cta"><a class="btn" href="tel:+38641738125">Pokličite 041 738 125</a><a class="btn o" href="#kontakt">Kje smo</a></div>
+      </div>
+      <div class="meta">
+        <div><b>Od 1999</b>V registru od 1. 2. 1999</div>
+        <div><b>Pon do pet</b>7.00 do 16.00</div>
+        <div><b>Velenje</b>Podkraj pri Velenju 10r</div>
+      </div>
+    </div>
+    <figure class="pic" style="margin:0">
+      <img src="../assets/img/kleparstvo-ravnalna-miza.jpg" alt="Poškodovano vozilo na ravnalni mizi v delavnici Avto Korelc" width="800" height="600" fetchpriority="high">
+      <span class="tag">Naša delavnica</span>
+    </figure>
+  </section>
+</div>
+
+<section id="storitve">
+  <div class="wrap">
+    <div class="sh"><h2>Storitve</h2><p>Vse za poškodovano vozilo na enem naslovu. Če je potrebno, vam ob popravilu zagotovimo nadomestno vozilo.</p></div>
+    <div class="cards">
+      <article class="card">
+        <figure><img src="../assets/img/kleparstvo-zadnji-del.jpg" alt="Razstavljen zadnji del vozila med kleparskim popravilom" width="800" height="600" loading="lazy"></figure>
+        <div class="b"><span class="n">01</span><h3>Avtokleparstvo</h3><p>Kleparska dela opravljamo na ravnalni mizi vrhunske znamke Spanesi. Poškodovano vozilo bomo kar se da temeljito popravili.</p></div>
+      </article>
+      <article class="card">
+        <figure><img src="../assets/img/lakirnica-notranjost.jpg" alt="Avtoličar v zaščitni obleki lakira notranjost vozila" width="800" height="449" loading="lazy"></figure>
+        <div class="b"><span class="n">02</span><h3>Avtoličarstvo</h3><p>Lakiranje v lakirni komori USI-Italia z vodnimi laki DuPont. Osebna, dostavna in tovorna vozila.</p></div>
+      </article>
+      <article class="card">
+        <figure><img src="../assets/img/cenitev.jpg" alt="Cenilec s podlogo za pisanje pregleduje dvignjeno vozilo" width="800" height="410" loading="lazy"></figure>
+        <div class="b"><span class="n">03</span><h3>Cenitve škod</h3><p>Prijave in cenitve škod iz naslova avtomobilskega kaska. Za ostale zavarovalnice pripravimo dokumentacijo, po dogovoru vozilo peljemo tudi na cenilno mesto.</p></div>
+      </article>
+      <article class="card">
+        <figure><div class="empty">Vaša fotografija vlečnega vozila in prikolice</div></figure>
+        <div class="b"><span class="n">04</span><h3>Vleka vozil</h3><p>Ob zahtevnejših okvarah in nezgodah vozilo pripeljemo do naše delavnice ali po vaši izbiri, s svojim vozilom in ustrezno opremljeno prikolico.</p></div>
+      </article>
+      <article class="card">
+        <figure><img src="../assets/img/steklo-stojalo.jpg" alt="Novo vetrobransko steklo na stojalu pred vgradnjo" width="800" height="600" loading="lazy"></figure>
+        <div class="b"><span class="n">05</span><h3>Vetrobranska stekla</h3><p>Steklo je sestavni del trdnosti vozila. Zamenjamo ga z originalnim delom oziroma z enakovrednim steklom.</p></div>
+      </article>
+      <article class="card">
+        <figure><div class="empty">Vaša fotografija: polnjenje klime ali vodno peskanje</div></figure>
+        <div class="b"><span class="n">06</span><h3>Klima in vodno peskanje</h3><p>Polnjenje klimatskih naprav v delavnici. Mobilno vodno peskanje na terenu: ekološko in brezprašno odstranjevanje barv, lakov, lepil in rje.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="oprema" class="equip">
+  <div class="wrap">
+    <div>
+      <span class="lbl">Oprema</span>
+      <h2>S čim delamo</h2>
+      <p>V sodobno opremljeni delavnici bomo vaše poškodovano vozilo kar se da temeljito popravili.</p>
+      <ul>
+        <li><b>01</b><div><strong>Ravnalna miza Spanesi</strong><br>Kleparska dela, vračanje karoserije v tovarniške mere.</div></li>
+        <li><b>02</b><div><strong>Lakirna komora USI-Italia</strong><br>Lakiranje v zaprti komori.</div></li>
+        <li><b>03</b><div><strong>Vodni laki DuPont</strong><br>Lakiranje z vodnimi laki.</div></li>
+        <li><b>04</b><div><strong>Brezprašno peskanje</strong><br>Priprava površin brez prahu.</div></li>
+      </ul>
+    </div>
+    <div class="pics">
+      <img src="../assets/img/lakirnica-koncano.jpg" alt="Prelakirano terensko vozilo v lakirni komori" width="800" height="600" loading="lazy">
+      <img src="../assets/img/kleparstvo-blatnik.jpg" alt="Popravljen rob blatnika pred lakiranjem" width="800" height="449" loading="lazy">
+      <img src="../assets/img/steklo-vgradnja.jpg" alt="Vgradnja vetrobranskega stekla z vakuumskimi prijemali" width="800" height="600" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sh"><h2>Pred in po</h2><p>Kabina starodobnega tovornjaka: v temeljni barvi in po lakiranju. Fotografiji iz naše delavnice.</p></div>
+    <div class="ba">
+      <figure><img src="../assets/img/kabina-temeljna.jpg" alt="Kabina starodobnega tovornjaka v temeljni barvi" width="800" height="600" loading="lazy"><figcaption><b>Pred</b>Temeljna barva, pripravljeno za lakiranje.</figcaption></figure>
+      <figure><img src="../assets/img/kabina-lakirana.jpg" alt="Ista kabina po lakiranju v oranžni barvi" width="800" height="600" loading="lazy"><figcaption><b>Po</b>Lakirano v komori z vodnimi laki.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="o-nas" style="padding-top:0">
+  <div class="wrap two">
+    <div>
+      <span class="lbl">O nas</span>
+      <h2 style="margin-top:.6rem">Marko Korelc, nosilec obrti</h2>
+      <p>Po osnovni šoli se je najprej izučil za orodjarja, ker so ga veselila dela z rokami. Ker v tej smeri ni bilo zaposlitve in je avtomobile popravljal že v srednji šoli, je z dodatnimi izpiti pridobil izobrazbo avtoličarja. V začetku leta 1999 je krenil na pot samostojnega podjetnika.</p>
+      <blockquote>Dobro opravljeno delo je najboljša reklama za našo dejavnost.</blockquote>
+      <p>Po navedbah na njihovi strani je bilo v delavnici zaposlenih šest ljudi: poleg Marka kot strokovnega vodje in nosilca obrti še dva avtoličarja, pomočnik avtoličarja, klepar in tajnica. Prosti čas je prav tako povezan z avtomobili: Marko se ljubiteljsko udeležuje tekmovanj državnega prvenstva v spretnostnih vožnjah na terenu.</p>
+      <img src="../assets/img/offroad-tekma.jpg" alt="Terensko vozilo med spretnostno vožnjo na terenu" width="480" height="270" loading="lazy" style="border:2px solid var(--line);margin-top:1rem">
+    </div>
+    <div id="nasveti">
+      <span class="lbl">Nasveti</span>
+      <h2 style="margin:.6rem 0 1rem">Kaj storiti ob nesreči</h2>
+      <div class="tips">
+        <article><span class="n">1</span><div><h3>Samo materialna škoda</h3><p>Ustavite vozilo, zavarujte in označite kraj, vozilo umaknite z vozišča, če je vozno. Policije ni treba obvestiti. Izmenjajte podatke in izpolnite Evropsko poročilo o prometni nesreči.</p></div></article>
+        <article><span class="n">2</span><div><h3>Oškodovanec ni prisoten</h3><p>Za brisalcem pustite svoje podatke. Dogodek lahko prijavite na policijski postaji, da se zavarujete pred prijavo pobega s kraja nesreče.</p></div></article>
+        <article><span class="n">3</span><div><h3>Poškodovani udeleženci</h3><p>Trikotnik vsaj 50 metrov od kraja nesreče, presodite stanje poškodovancev, pokličite 113.</p></div></article>
+        <article><span class="n">4</span><div><h3>Nato pokličite nas</h3><p>Vozilo pripeljemo s svojim vozilom in prikolico, cenitev opravimo v delavnici.</p></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="order">
+  <div class="wrap">
+    <div class="ticket">
+      <div class="l">
+        <span class="lbl">Kontakt</span>
+        <h2>Pokličite ali pridite.</h2>
+        <a class="big" href="tel:+38641738125"><span>041</span> 738 125</a>
+        <a class="big" href="tel:+38635862577"><span>03</span> 586 25 77</a>
+        <p style="margin:.8rem 0 0"><a href="mailto:info@avtokorelc.si">info@avtokorelc.si</a></p>
+        <span class="stamp">Pon do pet, 7.00 do 16.00</span>
+      </div>
+      <div class="r">
+        <dl><dt>Delavnica</dt><dd>Avto Korelc, Marko Korelc s.p.<br>Podkraj pri Velenju 10r, 3320 Velenje<br><a href="https://www.openstreetmap.org/search?query=Podkraj%20pri%20Velenju%2010r%2C%203320%20Velenje" rel="noopener">Prikaži na zemljevidu</a></dd></dl>
+        <dl><dt>Delovni čas</dt><dd>Ponedeljek do petek: 7.00 do 16.00<br>Sobota, nedelje in prazniki: zaprto</dd></dl>
+        <dl><dt>Podatki</dt><dd>Davčna številka SI14375583<br>Matična številka 1279297000<br>SKD G45.200, vzdrževanje in popravila motornih vozil</dd></dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Avto Korelc, Marko Korelc s.p., Podkraj pri Velenju 10r, 3320 Velenje</p>
+    <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p>
+  </div>
+</footer>
+
+<a class="mobilecall" href="tel:+38641738125">Pokličite 041 738 125</a>
+</body>
+</html>
