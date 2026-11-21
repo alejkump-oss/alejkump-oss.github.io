@@ -43,5 +43,6 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Izdelava spletnih strani Črnomelj](https://alejkump.si/izdelava-spletnih-strani-crnomelj.html)
 - [Izdelava spletnih strani Ivančna Gorica](https://alejkump.si/izdelava-spletnih-strani-ivancna-gorica.html)
 - [Izdelava spletnih strani Sodražica](https://alejkump.si/izdelava-spletnih-strani-sodrazica.html)
+- [Izdelava spletnih strani Velike Lašče](https://alejkump.si/izdelava-spletnih-strani-velike-lasce.html)
 
 Opomba: nobena storitev ne vključuje obljube o uvrstitvi na iskalnikih.
