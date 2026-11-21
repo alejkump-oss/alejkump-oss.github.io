@@ -31,6 +31,8 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Spletna stran za gradbeno podjetje](https://alejkump.si/clanki-spletna-stran-za-gradbeno-podjetje.html)
 - [Spletna stran za mizarja](https://alejkump.si/clanki-spletna-stran-za-mizarja.html)
 - [Spletna trgovina za lokalno podjetje](https://alejkump.si/clanki-spletna-trgovina-za-lokalno-podjetje.html)
+- [Spletna stran za čistilni servis](https://alejkump.si/clanki-spletna-stran-za-cistilni-servis.html)
+- [Spletna stran za računovodski servis](https://alejkump.si/clanki-spletna-stran-za-racunovodski-servis.html)
 
 ## Kraji
 
@@ -44,5 +46,9 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Izdelava spletnih strani Ivančna Gorica](https://alejkump.si/izdelava-spletnih-strani-ivancna-gorica.html)
 - [Izdelava spletnih strani Sodražica](https://alejkump.si/izdelava-spletnih-strani-sodrazica.html)
 - [Izdelava spletnih strani Velike Lašče](https://alejkump.si/izdelava-spletnih-strani-velike-lasce.html)
+- [Izdelava spletnih strani Kostel in Osilnica](https://alejkump.si/izdelava-spletnih-strani-kostel-osilnica.html)
+- [Izdelava spletnih strani Dolenjske Toplice](https://alejkump.si/izdelava-spletnih-strani-dolenjske-toplice.html)
+- [Izdelava spletnih strani Loški Potok](https://alejkump.si/izdelava-spletnih-strani-loski-potok.html)
+- [Izdelava spletnih strani Žužemberk](https://alejkump.si/izdelava-spletnih-strani-zuzemberk.html)
 
 Opomba: nobena storitev ne vključuje obljube o uvrstitvi na iskalnikih.
