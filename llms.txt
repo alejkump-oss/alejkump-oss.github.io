@@ -49,6 +49,7 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Spletna stran za pasji salon](https://alejkump.si/clanki-spletna-stran-za-pasji-salon.html)
 - [Spletna stran za kovinarstvo](https://alejkump.si/clanki-spletna-stran-za-kovinarstvo.html)
 - [Spletna stran za turističnega vodnika](https://alejkump.si/clanki-spletna-stran-za-turisticnega-vodnika.html)
+- [Spletna stran za glasbeno skupino](https://alejkump.si/clanki-spletna-stran-za-glasbeno-skupino.html)
 
 ## Kraji
 
@@ -76,5 +77,7 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Izdelava spletnih strani Krško](https://alejkump.si/izdelava-spletnih-strani-krsko.html)
 - [Izdelava spletnih strani Sevnica](https://alejkump.si/izdelava-spletnih-strani-sevnica.html)
 - [Izdelava spletnih strani Dobrepolje](https://alejkump.si/izdelava-spletnih-strani-dobrepolje.html)
+- [Izdelava spletnih strani Cerknica](https://alejkump.si/izdelava-spletnih-strani-cerknica.html)
+- [Izdelava spletnih strani Brežice](https://alejkump.si/izdelava-spletnih-strani-brezice.html)
 
 Opomba: nobena storitev ne vključuje obljube o uvrstitvi na iskalnikih.
