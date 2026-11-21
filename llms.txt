@@ -79,5 +79,6 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Izdelava spletnih strani Dobrepolje](https://alejkump.si/izdelava-spletnih-strani-dobrepolje.html)
 - [Izdelava spletnih strani Cerknica](https://alejkump.si/izdelava-spletnih-strani-cerknica.html)
 - [Izdelava spletnih strani Brežice](https://alejkump.si/izdelava-spletnih-strani-brezice.html)
+- [Izdelava spletnih strani Logatec](https://alejkump.si/izdelava-spletnih-strani-logatec.html)
 
 Opomba: nobena storitev ne vključuje obljube o uvrstitvi na iskalnikih.
