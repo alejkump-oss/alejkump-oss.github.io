@@ -22,6 +22,8 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 - [Spletna stran za obrtnika: 7 stvari](https://alejkump.si/clanki-spletna-stran-za-obrtnike.html)
 - [Spletna stran za frizerski salon](https://alejkump.si/clanki-spletna-stran-za-frizerje.html)
 - [Spletna stran za rokodelca in izdelovalca suhe robe](https://alejkump.si/clanki-spletna-stran-za-rokodelce-suha-roba.html)
+- [Spletna stran za gostilno](https://alejkump.si/clanki-spletna-stran-za-gostilno.html)
+- [Spletna stran za avtoservis](https://alejkump.si/clanki-spletna-stran-za-avtoservis.html)
 
 ## Kraji
 
