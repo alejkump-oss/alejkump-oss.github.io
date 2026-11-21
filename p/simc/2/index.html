@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>ŠIMC d.o.o., Plemberk pri Stopičah: avtoličarstvo in avtokleparstvo</title>
+<meta name="description" content="ŠIMC, avtokleparstvo in avtoličarstvo, d.o.o., Plemberk 5A, 8322 Stopiče. Ličanje in poliranje vozil, lastna lakirno-sušilna komora in mešalnica barv, karoserijska popravila, popravilo toče. Predlog prenove spletne strani.">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+:root{--mist:#f1f2ee;--card:#fbfbf9;--ink:#17191a;--ink2:#474b4d;--mute:#7b8083;--rule:#d3d6d1;--olive:#5e6b27;--olive2:#4a5520;--olive-soft:#e3e7d2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--mist);color:var(--ink);font-family:"Work Sans",Arial,sans-serif;font-size:17px;line-height:1.65;overflow-wrap:anywhere}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.08;margin:0;letter-spacing:-.01em}
+.wrap{width:min(1080px,100% - 32px);margin:0 auto}
+.ribbon{background:var(--ink);color:var(--mist);font-size:.8rem;text-align:center;padding:.45rem 1rem}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--rule)}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:.6rem;min-width:0}
+.brand b{font-family:"Fraunces",serif;font-weight:600;font-size:1.6rem;white-space:nowrap}
+.brand span{font-size:.85rem;color:var(--mute)}
+@media (max-width:520px){.brand span{display:none}}
+nav{display:flex;gap:1.5rem;font-size:.9rem}
+nav a{text-decoration:none;color:var(--ink2)}
+nav a:hover{color:var(--olive)}
+.tel{text-decoration:none;font-weight:600;white-space:nowrap;color:var(--olive)}
+@media (max-width:820px){nav{display:none}}
+/* hero: centred serif headline, wide frame below */
+.hero{text-align:center;padding:4rem 0 2.5rem}
+.hero .eyebrow{color:var(--olive);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;margin:0 0 1.2rem}
+.hero h1{font-size:clamp(2.4rem,6vw,4.6rem);max-width:18ch;margin:0 auto}
+.hero h1 i{font-style:italic;font-weight:400;color:var(--olive)}
+.hero p{max-width:40rem;margin:1.4rem auto 2rem;color:var(--ink2);font-size:1.1rem}
+.cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:.8rem 1.4rem;border-radius:999px;border:1.5px solid var(--ink);font-weight:600;font-size:.95rem}
+.btn.fill{background:var(--olive);border-color:var(--olive);color:#fff}
+.btn.fill:hover{background:var(--olive2)}
+.btn:hover{border-color:var(--olive);color:var(--olive)}
+.ph{border:1.5px dashed var(--mute);border-radius:14px;background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--mute);font-size:.85rem;padding:1rem}
+.ph.wide{aspect-ratio:21/9;margin-top:2.5rem}
+.ph.r43{aspect-ratio:4/3}
+.ph.r1{aspect-ratio:1}
+.ph b{font-family:"Fraunces",serif;font-weight:600;font-size:1.05rem;color:var(--ink2);margin-bottom:.2rem}
+.cap{font-size:.85rem;color:var(--mute);margin:.6rem 0 0;text-align:left}
+/* three things */
+.three{padding:4rem 0}
+.three .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:1.6rem}
+.card .n{font-family:"Fraunces",serif;font-style:italic;color:var(--olive);font-size:1.4rem;display:block;margin-bottom:.6rem}
+.card h3{font-size:1.35rem;margin-bottom:.6rem}
+.card p{margin:0;color:var(--ink2);font-size:.98rem}
+/* services */
+.serv{padding:3rem 0 4rem}
+.serv .cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.serv h2{font-size:2.2rem;margin-bottom:.4rem}
+.serv .sub{color:var(--mute);margin:0 0 1.4rem;font-size:.95rem}
+.serv ul{list-style:none;margin:0;padding:0}
+.serv li{padding:.75rem 0;border-top:1px solid var(--rule);display:flex;gap:.8rem;align-items:flex-start}
+.serv li::before{content:"";flex:0 0 auto;width:9px;height:9px;border-radius:50%;background:var(--olive);margin-top:.6rem}
+.serv li:last-child{border-bottom:1px solid var(--rule)}
+/* feature: komora */
+.feature{background:var(--olive);color:#fff;padding:4.5rem 0}
+.feature .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.feature h2{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:1rem}
+.feature p{margin:0 0 1rem;font-size:1.05rem;color:#f0f3e4}
+.feature .ph{border-color:#d9e0bf;background:rgba(255,255,255,.08);color:#eef2dc}
+.feature .ph b{color:#fff}
+/* insurance + form */
+.ins{padding:4.5rem 0}
+.ins .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.ins h2{font-size:2.2rem;margin-bottom:1rem}
+.ins p{color:var(--ink2)}
+form{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:1.6rem}
+form h3{font-size:1.4rem;margin-bottom:.4rem}
+form .note{font-size:.85rem;color:var(--mute);margin:0 0 1.2rem}
+label{display:block;font-size:.85rem;font-weight:600;margin:.8rem 0 .3rem}
+input,textarea,select{width:100%;font:inherit;font-size:.95rem;padding:.65rem .8rem;border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+.radios{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.9rem;font-weight:400}
+.radios label{display:flex;align-items:center;gap:.4rem;margin:.4rem 0 0;font-weight:400}
+.radios input{width:auto}
+form .btn{margin-top:1.2rem;border:0;cursor:pointer}
+/* contact */
+.contact{background:var(--card);border-top:1px solid var(--rule);padding:4rem 0}
+.contact .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem}
+.contact h2{font-size:2.2rem;margin-bottom:1.2rem}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:.5rem 1.5rem;font-size:1rem}
+.kv span{color:var(--mute);font-size:.85rem;padding-top:.15rem}
+.kv a{text-decoration:none;border-bottom:1px solid var(--olive)}
+.kv a:hover{color:var(--olive)}
+.hours{margin-top:1.6rem;padding:1.2rem 1.4rem;background:var(--olive-soft);border-radius:12px}
+.hours b{font-family:"Fraunces",serif;font-weight:600;font-size:1.2rem;display:block;margin-bottom:.2rem}
+.hours p{margin:0}
+.map{display:inline-block;margin-top:1rem;text-decoration:none;color:var(--olive);font-weight:600;border-bottom:1.5px solid var(--olive)}
+footer{padding:2rem 0;color:var(--mute);font-size:.85rem;border-top:1px solid var(--rule)}
+footer p{margin:0 0 .3rem}
+@media (max-width:820px){
+ .three .grid,.serv .cols,.feature .wrap,.ins .wrap,.contact .wrap{grid-template-columns:1fr}
+ .hero{padding:2.8rem 0 2rem}
+ .ph.wide{aspect-ratio:4/3}
+ .three,.serv,.feature,.ins,.contact{padding:3rem 0}
+ .kv{grid-template-columns:1fr;gap:.1rem}
+ .kv span{margin-top:.6rem}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">Predlog prenove spletne strani simc.si. Besedila so z vaše obstoječe strani, fotografije delavnice dodamo skupaj z vami.</div>
+<header>
+ <div class="wrap">
+  <a class="brand" href="#"><b>ŠIMC</b><span>avtokleparstvo in avtoličarstvo</span></a>
+  <nav><a href="#storitve">Storitve</a><a href="#komora">Lakirna komora</a><a href="#zavarovalnice">Zavarovalnice</a><a href="#kontakt">Kontakt</a></nav>
+  <a class="tel" href="tel:+38673080260">07 30 80 260</a>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="wrap">
+  <p class="eyebrow">Plemberk 5A, Stopiče</p>
+  <h1>Vaše vozilo spet <i>v prvotni barvi</i> in obliki</h1>
+  <p>Ličanje in poliranje v lastni lakirno-sušilni komori, barve iz lastne mešalnice, karoserijska popravila osebnih in dostavnih vozil. Vse na enem naslovu v Plemberku.</p>
+  <div class="cta"><a class="btn fill" href="tel:+38673080260">Pokličite 07 30 80 260</a><a class="btn" href="#zavarovalnice">Pišite nam</a></div>
+  <div class="ph wide"><b>Vaša fotografija</b>Delavnica ŠIMC v Plemberku, široki posnetek</div>
+ </div>
+</section>
+
+<section class="three">
+ <div class="wrap">
+  <div class="grid">
+   <div class="card"><span class="n">1.</span><h3>Lastna lakirno-sušilna komora</h3><p>Na voljo imamo lastno lakirno-sušilno komoro, v kateri vaše vozilo kakovostno in hitro polakiramo.</p></div>
+   <div class="card"><span class="n">2.</span><h3>Lastna mešalnica barv</h3><p>Barve znamk Standomix in Standohyp (ekološke barve) namešamo v lastni mešalnici, zato odtenek ustreza vašemu vozilu.</p></div>
+   <div class="card"><span class="n">3.</span><h3>Sodelujemo z zavarovalnicami</h3><p>Popravilo po zavarovalnem primeru lahko uredite pri nas. Za katere zavarovalnice, vam povemo po telefonu.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="storitve" class="serv">
+ <div class="wrap">
+  <div class="cols">
+   <div>
+    <h2>Avtoličarstvo</h2>
+    <p class="sub">Ličanje vozil</p>
+    <ul>
+     <li>Ličanje vozil</li>
+     <li>Poliranje vozil</li>
+     <li>Popravilo manjših poškodb na laku (praske, odrgnine in podobno)</li>
+    </ul>
+    <div class="ph r43" style="margin-top:1.6rem"><b>Vaša fotografija</b>polakirano vozilo pred prevzemom</div>
+   </div>
+   <div>
+    <h2>Avtokleparstvo</h2>
+    <p class="sub">Storitve</p>
+    <ul>
+     <li>Avtokleparska karoserijska popravila osebnih in dostavnih vozil</li>
+     <li>Menjava poškodovanih delov z novimi originalnimi</li>
+     <li>Popravilo poškodb od toče</li>
+     <li>Popravilo in zamenjava izpušnih sistemov</li>
+     <li>Varjenje in popravilo plastičnih delov (odbijači in drugo)</li>
+     <li>Popravilo vozil zaradi prerjavenja</li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="komora" class="feature">
+ <div class="wrap">
+  <div class="ph r43"><b>Vaša fotografija</b>lakirno-sušilna komora</div>
+  <div>
+   <h2>Lakirno-sušilna komora in mešalnica barv</h2>
+   <p>Na voljo imamo lastno lakirno-sušilno komoro, kjer vaše vozilo kakovostno in hitro polakiramo.</p>
+   <p>Lastna mešalnica barv znamk Standomix in Standohyp (ekološke barve).</p>
+  </div>
+ </div>
+</section>
+
+<section id="zavarovalnice" class="ins">
+ <div class="wrap">
+  <div>
+   <h2>Zavarovalnice</h2>
+   <p>Sodelujemo z zavarovalnicami, zato popravilo po toči ali nesreči lahko uredite pri nas. Za katere zavarovalnice, vam povemo po telefonu.</p>
+   <p>Pokličite nas na <a href="tel:+38673080260" style="text-decoration:none;color:var(--olive);font-weight:600">07 30 80 260</a> ali nam pišite na <a href="mailto:info@simc.si" style="text-decoration:none;color:var(--olive);font-weight:600">info@simc.si</a>.</p>
+   <div class="ph r43" style="margin-top:1.4rem"><b>Vaša fotografija</b>popravilo poškodb od toče</div>
+  </div>
+  <form onsubmit="return false">
+   <h3>Pišite nam</h3>
+   <p class="note">Povpraševanje za kleparstvo ali ličanje. V predogledu obrazec še ne pošilja, na prenovljeni strani bo.</p>
+   <label for="ime">Ime in priimek</label><input id="ime" name="ime" type="text" autocomplete="name">
+   <label for="mail">Vaša elektronska pošta</label><input id="mail" name="email" type="email" autocomplete="email">
+   <label for="tel">Vaša telefonska številka</label><input id="tel" name="tel" type="tel" autocomplete="tel">
+   <label for="msg">Vaše sporočilo ali vprašanje</label><textarea id="msg" name="body"></textarea>
+   <div class="radios"><label><input type="radio" name="kontakt" value="klic" checked> Želim, da me pokličete</label><label><input type="radio" name="kontakt" value="mail"> Odgovorite mi na e-pošto</label></div>
+   <button class="btn fill" type="button">Pošlji povpraševanje</button>
+  </form>
+ </div>
+</section>
+
+<section id="kontakt" class="contact">
+ <div class="wrap">
+  <div>
+   <h2>Kje nas najdete</h2>
+   <div class="kv">
+    <span>Naslov</span><div>ŠIMC d.o.o., Plemberk 5A, 8322 Stopiče</div>
+    <span>Telefon</span><div><a href="tel:+38673080260">07 30 80 260</a></div>
+    <span>Mobilni</span><div><a href="tel:+38641610728">041 610 728</a></div>
+    <span>E-pošta</span><div><a href="mailto:info@simc.si">info@simc.si</a></div>
+    <span>Podjetje</span><div>ŠIMC, avtokleparstvo in avtoličarstvo, d.o.o.<br>Davčna številka SI33187100, matična številka 3676226000, v registru od leta 2010</div>
+   </div>
+   <a class="map" href="https://www.openstreetmap.org/search?query=Plemberk%205A%2C%208322%20Stopi%C4%8De" rel="noopener">Odpri zemljevid (OpenStreetMap)</a>
+   <div class="hours"><b>Delovni čas</b><p>Vsak delavnik od 7.00 do 15.00. Ob sobotah, nedeljah in praznikih je zaprto.</p></div>
+  </div>
+  <div class="ph r1"><b>Vaša fotografija</b>vhod v delavnico, Plemberk 5A</div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <p>ŠIMC, avtokleparstvo in avtoličarstvo, d.o.o., Plemberk 5A, 8322 Stopiče</p>
+  <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p>
+ </div>
+</footer>
+</body>
+</html>
