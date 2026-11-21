@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Frizerski studio Ksenija · teden · Kočevje</title>
+<meta name="description" content="Frizerski studio Ksenija, Podjetniško naselje Kočevje 1. Dopoldne in popoldne, šest dni v tednu. Od leta 2002. Termin na 041 444 154.">
+<meta name="theme-color" content="#1c1a17">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#f1e9dc;--paper:#faf6ee;--ink:#1c1a17;--saffron:#c7791a;--gold:#f2b544;--mute:#6b6257;--line:rgba(28,26,23,.14)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.55 "IBM Plex Sans",system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--line);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.top a{text-decoration:none;color:var(--saffron)}
+header.intro{padding:40px 0 26px}
+.eyebrow{margin:0 0 12px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);font-weight:500}
+h1{font:700 clamp(38px,8vw,78px)/1.02 "Playfair Display",Georgia,serif;margin:0;letter-spacing:-.015em}
+h1 em{font-style:italic;font-weight:500;color:var(--saffron)}
+.lead{margin:18px 0 0;max-width:640px;font-size:clamp(17px,2.2vw,20px)}
+.facts{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.facts li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline}
+.facts b{font:700 clamp(26px,4vw,34px)/1 "Playfair Display",Georgia,serif;min-width:3.2ch}
+.facts small{display:block;color:var(--mute);font-size:13.5px}
+@media(min-width:760px){.facts{grid-template-columns:1fr 1fr 1fr;gap:22px}.facts li{grid-template-columns:1fr;gap:6px}}
+
+/* week grid */
+.week-sec{padding:10px 0 0}
+h2{font:700 clamp(26px,4.5vw,40px)/1.1 "Playfair Display",Georgia,serif;margin:0 0 6px;letter-spacing:-.01em}
+.sub{margin:0 0 18px;color:var(--mute);font-size:15px}
+.week{display:grid;gap:8px}
+.day{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;grid-template-columns:5.2ch 1fr;gap:10px;align-items:start}
+.day .n{font:700 17px/1.2 "Playfair Display",Georgia,serif;padding-top:6px}
+.slots{display:grid;gap:6px}
+.slot{display:flex;justify-content:space-between;gap:10px;border-radius:8px;padding:7px 10px;font-size:15px;background:var(--gold);color:var(--ink)}
+.slot span:first-child{font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:12px;padding-top:2px}
+.slot.off{background:transparent;border:1px dashed var(--line);color:var(--mute)}
+.day.closed{opacity:.75}
+.day.closed .slot.off{grid-column:1/-1}
+@media(min-width:760px){
+  .week{grid-template-columns:repeat(7,1fr);gap:10px}
+  .day{grid-template-columns:1fr;gap:12px;padding:14px 12px 16px;min-height:200px}
+  .day .n{padding:0;border-bottom:1px solid var(--line);padding-bottom:8px}
+  .slot{flex-direction:column;gap:4px;align-items:flex-start;min-height:66px;justify-content:center;padding:7px 8px}
+  .slot span:last-child{font-size:13.5px;white-space:nowrap;letter-spacing:-.01em}
+}
+.legend{margin:12px 0 0;color:var(--mute);font-size:14px}
+
+/* three columns */
+.three{display:grid;gap:14px;padding:34px 0 0}
+.three article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px}
+.three h3{font:700 22px/1.15 "Playfair Display",Georgia,serif;margin:0 0 8px}
+.three p{margin:0}
+.three small{display:block;margin-top:10px;color:var(--mute);font-size:13px}
+@media(min-width:760px){.three{grid-template-columns:1fr 1fr 1fr}}
+
+/* photo frame */
+.frame{margin:34px 0 0;border:2px dashed var(--saffron);border-radius:14px;min-height:220px;display:grid;place-items:center;text-align:center;padding:24px;color:var(--mute);background:rgba(250,246,238,.6)}
+.frame b{display:block;color:var(--ink);font:700 20px/1.2 "Playfair Display",Georgia,serif;margin-bottom:6px}
+
+.cta{display:grid;gap:10px;margin:34px 0 0}
+.cta a{display:block;text-align:center;text-decoration:none;padding:15px 16px;border-radius:12px;font-weight:600;border:1.5px solid var(--ink)}
+.cta .p{background:var(--ink);color:var(--sand)}
+@media(min-width:760px){.cta{grid-template-columns:1fr 1fr 1fr}}
+footer{padding:36px 16px 40px;text-align:center;font-size:13.5px;color:var(--mute);max-width:760px;margin:0 auto}
+footer p{margin:6px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span>Frizerski studio Ksenija · Kočevje</span><a href="tel:+38641444154">041 444 154</a></div>
+
+  <header class="intro">
+    <p class="eyebrow">Podjetniško naselje Kočevje 1 · Ksenija Maurin s.p.</p>
+    <h1>Dopoldne ali <em>popoldne</em>, šest dni v tednu.</h1>
+    <p class="lead">Frizerski studio, v poslovnem registru od leta 2002. Čez teden striže dopoldne in popoldne, v soboto dopoldne. Termin se dogovori po telefonu.</p>
+    <ul class="facts">
+      <li><b>23</b><span>let v registru<small>vpis v register 1. 8. 2002 (bizi.si, PIRS)</small></span></li>
+      <li><b>4,9</b><span>ocena na Googlu<small>9 mnenj, samo zvezdice, brez besedila</small></span></li>
+      <li><b>6</b><span>dni v tednu odprto<small>delovni čas po imeniku PIRS</small></span></li>
+    </ul>
+  </header>
+
+  <section class="week-sec">
+    <h2>Teden v studiu</h2>
+    <p class="sub">Delovni čas po imeniku PIRS. Na Googlu delovnega časa še ni.</p>
+    <div class="week">
+      <div class="day"><div class="n">pon</div><div class="slots"><div class="slot off"><span>dop.</span><span>zaprto</span></div><div class="slot"><span>pop.</span><span>15:00–19:00</span></div></div></div>
+      <div class="day"><div class="n">tor</div><div class="slots"><div class="slot"><span>dop.</span><span>7:30–12:00</span></div><div class="slot"><span>pop.</span><span>15:30–19:00</span></div></div></div>
+      <div class="day"><div class="n">sre</div><div class="slots"><div class="slot"><span>dop.</span><span>7:30–12:00</span></div><div class="slot"><span>pop.</span><span>15:30–19:00</span></div></div></div>
+      <div class="day"><div class="n">čet</div><div class="slots"><div class="slot"><span>dop.</span><span>7:30–12:00</span></div><div class="slot"><span>pop.</span><span>15:30–19:00</span></div></div></div>
+      <div class="day"><div class="n">pet</div><div class="slots"><div class="slot"><span>dop.</span><span>7:30–12:00</span></div><div class="slot"><span>pop.</span><span>15:30–19:00</span></div></div></div>
+      <div class="day"><div class="n">sob</div><div class="slots"><div class="slot"><span>dop.</span><span>8:00–12:00</span></div><div class="slot off"><span>pop.</span><span>zaprto</span></div></div></div>
+      <div class="day closed"><div class="n">ned</div><div class="slots"><div class="slot off"><span>ves dan</span><span>zaprto</span></div></div></div>
+    </div>
+    <p class="legend">Rumeno polje pomeni odprto. Če se delovni čas spremeni, ga na strani popravimo.</p>
+  </section>
+
+  <section class="three">
+    <article><h3>Kako do termina</h3><p>Po telefonu, 041 444 154. Google kot spletno mesto trenutno navaja portal rabim.info; na lastni strani bi bila številka na vrhu.</p><small>Googlov profil, 21. 11. 2026</small></article>
+    <article><h3>Kje parkiram</h3><p>Pri studiu, Podjetniško naselje Kočevje 1. Imenik PIRS navaja parkirišče. Plus koda MR3X+WM.</p><small>PIRS, Googlov profil</small></article>
+    <article><h3>Majhen studio</h3><p>Imenik PIRS navaja enega zaposlenega. Cenik in seznam storitev nista javno objavljena, zato jih tukaj ni; ob dogovoru jih dodamo po vaših besedah.</p><small>PIRS; ni javnega cenika</small></article>
+  </section>
+
+  <div class="frame" aria-label="Prostor za fotografijo studia">
+    <div><b>Tukaj bi bila fotografija studia</b>Vaša, ko jo pošljete. Javno je nismo našli, zato tukaj ni ne tuje ne umetne.</div>
+  </div>
+
+  <div class="cta">
+    <a class="p" href="tel:+38641444154">Pokliči 041 444 154</a>
+    <a href="https://www.google.com/maps/search/Frizerski+Studio+Ksenija+Ksenija+Maurin+S.P.+Ko%C4%8Devje" rel="noopener">Google Zemljevidi</a>
+    <a href="../">Nazaj na izbor</a>
+  </div>
+</div>
+
+<footer><p>Predogled pripravila AK agencija (alejkump.si). To ni uradna stran podjetja.</p><p>Podatki: Googlov profil, PIRS, bizi.si (21. 11. 2026). Brez fotografij in brez cenika, ker nista javno objavljena.</p></footer>
+</body>
+</html>
