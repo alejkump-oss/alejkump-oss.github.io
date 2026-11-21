@@ -30,5 +30,6 @@ Podjetje: AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroj
 
 - [Izdelava spletnih strani Kočevje](https://alejkump.si/izdelava-spletnih-strani-kocevje.html)
 - [Izdelava spletnih strani Ribnica](https://alejkump.si/izdelava-spletnih-strani-ribnica.html)
+- [Izdelava spletnih strani Novo mesto](https://alejkump.si/izdelava-spletnih-strani-novo-mesto.html)
 
 Opomba: nobena storitev ne vključuje obljube o uvrstitvi na iskalnikih.
