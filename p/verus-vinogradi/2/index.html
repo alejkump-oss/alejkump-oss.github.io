@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Verus Vinogradi, Ormož: sedem leg, trideset hektarjev (predlog 2)</title>
+<meta name="description" content="Predlog prenovljene spletne strani za Verus Vinogradi d.o.o., Ormož, zasnovan okrog podatkov o legah, letnikih in pridelavi z njihove strani verusvino.com. Temna različica.">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+:root{--loam:#1f2422;--loam2:#272d2a;--loam3:#313835;--chalk:#ece7dc;--chalk2:#cfc9bd;--straw:#d8b64f;--straw2:#b8952f;--mist:#9aa39c;--line:#3b433e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--loam);color:var(--chalk);font-family:"Karla",Arial,sans-serif;font-size:1.02rem;line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--straw)}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:500;line-height:1.05;margin:0}
+h2{font-size:clamp(2rem,4.5vw,3.4rem)}
+h3{font-size:1.5rem}
+.mono{font-family:"JetBrains Mono",Consolas,monospace;font-size:.82rem;letter-spacing:.02em}
+.wrap{width:min(1200px,100% - 2rem);margin:0 auto}
+.ribbon{background:var(--straw);color:#1a1a12;font-size:.82rem;text-align:center;padding:.5rem 1rem}
+.eyebrow{font-family:"JetBrains Mono",Consolas,monospace;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--straw);margin:0 0 1rem}
+.lead{font-size:1.12rem;color:var(--chalk2);max-width:60ch}
+.src{font-size:.8rem;color:var(--mist)}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px}
+header .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--chalk)}
+header .brand span{font-family:"Bodoni Moda",Georgia,serif;font-size:1.35rem;letter-spacing:.08em}
+header .brand small{display:block;font-family:"JetBrains Mono",Consolas,monospace;font-size:.62rem;letter-spacing:.2em;color:var(--mist);text-transform:uppercase}
+header nav{display:flex;gap:1.3rem;font-size:.9rem}
+header nav a{color:var(--chalk2);text-decoration:none}
+header nav a:hover{color:var(--straw)}
+header .tel{font-family:"JetBrains Mono",Consolas,monospace;font-size:.82rem;color:var(--chalk);text-decoration:none;white-space:nowrap}
+.hero{padding:4rem 0 3rem}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.7rem,6.6vw,5.6rem);font-weight:500}
+.hero h1 i{font-style:italic;font-weight:400;color:var(--straw)}
+.hero .lead{margin:1.6rem 0 2rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;text-decoration:none;font-weight:600;font-size:.92rem;border:1px solid var(--straw);color:var(--straw);margin-right:.6rem;margin-bottom:.6rem}
+.btn.solid{background:var(--straw);color:#1a1a12}
+.card{background:var(--loam2);border:1px solid var(--line);padding:1.4rem}
+.card dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:.55rem 1rem;font-family:"JetBrains Mono",Consolas,monospace;font-size:.8rem}
+.card dt{color:var(--mist)}
+.card dd{margin:0;text-align:right;color:var(--chalk)}
+.card .ttl{font-family:"Bodoni Moda",Georgia,serif;font-size:1.3rem;margin-bottom:1rem;border-bottom:1px solid var(--line);padding-bottom:.7rem}
+.bleed img{width:100%;aspect-ratio:21/9;object-fit:cover}
+.bleed figcaption{font-size:.78rem;color:var(--mist);padding:.5rem 0}
+section{padding:5rem 0}
+.rows{margin-top:2.5rem;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:3rem 1.2fr .6fr .6fr 2fr;gap:1rem;align-items:baseline;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.row .n{font-family:"JetBrains Mono",Consolas,monospace;color:var(--straw);font-size:.8rem}
+.row .name{font-family:"Bodoni Moda",Georgia,serif;font-size:1.7rem}
+.row .v{font-family:"JetBrains Mono",Consolas,monospace;font-size:.86rem;color:var(--chalk2)}
+.row .sorts{font-size:.92rem;color:var(--chalk2)}
+.row .lbl{display:none;font-family:"JetBrains Mono",Consolas,monospace;font-size:.62rem;color:var(--mist);letter-spacing:.1em;text-transform:uppercase}
+.sum{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
+.sum div{border-left:2px solid var(--straw);padding-left:1rem}
+.sum b{display:block;font-family:"Bodoni Moda",Georgia,serif;font-size:2.2rem;font-weight:500;line-height:1}
+.sum span{font-size:.85rem;color:var(--mist)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.grid2 img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.rules{margin:1.5rem 0 0;padding:0;list-style:none}
+.rules li{display:grid;grid-template-columns:2.2rem 1fr;gap:.8rem;padding:.9rem 0;border-top:1px solid var(--line)}
+.rules li b{font-family:"JetBrains Mono",Consolas,monospace;font-size:.78rem;color:var(--straw);padding-top:.3rem}
+.rules li strong{display:block;font-family:"Bodoni Moda",Georgia,serif;font-size:1.25rem;font-weight:500;margin-bottom:.2rem}
+.rules li p{margin:0;font-size:.93rem;color:var(--chalk2)}
+.wines{background:var(--loam2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wlist{margin-top:2.5rem;display:grid;grid-template-columns:repeat(7,1fr);gap:.8rem}
+.w{background:var(--chalk);color:#1f2422;padding:1rem .8rem 1.1rem;display:flex;flex-direction:column;align-items:center;text-align:center}
+.w img{height:200px;width:auto}
+.w h3{font-size:1.1rem;margin:.9rem 0 .2rem;font-weight:700}
+.w .yrs{font-family:"JetBrains Mono",Consolas,monospace;font-size:.62rem;letter-spacing:.08em;color:#5a5f5a;margin:0}
+.notes{margin-top:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem 2.5rem}
+.notes div{border-top:1px solid var(--line);padding-top:.9rem}
+.notes h3{font-size:1.25rem;margin-bottom:.3rem}
+.notes p{margin:0;font-size:.92rem;color:var(--chalk2)}
+.izbran{margin-top:3rem;display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;border:1px solid var(--straw2);padding:1.5rem}
+.izbran .b{display:flex;gap:.8rem;background:var(--chalk);padding:1rem}
+.izbran .b img{height:190px;width:auto}
+.izbran p{margin:.4rem 0 0;color:var(--chalk2);font-size:.95rem}
+.log{margin-top:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.log article{border:1px solid var(--line);padding:1.3rem;background:var(--loam2)}
+.log h3{font-size:2.4rem;color:var(--straw);font-weight:500;margin-bottom:.6rem}
+.log dl{margin:0 0 1rem;display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;font-family:"JetBrains Mono",Consolas,monospace;font-size:.76rem}
+.log dt{color:var(--mist)}
+.log dd{margin:0}
+.log p{margin:0;font-size:.92rem;color:var(--chalk2)}
+.story .grid2{align-items:center}
+.story img{aspect-ratio:3/2}
+.story p{color:var(--chalk2)}
+.story .names{margin:1.4rem 0 0;padding:0;list-style:none;display:grid;gap:.5rem}
+.story .names li{border-top:1px solid var(--line);padding-top:.5rem;font-size:.95rem}
+.story .names b{font-family:"Bodoni Moda",Georgia,serif;font-size:1.2rem;font-weight:500;display:block}
+.quotes{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2rem}
+blockquote{margin:0;font-family:"Bodoni Moda",Georgia,serif;font-style:italic;font-weight:400;font-size:1.5rem;line-height:1.3}
+.quotes figure{margin:0}
+.quotes figcaption{margin-top:.9rem;font-family:"JetBrains Mono",Consolas,monospace;font-size:.74rem;color:var(--mist)}
+.visit{background:var(--chalk);color:#1f2422}
+.visit .eyebrow{color:var(--straw2)}
+.visit .grid2{align-items:start}
+.visit a{color:#1f2422}
+.visit .hours{font-family:"JetBrains Mono",Consolas,monospace;font-size:.84rem;margin:1.3rem 0;display:grid;grid-template-columns:auto 1fr;gap:.4rem 1.2rem}
+.visit .hours dt{color:#5a5f5a}
+.visit .hours dd{margin:0}
+.visit .cta{display:inline-block;background:#1f2422;color:var(--chalk);padding:.85rem 1.4rem;text-decoration:none;font-weight:600;margin-top:.5rem}
+.visit .countries{font-size:.85rem;color:#5a5f5a;margin-top:1.5rem}
+footer{border-top:1px solid var(--line);padding:2.5rem 0;font-size:.86rem;color:var(--mist)}
+footer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+footer p{margin:.3rem 0}
+@media (max-width:980px){
+ .hero .wrap,.grid2,footer .wrap,.quotes,.izbran{grid-template-columns:1fr}
+ .wlist{grid-template-columns:repeat(4,1fr)}
+ .notes,.log{grid-template-columns:1fr}
+ .sum{grid-template-columns:1fr 1fr}
+ header nav{display:none}
+ section{padding:3.5rem 0}
+ .row{grid-template-columns:3rem 1fr 1fr;grid-template-areas:"n name name" ". alt area" ". sorts sorts";row-gap:.3rem}
+ .row .n{grid-area:n}.row .name{grid-area:name}.row .alt{grid-area:alt}.row .area{grid-area:area}.row .sorts{grid-area:sorts}
+ .row .lbl{display:inline;margin-right:.4rem}
+}
+@media (max-width:560px){
+ .wlist{grid-template-columns:1fr 1fr}
+ .w img{height:160px}
+ .izbran .b img{height:150px}
+ .hero h1{font-size:2.6rem}
+}
+</style>
+</head>
+<body>
+<div class="ribbon">Predlog prenove spletne strani verusvino.com. Besedila, podatki in fotografije so z vaše obstoječe strani.</div>
+<header>
+ <div class="wrap">
+  <a class="brand" href="#"><span>VERUS<small>Vinogradi, Ormož</small></span></a>
+  <nav><a href="#lege">Lege</a><a href="#pridelava">Pridelava</a><a href="#vina">Vina</a><a href="#letniki">Letniki</a><a href="#zgodba">Zgodba</a><a href="#obisk">Obisk</a></nav>
+  <a class="tel" href="tel:+38627415440">+386 (0)2 7415 440</a>
+ </div>
+</header>
+
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <p class="eyebrow">Podokoliš Ljutomer - Ormož</p>
+   <h1>Sedem leg. Trideset hektarjev. <i>Ena klet v Ormožu.</i></h1>
+   <p class="lead">Grozdje pridelujemo na 30 ha vinogradniških leg v podokolišu Ljutomer - Ormož, kjer so najbolj prepoznavne terase okrog vasi Jeruzalem. V vseh vinogradih je trgatev ročna. Verjamemo, da kakovost vina izvira iz vinograda in zahteva veliko znanja ter skrbno delo.</p>
+   <a class="btn solid" href="#vina">Vina in letniki</a><a class="btn" href="#obisk">Ogled kleti z degustacijo</a>
+  </div>
+  <div class="card">
+   <div class="ttl">Vinorodni okoliš Štajerska Slovenija</div>
+   <dl>
+    <dt>Širina</dt><dd>46°24' do 46°31' N</dd>
+    <dt>Dolžina</dt><dd>16°05' do 16°19' E</dd>
+    <dt>Lege</dt><dd>290 do 341 m n. m.</dd>
+    <dt>Sonce</dt><dd>2600 do 2800 h/leto</dd>
+    <dt>Padavine</dt><dd>900 do 1000 mm/leto</dd>
+    <dt>Povp. temperatura</dt><dd>9 do 10 °C</dd>
+    <dt>Tla</dt><dd>sivi lapor, apneni peščenjak</dd>
+    <dt>Trgatev</dt><dd>ročna, v vseh vinogradih</dd>
+   </dl>
+  </div>
+ </div>
+</section>
+
+<figure class="bleed wrap" style="margin:0 auto">
+ <img src="../assets/img/jeruzalem-panorama.webp" alt="Panorama terasastih vinogradov Jeruzalem" width="1800" height="789">
+ <figcaption>Jeruzalem. Fotografija z vaše strani verusvino.com.</figcaption>
+</figure>
+
+<section id="lege">
+ <div class="wrap">
+  <p class="eyebrow">Kataster leg</p>
+  <h2>Vsaka lega s svojo višino, površino in sortami.</h2>
+  <p class="lead">Podatki so z vaše strani Vinogradi. Podokoliš Ljutomer - Ormož je znan po veliki koncentraciji odličnih vinogradniških leg; to je najtoplejši in najbolj suh del Štajerske.</p>
+  <div class="rows">
+   <div class="row"><span class="n">01</span><span class="name">Jeruzalem</span><span class="v alt"><span class="lbl">n. m.</span>341 m</span><span class="v area"><span class="lbl">površina</span>19,8 ha</span><span class="sorts">sauvignon, šipon, renski rizling, sivi pinot, modri pinot</span></div>
+   <div class="row"><span class="n">02</span><span class="name">Brebrovnik</span><span class="v alt"><span class="lbl">n. m.</span>320 m</span><span class="v area"><span class="lbl">površina</span>3,2 ha</span><span class="sorts">sauvignon</span></div>
+   <div class="row"><span class="n">03</span><span class="name">Pavlovski vrh</span><span class="v alt"><span class="lbl">n. m.</span>290 m</span><span class="v area"><span class="lbl">površina</span>2,8 ha</span><span class="sorts">sauvignon, rumeni muškat</span></div>
+   <div class="row"><span class="n">04</span><span class="name">Kog</span><span class="v alt"><span class="lbl">n. m.</span>321 m</span><span class="v area"><span class="lbl">površina</span>2,5 ha</span><span class="sorts">sauvignon, renski rizling, chardonnay</span></div>
+   <div class="row"><span class="n">05</span><span class="name">Ivanjkovci</span><span class="v alt"><span class="lbl">n. m.</span>311 m</span><span class="v area"><span class="lbl">površina</span>2,5 ha</span><span class="sorts">sauvignon, šipon, renski rizling, modri pinot</span></div>
+   <div class="row"><span class="n">06</span><span class="name">Litmerk</span><span class="v alt"><span class="lbl">n. m.</span>331 m</span><span class="v area"><span class="lbl">površina</span>2,4 ha</span><span class="sorts">sauvignon, rumeni muškat, chardonnay</span></div>
+   <div class="row"><span class="n">07</span><span class="name">Radomerje</span><span class="v alt"><span class="lbl">n. m.</span>311 m</span><span class="v area"><span class="lbl">površina</span>0,8 ha</span><span class="sorts">sauvignon, sivi pinot</span></div>
+  </div>
+  <div class="sum">
+   <div><b>30 ha</b><span>vinogradov v obdelavi</span></div>
+   <div><b>2.000</b><span>trsov/ha na terasah najbolj strmih leg</span></div>
+   <div><b>4.000</b><span>trsov/ha v vertikalnih vinogradih pod 30 % nagiba</span></div>
+   <div><b>6 do 8 t</b><span>pridelka na hektar, 1,5 do 2,5 kg na trs</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="pridelava" style="padding-top:0">
+ <div class="wrap grid2">
+  <div>
+   <p class="eyebrow">Trajnostna pridelava</p>
+   <h2>Integrirana pridelava, brez gnojil.</h2>
+   <p class="lead">Vse vinograde obdelujemo na naravi prijazen način, skladno s smernicami za integrirano pridelavo, ki jo kontrolira akreditirana inštitucija. Ker trte obremenimo minimalno in ker imajo dovolj življenjskega prostora, pri pridelavi ne uporabljamo nobenih gnojil.</p>
+   <ul class="rules">
+    <li><b>01</b><div><strong>Trajna zatravitev</strong><p>Na strmih pobočjih preprečuje erozijo, omogoča lažje delo s stroji in odlično rastišče za trto.</p></div></li>
+    <li><b>02</b><div><strong>Enojni guyot</strong><p>Dobra osončenost in zračnost listne stene, uravnotežena rast in količinsko zmeren pridelek.</p></div></li>
+    <li><b>03</b><div><strong>Ročna trgatev</strong><p>Odbiramo popolnoma zrelo in zdravo grozdje polnega okusa. Do kleti ga pripeljemo ohlajenega in nepoškodovanega v majhnih zabojih v klimatiziranem vozilu.</p></div></li>
+    <li><b>04</b><div><strong>Vreme, vsak dan</strong><p>Od začetka rastne dobe do konca trgatve dnevno spremljamo vreme; cvetenje je običajno v začetku junija, trgatev od druge polovice septembra do srede oktobra.</p></div></li>
+   </ul>
+  </div>
+  <div>
+   <img src="../assets/img/zatravitev.webp" alt="Zatravljen vinograd" width="1000" height="667">
+   <img src="../assets/img/brstenje.webp" alt="Brstenje trte, enojni guyot" width="1080" height="720" style="margin-top:1rem">
+  </div>
+ </div>
+</section>
+
+<section class="wines" id="vina">
+ <div class="wrap">
+  <p class="eyebrow">Vina</p>
+  <h2>Šest belih in en modri pinot.</h2>
+  <p class="lead">Pridelujemo zrela, harmonična vina z intenzivno cvetico in jasno izraženo sortnostjo. S skrbnim kletarjenjem skušamo čim več bogatih snovi iz grozdja ohraniti in ujeti v steklenico. Letniki so navedeni po vaši strani.</p>
+  <div class="wlist">
+   <div class="w"><img src="../assets/img/steklenica-sipon.webp" alt="Verus šipon" width="562" height="900"><h3>Šipon</h3><p class="yrs">2021 DO 2025</p></div>
+   <div class="w"><img src="../assets/img/steklenica-sauvignon.webp" alt="Verus sauvignon" width="562" height="900"><h3>Sauvignon</h3><p class="yrs">2021 DO 2025</p></div>
+   <div class="w"><img src="../assets/img/steklenica-renski-rizling.webp" alt="Verus renski rizling" width="562" height="900"><h3>Renski rizling</h3><p class="yrs">2021 DO 2025</p></div>
+   <div class="w"><img src="../assets/img/steklenica-sivi-pinot.webp" alt="Verus sivi pinot" width="562" height="900"><h3>Sivi pinot</h3><p class="yrs">2021 DO 2025</p></div>
+   <div class="w"><img src="../assets/img/steklenica-chardonnay.webp" alt="Verus chardonnay" width="562" height="900"><h3>Chardonnay</h3><p class="yrs">2021 DO 2025</p></div>
+   <div class="w"><img src="../assets/img/steklenica-rumeni-muskat.webp" alt="Verus rumeni muškat" width="562" height="900"><h3>Rumeni muškat</h3><p class="yrs">2021 DO 2025</p></div>
+   <div class="w"><img src="../assets/img/steklenica-modri-pinot.webp" alt="Verus modri pinot" width="562" height="900"><h3>Modri pinot</h3><p class="yrs">2016, 2017, 2019, 2020</p></div>
+  </div>
+  <div class="notes">
+   <div><h3>Šipon</h3><p>Naša najstarejša sorta; v okolišu zaseda petino vseh vinogradov. Edinstveno nežna cvetica, ki spominja na kutine, hruške ali limone; polnega okusa, s prijetno svežino, in se odlično stara.</p></div>
+   <div><h3>Sauvignon</h3><p>Vodilna sorta okoliša. Vonj po bezgovem cvetju, kosmuljah, tropskem sadju, koprivah, papriki, črnem ribezu ali pokošeni travi. Sveže, harmonično, polnega okusa.</p></div>
+   <div><h3>Renski rizling</h3><p>Vinogradi, stari prek 30 let. Mlado vino ima aromo vinogradniške breskve in akacijevega cvetja, s staranjem arome medu, cimeta ali suhih marelic.</p></div>
+   <div><h3>Sivi pinot</h3><p>Rdečkast grozd, nežno rdečkast pridih v barvi. Nežne cvetlične arome in tropsko sadje; okus bogat in poln.</p></div>
+   <div><h3>Chardonnay</h3><p>Sadna cvetica, ki lahko spominja na jabolka, hruške, melone, ananas, banane ali agrume. V okusu polno in elegantno.</p></div>
+   <div><h3>Rumeni muškat in modri pinot</h3><p>Muškat: izjemno aromatično in bogato vino s cvetico po muškatu in pomarančah. Modri pinot, naša edina rdeča sorta: rubinasta barva, cvetica malin, jagod, češenj ali ribeza, skladen, poln, zrel okus.</p></div>
+  </div>
+  <div class="izbran">
+   <div class="b"><img src="../assets/img/steklenica-sipon-izbran-2021.webp" alt="Šipon, izbran letnik 2021" width="562" height="900"><img src="../assets/img/steklenica-modri-pinot-izbran-2018.webp" alt="Modri pinot, izbran letnik 2018, magnum" width="475" height="900"></div>
+   <div>
+    <p class="eyebrow">Serija Izbran letnik, od oktobra 2024</p>
+    <h3>Šipon 2021 (0,75 l in 1,5 l) in modri pinot 2018 (1,5 l)</h3>
+    <p>Nekateri letniki izstopajo tako, da si zaslužijo posebno pozornost. Izberemo jih na podlagi vremenskih razmer, kakovosti grozdja in spremljanja zorenja vina v steklenici.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="letniki">
+ <div class="wrap">
+  <p class="eyebrow">Dnevnik letnikov</p>
+  <h2>Nikoli dva nista popolnoma enaka.</h2>
+  <p class="lead">Lahko so si podobni, a nikoli niti dva letnika nista popolnoma enaka. Izvlečki so z vaše strani Letniki; v prenovi ostane celoten arhiv od 2021 naprej.</p>
+  <div class="log">
+   <article><h3>2025</h3><dl><dt>Cvetenje</dt><dd>1. junij</dd><dt>Vročina</dt><dd>36 °C, 10. in 16. avgust</dd><dt>Začetek trgatve</dt><dd>26. avgust</dd></dl><p>Spomladanske pozebe ni bilo; na višjih legah so temperature 7. aprila ostale tik nad 0 °C. Drugi najzgodnejši začetek trgatve do zdaj, grozdje zdravo in optimalno dozorelo pri vseh sortah, pridelek nekoliko večji kot v preteklih letih.</p></article>
+   <article><h3>2024</h3><dl><dt>Cvetenje</dt><dd>20. maj</dd><dt>Toča</dt><dd>13. julij, Ivanjkovci</dd><dt>Trgatev</dt><dd>21. avgust do 14. september</dd></dl><p>Rekordno zgoden letnik: dva tedna pred doslej najzgodnejšim. Zaradi pozebe in toče je bil pridelek v povprečju nižji za 15 %. Grozdje smo pred predelavo hladili v kleti.</p></article>
+   <article><h3>2023</h3><dl><dt>Cvetenje</dt><dd>10. junij</dd><dt>Poletje</dt><dd>pogosta neurja, veliko dežja</dd><dt>Trgatev</dt><dd>11. september do 4. oktober</dd></dl><p>Zorenje je zamujalo, po 10. avgustu pa je prišlo lepo, ne prevroče, sončno vreme. Izjemno pitna vina z nekoliko nižjo stopnjo alkohola, aromatična, z lepo izraženo sortnostjo.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="story" id="zgodba" style="padding-top:0">
+ <div class="wrap grid2">
+  <div>
+   <img src="../assets/img/klet-sodi.webp" alt="Sodi v novi kleti Verus v Ormožu" width="1800" height="825">
+   <p class="src">Nova klet ob Ljutomerski cesti v Ormožu: gradnja od januarja do avgusta 2018, selitev opreme in vina avgusta 2018 (po navedbah podjetja).</p>
+  </div>
+  <div>
+   <p class="eyebrow">Zgodba</p>
+   <h2>Trije prijatelji, od 2007.</h2>
+   <p>Verus smo ustanovili trije prijatelji. Združili smo družinske vinograde, znanje in delo ter spomladi 2007 v prostorih nekdanje pekarne opremili vinsko klet. Prvo trgatev smo imeli oktobra 2007, prve steklenice sauvignona in rumenega muškata smo napolnili decembra 2007. Verus pomeni pravi, resničen, dejanski, tudi iskren, pristen, nenarejen, pošten.</p>
+   <ul class="names">
+    <li><b>Danilo Šnajder</b>enolog; pred Verusom glavni enolog in vodja kleti Jeruzalem Ormož</li>
+    <li><b>Božidar Grabovac</b>vinogradi in marketing; pred Verusom vodil vinogradništvo na 500 ha</li>
+    <li><b>Rajko Žličar</b>soustanovitelj; pred Verusom vodja prodaje v več vinskih podjetjih</li>
+   </ul>
+   <p class="src" style="margin-top:1.2rem">Po navedbah podjetja (verusvino.com/verus, /novice). Družba z matično številko 5585511000 je v sodnem registru od 2. 4. 1992 (bizi.si); družbeno pogodbo Verus vinogradi so po lastnih navedbah podpisali 6. 6. 2007.</p>
+  </div>
+ </div>
+</section>
+
+<section style="padding-top:0">
+ <div class="wrap">
+  <p class="eyebrow">Objave</p>
+  <h2>Iz tujih vinskih medijev.</h2>
+  <div class="quotes">
+   <figure><blockquote>Čudovita sortnost, tako čista in močno izražena! Kot eksplozija zrelih grozdnih jagod v ustih. Izjemna harmonija in vitalnost. Pravo poletno vino.</blockquote><figcaption>JANCIS ROBINSON, FINANCIAL TIMES, 28. 11. 2009, SAUVIGNON 2008 (zapis na verusvino.com/objave)</figcaption></figure>
+   <figure><blockquote>So izjemno čista, polna življenja in imajo izjemno svežino. Vsa so zelo dobri predstavniki sort, a meni je najljubši šipon. Očitno je, da je tam domač in vidi se, kako zadovoljen je v svojem kraju.</blockquote><figcaption>STEVEN SPURIER, LONDON, 28. 7. 2009, O VERUS VINIH (zapis na verusvino.com/objave)</figcaption></figure>
+  </div>
+  <p class="src" style="margin-top:1.5rem">Decanter, vino meseca: Verus šipon 2008 (november 2009) in Verus sauvignon 2008 (december 2009). Po navedbah podjetja je Verus naveden v 7. izdaji The World Atlas of Wine (2013).</p>
+ </div>
+</section>
+
+<section class="visit" id="obisk">
+ <div class="wrap grid2">
+  <div>
+   <p class="eyebrow">Nakup vina in degustacija</p>
+   <h2>Obiščite nas v Ormožu.</h2>
+   <p>Vodeni ogledi kleti z degustacijo so na voljo ob predhodni najavi in rezervaciji termina.</p>
+   <dl class="hours"><dt>PON - PET</dt><dd>8.00 do 15.00</dd><dt>SOBOTA</dt><dd>po dogovoru</dd><dt>NEDELJA</dt><dd>zaprto</dd></dl>
+   <p><strong>Ljutomerska cesta 36, 2270 Ormož</strong><br>GPS 46.41042, 16.16186<br><a href="https://www.openstreetmap.org/search?query=Ljutomerska%20cesta%2036%2C%202270%20Ormo%C5%BE">Zemljevid (OpenStreetMap)</a></p>
+   <p><a href="tel:+38627415440">+386 (0)2 7415 440</a><br><a href="mailto:info@verusvino.com">info@verusvino.com</a></p>
+   <a class="cta" href="mailto:info@verusvino.com?subject=Ogled%20kleti%20z%20degustacijo">Rezerviraj termin po e-pošti</a>
+   <p class="countries">Verus vina najdete v številnih vinotekah in restavracijah v Sloveniji in, po navedbah podjetja, v več kot 20 drugih državah.</p>
+  </div>
+  <div>
+   <img src="../assets/img/terase-2.webp" alt="Terase vinogradov Jeruzalem" width="1400" height="939">
+   <img src="../assets/img/grozdje-pikapolonica.webp" alt="Grozdje s pikapolonico" width="1100" height="798" style="margin-top:1rem">
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <div>
+   <p><strong style="color:var(--chalk)">VERUS VINOGRADI d.o.o.</strong></p>
+   <p>Ljutomerska cesta 36, 2270 Ormož, Slovenija</p>
+   <p>T: <a href="tel:+38627415440">+386 (0)2 7415 440</a>, E: <a href="mailto:info@verusvino.com">info@verusvino.com</a></p>
+   <p>Davčna številka: SI 11919698, matična številka: 5585511000</p>
+  </div>
+  <div>
+   <p>Predogled pripravila AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje</p>
+  </div>
+ </div>
+</footer>
+</body>
+</html>
