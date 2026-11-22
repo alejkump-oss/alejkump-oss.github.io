@@ -48,6 +48,11 @@ Glasba: naše lastne skladbe (ig/trials/music, m1 do m6). Brez plačljivih orodi
 | [38](https://alejkump.si/ig/pro/2026-11-22/pro-38.mp4) | Checklist | pip | Avtoservis Primer (izmišljen) | Ali ima vaša stran kaj od tega? | outline / Inter | whip | cool | grid:121214 | m3-drive | 18.1 s |
 | [39](https://alejkump.si/ig/pro/2026-11-22/pro-39.mp4) | Scroll showcase | angled | alejkump.si/Novo mesto | Spletne strani v Novem mestu | white / Archivo | cut | teal | grad:1a0f0a:3a1f12 | m5-bright | 11.8 s |
 | [40](https://alejkump.si/ig/pro/2026-11-22/pro-40.mp4) | Dobra stran #N | phone | Mizarstvo Hrast (izmišljeno) | (kinetic text) | shadow / Playfair | zoom | none | grad:0b1320:0f3a3a | m6-groove | 11.5 s |
+| [41](https://alejkump.si/ig/pro/2026-11-22/pro-41.mp4) | Pred/po | full | Krovstvo Primer (izmišljeno) | Stara stran za krovstvo? | stack / Bebas | swipe | punchy | grad:0d0d12:2a1a3a | m4-warm | 14.4 s |
+| [42](https://alejkump.si/ig/pro/2026-11-22/pro-42.mp4) | Laptop + telefon | laptop | Apartmaji Ob jezeru (izmišljeni) | Apartmaji na računalniku in telefonu | box / Space | flash | vignette | blur | m2-chill | 13.1 s |
+| [43](https://alejkump.si/ig/pro/2026-11-22/pro-43.mp4) | Scroll showcase | phone | Briški (stranka) | Galerija gostilne na telefonu | outline / Anton | whip | warm | solid:111111 | m1-upbeat | 16.3 s |
+| [44](https://alejkump.si/ig/pro/2026-11-22/pro-44.mp4) | Napaka + rešitev | split | Fizioterapija Primer (izmišljena) | Pogosta napaka: cenik v PDF | shadow / Montserrat | cut | matte | grid:15161a | m3-drive | 12.4 s |
+| [45](https://alejkump.si/ig/pro/2026-11-22/pro-45.mp4) | Predogled pred naročilom | full | Krovstvo Primer (izmišljeno) | Tako izgleda predogled, preden naročite | box / ExtraBold | zoom | mono | grid:121214 | m5-bright | 12.9 s |
 
 ## Opisi (captions)
 
@@ -210,3 +215,23 @@ Spletne strani za podjetja v Novem mestu in okolici. Najprej brezplačen predogl
 ### pro-40
 
 Dobra stran #5: jasno napisano, kako poteka delo, od klica do montaže. To je izmišljeno podjetje, primer, ki sem ga izdelal za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #mizarstvo #obrtnik #spletnastran
+
+### pro-41
+
+Pred: stara stran z drobnim besedilom. Po: cenik del in klic z enim dotikom. Obe sta izmišljen primer. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #krovstvo #prenova #spletnastran
+
+### pro-42
+
+Stran za apartmaje na obeh zaslonih, s fotografijami in povpraševanjem. To je izmišljeno podjetje, primer, ki sem ga izdelal za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #apartmaji #turizem #webdesign
+
+### pro-43
+
+Galerija gostilnice Briški v Kočevju na telefonu. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #kočevje #gostilna #spletnastran
+
+### pro-44
+
+Cenik v PDF se na telefonu odpre slabo. Rešitev: cenik storitev kar na strani. To je izmišljeno podjetje, primer, ki sem ga izdelal za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #fizioterapija #spletnastran #slovenija
+
+### pro-45
+
+Preden se odločite, vidite predogled svoje strani na telefonu. Brezplačno in brez obveznosti. Prikazan je izmišljen primer. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #spletnastran #obrtnik #slovenija
