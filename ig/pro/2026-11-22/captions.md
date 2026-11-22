@@ -38,6 +38,16 @@ Glasba: naše lastne skladbe (ig/trials/music, m1 do m6). Brez plačljivih orodi
 | [28](https://alejkump.si/ig/pro/2026-11-22/pro-28.mp4) | Napaka + rešitev | angled | Avtoservis Primer (izmišljen) | Pogosta napaka: ni delovnega časa | underline / DMSerif | whip | matte | blur | m6-groove | 15.0 s |
 | [29](https://alejkump.si/ig/pro/2026-11-22/pro-29.mp4) | Checklist | full | Frizerski salon Lila (izmišljen) | Ali ima vaša stran kaj od tega? | outline / Inter | cut | mono | solid:111111 | m4-warm | 14.4 s |
 | [30](https://alejkump.si/ig/pro/2026-11-22/pro-30.mp4) | Scroll showcase | phone | Krovstvo Primer (izmišljeno) | Spletna stran za krovstvo | white / Archivo | zoom | cool | light | m2-chill | 17.0 s |
+| [31](https://alejkump.si/ig/pro/2026-11-22/pro-31.mp4) | Motion explainer | motion | Mizarstvo Hrast (izmišljeno) | (kinetic text) | shadow / Playfair | swipe | teal | grid:121214 | m1-upbeat | 12.2 s |
+| [32](https://alejkump.si/ig/pro/2026-11-22/pro-32.mp4) | Dobra stran #N | angled | Gostilna Pri Lipi (izmišljena) | (kinetic text) | stack / Bebas | flash | none | grad:1a0f0a:3a1f12 | m3-drive | 9.5 s |
+| [33](https://alejkump.si/ig/pro/2026-11-22/pro-33.mp4) | Laptop + telefon | laptop | alejkump.si/Ribnica | Spletne strani v Ribnici | box / Space | whip | punchy | grad:0b1320:0f3a3a | m5-bright | 17.1 s |
+| [34](https://alejkump.si/ig/pro/2026-11-22/pro-34.mp4) | Pred/po | split | Gostilna Pri Lipi (izmišljena) | Pred in po: gostilna | outline / Anton | cut | vignette | grad:0d0d12:2a1a3a | m6-groove | 10.4 s |
+| [35](https://alejkump.si/ig/pro/2026-11-22/pro-35.mp4) | Scroll showcase | full | Mizarstvo Hrast (izmišljeno) | Scroll po strani za mizarja | shadow / Montserrat | zoom | warm | blur | m4-warm | 13.2 s |
+| [36](https://alejkump.si/ig/pro/2026-11-22/pro-36.mp4) | Napaka + rešitev | phone | Mizarstvo Hrast (izmišljeno) | Na telefonu je vse premajhno? | box / ExtraBold | swipe | matte | solid:111111 | m2-chill | 15.7 s |
+| [37](https://alejkump.si/ig/pro/2026-11-22/pro-37.mp4) | Predogled pred naročilom | angled | Apartmaji Ob jezeru (izmišljeni) | Brezplačen predogled vaše strani | underline / DMSerif | flash | mono | grid:15161a | m1-upbeat | 12.2 s |
+| [38](https://alejkump.si/ig/pro/2026-11-22/pro-38.mp4) | Checklist | pip | Avtoservis Primer (izmišljen) | Ali ima vaša stran kaj od tega? | outline / Inter | whip | cool | grid:121214 | m3-drive | 18.1 s |
+| [39](https://alejkump.si/ig/pro/2026-11-22/pro-39.mp4) | Scroll showcase | angled | alejkump.si/Novo mesto | Spletne strani v Novem mestu | white / Archivo | cut | teal | grad:1a0f0a:3a1f12 | m5-bright | 11.8 s |
+| [40](https://alejkump.si/ig/pro/2026-11-22/pro-40.mp4) | Dobra stran #N | phone | Mizarstvo Hrast (izmišljeno) | (kinetic text) | shadow / Playfair | zoom | none | grad:0b1320:0f3a3a | m6-groove | 11.5 s |
 
 ## Opisi (captions)
 
@@ -160,3 +170,43 @@ Kaj mora imeti stran salona, da stranka rezervira. To je izmišljeno podjetje, p
 ### pro-30
 
 Stran za krovstvo: cenik del, o delavnici in delovni čas. To je izmišljeno podjetje, primer, ki sem ga izdelal za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #krovstvo #obrtnik #spletnastran
+
+### pro-31
+
+Od predogleda do objave v štirih korakih: predogled, pisna ponudba, plačilo v celoti ali na obroke in objava. Stran je vaša. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #spletnastran #slovenija #malopodjetje
+
+### pro-32
+
+Dobra stran #4: delovni čas, ki je na telefonu takoj berljiv. To je izmišljeno podjetje, primer, ki sem ga izdelal za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #gostilna #spletnastran #slovenija
+
+### pro-33
+
+Izdelujem spletne strani za podjetja v Ribnici in okolici, z brezplačnim predogledom. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #ribnica #spletnastran #lokalno
+
+### pro-34
+
+Stara stran gostilne proti animirani novi. Obe sta izmišljen primer za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #gostilna #prenova #webdesign
+
+### pro-35
+
+Stran za mizarstvo čez cel zaslon: izdelki, potek dela in delavnica. To je izmišljeno podjetje, primer, ki sem ga izdelal za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #mizarstvo #spletnastran #lesa
+
+### pro-36
+
+Če stran ni prilagojena telefonu, je besedilo drobno in gumbov ne zadenete. Rešitev: stran, narejena najprej za telefon. To je izmišljeno podjetje, primer, ki sem ga izdelal za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #spletnastran #mizar #slovenija
+
+### pro-37
+
+Iz javnih podatkov vašega podjetja pripravim predogled strani. Ogledate si ga na telefonu, brez obveznosti. Prikazan je izmišljen primer. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #apartmaji #spletnastran #slovenija
+
+### pro-38
+
+Štiri stvari, ki jih stranka išče na strani avtoservisa. To je izmišljeno podjetje, primer, ki sem ga izdelal za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #avtoservis #spletnastran #slovenija
+
+### pro-39
+
+Spletne strani za podjetja v Novem mestu in okolici. Najprej brezplačen predogled, nato ponudba. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #novomesto #spletnastran #dolenjska
+
+### pro-40
+
+Dobra stran #5: jasno napisano, kako poteka delo, od klica do montaže. To je izmišljeno podjetje, primer, ki sem ga izdelal za prikaz. Napišite STRAN v komentar in pripravim vam brezplačen predogled vaše strani. #mizarstvo #obrtnik #spletnastran
