@@ -1,0 +1,175 @@
+---
+import Icon from '../components/Icon.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogDescription?: string;
+  path: string;              // '' | 'storitve.html' | 'cene.html'
+  page: 'index' | 'storitve' | 'cene';
+}
+const { title, description, ogDescription = description, path, page } = Astro.props;
+const canonical = `https://alejkump.si/${path}`;
+// Cloudflare Web Analytics snippet, byte-for-byte as in the previous index.html (brief: keep unchanged).
+const beacon = `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>`;
+const home = page === 'index' ? '' : './';   // anchors on subpages go back to the home page
+
+// Menu per the brief: Poudarki, Storitve, Postopek, Primeri, O meni, Kontakt, Cene.
+const menu = [
+  { label: 'Poudarki', href: `${home}#poudarki` },
+  { label: 'Storitve', href: 'storitve.html', page: 'storitve' },
+  { label: 'Postopek', href: `${home}#postopek` },
+  { label: 'Primeri', href: `${home}#primeri` },
+  { label: 'O meni', href: `${home}#o-meni` },
+  { label: 'Kontakt', href: `${home}#kontakt` },
+  { label: 'Cene', href: 'cene.html', page: 'cene' },
+];
+
+// JSON-LD copied verbatim from the previous index.html (brief: keep it).
+const jsonLd = `{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AK agencija, računalniško programiranje, Alej Kump s.p.",
+  "alternateName": "AK agencija",
+  "url": "https://alejkump.si/",
+  "email": "alej.kump@gmail.com",
+  "telephone": "+386 70 479 188",
+  "description": "Izdelava hitrih, mobilno prilagojenih spletnih strani za lokalna podjetja v Sloveniji, z brezplačnim konceptnim predogledom pred naročilom.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ulica heroja Marinclja 3",
+    "postalCode": "1330",
+    "addressLocality": "Kočevje",
+    "addressCountry": "SI"
+  },
+  "founder": { "@type": "Person", "name": "Alej Kump" },
+  "areaServed": [
+    { "@type": "City", "name": "Kočevje" },
+    { "@type": "AdministrativeArea", "name": "Dolenjska" },
+    { "@type": "Country", "name": "Slovenija" }
+  ],
+  "geo": { "@type": "GeoCoordinates", "latitude": 45.643, "longitude": 14.862 },
+  "sameAs": ["https://www.instagram.com/alej_kump/"],
+  "knowsAbout": ["izdelava spletnih strani", "mobilno prilagojene strani", "spletne strani za lokalna podjetja"]
+}`;
+---
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link rel="canonical" href={canonical}>
+<link rel="alternate" hreflang="sl" href={canonical}>
+<link rel="alternate" hreflang="en" href="https://alejkump.si/en.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content={canonical}>
+<meta property="og:title" content={title}>
+<meta property="og:description" content={ogDescription}>
+<meta property="og:locale" content="sl_SI">
+<meta property="og:image" content="https://alejkump.si/rz/img/og-razgled.jpg">
+<meta property="og:image:alt" content="Prenosnik in telefon s spletno stranjo Gostilnice in picerije Briški v Kočevju">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://alejkump.si/rz/img/og-razgled.jpg">
+{page === 'index' && <script type="application/ld+json" set:html={jsonLd} />}
+<meta name="theme-color" content="#F5F3F0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preload" as="font" type="font/woff2" href="/assets/v2/fonts/unbounded-latin-700-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/v2/fonts/unbounded-latin-ext-700-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/v2/fonts/inter-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/v2/site.css">
+<script is:inline>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page={page}>
+<a class="skip" href="#vsebina">Preskoči na vsebino</a>
+
+<header class="top" id="top">
+  <div class="wrap top-row">
+    <a class="brand" href="./" aria-label="AK agencija, domov">AK agencija</a>
+    <nav class="top-nav" aria-label="Glavni meni">
+      <ul>
+        {menu.map((m) => (
+          <li><a href={m.href} aria-current={m.page === page ? 'page' : undefined}>{m.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <button class="burger" id="nav-toggle" type="button" aria-controls="nav-panel" aria-expanded="false">
+      <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="burger-label">Meni</span>
+    </button>
+  </div>
+</header>
+<!-- phone menu panel: a sibling of the header on purpose. A fixed element inside
+     the backdrop-filtered header would be positioned relative to the header in WebKit. -->
+<div class="nav-panel" id="nav-panel" hidden>
+    <nav aria-label="Meni za telefon">
+      <ul>
+        {menu.map((m) => (
+          <li><a href={m.href} aria-current={m.page === page ? 'page' : undefined}>{m.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div class="nav-panel-cta">
+      <a class="btn btn--solid" href="tel:+38670479188"><Icon name="call" />Pokličite 070 479 188</a>
+      <a class="btn" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank"><Icon name="instagram" />Instagram @alej_kump</a>
+    </div>
+  </div>
+
+<main id="vsebina">
+  <slot />
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <p class="brand">AK agencija</p>
+        <p class="foot-muted">Spletne strani za lokalna podjetja. Kočevje, Dolenjska, vsa Slovenija.</p>
+      </div>
+      <div>
+        <p class="eyebrow eyebrow--accent">Raziščite</p>
+        <ul class="foot-links">
+          <li><a href={`${home}#poudarki`}>Poudarki</a></li>
+          <li><a href="storitve.html">Storitve</a></li>
+          <li><a href={`${home}#postopek`}>Postopek</a></li>
+          <li><a href={`${home}#primeri`}>Primeri</a></li>
+          <li><a href={`${home}#o-meni`}>O meni</a></li>
+          <li><a href={`${home}#kontakt`}>Kontakt</a></li>
+          <li><a href="cene.html">Cene</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow eyebrow--accent">Več</p>
+        <ul class="foot-links">
+          <li><a href="primeri.html">Vsi primeri</a></li>
+          <li><a href="kako-poteka.html">Kako poteka</a></li>
+          <li><a href="marketing.html">Marketing</a></li>
+          <li><a href="o-meni.html">Več o meni</a></li>
+          <li><a href="kontakt.html">Vsi kontakti</a></li>
+          <li><a href="zasebnost.html">Varstvo podatkov</a></li>
+          <li><a href="en.html" lang="en">English</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow eyebrow--accent">Kontakt</p>
+        <ul class="foot-links">
+          <li><a href="tel:+38670479188">070 479 188</a></li>
+          <li><a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">@alej_kump</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p>To je komercialna stran. Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja. Rezultatov ne obljubljam.</p>
+      <p>AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje · matična št. 7585942000 · davčna št. 67735509 · nisem zavezanec za DDV (čl. 94 ZDDV-1)</p>
+      <p>Ta stran ne nastavlja piškotkov. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Pisave in slike so gostovane tukaj, na alejkump.si.</p>
+      <p class="foot-copy">© 2026 AK agencija · Kočevje</p>
+    </div>
+  </div>
+</footer>
+
+<script is:inline src="/assets/v2/site.js" defer></script>
+<Fragment set:html={beacon} />
+</body>
+</html>

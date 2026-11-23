@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sl">
 <head>
 <meta charset="utf-8">
@@ -17,117 +17,176 @@
 <meta property="og:image:alt" content="Prenosnik in telefon s spletno stranjo Gostilnice in picerije Briški v Kočevju">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://alejkump.si/rz/img/og-razgled.jpg">
-<meta name="theme-color" content="#000000">
+
+<meta name="theme-color" content="#F5F3F0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-latin-800-normal.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-latin-300-normal.woff2" crossorigin>
-<link rel="stylesheet" href="dw.css?v=2">
-<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/examples/jsm/"}}</script>
+<link rel="preload" as="font" type="font/woff2" href="/assets/v2/fonts/unbounded-latin-700-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/v2/fonts/unbounded-latin-ext-700-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/v2/fonts/inter-latin-var.woff2" crossorigin>
+<link rel="stylesheet" href="/assets/v2/site.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
-<body data-page="cene.html">
+<body data-page="cene">
 <a class="skip" href="#vsebina">Preskoči na vsebino</a>
-<section class="hero hero--sub" id="hero" data-lines='[["Cena","po","dogovoru"]]' data-counter="static">
-  <canvas id="scene" aria-label="Steklena kocka, ki jo lahko zavrtite. Povlecite vstran za vrtenje."></canvas>
-  <p class="fallback-title" aria-hidden="true">Cena<br>po<br>dogovoru</p>
-  <div class="ui">
-    <h1 class="sr-only">Cene spletnih strani pri AK agencija: po dogovoru, zapisano vnaprej</h1>
-    <p class="sr-only" id="hero-live" aria-live="polite">Cena po dogovoru</p>
-    <header class="nav">
-      <a class="logo" href="./" aria-label="AK agencija, domov"><i class="logo-mark" aria-hidden="true"></i><b>AK</b><span>agencija</span></a>
-      <ul class="nav-links"><li><a href="./">Domov</a></li><li><a href="storitve.html">Storitve</a></li><li><a href="primeri.html">Primeri</a></li><li><a href="kako-poteka.html">Kako poteka</a></li><li><a href="cene.html" aria-current="page">Cene</a></li><li><a href="o-meni.html">O meni</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
-      <button class="menu-btn" id="menu-open" type="button" aria-controls="menu" aria-expanded="false"><i aria-hidden="true"></i>Meni</button>
-    </header>
-    <div class="arrows">
-      <button class="arrow" id="prev" type="button" aria-label="Zavrti kocko v levo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
-      <button class="arrow" id="next" type="button" aria-label="Zavrti kocko v desno"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-    </div>
-    
-    <p class="tagline">Trije paketi.<br>Vaša cena v ponudbi.<strong>DDV ni obračunan.</strong></p>
-    <div class="cta-row">
-      <a class="cta" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Brezplačen predogled</a>
-      <span class="cta-line" aria-hidden="true"></span>
-      <span class="count" aria-hidden="true">05</span>
-    </div>
-    <div class="loader" id="loader" aria-hidden="true">Nalagam</div>
+
+<header class="top" id="top">
+  <div class="wrap top-row">
+    <a class="brand" href="./" aria-label="AK agencija, domov">AK agencija</a>
+    <nav class="top-nav" aria-label="Glavni meni">
+      <ul>
+        <li><a href="./#poudarki">Poudarki</a></li><li><a href="storitve.html">Storitve</a></li><li><a href="./#postopek">Postopek</a></li><li><a href="./#primeri">Primeri</a></li><li><a href="./#o-meni">O meni</a></li><li><a href="./#kontakt">Kontakt</a></li><li><a href="cene.html" aria-current="page">Cene</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="nav-toggle" type="button" aria-controls="nav-panel" aria-expanded="false">
+      <span class="burger-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="burger-label">Meni</span>
+    </button>
   </div>
-</section>
+</header>
+<!-- phone menu panel: a sibling of the header on purpose. A fixed element inside
+     the backdrop-filtered header would be positioned relative to the header in WebKit. -->
+<div class="nav-panel" id="nav-panel" hidden>
+    <nav aria-label="Meni za telefon">
+      <ul>
+        <li><a href="./#poudarki">Poudarki</a></li><li><a href="storitve.html">Storitve</a></li><li><a href="./#postopek">Postopek</a></li><li><a href="./#primeri">Primeri</a></li><li><a href="./#o-meni">O meni</a></li><li><a href="./#kontakt">Kontakt</a></li><li><a href="cene.html" aria-current="page">Cene</a></li>
+      </ul>
+    </nav>
+    <div class="nav-panel-cta">
+      <a class="btn btn--solid" href="tel:+38670479188"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>Pokličite 070 479 188</a>
+      <a class="btn" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram @alej_kump</a>
+    </div>
+  </div>
+
 <main id="vsebina">
-<section class="sec" id="paketi" aria-labelledby="paketi-h">
-  <div class="wrap">
-    <p class="eyebrow"><b>01</b> Paketi</p>
-    <h2 class="h2" id="paketi-h">Trije paketi. <em>Vaša cena v ponudbi.</em></h2>
-    <p class="lead">Najprej prejmete brezplačen predogled, nato pisno ponudbo s ceno, ki jo dogovoriva vnaprej. DDV ni obračunan. Domena je za prvo leto vključena.</p><div class="packs">
-  <div class="pack"><h3>Osnovna</h3><p class="price">Cena po dogovoru</p><dl><dt>Obseg</dt><dd>1 stran, razdeljena na sekcije</dd><dt>Popravki</dt><dd>1 krog popravkov</dd><dt>Rok izdelave</dt><dd>7 delovnih dni</dd><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></dl><a class="btn" href="mailto:alej.kump@gmail.com?subject=Paket%20Osnovna">Vprašam za paket Osnovna</a><p class="pack-alt">Brez e-pošte? <a class="link" href="tel:+38670479188">Pokličite</a> ali <a class="link" href="sms:+38670479188">pošljite SMS</a> na 070&nbsp;479&nbsp;188.</p></div>
-  <div class="pack pack--rec"><h3>Lokalni posel</h3><p class="price">Cena po dogovoru · priporočam</p><dl><dt>Obseg</dt><dd>do 5 podstrani</dd><dt>Popravki</dt><dd>2 kroga popravkov</dd><dt>Rok izdelave</dt><dd>10 delovnih dni</dd><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></dl><a class="btn btn--solid" href="mailto:alej.kump@gmail.com?subject=Paket%20Lokalni%20posel">Vprašam za paket Lokalni posel</a><p class="pack-alt">Brez e-pošte? <a class="link" href="tel:+38670479188">Pokličite</a> ali <a class="link" href="sms:+38670479188">pošljite SMS</a> na 070&nbsp;479&nbsp;188.</p></div>
-  <div class="pack"><h3>Premium</h3><p class="price">Cena po dogovoru</p><dl><dt>Obseg</dt><dd>do 5 podstrani, s prilagojenimi slikami in besedilom</dd><dt>Popravki</dt><dd>2 kroga popravkov</dd><dt>Rok izdelave</dt><dd>14 delovnih dni</dd><dt>Animacija</dt><dd>animirana stran je na voljo samo v tem paketu</dd><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></dl><a class="btn" href="mailto:alej.kump@gmail.com?subject=Paket%20Premium">Vprašam za paket Premium</a><p class="pack-alt">Brez e-pošte? <a class="link" href="tel:+38670479188">Pokličite</a> ali <a class="link" href="sms:+38670479188">pošljite SMS</a> na 070&nbsp;479&nbsp;188.</p></div>
-</div>
-<div class="btn-row"><a class="btn" href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">Ne veste, kateri paket? Rezervirajte klic</a></div>
-  </div>
-</section>
-<section class="sec" id="pogoji" aria-labelledby="pogoji-h">
-  <div class="wrap">
-    <p class="eyebrow"><b>02</b> Plačilo in pogoji</p>
-    <h2 class="h2" id="pogoji-h">Kaj <em>še velja.</em></h2>
-    <div class="terms">
-  <div><h3>Plačilo</h3><p>Celoten znesek ali na obroke, kot se dogovoriva v ponudbi. Za vsako plačilo prejmete davčno potrjen račun. Nisem zavezanec za DDV, zato se DDV ne obračuna (čl. 94 ZDDV-1).</p></div>
-  <div><h3>Domena</h3><p>Za prvo leto vključena v ceno. Registriram jo na vaše ime, podaljšanje po prvem letu plačate sami pri registrarju po njegovem ceniku.</p></div>
-  <div><h3>Gostovanje</h3><p>Mesečni znesek za gostovanje in vzdrževanje je neobvezen. Lastništvo strani, besedil in slik preide na vas, ko je paket v celoti plačan.</p></div>
-  <div><h3>Rok</h3><p>Teče od dneva, ko prejmem dogovorjeno vsebino in prvo plačilo.</p></div>
-  <div><h3>Česa noben paket ne vključuje</h3><p>Spletne trgovine in naročanja na termin (oboje je na voljo kot dodatek, cena po dogovoru), obljube o uvrstitvi na iskalnikih, nakupa fotografij mimo tistih, ki jih priskrbite sami, ali česarkoli, kar ni zapisano v ponudbi.</p></div>
-  <div><h3>Od česa je odvisna končna cena</h3><p><a class="link" href="/clanki-koliko-stane-spletna-stran.html">Koliko stane spletna stran za lokalno podjetje</a></p></div>
-</div>
-  </div>
-</section>
-<section class="final" aria-labelledby="final-h">
-  <div class="wrap">
-    <p class="eyebrow"><b>Brez obveznosti</b></p>
-    <h2 class="big" id="final-h">Napišite STRAN. <span>Pripravim vam predogled.</span></h2>
-    <p class="lead">V sporočilo napišite STRAN in ime podjetja. V najslabšem primeru dobite brezplačen predogled svoje strani.</p>
-    <div class="btn-row">
-      <a class="btn btn--solid" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Napiši STRAN na Instagramu</a>
-      <a class="btn" href="tel:+38670479188">Pokliči 070 479 188</a>
-      <a class="btn" href="https://calendar.app.google/uyM6dgHUa9PLi6ku5" rel="noopener" target="_blank">Rezervirajte 15-minutni klic</a>
+  
+  <section class="sec sec--alt page-hero" aria-labelledby="ce-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Cene</p>
+      <h1 class="h1 h1--page reveal" id="ce-h">Trije paketi. Vaša cena v ponudbi.</h1>
+      <p class="lead reveal">Najprej prejmete brezplačen predogled, nato pisno ponudbo s ceno, ki jo dogovoriva vnaprej. DDV ni obračunan. Domena je za prvo leto vključena.</p>
+
+      <div class="cards cards--3 packs">
+        <article class="card price-card reveal">
+            
+            <h2>Osnovna</h2>
+            <p class="tag">Cena po dogovoru</p>
+            <dl class="specs">
+              <div><dt>Obseg</dt><dd>1 stran, razdeljena na sekcije</dd></div>
+              <div><dt>Popravki</dt><dd>1 krog popravkov</dd></div>
+              <div><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></div>
+            </dl>
+            <a class="btn btn--solid" href="tel:+38670479188"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>Vprašam za paket<span class="sr-only"> Osnovna</span></a>
+          </article><article class="card price-card reveal price-card--rec">
+            <p class="tag tag--solid">Priporočam</p>
+            <h2>Lokalni posel</h2>
+            <p class="tag">Cena po dogovoru</p>
+            <dl class="specs">
+              <div><dt>Obseg</dt><dd>do 5 podstrani</dd></div>
+              <div><dt>Popravki</dt><dd>2 kroga popravkov</dd></div>
+              <div><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></div>
+            </dl>
+            <a class="btn btn--solid" href="tel:+38670479188"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>Vprašam za paket<span class="sr-only"> Lokalni posel</span></a>
+          </article><article class="card price-card reveal">
+            
+            <h2>Premium</h2>
+            <p class="tag">Cena po dogovoru</p>
+            <dl class="specs">
+              <div><dt>Obseg</dt><dd>do 5 podstrani, s pripravljenimi besedili in slikami</dd></div>
+              <div><dt>Popravki</dt><dd>2 kroga popravkov</dd></div>
+              <div><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></div>
+            </dl>
+            <a class="btn btn--solid" href="tel:+38670479188"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>Vprašam za paket<span class="sr-only"> Premium</span></a>
+          </article>
+      </div>
     </div>
-    <p class="muted small" style="margin-top:22px">Raje pišete? <a class="link" href="sms:+38670479188">SMS na 070&nbsp;479&nbsp;188</a> ali e-pošta <a class="link" href="mailto:alej.kump@gmail.com?subject=STRAN%20-%20predogled%20strani&amp;body=Pozdravljeni%2C%20zanima%20me%20predogled%20strani.%20Podjetje%3A%20%20Dejavnost%3A%20">alej.kump@gmail.com</a></p>
-  </div>
-</section>
+  </section>
+
+  <section class="sec" id="pogoji" aria-labelledby="pg-h">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="pg-h">Plačilo in pogoji</h2>
+      <div class="cards cards--4 terms">
+        <article class="card reveal">
+          <h3>Plačilo</h3>
+          <p>Celoten znesek ali na obroke, kot se dogovoriva v ponudbi. Za vsako plačilo prejmete davčno potrjen račun. Nisem zavezanec za DDV, zato se DDV ne obračuna (čl. 94 ZDDV-1).</p>
+        </article>
+        <article class="card reveal">
+          <h3>Domena</h3>
+          <p>Za prvo leto vključena v ceno. Registriram jo na vaše ime, podaljšanje po prvem letu plačate sami pri registrarju po njegovem ceniku.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Gostovanje</h3>
+          <p>Mesečni znesek za gostovanje in vzdrževanje je po dogovoru.</p>
+        </article>
+        <article class="card card--accent reveal">
+          <h3>Česa noben paket ne vključuje</h3>
+          <p>Spletne trgovine in naročanja na termin (oboje je na voljo kot dodatek, cena po dogovoru), obljube o uvrstitvi na iskalnikih, nakupa fotografij mimo tistih, ki jih priskrbite sami, ali česarkoli, kar ni zapisano v ponudbi.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="cta-h">Napišite STRAN. Pripravim vam predogled.</h2>
+      <div class="btn-row btn-row--center reveal">
+        <a class="btn btn--solid" href="tel:+38670479188"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>Pokličite 070 479 188</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank"><svg class="ico" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram @alej_kump</a>
+      </div>
+    </div>
+  </section>
+
 </main>
+
 <footer class="foot">
   <div class="wrap">
-    <ul class="foot-links">
-      <li><a href="./">Domov</a></li><li><a href="storitve.html">Storitve</a></li><li><a href="primeri.html">Primeri</a></li><li><a href="kako-poteka.html">Kako poteka</a></li><li><a href="cene.html">Cene</a></li><li><a href="o-meni.html">O meni</a></li><li><a href="kontakt.html">Kontakt</a></li>
-      <li><a href="/marketing.html">Marketing</a></li>
-      <li><a href="/clanki-koliko-stane-spletna-stran.html">Članek: Koliko stane spletna stran</a></li>
-      <li><a href="/clanki-facebook-ali-spletna-stran.html">Članek: Facebook ali spletna stran</a></li>
-      <li><a href="/clanki-google-profil-podjetja.html">Članek: Google profil</a></li>
-      <li><a href="/clanki-spletna-stran-za-obrtnike.html">Članek: Stran za obrtnike</a></li>
-      <li><a href="/zasebnost.html">Varstvo podatkov</a></li>
-      <li><a href="/en.html" lang="en">English</a></li>
-    </ul>
-    <p class="notice">To je komercialna stran. Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja. Rezultatov ne obljubljam.</p>
-    <p>AK agencija, računalniško programiranje, Alej Kump s.p., Kočevje · matična številka 7585942000 · davčna številka 67735509 · nisem zavezanec za DDV · <a class="link" href="kontakt.html#podjetje">sedež in vsi podatki</a></p>
-    <p>Ta stran ne nastavlja piškotkov. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Vse, kar stran potrebuje (pisave, slike, knjižnica three.js in 3D model kocke), je gostovano tukaj, na alejkump.si.</p>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <p class="brand">AK agencija</p>
+        <p class="foot-muted">Spletne strani za lokalna podjetja. Kočevje, Dolenjska, vsa Slovenija.</p>
+      </div>
+      <div>
+        <p class="eyebrow eyebrow--accent">Raziščite</p>
+        <ul class="foot-links">
+          <li><a href="./#poudarki">Poudarki</a></li>
+          <li><a href="storitve.html">Storitve</a></li>
+          <li><a href="./#postopek">Postopek</a></li>
+          <li><a href="./#primeri">Primeri</a></li>
+          <li><a href="./#o-meni">O meni</a></li>
+          <li><a href="./#kontakt">Kontakt</a></li>
+          <li><a href="cene.html">Cene</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow eyebrow--accent">Več</p>
+        <ul class="foot-links">
+          <li><a href="primeri.html">Vsi primeri</a></li>
+          <li><a href="kako-poteka.html">Kako poteka</a></li>
+          <li><a href="marketing.html">Marketing</a></li>
+          <li><a href="o-meni.html">Več o meni</a></li>
+          <li><a href="kontakt.html">Vsi kontakti</a></li>
+          <li><a href="zasebnost.html">Varstvo podatkov</a></li>
+          <li><a href="en.html" lang="en">English</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow eyebrow--accent">Kontakt</p>
+        <ul class="foot-links">
+          <li><a href="tel:+38670479188">070 479 188</a></li>
+          <li><a href="mailto:alej.kump@gmail.com">alej.kump@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">@alej_kump</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p>To je komercialna stran. Oglašuje plačljivo storitev in jo je napisala oseba, ki jo opravlja. Rezultatov ne obljubljam.</p>
+      <p>AK agencija, računalniško programiranje, Alej Kump s.p., Ulica heroja Marinclja 3, 1330 Kočevje · matična št. 7585942000 · davčna št. 67735509 · nisem zavezanec za DDV (čl. 94 ZDDV-1)</p>
+      <p>Ta stran ne nastavlja piškotkov. Število obiskov šteje Cloudflare Web Analytics, brez piškotkov in brez sledenja posameznim obiskovalcem. Pisave in slike so gostovane tukaj, na alejkump.si.</p>
+      <p class="foot-copy">© 2026 AK agencija · Kočevje</p>
+    </div>
   </div>
 </footer>
-<nav class="bar" aria-label="Hiter kontakt">
-  <div class="bar-btns"><a class="bar-call" href="tel:+38670479188" aria-label="Pokliči 070 479 188">Pokliči</a><a class="bar-sms" href="sms:+38670479188" aria-label="Pošlji SMS na 070 479 188">SMS</a></div>
-  <a class="bar-ig" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Instagram: napišite STRAN</a>
-</nav>
-<div class="menu" id="menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Meni">
-  <div class="menu-top"><a class="logo" href="./" aria-label="AK agencija, domov"><i class="logo-mark" aria-hidden="true"></i><b>AK</b><span>agencija</span></a><button class="menu-btn menu-close" id="menu-close" type="button"><i aria-hidden="true"></i>Zapri</button></div>
-  <nav aria-label="Glavni meni"><a href="./">Domov</a><a href="storitve.html">Storitve</a><a href="primeri.html">Primeri</a><a href="kako-poteka.html">Kako poteka</a><a href="cene.html" aria-current="page">Cene</a><a href="o-meni.html">O meni</a><a href="kontakt.html">Kontakt</a></nav>
-  <div class="btn-row"><a class="btn btn--solid" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank">Napiši STRAN na Instagramu</a><a class="btn" href="tel:+38670479188">Pokliči 070 479 188</a></div>
-</div>
-<script src="site.js?v=2" defer></script>
-<script>
-(function () {
-  var d = document.documentElement;
-  try { if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { d.classList.add('no-webgl'); return; } } catch (e) {}
-  function go() { var s = document.createElement('script'); s.type = 'module'; s.src = 'hero.js?v=1'; document.body.appendChild(s); }
-  function idle() { if ('requestIdleCallback' in window) requestIdleCallback(go, { timeout: 2000 }); else setTimeout(go, 200); }
-  if (document.readyState === 'complete') idle(); else window.addEventListener('load', idle, { once: true });
-})();
-</script>
+
+<script src="/assets/v2/site.js" defer></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "076e8935243a47ebaaf3851e298a5c1e"}'></script>
 </body>
 </html>

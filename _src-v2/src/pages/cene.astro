@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+
+const packs = [
+  { name: 'Osnovna', scope: '1 stran, razdeljena na sekcije', fixes: '1 krog popravkov', subject: 'Paket%20Osnovna' },
+  { name: 'Lokalni posel', rec: true, scope: 'do 5 podstrani', fixes: '2 kroga popravkov', subject: 'Paket%20Lokalni%20posel' },
+  { name: 'Premium', scope: 'do 5 podstrani, s pripravljenimi besedili in slikami', fixes: '2 kroga popravkov', subject: 'Paket%20Premium' },
+];
+---
+<Base
+  page="cene"
+  path="cene.html"
+  title="Cene spletnih strani: po dogovoru, zapisano vnaprej | AK agencija"
+  description="Trije paketi spletnih strani, cena po dogovoru v pisni ponudbi. DDV ni obračunan, domena za prvo leto vključena, plačilo tudi na obroke."
+  ogDescription="Trije paketi: Osnovna, Lokalni posel in Premium. Cena po dogovoru v pisni ponudbi, DDV ni obračunan, domena za prvo leto vključena, plačilo tudi na obroke."
+>
+  <section class="sec sec--alt page-hero" aria-labelledby="ce-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Cene</p>
+      <h1 class="h1 h1--page reveal" id="ce-h">Trije paketi. Vaša cena v ponudbi.</h1>
+      <p class="lead reveal">Najprej prejmete brezplačen predogled, nato pisno ponudbo s ceno, ki jo dogovoriva vnaprej. DDV ni obračunan. Domena je za prvo leto vključena.</p>
+
+      <div class="cards cards--3 packs">
+        {packs.map((p) => (
+          <article class={`card price-card reveal${p.rec ? ' price-card--rec' : ''}`}>
+            {p.rec && <p class="tag tag--solid">Priporočam</p>}
+            <h2>{p.name}</h2>
+            <p class="tag">Cena po dogovoru</p>
+            <dl class="specs">
+              <div><dt>Obseg</dt><dd>{p.scope}</dd></div>
+              <div><dt>Popravki</dt><dd>{p.fixes}</dd></div>
+              <div><dt>Mesečno</dt><dd>neobvezno gostovanje in vzdrževanje, po dogovoru</dd></div>
+            </dl>
+            <a class="btn btn--solid" href="tel:+38670479188"><Icon name="call" />Vprašam za paket<span class="sr-only"> {p.name}</span></a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="pogoji" aria-labelledby="pg-h">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="pg-h">Plačilo in pogoji</h2>
+      <div class="cards cards--4 terms">
+        <article class="card reveal">
+          <h3>Plačilo</h3>
+          <p>Celoten znesek ali na obroke, kot se dogovoriva v ponudbi. Za vsako plačilo prejmete davčno potrjen račun. Nisem zavezanec za DDV, zato se DDV ne obračuna (čl. 94 ZDDV-1).</p>
+        </article>
+        <article class="card reveal">
+          <h3>Domena</h3>
+          <p>Za prvo leto vključena v ceno. Registriram jo na vaše ime, podaljšanje po prvem letu plačate sami pri registrarju po njegovem ceniku.</p>
+        </article>
+        <article class="card reveal">
+          <h3>Gostovanje</h3>
+          <p>Mesečni znesek za gostovanje in vzdrževanje je po dogovoru.</p>
+        </article>
+        <article class="card card--accent reveal">
+          <h3>Česa noben paket ne vključuje</h3>
+          <p>Spletne trgovine in naročanja na termin (oboje je na voljo kot dodatek, cena po dogovoru), obljube o uvrstitvi na iskalnikih, nakupa fotografij mimo tistih, ki jih priskrbite sami, ali česarkoli, kar ni zapisano v ponudbi.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-h">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="cta-h">Napišite STRAN. Pripravim vam predogled.</h2>
+      <div class="btn-row btn-row--center reveal">
+        <a class="btn btn--solid" href="tel:+38670479188"><Icon name="call" />Pokličite 070 479 188</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/alej_kump/" rel="noopener" target="_blank"><Icon name="instagram" />Instagram @alej_kump</a>
+      </div>
+    </div>
+  </section>
+</Base>
