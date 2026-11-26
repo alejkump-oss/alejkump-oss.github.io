@@ -16,7 +16,7 @@ const cards = [
 <html lang="sl">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Strato Apartment – 7 predlogov</title>
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,12 +34,13 @@ const cards = [
   a.card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
   .b{padding:16px 18px 20px}
   .n{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7a776f;font-weight:600}
-  .ref{font-size:13px;color:#2c6a9c;margin-top:4px;word-break:break-all}
-  .d{font-size:14px;color:#3d3d39;margin-top:10px}
-  .d em{display:block;font-style:normal;color:#7a776f;margin-top:4px;font-size:13px}
+  .ref{font-size:15px;color:#2c6a9c;margin-top:4px;word-break:break-all}
+  .d{font-size:15px;color:#3d3d39;margin-top:10px}
+  .d em{display:block;font-style:normal;color:#7a776f;margin-top:4px;font-size:15px}
   .go{display:inline-block;margin-top:14px;font-weight:600;font-size:14px}
   .star{position:absolute;top:12px;left:12px;background:#1b1b1b;color:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
-  footer{margin-top:40px;font-size:13px;color:#7a776f}
+  footer{margin-top:40px;font-size:15px;color:#7a776f}
+  body{padding-left:max(clamp(16px,4vw,48px),env(safe-area-inset-left));padding-right:max(clamp(16px,4vw,48px),env(safe-area-inset-right))}
   @media (prefers-reduced-motion:reduce){a.card{transition:none}}
 </style>
 </head>

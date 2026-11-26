@@ -169,6 +169,32 @@ footer{background:var(--green);color:#fff}
 .fbot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:18px;padding-bottom:18px}
 .rv{opacity:1}
 @media (prefers-reduced-motion:no-preference){.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}}
+
+/* ---- mobile QA (owner checks on phone): tap targets, readable sizes, iOS zoom, header offsets ---- */
+@media (max-width:1000px){
+  input,textarea,select{font-size:16px!important}
+  .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+  .burger{width:44px;height:44px;display:grid;place-items:center;padding:0}
+  .burger span{position:relative;top:auto;left:auto}
+  #menu a{min-height:44px;display:flex;align-items:center}
+  [data-set-lang]{min-width:44px;min-height:44px}
+  main p a:not(.btn),main dd a:not(.btn),main li a:not(.btn){display:inline-block;padding:12px 0;margin:-12px 0}
+  .hint{font-size:15px}
+  .logo-slot{font-size:11.5px}
+}
+
+@media (max-width:1000px){
+  .lbl,.three .txt .lbl,.widget span{font-size:12px}
+  .rev small{font-size:13px}
+  .scores>div>span{font-size:13px}
+  label{font-size:13px}
+  .lang button{min-width:44px;min-height:44px}
+  .fgrid a{min-height:44px;display:flex;align-items:center;margin-bottom:0}
+  .logo{min-height:44px;display:inline-grid;align-content:center}
+  [id]{scroll-margin-top:90px}
+}
+@media (max-width:1000px){.fbot span{font-size:14px}main p a:not(.btn),main dd a:not(.btn),main li a:not(.btn){padding:12px 6px;margin:-12px -6px}}
+@media (max-width:1000px){.btn{gap:.3em}}
 </style>
 </head>
 <body>
@@ -288,7 +314,7 @@ footer{background:var(--green);color:#fff}
   bg.addEventListener('click',function(){var o=menu.classList.toggle('open');bg.setAttribute('aria-expanded',String(o))});
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
   var els=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('in')})}
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -2% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('in')})}
 })();
 </script>
 </body>

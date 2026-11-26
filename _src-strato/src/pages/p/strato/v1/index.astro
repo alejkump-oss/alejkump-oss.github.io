@@ -180,6 +180,32 @@ textarea{min-height:120px;resize:vertical}
 .logo-slot{width:150px;height:84px;border:1px dashed var(--grey);display:grid;place-items:center;text-align:center;font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.04em;color:var(--grey);padding:8px}
 .rv{opacity:1}
 @media (prefers-reduced-motion:no-preference){.rv{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}}
+
+/* ---- mobile QA (owner checks on phone): tap targets, readable sizes, iOS zoom, header offsets ---- */
+@media (max-width:1000px){
+  input,textarea,select{font-size:16px!important}
+  .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+  .burger{width:44px;height:44px;display:grid;place-items:center;padding:0}
+  .burger span{position:relative;top:auto;left:auto}
+  #menu a{min-height:44px;display:flex;align-items:center}
+  [data-set-lang]{min-width:44px;min-height:44px}
+  main p a:not(.btn),main dd a:not(.btn),main li a:not(.btn){display:inline-block;padding:12px 0;margin:-12px 0}
+  .hint{font-size:15px}
+  .logo-slot{font-size:11.5px}
+}
+
+@media (max-width:1000px){
+  .logo{padding:2px 0;min-height:44px;align-content:center}
+  .hbtns .btn{min-height:44px;padding:0 16px}
+  .rev .who{font-size:13px}
+  .score small{font-size:14px}
+  label{font-size:12.5px}
+  .links a,.links span{display:inline-flex;align-items:center;min-height:44px}
+}
+@media (max-width:1000px){.logo{padding:2px 10px;margin-left:-10px}label{font-size:13px}main p a:not(.btn),main dd a:not(.btn),main li a:not(.btn){padding:12px 6px;margin:-12px -6px}}
+@media (max-width:1000px){.btn{gap:.3em}}
+@media (max-width:900px){.blk .box{width:auto!important}}
+@media (max-width:900px){.blk:not(:has(figure)) .box{top:0}.blk .txt{padding-top:30px}}
 </style>
 </head>
 <body>
@@ -360,7 +386,7 @@ textarea{min-height:120px;resize:vertical}
   bg.addEventListener('click',function(){var o=menu.classList.toggle('open');bg.setAttribute('aria-expanded',String(o))});
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
   var els=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('in')})}
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -2% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('in')})}
 })();
 </script>
 </body>

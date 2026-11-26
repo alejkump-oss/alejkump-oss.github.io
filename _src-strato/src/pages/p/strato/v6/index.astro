@@ -30,7 +30,7 @@ const faq = [
 <html lang="sl">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Strato Apartment · Kočevje</title>
 <meta name="description" content="Strato Apartment, Kočevje – apartma za do 5 oseb, 270 m od Kočevskega jezera. Predlog spletne strani (AK agencija)." />
 <meta name="robots" content="noindex" />
@@ -68,14 +68,14 @@ const faq = [
   .pill:hover{background:var(--teal2);transform:translateY(-1px)}
   .pill.ghost{background:var(--muted2);color:var(--teal);box-shadow:none;border:1px solid var(--line)}
   .pill.ghost:hover{background:#e3e9ea}
-  .pill.sm{font-size:14px;padding:10px 20px}
+  .pill.sm{font-size:14px;padding:10px 20px;min-height:44px}
   .chip{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);color:#fff;border-radius:999px;padding:10px 18px;font-size:14px;font-weight:600}
   .chip i{width:8px;height:8px;border-radius:50%;background:#fff;opacity:.8}
   section{padding:clamp(64px,8vw,112px) 0}
   section.tint{background:var(--muted)}
 
   /* header */
-  .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+  .nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s;padding-top:env(safe-area-inset-top)}
   .nav.on{background:rgba(248,250,250,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px;color:#fff}
   .nav.on .wrap{color:var(--ink)}
@@ -89,7 +89,7 @@ const faq = [
   .nav.on .lang{border-color:var(--line);background:var(--muted2)}
   .lang button{border:0;background:none;color:inherit;font:800 12px/1 var(--sans);letter-spacing:.08em;padding:7px 10px;border-radius:999px;cursor:pointer}
   .lang button[aria-pressed=true]{background:#fff;color:var(--teal)}
-  .nav .pill.sm{font-size:14px;padding:12px 22px;white-space:nowrap}
+  .nav .pill.sm{font-size:14px;padding:12px 22px;white-space:nowrap;min-height:44px}
   @media (max-width:980px){.menu{display:none}}
   @media (max-width:520px){.nav .pill.sm{padding:10px 12px;font-size:11px;letter-spacing:0}.logo{font-size:17px}.lang button{padding:6px 7px;font-size:11px}.nav .wrap{gap:8px}}
 
@@ -106,7 +106,7 @@ const faq = [
   .hero .acts .pill.ghost{background:rgba(255,255,255,.9)}
   .side{display:grid;gap:12px}
   .side .ic{display:flex;gap:10px;margin-bottom:6px}
-  .side .ic a{width:52px;height:38px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;color:#fff}
+  .side .ic a{width:52px;height:44px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;color:#fff}
   .side .ic svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.8}
   .near{display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:14px 16px;color:#fff}
   .near i{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;font:800 15px/1 var(--sans);flex:0 0 52px}
@@ -174,7 +174,7 @@ const faq = [
   .prow small{font-size:13px;color:rgba(255,255,255,.85)}
   .prow .m{margin-left:auto;background:rgba(255,255,255,.14);border-radius:14px;padding:8px 14px;text-align:center;font-weight:800;line-height:1}
   .prow .m small{display:block;font-size:9px;letter-spacing:.2em;margin-top:3px}
-  .panel .pill{width:100%;margin-top:14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);box-shadow:none}
+  .panel .pill{width:100%;margin-top:14px;min-height:44px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);box-shadow:none}
   .panel .pill:hover{background:rgba(255,255,255,.2)}
   @media (max-width:900px){.access .wrap{grid-template-columns:minmax(0,1fr)}.mapcard{min-height:440px}}
 
@@ -257,6 +257,27 @@ const faq = [
   @media (max-width:900px){.fgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
   @media (max-width:560px){.fgrid{grid-template-columns:minmax(0,1fr)}}
 
+  /* mobile QA */
+  [id]{scroll-margin-top:calc(84px + env(safe-area-inset-top))}
+  @media (max-width:760px){
+    .logo{min-height:44px;display:inline-flex;align-items:center;gap:.28em}
+    .hero::after{background:linear-gradient(180deg,rgba(0,40,36,.55),rgba(0,40,36,.45) 40%,rgba(0,40,36,.7))}
+    .hero h1{text-shadow:0 2px 14px rgba(0,30,27,.45)}
+    .glass{background:rgba(0,40,36,.38);backdrop-filter:blur(10px)}
+    .near,.chip{background:rgba(0,40,36,.3)}
+    .lang button{min-height:44px;min-width:44px;padding:8px 10px}
+    .lang{min-height:44px;align-items:center}
+    .nav .pill.sm{padding:10px 14px}
+    .mapcard .c p,.pbox p,.prow small,.feat p,.rev q,.score span,.who .card p,.rev .who,.sidebox p,.hint,.fgrid li,.fgrid .l+p,.slot,.koc{font-size:15px}
+    .panel p[style]{font-size:15px!important}
+    .form label{font-size:15px}
+    .koc a,.fgrid li a{display:inline-block;padding:11px 0;min-width:44px}
+    .rev .who span{display:inline-block;padding:8px 0}
+    .mapcard .c .pill.sm{min-height:44px}
+    .room .pill.sm{min-height:44px}
+    summary{min-height:44px}
+    .hero{padding-top:calc(100px + env(safe-area-inset-top))}
+  }
   html.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
   html.js .rv.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}.pill{transition:none}}
@@ -487,8 +508,9 @@ const faq = [
   onScroll();addEventListener('scroll',onScroll,{passive:true});
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08,rootMargin:'0px 0px -5% 0px'});
-    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+    document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0){el.classList.add('in')}else{io.observe(el)}});
   } else { document.querySelectorAll('.rv').forEach(function(el){el.classList.add('in')}); }
+  addEventListener('scroll',function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){if(el.getBoundingClientRect().top<innerHeight)el.classList.add('in')})},{passive:true});
   var cf=document.getElementById('cf');
   cf.addEventListener('submit',function(ev){ev.preventDefault();
     var en=h.lang==='en';

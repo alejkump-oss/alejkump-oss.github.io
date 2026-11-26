@@ -242,6 +242,40 @@ footer p{font-size:.95rem;color:#444;max-width:360px;margin-top:16px}
 .logo-slot{width:150px;height:84px;border:1px dashed var(--grey);border-radius:8px;display:grid;place-items:center;text-align:center;font-size:.68rem;color:var(--grey);padding:8px;background:#fff}
 .rv{opacity:1}
 @media (prefers-reduced-motion:no-preference){.rv{opacity:0;transform:translateY(18px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}}
+
+/* ---- mobile QA (owner checks on phone): tap targets, readable sizes, iOS zoom, header offsets ---- */
+@media (max-width:1000px){
+  input,textarea,select{font-size:16px!important}
+  .btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;font-size:13px}
+  .burger{width:44px;height:44px;display:grid;place-items:center;padding:0}
+  .burger span{position:relative;top:auto;left:auto}
+  #menu a{min-height:44px;display:flex;align-items:center}
+  [data-set-lang]{min-width:44px;min-height:44px}
+  main p a:not(.btn),main dd a:not(.btn),main li a:not(.btn){display:inline-block;padding:12px 0;margin:-12px 0}
+  .hint{font-size:15px}
+  .logo-slot{font-size:11.5px}
+}
+
+.acc>*{min-width:0}
+@media (max-width:1000px){
+  .card{flex-basis:min(370px,78vw)}
+  .topbar{font-size:12px}
+  .label{font-size:12px}
+  .tcard .who span{font-size:14px}
+  .lang button{min-width:44px;min-height:44px}
+  .bars button{height:44px;background:transparent;display:grid;align-items:center}
+  .bars button::after{content:"";display:block;height:2px;background:rgba(255,255,255,.35)}
+  .bars button[aria-current=true]::after{background:#fff}
+  footer a{min-height:44px;display:flex;align-items:center;margin-bottom:0}
+  [id]{scroll-margin-top:74px}
+}
+@media (max-width:1000px){.brand{min-height:44px}}
+@media (max-width:380px){header .wrap{gap:8px;padding:0 16px}.brand{font-size:1.3rem;gap:8px}.brand svg{width:34px;height:34px}.lang button{min-width:36px;padding:4px 2px}}
+@media (max-width:1000px){.fbot span{font-size:14px}main p a:not(.btn),main dd a:not(.btn),main li a:not(.btn){padding:12px 6px;margin:-12px -6px}}
+@media (max-width:1000px){.btn{gap:.3em}}
+@media (max-width:1000px){.bars button[aria-current=true]{background:transparent}.strip{padding:46px 24px;gap:18px 24px}.strip .plat{font-size:1.2rem;flex:1 1 40%}}
+@media (max-width:760px){.collage .a,.collage .b,.collage .c{width:100%;height:auto}}
+@media (max-width:900px){.lcol .a{width:100%;height:auto}}
 </style>
 </head>
 <body>
@@ -448,7 +482,7 @@ footer p{font-size:.95rem;color:#444;max-width:360px;margin-top:16px}
   function scroller(sel,attr){var tr=document.getElementById(sel);document.querySelectorAll('['+attr+']').forEach(function(b){b.addEventListener('click',function(){tr.scrollBy({left:parseInt(b.getAttribute(attr))*(tr.firstElementChild.offsetWidth+30),behavior:reduce?'auto':'smooth'})})})}
   scroller('track','data-scroll');scroller('ttrack','data-tscroll');
   var els=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('in')})}
+  if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -2% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('in')})}
 })();
 </script>
 </body>
