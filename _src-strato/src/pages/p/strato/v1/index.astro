@@ -1,0 +1,452 @@
+---
+// Strato Apartment – preview v1 ("Workation" archetype).
+// Feel borrowed from a modern extended-stay residence site: geometric sans + mono labels,
+// terracotta accent on warm white, modular text/photo rows, persistent booking bar.
+// All code, copy and layout are original. Facts come only from src/data/strato.json.
+import d from '../../../../data/strato.json';
+
+const t = (sl: string, en: string) =>
+  `<span data-lang="sl">${sl}</span><span data-lang="en">${en}</span>`;
+
+const labels: Record<string, [string, string]> = {
+  size: ['Velikost', 'Size'],
+  guests: ['Gostje', 'Guests'],
+  bedrooms: ['Spanje', 'Sleeping'],
+  lake: ['Jezero', 'Lake'],
+  center: ['Središče', 'Town centre'],
+  checkin: ['Prijava', 'Check-in'],
+  checkout: ['Odjava', 'Check-out'],
+  rules: ['Hišni red', 'House rules'],
+  parking: ['Parkiranje', 'Parking'],
+  kitchen: ['Kuhinja', 'Kitchen'],
+  bedroom1: ['Velika spalnica', 'Main bedroom'],
+  bedroom2: ['Manjša spalnica', 'Second bedroom'],
+  living: ['Dnevna soba', 'Living room'],
+  bathroom: ['Kopalnica', 'Bathroom'],
+  climate: ['Ogrevanje in hlajenje', 'Heating and cooling'],
+  outdoor: ['Zunaj', 'Outdoors'],
+  extras: ['Dodatno', 'Extras'],
+};
+const amenityKeys = ['kitchen','living','bedroom1','bedroom2','bathroom','climate','outdoor','parking','extras'];
+
+const photos: Record<string, [string, string]> = {
+  '01': ['Dnevna soba s kavčem in pisalno mizo', 'Living room with sofa and desk'],
+  '02': ['Dnevna soba s TV in kitaro', 'Living room with TV and guitar'],
+  '03': ['Klavir in delovni kotiček', 'Piano and desk corner'],
+  '04': ['Kitara in klavir', 'Guitar and piano'],
+  '05': ['Dnevna soba s klavirjem', 'Living room with piano'],
+  '06': ['Kuhinja', 'Kitchen'],
+  '07': ['Kuhinja z jedilnico', 'Kitchen with dining area'],
+  '08': ['Kuhinjski pult', 'Kitchen counter'],
+  '09': ['Jedilnica', 'Dining area'],
+  '10': ['Velika spalnica', 'Main bedroom'],
+  '11': ['Velika spalnica z omaro', 'Main bedroom with wardrobe'],
+  '12': ['Velika spalnica', 'Main bedroom'],
+  '13': ['Velika spalnica', 'Main bedroom'],
+  '14': ['Manjša spalnica s sedalnimi vrečami', 'Second bedroom with bean bags'],
+  '15': ['Manjša spalnica', 'Second bedroom'],
+};
+const img = (n: string, cls = '', loading: 'lazy' | 'eager' = 'lazy') =>
+  `<img src="../assets/strato-${n}.jpg" width="950" height="632" loading="${loading}" decoding="async" class="${cls}" alt="${photos[n][0]}" data-alt-sl="${photos[n][0]}" data-alt-en="${photos[n][1]}">`;
+const galleryIds = ['03','04','05','06','07','08','10','12','13','15'];
+
+const rows = [
+  { n: '02', key: 'living' },
+  { n: '09', key: 'kitchen' },
+  { n: '11', key: 'bedroom1' },
+  { n: '14', key: 'bedroom2' },
+];
+
+const bookingEn = '9.9 / 10 (10 reviews)';
+const airbnbEn = '5.0 (9 reviews)';
+const mailSubjectSl = 'Povpraševanje – Strato Apartment';
+const mailSubjectEn = 'Enquiry – Strato Apartment';
+---
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strato Apartment – Kočevje</title>
+<meta name="description" content="Strato Apartment, Kočevje: apartma 74 m² za do 5 oseb, 270 m od Kočevskega jezera. Predogled spletne strani.">
+<meta name="robots" content="noindex">
+<script is:inline>try{var l=localStorage.getItem('strato-lang');if(l==='en'||l==='sl')document.documentElement.lang=l}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style is:global>
+:root{
+  --bg:#faf7f2;--bg2:#f1ebe2;--ink:#2a2724;--ink2:#5c5650;--line:#e4dcd0;
+  --acc:#c9705e;--acc2:#f3d6cd;--teal:#163b40;--white:#fff;
+  --r:18px;--max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+html[lang=sl] [data-lang=en],html[lang=en] [data-lang=sl]{display:none!important}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:500;line-height:1.08;letter-spacing:-.02em}
+h1{font-size:clamp(2.6rem,7vw,5.2rem)}
+h2{font-size:clamp(1.9rem,4vw,3rem)}
+h3{font-size:1.25rem}
+p{margin:0}
+.mono{font-family:'DM Mono',ui-monospace,monospace;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+@media (max-width:760px){section{padding:56px 0}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:1.5px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;font-weight:500;font-size:.98rem;transition:transform .2s,background .2s,color .2s;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn.acc{background:var(--acc);border-color:var(--acc)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px}
+.brand{font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;font-size:.95rem}
+.brand small{display:block;font-weight:400;letter-spacing:.08em;font-size:.6rem;color:var(--ink2)}
+.links{display:flex;gap:26px;font-size:.92rem}
+.links a{text-decoration:none;color:var(--ink2)}
+.links a:hover{color:var(--ink)}
+@media (max-width:900px){.links{display:none}}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:#fff}
+.lang button{border:0;background:transparent;font:inherit;font-size:.8rem;font-weight:600;letter-spacing:.06em;padding:6px 11px;border-radius:999px;cursor:pointer;color:var(--ink2)}
+.lang button[aria-pressed=true]{background:var(--ink);color:#fff}
+.nav .btn{padding:10px 16px;font-size:.9rem}
+@media (max-width:560px){.nav .btn{display:none}}
+/* hero */
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:28px}}
+.hero .lead{font-size:1.2rem;color:var(--ink2);max-width:520px;margin:22px 0 30px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero figure{margin:0;position:relative}
+.hero img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
+.float{position:absolute;left:-18px;bottom:22px;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 20px 50px rgba(42,39,36,.14);display:flex;gap:18px}
+@media (max-width:900px){.float{left:14px;bottom:14px;padding:10px 14px;gap:12px}}
+.float b{display:block;font-size:1.3rem;font-weight:600;letter-spacing:-.02em}
+.float>div>span{font-size:.75rem;color:var(--ink2)}
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.strip .wrap{display:flex;flex-wrap:wrap;gap:10px 34px;padding:16px 20px;justify-content:center}
+.strip .mono{color:var(--ink)}
+.strip .mono::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--acc);margin-right:10px;vertical-align:1px}
+/* rows */
+.row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:34px 0}
+.row:nth-child(even) figure{order:2}
+@media (max-width:860px){.row{grid-template-columns:1fr;gap:20px}.row:nth-child(even) figure{order:0}}
+.row figure{margin:0}
+.row img{border-radius:var(--r);aspect-ratio:3/2;object-fit:cover}
+.row .mono{margin-bottom:14px;display:block}
+.row h3{font-size:clamp(1.5rem,2.6vw,2.1rem);margin-bottom:14px}
+.row p{color:var(--ink2);font-size:1.05rem}
+.num{font-family:'DM Mono',monospace;color:var(--acc);font-size:.8rem;margin-right:10px}
+/* amenities */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.card .mono{display:block;margin-bottom:10px;color:var(--acc)}
+.card h3{font-size:1.1rem;margin-bottom:8px}
+.card p{color:var(--ink2);font-size:.95rem}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.head p{color:var(--ink2);max-width:460px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:40px}
+.gal img{border-radius:12px;aspect-ratio:1/1;object-fit:cover;width:100%;transition:transform .5s}
+.gal a{overflow:hidden;border-radius:12px;display:block}
+.gal a:hover img{transform:scale(1.04)}
+.gal a:nth-child(1),.gal a:nth-child(6){grid-column:span 2;grid-row:span 2}
+.gal a:nth-child(1) img,.gal a:nth-child(6) img{aspect-ratio:1/1}
+@media (max-width:700px){.gal{grid-template-columns:repeat(2,1fr)}.gal a:nth-child(1),.gal a:nth-child(6){grid-column:span 2;grid-row:span 1}.gal a:nth-child(1) img,.gal a:nth-child(6) img{aspect-ratio:16/10}}
+/* ratings */
+.dark{background:var(--teal);color:#f3efe8}
+.dark .mono,.dark .head p{color:#b9c9c6}
+.scores{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+@media (max-width:600px){.scores{grid-template-columns:1fr}}
+.score{border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:28px}
+.score b{display:block;font-size:clamp(2.6rem,5vw,4rem);font-weight:500;letter-spacing:-.03em;line-height:1}
+.score>span{display:block;margin-top:8px;color:#b9c9c6}
+.slots{margin-top:14px;border:1.5px dashed rgba(255,255,255,.35);border-radius:var(--r);padding:24px}
+.slots .mono{color:#f3d6cd;margin-bottom:14px;display:block}
+.slots ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media (max-width:800px){.slots ul{grid-template-columns:repeat(2,1fr)}}
+.slots li{border:1px dashed rgba(255,255,255,.25);border-radius:12px;min-height:96px;display:grid;place-items:center;font-family:'DM Mono',monospace;font-size:.8rem;color:#b9c9c6}
+/* todo */
+.todo{list-style:none;margin:40px 0 0;padding:0;border-top:1px solid var(--line)}
+.todo li{display:grid;grid-template-columns:70px 1fr 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
+@media (max-width:700px){.todo li{grid-template-columns:50px 1fr}.todo li span:last-child{grid-column:2}}
+.todo h3{font-size:1.3rem}
+.todo li span:last-child{color:var(--ink2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:.9rem}
+/* booking */
+.book{background:var(--bg2)}
+.widget{margin-top:40px;border:2px dashed var(--acc);background:#fff;border-radius:var(--r);min-height:320px;display:grid;place-items:center;text-align:center;padding:30px}
+.widget .mono{color:var(--acc);margin-bottom:10px;display:block}
+.widget p{color:var(--ink2);max-width:420px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+/* form */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:40px}
+@media (max-width:860px){.two{grid-template-columns:1fr;gap:34px}}
+form{display:grid;gap:14px}
+label{display:grid;gap:6px;font-size:.9rem;color:var(--ink2)}
+input,textarea{font:inherit;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:130px;resize:vertical}
+.hint{font-size:.85rem;color:var(--ink2)}
+.info dl{margin:0;display:grid;gap:18px}
+.info dt{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.info dd{margin:4px 0 0}
+.badge{margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.logo-slot{width:150px;height:84px;border:1.5px dashed var(--ink2);border-radius:12px;display:grid;place-items:center;text-align:center;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.06em;color:var(--ink2);padding:8px;background:#fff}
+footer{border-top:1px solid var(--line);padding:30px 0 110px;font-size:.9rem;color:var(--ink2)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media (min-width:761px){footer{padding-bottom:40px}}
+/* mobile persistent booking bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:none;gap:10px;align-items:center;justify-content:space-between}
+.bar .btn{padding:11px 18px;font-size:.92rem}
+@media (max-width:760px){.bar{display:flex}}
+/* reveal */
+.rv{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .rv.in{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Strato<small>Apartment · Kočevje</small></a>
+    <nav class="links" aria-label="Meni">
+      <a href="#apartma"><Fragment set:html={t('Apartma','Apartment')} /></a>
+      <a href="#oprema"><Fragment set:html={t('Oprema','Amenities')} /></a>
+      <a href="#galerija"><Fragment set:html={t('Galerija','Gallery')} /></a>
+      <a href="#ocene"><Fragment set:html={t('Ocene','Reviews')} /></a>
+      <a href="#okolica"><Fragment set:html={t('Okolica','Things to do')} /></a>
+      <a href="#kontakt"><Fragment set:html={t('Kontakt','Contact')} /></a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="lang" role="group" aria-label="Jezik / Language">
+        <button type="button" data-set-lang="sl" aria-pressed="true">SL</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn acc" href="#bentral"><Fragment set:html={t('Rezerviraj','Book')} /></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="mono"><Fragment set:html={t('Apartma · Kočevje · Slovenija','Apartment · Kočevje · Slovenia')} /></p>
+        <h1 style="margin-top:18px">Strato<br>Apartment</h1>
+        <p class="lead"><Fragment set:html={t(
+          `Apartma ${d.facts_sl.size} za ${d.facts_sl.guests}, ${d.facts_sl.center}. ${d.facts_sl.lake}.`,
+          `A ${d.facts_en.size} apartment for ${d.facts_en.guests}, ${d.facts_en.center}. ${d.facts_en.lake}.`)} /></p>
+        <div class="cta">
+          <a class="btn acc" href="#bentral"><Fragment set:html={t('Preveri razpoložljivost','Check availability')} /></a>
+          <a class="btn ghost" href="#galerija"><Fragment set:html={t('Poglej fotografije','See the photos')} /></a>
+        </div>
+      </div>
+      <figure>
+        <Fragment set:html={img('01','',"eager")} />
+        <div class="float">
+          <div><b>{d.facts_sl.size}</b><span><Fragment set:html={t('bivalne površine','of living space')} /></span></div>
+          <div><b>2</b><span><Fragment set:html={t('spalnici','bedrooms')} /></span></div>
+          <div><b>5</b><span><Fragment set:html={t('oseb','guests')} /></span></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <span class="mono">{d.facts_sl.size}</span>
+      <span class="mono"><Fragment set:html={t(d.facts_sl.guests,d.facts_en.guests)} /></span>
+      <span class="mono"><Fragment set:html={t('2 spalnici + kavč','2 bedrooms + sofa bed')} /></span>
+      <span class="mono"><Fragment set:html={t('270 m do jezera','270 m to the lake')} /></span>
+      <span class="mono"><Fragment set:html={t('400 m do središča','400 m to the centre')} /></span>
+      <span class="mono"><Fragment set:html={t('brezplačen WiFi','free WiFi')} /></span>
+    </div>
+  </div>
+
+  <section id="apartma">
+    <div class="wrap">
+      <div class="head rv">
+        <h2><Fragment set:html={t('Prostori apartmaja','The rooms')} /></h2>
+        <p><Fragment set:html={t(
+          `${d.facts_sl.bedrooms}. Gostitelja sta Barbara in Rok.`,
+          `${d.facts_en.bedrooms}. Your hosts are Barbara and Rok.`)} /></p>
+      </div>
+      {rows.map((r, i) => (
+        <div class="row rv">
+          <figure><Fragment set:html={img(r.n)} /></figure>
+          <div>
+            <span class="mono"><span class="num">0{i+1}</span><Fragment set:html={t(labels[r.key][0],labels[r.key][1])} /></span>
+            <h3><Fragment set:html={t(labels[r.key][0],labels[r.key][1])} /></h3>
+            <p><Fragment set:html={t((d.facts_sl as any)[r.key],(d.facts_en as any)[r.key])} /></p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="oprema" style="padding-top:0">
+    <div class="wrap">
+      <div class="head rv">
+        <h2><Fragment set:html={t('Oprema in udobje','Amenities and comfort')} /></h2>
+        <p><Fragment set:html={t('Vse, kar je v apartmaju, po seznamu gostiteljev.','Everything in the apartment, as listed by the hosts.')} /></p>
+      </div>
+      <div class="grid">
+        {amenityKeys.map((k, i) => (
+          <div class="card rv">
+            <span class="mono">{String(i+1).padStart(2,'0')}</span>
+            <h3><Fragment set:html={t(labels[k][0],labels[k][1])} /></h3>
+            <p><Fragment set:html={t((d.facts_sl as any)[k],(d.facts_en as any)[k])} /></p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="galerija" style="padding-top:0">
+    <div class="wrap">
+      <div class="head rv">
+        <h2><Fragment set:html={t('Galerija','Gallery')} /></h2>
+        <p><Fragment set:html={t('Fotografije apartmaja.','Photos of the apartment.')} /></p>
+      </div>
+      <div class="gal rv">
+        {galleryIds.map(n => (<a href={`../assets/strato-${n}.jpg`}><Fragment set:html={img(n)} /></a>))}
+      </div>
+    </div>
+  </section>
+
+  <section id="ocene" class="dark">
+    <div class="wrap">
+      <div class="head rv">
+        <h2><Fragment set:html={t('Ocene gostov','Guest ratings')} /></h2>
+        <p><Fragment set:html={t('Javne ocene, prebrane 25. 11. 2026.','Public scores as read on 25 Nov 2026.')} /></p>
+      </div>
+      <div class="scores rv">
+        <div class="score"><span class="mono">Booking.com</span><b><Fragment set:html={t('9,9','9.9')} /><small style="font-size:.4em;color:#b9c9c6"> / 10</small></b><span><Fragment set:html={t('10 ocen','10 reviews')} /></span></div>
+        <div class="score"><span class="mono">Airbnb</span><b><Fragment set:html={t('5,0','5.0')} /></b><span><Fragment set:html={t('9 ocen','9 reviews')} /></span></div>
+      </div>
+      <div class="slots rv">
+        <span class="mono"><Fragment set:html={t(
+          'Ocene gostov – izbor 5 ocen z Bookinga in Airbnb (vstavimo po potrditvi)',
+          'Guest reviews – a selection of 5 reviews from Booking and Airbnb (inserted after confirmation)')} /></span>
+        <ul>{[1,2,3,4,5].map(i => (<li><Fragment set:html={t(`Ocena ${i}`,`Review ${i}`)} /></li>))}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="okolica">
+    <div class="wrap">
+      <div class="head rv">
+        <h2><Fragment set:html={t('Kaj početi v okolici','Things to do nearby')} /></h2>
+        <p><Fragment set:html={t('Pet izbranih točk iz vodiča gostiteljev.','Five picks from the hosts’ guide.')} /></p>
+      </div>
+      <ol class="todo rv">
+        {d.things_to_do_from_hosts_folio_guide.map((p, i) => (
+          <li><span class="num">0{i+1}</span><h3><Fragment set:html={t(p.sl,p.en)} /></h3><span><Fragment set:html={t(p.note_sl,p.note_en)} /></span></li>
+        ))}
+      </ol>
+      <p class="mono rv" style="margin-top:30px"><Fragment set:html={t('Več iz vodiča','More from the guide')} /></p>
+      <div class="chips rv">{d.more_from_guide.map(m => (<span>{m}</span>))}</div>
+    </div>
+  </section>
+
+  <section id="bentral" class="book">
+    <div class="wrap">
+      <div class="head rv">
+        <h2><Fragment set:html={t('Rezervacija','Reservation')} /></h2>
+        <p><Fragment set:html={t('Preverite proste termine ali nas pokličite.','Check free dates or give us a call.')} /></p>
+      </div>
+      <div class="widget rv">
+        <div>
+          <span class="mono">Bentral</span>
+          <p><Fragment set:html={t('Tu bo Bentral rezervacijski koledar (vstavimo kodo vtičnika).','The Bentral booking calendar will appear here (plugin code to be inserted).')} /></p>
+        </div>
+      </div>
+      <div class="actions rv">
+        <a class="btn" href={d.phone_href}><Fragment set:html={t('Pokliči','Call')} /> {d.phone}</a>
+        <a class="btn ghost" href={`mailto:${d.email}`}><Fragment set:html={t('Piši na e-pošto','Send an e-mail')} /></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="head rv">
+        <h2><Fragment set:html={t('Kontakt in informacije','Contact and information')} /></h2>
+      </div>
+      <div class="two">
+        <form class="rv" method="post" enctype="text/plain" action={`mailto:${d.email}?subject=${encodeURIComponent(mailSubjectSl)}`} data-subject-sl={mailSubjectSl} data-subject-en={mailSubjectEn}>
+          <label><Fragment set:html={t('Ime in priimek','Full name')} /><input name="ime" required autocomplete="name"></label>
+          <label><Fragment set:html={t('E-pošta','E-mail')} /><input name="eposta" type="email" required autocomplete="email"></label>
+          <label><Fragment set:html={t('Termin (prihod – odhod)','Dates (arrival – departure)')} /><input name="termin" data-ph-sl="npr. 12. 7. – 16. 7." data-ph-en="e.g. 12 Jul – 16 Jul" placeholder="npr. 12. 7. – 16. 7."></label>
+          <label><Fragment set:html={t('Sporočilo','Message')} /><textarea name="sporocilo"></textarea></label>
+          <button class="btn acc" type="submit"><Fragment set:html={t('Odpri v e-pošti','Open in e-mail')} /></button>
+          <p class="hint"><Fragment set:html={t(
+            `Obrazec nima strežnika: gumb odpre vaš e-poštni program s pripravljenim sporočilom na ${d.email}, pošljete ga vi.`,
+            `This form has no server: the button opens your e-mail app with a prepared message to ${d.email}; you send it yourself.`)} /></p>
+        </form>
+        <div class="info rv">
+          <dl>
+            <div><dt><Fragment set:html={t('Naslov','Address')} /></dt><dd>{d.address}<br><a href={d.maps} target="_blank" rel="noopener"><Fragment set:html={t('Odpri zemljevid','Open map')} /> ↗</a></dd></div>
+            <div><dt><Fragment set:html={t('Telefon','Phone')} /></dt><dd><a href={d.phone_href}>{d.phone}</a></dd></div>
+            <div><dt><Fragment set:html={t('E-pošta','E-mail')} /></dt><dd><a href={`mailto:${d.email}`}>{d.email}</a></dd></div>
+            <div><dt><Fragment set:html={t('Prijava / odjava','Check-in / check-out')} /></dt><dd><Fragment set:html={t(`${d.facts_sl.checkin}. ${d.facts_sl.checkout}.`,`${d.facts_en.checkin}. ${d.facts_en.checkout}.`)} /></dd></div>
+            <div><dt><Fragment set:html={t('Hišni red','House rules')} /></dt><dd><Fragment set:html={t(d.facts_sl.rules,d.facts_en.rules)} /></dd></div>
+            <div><dt><Fragment set:html={t('Gostitelja','Hosts')} /></dt><dd>{d.hosts}</dd></div>
+          </dl>
+          <div class="badge">
+            <div class="logo-slot"><Fragment set:html={t('Logo Green &amp; Safe (pošljeta gostitelja)','Green &amp; Safe logo (to be sent by the hosts)')} /></div>
+            <a href={d.kocevsko_link} target="_blank" rel="noopener"><Fragment set:html={t('Najdete nas tudi na Kočevsko.com','Find us also on Kočevsko.com')} /> ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Strato Apartment · {d.hosts} · Kočevje</span>
+    <span><Fragment set:html={t('Predogled: AK agencija','Preview: AK agencija')} /></span>
+  </div>
+</footer>
+
+<div class="bar" aria-hidden="false">
+  <span class="mono" style="color:var(--ink)">Strato · {d.facts_sl.size}</span>
+  <a class="btn acc" href="#bentral"><Fragment set:html={t('Preveri razpoložljivost','Check availability')} /></a>
+</div>
+
+<script is:inline>
+(function(){
+  var root=document.documentElement;
+  function apply(l){
+    root.lang=l;
+    try{localStorage.setItem('strato-lang',l)}catch(e){}
+    document.querySelectorAll('[data-set-lang]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-set-lang')===l))});
+    document.querySelectorAll('[data-alt-sl]').forEach(function(i){i.alt=i.getAttribute('data-alt-'+l)||i.alt});
+    document.querySelectorAll('[data-ph-sl]').forEach(function(i){i.placeholder=i.getAttribute('data-ph-'+l)||''});
+    document.querySelectorAll('form[data-subject-sl]').forEach(function(f){
+      var m=f.action.split('?')[0];f.action=m+'?subject='+encodeURIComponent(f.getAttribute('data-subject-'+l));
+    });
+    document.title=l==='en'?'Strato Apartment – Kočevje, Slovenia':'Strato Apartment – Kočevje';
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-set-lang'))})});
+  apply(root.lang==='en'?'en':'sl');
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }else{els.forEach(function(e){e.classList.add('in')})}
+})();
+</script>
+</body>
+</html>

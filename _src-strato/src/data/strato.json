@@ -1,0 +1,69 @@
+{
+  "_rules": "ONLY these facts. Never invent reviews, prices, awards, distances or amenities. Guest WiFi password and door codes are private: never publish.",
+  "name": "Strato Apartment",
+  "hosts": "Barbara & Rok",
+  "address": "Trata VI 11, 1330 Kočevje, Slovenija",
+  "phone": "+386 40 251 540",
+  "phone_href": "tel:+38640251540",
+  "email": "strato.apartment@gmail.com",
+  "maps": "https://www.google.com/maps/search/?api=1&query=Trata+VI+11,+1330+Ko%C4%8Devje",
+  "kocevsko_link": "https://www.kocevsko.com/poi/strato-apartma",
+  "facts_sl": {
+    "size": "74 m²",
+    "guests": "do 5 oseb",
+    "bedrooms": "2 spalnici (velika zakonska postelja in zakonska postelja) ter raztegljiv kavč",
+    "lake": "Kočevsko jezero je približno 270 m od apartmaja",
+    "center": "približno 400 m do središča Kočevja",
+    "checkin": "Prijava od 15:00 (osebni sprejem ali samostojna prijava s kodo)",
+    "checkout": "Odjava do 11:00",
+    "rules": "Kajenje samo na terasi in zunaj; nočni mir 22:00–07:00; hišni ljubljenčki niso dovoljeni",
+    "parking": "Zasebno parkirišče in dvorišče na posesti",
+    "kitchen": "Popolnoma opremljena kuhinja: kavni aparati, kuhalnik vode, blender, pomivalni stroj, indukcijska plošča, pečica, hladilnik, mikrovalovna pečica, osnovna živila",
+    "bedroom1": "Velika spalnica z multimedijo, knjigami in ambientno osvetlitvijo",
+    "bedroom2": "Manjša spalnica s TV in igralno konzolo Xbox ter dvema sedalnima vrečama",
+    "living": "Dnevna soba s TV, klavirjem, kitaro in tolkali, otroškimi igračami in družabnimi igrami; neposreden izhod na teraso",
+    "bathroom": "Kopalnica s tušem, pralni stroj, sušilec za lase, kozmetično ogledalo",
+    "climate": "Ogrevanje s toplotno črpalko, klimatska naprava",
+    "outdoor": "Terasa s senčnikom, vrt, prostor za žar",
+    "extras": "Brezplačen WiFi, otroška posteljica, zasebni vhod, copati, dežniki, knjiga gostov"
+  },
+  "facts_en": {
+    "size": "74 m²",
+    "guests": "up to 5 guests",
+    "bedrooms": "2 bedrooms (a king-size and a double bed) plus a sofa bed",
+    "lake": "Lake Kočevje is about 270 m from the apartment",
+    "center": "about 400 m to Kočevje town centre",
+    "checkin": "Check-in from 15:00 (in person or self check-in with a code)",
+    "checkout": "Check-out until 11:00",
+    "rules": "Smoking only on the terrace and outside; quiet hours 22:00–07:00; pets are not allowed",
+    "parking": "Private parking and courtyard on the property",
+    "kitchen": "Fully equipped kitchen: coffee machines, kettle, blender, dishwasher, induction hob, oven, fridge, microwave, basic supplies",
+    "bedroom1": "Large bedroom with media, books and ambient lighting",
+    "bedroom2": "Smaller bedroom with a TV, an Xbox console and two bean bags",
+    "living": "Living room with TV, piano, guitar and percussion, children's toys and board games; direct access to the terrace",
+    "bathroom": "Bathroom with shower, washing machine, hair dryer, cosmetic mirror",
+    "climate": "Heat-pump heating and air conditioning",
+    "outdoor": "Terrace with sunshade, garden, barbecue area",
+    "extras": "Free WiFi, baby cot, private entrance, slippers, umbrellas, guest book"
+  },
+  "ratings": {
+    "_note": "Public scores as read on 25.11.2026. Show as scores only. Do NOT write review quotes: the hosts will choose 5 real reviews; leave a clearly marked slot 'Ocene gostov – izbor 5 ocen z Bookinga in Airbnb (vstavimo po potrditvi)'.",
+    "booking": "9,9 / 10 (10 ocen)",
+    "airbnb": "5,0 (9 ocen)"
+  },
+  "things_to_do_from_hosts_folio_guide": [
+    {"sl": "Kočevsko jezero", "en": "Lake Kočevje", "note_sl": "približno 270 m od apartmaja", "note_en": "about 270 m from the apartment"},
+    {"sl": "Pragozd Krokar", "en": "Krokar virgin forest", "note_sl": "pragozd na Unescovem seznamu", "note_en": "UNESCO-listed virgin forest"},
+    {"sl": "Grad Fridrihštajn", "en": "Fridrihštajn Castle", "note_sl": "razvaline gradu nad Kočevjem", "note_en": "castle ruins above Kočevje"},
+    {"sl": "Željnske jame", "en": "Željne caves", "note_sl": "kraške jame tik ob mestu", "note_en": "karst caves just outside town"},
+    {"sl": "Reka Kolpa", "en": "Kolpa river", "note_sl": "kopanje in rafting", "note_en": "swimming and rafting"}
+  ],
+  "more_from_guide": ["MTB trail center Kočevje", "Poyek Wildlife Adventures", "Ars Naturae Wildlife adventures", "Bunker Škrilj", "Reško jezero", "Kraljica Roga", "Grad Kostel", "Ranch Marina"],
+  "badges_pending": {
+    "green_and_safe": "Slot for the Green & Safe logo: show a neutral placeholder box labelled 'Logo Green & Safe (pošljeta gostitelja)'. Do not draw a fake logo.",
+    "kocevsko": "Text link 'Najdete nas tudi na Kočevsko.com' -> kocevsko_link. Logo file pending from hosts."
+  },
+  "booking_widget": "Section 'Rezervacija' with id='bentral' containing a clearly labelled placeholder: 'Tu bo Bentral rezervacijski koledar (vstavimo kodo vtičnika)'. Plus buttons: call and e-mail.",
+  "photos": "assets/strato-01.jpg ... strato-15.jpg (950x632, their real photos from kocevsko.com). Look at them and pick the right ones per section.",
+  "languages": "Every variant must have SL and EN: a language switch (SL | EN) that swaps all text on the page (data-lang toggle, remembered in localStorage)."
+}

@@ -1,0 +1,67 @@
+---
+// Strato Apartment – chooser: 7 predlogov, eden na referenčno stran, ki sta jo poslala Barbara in Rok.
+import d from '../../../data/strato.json';
+const A = 'assets/';
+const cards = [
+  { n: 1, img: '05', ref: 'neu-residences.com/en/workation', sl: 'Modularno in toplo: vrstice besedila in fotografij, lebdeča kartica z dejstvi, lepljiv gumb za rezervacijo na telefonu.', en: 'Modular and warm: text and photo rows, a floating fact card, a sticky booking button on mobile.' },
+  { n: 2, img: '09', ref: 'resort-beatrice.si', sl: 'Resort slog: fotografija čez cel zaslon, velike številke, galerija za drsenje, pogosta vprašanja.', en: 'Resort style: full-screen photo, big numbers, a swipe gallery, FAQ.' },
+  { n: 3, img: '11', ref: 'vilaspecial.com', sl: 'Butična vila: drsnik fotografij čez cel zaslon, elegantna serifna pisava, slonokoščene in temne barve.', en: 'Boutique villa: full-screen photo slider, elegant serif type, ivory and dark tones.' },
+  { n: 4, img: '01', ref: 'carolinaluxurystay.com', sl: 'Svetlo in kremno: naslov levo, prekrivajoči se fotografiji, zelen pas z dejstvi, zaobljene kartice.', en: 'Light and creamy: headline left, overlapping photos, a green facts band, rounded cards.' },
+  { n: 5, img: '02', ref: 'bohinjmountaindreams.com/sl', sl: 'Kinematografsko in temno: cel zaslon fotografije, serifna tipografija, rezervacijska vrstica v junaku. (Vajin "dober vmesnik".)', en: 'Cinematic and dark: full-screen photo, serif type, booking bar in the hero. (Your "good interface".)', star: true },
+  { n: 6, img: '07', ref: 'oldsquarehouse.com/sl', sl: 'Svetlo in prijazno: smaragdni poudarki, zaobljeni gumbi, tri kartice, pogosta vprašanja.', en: 'Bright and friendly: emerald accents, rounded buttons, three cards, FAQ.' },
+  { n: 7, img: '03', ref: 'cirus-apartments.com/sl/domov', sl: 'Besedilno, minimalno: telefon in e-pošta v ospredju, oštevilčeni razdelki, stroga mreža.', en: 'Text-forward, minimal: phone and e-mail up front, numbered sections, strict grid.' },
+];
+---
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Strato Apartment – 7 predlogov</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style is:global>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:#f4f3ef;color:#1b1b1b;line-height:1.55;padding:clamp(24px,5vw,64px) clamp(16px,4vw,48px)}
+  .wrap{max-width:1180px;margin:0 auto}
+  h1{font-size:clamp(28px,4vw,44px);font-weight:600;letter-spacing:-.02em}
+  .sub{color:#5d5d57;margin-top:10px;max-width:70ch}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:36px}
+  a.card{display:block;background:#fff;border:1px solid #e3e1da;border-radius:14px;overflow:hidden;color:inherit;text-decoration:none;transition:transform .25s,box-shadow .25s;position:relative}
+  a.card:hover{transform:translateY(-3px);box-shadow:0 20px 40px -28px rgba(0,0,0,.35)}
+  a.card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+  .b{padding:16px 18px 20px}
+  .n{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7a776f;font-weight:600}
+  .ref{font-size:13px;color:#2c6a9c;margin-top:4px;word-break:break-all}
+  .d{font-size:14px;color:#3d3d39;margin-top:10px}
+  .d em{display:block;font-style:normal;color:#7a776f;margin-top:4px;font-size:13px}
+  .go{display:inline-block;margin-top:14px;font-weight:600;font-size:14px}
+  .star{position:absolute;top:12px;left:12px;background:#1b1b1b;color:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
+  footer{margin-top:40px;font-size:13px;color:#7a776f}
+  @media (prefers-reduced-motion:reduce){a.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Strato Apartment, 7 predlogov</h1>
+  <p class="sub">Za vsako referenčno stran, ki sta jo poslala, en celoten predlog z vajinimi fotografijami in podatki. Vsak ima slovenščino in angleščino (SL | EN), rezervacijski razdelek za Bentral, ocene, kontaktni obrazec in »things to do«. Kliknite predlog in ga preizkusite na telefonu in računalniku.<br /><small>One full proposal per reference site you sent. Each has SL | EN, a Bentral booking slot, ratings, a contact form and things to do.</small></p>
+  <div class="grid">
+    {cards.map((c) => (
+      <a class="card" href={`v${c.n}/`}>
+        {c.star && <span class="star">dober vmesnik</span>}
+        <img src={A+'strato-'+c.img+'.jpg'} alt={`Predlog ${c.n}`} loading={c.n > 3 ? 'lazy' : 'eager'} />
+        <div class="b">
+          <div class="n">Predlog {c.n}</div>
+          <div class="ref">navdih: {c.ref}</div>
+          <p class="d">{c.sl}<em>{c.en}</em></p>
+          <span class="go">Odpri predlog {c.n} →</span>
+        </div>
+      </a>
+    ))}
+  </div>
+  <footer>Predogled: AK agencija · {d.hosts} · {d.email}</footer>
+</div>
+</body>
+</html>
