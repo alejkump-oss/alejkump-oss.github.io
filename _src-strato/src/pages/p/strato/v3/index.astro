@@ -1,435 +1,361 @@
 ---
-// Strato Apartment – preview v3 ("Boutique classic" archetype).
-// Feel borrowed from a classic boutique-villa site: full-screen crossfading hero slider,
-// a display serif with wide-tracked uppercase labels, near-black and ivory bands,
-// a thin bronze rule as the recurring ornament, three-column room presentation.
-// All code, copy and layout are original. Facts come only from src/data/strato.json.
+// Strato Apartment – preview v3. Structure and look mirror vilaspecial.com: tan announcement bar,
+// centred logo, pipe-separated Poppins nav with underlined REZERVACIJA, dark full-width slider
+// with a dark enquiry bar, centred Playfair headline + grey text + tan button beside an overlapping
+// photo stack, light-grey "Nastanitve" with a big card + three tiles, dark two-tone section with a
+// photo column, centred headline + media, full-bleed banner with badge, light reviews section,
+// dark four-column footer with a bottom bar. Code, copy and photos are our own; facts from strato.json.
 import d from '../../../../data/strato.json';
-
-const t = (sl: string, en: string) =>
-  `<span data-lang="sl">${sl}</span><span data-lang="en">${en}</span>`;
-
-const labels: Record<string, [string, string]> = {
-  kitchen: ['Kuhinja', 'Kitchen'],
-  bedroom1: ['Velika spalnica', 'Main bedroom'],
-  bedroom2: ['Manjša spalnica', 'Second bedroom'],
-  living: ['Dnevna soba', 'Living room'],
-  bathroom: ['Kopalnica', 'Bathroom'],
-  climate: ['Ogrevanje in hlajenje', 'Heating and cooling'],
-  outdoor: ['Terasa in vrt', 'Terrace and garden'],
-  parking: ['Parkiranje', 'Parking'],
-  extras: ['Dodatno', 'Extras'],
-  bedrooms: ['Spanje', 'Sleeping'],
-};
-const amenityKeys = ['bedrooms','kitchen','living','bedroom1','bedroom2','bathroom','climate','outdoor','parking','extras'];
-
+const t = (sl: string, en: string) => `<span data-lang="sl">${sl}</span><span data-lang="en">${en}</span>`;
 const photos: Record<string, [string, string]> = {
   '01': ['Dnevna soba s kavčem in pisalno mizo', 'Living room with sofa and desk'],
   '02': ['Dnevna soba s TV in kitaro', 'Living room with TV and guitar'],
   '03': ['Klavir in delovni kotiček', 'Piano and desk corner'],
   '04': ['Kitara in klavir', 'Guitar and piano'],
   '05': ['Dnevna soba s klavirjem', 'Living room with piano'],
-  '06': ['Kuhinja', 'Kitchen'],
-  '07': ['Kuhinja z jedilnico', 'Kitchen with dining area'],
-  '08': ['Kuhinjski pult', 'Kitchen counter'],
-  '09': ['Jedilnica', 'Dining area'],
-  '10': ['Velika spalnica', 'Main bedroom'],
-  '11': ['Velika spalnica z omaro', 'Main bedroom with wardrobe'],
-  '12': ['Velika spalnica', 'Main bedroom'],
-  '13': ['Velika spalnica', 'Main bedroom'],
-  '14': ['Manjša spalnica s sedalnimi vrečami', 'Second bedroom with bean bags'],
-  '15': ['Manjša spalnica', 'Second bedroom'],
+  '06': ['Kuhinja', 'Kitchen'], '07': ['Kuhinja z jedilnico', 'Kitchen with dining area'],
+  '08': ['Kuhinjski pult', 'Kitchen counter'], '09': ['Jedilnica', 'Dining area'],
+  '10': ['Velika spalnica', 'Main bedroom'], '11': ['Velika spalnica z omaro', 'Main bedroom with wardrobe'],
+  '12': ['Velika spalnica', 'Main bedroom'], '13': ['Velika spalnica', 'Main bedroom'],
+  '14': ['Manjša spalnica s sedalnimi vrečami', 'Second bedroom with bean bags'], '15': ['Manjša spalnica', 'Second bedroom'],
 };
 const img = (n: string, cls = '', loading: 'lazy' | 'eager' = 'lazy') =>
   `<img src="../assets/strato-${n}.jpg" width="950" height="632" loading="${loading}" decoding="async" class="${cls}" alt="${photos[n][0]}" data-alt-sl="${photos[n][0]}" data-alt-en="${photos[n][1]}">`;
-
-const slides = ['05', '12', '09'];
-const rooms = [
-  { n: '02', key: 'living' },
-  { n: '06', key: 'kitchen' },
-  { n: '11', key: 'bedroom1' },
-];
-const galleryIds = ['01','03','04','07','08','10','13','14','15'];
-
-const mailSubjectSl = 'Povpraševanje – Strato Apartment';
-const mailSubjectEn = 'Enquiry – Strato Apartment';
+const S = d.facts_sl as any, E = d.facts_en as any;
+const mailSl = 'Povpraševanje – Strato Apartment', mailEn = 'Enquiry – Strato Apartment';
+const dsl = (x: string) => x.split(' / ')[0], den = (x: string) => x.split(' / ')[1] || x;
+const amenA = ['kitchen','bathroom','climate','outdoor'], amenB = ['parking','extras','renovated','languages'];
 ---
 <!doctype html>
 <html lang="sl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Strato Apartment – Kočevje</title>
-<meta name="description" content="Strato Apartment, Kočevje: apartma 74 m² za do 5 oseb, 270 m od Kočevskega jezera. Predogled spletne strani.">
+<meta name="description" content="Strato Apartment, Kočevje: apartma 74 m² za do 5 oseb, 270 m od Kočevskega jezera. Predogled.">
 <meta name="robots" content="noindex">
 <script is:inline>try{var l=localStorage.getItem('strato-lang');if(l==='en'||l==='sl')document.documentElement.lang=l}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style is:global>
-:root{
-  --black:#151413;--char:#211f1d;--ivory:#f4f0e8;--ivory2:#ebe5da;--ink:#1c1a18;--mute:#77716a;--mute2:#b5ada2;
-  --bronze:#a8865a;--line:rgba(21,20,19,.14);--line-d:rgba(244,240,232,.16);
-  --max:1200px;
-}
+:root{--tan:#c19b76;--ink:#1c1c1c;--dark:#151515;--grey:#878787;--light:#f1f1f1;--line:#e3e3e3;--max:1170px}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--ivory);color:var(--ink);font-family:'Jost',system-ui,sans-serif;font-weight:300;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Poppins',sans-serif;font-weight:300;font-size:16px;line-height:1.8}
 html[lang=sl] [data-lang=en],html[lang=en] [data-lang=sl]{display:none!important}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 p{margin:0}
-h1,h2,h3{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;line-height:1.05;letter-spacing:.01em}
-h1{font-size:clamp(2.8rem,7.5vw,6rem)}
-h2{font-size:clamp(2.2rem,4.6vw,3.6rem)}
-h3{font-size:1.7rem;font-weight:400}
-.eyebrow{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--bronze);font-weight:400}
-.rule{width:48px;height:1px;background:var(--bronze);margin:18px auto}
-.rule.left{margin-left:0}
+h1,h2,h3{margin:0;font-family:'Playfair Display',serif;font-weight:400;line-height:1.05;color:var(--ink)}
+h2{font-size:clamp(2.6rem,5.6vw,5.4rem)}
+h3{font-size:1.9rem}
+.lbl{font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--grey);font-weight:400}
+.rule{width:30px;height:1px;background:var(--grey);margin:12px auto 26px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-section{padding:104px 0}
-@media (max-width:760px){section{padding:68px 0}}
 .center{text-align:center}
-.dark{background:var(--black);color:var(--ivory)}
-.dark .mute{color:var(--mute2)}
-.mute{color:var(--mute)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border:1px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;font-family:'Jost',sans-serif;font-weight:400;font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
-.btn:hover{background:var(--ink);color:var(--ivory)}
-.btn.fill{background:var(--bronze);border-color:var(--bronze);color:#fff}
-.btn.fill:hover{background:#8e6f49;border-color:#8e6f49}
-.btn.inv{border-color:rgba(244,240,232,.8);color:var(--ivory)}
-.btn.inv:hover{background:var(--ivory);color:var(--ink)}
-/* nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:60;color:var(--ivory);transition:background .3s,padding .3s}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;gap:16px}
-.nav.solid{background:rgba(21,20,19,.92);backdrop-filter:blur(8px)}
-.nav.solid .wrap{height:66px}
-.brand{text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
-.links{display:flex;gap:30px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase}
-.links a{text-decoration:none;opacity:.8}
-.links a:hover{opacity:1}
-@media (max-width:1000px){.links{display:none}}
-.lang{display:inline-flex;align-items:center;gap:6px;font-size:.7rem;letter-spacing:.2em}
-.lang button{border:0;background:transparent;color:inherit;font:inherit;padding:4px 4px;cursor:pointer;opacity:.55}
-.lang button[aria-pressed=true]{opacity:1;color:var(--bronze)}
-/* hero slider */
-.hero{position:relative;height:100svh;min-height:600px;display:grid;place-items:center;text-align:center;color:var(--ivory);overflow:hidden}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.grey{color:var(--grey);font-size:.95rem;letter-spacing:.04em}
+.btn{display:inline-block;background:var(--tan);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:14px 36px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.btn.out{background:transparent;color:var(--tan);border:1px solid var(--tan)}
+.btn.dark{background:var(--dark);color:#fff}
+.btn.up{text-transform:none;letter-spacing:.14em;font-size:.76rem}
+/* bars */
+.ann{background:var(--tan);color:#fff;text-align:center;font-size:.92rem;padding:12px 40px;position:relative}
+.ann button{position:absolute;right:10px;top:8px;border:0;background:#fff;color:var(--tan);width:14px;height:14px;font-size:.6rem;line-height:1;cursor:pointer;padding:0}
+header{background:#fff;position:relative;z-index:5}
+.logo{display:block;text-align:center;padding:30px 0 22px;text-decoration:none;font-family:'Playfair Display',serif;font-style:italic;font-size:2rem;line-height:1;color:var(--ink)}
+.logo small{display:block;font-style:normal;font-size:1rem;letter-spacing:.3em;text-transform:uppercase;margin-top:4px}
+nav.main{border-top:1px solid var(--line);display:flex;justify-content:center;align-items:center;flex-wrap:wrap;padding:16px 0;font-size:.82rem;letter-spacing:.22em;font-weight:400}
+nav.main a{text-decoration:none;padding:0 22px}
+nav.main a.res{text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}
+nav.main i{color:var(--grey)}
+.lang button{border:0;background:none;font:inherit;letter-spacing:.2em;cursor:pointer;color:var(--grey);padding:0 4px}
+.lang button[aria-pressed=true]{color:var(--ink)}
+.burger{display:none;margin:0 auto 18px;border:0;background:none;cursor:pointer;width:30px;height:20px;position:relative}
+.burger span,.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:26px;height:1.5px;background:#333;top:9px}
+.burger span::before{top:-8px}.burger span::after{top:8px}
+@media (max-width:900px){nav.main{display:none}nav.main.open{display:flex;flex-direction:column;gap:12px}nav.main.open i{display:none}.burger{display:block}}
+/* hero */
+.hero{position:relative;height:780px;background:var(--dark);overflow:hidden}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s}
 .slide.on{opacity:1}
-.slide img{width:100%;height:100%;object-fit:cover}
-@media (prefers-reduced-motion:no-preference){.slide.on img{animation:kb 9s ease-out forwards}}
-@keyframes kb{from{transform:scale(1)}to{transform:scale(1.06)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,20,19,.55),rgba(21,20,19,.25) 50%,rgba(21,20,19,.6))}
-.hero .wrap{position:relative;z-index:2;padding-top:40px}
-.hero h1{margin:18px 0 10px}
-.hero .sub{font-size:1.05rem;letter-spacing:.04em;max-width:46ch;margin:18px auto 36px;color:rgba(244,240,232,.9)}
-.hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.dots{position:absolute;bottom:34px;left:0;right:0;z-index:2;display:flex;justify-content:center;gap:12px}
-.dots button{width:34px;height:2px;border:0;background:rgba(244,240,232,.35);cursor:pointer;padding:0}
-.dots button[aria-current=true]{background:var(--bronze)}
-/* welcome */
-.welcome .wrap{max-width:820px}
-.welcome p.big{font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,2.4vw,1.75rem);line-height:1.5;margin-top:22px}
-.welcome .facts{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 36px;margin-top:34px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
-/* rooms three columns */
-.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
-@media (max-width:900px){.cols{grid-template-columns:1fr}}
-.col figure{margin:0;overflow:hidden}
-.col img{aspect-ratio:4/5;object-fit:cover;width:100%;transition:transform .9s ease}
-.col:hover img{transform:scale(1.04)}
-.col .eyebrow{display:block;margin-top:22px}
-.col h3{margin:8px 0 10px}
-.col p{color:var(--mute);font-size:.98rem}
-/* amenities dark */
-.amen{display:grid;grid-template-columns:1fr 1fr;gap:0 60px;margin-top:54px}
-@media (max-width:800px){.amen{grid-template-columns:1fr}}
-.amen div{padding:22px 0;border-bottom:1px solid var(--line-d)}
-.amen .eyebrow{display:block;margin-bottom:6px}
-.amen p{color:#d8d1c5;font-size:.98rem}
-/* gallery */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:54px}
-@media (max-width:700px){.gal{grid-template-columns:1fr 1fr;gap:10px}}
-.gal a{display:block;overflow:hidden}
-.gal img{aspect-ratio:3/2;object-fit:cover;width:100%;transition:transform .9s ease,filter .9s}
-.gal a:hover img{transform:scale(1.05)}
-.gal a:nth-child(4){grid-column:span 2}
-.gal a:nth-child(4) img{aspect-ratio:3/1}
-@media (max-width:700px){.gal a:nth-child(4) img{aspect-ratio:16/9}}
-/* ratings */
-.scores{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:30px;max-width:720px;margin:54px auto 0}
-@media (max-width:600px){.scores{grid-template-columns:1fr;gap:20px}.scores .vr{display:none}}
-.scores .vr{width:1px;height:90px;background:var(--line)}
-.scores b{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(3.4rem,7vw,5.4rem);line-height:1;color:var(--ink)}
-.scores b small{font-size:.35em;color:var(--mute)}
-.scores>div>span{display:block;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:6px}
-.slot{max-width:900px;margin:40px auto 0;border:1px dashed var(--bronze);padding:30px 24px}
-.slot .eyebrow{display:block;margin-bottom:18px;letter-spacing:.2em}
-.slot ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-@media (max-width:720px){.slot ul{grid-template-columns:repeat(2,1fr)}}
-.slot li{border:1px dashed var(--line);min-height:96px;display:grid;place-items:center;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
-/* things to do */
-.todo{list-style:none;margin:54px 0 0;padding:0;border-top:1px solid var(--line-d)}
-.todo li{display:grid;grid-template-columns:60px 1fr 1fr;align-items:baseline;gap:20px;padding:26px 0;border-bottom:1px solid var(--line-d)}
-@media (max-width:700px){.todo li{grid-template-columns:40px 1fr}.todo li span.note{grid-column:2}}
-.todo .n{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--bronze)}
-.todo h3{font-size:1.8rem}
-.todo .note{color:var(--mute2)}
-.more{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute2)}
-/* booking */
-.widget{max-width:900px;margin:54px auto 0;border:1px dashed var(--bronze);min-height:320px;display:grid;place-items:center;text-align:center;padding:30px;background:#fff}
-.widget .eyebrow{display:block;margin-bottom:12px}
-.widget p{color:var(--mute)}
-.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px}
-/* contact */
-.two{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:54px}
-@media (max-width:860px){.two{grid-template-columns:1fr;gap:44px}}
-form{display:grid;gap:18px}
-label{display:grid;gap:8px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute2)}
-input,textarea{font:inherit;font-size:1rem;padding:12px 0;border:0;border-bottom:1px solid var(--line-d);background:transparent;color:var(--ivory);width:100%;border-radius:0}
-input:focus,textarea:focus{outline:none;border-bottom-color:var(--bronze)}
-textarea{min-height:110px;resize:vertical}
-.hint{font-size:.85rem;color:var(--mute2)}
-dl{margin:0;display:grid;gap:22px}
-dt{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bronze)}
-dd{margin:6px 0 0}
-.badge{margin-top:30px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-.logo-slot{width:150px;height:84px;border:1px dashed var(--mute2);display:grid;place-items:center;text-align:center;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute2);padding:8px}
-footer{background:var(--char);color:var(--mute2);padding:36px 0;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-align:center}
-footer p+p{margin-top:10px}
+.slide img{width:100%;height:100%;object-fit:cover;filter:brightness(.42)}
+.bar{position:absolute;left:50%;bottom:140px;transform:translateX(-50%);width:min(1170px,calc(100% - 48px));background:rgba(12,12,12,.92);padding:48px 52px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;align-items:end;color:#fff}
+.bar label{display:grid;gap:8px;font-family:'Playfair Display',serif;font-size:1.05rem;color:#fff}
+.bar input{font:inherit;font-family:'Poppins',sans-serif;font-size:.95rem;padding:15px 18px;border:0;background:var(--light);color:#333;width:100%}
+.bar .btn{padding:19px 20px;text-align:center}
+.dots{position:absolute;bottom:34px;left:0;right:0;display:flex;justify-content:center;gap:16px}
+.dots button{width:9px;height:9px;border:0;background:#777;cursor:pointer;padding:0}
+.dots button[aria-current=true]{background:#fff}
+@media (max-width:900px){.hero{height:500px}.bar{position:static;transform:none;width:auto;margin:-70px 24px 0;grid-template-columns:1fr;background:#6b6b6b;padding:26px}.bar .btn{margin-top:8px}.dots{bottom:auto;top:450px}}
+/* intro */
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:80px 0 60px;align-items:center}
+.intro .txt{text-align:center;padding:0 40px}
+.intro h2{margin:12px 0 30px}
+.intro .btn{margin-top:30px}
+.stack{position:relative;height:620px}
+.stack img{position:absolute;object-fit:cover;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.stack .a{left:10%;top:0;width:60%;height:60%}
+.stack .b{right:0;top:15%;width:55%;height:52%;z-index:1}
+.stack .c{left:0;bottom:0;width:62%;height:46%;z-index:2}
+.stack .badge{position:absolute;right:4%;bottom:0;width:38%;background:#003580;color:#fff;padding:22px 24px;z-index:3;font-weight:500;font-size:.9rem;line-height:1.5}
+.stack .badge b{display:block;font-size:2.6rem;font-family:'Playfair Display',serif;font-weight:700;line-height:1;margin-top:14px}
+@media (max-width:900px){.intro{grid-template-columns:1fr;padding:50px 0 40px}.intro .txt{padding:0}.stack{height:480px}}
+/* nastanitve */
+.rooms{background:#f7f7f7;padding:80px 0 90px}
+.rooms .grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:50px}
+.bigcard{background:#fff;border:1px solid var(--line)}
+.bigcard figure{margin:0;position:relative}
+.bigcard figure img{aspect-ratio:1.86;object-fit:cover;width:100%}
+.bigcard figure span{position:absolute;left:30px;bottom:24px;color:#fff;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+.bigcard .body{padding:30px}
+.bigcard h3{margin-bottom:12px}
+.meta{display:flex;gap:26px;color:var(--grey);font-size:.82rem;letter-spacing:.06em;margin-bottom:22px}
+.meta svg{width:20px;height:20px;vertical-align:-5px;margin-right:6px;stroke:var(--grey);fill:none;stroke-width:1.3}
+.caps{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);margin-bottom:26px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-content:start}
+.tiles a{position:relative;display:block}
+.tiles img{aspect-ratio:1;object-fit:cover;width:100%}
+.tiles span{position:absolute;left:30px;bottom:22px;color:#fff;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+@media (max-width:900px){.rooms .grid{grid-template-columns:1fr}}
+/* dark two-tone */
+.wine{display:grid;grid-template-columns:1fr 1fr;background:var(--dark);color:#fff}
+.wine .pics{display:grid;grid-template-columns:30% 40% 30%;gap:12px;padding-right:0}
+.wine .pics div{display:grid;gap:12px}
+.wine .pics img{width:100%;object-fit:cover;height:100%}
+.wine .txt{padding:130px 100px 110px 85px}
+.wine .lbl{color:#fff;letter-spacing:.2em;text-transform:none;font-size:.92rem}
+.wine h2{color:#fff;margin:22px 0 48px}
+.wine h2 span{color:var(--tan)}
+.wine .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;color:#bdbdbd;font-size:.95rem;line-height:1.9}
+.wine .cols ul{list-style:none;margin:0;padding:0}
+.wine .btn{margin-top:46px}
+@media (max-width:1000px){.wine{grid-template-columns:1fr}.wine .pics{height:420px}.wine .txt{padding:60px 24px}}
+@media (max-width:600px){.wine .cols{grid-template-columns:1fr}}
+/* experience */
+.exp{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:100px 0;align-items:center}
+.exp .txt{text-align:center;padding:0 40px}
+.exp h2{margin:12px 0 30px}
+.exp ol{text-align:left;margin:0 auto 26px;padding-left:20px;color:#555;font-size:.95rem;max-width:380px}
+.exp .more{color:var(--grey);font-size:.85rem;margin-bottom:26px}
+.exp img{aspect-ratio:16/9;object-fit:cover;width:100%}
+@media (max-width:900px){.exp{grid-template-columns:1fr;padding:60px 0}.exp .txt{padding:0}}
+/* banner */
+.lake{position:relative;height:560px;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden}
+.lake img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.6)}
+.lake .in{position:relative;z-index:1;display:grid;justify-items:center;gap:14px}
+.lake h2{color:#fff;font-weight:700;font-size:clamp(2.4rem,5vw,4rem)}
+.lake p{letter-spacing:.1em;font-size:.9rem}
+.logo-slot{width:170px;height:170px;border-radius:50%;border:2px dashed rgba(255,255,255,.8);display:grid;place-items:center;text-align:center;font-size:.72rem;letter-spacing:.06em;padding:18px;background:rgba(0,0,0,.25)}
+.lake a{text-decoration:underline;text-underline-offset:4px;font-size:.9rem}
+/* reviews */
+.revs{background:var(--light);padding:90px 0}
+.scores{display:flex;justify-content:center;gap:60px;flex-wrap:wrap;margin:10px 0 50px}
+.scores div{text-align:center}
+.scores b{display:block;font-family:'Playfair Display',serif;font-size:3.4rem;line-height:1}
+.scores>div>span{display:block;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.rev{background:#fff;padding:36px 34px;font-size:.92rem;color:#555;letter-spacing:.02em}
+.rev:nth-child(4),.rev:nth-child(5){grid-column:span 1}
+.rev .who{display:block;margin-top:22px;font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--ink)}
+.rev .src{display:block;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tan);margin-top:4px}
+@media (max-width:900px){.rgrid{grid-template-columns:1fr}}
+/* booking + contact */
+.book{padding:90px 0;text-align:center}
+.widget{border:1px dashed var(--tan);min-height:300px;display:grid;place-items:center;padding:30px;margin:40px 0 30px;background:#fafafa}
+.widget .lbl{display:block;margin-bottom:10px}
+.actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.contact{background:#f7f7f7;padding:90px 0}
+.contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px}
+@media (max-width:900px){.contact .grid{grid-template-columns:1fr}}
+form{display:grid;gap:14px}
+label.f{display:grid;gap:6px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.contact input,.contact textarea{font:inherit;font-family:'Poppins',sans-serif;font-size:.95rem;padding:14px 16px;border:1px solid var(--line);background:#fff;color:#333;width:100%}
+textarea{min-height:120px;resize:vertical}
+.hint{font-size:.82rem;color:var(--grey)}
+dl{margin:0;display:grid;gap:16px}
+dt{font-family:'Playfair Display',serif;font-size:1.2rem}
+dd{margin:2px 0 0;color:#555;font-size:.95rem}
+/* footer */
+footer{background:var(--dark);color:#fff}
+.fgrid{display:grid;grid-template-columns:1.2fr 1.2fr 1fr 1fr;gap:30px;padding:60px 0 50px}
+.fgrid h3{font-size:1.4rem;color:#fff;margin-bottom:4px}
+.fgrid .lbl{color:#bdbdbd;letter-spacing:.14em;font-size:.72rem;margin-bottom:22px;display:block}
+.fgrid a{text-decoration:none;color:#bdbdbd;display:block;font-size:.95rem}
+.fmark{font-family:'Playfair Display',serif;font-style:italic;font-size:2rem;text-align:right}
+.fmark small{display:block;font-style:normal;font-size:.9rem;letter-spacing:.3em;text-transform:uppercase}
+@media (max-width:900px){.fgrid{grid-template-columns:1fr 1fr}.fmark{text-align:left}}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+.fbot{background:#0d0d0d;color:#bdbdbd;font-size:.85rem;letter-spacing:.06em}
+.fbot .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:14px;padding-bottom:14px}
 .rv{opacity:1}
-@media (prefers-reduced-motion:no-preference){
-  .rv{opacity:0;transform:translateY(20px);transition:opacity .9s ease,transform .9s ease}
-  .rv.in{opacity:1;transform:none}
-}
+@media (prefers-reduced-motion:no-preference){.rv{opacity:0;transform:translateY(18px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top">Strato</a>
-    <nav class="links" aria-label="Meni">
-      <a href="#apartma"><Fragment set:html={t('Apartma','Apartment')} /></a>
-      <a href="#oprema"><Fragment set:html={t('Oprema','Amenities')} /></a>
-      <a href="#galerija"><Fragment set:html={t('Galerija','Gallery')} /></a>
-      <a href="#ocene"><Fragment set:html={t('Ocene','Reviews')} /></a>
-      <a href="#okolica"><Fragment set:html={t('Okolica','Things to do')} /></a>
-      <a href="#bentral"><Fragment set:html={t('Rezervacija','Reservation')} /></a>
-      <a href="#kontakt"><Fragment set:html={t('Kontakt','Contact')} /></a>
-    </nav>
-    <div class="lang" role="group" aria-label="Jezik / Language">
-      <button type="button" data-set-lang="sl" aria-pressed="true">SL</button><span>·</span>
-      <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
-    </div>
-  </div>
+<div class="ann" id="ann"><Fragment set:html={t('Rezervirajte neposredno pri gostiteljih Barbari in Roku.','Book directly with your hosts Barbara and Rok.')} /><button type="button" aria-label="Zapri" onclick="document.getElementById('ann').remove()">×</button></div>
+<header>
+  <a class="logo" href="#top">Strato<small>Apartment</small></a>
+  <button class="burger" type="button" aria-label="Meni" aria-controls="menu" aria-expanded="false"><span></span></button>
+  <nav class="main" id="menu" aria-label="Meni">
+    <a href="#top"><Fragment set:html={t('Domov','Home')} /></a><i>|</i>
+    <a href="#apartma"><Fragment set:html={t('Apartma','Apartment')} /></a><i>|</i>
+    <a href="#oprema"><Fragment set:html={t('Oprema','Amenities')} /></a><i>|</i>
+    <a href="#okolica"><Fragment set:html={t('Okolica','Nearby')} /></a><i>|</i>
+    <a href="#ocene"><Fragment set:html={t('Ocene','Reviews')} /></a><i>|</i>
+    <a href="#kontakt"><Fragment set:html={t('Kontakt','Contact')} /></a><i>|</i>
+    <span class="lang" role="group" aria-label="Jezik / Language" style="padding:0 18px"><button type="button" data-set-lang="sl" aria-pressed="true">SL</button>/<button type="button" data-set-lang="en" aria-pressed="false">EN</button></span><i>|</i>
+    <a class="res" href="#bentral"><Fragment set:html={t('Rezervacija','Reservation')} /></a>
+  </nav>
 </header>
 
 <main id="top">
-  <section class="hero" style="padding:0">
-    {slides.map((n, i) => (<div class={`slide${i===0?' on':''}`} data-slide><Fragment set:html={img(n,'',i===0?'eager':'lazy')} /></div>))}
-    <div class="wrap">
-      <p class="eyebrow" style="color:#d9c3a3"><Fragment set:html={t('Kočevje · Slovenija','Kočevje · Slovenia')} /></p>
-      <h1>Strato Apartment</h1>
-      <div class="rule"></div>
-      <p class="sub"><Fragment set:html={t(
-        `${d.facts_sl.size} · ${d.facts_sl.guests} · ${d.facts_sl.lake}`,
-        `${d.facts_en.size} · ${d.facts_en.guests} · ${d.facts_en.lake}`)} /></p>
-      <div class="cta">
-        <a class="btn fill" href="#bentral"><Fragment set:html={t('Preveri razpoložljivost','Check availability')} /></a>
-        <a class="btn inv" href="#apartma"><Fragment set:html={t('Odkrijte apartma','Discover the apartment')} /></a>
-      </div>
-    </div>
-    <div class="dots" role="tablist" aria-label="Fotografije v ozadju">
-      {slides.map((n, i) => (<button type="button" data-dot={i} aria-current={i===0?'true':'false'} aria-label={`Slika ${i+1}`}></button>))}
-    </div>
+  <section class="hero">
+    {['05','12'].map((n,i) => (<div class={`slide${i===0?' on':''}`} data-slide><Fragment set:html={img(n,'',i===0?'eager':'lazy')} /></div>))}
+    <form class="bar" id="quick">
+      <label><Fragment set:html={t('Datum prihoda','Arrival date')} /><input type="date" name="prihod"></label>
+      <label><Fragment set:html={t('Datum odhoda','Departure date')} /><input type="date" name="odhod"></label>
+      <label><Fragment set:html={t('Število gostov','Number of guests')} /><input type="number" name="gostje" min="1" max="5" value="2"></label>
+      <button class="btn" type="submit"><Fragment set:html={t('Preveri razpoložljivost','Check availability')} /></button>
+    </form>
+    <div class="dots">{[0,1].map(i => (<button type="button" data-dot={i} aria-current={i===0?'true':'false'} aria-label={`Slika ${i+1}`}></button>))}</div>
   </section>
 
-  <section class="welcome center">
-    <div class="wrap rv">
-      <p class="eyebrow"><Fragment set:html={t('Dobrodošli','Welcome')} /></p>
-      <h2 style="margin-top:14px"><Fragment set:html={t('Mir ob jezeru, korak od mesta','Calm by the lake, a step from town')} /></h2>
-      <div class="rule"></div>
-      <p class="big"><Fragment set:html={t(
-        `${d.facts_sl.bedrooms}. ${d.facts_sl.living}. Gostitelja Barbara in Rok.`,
-        `${d.facts_en.bedrooms}. ${d.facts_en.living}. Hosted by Barbara and Rok.`)} /></p>
-      <div class="facts">
-        <span>{d.facts_sl.size}</span>
-        <span><Fragment set:html={t(d.facts_sl.guests,d.facts_en.guests)} /></span>
-        <span><Fragment set:html={t('270 m do jezera','270 m to the lake')} /></span>
-        <span><Fragment set:html={t('400 m do središča','400 m to the centre')} /></span>
-      </div>
+  <section class="wrap intro" id="apartma">
+    <div class="txt rv">
+      <span class="lbl">Strato Apartment</span>
+      <h2><Fragment set:html={t('Dom, poln detajlov','A home full of details')} /></h2>
+      <p class="grey"><Fragment set:html={t(`${S.renovated}. Apartma ${S.size} za ${S.guests} v Kočevju. ${S.lake}, ${S.center}. Gostitelja Barbara in Rok.`,`${E.renovated}. A ${E.size} apartment for ${E.guests} in Kočevje. ${E.lake}, ${E.center}. Hosted by Barbara and Rok.`)} /></p>
+      <a class="btn up" href="#oprema"><Fragment set:html={t('O apartmaju','About the apartment')} /></a>
     </div>
+    <div class="stack rv"><Fragment set:html={img('01','a')} /><Fragment set:html={img('08','b')} /><Fragment set:html={img('13','c')} /><div class="badge">Booking.com<br><Fragment set:html={t('10 ocen · prebrano 25. 11. 2026','10 reviews · read 25 Nov 2026')} /><b><Fragment set:html={t('9,9','9.9')} /><span style="font-size:.9rem;font-family:Poppins;font-weight:400"> / 10</span></b></div></div>
   </section>
 
-  <section id="apartma" class="center" style="padding-top:0">
+  <section class="rooms">
     <div class="wrap">
-      <p class="eyebrow rv"><Fragment set:html={t('Prostori','The rooms')} /></p>
-      <h2 class="rv" style="margin-top:14px"><Fragment set:html={t('Trije prostori, en dom','Three rooms, one home')} /></h2>
-      <div class="cols">
-        {rooms.map(r => (
-          <div class="col rv">
-            <figure><Fragment set:html={img(r.n)} /></figure>
-            <span class="eyebrow"><Fragment set:html={t(labels[r.key][0],labels[r.key][1])} /></span>
-            <h3><Fragment set:html={t(labels[r.key][0],labels[r.key][1])} /></h3>
-            <p><Fragment set:html={t((d.facts_sl as any)[r.key],(d.facts_en as any)[r.key])} /></p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="oprema" class="dark">
-    <div class="wrap">
-      <div class="center rv">
-        <p class="eyebrow"><Fragment set:html={t('Oprema','Amenities')} /></p>
-        <h2 style="margin-top:14px"><Fragment set:html={t('Vse na svojem mestu','Everything in its place')} /></h2>
-        <div class="rule"></div>
-      </div>
-      <div class="amen">
-        {amenityKeys.map(k => (
-          <div class="rv"><span class="eyebrow"><Fragment set:html={t(labels[k][0],labels[k][1])} /></span><p><Fragment set:html={t((d.facts_sl as any)[k],(d.facts_en as any)[k])} /></p></div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="galerija" class="center">
-    <div class="wrap">
-      <p class="eyebrow rv"><Fragment set:html={t('Galerija','Gallery')} /></p>
-      <h2 class="rv" style="margin-top:14px"><Fragment set:html={t('Pogled v apartma','A look inside')} /></h2>
-      <div class="gal rv">{galleryIds.map(n => (<a href={`../assets/strato-${n}.jpg`}><Fragment set:html={img(n)} /></a>))}</div>
-    </div>
-  </section>
-
-  <section id="ocene" class="center" style="background:var(--ivory2)">
-    <div class="wrap">
-      <p class="eyebrow rv"><Fragment set:html={t('Ocene gostov','Guest ratings')} /></p>
-      <h2 class="rv" style="margin-top:14px"><Fragment set:html={t('Kar pravijo javne ocene','What the public scores say')} /></h2>
-      <p class="mute rv" style="margin-top:10px;font-size:.9rem"><Fragment set:html={t('Prebrano 25. 11. 2026','As read on 25 Nov 2026')} /></p>
-      <div class="scores rv">
-        <div><b><Fragment set:html={t('9,9','9.9')} /><small> / 10</small></b><span>Booking.com · <Fragment set:html={t('10 ocen','10 reviews')} /></span></div>
-        <div class="vr"></div>
-        <div><b><Fragment set:html={t('5,0','5.0')} /></b><span>Airbnb · <Fragment set:html={t('9 ocen','9 reviews')} /></span></div>
-      </div>
-      <div class="slot rv">
-        <span class="eyebrow"><Fragment set:html={t(
-          'Ocene gostov – izbor 5 ocen z Bookinga in Airbnb (vstavimo po potrditvi)',
-          'Guest reviews – a selection of 5 reviews from Booking and Airbnb (inserted after confirmation)')} /></span>
-        <ul>{[1,2,3,4,5].map(i => (<li><Fragment set:html={t(`Ocena ${i}`,`Review ${i}`)} /></li>))}</ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="okolica" class="dark">
-    <div class="wrap">
-      <div class="center rv">
-        <p class="eyebrow"><Fragment set:html={t('Okolica','Nearby')} /></p>
-        <h2 style="margin-top:14px"><Fragment set:html={t('Kaj početi na Kočevskem','Things to do around Kočevje')} /></h2>
-        <div class="rule"></div>
-        <p class="mute"><Fragment set:html={t('Pet izbranih točk iz vodiča gostiteljev.','Five picks from the hosts’ guide.')} /></p>
-      </div>
-      <ol class="todo rv">
-        {d.things_to_do_from_hosts_folio_guide.map((p, i) => (
-          <li><span class="n">0{i+1}</span><h3><Fragment set:html={t(p.sl,p.en)} /></h3><span class="note"><Fragment set:html={t(p.note_sl,p.note_en)} /></span></li>
-        ))}
-      </ol>
-      <p class="eyebrow rv" style="margin-top:36px"><Fragment set:html={t('Več iz vodiča','More from the guide')} /></p>
-      <div class="more rv">{d.more_from_guide.map(m => (<span>{m}</span>))}</div>
-    </div>
-  </section>
-
-  <section id="bentral" class="center">
-    <div class="wrap">
-      <p class="eyebrow rv"><Fragment set:html={t('Rezervacija','Reservation')} /></p>
-      <h2 class="rv" style="margin-top:14px"><Fragment set:html={t('Preverite proste termine','Check free dates')} /></h2>
-      <div class="widget rv">
-        <div><span class="eyebrow">Bentral</span><p><Fragment set:html={t('Tu bo Bentral rezervacijski koledar (vstavimo kodo vtičnika).','The Bentral booking calendar will appear here (plugin code to be inserted).')} /></p></div>
-      </div>
-      <div class="actions rv">
-        <a class="btn fill" href={d.phone_href}><Fragment set:html={t('Pokliči','Call')} /> {d.phone}</a>
-        <a class="btn" href={`mailto:${d.email}`}><Fragment set:html={t('Piši na e-pošto','Send an e-mail')} /></a>
-      </div>
-    </div>
-  </section>
-
-  <section id="kontakt" class="dark">
-    <div class="wrap">
-      <div class="center rv">
-        <p class="eyebrow"><Fragment set:html={t('Kontakt','Contact')} /></p>
-        <h2 style="margin-top:14px"><Fragment set:html={t('Pišite nam','Write to us')} /></h2>
-        <div class="rule"></div>
-      </div>
-      <div class="two">
-        <form class="rv" method="post" enctype="text/plain" action={`mailto:${d.email}?subject=${encodeURIComponent(mailSubjectSl)}`} data-subject-sl={mailSubjectSl} data-subject-en={mailSubjectEn}>
-          <label><Fragment set:html={t('Ime in priimek','Full name')} /><input name="ime" required autocomplete="name"></label>
-          <label><Fragment set:html={t('E-pošta','E-mail')} /><input name="eposta" type="email" required autocomplete="email"></label>
-          <label><Fragment set:html={t('Termin (prihod – odhod)','Dates (arrival – departure)')} /><input name="termin" data-ph-sl="npr. 12. 7. – 16. 7." data-ph-en="e.g. 12 Jul – 16 Jul" placeholder="npr. 12. 7. – 16. 7."></label>
-          <label><Fragment set:html={t('Sporočilo','Message')} /><textarea name="sporocilo"></textarea></label>
-          <div><button class="btn fill" type="submit"><Fragment set:html={t('Odpri v e-pošti','Open in e-mail')} /></button></div>
-          <p class="hint"><Fragment set:html={t(
-            `Obrazec nima strežnika: gumb odpre vaš e-poštni program s pripravljenim sporočilom na ${d.email}, pošljete ga vi.`,
-            `This form has no server: the button opens your e-mail app with a prepared message to ${d.email}; you send it yourself.`)} /></p>
-        </form>
-        <div class="rv">
-          <dl>
-            <div><dt><Fragment set:html={t('Naslov','Address')} /></dt><dd>{d.address}<br><a href={d.maps} target="_blank" rel="noopener"><Fragment set:html={t('Odpri zemljevid','Open map')} /> ↗</a></dd></div>
-            <div><dt><Fragment set:html={t('Telefon','Phone')} /></dt><dd><a href={d.phone_href}>{d.phone}</a></dd></div>
-            <div><dt><Fragment set:html={t('E-pošta','E-mail')} /></dt><dd><a href={`mailto:${d.email}`}>{d.email}</a></dd></div>
-            <div><dt><Fragment set:html={t('Prijava / odjava','Check-in / check-out')} /></dt><dd><Fragment set:html={t(`${d.facts_sl.checkin}. ${d.facts_sl.checkout}.`,`${d.facts_en.checkin}. ${d.facts_en.checkout}.`)} /></dd></div>
-            <div><dt><Fragment set:html={t('Hišni red','House rules')} /></dt><dd><Fragment set:html={t(d.facts_sl.rules,d.facts_en.rules)} /></dd></div>
-            <div><dt><Fragment set:html={t('Gostitelja','Hosts')} /></dt><dd>{d.hosts}</dd></div>
-          </dl>
-          <div class="badge">
-            <div class="logo-slot"><Fragment set:html={t('Logo Green &amp; Safe (pošljeta gostitelja)','Green &amp; Safe logo (to be sent by the hosts)')} /></div>
-            <a href={d.kocevsko_link} target="_blank" rel="noopener"><Fragment set:html={t('Najdete nas tudi na Kočevsko.com','Find us also on Kočevsko.com')} /> ↗</a>
+      <div class="center rv"><span class="lbl">Strato Apartment</span><div class="rule"></div><h2><Fragment set:html={t('Prostori','The rooms')} /></h2></div>
+      <div class="grid">
+        <div class="bigcard rv">
+          <figure><Fragment set:html={img('02')} /><span>Strato · ★★★★★</span></figure>
+          <div class="body">
+            <h3><Fragment set:html={t('Dnevna soba','Living room')} /></h3>
+            <div class="meta"><span><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><Fragment set:html={t(S.guests,E.guests)} /></span><span><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/><path d="M4 12h4M12 4v4"/></svg>{S.size}</span></div>
+            <p class="caps"><Fragment set:html={t(S.living,E.living)} /></p>
+            <a class="btn out" href="#bentral"><Fragment set:html={t('Rezerviraj','Book now')} /></a>
           </div>
         </div>
+        <div class="tiles rv">
+          <a href="../assets/strato-06.jpg"><Fragment set:html={img('06')} /><span><Fragment set:html={t('Kuhinja','Kitchen')} /></span></a>
+          <a href="../assets/strato-11.jpg"><Fragment set:html={img('11')} /><span><Fragment set:html={t('Velika spalnica','Main bedroom')} /></span></a>
+          <a href="../assets/strato-15.jpg"><Fragment set:html={img('15')} /><span><Fragment set:html={t('Manjša spalnica','Second bedroom')} /></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wine" id="oprema">
+    <div class="pics"><div><Fragment set:html={img('03')} /></div><div><Fragment set:html={img('07')} /><Fragment set:html={img('10')} /></div><div><Fragment set:html={img('09')} /></div></div>
+    <div class="txt rv">
+      <span class="lbl"><Fragment set:html={t('Oprema & udobje','Amenities & comfort')} /></span>
+      <h2><Fragment set:html={t('Vse za<br><span>udobno bivanje</span>','Everything for<br><span>a comfortable stay</span>')} /></h2>
+      <div class="cols"><ul>{amenA.map(k => (<li><Fragment set:html={t(S[k],E[k])} /></li>))}</ul><ul>{amenB.map(k => (<li><Fragment set:html={t(S[k],E[k])} /></li>))}</ul></div>
+      <a class="btn dark up" href="#bentral"><Fragment set:html={t('Rezervacija','Reservation')} /></a>
+    </div>
+  </section>
+
+  <section class="wrap exp" id="okolica">
+    <div class="txt rv">
+      <span class="lbl">Strato Apartment</span>
+      <h2><Fragment set:html={t('Doživite Kočevsko!','Experience Kočevje!')} /></h2>
+      <ol>{d.things_to_do_from_hosts_folio_guide.map(p => (<li><b style="font-weight:500"><Fragment set:html={t(p.sl,p.en)} /></b> – <Fragment set:html={t(p.note_sl,p.note_en)} /></li>))}</ol>
+      <p class="more"><Fragment set:html={t('Več iz vodiča','More from the guide')} />: {d.more_from_guide.join(', ')}</p>
+      <a class="btn up" href="#bentral"><Fragment set:html={t('Rezervacija','Reservation')} /></a>
+    </div>
+    <div class="rv"><Fragment set:html={img('14')} /></div>
+  </section>
+
+  <section class="lake">
+    <Fragment set:html={img('04')} />
+    <div class="in">
+      <div class="logo-slot"><Fragment set:html={t('Logo Green &amp; Safe (pošljeta gostitelja)','Green &amp; Safe logo (to be sent by the hosts)')} /></div>
+      <h2>KOČEVJE</h2>
+      <p><Fragment set:html={t(`${S.lake}, ${S.center}.`,`${E.lake}, ${E.center}.`)} /></p>
+      <a href={d.kocevsko_link} target="_blank" rel="noopener"><Fragment set:html={t('Najdete nas tudi na Kočevsko.com','Find us also on Kočevsko.com')} /></a>
+    </div>
+  </section>
+
+  <section class="revs" id="ocene">
+    <div class="wrap">
+      <div class="center rv"><span class="lbl"><Fragment set:html={t('Ocene gostov','Guest reviews')} /></span><div class="rule"></div><h2><Fragment set:html={t('Kaj pravijo gostje','What guests say')} /></h2></div>
+      <div class="scores rv">
+        <div><b><Fragment set:html={t('9,9','9.9')} /></b><span>Booking.com · <Fragment set:html={t('10 ocen','10 reviews')} /></span></div>
+        <div><b><Fragment set:html={t('5,0','5.0')} /></b><span>Airbnb · <Fragment set:html={t('9 ocen · Izbira gostov','9 reviews · Guest favourite')} /></span></div>
+      </div>
+      <div class="rgrid rv">{d.ratings.reviews.map(r => (<div class="rev">„<Fragment set:html={t(r.sl,r.en)} />“<span class="who">{r.name}</span><span class="src">{r.source} · <Fragment set:html={t(dsl(r.date),den(r.date))} />{r.translated && <Fragment set:html={t(' · prevedeno',' · translated')} />}</span></div>))}</div>
+    </div>
+  </section>
+
+  <section class="book wrap" id="bentral">
+    <div class="rv"><span class="lbl"><Fragment set:html={t('Rezervacija','Reservation')} /></span><div class="rule"></div><h2><Fragment set:html={t('Preverite proste termine','Check free dates')} /></h2>
+    <div class="widget"><div><span class="lbl">Bentral</span><p class="grey"><Fragment set:html={t('Tu bo Bentral rezervacijski koledar (vstavimo kodo vtičnika).','The Bentral booking calendar will appear here (plugin code to be inserted).')} /></p></div></div>
+    <div class="actions"><a class="btn" href={d.phone_href}><Fragment set:html={t('Pokliči','Call')} /> {d.phone}</a><a class="btn out" href={`mailto:${d.email}`}><Fragment set:html={t('Piši na e-pošto','Send an e-mail')} /></a></div></div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="center rv"><span class="lbl"><Fragment set:html={t('Kontakt','Contact')} /></span><div class="rule"></div><h2><Fragment set:html={t('Pišite nam','Write to us')} /></h2></div>
+      <div class="grid">
+        <form class="rv" method="post" enctype="text/plain" action={`mailto:${d.email}?subject=${encodeURIComponent(mailSl)}`} data-subject-sl={mailSl} data-subject-en={mailEn}>
+          <label class="f"><Fragment set:html={t('Ime in priimek','Full name')} /><input name="ime" required autocomplete="name"></label>
+          <label class="f"><Fragment set:html={t('E-pošta','E-mail')} /><input name="eposta" type="email" required autocomplete="email"></label>
+          <label class="f"><Fragment set:html={t('Termin (prihod – odhod)','Dates (arrival – departure)')} /><input name="termin" id="termin" data-ph-sl="npr. 12. 7. – 16. 7." data-ph-en="e.g. 12 Jul – 16 Jul" placeholder="npr. 12. 7. – 16. 7."></label>
+          <label class="f"><Fragment set:html={t('Sporočilo','Message')} /><textarea name="sporocilo"></textarea></label>
+          <div><button class="btn" type="submit"><Fragment set:html={t('Odpri v e-pošti','Open in e-mail')} /></button></div>
+          <p class="hint"><Fragment set:html={t(`Obrazec nima strežnika: gumb odpre vaš e-poštni program s pripravljenim sporočilom na ${d.email}, pošljete ga vi.`,`This form has no server: the button opens your e-mail app with a prepared message to ${d.email}; you send it yourself.`)} /></p>
+        </form>
+        <dl class="rv">
+          <div><dt><Fragment set:html={t('Naslov','Address')} /></dt><dd>{d.address} · <a href={d.maps} target="_blank" rel="noopener"><Fragment set:html={t('zemljevid','map')} /></a></dd></div>
+          <div><dt><Fragment set:html={t('Telefon in e-pošta','Phone and e-mail')} /></dt><dd><a href={d.phone_href}>{d.phone}</a> · <a href={`mailto:${d.email}`}>{d.email}</a></dd></div>
+          <div><dt><Fragment set:html={t('Prijava in odjava','Check-in and check-out')} /></dt><dd><Fragment set:html={t(`${S.checkin}. ${S.checkout}.`,`${E.checkin}. ${E.checkout}.`)} /></dd></div>
+          <div><dt><Fragment set:html={t('Hišni red','House rules')} /></dt><dd><Fragment set:html={t(S.rules,E.rules)} /></dd></div>
+          <div><dt><Fragment set:html={t('Gostitelja','Hosts')} /></dt><dd>{d.hosts} · <Fragment set:html={t(S.languages,E.languages)} /></dd></div>
+        </dl>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <p>Strato Apartment · {d.hosts} · {d.address}</p>
-    <p><Fragment set:html={t('Predogled: AK agencija','Preview: AK agencija')} /></p>
+  <div class="wrap fgrid">
+    <div><h3><Fragment set:html={t('Želite več info?','Need more info?')} /></h3><span class="lbl"><Fragment set:html={t('Dosegljiva sva na','Reach us at')} /></span><a href={d.phone_href}>{d.phone}</a><a href={`mailto:${d.email}`}>{d.email}</a></div>
+    <div><h3><Fragment set:html={t('Kje smo','Where we are')} /></h3><span class="lbl"><Fragment set:html={t('Naslov','Address')} /></span><a href={d.maps} target="_blank" rel="noopener">{d.address}</a></div>
+    <div><h3><Fragment set:html={t('Povežimo se','Connect')} /></h3><span class="lbl"><Fragment set:html={t('Spletne povezave','Links')} /></span><a href={d.kocevsko_link} target="_blank" rel="noopener">Kočevsko.com</a><a href="#bentral"><Fragment set:html={t('Rezervacija','Reservation')} /></a></div>
+    <div class="fmark">Strato<small>Apartment</small></div>
   </div>
+  <div class="fbot"><div class="wrap"><span>© Strato Apartment · {d.hosts}</span><span><Fragment set:html={t('Predogled: AK agencija','Preview: AK agencija')} /></span></div></div>
 </footer>
 
 <script is:inline>
 (function(){
   var root=document.documentElement;
-  function apply(l){
-    root.lang=l;
-    try{localStorage.setItem('strato-lang',l)}catch(e){}
+  function apply(l){root.lang=l;try{localStorage.setItem('strato-lang',l)}catch(e){}
     document.querySelectorAll('[data-set-lang]').forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-set-lang')===l))});
     document.querySelectorAll('[data-alt-sl]').forEach(function(i){i.alt=i.getAttribute('data-alt-'+l)||i.alt});
     document.querySelectorAll('[data-ph-sl]').forEach(function(i){i.placeholder=i.getAttribute('data-ph-'+l)||''});
-    document.querySelectorAll('form[data-subject-sl]').forEach(function(f){
-      var m=f.action.split('?')[0];f.action=m+'?subject='+encodeURIComponent(f.getAttribute('data-subject-'+l));
-    });
-    document.title=l==='en'?'Strato Apartment – Kočevje, Slovenia':'Strato Apartment – Kočevje';
-  }
+    document.querySelectorAll('form[data-subject-sl]').forEach(function(f){var m=f.action.split('?')[0];f.action=m+'?subject='+encodeURIComponent(f.getAttribute('data-subject-'+l))});
+    document.title=l==='en'?'Strato Apartment – Kočevje, Slovenia':'Strato Apartment – Kočevje';}
   document.querySelectorAll('[data-set-lang]').forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-set-lang'))})});
   apply(root.lang==='en'?'en':'sl');
-  /* hero slider */
-  var slides=[].slice.call(document.querySelectorAll('[data-slide]')),dots=[].slice.call(document.querySelectorAll('[data-dot]')),cur=0,timer;
+  var bg=document.querySelector('.burger'),menu=document.getElementById('menu');
+  bg.addEventListener('click',function(){var o=menu.classList.toggle('open');bg.setAttribute('aria-expanded',String(o))});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open')})});
+  /* quick bar: carries dates and guests into the enquiry form, then jumps to the reservation section */
+  document.getElementById('quick').addEventListener('submit',function(e){e.preventDefault();var f=e.target,v=[];if(f.prihod.value)v.push(f.prihod.value);if(f.odhod.value)v.push(f.odhod.value);var s=v.join(' – ');if(f.gostje.value)s+=(s?' · ':'')+f.gostje.value+(root.lang==='en'?' guests':' gostov');document.getElementById('termin').value=s;location.hash='#bentral'});
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var slides=[].slice.call(document.querySelectorAll('[data-slide]')),dots=[].slice.call(document.querySelectorAll('[data-dot]')),cur=0,timer;
   function go(i){cur=(i+slides.length)%slides.length;slides.forEach(function(s,j){s.classList.toggle('on',j===cur)});dots.forEach(function(d,j){d.setAttribute('aria-current',String(j===cur))})}
-  function start(){if(reduce)return;clearInterval(timer);timer=setInterval(function(){go(cur+1)},6500)}
-  dots.forEach(function(d,i){d.addEventListener('click',function(){go(i);start()})});
-  start();
-  /* nav */
-  var nav=document.querySelector('.nav');
-  function onScroll(){nav.classList.toggle('solid',window.scrollY>80)}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-  /* reveal */
+  function start(){if(reduce)return;clearInterval(timer);timer=setInterval(function(){go(cur+1)},6000)}
+  dots.forEach(function(d,i){d.addEventListener('click',function(){go(i);start()})});start();
   var els=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !reduce){
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-    els.forEach(function(e){io.observe(e)});
-  }else{els.forEach(function(e){e.classList.add('in')})}
+  if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(function(e){e.classList.add('in')})}
 })();
 </script>
 </body>

@@ -25,7 +25,9 @@
     "bathroom": "Kopalnica s tušem, pralni stroj, sušilec za lase, kozmetično ogledalo",
     "climate": "Ogrevanje s toplotno črpalko, klimatska naprava",
     "outdoor": "Terasa s senčnikom, vrt, prostor za žar",
-    "extras": "Brezplačen WiFi, otroška posteljica, zasebni vhod, copati, dežniki, knjiga gostov"
+    "extras": "Brezplačen WiFi, otroška posteljica, zasebni vhod, copati, dežniki, knjiga gostov",
+    "renovated": "Leta 2025 v celoti prenovljen in posodobljen",
+    "languages": "Govorimo slovensko, angleško, hrvaško in srbsko"
   },
   "facts_en": {
     "size": "74 m²",
@@ -44,21 +46,101 @@
     "bathroom": "Bathroom with shower, washing machine, hair dryer, cosmetic mirror",
     "climate": "Heat-pump heating and air conditioning",
     "outdoor": "Terrace with sunshade, garden, barbecue area",
-    "extras": "Free WiFi, baby cot, private entrance, slippers, umbrellas, guest book"
+    "extras": "Free WiFi, baby cot, private entrance, slippers, umbrellas, guest book",
+    "renovated": "Fully renovated and modernised in 2025",
+    "languages": "We speak Slovenian, English, Croatian and Serbian"
   },
   "ratings": {
-    "_note": "Public scores as read on 25.11.2026. Show as scores only. Do NOT write review quotes: the hosts will choose 5 real reviews; leave a clearly marked slot 'Ocene gostov – izbor 5 ocen z Bookinga in Airbnb (vstavimo po potrditvi)'.",
-    "booking": "9,9 / 10 (10 ocen)",
-    "airbnb": "5,0 (9 ocen)"
+    "_note": "Hosts allowed us (26.11.2026, via owner) to use their Booking and Airbnb reviews. Use these 5 exactly; mark the source and 'prevedeno/translated' where shown. Do not edit or add reviews.",
+    "booking": "9,9 / 10 (10 ocen) – Izjemno; osebje 10, čistoča 10, udobje 10, lokacija 9,6",
+    "airbnb": "5,0 / 5 (9 ocen) – Izbira gostov (Guest favourite)",
+    "reviews": [
+      {
+        "name": "Christel",
+        "source": "Airbnb",
+        "date": "avgust 2025 / August 2025",
+        "sl": "Na poti v Budimpešto smo se ustavili pri Barbari in Roku za eno noč in našli pravi zaklad. Hiša je čudovita, okusno opremljena in ima zelo sproščujoče vzdušje. Terasa je miren prostor za branje ali obedovanje. Rok in Barbara sta bila zelo prijazna in proaktivna od prvih sporočil.",
+        "en": "On our way to Budapest we stopped at Barbara and Rok's for one night and found a real treasure. The house is beautiful, tastefully furnished and very relaxing. The terrace is a quiet place for reading or dining. Rok and Barbara were very kind and proactive from the very first messages.",
+        "translated": true
+      },
+      {
+        "name": "Sebastiano",
+        "source": "Airbnb",
+        "date": "januar 2026 / January 2026",
+        "sl": "Bivanje je bilo neverjetno: stanovanje je 100 % skladno s fotografijami in opisom. Je toplo in prijetno, kot doma. Gostitelj je bil vedno na voljo. Toplo priporočam!",
+        "en": "The stay was incredible: the apartment matches the photos and description 100%. It is warm and cosy, just like home. The host was always available. Highly recommended!",
+        "translated": true
+      },
+      {
+        "name": "Jana",
+        "source": "Airbnb",
+        "date": "julij 2026 / July 2026",
+        "sl": "Čudovito, na novo prenovljeno stanovanje. Imelo je vse, kar smo potrebovali. Gostitelji so bili zelo prijazni.",
+        "en": "A wonderful, newly renovated apartment. It had everything we needed. The hosts were very friendly.",
+        "translated": true
+      },
+      {
+        "name": "Martin",
+        "source": "Booking.com",
+        "date": "Avstrija / Austria",
+        "sl": "Nastanitev je bila zelo čista in moderno opremljena. Kljub poznemu prihodu ob 01:30 ponoči smo se še vedno udobno prijavili.",
+        "en": "The accommodation was very clean and modern. Despite our late arrival at 01:30 at night we could still check in comfortably.",
+        "original": "Die Unterkunft war sehr sauber und modern eingerichtet. Trotz unserer verspäteten Ankunft um 01:30 in der Nacht konnten wir immer noch bequem Einchecken.",
+        "translated": true
+      },
+      {
+        "name": "Cindy",
+        "source": "Booking.com",
+        "date": "Nemčija / Germany",
+        "sl": "Zelo lepo, kakovostno in novo stanovanje s super prijaznima gostiteljema, v čudoviti pokrajini.",
+        "en": "A very beautiful, high-quality new apartment with super friendly hosts, in wonderful countryside.",
+        "original": "Sehr schönes hochwertiges und neues Apartment mit super freundlichen Vermietern, in einer tollen Landschaft.",
+        "translated": true
+      }
+    ]
   },
   "things_to_do_from_hosts_folio_guide": [
-    {"sl": "Kočevsko jezero", "en": "Lake Kočevje", "note_sl": "približno 270 m od apartmaja", "note_en": "about 270 m from the apartment"},
-    {"sl": "Pragozd Krokar", "en": "Krokar virgin forest", "note_sl": "pragozd na Unescovem seznamu", "note_en": "UNESCO-listed virgin forest"},
-    {"sl": "Grad Fridrihštajn", "en": "Fridrihštajn Castle", "note_sl": "razvaline gradu nad Kočevjem", "note_en": "castle ruins above Kočevje"},
-    {"sl": "Željnske jame", "en": "Željne caves", "note_sl": "kraške jame tik ob mestu", "note_en": "karst caves just outside town"},
-    {"sl": "Reka Kolpa", "en": "Kolpa river", "note_sl": "kopanje in rafting", "note_en": "swimming and rafting"}
+    {
+      "sl": "Kočevsko jezero",
+      "en": "Lake Kočevje",
+      "note_sl": "približno 270 m od apartmaja",
+      "note_en": "about 270 m from the apartment"
+    },
+    {
+      "sl": "Pragozd Krokar",
+      "en": "Krokar virgin forest",
+      "note_sl": "pragozd na Unescovem seznamu",
+      "note_en": "UNESCO-listed virgin forest"
+    },
+    {
+      "sl": "Grad Fridrihštajn",
+      "en": "Fridrihštajn Castle",
+      "note_sl": "razvaline gradu nad Kočevjem",
+      "note_en": "castle ruins above Kočevje"
+    },
+    {
+      "sl": "Željnske jame",
+      "en": "Željne caves",
+      "note_sl": "kraške jame tik ob mestu",
+      "note_en": "karst caves just outside town"
+    },
+    {
+      "sl": "Reka Kolpa",
+      "en": "Kolpa river",
+      "note_sl": "kopanje in rafting",
+      "note_en": "swimming and rafting"
+    }
   ],
-  "more_from_guide": ["MTB trail center Kočevje", "Poyek Wildlife Adventures", "Ars Naturae Wildlife adventures", "Bunker Škrilj", "Reško jezero", "Kraljica Roga", "Grad Kostel", "Ranch Marina"],
+  "more_from_guide": [
+    "MTB trail center Kočevje",
+    "Poyek Wildlife Adventures",
+    "Ars Naturae Wildlife adventures",
+    "Bunker Škrilj",
+    "Reško jezero",
+    "Kraljica Roga",
+    "Grad Kostel",
+    "Ranch Marina"
+  ],
   "badges_pending": {
     "green_and_safe": "Slot for the Green & Safe logo: show a neutral placeholder box labelled 'Logo Green & Safe (pošljeta gostitelja)'. Do not draw a fake logo.",
     "kocevsko": "Text link 'Najdete nas tudi na Kočevsko.com' -> kocevsko_link. Logo file pending from hosts."
