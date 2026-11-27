@@ -1,0 +1,64 @@
+---
+// PROMO-TEK – izbirnik: 3 predlogi prenove spletne strani.
+import d from '../../../data/promo-tek.json';
+const A = 'assets/';
+const c = d.company;
+const cards = [
+  { n: 1, img: 'ada.webp', t: 'B2B katalog in e-trgovina', s: 'Sodobna domača stran trgovine: iskalnik, ploščice 13 kategorij s številom izdelkov, izdelki s cenami in gumb + za zbiranje v povpraševanje, promo paketi, tehnike tiska, obrazec za ponudbo.' },
+  { n: 2, img: 'proc-dtf.webp', t: 'Tiskarski studio – »Vaš logotip na …«', s: 'Drzna temna stran z velikim naslovom in vrtečo besedo, štiri tehnike tiska s fotografijami iz delavnice, vodoravni trak izdelkov, pot od briefa do škatle in obrazec »brief«.' },
+  { n: 3, img: 'maren.webp', t: 'Korporativni / nabavni slog', s: 'Umirjena svetla stran za nabavnike: hitra ponudba na prvem zaslonu, tabela dobavnih in plačilnih pogojev, program po kategorijah, katalogi PDF, pogosta vprašanja, podatki o podjetju.' },
+];
+---
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PROMO-TEK – 3 predlogi prenove</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href={A + 'logo-cut.png'}>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style is:global>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#f3f5f8;color:#17202b;line-height:1.55;padding:clamp(24px,5vw,64px) max(16px,env(safe-area-inset-right)) 40px max(16px,env(safe-area-inset-left));overflow-x:hidden}
+.wrap{max-width:1140px;margin:0 auto}
+.logo{background:#fff;display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid #e3e8ef;margin-bottom:22px}
+.logo img{height:40px;width:auto;display:block}
+h1{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-.02em;color:#0b2a5b}
+.sub{color:#5b6775;margin-top:10px;max-width:72ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px;margin-top:32px}
+a.card{display:flex;flex-direction:column;background:#fff;border:1px solid #e3e8ef;border-radius:14px;overflow:hidden;color:inherit;text-decoration:none;transition:transform .2s,box-shadow .2s}
+a.card:hover{transform:translateY(-3px);box-shadow:0 20px 40px -28px rgba(11,42,91,.45)}
+a.card img{width:100%;aspect-ratio:16/10;object-fit:cover;background:#fff;display:block}
+a.card img.c{object-fit:contain;padding:18px}
+.b{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1}
+.n{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#1b8fe6;font-weight:600}
+.t{font-size:18px;font-weight:600;margin-top:4px;color:#0b2a5b}
+.d{font-size:15px;color:#3d4753;margin-top:10px}
+.go{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;padding-top:12px;font-weight:600;font-size:15px;color:#0b2a5b}
+.facts{margin-top:32px;background:#fff;border:1px solid #e3e8ef;border-radius:14px;padding:18px;font-size:14px;color:#3d4753}
+.facts b{color:#0b2a5b}
+.facts a{color:#0b2a5b;display:inline-flex;align-items:center;min-height:44px;font-weight:600}
+footer{margin-top:28px;font-size:14px;color:#5b6775}
+@media (prefers-reduced-motion:reduce){a.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo"><img src={A + 'logo.png'} width="640" height="202" alt="PROMO-TEK"></div>
+  <h1>PROMO-TEK d.o.o. – trije predlogi prenove spletne strani</h1>
+  <p class="sub">Vsak predlog je drugačna zasnova iste vsebine: vaše kategorije in izdelki s cenami iz trgovine, tehnike tiska, promo paketi, obrazec za povpraševanje (odpre e-pošto na {c.email}) in klic na {c.phone}. Odprite jih na telefonu in računalniku.</p>
+  <div class="grid">
+    {cards.map(k => (
+      <a class="card" href={`v${k.n}/`}>
+        <img src={A + k.img} class={k.n === 2 ? '' : 'c'} alt={'Predlog ' + k.n} loading={k.n === 1 ? 'eager' : 'lazy'}>
+        <div class="b"><div class="n">Predlog {k.n}</div><div class="t">{k.t}</div><p class="d">{k.s}</p><span class="go">Odpri predlog {k.n} →</span></div>
+      </a>
+    ))}
+  </div>
+  <div class="facts">Uporabljeni so samo podatki z <a href={c.site} target="_blank" rel="noopener">promo-tek.si</a> (27. 11. 2026): kategorije in število izdelkov, imena in cene izdelkov z DDV, tehnike tiska, dobavni in plačilni pogoji, katalogi, podatki o podjetju. <b>Fotografije so vaše</b> (iz trgovine in strani Tisk) in so v predogledu uporabljene samo za prikaz. Ničesar ni izmišljenega – ni mnenj, logotipov strank ali številk, ki jih na vaši strani ni.</div>
+  <footer>{d.footerLine} · <a href={c.phoneHref} style="color:#0b2a5b;display:inline-flex;align-items:center;min-height:44px">{c.phone}</a> · <a href={'mailto:' + c.email} style="color:#0b2a5b;display:inline-flex;align-items:center;min-height:44px">{c.email}</a></footer>
+</div>
+</body>
+</html>

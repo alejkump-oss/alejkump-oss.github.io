@@ -1,0 +1,306 @@
+---
+// PROMO-TEK – predlog 3: umirjen korporativni / nabavni slog. Hitra ponudba na prvem zaslonu,
+// pregledna tabela pogojev, program po kategorijah, katalogi (PDF), pogosta vprašanja, podatki o podjetju.
+// Vsi podatki iz src/data/promo-tek.json (prebrani s promo-tek.si 2026-11-27); fotografije so njihove.
+import d from '../../../../data/promo-tek.json';
+const A = '../assets/';
+const c = d.company;
+const examples = d.products.filter(p => ['MASTER MEN','2001','ADA','NAMIZNI LEŽEČI KOLEDAR FIX','Poslovni nahrbtnik Maren','FORCE JACKET','Termo lonček Liran','ART'].includes(p.name));
+const terms = [
+  ['Cene', 'V trgovini so objavljene cene z DDV za nepotiskane izdelke. Dotisk je ovrednoten v ponudbi.'],
+  ['Rok dobave', 'Nepotiskani izdelki: od 7 do 14 dni od potrditve naročila. Izdelki z dotiskom: po dogovoru ob potrditvi naročila.'],
+  ['Plačilo', 'Za naročilo z dodelavo priporočamo plačilo po predračunu.'],
+  ['Priprava za tisk', 'Pri promo paketih priprave za tisk ne zaračunamo. Grafično pripravo uredimo v hiši.'],
+  ['Logotip', 'Priložite PDF, PNG ali JPG (do 10 MB).'],
+  ['Zaloga', 'Veliko promocijskega materiala imamo na zalogi; dobavljivost preverimo ob povpraševanju.'],
+  ['Ogled', 'Showroom: ' + c.showroom + '.'],
+];
+const faq = [
+  ['Kaj naj navedem v povpraševanju?', 'Želene izdelke (ime ali povezavo iz trgovine), količine in rok. Če imate logotip, ga priložite kot PDF, PNG ali JPG do 10 MB. Cene, dobavljivost in možnosti dodelave preverimo ob povpraševanju.'],
+  ['Kako hitro dobim izdelke?', 'Nepotiskani izdelki so dobavljivi v 7 do 14 dneh od potrditve naročila. Pri izdelkih z dotiskom rok določimo ob potrditvi naročila, glede na količino in zahtevnost.'],
+  ['Kako poteka plačilo?', 'Za naročilo z dodelavo priporočamo plačilo po predračunu.'],
+  ['Katero tehniko tiska izberete?', 'Glede na material in obliko izdelka: DTF za tekstil, UV za pisala, beležke in trde materiale, širokoformatni tisk za cerade, roll-up stojala in nalepke, lasersko graviranje za kovino, les, steklo in usnje. Pri posameznih izdelkih je priporočena tudi sitotisk, tampotisk, preslikač ali vezenje.'],
+  ['Ali so cene v trgovini končne?', 'Objavljene cene veljajo za nepotiskane izdelke in vključujejo DDV. Končno ponudbo z dotiskom pripravimo na podlagi količine, tehnike in števila barv.'],
+  ['Ali lahko izdelke vidim pred naročilom?', 'Da – v showroomu na naslovu ' + c.showroom + '. Priporočamo predhodni klic na ' + c.phone + '.'],
+];
+---
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PROMO-TEK d.o.o. – promocijski izdelki za podjetja | Predlog 3</title>
+<meta name="description" content="Promocijski izdelki, tekstil, delovna zaščita in tisk za podjetja. Hitra ponudba, jasni dobavni in plačilni pogoji, katalogi 2026/2027. Predogled prenove.">
+<meta name="robots" content="noindex">
+<link rel="icon" href={A + 'logo-cut.png'}>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style is:global>
+:root{--navy:#0b2a5b;--blue:#1b6fc2;--ink:#1c2430;--mute:#5a6675;--line:#dde3ea;--bg:#f3f5f8;--panel:#fff;--gut:16px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:'IBM Plex Serif',Georgia,serif;font-weight:600;line-height:1.15;letter-spacing:-.01em;color:var(--navy)}
+h1{font-size:clamp(1.9rem,4.6vw,3rem)}
+h2{font-size:clamp(1.5rem,3vw,2.1rem)}
+h3{font-size:1.1rem}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right))}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:inherit;transition:background .2s}
+.btn.p{background:var(--navy);color:#fff}.btn.p:hover{background:#0f3a7a}
+.btn.o{background:#fff;color:var(--navy);border-color:var(--navy)}.btn.o:hover{background:#eef3fa}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+/* info bar */
+.info{background:var(--navy);color:#d6e0ef;font-size:13px}
+.info .wrap{display:flex;justify-content:space-between;align-items:center;min-height:44px;gap:14px}
+.info span{display:none}
+@media (min-width:860px){.info span{display:inline}}
+.info a{color:#fff;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;gap:6px;padding:0 4px}
+.info .r{display:flex;gap:18px}
+/* header */
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.hd{display:flex;align-items:center;justify-content:space-between;min-height:70px;gap:12px}
+.logo{display:inline-flex;align-items:center;min-height:44px}
+.logo img{height:38px;width:auto}
+.desk{display:none;gap:2px}
+.desk a{text-decoration:none;font-weight:500;font-size:15px;padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}
+.desk a:hover{border-bottom-color:var(--navy)}
+.hr{display:flex;gap:8px;align-items:center}
+.hr .btn{display:none}
+@media (min-width:1024px){.desk{display:flex}.hr .btn{display:inline-flex}.burger{display:none!important}}
+.burger{width:44px;height:44px;border:1.5px solid var(--line);border-radius:6px;background:#fff;color:var(--navy);cursor:pointer;display:grid;place-items:center}
+nav.m{display:none;border-top:1px solid var(--line);background:#fff}
+nav.m.open{display:block}
+nav.m ul{list-style:none;margin:0;padding:6px 0}
+nav.m a{display:flex;align-items:center;min-height:48px;padding:0 var(--gut);text-decoration:none;font-weight:500}
+@media (min-width:1024px){nav.m{display:none!important}}
+/* hero */
+.hero{padding:36px 0 44px;background:#fff;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;gap:28px}
+@media (min-width:960px){.hero{padding:64px 0 72px}.hero .wrap{grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}}
+.hero .lead{font-size:1.1rem;color:var(--mute);margin-top:16px;max-width:54ch}
+.hero ul{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.hero li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.hero li::before{content:"";flex:0 0 8px;height:8px;border-radius:2px;background:var(--blue);margin-top:9px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:0 10px 30px -24px rgba(11,42,91,.35)}
+.card h2{font-size:1.3rem}
+.card .s{font-size:14px;color:var(--mute);margin-top:4px}
+form.qq{display:grid;gap:12px;margin-top:16px}
+@media (min-width:640px){form.qq{grid-template-columns:1fr 1fr}form.qq .full{grid-column:1/-1}}
+form label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--mute)}
+form input,form textarea,form select{font:inherit;font-size:16px;min-height:48px;padding:10px 12px;border:1.5px solid var(--line);border-radius:6px;width:100%;background:#fff;color:var(--ink)}
+form textarea{min-height:96px;resize:vertical}
+form input:focus,form textarea:focus,form select:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+form .hint{font-size:12px;color:var(--mute)}
+form .btn{width:100%}
+/* sections */
+section{padding:44px 0}
+@media (min-width:960px){section{padding:68px 0}}
+.sh{margin-bottom:22px}
+.sh p{color:var(--mute);margin-top:8px;max-width:64ch}
+.white{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* terms table */
+.terms{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.terms .row{display:grid;grid-template-columns:1fr;gap:4px;padding:14px 16px;border-top:1px solid var(--line)}
+.terms .row:first-child{border-top:0}
+.terms .row b{color:var(--navy);font-weight:600}
+.terms .row span{font-size:15px;color:var(--ink)}
+@media (min-width:640px){.terms .row{grid-template-columns:180px 1fr;gap:16px;padding:16px 20px}}
+/* program table */
+.prog{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.prog a.r{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:10px 14px;border-top:1px solid var(--line);text-decoration:none;min-height:60px}
+.prog a.r:first-child{border-top:0}
+.prog a.r:hover{background:var(--bg)}
+.prog img{width:48px;height:48px;object-fit:contain;border-radius:6px;background:var(--bg)}
+.prog .n{font-weight:600;color:var(--navy)}
+.prog .s{font-size:13px;color:var(--mute);display:none}
+@media (min-width:640px){.prog .s{display:block}.prog a.r{grid-template-columns:56px 1fr auto;padding:12px 20px}.prog img{width:56px;height:56px}}
+.prog .c{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink);font-size:15px;white-space:nowrap}
+.prog .c small{display:block;font-weight:400;color:var(--mute);font-size:12px;text-align:right}
+/* examples */
+.ex{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (min-width:640px){.ex{grid-template-columns:repeat(4,1fr)}}
+.e{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.e img{aspect-ratio:1;object-fit:contain;padding:12px;width:100%}
+.e .b{padding:0 12px 12px;display:grid;gap:2px}
+.e .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+.e h3{font-size:.98rem;font-family:'IBM Plex Sans',sans-serif;font-weight:600;color:var(--ink)}
+.e .d{font-size:13px;color:var(--mute);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.e .p{font-weight:600;color:var(--navy);margin-top:4px;font-variant-numeric:tabular-nums}
+.e .p small{font-weight:400;color:var(--mute);font-size:12px;display:block}
+.note{font-size:14px;color:var(--mute);margin-top:14px}
+/* techniques */
+.tech{display:grid;gap:12px}
+@media (min-width:640px){.tech{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.tech{grid-template-columns:repeat(4,1fr)}}
+.t{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.t img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.t .b{padding:14px}
+.t p{font-size:14px;color:var(--mute);margin-top:6px}
+.t .f{font-size:13px;color:var(--navy);margin-top:8px}
+/* catalogs */
+.cats{display:grid;gap:10px}
+@media (min-width:640px){.cats{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1024px){.cats{grid-template-columns:repeat(3,1fr)}}
+.cat{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-decoration:none;min-height:72px}
+.cat:hover{border-color:var(--navy)}
+.cat .ic{width:44px;height:44px;border-radius:6px;background:var(--bg);display:grid;place-items:center;color:var(--navy);font-size:11px;font-weight:600}
+.cat b{display:block;color:var(--navy);font-weight:600}
+.cat small{color:var(--mute);font-size:13px}
+/* faq */
+.faq{display:grid;gap:8px}
+details{background:#fff;border:1px solid var(--line);border-radius:10px}
+summary{cursor:pointer;list-style:none;padding:14px 48px 14px 16px;font-weight:600;color:var(--navy);min-height:48px;display:flex;align-items:center;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--blue);font-weight:400}
+details[open] summary::after{content:"–"}
+details p{padding:0 16px 16px;color:var(--ink);font-size:15px}
+/* company */
+.co{display:grid;gap:16px}
+@media (min-width:860px){.co{grid-template-columns:1fr 1fr}}
+.co .card ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;font-size:15px}
+.co .card a{text-decoration:none;color:var(--navy);font-weight:600;min-height:44px;display:inline-flex;align-items:center;gap:8px}
+.co .card svg{width:18px;height:18px;color:var(--blue)}
+.co dl{margin:10px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px}
+.co dt{color:var(--mute)}.co dd{margin:0;font-weight:500}
+/* footer */
+footer{background:var(--navy);color:#c7d3e6;font-size:14px;padding:30px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center}
+footer a{color:#fff;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.co .card dd a{min-height:44px;display:inline-flex;align-items:center}
+footer strong{color:#fff}
+/* mobile bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px max(12px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));background:rgba(255,255,255,.97);border-top:1px solid var(--line)}
+.mbar .btn{min-height:48px;font-size:15px}
+@media (min-width:860px){.mbar{display:none}}
+body{padding-bottom:76px}@media (min-width:860px){body{padding-bottom:0}}
+</style>
+</head>
+<body>
+<div class="info"><div class="wrap">
+  <span>{c.name} · {c.street}, {c.city}</span>
+  <div class="r"><a href={c.phoneHref}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>{c.phone}</a><a href={'mailto:' + c.email}>{c.email}</a></div>
+</div></div>
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#" aria-label="PROMO-TEK, domov"><img src={A + 'logo.png'} width="640" height="202" alt="PROMO-TEK – Boost your promotion"></a>
+    <nav class="desk" aria-label="Glavni meni"><a href="#pogoji">Pogoji</a><a href="#program">Program</a><a href="#tisk">Dotisk</a><a href="#katalogi">Katalogi</a><a href="#faq">Vprašanja</a><a href="#podjetje">Podjetje</a></nav>
+    <div class="hr"><a class="btn p" href="#ponudba">Hitra ponudba</a><button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Meni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+  </div>
+  <nav class="m" id="mnav" aria-label="Mobilni meni"><ul><li><a href="#ponudba">Hitra ponudba</a></li><li><a href="#pogoji">Dobavni in plačilni pogoji</a></li><li><a href="#program">Program</a></li><li><a href="#tisk">Dotisk</a></li><li><a href="#katalogi">Katalogi</a></li><li><a href="#faq">Pogosta vprašanja</a></li><li><a href="#podjetje">Podjetje in kontakt</a></li></ul></nav>
+</header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <div>
+    <span class="lbl">Promocijski izdelki · Tekstil · Delovna zaščita · Tisk</span>
+    <h1 style="margin-top:12px">Promocijski izdelki za podjetja, z dotiskom in jasnimi pogoji.</h1>
+    <p class="lead">Približno 1.500 izdelkov v 13 kategorijah, štiri tehnike tiska v lastni delavnici in showroom v Novem mestu. Pošljite seznam, prejmete ponudbo.</p>
+    <ul>
+      <li>Cene v trgovini z DDV, dotisk ovrednoten v ponudbi</li>
+      <li>Nepotiskani izdelki v 7–14 dneh od potrditve naročila</li>
+      <li>DTF, UV, širokoformatni tisk in lasersko graviranje</li>
+      <li>Katalogi 2026/2027 za darila, tekstil in zaščitno obutev</li>
+    </ul>
+    <div class="cta"><a class="btn p" href="#ponudba">Hitra ponudba</a><a class="btn o" href={c.phoneHref}>Pokliči {c.phone}</a></div>
+  </div>
+  <div class="card" id="ponudba">
+    <h2>Hitra ponudba</h2>
+    <p class="s">Izpolnite in kliknite – odpre se e-pošta na {c.email} s pripravljenim besedilom. Logotip priložite v e-pošti.</p>
+    <form class="qq" id="qq" action={'mailto:' + c.email} method="post" enctype="text/plain">
+      <label class="full">Kaj potrebujete<input name="kaj" placeholder="npr. 150 majic z logotipom, 300 pisal" required></label>
+      <label>Količina<input name="kolicina" inputmode="numeric" placeholder="npr. 150"></label>
+      <label>Želeni rok<input name="rok" placeholder="npr. do 20. 12."></label>
+      <label>Podjetje<input name="podjetje" autocomplete="organization" required></label>
+      <label>Kontaktna oseba<input name="ime" autocomplete="name" required></label>
+      <label>E-pošta<input type="email" name="email" autocomplete="email" required></label>
+      <label>Telefon<input type="tel" name="telefon" autocomplete="tel"></label>
+      <label class="full">Opombe (barve, mesto tiska, dostava)<textarea name="opombe"></textarea></label>
+      <div class="full hint">Nič se ne pošlje samodejno. Logotip: PDF, PNG ali JPG do 10 MB.</div>
+      <button class="btn p full" type="submit">Pripravi e-pošto s povpraševanjem</button>
+    </form>
+  </div>
+</div></div>
+
+<section id="pogoji"><div class="wrap">
+  <div class="sh"><span class="lbl">Pogoji</span><h2 style="margin-top:8px">Dobavni in plačilni pogoji</h2><p>Zapisano tako, kot velja v trgovini in pri naročilih z dodelavo.</p></div>
+  <div class="terms">{terms.map(([k, v]) => <div class="row"><b>{k}</b><span>{v}</span></div>)}</div>
+</div></section>
+
+<section class="white" id="program"><div class="wrap">
+  <div class="sh"><span class="lbl">Program</span><h2 style="margin-top:8px">13 kategorij, približno 1.500 izdelkov</h2><p>Število izdelkov po kategorijah, kot ga kaže spletna trgovina. Vsaka vrstica vodi v obstoječo trgovino.</p></div>
+  <div class="prog">
+    {d.categories.map(k => (
+      <a class="r" href={`${c.site}/izdelek-kategorija/${k.slug}/`} target="_blank" rel="noopener">
+        <img src={A + k.img} width="800" height="800" loading="lazy" alt="">
+        <div><div class="n">{k.name}</div><div class="s">{k.sub}</div></div>
+        <div class="c">{k.count}<small>izdelkov</small></div>
+      </a>
+    ))}
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sh"><span class="lbl">Primeri</span><h2 style="margin-top:8px">Izdelki in objavljene cene</h2><p>Cene so z DDV, za nepotiskan izdelek. Priporočena tehnika dotiska je zapisana pri izdelku.</p></div>
+  <div class="ex">
+    {examples.map(p => (
+      <article class="e"><img src={A + p.img} width="800" height="800" loading="lazy" alt={p.name + ' – ' + p.desc}>
+        <div class="b"><span class="k">{p.cat}</span><h3>{p.name}</h3><p class="d">{p.desc}</p><div class="p">{p.price}<small>z DDV, brez dotiska{p.print ? ' · ' + p.print : ''}</small></div></div></article>
+    ))}
+  </div>
+  <p class="note">Promo paketi s potiskom: {d.packages.map(k => k.name + ' ' + k.price).join(' · ')} (z DDV; priprave za tisk ne zaračunamo).</p>
+</div></section>
+
+<section class="white" id="tisk"><div class="wrap">
+  <div class="sh"><span class="lbl">Dotisk</span><h2 style="margin-top:8px">Tehnike dotiska v lastni delavnici</h2><p>Glede na izdelek svetujemo tudi sitotisk, tampotisk, preslikač ali vezenje.</p></div>
+  <div class="tech">{d.techniques.map(t => <div class="t"><img src={A + t.img} width="1400" height="933" loading="lazy" alt={t.title}><div class="b"><h3>{t.name}</h3><p>{t.desc}</p><div class="f">{t.for}</div>{t.note && <div class="f">{t.note}</div>}</div></div>)}</div>
+</div></section>
+
+<section id="katalogi"><div class="wrap">
+  <div class="sh"><span class="lbl">Katalogi</span><h2 style="margin-top:8px">Katalogi 2026/2027 (PDF)</h2><p>Cene, dobavljivost in možnosti dodelave za izdelke iz katalogov preverimo ob povpraševanju.</p></div>
+  <div class="cats">{d.catalogs.map(k => <a class="cat" href={k.url} target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>{k.title}</b><small>{k.meta}</small></span></a>)}</div>
+</div></section>
+
+<section class="white" id="faq"><div class="wrap">
+  <div class="sh"><span class="lbl">Pogosta vprašanja</span><h2 style="margin-top:8px">Kar nabavniki vprašajo najprej</h2></div>
+  <div class="faq">{faq.map(([q, a]) => <details><summary>{q}</summary><p>{a}</p></details>)}</div>
+</div></section>
+
+<section id="podjetje"><div class="wrap">
+  <div class="sh"><span class="lbl">Podjetje</span><h2 style="margin-top:8px">Podatki in kontakt</h2></div>
+  <div class="co">
+    <div class="card"><h3>Kontakt</h3><ul>
+      <li><a href={c.phoneHref}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>{c.phone}</a></li>
+      <li><a href={'mailto:' + c.email}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>{c.email}</a></li>
+      <li><a href="https://www.google.com/maps/search/?api=1&query=Podbev%C5%A1kova+ulica+15%2C+8000+Novo+mesto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Showroom: {c.showroom}</a></li>
+    </ul></div>
+    <div class="card"><h3>{c.name}</h3><dl><dt>Naslov</dt><dd>{c.street}, {c.city}</dd><dt>Matična št.</dt><dd>{c.maticna}</dd><dt>ID za DDV</dt><dd>{c.ddv}</dd><dt>Spletna trgovina</dt><dd><a href={c.site + '/trgovina/'} target="_blank" rel="noopener" style="color:var(--navy)">promo-tek.si/trgovina</a></dd></dl></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© {c.name} · {c.street}, {c.city}</span>
+  <span><a href={c.phoneHref}>{c.phone}</a> · <a href={'mailto:' + c.email}>{c.email}</a></span>
+  <strong>{d.footerLine}</strong>
+</div></footer>
+
+<div class="mbar"><a class="btn o" href={c.phoneHref}>Pokliči {c.phone}</a><a class="btn p" href="#ponudba">Hitra ponudba</a></div>
+
+<script is:inline>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('mnav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  var f=document.getElementById('qq');
+  f.addEventListener('submit',function(e){e.preventDefault();var v=function(k){return (f.elements[k]&&f.elements[k].value||'').trim()};
+    var body='Pozdravljeni,\n\nprosim za ponudbo.\n\nPotrebujemo: '+v('kaj')+'\nKoličina: '+v('kolicina')+'\nŽeleni rok: '+v('rok')+'\n\nOpombe:\n'+v('opombe')+'\n\nPodjetje: '+v('podjetje')+'\nKontakt: '+v('ime')+', '+v('email')+(v('telefon')?', '+v('telefon'):'')+'\n\nLogotip prilagam v tej e-pošti.\n';
+    window.location.href='mailto:info@promo-tek.si?subject='+encodeURIComponent('Hitra ponudba – promo-tek.si')+'&body='+encodeURIComponent(body);});
+})();
+</script>
+</body>
+</html>

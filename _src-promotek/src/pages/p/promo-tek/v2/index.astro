@@ -1,0 +1,303 @@
+---
+// PROMO-TEK – predlog 2: drzna zgodba tiskarskega studia (»Vaš logotip na …«), temna podlaga,
+// velik naslov z vrtečo besedo, postopek tiska v štirih korakih, vodoravni trak izdelkov, »brief« obrazec.
+// Vsi podatki iz src/data/promo-tek.json (prebrani s promo-tek.si 2026-11-27); fotografije so njihove.
+import d from '../../../../data/promo-tek.json';
+const A = '../assets/';
+const c = d.company;
+const words = ['majici', 'steklenici', 'svinčniku', 'nahrbtniku', 'delovni jakni', 'koledarju', 'termo lončku'];
+const strip = d.products.filter(p => ['MASTER MEN','ADA','2001','Poslovni nahrbtnik Maren','FORCE JACKET','NAMIZNI LEŽEČI KOLEDAR FIX','Termo lonček Liran','ABSOLUT HOODY','Brezžični zvočnik OPERA','Svinčnik v etuiju Tarel','BERN','ART'].includes(p.name));
+const steps = [
+  { n: '01', t: 'Brief', p: 'Povejte, kateri izdelki, koliko kosov in do kdaj. Priložite logotip (PDF, PNG, JPG do 10 MB).' },
+  { n: '02', t: 'Grafična priprava', p: 'Logotip postavimo na izdelek in izberemo tehniko glede na material: DTF, UV, sitotisk, tampotisk, vezenje ali laser.' },
+  { n: '03', t: 'Ponudba', p: 'Cene, dobavljivost in možnosti dodelave preverimo ob povpraševanju. Za naročilo z dodelavo priporočamo plačilo po predračunu.' },
+  { n: '04', t: 'Tisk in dobava', p: 'Nepotiskani izdelki v 7–14 dneh od potrditve naročila, z dotiskom po dogovoru. Veliko materiala imamo na zalogi.' },
+];
+---
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PROMO-TEK – Vaš logotip na vsem | Predlog 2</title>
+<meta name="description" content="Tiskarski studio v Novem mestu: DTF, UV in širokoformatni tisk, lasersko graviranje. Vaš logotip na majicah, steklenicah, pisalih in delovnih oblačilih. Predogled prenove.">
+<meta name="robots" content="noindex">
+<link rel="icon" href={A + 'logo-cut.png'}>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style is:global>
+:root{--bg:#07111f;--bg2:#0d1b31;--card:#122444;--blue:#2aa3ff;--blue2:#7cc6ff;--ink:#f3f7fc;--mute:#a7b6cc;--line:rgba(255,255,255,.12);--gut:16px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.55;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:Syne,'DM Sans',sans-serif;font-weight:800;line-height:1;letter-spacing:-.025em}
+h1{font-size:clamp(2.6rem,9vw,6.4rem)}
+h2{font-size:clamp(2rem,5.5vw,3.8rem)}
+h3{font-size:1.2rem;letter-spacing:-.01em}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right))}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;letter-spacing:.01em;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.98)}
+.btn.p{background:var(--blue);color:#04101f}.btn.p:hover{background:var(--blue2)}
+.btn.g{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}.btn.g:hover{border-color:#fff}
+.btn.w{background:#fff;color:#04101f}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(7,17,31,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:12px}
+.logo{background:#fff;border-radius:10px;padding:7px 10px;display:inline-flex;min-height:44px;align-items:center}
+.logo img{height:30px;width:auto}
+.desk{display:none;gap:4px}
+.desk a{text-decoration:none;font-weight:500;padding:10px 14px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px;color:var(--mute)}
+.desk a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.hr{display:flex;gap:8px;align-items:center}
+.hr .call{display:none}
+@media (min-width:1024px){.desk{display:flex}.hr .call{display:inline-flex}.burger{display:none!important}}
+.burger{width:44px;height:44px;border-radius:999px;border:1.5px solid rgba(255,255,255,.35);background:none;color:#fff;cursor:pointer;display:grid;place-items:center}
+nav.m{display:none;border-top:1px solid var(--line)}
+nav.m.open{display:block}
+nav.m ul{list-style:none;margin:0;padding:8px 0}
+nav.m a{display:flex;align-items:center;min-height:48px;padding:0 var(--gut);text-decoration:none;font-weight:500}
+@media (min-width:1024px){nav.m{display:none!important}}
+/* hero */
+.hero{position:relative;padding:56px 0 40px;overflow:hidden}
+.hero .wrap{display:grid;gap:28px}
+@media (min-width:960px){.hero{padding:88px 0 72px}.hero .wrap{grid-template-columns:1.25fr 1fr;align-items:center;gap:40px}}
+.hero h1 .w{display:block;color:var(--blue);min-height:1em;position:relative}
+.hero h1 .w span{position:absolute;left:0;top:0;opacity:0;animation:rot 14s infinite}
+.hero h1 .w span:nth-child(1){animation-delay:0s}.hero h1 .w span:nth-child(2){animation-delay:2s}.hero h1 .w span:nth-child(3){animation-delay:4s}.hero h1 .w span:nth-child(4){animation-delay:6s}.hero h1 .w span:nth-child(5){animation-delay:8s}.hero h1 .w span:nth-child(6){animation-delay:10s}.hero h1 .w span:nth-child(7){animation-delay:12s}
+@keyframes rot{0%{opacity:0;transform:translateY(.3em)}3%{opacity:1;transform:none}13%{opacity:1}16%{opacity:0;transform:translateY(-.3em)}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.hero h1 .w span{position:static;opacity:1;display:none}.hero h1 .w span:first-child{display:inline}}
+.hero .lead{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--mute);max-width:52ch;margin-top:18px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.hero .meta span{font-size:13px;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+.collage{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-items:end}
+.collage img{border-radius:18px;background:#fff;aspect-ratio:1;object-fit:contain;padding:8%;width:100%}
+.collage img:nth-child(2){transform:translateY(-24px)}
+.collage .tag{position:absolute;left:8px;bottom:-14px;background:var(--blue);color:#04101f;font-weight:700;font-size:13px;border-radius:999px;padding:8px 14px}
+/* marquee */
+.mq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:14px 0;background:var(--bg2)}
+.mq .t{display:flex;gap:40px;white-space:nowrap;width:max-content;animation:mq 50s linear infinite;font-family:Syne,sans-serif;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.mq .t span::before{content:"●";color:var(--blue);margin-right:16px;font-size:10px;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mq .t{animation:none;white-space:normal;width:auto;flex-wrap:wrap;gap:12px 28px;padding:0 var(--gut)}}
+/* process */
+section{padding:56px 0}
+@media (min-width:960px){section{padding:96px 0}}
+.sh{max-width:30ch;margin-bottom:34px}
+.sh p{color:var(--mute);margin-top:14px;max-width:52ch;font-size:1.05rem}
+.proc{display:grid;gap:40px}
+.pr{display:grid;gap:18px}
+@media (min-width:860px){.pr{grid-template-columns:1fr 1fr;align-items:center;gap:48px}.pr:nth-child(even) .ph{order:2}}
+.pr .ph{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:3/2}
+.pr .ph img{width:100%;height:100%;object-fit:cover}
+.pr .num{font-family:Syne,sans-serif;font-weight:800;font-size:clamp(3.5rem,9vw,6.5rem);line-height:.9;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.35);margin-bottom:8px}
+.pr h3{font-size:clamp(1.6rem,3.5vw,2.4rem)}
+.pr p{color:var(--mute);margin-top:12px;max-width:48ch}
+.pr .for{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.pr .for span{font-size:13px;border-radius:999px;background:var(--card);padding:7px 12px}
+.pr .note{margin-top:14px;color:var(--blue2);font-weight:700}
+.more{margin-top:30px;color:var(--mute);font-size:15px}
+.more b{color:#fff}
+/* strip */
+.strip-sec{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip-sec .sh{display:flex;justify-content:space-between;align-items:end;max-width:none;gap:16px;flex-wrap:wrap}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gut) 18px;margin:0 calc(-1*var(--gut));-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.strip::-webkit-scrollbar{height:6px}.strip::-webkit-scrollbar-thumb{background:var(--card);border-radius:3px}
+.sc{flex:0 0 72%;max-width:300px;scroll-snap-align:start;background:var(--card);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+@media (min-width:640px){.sc{flex-basis:260px}}
+.sc img{aspect-ratio:1;object-fit:contain;background:#fff;padding:10px;width:100%}
+.sc .b{padding:14px 14px 16px;display:grid;gap:4px;flex:1}
+.sc .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue2);font-weight:700}
+.sc h3{font-size:1rem}
+.sc .d{font-size:13px;color:var(--mute)}
+.sc .p{margin-top:auto;padding-top:8px;font-family:Syne,sans-serif;font-weight:800;font-size:1.25rem}
+.sc .p small{display:block;font-family:'DM Sans',sans-serif;font-size:11px;color:var(--mute);font-weight:400}
+.sc .t{font-size:12px;color:var(--mute)}
+/* steps */
+.steps{display:grid;gap:14px}
+@media (min-width:860px){.steps{grid-template-columns:repeat(4,1fr)}}
+.st{border:1px solid var(--line);border-radius:18px;padding:22px 20px;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)}
+.st .n{font-family:Syne,sans-serif;font-weight:800;color:var(--blue);font-size:14px;letter-spacing:.1em}
+.st h3{margin-top:10px}
+.st p{color:var(--mute);font-size:14px;margin-top:8px}
+/* packs */
+.packs{display:grid;gap:12px}
+@media (min-width:860px){.packs{grid-template-columns:repeat(3,1fr);gap:16px}}
+.pk{background:#fff;color:#07111f;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:120px 1fr;align-items:center;gap:10px;padding:12px}
+@media (min-width:860px){.pk{grid-template-columns:1fr;padding:0}.pk img{aspect-ratio:4/3}}
+.pk img{object-fit:contain;background:#f3f6fa;border-radius:14px;aspect-ratio:1;width:100%}
+.pk .b{padding:8px 10px 10px}
+@media (min-width:860px){.pk .b{padding:18px 20px 22px}}
+.pk h3{font-size:1.3rem}
+.pk p{font-size:14px;color:#4a5568;margin-top:4px}
+.pk .pz{font-family:Syne,sans-serif;font-weight:800;font-size:1.4rem;margin-top:8px}
+.pk .pz small{display:block;font-family:'DM Sans',sans-serif;font-size:12px;color:#4a5568;font-weight:400}
+/* brief form */
+.brief{background:#fff;color:#07111f}
+.brief .eyebrow{color:#0f74c4}
+.brief .grid{display:grid;gap:28px}
+@media (min-width:960px){.brief .grid{grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}}
+.brief .sh p{color:#4a5568}
+.brief .lines{display:grid;gap:8px;margin-top:22px}
+.brief .lines a{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font-weight:700;color:#07111f}
+.brief .lines svg{width:20px;height:20px;color:#0f74c4}
+.brief .lines small{display:block;font-weight:400;color:#4a5568}
+form.b{display:grid;gap:14px;background:#f3f6fa;border-radius:22px;padding:18px}
+@media (min-width:640px){form.b{padding:26px;grid-template-columns:1fr 1fr}form.b .full{grid-column:1/-1}}
+form.b label{display:grid;gap:6px;font-size:13px;font-weight:700;color:#334155}
+form.b input,form.b textarea{font:inherit;font-size:16px;min-height:48px;padding:10px 14px;border:1.5px solid #d6dee9;border-radius:12px;width:100%;background:#fff;color:#07111f}
+form.b textarea{min-height:120px;resize:vertical}
+form.b input:focus,form.b textarea:focus{outline:2px solid #2aa3ff;outline-offset:1px;border-color:#2aa3ff}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;display:inline-flex}
+form.b .chips input{position:absolute;left:0;top:0;opacity:0;width:1px;height:1px;min-height:0;padding:0;border:0;margin:0;overflow:hidden;clip:rect(0 0 0 0);pointer-events:none}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid #d6dee9;background:#fff;font-size:14px;font-weight:500;cursor:pointer;user-select:none}
+.chips input:checked+span{background:#07111f;color:#fff;border-color:#07111f}
+.chips input:focus-visible+span{outline:2px solid #2aa3ff;outline-offset:2px}
+form.b .hint{font-size:12px;color:#4a5568}
+form.b .btn{width:100%}
+/* footer */
+footer{padding:40px 0 30px;border-top:1px solid var(--line);color:var(--mute);font-size:14px}
+footer .cols{display:grid;gap:22px}
+@media (min-width:860px){footer .cols{grid-template-columns:1.3fr 1fr 1fr}}
+footer h3{color:#fff;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;font-family:'DM Sans',sans-serif;font-weight:700}
+footer a{color:#fff;text-decoration:none;display:inline-flex;min-height:44px;align-items:center}
+footer ul{list-style:none;margin:0;padding:0}
+footer .bot{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:13px}
+footer .bot strong{color:#fff}
+/* mobile bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px max(12px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));background:rgba(7,17,31,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.mbar .btn{min-height:48px;font-size:15px}
+@media (min-width:860px){.mbar{display:none}}
+body{padding-bottom:76px}@media (min-width:860px){body{padding-bottom:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#" aria-label="PROMO-TEK, domov"><img src={A + 'logo.png'} width="640" height="202" alt="PROMO-TEK – Boost your promotion"></a>
+    <nav class="desk" aria-label="Glavni meni"><a href="#tisk">Tisk</a><a href="#izdelki">Izdelki</a><a href="#postopek">Postopek</a><a href="#paketi">Paketi</a><a href="#brief">Kontakt</a></nav>
+    <div class="hr"><a class="btn g call" href={c.phoneHref}>{c.phone}</a><a class="btn p" href="#brief">Pošlji brief</a><button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Meni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+  </div>
+  <nav class="m" id="mnav" aria-label="Mobilni meni"><ul><li><a href="#tisk">Tisk</a></li><li><a href="#izdelki">Izdelki</a></li><li><a href="#postopek">Postopek</a></li><li><a href="#paketi">Promo paketi</a></li><li><a href="#brief">Kontakt in brief</a></li><li><a href={c.phoneHref}>Pokliči {c.phone}</a></li></ul></nav>
+</header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Tiskarski studio · Novo mesto</span>
+    <h1 style="margin-top:14px">Vaš logotip na <span class="w" aria-label={words.join(', ')}>{words.map(w => <span>{w}.</span>)}</span></h1>
+    <p class="lead">DTF, UV in širokoformatni tisk ter lasersko graviranje v lastni delavnici. Približno 1.500 izdelkov v 13 kategorijah – od majice za 2,66 € do poslovnega nahrbtnika.</p>
+    <div class="cta"><a class="btn p" href="#brief">Pošlji brief za ponudbo</a><a class="btn g" href="#tisk">Kako tiskamo</a></div>
+    <div class="meta"><span>Grafična priprava v hiši</span><span>Veliko izdelkov na zalogi</span><span>Showroom: {c.showroom}</span></div>
+  </div>
+  <div class="collage">
+    <img src={A + 'master-men.webp'} width="800" height="800" alt="MASTER MEN – bombažna majica 150 g/m²">
+    <img src={A + 'ada.webp'} width="800" height="800" alt="ADA – steklenica za vodo 500 ml">
+    <img src={A + 'maren.webp'} width="800" height="800" alt="Poslovni nahrbtnik Maren">
+    <span class="tag">Vse z vašim logotipom</span>
+  </div>
+</div></div>
+
+<div class="mq" aria-hidden="true"><div class="t">
+  {[...d.categories, ...d.categories].map(k => <span>{k.name} · {k.count}</span>)}
+</div></div>
+
+<section id="tisk"><div class="wrap">
+  <div class="sh"><span class="eyebrow">Tehnike</span><h2 style="margin-top:10px">Štiri načine tiska imamo pod eno streho.</h2><p>Katera tehnika je prava, odloči material in oblika izdelka. Svetujemo, pripravimo grafiko in izvedemo.</p></div>
+  <div class="proc">
+    {d.techniques.map((t, i) => (
+      <div class="pr">
+        <div class="ph"><img src={A + t.img} width="1400" height="933" loading={i ? 'lazy' : 'eager'} alt={t.title}></div>
+        <div><div class="num">0{i + 1}</div><h3>{t.title}</h3><p>{t.desc}</p><div class="for">{t.for.split(', ').map(f => <span>{f}</span>)}</div>{t.note && <div class="note">{t.note}</div>}</div>
+      </div>
+    ))}
+  </div>
+  <p class="more">Po potrebi tudi <b>sitotisk</b>, <b>tampotisk</b>, <b>preslikač</b> in <b>vezenje</b> – priporočilo je zapisano pri vsakem izdelku v trgovini.</p>
+</div></section>
+
+<section class="strip-sec" id="izdelki"><div class="wrap">
+  <div class="sh"><div><span class="eyebrow">Kaj tiskamo</span><h2 style="margin-top:10px">Izdelki in cene.</h2></div><a class="btn g" href={c.site + '/trgovina/'} target="_blank" rel="noopener">Celotna trgovina</a></div>
+  <div class="strip" tabindex="0" aria-label="Izbor izdelkov, pomikajte vodoravno">
+    {strip.map(p => (
+      <article class="sc"><img src={A + p.img} width="800" height="800" loading="lazy" alt={p.name + ' – ' + p.desc}>
+        <div class="b"><span class="k">{p.cat}</span><h3>{p.name}</h3><p class="d">{p.desc}</p>{p.print && <p class="t">Tisk: {p.print}</p>}<div class="p">{p.price}<small>z DDV, brez dotiska</small></div></div></article>
+    ))}
+  </div>
+  <p class="more" style="margin-top:8px">Cene so objavljene cene nepotiskanih izdelkov v trgovini. Cene, dobavljivost in dodelavo preverimo ob povpraševanju.</p>
+</div></section>
+
+<section id="postopek"><div class="wrap">
+  <div class="sh"><span class="eyebrow">Postopek</span><h2 style="margin-top:10px">Od briefa do škatle.</h2></div>
+  <div class="steps">{steps.map(s => <div class="st"><div class="n">{s.n}</div><h3>{s.t}</h3><p>{s.p}</p></div>)}</div>
+</div></section>
+
+<section id="paketi" style="padding-top:0"><div class="wrap">
+  <div class="sh"><span class="eyebrow">Hitra odločitev</span><h2 style="margin-top:10px">Promo paketi.</h2><p>Trije pripravljeni kompleti s potiskom vašega logotipa. Priprave za tisk pri paketih ne zaračunamo.</p></div>
+  <div class="packs">
+    {d.packages.map(k => (
+      <div class="pk"><img src={A + k.img} width="800" height="800" loading="lazy" alt={'Paket ' + k.name}><div class="b"><h3>{k.name}</h3><p>{k.contents}</p><div class="pz">{k.price}<small>z DDV · priprava za tisk vključena</small></div></div></div>
+    ))}
+  </div>
+</div></section>
+
+<section class="brief" id="brief"><div class="wrap grid">
+  <div>
+    <div class="sh"><span class="eyebrow">Brief</span><h2 style="margin-top:10px">Povejte nam, kaj naj potiskamo.</h2><p>Obrazec sestavi e-pošto na {c.email} in jo odpre v vašem programu – logotip priložite tam. Odgovorimo s ponudbo.</p></div>
+    <div class="lines">
+      <a href={c.phoneHref}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>{c.phone}<small>Pokličite, hitreje se dogovorimo.</small></span></a>
+      <a href={'mailto:' + c.email}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>{c.email}<small>Logotip: PDF, PNG ali JPG do 10 MB.</small></span></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Podbev%C5%A1kova+ulica+15%2C+8000+Novo+mesto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span>{c.showroom}<small>Showroom – izdelke si lahko ogledate v živo.</small></span></a>
+    </div>
+  </div>
+  <form class="b" id="bf" action={'mailto:' + c.email} method="post" enctype="text/plain">
+    <div class="full"><div style="font-size:13px;font-weight:700;color:#334155;margin-bottom:8px">Kaj potiskamo?</div><div class="chips">
+      {['Tekstil', 'Delovna oblačila', 'Pisala', 'Steklenice in lončki', 'Torbe in nahrbtniki', 'Pisarna', 'Tehnologija', 'Koledarji', 'Promo paket', 'Sejemska oprema'].map(x => <label><input type="checkbox" name="izdelki" value={x}><span>{x}</span></label>)}
+    </div></div>
+    <div class="full"><div style="font-size:13px;font-weight:700;color:#334155;margin-bottom:8px">Želena tehnika (če veste)</div><div class="chips">
+      {['DTF tisk', 'UV tisk', 'Širokoformatni tisk', 'Lasersko graviranje', 'Vezenje', 'Sitotisk', 'Svetujte vi'].map(x => <label><input type="checkbox" name="tehnika" value={x}><span>{x}</span></label>)}
+    </div></div>
+    <label>Količina<input name="kolicina" inputmode="numeric" placeholder="npr. 200 kosov" required></label>
+    <label>Rok<input name="rok" placeholder="npr. do konca meseca"></label>
+    <label>Podjetje<input name="podjetje" autocomplete="organization" required></label>
+    <label>Ime in priimek<input name="ime" autocomplete="name" required></label>
+    <label>E-pošta<input type="email" name="email" autocomplete="email" required></label>
+    <label>Telefon<input type="tel" name="telefon" autocomplete="tel"></label>
+    <label class="full">Opis (izdelki, barve, mesto tiska, število barv logotipa)<textarea name="opis"></textarea></label>
+    <div class="full hint">Nič se ne pošlje samodejno – odpre se vaša e-pošta s pripravljenim besedilom. Logotip priložite tam.</div>
+    <button class="btn p full" type="submit">Sestavi e-pošto z briefom</button>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><a class="logo" href="#" style="margin-bottom:12px"><img src={A + 'logo.png'} width="640" height="202" alt="PROMO-TEK" loading="lazy"></a><p>{c.name}<br>{c.street}, {c.city}<br>Matična št.: {c.maticna} · ID za DDV: {c.ddv}</p></div>
+    <div><h3>Kontakt</h3><ul><li><a href={c.phoneHref}>{c.phone}</a></li><li><a href={'mailto:' + c.email}>{c.email}</a></li><li><a href={c.site + '/katalogi/'} target="_blank" rel="noopener">Katalogi (PDF)</a></li></ul></div>
+    <div><h3>Pogoji</h3><ul><li>Cene z DDV, brez dotiska</li><li>Nepotiskano: 7–14 dni od potrditve</li><li>Z dodelavo: plačilo po predračunu</li></ul></div>
+  </div>
+  <div class="bot"><span>© {c.name}</span><span><strong>{d.footerLine}</strong></span></div>
+</div></footer>
+
+<div class="mbar"><a class="btn g" href={c.phoneHref} style="background:var(--card)">Pokliči {c.phone}</a><a class="btn p" href="#brief">Pošlji brief</a></div>
+
+<script is:inline>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('mnav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  var f=document.getElementById('bf');
+  f.addEventListener('submit',function(e){e.preventDefault();
+    var v=function(k){return (f.elements[k]&&f.elements[k].value||'').trim()};
+    var checked=function(k){return [].filter.call(f.querySelectorAll('input[name="'+k+'"]'),function(i){return i.checked}).map(function(i){return i.value})};
+    var body='Pozdravljeni,\n\nprosim za ponudbo.\n\nIzdelki: '+(checked('izdelki').join(', ')||'(glej opis)')+'\nTehnika: '+(checked('tehnika').join(', ')||'svetujte vi')+'\nKoličina: '+v('kolicina')+'\nRok: '+v('rok')+'\n\nOpis:\n'+v('opis')+'\n\nPodjetje: '+v('podjetje')+'\nKontakt: '+v('ime')+', '+v('email')+(v('telefon')?', '+v('telefon'):'')+'\n\nLogotip prilagam v tej e-pošti.\n';
+    window.location.href='mailto:info@promo-tek.si?subject='+encodeURIComponent('Brief za ponudbo – promo-tek.si')+'&body='+encodeURIComponent(body);});
+})();
+</script>
+</body>
+</html>

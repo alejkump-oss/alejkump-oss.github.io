@@ -1,0 +1,99 @@
+{
+  "_source": "Every value below was read from promo-tek.si on 2026-11-27 (home, /trgovina/, /tisk/, /kontakt/, /o-nas/, /katalogi/, /posebna-ponudba/, /novice/, /pravilnik-o-zasebnosti, category and product pages). Nothing is invented. Prices are 'z DDV' as shown in the shop on that day.",
+  "company": {
+    "name": "PROMO-TEK d.o.o.",
+    "brand": "PROMO-TEK",
+    "claim": "Boost your promotion",
+    "tagline": "PROMOCIJSKI IZDELKI • TEKSTIL • DELOVNA ZAŠČITA • TISK",
+    "street": "Podbevškova ulica 15",
+    "city": "8000 Novo mesto",
+    "phone": "031 321 937",
+    "phoneHref": "tel:+38631321937",
+    "email": "info@promo-tek.si",
+    "maticna": "9492925000",
+    "ddv": "SI11231181",
+    "site": "https://promo-tek.si",
+    "showroom": "Podbevškova ulica 15, 8000 Novo mesto"
+  },
+  "about": {
+    "headline": "Usklajena ekipa. Premišljene rešitve. Prepoznavna promocija.",
+    "line": "Z veseljem ustvarjamo za vašo prepoznavnost.",
+    "detail": "Pri načrtovanju vaše promocije poskrbimo za vsako podrobnost – od izbire izdelkov do končne izvedbe.",
+    "stock": "Veliko promocijskega materiala imamo na zalogi."
+  },
+  "terms": {
+    "delivery": "Rok dobave za nepotiskane izdelke je od 7 do 14 dni od potrditve naročila; za izdelke z dotiskom po dogovoru ob potrditvi naročila.",
+    "payment": "Za naročilo z dodelavo priporočamo plačilo po predračunu.",
+    "quote": "Cene, dobavljivost in možnosti dodelave preverimo ob povpraševanju.",
+    "packagesPrep": "Pri promo paketih priprave za tisk ne zaračunamo.",
+    "logoFile": "Logotip priložite kot PDF, PNG ali JPG (do 10 MB).",
+    "askFor": "V povpraševanju navedite želene izdelke, količine in roke."
+  },
+  "techniques": [
+    { "id": "dtf", "name": "DTF tisk", "title": "DTF tisk na majice in tekstil", "desc": "Z DTF tehnologijo motive najprej natisnemo na posebno folijo, nato pa jih s toplotno prešo prenesemo na tekstil.", "for": "Majice, puloverji, jakne, torbe, delovna oblačila", "img": "proc-dtf.webp", "note": "DTF preslikači od 14,90 €/tekoči meter" },
+    { "id": "uv", "name": "UV tisk", "title": "UV tisk na promocijske izdelke", "desc": "Pri UV tisku barvo nanašamo neposredno na površino izdelka in jo sproti utrjujemo z UV svetlobo.", "for": "Pisala, vžigalniki, beležke, pleksi, trdi materiali", "img": "proc-uv.webp", "note": "" },
+    { "id": "eko", "name": "Širokoformatni tisk", "title": "Ekosolventni širokoformatni tisk", "desc": "Za večje promocijske površine za notranjo in zunanjo uporabo – od priprave grafike do tiska in dodelave.", "for": "Cerade, roll-up stojala, plakati, nalepke, sejemska oprema", "img": "proc-formats.webp", "note": "" },
+    { "id": "laser", "name": "Lasersko graviranje", "title": "Lasersko graviranje", "desc": "Z laserskim žarkom v površino izdelka vgraviramo logotip, napis ali motiv. Natančna in trajna oznaka brez barve.", "for": "Kovina, les, steklo, usnje", "img": "proc-laser.webp", "note": "" }
+  ],
+  "otherTechniques": ["sitotisk", "preslikač", "tampotisk", "vezenje", "digitalni tisk", "grafično oblikovanje"],
+  "categories": [
+    { "name": "Tekstil", "count": 337, "slug": "tekstil", "img": "master-men.webp", "sub": "Majice, polo majice, puloverji, jakne, kape" },
+    { "name": "Dom", "count": 293, "slug": "dom", "img": "ada.webp", "sub": "Steklenice, termovke, skodelice, kuhinjski pripomočki, vžigalniki" },
+    { "name": "Pisarna", "count": 210, "slug": "pisarna", "img": "art-notesnik.webp", "sub": "Notesniki in rokovniki, pisarniški pripomočki, darilne škatle, ure" },
+    { "name": "Torbe & Potovanje", "count": 202, "slug": "torbe-potovanje", "img": "maren.webp", "sub": "Nahrbtniki, torbe, vrečke, dežniki, potovalni program" },
+    { "name": "Tehnologija", "count": 145, "slug": "tehnologija", "img": "opera.webp", "sub": "Audio oprema, prenosne baterije, USB kabli, pametne ure" },
+    { "name": "Pisala", "count": 129, "slug": "pisala", "img": "pen-2001.webp", "sub": "Plastična, kovinska in lesena pisala, kompleti" },
+    { "name": "Obeski & Orodje", "count": 112, "slug": "obeski-orodje", "img": "tarel.webp", "sub": "Kovinski, leseni in plastični obeski, svetilke, ročno orodje" },
+    { "name": "Delovna oblačila, obutev in oprema", "count": 37, "slug": "delovna-oblacila-obutev-in-oprema", "img": "force-jacket.webp", "sub": "Delovne hlače in jakne, zaščitna oblačila, zaščitni čevlji" },
+    { "name": "Koledarji & Planerji", "count": 26, "slug": "koledarji-planerji", "img": "koledar-soca.webp", "sub": "Namizni in stenski koledarji, dnevniki, planerji" },
+    { "name": "Konference", "count": 23, "slug": "konference", "img": "alcantara.webp", "sub": "Oprema za dogodke in konference" },
+    { "name": "Eko izdelki", "count": 13, "slug": "eko-izdelki", "img": "absolut-hoody.webp", "sub": "Izdelki iz organskih in recikliranih materialov" },
+    { "name": "Premium Line", "count": 8, "slug": "premium-line", "img": "liran.webp", "sub": "Poslovna darila višjega razreda" },
+    { "name": "Promo paketi", "count": 3, "slug": "promo-paketi", "img": "promo-go-set.webp", "sub": "Pripravljeni kompleti z vašim logotipom" }
+  ],
+  "products": [
+    { "name": "ADA", "desc": "Steklenica za vodo s silikonsko prevleko, 500 ml, borosilikatno steklo, bambusov pokrov", "price": "4,26 €", "cat": "Dom", "img": "ada.webp", "print": "lasersko graviranje", "slug": "ada" },
+    { "name": "MASTER MEN", "desc": "Bombažna majica, 150 g/m², velikosti XS–4XL, 23 barv", "price": "2,66–3,38 €", "cat": "Tekstil", "img": "master-men.webp", "print": "sitotisk, preslikač", "slug": "master-men" },
+    { "name": "ABSOLUT HOODY", "desc": "Pulover s kapuco iz organskega bombaža, 280 g/m²", "price": "28,99 €", "cat": "Tekstil", "img": "absolut-hoody.webp", "print": "sitotisk, preslikač, vezenje, digitalni tisk", "slug": "absolut-hoody" },
+    { "name": "2001", "desc": "Plastični kemični svinčnik, 8 barv", "price": "0,15 €", "cat": "Pisala", "img": "pen-2001.webp", "print": "tampotisk", "slug": "2001" },
+    { "name": "Termo lonček Liran", "desc": "Dvostenski vakuumsko izoliran lonček, 280 ml, reciklirano nerjaveče jeklo", "price": "17,93 €", "cat": "Premium Line", "img": "liran.webp", "print": "", "slug": "termo-loncek-liran" },
+    { "name": "Set Orel", "desc": "Premium Line", "price": "28,67 €", "cat": "Premium Line", "img": "set-orel.webp", "print": "", "slug": "set-orel" },
+    { "name": "Svinčnik v etuiju Tarel", "desc": "Nerjaveče jeklo, mat ohišje, etui iz PU usnja z magnetnim zapiranjem", "price": "13,05 €", "cat": "Premium Line", "img": "tarel.webp", "print": "", "slug": "svincnik-v-etuiju-tarel" },
+    { "name": "NAMIZNI LEŽEČI KOLEDAR FIX", "desc": "30 × 10,5 cm, za dotisk 30 × 3 cm, 56 listov, spiralna vezava", "price": "4,75–4,82 €", "cat": "Koledarji & Planerji", "img": "koledar-soca.webp", "print": "dotisk", "slug": "namizni-lezeci-koledar-fix" },
+    { "name": "Poslovni nahrbtnik Maren", "desc": "Oblazinjen nahrbtnik iz oxfordske tkanine 1680D, trije glavni predelki", "price": "48,19 €", "cat": "Torbe & Potovanje", "img": "maren.webp", "print": "", "slug": "nahrbtnik-maren" },
+    { "name": "Brezžični zvočnik OPERA", "desc": "Tehnologija", "price": "21,29 €", "cat": "Tehnologija", "img": "opera.webp", "print": "", "slug": "" },
+    { "name": "Brezžične slušalke SONIX AI", "desc": "Tehnologija", "price": "29,80 €", "cat": "Tehnologija", "img": "sonix.webp", "print": "", "slug": "" },
+    { "name": "BARACUDA PRO", "desc": "Tehnologija", "price": "96,86 €", "cat": "Tehnologija", "img": "baracuda-pro.webp", "print": "", "slug": "" },
+    { "name": "ADAMS", "desc": "Torbe & Potovanje", "price": "39,83 €", "cat": "Torbe & Potovanje", "img": "adams.webp", "print": "", "slug": "" },
+    { "name": "ATLAS", "desc": "Torbe & Potovanje", "price": "20,91 €", "cat": "Torbe & Potovanje", "img": "atlas.webp", "print": "", "slug": "" },
+    { "name": "BERN", "desc": "Torbe & Potovanje", "price": "41,37 €", "cat": "Torbe & Potovanje", "img": "bern.webp", "print": "", "slug": "" },
+    { "name": "ALCANTARA", "desc": "Pisarna", "price": "25,86 €", "cat": "Pisarna", "img": "alcantara.webp", "print": "", "slug": "" },
+    { "name": "ART", "desc": "Notesnik", "price": "7,54 €", "cat": "Pisarna", "img": "art-notesnik.webp", "print": "", "slug": "" },
+    { "name": "ARKON", "desc": "Pisarna", "price": "27,00 €", "cat": "Pisarna", "img": "arkon.webp", "print": "", "slug": "" },
+    { "name": "ARCTIC ONE 24", "desc": "Dom", "price": "13,76 €", "cat": "Dom", "img": "arctic-one.webp", "print": "", "slug": "" },
+    { "name": "ANTIPASTI", "desc": "Dom", "price": "21,70 €", "cat": "Dom", "img": "antipasti.webp", "print": "", "slug": "" },
+    { "name": "FORCE JACKET", "desc": "Delovna oblačila", "price": "48,63 €", "cat": "Delovna oblačila", "img": "force-jacket.webp", "print": "", "slug": "" },
+    { "name": "CRAFT JACKET", "desc": "Delovna oblačila", "price": "24,31 €", "cat": "Delovna oblačila", "img": "craft-jacket.webp", "print": "", "slug": "" },
+    { "name": "GLOW", "desc": "Delovna oblačila", "price": "2,71 €", "cat": "Delovna oblačila", "img": "glow.webp", "print": "", "slug": "" }
+  ],
+  "packages": [
+    { "name": "Promo Start", "price": "122,00 €", "contents": "100 svinčnikov + 100 vžigalnikov z vašim logotipom", "img": "promo-start.webp" },
+    { "name": "Promo Office", "price": "128,10 €", "contents": "50 mini beležk A6 + 50 kovinskih svinčnikov z vašim logotipom", "img": "promo-office.webp" },
+    { "name": "Promo Go", "price": "183,00 €", "contents": "20 stekleničk (500 ml) + 20 zložljivih dežnikov z vašim logotipom; 6 barv", "img": "promo-go-set.webp" }
+  ],
+  "catalogs": [
+    { "title": "Promocijska in poslovna darila 2026", "meta": "XD Collection · 460 strani", "url": "https://promo-tek.si/wp-content/uploads/2026/11/xd-main-2026-web.pdf" },
+    { "title": "Zimska kolekcija 2026", "meta": "XD Collection · 272 strani", "url": "https://promo-tek.si/wp-content/uploads/2026/11/xd-winter-2026-web.pdf" },
+    { "title": "Darila ob koncu leta 2026", "meta": "Essential · 190 strani", "url": "https://promo-tek.si/wp-content/uploads/2026/11/darila-ob-koncu-leta-web.pdf" },
+    { "title": "Tekstil 2026–2027", "meta": "Promocijski in delovni tekstil · 90 strani", "url": "https://promo-tek.si/wp-content/uploads/2026/11/tekstil-2026-2027-web.pdf" },
+    { "title": "Makito tekstil 2026", "meta": "Tekstilna kolekcija · 156 strani", "url": "https://promo-tek.si/wp-content/uploads/2026/11/m-collection-tekstil-web.pdf" },
+    { "title": "Promo Tek tekstil 2027", "meta": "Textile World · 460 strani", "url": "https://promo-tek.si/wp-content/uploads/2026/11/promo-tek-tekstil-2025-web.pdf" },
+    { "title": "Sixton zaščitna obutev 2026", "meta": "Sixton Peak · 60 strani", "url": "https://promo-tek.si/wp-content/uploads/2026/11/sixton-obutev-2026-web.pdf" }
+  ],
+  "news": [
+    { "title": "T-majica kot orodje brandinga – ne kot strošek", "url": "https://promo-tek.si/t-majica-kot-orodje-brandinga-ne-kot-strosek/" },
+    { "title": "UV tisk na promocijske materiale – tehnična odločitev, ne estetska.", "url": "https://promo-tek.si/uv-tisk-na-promocijske-materiale-tehnicna-odlocitev-ne-estetska/" },
+    { "title": "V Promo-Teku te celostno opremimo za sejem", "url": "https://promo-tek.si/v-promo-teku-te-celostno-opremimo-za-sejem/" }
+  ],
+  "footerLine": "Predogled: AK agencija – predlog prenove"
+}
