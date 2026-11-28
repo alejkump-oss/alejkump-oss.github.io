@@ -1,0 +1,778 @@
+---
+// Strato Apartment – predlog 8
+// Built on the design template the owner sent ("travel-booking-v1"): peach palette, Gilda Display + Urbanist
+// (embedded woff2 in ../assets/strato-v8-fonts.css), 3-slide hero with a mask/mist wipe and Ken Burns, gradient
+// uppercase titles rising word by word, a right rail of round thumbnails on rings with a caption bar, drifting
+// clouds (local ../assets/strato-clouds.webp), a white booking bar with calendar and guests popovers, a card grid
+// with scroll reveal, a full-screen detail page with a shared-element "fly" animation, a custom cursor on fine
+// pointers only, scroll parallax and a nav that turns solid. Every fact and every review comes from strato.json.
+import d from '../../../../data/strato.json';
+const f = d.facts_sl, e = d.facts_en;
+const t = (sl, en) => `<span data-lang="sl">${sl}</span><span data-lang="en">${en}</span>`;
+const todo = d.things_to_do_from_hosts_folio_guide;
+const reviews = d.ratings.reviews;
+const split = (s) => s.split(' / ');
+// Ratings: the short part of the JSON strings ("9,9 / 10 (10 ocen)" / "5,0 / 5 (9 ocen)"), EN with a dot and "reviews".
+const bk = d.ratings.booking.split(' – ')[0].trim();
+const ab = d.ratings.airbnb.split(' – ')[0].trim();
+const enNum = (s) => s.replace(',', '.').replace('ocen', 'reviews');
+const bkEn = enNum(bk), abEn = enNum(ab);
+
+const rooms = [
+  { id: 'dnevna', img: ['01', '02', '03', '04', '05'], sl: 'Dnevna soba', en: 'Living room', csl: 'klavir · kitara · TV', cen: 'piano · guitar · TV', ssl: 'Neposreden izhod na teraso', sen: 'Direct access to the terrace', tsl: f.living, ten: e.living },
+  { id: 'kuhinja', img: ['09', '06', '07', '08'], sl: 'Kuhinja in jedilnica', en: 'Kitchen and dining', csl: 'popolnoma opremljena', cen: 'fully equipped', ssl: 'Indukcija, pečica, pomivalni stroj', sen: 'Induction hob, oven, dishwasher', tsl: f.kitchen, ten: e.kitchen },
+  { id: 'velika', img: ['11', '10', '12', '13'], sl: 'Velika spalnica', en: 'Large bedroom', csl: 'velika zakonska postelja', cen: 'king-size bed', ssl: 'Multimedija, knjige, ambientna luč', sen: 'Media, books, ambient lighting', tsl: f.bedroom1, ten: e.bedroom1 },
+  { id: 'manjsa', img: ['14', '15'], sl: 'Manjša spalnica', en: 'Second bedroom', csl: 'TV · Xbox', cen: 'TV · Xbox', ssl: 'Zakonska postelja, dve sedalni vreči', sen: 'Double bed, two bean bags', tsl: f.bedroom2, ten: e.bedroom2 },
+  { id: 'terasa', img: [], sl: 'Terasa in vrt', en: 'Terrace and garden', csl: 'senčnik · žar', cen: 'sunshade · barbecue', ssl: 'Brez fotografije', sen: 'No photo', tsl: f.outdoor, ten: e.outdoor },
+  { id: 'kopalnica', img: [], sl: 'Kopalnica', en: 'Bathroom', csl: 'tuš · pralni stroj', cen: 'shower · washing machine', ssl: 'Brez fotografije', sen: 'No photo', tsl: f.bathroom, ten: e.bathroom },
+];
+const slides = [
+  { img: '01', pos: 'center 62%', tsl: ['DOBRODOŠLI', 'V KOČEVJU'], ten: ['WELCOME TO', 'KOČEVJE'], thumb: 2,
+    hsl: 'Strato Apartment', hen: 'Strato Apartment',
+    psl: `${f.size}, ${f.guests}, ${f.renovated.charAt(0).toLowerCase()}${f.renovated.slice(1)}.`,
+    pen: `${e.size}, ${e.guests}, ${e.renovated.charAt(0).toLowerCase()}${e.renovated.slice(1)}.` },
+  { img: '02', pos: 'center 55%', tsl: ['VAŠ DOM', 'OB JEZERU'], ten: ['YOUR HOME', 'BY THE LAKE'], thumb: 1,
+    hsl: '270 m do jezera', hen: '270 m to the lake',
+    psl: `${f.lake}, ${f.center}.`, pen: `${e.lake}, ${e.center}.` },
+  { img: '09', pos: 'center 50%', tsl: ['RAZIŠČITE', 'KOČEVSKO'], ten: ['EXPLORE', 'KOČEVSKO'], thumb: 0,
+    hsl: 'Kaj početi v okolici', hen: 'Things to do nearby',
+    psl: todo.map((x) => x.sl).join(', ') + '.', pen: todo.map((x) => x.en).join(', ') + '.' },
+];
+const am = [
+  { sl: 'Brezplačen WiFi', en: 'Free WiFi', i: '<path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r=".8"/>' },
+  { sl: 'Zasebno parkirišče', en: 'Private parking', i: '<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>' },
+  { sl: 'Toplotna črpalka in klima', en: 'Heat pump and AC', i: '<rect x="3" y="5" width="18" height="9" rx="2"/><path d="M7 17l-1 3M12 17v4M17 17l1 3M7 10.5h10"/>' },
+  { sl: 'Pralni stroj', en: 'Washing machine', i: '<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="13.5" r="4.5"/><path d="M7 6.5h2M11 6.5h2"/>' },
+  { sl: 'Otroška posteljica', en: 'Baby cot', i: '<rect x="3" y="8" width="18" height="10" rx="1.5"/><path d="M7.5 8v10M12 8v10M16.5 8v10M4 21v-3M20 21v-3"/>' },
+  { sl: 'Xbox', en: 'Xbox', i: '<path d="M7 8h10a4 4 0 0 1 4 4v2a3 3 0 0 1-5.4 1.8L14.5 14h-5l-1.1 1.8A3 3 0 0 1 3 14v-2a4 4 0 0 1 4-4z"/><path d="M8 10.5v3M6.5 12h3M16 11.5h.01M18 13h.01"/>' },
+  { sl: 'Klavir', en: 'Piano', i: '<rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3 13h18M7.5 13V5M12 13V5M16.5 13V5"/>' },
+];
+const S = {
+  sl: { addDate: 'Izberite datum', adults: 'Odrasli', adultsSub: '13 let in več', children: 'Otroci', childrenSub: '2–12 let', maxNote: 'Največ 5 oseb', close: 'Zapri',
+    months: ['januar', 'februar', 'marec', 'april', 'maj', 'junij', 'julij', 'avgust', 'september', 'oktober', 'november', 'december'], days: ['po', 'to', 'sr', 'če', 'pe', 'so', 'ne'],
+    pick: 'Vaš izbor', subj: 'Povpraševanje Strato Apartment', title: 'Strato Apartment · Kočevje' },
+  en: { addDate: 'Add date', adults: 'Adults', adultsSub: 'Ages 13+', children: 'Children', childrenSub: 'Ages 2–12', maxNote: 'Max. 5 guests', close: 'Close',
+    months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], days: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+    pick: 'Your selection', subj: 'Enquiry Strato Apartment', title: 'Strato Apartment · Kočevje' },
+};
+const P = { A: '../assets/', slides, thumbs: ['03', '06', '11'], rooms, am, S, hosts: d.hosts, email: d.email, guests: { sl: f.guests, en: e.guests }, bk, bkEn, ab, abEn };
+const payload = ('window.STRATO=' + JSON.stringify(P) + ';').replace(/</g, '\\u003c');
+---
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Strato Apartment · Kočevje</title>
+<meta name="description" content="Strato Apartment, Kočevje – apartma za do 5 oseb, približno 270 m od Kočevskega jezera. Predlog spletne strani (AK agencija)." />
+<meta name="robots" content="noindex" />
+<script is:inline>
+  (function(){var h=document.documentElement;h.classList.add('js');try{var l=localStorage.getItem('strato-lang');if(l==='en'||l==='sl')h.lang=l;}catch(e){}})();
+</script>
+<link rel="stylesheet" href="../assets/strato-v8-fonts.css" />
+<style is:global>
+:root{
+  --peach:#f7d9c6; --peach2:#fbe7da; --ink:#1d1a1c; --ink2:#5c5156; --line:rgba(255,255,255,.28);
+  --orange:#f39419; --star:#f7c325; --gut:clamp(20px,9.5vw,170px);
+  --ease:cubic-bezier(.65,0,.35,1); --out:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--peach);overflow-x:hidden;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Urbanist',system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--peach) 0,var(--peach) 115vh,var(--peach2) 175vh,#fdf0e7 100%);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+button,input,textarea{font:inherit;color:inherit;background:none;border:0}
+button{cursor:pointer;text-align:left}
+a{color:inherit;text-decoration:none}
+img{display:block}
+html[lang=sl] [data-lang=en]{display:none!important}
+html[lang=en] [data-lang=sl]{display:none!important}
+section{scroll-margin-top:90px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* ---------- cursor: fine pointers only ---------- */
+#cur{display:none;position:fixed;left:0;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:rgba(72,62,68,.55);pointer-events:none;z-index:9999;transition:width .25s var(--out),height .25s var(--out),margin .25s var(--out),background .25s,border-color .25s,border-width .2s;border:0 solid rgba(20,16,18,.9);will-change:transform}
+#cur.hov{width:38px;height:38px;margin:-19px 0 0 -19px;background:rgba(72,62,68,.35)}
+#cur.down{width:44px;height:44px;margin:-22px 0 0 -22px;background:transparent;border-width:5px}
+@media (hover:hover) and (pointer:fine){
+  body,button,a,input,textarea,.card,.fld{cursor:none}
+  #cur{display:block}
+}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;height:74px;display:flex;align-items:center;padding:0 var(--gut);color:rgba(255,255,255,.92);border-bottom:1px solid var(--line);transition:background .5s,color .5s,border-color .5s}
+.nav.solid,.nav.menu{background:rgba(247,217,198,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);border-color:rgba(29,26,28,.08)}
+.brand{font-size:26px;font-weight:300;letter-spacing:.01em;white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}
+.vsep{width:1px;height:42px;background:currentColor;opacity:.45;margin:0 22px}
+.vis{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85;white-space:nowrap}
+.links{display:flex;gap:40px;margin-left:auto;margin-right:auto;font-size:14.5px;font-weight:400}
+.links a{position:relative;opacity:.92;padding:10px 0}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--out)}
+.links a:hover::after{transform:scaleX(1);transform-origin:left}
+.links a.monly{display:none}
+.nr{display:flex;align-items:center;gap:14px;font-size:14px;margin-left:auto}
+.lang{display:flex;border:1.5px solid currentColor;border-radius:9px;overflow:hidden}
+.lang button{min-width:44px;height:44px;font-size:13px;font-weight:600;letter-spacing:.06em;display:grid;place-items:center;transition:background .3s,color .3s}
+.lang button.on{background:rgba(255,255,255,.92);color:#5c4a4f}
+.nav.solid .lang button.on,.nav.menu .lang button.on{background:var(--ink);color:#fff}
+.pillbtn{display:flex;align-items:center;gap:10px;border:1.5px solid currentColor;border-radius:9px;padding:0 8px 0 14px;height:44px;white-space:nowrap}
+.pillbtn i{width:24px;height:24px;border-radius:50%;background:currentColor;display:grid;place-items:center}
+.pillbtn i svg{width:14px;height:14px;fill:none;stroke:#8b7076;stroke-width:1.8}
+.nav.solid .pillbtn i svg,.nav.menu .pillbtn i svg{stroke:var(--peach)}
+.burger{display:none;width:44px;height:44px;border:1.5px solid currentColor;border-radius:9px;place-items:center}
+.burger svg{width:18px;height:14px;stroke:currentColor;stroke-width:1.6;fill:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:680px;overflow:hidden;background:#b98a7b}
+.slides{position:absolute;inset:0;will-change:transform}
+.slide{position:absolute;inset:0;overflow:hidden}
+.slide .ph{position:absolute;inset:-3%;background-size:cover;background-position:center 60%;transform:scale(1.04);will-change:transform}
+.slide .tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(84,64,74,.46) 0%,rgba(84,64,74,.12) 30%,rgba(0,0,0,0) 50%)}
+.slide .ttl{position:absolute;left:2.6vw;top:calc(74px + 3.2vh);font-weight:700;line-height:.92;letter-spacing:.005em;text-transform:uppercase;white-space:nowrap;color:#fff;pointer-events:none;font-size:8.4vw}
+.slide[data-i="2"] .ttl{font-size:9.2vw;left:5vw;top:calc(74px + 4.5vh)}
+.ttl .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.04em}
+.ttl .w>span{display:inline-block;background:linear-gradient(180deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.86) 36%,rgba(255,255,255,.16) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .02em}
+.mist{position:absolute;top:-10%;bottom:-10%;width:34vw;margin-left:-17vw;pointer-events:none;z-index:6;opacity:0;background:radial-gradient(50% 50% at 50% 50%,rgba(255,236,226,.75),rgba(255,236,226,.35) 45%,rgba(255,236,226,0) 72%);filter:blur(10px)}
+
+.clouds{position:absolute;left:-4%;right:-4%;bottom:-6%;height:78%;pointer-events:none;z-index:7;mix-blend-mode:screen;will-change:transform}
+.clouds div{position:absolute;inset:0;background-size:cover;background-position:center bottom;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 38%);mask-image:linear-gradient(180deg,transparent 0%,#000 38%)}
+.clouds .c1{animation:drift 26s ease-in-out infinite alternate}
+.clouds .c2{transform:scaleX(-1);opacity:.85;animation:drift2 34s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translateX(-2.5%)}to{transform:translateX(2.5%)}}
+@keyframes drift2{from{transform:scaleX(-1) translateX(-3%) translateY(4%)}to{transform:scaleX(-1) translateX(3%) translateY(0)}}
+.topcloud{position:absolute;left:-6%;right:-6%;top:-30%;height:80%;z-index:7;mix-blend-mode:screen;pointer-events:none;background-size:cover;background-position:center bottom;transform:scaleY(-1);opacity:0;will-change:opacity,transform;-webkit-mask-image:linear-gradient(0deg,transparent 0%,#000 38%);mask-image:linear-gradient(0deg,transparent 0%,#000 38%)}
+.fade{position:absolute;left:0;right:0;bottom:0;height:46%;z-index:8;pointer-events:none;background:linear-gradient(180deg,rgba(247,217,198,0) 0%,rgba(247,217,198,.45) 45%,rgba(247,217,198,.92) 82%,var(--peach) 100%)}
+
+/* right rail: thumbnails on rings */
+.rail{position:absolute;inset:0;z-index:20;pointer-events:none}
+.ring{position:absolute;border-radius:50%;border:1.6px solid rgba(255,255,255,.5);pointer-events:none;transition:top .9s var(--ease),left .9s var(--ease),width .9s var(--ease),height .9s var(--ease),opacity .6s}
+.thumb{position:absolute;border-radius:50%;border:3px solid rgba(255,255,255,.92);background-size:cover;background-position:center;pointer-events:auto;box-shadow:0 10px 26px rgba(60,30,30,.28);transition:top .9s var(--ease),left .9s var(--ease),width .9s var(--ease),height .9s var(--ease),transform .5s var(--out),box-shadow .4s}
+.thumb:hover{transform:scale(1.07);box-shadow:0 14px 34px rgba(60,30,30,.38)}
+.thumb::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:1.5px solid rgba(255,255,255,0);transition:border-color .5s}
+.thumb.on::after{border-color:rgba(255,255,255,.55)}
+.conn{position:absolute;height:3px;background:#fff;border-radius:2px;transform-origin:right;transition:top .9s var(--ease),transform .55s var(--out)}
+.cap{position:absolute;display:flex;gap:16px;color:#fff;transition:top .9s var(--ease)}
+.cap .bar{width:3px;border-radius:2px;background:#fff;transform-origin:top;transition:transform .6s var(--out)}
+.cap .tx{clip-path:inset(-20% 100% -20% 0);transition:clip-path .9s var(--out)}
+.cap.show .tx{clip-path:inset(-20% -300% -20% 0)}
+.cap h3{font-weight:300;font-size:clamp(26px,2.75vw,40px);line-height:1.05;letter-spacing:-.005em;white-space:nowrap;text-shadow:0 2px 18px rgba(80,40,40,.25)}
+.cap p{max-width:260px;font-size:clamp(12px,1vw,14.5px);font-weight:400;line-height:1.38;margin-top:12px;opacity:.9;text-shadow:0 1px 12px rgba(80,40,40,.3)}
+
+/* booking bar */
+.search{position:absolute;left:50%;bottom:calc(20vh + 2px);transform:translateX(-50%);width:min(960px,calc(100% - 40px));min-height:90px;z-index:30;background:rgba(255,255,255,.93);border-radius:26px;display:flex;align-items:center;padding:9px 16px 9px 10px;box-shadow:0 18px 60px rgba(120,70,60,.16);transition:opacity .9s,transform 1s var(--out)}
+.fld{position:relative;flex:1;min-height:72px;border-radius:14px;display:flex;align-items:center;gap:14px;padding:0 20px;transition:background .35s,box-shadow .35s;text-align:left;color:var(--ink)}
+.fld.static{flex:1.3;cursor:default}
+.fld:not(.static):hover,.fld.act{background:#fff;box-shadow:0 8px 24px rgba(120,80,70,.14)}
+.fld svg{width:16px;height:16px;stroke:#8f8589;fill:none;stroke-width:1.6;flex:none}
+.fld b{display:block;font-weight:500;font-size:19px;letter-spacing:.005em;line-height:1.15}
+.fld small{display:block;font-size:13px;color:#8a7f83;margin-top:3px;white-space:nowrap}
+.send{min-width:44px;height:44px;border-radius:11px;background:#0d0d0f;color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;flex:none;margin-left:6px;transition:transform .35s var(--out);padding:0 12px;font-size:14px;font-weight:600}
+.send:hover{transform:scale(1.06) rotate(-4deg)}
+.send svg{width:17px;height:17px;fill:#fff}
+.send .sl{display:none}
+.pop{position:absolute;bottom:calc(100% + 14px);left:0;background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(90,50,40,.2);padding:18px;z-index:40;opacity:0;transform:translateY(8px) scale(.98);transform-origin:bottom left;pointer-events:none;transition:opacity .3s,transform .4s var(--out);min-width:280px;color:var(--ink)}
+.pop.open{opacity:1;transform:none;pointer-events:auto}
+.cal h4{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;margin-bottom:10px;text-transform:capitalize}
+.cal h4 button{width:36px;height:36px;border-radius:8px;background:#f6eee9;display:grid;place-items:center;font-size:18px}
+.cal .g{display:grid;grid-template-columns:repeat(7,40px);gap:3px;font-size:13px;text-align:center}
+.cal .g span{color:#a2979b;font-size:11px;padding:4px 0}
+.cal .g button{height:40px;border-radius:9px;transition:background .2s,color .2s;text-align:center}
+.cal .g button:hover{background:#f7e3d6}
+.cal .g button.in{background:#fbe9de;border-radius:0}
+.cal .g button.s,.cal .g button.e{background:#111;color:#fff;border-radius:9px}
+.cal .g button.x{opacity:.3;pointer-events:none}
+.gst{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:6px 2px;font-size:15px}
+.gst+.gst{border-top:1px solid #f1e6e0;margin-top:8px;padding-top:12px}
+.gst small{display:block;color:#8a7f83;font-size:12px}
+.gnote{font-size:12px;color:#8a7f83;margin-top:12px;padding-top:10px;border-top:1px solid #f1e6e0}
+.step{display:flex;align-items:center;gap:10px}
+.step button{width:36px;height:36px;border-radius:50%;border:1.4px solid #d8cbc4;font-size:18px;line-height:1;display:grid;place-items:center}
+.step button:disabled{opacity:.3}
+.step b{min-width:16px;text-align:center}
+.pdone{display:none;margin-top:14px;width:100%;min-height:46px;border-radius:14px;background:#0d0d0f;color:#fff;font-weight:600;font-size:14px;align-items:center;justify-content:center}
+@media (pointer:coarse){
+  .cal .g{grid-template-columns:repeat(7,44px)}.cal .g button{height:44px}.cal h4 button,.step button{width:44px;height:44px}
+}
+
+/* ---------- card grid ---------- */
+.stays{position:relative;z-index:25;margin-top:-17vh;padding:0 var(--gut) 90px}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:22px;gap:16px;flex-wrap:wrap}
+.sh h2,.sec h2{font-family:'Gilda Display',Georgia,serif;font-weight:400;font-size:clamp(26px,2.45vw,36px);letter-spacing:.005em}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips span{white-space:nowrap;border:1.4px solid var(--ink);border-radius:20px;padding:7px 14px;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.2vw,30px)}
+.card{position:relative;display:block;width:100%;aspect-ratio:203/268;border-radius:12px;overflow:hidden;background:#d9b9a8;box-shadow:0 12px 30px rgba(110,60,50,.16);transform:translateY(40px);opacity:0;transition:transform 1s var(--out),opacity .8s,box-shadow .4s}
+.card.in{transform:none;opacity:1}
+.card.in:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(110,60,50,.26)}
+.card .im{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s var(--out)}
+.card:hover .im{transform:scale(1.07)}
+.card .sh2{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 44%,rgba(20,14,20,.74) 100%)}
+.price{position:absolute;left:12px;top:14px;background:rgba(255,255,255,.84);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:6px;font-size:11.5px;font-weight:500;padding:4px 8px;color:#3a3236;z-index:2;max-width:calc(100% - 24px)}
+.meta{position:absolute;left:16px;right:12px;bottom:14px;color:#fff}
+.meta h4{font-weight:600;font-size:clamp(14px,1.1vw,16px);margin-bottom:6px}
+.meta .loc{font-size:clamp(11.5px,.95vw,13.5px);opacity:.95;line-height:1.3}
+.row2{margin-top:clamp(16px,2.6vw,34px);grid-template-columns:repeat(2,1fr)}
+.card.txt{aspect-ratio:auto;min-height:230px;background:linear-gradient(135deg,#fff5ee 0%,#f3cdb8 100%)}
+.card.txt .tmeta{position:relative;padding:58px 24px 24px;color:var(--ink)}
+.card.txt h4{font-family:'Gilda Display',Georgia,serif;font-weight:400;font-size:clamp(24px,2vw,30px);margin-bottom:10px}
+.card.txt p{font-size:14.5px;line-height:1.5;color:#3d3538;max-width:52ch}
+.card.txt small{display:block;margin-top:12px;font-size:12px;color:#8a7f83;letter-spacing:.08em;text-transform:uppercase}
+
+/* ---------- further sections ---------- */
+.sec{padding:0 var(--gut) 90px}
+.sec .sh{margin-bottom:26px}
+.rv{opacity:0;transform:translateY(30px);transition:transform 1s var(--out),opacity .8s}
+.rv.in{opacity:1;transform:none}
+.ratings{display:flex;gap:12px;flex-wrap:wrap}
+.ratings div{background:#fff;border-radius:14px;padding:10px 16px;box-shadow:0 10px 30px rgba(110,70,60,.1);display:flex;align-items:baseline;gap:10px}
+.ratings b{font-size:22px;font-weight:600}
+.ratings small{font-size:12.5px;color:#8a7f83}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px)}
+.rev{background:#fff;border-radius:18px;padding:26px 26px 22px;box-shadow:0 14px 40px rgba(110,70,60,.1);display:flex;flex-direction:column;gap:14px}
+.rev q{font-family:'Gilda Display',Georgia,serif;font-size:18px;line-height:1.45;color:#2a2427;quotes:"„" "“" "‘" "’"}
+.rev .who{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13px;color:#8a7f83}
+.rev .who b{color:var(--ink);font-weight:600;font-size:14px}
+.rev .tag{border:1px solid #e9dcd4;border-radius:20px;padding:2px 9px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.tgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.6vw,22px)}
+.tdo{background:linear-gradient(160deg,#fff 0%,#fbe7da 100%);border:1px solid rgba(29,26,28,.06);border-radius:18px;padding:22px 20px 20px;min-height:170px;display:flex;flex-direction:column}
+.tdo i{font-style:normal;font-family:'Gilda Display',Georgia,serif;font-size:28px;color:#c9a08b;line-height:1}
+.tdo h3{font-weight:600;font-size:17px;margin-top:auto;padding-top:22px}
+.tdo p{font-size:13.5px;color:#5c5156;margin-top:6px;line-height:1.4}
+.more{margin-top:20px;font-size:14px;color:#5c5156;line-height:1.6}
+.more b{font-weight:600;color:var(--ink)}
+.bent{background:#fff;border-radius:26px;padding:clamp(20px,3vw,36px);box-shadow:0 18px 60px rgba(120,70,60,.12);display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(20px,3vw,40px);align-items:start}
+.slot{border:2px dashed #d9b9a8;border-radius:18px;min-height:260px;display:grid;place-items:center;text-align:center;color:#8a7f83;padding:24px;font-size:15px;line-height:1.5}
+.slot b{display:block;color:var(--ink);font-weight:600;font-size:17px;margin-bottom:6px}
+.bside h3{font-family:'Gilda Display',Georgia,serif;font-weight:400;font-size:24px;margin-bottom:8px}
+.bside p{font-size:14.5px;line-height:1.55;color:#3d3538}
+.bside .pickl{margin:12px 0 0;font-weight:600;min-height:1.4em}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 20px;border-radius:22px;background:#0d0d0f;color:#fff;font-weight:600;font-size:14px;transition:transform .3s var(--out),background .3s}
+.btn:hover{transform:scale(1.04)}
+.btn.o{background:transparent;border:1.4px solid var(--ink);color:var(--ink)}
+.btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.7}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px);align-items:start}
+.cinfo p{font-size:15px;line-height:1.6;color:#3d3538;margin-bottom:6px}
+.cinfo .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8a7f83;margin:18px 0 4px}
+.cinfo .lbl:first-child{margin-top:0}
+.badges{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:22px}
+.gs{border:2px dashed #d9b9a8;border-radius:12px;width:180px;height:84px;display:grid;place-items:center;text-align:center;font-size:12px;color:#8a7f83;padding:8px;line-height:1.3}
+.koc{font-size:14px;text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px}
+.cinfo p a{display:inline-block;padding:10px 0}
+.frm{background:#fff;border-radius:22px;padding:clamp(18px,2.4vw,30px);box-shadow:0 14px 40px rgba(110,70,60,.1)}
+.frm label{display:block;font-size:13px;color:#5c5156;margin:12px 0 6px}
+.frm label:first-child{margin-top:0}
+.frm input,.frm textarea{width:100%;font-size:16px;padding:12px 14px;border:1.4px solid #e2d6cf;border-radius:12px;background:#fff;min-height:46px}
+.frm textarea{min-height:120px;resize:vertical}
+.frm .note{font-size:12px;color:#8a7f83;margin-top:10px}
+.frm .btn{margin-top:14px}
+footer{padding:30px var(--gut) 40px;font-size:13px;color:var(--ink2);border-top:1px solid rgba(29,26,28,.08);display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
+footer .fb{font-size:18px;font-weight:300;color:var(--ink)}
+
+/* ---------- detail page ---------- */
+#detail{position:fixed;inset:0;z-index:50;background:#fff;overflow-y:auto;overflow-x:hidden;visibility:hidden;opacity:0;transition:opacity .55s,visibility 0s .55s;-webkit-overflow-scrolling:touch}
+#detail.open{visibility:visible;opacity:1;transition:opacity .55s}
+.dband{position:absolute;left:0;right:0;top:0;height:290px;background:var(--peach)}
+.dwrap{position:relative;padding:96px var(--gut) 70px}
+.crumb{display:flex;gap:14px;font-size:12.5px;color:#5c5156;margin-bottom:22px;flex-wrap:wrap;align-items:center}
+.crumb span:last-child{color:#a9969b}
+.crumb i{font-style:normal;opacity:.6}
+.crumb a{min-height:44px;display:inline-flex;align-items:center}
+.dclose{margin-left:auto;width:44px;height:44px;border-radius:50%;background:#fff;box-shadow:0 8px 24px rgba(110,70,60,.16);display:grid;place-items:center;font-size:16px;text-align:center}
+.dgrid{display:grid;grid-template-columns:1.18fr 1fr;gap:clamp(20px,2.6vw,36px)}
+.dmain{position:relative;aspect-ratio:512/445;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,#fff5ee 0%,#f3cdb8 100%)}
+.dmain .im{position:absolute;inset:0;background-size:cover;background-position:center}
+.dmain .nop{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px}
+.dmain .nop b{font-family:'Gilda Display',Georgia,serif;font-weight:400;font-size:clamp(28px,3vw,42px)}
+.dmain .nop span{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#8a7f83}
+.thumbs3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.thumbs3 button{aspect-ratio:1/1;border-radius:9px;background-size:cover;background-position:center;position:relative;overflow:hidden;transition:transform .5s var(--out)}
+.thumbs3 button:hover{transform:translateY(-4px)}
+.dinfo h1{font-family:'Gilda Display',Georgia,serif;font-weight:400;font-size:clamp(28px,2.6vw,38px);line-height:1.05}
+.host{font-size:13.5px;color:#a5979b;margin:6px 0 22px}
+.host b{color:var(--ink);font-weight:500}
+.dinfo h2{font-family:'Gilda Display',Georgia,serif;font-weight:400;font-size:clamp(20px,1.7vw,24px);margin-bottom:8px}
+.dinfo p.ab{font-size:14px;line-height:1.5;color:#3d3538;max-width:440px}
+.book{margin-top:24px;background:#fff;border-radius:18px;box-shadow:0 14px 40px rgba(110,70,60,.12);padding:18px 10px 22px}
+.book .pr{font-size:20px;font-weight:600;padding:0 10px 14px}
+.bx{background:#f6f2f0;border-radius:14px;padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:16px 10px}
+.bx div{display:flex;gap:12px;align-items:flex-start;font-size:14px;font-weight:500}
+.bx small{display:block;color:#b0a4a8;font-size:11.5px;font-weight:400;margin-bottom:3px}
+.bx svg{width:18px;height:18px;stroke:#b0a4a8;fill:none;stroke-width:1.5;margin-top:4px;flex:none}
+.bx .gsel{grid-column:1/3;border-top:1px solid #ece4e0;padding-top:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.bx .nop2{font-size:12px;color:#8a7f83;font-weight:500}
+.bnow{margin:16px 10px 0;min-height:44px;padding:9px 20px;border-radius:22px;background:var(--orange);color:#fff;font-size:13px;font-weight:600;transition:transform .3s var(--out),background .3s;text-align:center}
+.bnow:hover{transform:scale(1.05)}
+.rate{display:flex;align-items:center;gap:22px;border-top:1px solid #e7dedb;border-bottom:1px solid #e7dedb;padding:14px 0;margin-top:24px;flex-wrap:wrap}
+.rate .num{font-size:30px;font-weight:600;line-height:1}
+.rate .num sup{font-size:12px;font-weight:400;color:#6b5f63;vertical-align:top;margin-left:2px}
+.rate small{display:block;font-size:12px;color:#8a7f83;margin-top:4px}
+.rnow{margin-left:auto;border:1.4px solid #cfc3bf;border-radius:22px;min-height:44px;padding:8px 18px;font-size:14px;transition:background .3s,color .3s}
+.rnow:hover{background:var(--ink);color:#fff}
+.am h2{margin-top:20px}
+.amg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px 10px;margin-top:12px}
+.amg div{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;font-weight:500;text-align:center}
+.amg div:nth-child(3n+1){align-items:flex-start;text-align:left}
+.amg div:nth-child(3n){align-items:flex-end;text-align:right}
+.amg svg{width:22px;height:22px;stroke:#1d1a1c;fill:none;stroke-width:1.6}
+.sim{margin-top:56px}
+.sim .grid{grid-template-columns:repeat(5,1fr)}
+.sim .grid .card{opacity:1;transform:none}
+.sim .card.txt{aspect-ratio:203/268;min-height:0}
+.sim .card.txt .tmeta{padding:52px 16px 16px}
+.sim .card.txt h4{font-size:20px}
+.sim .card.txt p{font-size:12.5px;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+#fly{position:fixed;z-index:70;border-radius:12px;background-size:cover;background-position:center;pointer-events:none;display:none;will-change:left,top,width,height}
+
+/* loader intro */
+.intro .ttl .w>span{transform:translateY(105%)}
+.intro .thumb{transform:scale(0)}
+.intro .ring{opacity:0}
+.intro .search{opacity:0;transform:translate(-50%,30px)}
+
+/* reduced motion */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .card,.rv{opacity:1;transform:none}
+  .clouds .c1,.clouds .c2{animation:none}
+}
+
+/* responsive */
+@media (max-width:1100px){
+  .links{display:none}
+  .burger{display:grid}
+  .nav.menu .links{display:flex;position:absolute;top:74px;left:0;right:0;flex-direction:column;gap:0;background:rgba(247,217,198,.97);padding:10px 20px 18px;border-bottom:1px solid rgba(29,26,28,.08)}
+  .nav.menu .links a{padding:13px 0;font-size:17px;min-height:48px;display:flex;align-items:center}
+  .pillbtn span{display:none}.pillbtn{padding:0 9px;gap:0}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .sim .grid{grid-template-columns:repeat(3,1fr)}
+  .dgrid{grid-template-columns:1fr}
+  .cap .tx{max-width:180px}
+  .rgrid{grid-template-columns:repeat(2,1fr)}
+  .tgrid{grid-template-columns:repeat(3,1fr)}
+  .bent,.cgrid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .nav{padding:0 16px}.vsep,.vis{display:none}.brand{font-size:20px}
+  .nr{gap:8px}
+  .pillbtn{display:none}
+  .nav.menu .links a.monly{display:flex}
+  .slide .ttl,.slide[data-i="2"] .ttl{font-size:13vw;white-space:normal;width:86vw;left:16px;top:calc(74px + 2vh);line-height:.95}
+  .cap{display:none!important}.conn{display:none}
+  .search{flex-wrap:wrap;bottom:14vh;border-radius:20px;padding:8px;width:calc(100% - 24px);gap:2px}
+  .fld{flex:1 1 calc(50% - 2px);min-height:58px;padding:0 10px;gap:10px}
+  .fld.static{flex:1 1 100%;min-height:52px}
+  .fld b{font-size:16px}.fld small{font-size:11px}
+  .send{margin:6px 0 0;width:100%;height:46px}
+  .send .sl{display:inline}
+  .search{transform:none;left:12px;right:12px;width:auto}
+  .intro .search{transform:translateY(30px)}
+  .pop{position:fixed;left:0!important;right:0!important;bottom:0;top:auto;min-width:0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));border-radius:22px 22px 0 0;max-height:calc(100svh - 84px);overflow:auto;transform:translateY(16px);box-shadow:0 -14px 50px rgba(90,50,40,.22)}
+  .pop.open{transform:none}
+  .pdone{display:flex}
+  .cal .g{grid-template-columns:repeat(7,1fr)}.cal .g button{height:44px}
+  .stays{margin-top:-8vh;padding-bottom:70px}
+  .row2{grid-template-columns:1fr}
+  .sec{padding-bottom:70px}
+  .rgrid,.tgrid{grid-template-columns:1fr}
+  .sim .grid{grid-template-columns:repeat(2,1fr)}
+  .sim .card.txt{aspect-ratio:auto;min-height:200px}
+  .sim .card.txt p{-webkit-line-clamp:4}
+  .dwrap{padding:90px 16px 50px}
+  .bx{grid-template-columns:1fr}.bx .gsel{grid-column:1}
+  .amg{gap:16px 8px}
+  .dclose{margin-left:auto}
+  footer{padding:24px 16px 32px}
+}
+</style>
+</head>
+<body>
+<div id="cur" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" data-home>Strato Apartment</a>
+  <div class="vsep"></div>
+  <span class="vis">Kočevje</span>
+  <nav class="links" id="links">
+    <a href="#stays" set:html={t('Prostori', 'The apartment')} />
+    <a href="#reviews" set:html={t('Mnenja', 'Reviews')} />
+    <a href="#todo" set:html={t('Okolica', 'Things to do')} />
+    <a href="#contact" set:html={t('Kontakt', 'Contact')} />
+    <a href="#bentral" class="monly" set:html={t('Rezervacija', 'Book')} />
+  </nav>
+  <div class="nr">
+    <div class="lang" role="group" aria-label="Jezik / Language"><button type="button" data-set="sl" class="on" aria-label="Slovensko">SL</button><button type="button" data-set="en" aria-label="English">EN</button></div>
+    <a class="pillbtn" href="#bentral" aria-label="Rezervacija"><span set:html={t('Rezervacija', 'Book')} /><i><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></i></a>
+    <button class="burger" id="burger" type="button" aria-label="Meni" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 18 14"><path d="M1 1h16M1 7h16M1 13h16"/></svg></button>
+  </div>
+</header>
+
+<section class="hero intro" id="hero">
+  <div class="slides" id="slides"></div>
+  <div class="mist" id="mist"></div>
+  <div class="topcloud" id="topcloud"></div>
+  <div class="clouds" id="clouds"><div class="c2"></div><div class="c1"></div></div>
+  <div class="fade"></div>
+  <div class="rail" id="rail">
+    <div class="ring" id="r1"></div><div class="ring" id="r2"></div>
+    <div class="conn" id="conn"></div>
+    <div class="cap" id="cap"><div class="bar"></div><div class="tx"><h3></h3><p></p></div></div>
+  </div>
+  <div class="search" id="search">
+    <div class="fld static"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><b>Strato Apartment</b><small>Kočevje · Trata VI 11</small></span></div>
+    <button type="button" class="fld act" data-p="in"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span><b set:html={t('Prijava', 'Check-in')} /><small id="ciL"></small></span></button>
+    <button type="button" class="fld" data-p="out"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span><b set:html={t('Odjava', 'Check-out')} /><small id="coL"></small></span></button>
+    <button type="button" class="fld" data-p="gst"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c.8-3.3 3.2-5 6-5s5.2 1.7 6 5"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c2.6 0 4.4 1.5 5 4"/></svg><span><b set:html={t('Gostje', 'Guests')} /><small id="gL"></small></span></button>
+    <button type="button" class="send" id="send" aria-label="Preveri razpoložljivost"><span class="sl" set:html={t('Preveri razpoložljivost', 'Check availability')} /><svg viewBox="0 0 24 24"><path d="M3 4l18 8-18 8 3.2-8L3 4zm3.2 8H13"/></svg></button>
+    <div class="pop cal" id="pCal" style="left:30%"></div>
+    <div class="pop" id="pGst" style="left:auto;right:40px">
+      <div class="gst"><span><span data-lang="sl">Odrasli</span><span data-lang="en">Adults</span><small><span data-lang="sl">13 let in več</span><span data-lang="en">Ages 13+</span></small></span><div class="step"><button type="button" data-g="a" data-d="-1" aria-label="−">−</button><b id="ga">2</b><button type="button" data-g="a" data-d="1" aria-label="+">+</button></div></div>
+      <div class="gst"><span><span data-lang="sl">Otroci</span><span data-lang="en">Children</span><small><span data-lang="sl">2–12 let</span><span data-lang="en">Ages 2–12</span></small></span><div class="step"><button type="button" data-g="c" data-d="-1" aria-label="−">−</button><b id="gc">0</b><button type="button" data-g="c" data-d="1" aria-label="+">+</button></div></div>
+      <div class="gnote" set:html={t('Največ 5 oseb. Otroška posteljica je na voljo.', 'Max. 5 guests. A baby cot is available.')} />
+      <button type="button" class="pdone" set:html={t('V redu', 'Done')} />
+    </div>
+  </div>
+</section>
+
+<section class="stays" id="stays">
+  <div class="sh"><h2 set:html={t('Prostori apartmaja', 'The apartment')} /><div class="chips"><span>{f.size}</span><span set:html={t(f.guests, e.guests)} /><span set:html={t('2 spalnici', '2 bedrooms')} /><span set:html={t('prenovljeno 2025', 'renovated 2025')} /></div></div>
+  <div class="grid" id="g1"></div>
+  <div class="grid row2" id="g2"></div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="sh"><h2 set:html={t('Mnenja gostov', 'Guest reviews')} /><div class="ratings"><div><b set:html={t(bk.split(' (')[0], bkEn.split(' (')[0])} /><small set:html={t('Booking.com · ' + bk.split('(')[1].replace(')', '') + ' · Izjemno', 'Booking.com · ' + bkEn.split('(')[1].replace(')', '') + ' · Exceptional')} /></div><div><b set:html={t(ab.split(' (')[0], abEn.split(' (')[0])} /><small set:html={t('Airbnb · ' + ab.split('(')[1].replace(')', '') + ' · Izbira gostov', 'Airbnb · ' + abEn.split('(')[1].replace(')', '') + ' · Guest favourite')} /></div></div></div>
+  <div class="rgrid">
+    {reviews.map((r, i) => (
+      <article class="rev rv" style={`transition-delay:${(i % 3) * .09}s`}>
+        <q set:html={t(r.sl, r.en)} />
+        <div class="who"><b>{r.name}</b><span>{r.source}</span><span set:html={t(split(r.date)[0], split(r.date)[1] || split(r.date)[0])} />{r.translated && <span class="tag" set:html={t('prevedeno', 'translated')} />}</div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section class="sec" id="todo">
+  <div class="sh"><h2 set:html={t('Kaj početi v okolici', 'Things to do nearby')} /><div class="chips"><span set:html={t('iz vodiča gostiteljev', 'from the hosts’ guide')} /></div></div>
+  <div class="tgrid">
+    {todo.map((x, i) => (
+      <div class="tdo rv" style={`transition-delay:${i * .07}s`}><i>0{i + 1}</i><h3 set:html={t(x.sl, x.en)} /><p set:html={t(x.note_sl, x.note_en)} /></div>
+    ))}
+  </div>
+  <p class="more"><b set:html={t('Še iz vodiča: ', 'Also from the guide: ')} />{d.more_from_guide.join(' · ')}</p>
+</section>
+
+<section class="sec" id="bentral">
+  <div class="sh"><h2 set:html={t('Rezervacija', 'Booking')} /></div>
+  <div class="bent rv">
+    <div class="slot"><div><b set:html={t('Tu bo Bentral rezervacijski koledar', 'The Bentral booking calendar goes here')} /><span set:html={t('(vstavimo kodo vtičnika)', '(plugin code to be inserted)')} /></div></div>
+    <div class="bside">
+      <h3 set:html={t('Povprašajte po terminu', 'Ask about your dates')} />
+      <p set:html={t('Termine potrdita gostitelja Barbara in Rok. Prijava od 15:00, odjava do 11:00, do 5 oseb. Hišni ljubljenčki niso dovoljeni.', 'Dates are confirmed by the hosts, Barbara and Rok. Check-in from 15:00, check-out until 11:00, up to 5 guests. Pets are not allowed.')} />
+      <p class="pickl" id="pick"></p>
+      <div class="btns">
+        <a class="btn" href={d.phone_href}><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>{d.phone}</a>
+        <a class="btn o" id="mailbtn" href={`mailto:${d.email}`}><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>{d.email}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="sh"><h2 set:html={t('Kje smo', 'Where to find us')} /></div>
+  <div class="cgrid">
+    <div class="cinfo rv">
+      <div class="lbl" set:html={t('Naslov', 'Address')} /><p>{d.address}</p>
+      <div class="lbl" set:html={t('Gostitelja', 'Hosts')} /><p>{d.hosts} · <span set:html={t(f.languages, e.languages)} /></p>
+      <div class="lbl" set:html={t('Telefon in e-pošta', 'Phone and e-mail')} /><p><a href={d.phone_href}>{d.phone}</a> · <a href={`mailto:${d.email}`}>{d.email}</a></p>
+      <div class="lbl" set:html={t('Lega', 'Location')} /><p set:html={t(`${f.lake}. ${f.center}. ${f.parking}.`, `${e.lake}. ${e.center}. ${e.parking}.`)} />
+      <div class="btns"><a class="btn o" href={d.maps} target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span set:html={t('Odpri v Google Zemljevidih', 'Open in Google Maps')} /></a></div>
+      <div class="badges"><div class="gs" set:html={t('Logo Green &amp; Safe<br>(pošljeta gostitelja)', 'Green &amp; Safe logo<br>(hosts will send it)')} /><a class="koc" href={d.kocevsko_link} target="_blank" rel="noopener" set:html={t('Najdete nas tudi na Kočevsko.com', 'Also find us on Kočevsko.com')} /></div>
+    </div>
+    <form class="frm rv" id="cform" novalidate>
+      <label for="cn" set:html={t('Ime in priimek', 'Name')} /><input id="cn" name="name" type="text" autocomplete="name" required />
+      <label for="ce" set:html={t('Vaš e-naslov', 'Your e-mail')} /><input id="ce" name="email" type="email" autocomplete="email" required />
+      <label for="cm" set:html={t('Sporočilo (termin, število oseb, vprašanja)', 'Message (dates, number of guests, questions)')} /><textarea id="cm" name="msg"></textarea>
+      <button class="btn" type="submit" set:html={t('Pošlji po e-pošti', 'Send by e-mail')} />
+      <p class="note" set:html={t('Gumb odpre vaš e-poštni program s pripravljenim sporočilom za ' + d.email + '. Nič se ne pošlje samodejno.', 'The button opens your e-mail app with a prepared message to ' + d.email + '. Nothing is sent automatically.')} />
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div><div class="fb">Strato Apartment</div><div>{d.hosts} · {d.address}</div></div>
+  <div><span set:html={t('Predogled spletne strani · ', 'Website preview · ')} />AK agencija · 2026</div>
+</footer>
+
+<div id="detail" role="dialog" aria-modal="true" aria-label="Prostor"><div class="dband"></div><div class="dwrap" id="dwrap"></div></div>
+<div id="fly" aria-hidden="true"></div>
+
+<script is:inline set:html={payload} />
+<script is:inline>
+const P=window.STRATO,A=P.A,S=P.S;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const H=document.documentElement;
+const lang=()=>H.lang==='en'?'en':'sl';
+const L=(sl,en)=>`<span data-lang="sl">${sl}</span><span data-lang="en">${en}</span>`;
+const T=(o,k)=>o[k+lang()];
+const s=k=>S[lang()][k];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const FINE=matchMedia('(hover: hover) and (pointer: fine)').matches;
+const CALI='<svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>';
+const USRI='<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-3.8 3.7-6 7-6s6 2.2 7 6"/></svg>';
+const PEACH="linear-gradient(135deg,#fff5ee 0%,#f3cdb8 100%)";
+
+/* ---------- slides ---------- */
+const slidesEl=$('#slides');
+const words=lines=>lines.map(line=>line.split(' ').map(w=>`<span class="w"><span>${w}</span></span>`).join(' ')).join('<br>');
+P.slides.forEach((sd,i)=>{
+  const d=document.createElement('div');d.className='slide';d.dataset.i=i;
+  d.innerHTML=`<div class="ph" style="background-image:url('${A}strato-${sd.img}.jpg');background-position:${sd.pos}"></div><div class="tint"></div><div class="ttl" data-lang="sl">${words(sd.tsl)}</div><div class="ttl" data-lang="en">${words(sd.ten)}</div>`;
+  d.style.zIndex=i===0?2:0;d.style.visibility=i===0?'visible':'hidden';
+  slidesEl.appendChild(d);
+});
+const CLOUD=`url('${A}strato-clouds.webp')`;
+$$('#clouds div').forEach(d=>d.style.backgroundImage=CLOUD);
+$('#topcloud').style.backgroundImage=CLOUD;
+const rail=$('#rail');
+const thumbs=P.thumbs.map((k,i)=>{const t=document.createElement('button');t.type='button';t.className='thumb';t.style.backgroundImage=`url('${A}strato-${k}.jpg')`;t.dataset.i=i;const n=P.slides.findIndex(x=>x.thumb===i);t.setAttribute('aria-label',P.slides[n].hsl+' / '+P.slides[n].hen);rail.appendChild(t);return t;});
+let cur=0,busy=false,timer=null;
+const slideEls=$$('.slide');
+
+function layoutRail(active,instant){
+  const W=innerWidth,Hh=Math.max(innerHeight,680);
+  const B=Math.max(96,Math.min(W*.113,190)),Sz=Math.max(46,Math.min(W*.054,92)),gap=Math.max(8,W*.009);
+  const cx=W*.855,top=74+Hh*.085;
+  let y=top;const ti=P.slides[active].thumb;
+  thumbs.forEach((t,i)=>{
+    const d=i===ti?B:Sz;
+    if(instant)t.style.transition='none';
+    t.style.width=t.style.height=d+'px';t.style.left=(cx-d/2)+'px';t.style.top=y+'px';
+    t.classList.toggle('on',i===ti);
+    if(i===ti)t._c=y+d/2;
+    y+=d+gap;
+    if(instant){t.offsetWidth;t.style.transition='';}
+  });
+  const cy=thumbs[ti]._c;
+  [['#r1',B*.5+W*.05],['#r2',B*.5+W*.108]].forEach(([q,r])=>{const el=$(q);el.style.width=el.style.height=2*r+'px';el.style.left=(cx-r)+'px';el.style.top=(cy-r)+'px';});
+  const cn=$('#conn'),Ln=Math.max(40,W*.047);cn.style.width=Ln+'px';cn.style.left=(cx-B/2-Ln-W*.008)+'px';cn.style.top=(cy-1.5)+'px';
+  const cap=$('#cap'),bh=Math.max(84,W*.065);cap.querySelector('.bar').style.height=bh+'px';
+  cap.style.left='auto';cap.style.right=(W-(cx-B/2-Ln-W*.008)+Math.max(16,W*.014))+'px';cap.style.top=(cy-bh*.42)+'px';
+}
+function setCap(i,show){
+  const cap=$('#cap'),sd=P.slides[i];
+  const fill=()=>{cap.querySelector('h3').textContent=T(sd,'h');cap.querySelector('p').textContent=T(sd,'p');};
+  if(RM){fill();cap.classList.add('show');cap.querySelector('.bar').style.transform='';$('#conn').style.transform='';return;}
+  cap.classList.remove('show');cap.querySelector('.bar').style.transform='scaleY(0)';$('#conn').style.transform='scaleX(0)';
+  setTimeout(()=>{fill();$('#conn').style.transform='scaleX(1)';cap.querySelector('.bar').style.transform='scaleY(1)';setTimeout(()=>cap.classList.add('show'),180);},show===undefined?650:show);
+}
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+function mask(el,p){const a=(p*135-35).toFixed(2),b=(p*135).toFixed(2);const m=`linear-gradient(to left,#000 ${a}%,rgba(0,0,0,.6) ${((+a+ +b)/2).toFixed(2)}%,transparent ${b}%)`;el.style.webkitMaskImage=m;el.style.maskImage=m;}
+function go(n){
+  if(busy||n===cur)return;busy=true;clearTimeout(timer);
+  const Ae=slideEls[cur],Be=slideEls[n];
+  slideEls.forEach((x,i)=>{if(i!==cur&&i!==n){x.style.visibility='hidden';x.style.zIndex=0;}});
+  Be.querySelectorAll('.w>span').forEach(x=>{x.style.transition='none';x.style.transform='none';});
+  layoutRail(n);setCap(n,RM?0:undefined);
+  if(RM){Be.style.visibility='visible';Be.style.zIndex=2;Ae.style.visibility='hidden';Ae.style.zIndex=0;cur=n;busy=false;return;}
+  Be.style.visibility='visible';Be.style.zIndex=3;Ae.style.zIndex=2;mask(Be,0);
+  const pa=Ae.querySelector('.ph'),pb=Be.querySelector('.ph'),mist=$('#mist');
+  const t0=performance.now(),D=1250;
+  (function f(){const t=Math.min(1,(performance.now()-t0)/D),e=ease(t);
+    mask(Be,e);pb.style.transform=`scale(${1.12-.08*e}) translateX(${(1-e)*2}%)`;pa.style.transform=`scale(${1.04+.05*e}) translateX(${-e*2}%)`;
+    const edge=100-(e*135-17.5);mist.style.left=edge+'%';mist.style.opacity=(Math.sin(Math.PI*t)*.95).toFixed(3);
+    if(t<1)requestAnimationFrame(f);else{Be.style.webkitMaskImage=Be.style.maskImage='none';Ae.style.visibility='hidden';Ae.style.zIndex=0;Be.style.zIndex=2;mist.style.opacity=0;cur=n;busy=false;kb();sched();}
+  })();
+}
+let px=0,py=0;
+function kb(){ // slow Ken Burns on the live slide
+  if(RM)return;
+  const ph=slideEls[cur].querySelector('.ph'),t0=performance.now(),me=cur;
+  (function f(){if(cur!==me||busy||document.hidden)return;const t=(performance.now()-t0)/1000;ph.style.transform=`scale(${1.04+Math.min(t,12)*.0035}) translate(${px*-.6}%,${py*-.5}%)`;requestAnimationFrame(f);})();
+}
+function sched(){clearTimeout(timer);if(RM)return;timer=setTimeout(()=>go((cur+1)%P.slides.length),5200);}
+thumbs.forEach(t=>t.addEventListener('click',()=>{const n=P.slides.findIndex(x=>x.thumb===+t.dataset.i);go(n);}));
+document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeout(timer);else{kb();sched();}});
+if(FINE&&!RM)addEventListener('pointermove',e=>{px=(e.clientX/innerWidth-.5)*2;py=(e.clientY/innerHeight-.5)*2;});
+
+/* ---------- intro ---------- */
+layoutRail(0,true);
+setTimeout(()=>{
+  const hero=$('#hero');
+  slideEls[0].querySelectorAll('.w>span').forEach((x,i)=>{x.style.transition=`transform 1.15s var(--out) ${i*.09}s`;});
+  thumbs.forEach((t,i)=>{t.style.transition+=`, transform .9s var(--out) ${.35+i*.14}s`;});
+  hero.classList.remove('intro');
+  setTimeout(()=>thumbs.forEach(t=>t.style.transition=''),1600);
+  setCap(0,RM?0:900);kb();sched();
+},RM?0:250);
+
+/* ---------- scroll ---------- */
+const nav=$('#nav');
+function onScroll(){
+  const y=scrollY,Hh=innerHeight;
+  nav.classList.toggle('solid',y>Hh*.3||$('#detail').classList.contains('open'));
+  if(RM)return;
+  slidesEl.style.transform=`translateY(${y*.42}px)`;
+  $('#clouds').style.transform=`translateY(${-y*.38}px) scale(${1+y/Hh*.35})`;
+  const tc=$('#topcloud');tc.style.opacity=Math.min(1,y/(Hh*.45)).toFixed(3);tc.style.transform=`scaleY(-1) translateY(${-y*.25}px)`;
+  rail.style.transform=`translateY(${y*.2}px)`;rail.style.opacity=Math.max(0,1-y/(Hh*.5));
+}
+addEventListener('scroll',onScroll,{passive:true});
+addEventListener('resize',()=>{layoutRail(cur,true);onScroll();});
+onScroll();
+
+/* ---------- mobile menu ---------- */
+const burger=$('#burger');
+burger.addEventListener('click',()=>{const on=nav.classList.toggle('menu');burger.setAttribute('aria-expanded',on);});
+$('#links').addEventListener('click',()=>{nav.classList.remove('menu');burger.setAttribute('aria-expanded','false');});
+
+/* ---------- cards ---------- */
+function cardHTML(r,i){
+  const chip=`<span class="price">${L(r.csl,r.cen)}</span>`;
+  if(!r.img.length)return `<button type="button" class="card txt" data-i="${i}">${chip}<div class="tmeta"><h4>${L(r.sl,r.en)}</h4><p>${L(r.tsl,r.ten)}</p><small>${L(r.ssl,r.sen)}</small></div></button>`;
+  return `<button type="button" class="card" data-i="${i}"><div class="im" style="background-image:url('${A}strato-${r.img[0]}.jpg')"></div><div class="sh2"></div>${chip}<div class="meta"><h4>${L(r.sl,r.en)}</h4><div class="loc">${L(r.ssl,r.sen)}</div></div></button>`;
+}
+$('#g1').innerHTML=P.rooms.slice(0,4).map((r,i)=>cardHTML(r,i)).join('');
+$('#g2').innerHTML=P.rooms.slice(4).map((r,i)=>cardHTML(r,i+4)).join('');
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){const c=en.target;if(c.classList.contains('card'))c.style.transitionDelay=(+c.dataset.i%4)*.09+'s';c.classList.add('in');setTimeout(()=>c.style.transitionDelay='',1300);io.unobserve(c);}}),{threshold:.12});
+$$('.stays .card,.rv').forEach(c=>{if(RM)c.classList.add('in');else io.observe(c);});
+document.addEventListener('click',e=>{
+  const c=e.target.closest('.card');if(c)openDetail(+c.dataset.i,c);
+});
+
+/* ---------- booking bar popovers ---------- */
+const today=new Date();today.setHours(0,0,0,0);
+let ci=null,co=null,picking='in',month=new Date(today.getFullYear(),today.getMonth(),1),ga=2,gc=0;
+const MAXG=5;
+const fmt=d=>lang()==='sl'?`${d.getDate()}. ${s('months')[d.getMonth()].slice(0,3)}`:`${d.getDate()} ${s('months')[d.getMonth()].slice(0,3)}`;
+const fmtFull=d=>lang()==='sl'?`${d.getDate()}. ${d.getMonth()+1}. ${d.getFullYear()}`:`${d.getDate()} ${s('months')[d.getMonth()]} ${d.getFullYear()}`;
+const gWord=n=>lang()==='sl'?(n===1?'gost':n===2?'gosta':n<5?'gostje':'gostov'):(n===1?'guest':'guests');
+const gLabel=()=>`${ga+gc} ${gWord(ga+gc)}`;
+function drawCal(){
+  const y=month.getFullYear(),m=month.getMonth(),first=(new Date(y,m,1).getDay()+6)%7,days=new Date(y,m+1,0).getDate();
+  let h=`<h4><button type="button" data-mv="-1" aria-label="‹">‹</button><span>${s('months')[m]} ${y}</span><button type="button" data-mv="1" aria-label="›">›</button></h4><div class="g">`+s('days').map(d=>`<span>${d}</span>`).join('')+'<i></i>'.repeat(first);
+  for(let d=1;d<=days;d++){const dt=new Date(y,m,d),t=+dt;let c='';if(ci&&t===+ci)c='s';else if(co&&t===+co)c='e';else if(ci&&co&&t>+ci&&t<+co)c='in';if(t<+today||(picking==='out'&&ci&&t<=+ci))c+=' x';h+=`<button type="button" class="${c}" data-d="${t}">${d}</button>`;}
+  $('#pCal').innerHTML=h+`</div><button type="button" class="pdone">${L('V redu','Done')}</button>`;
+}
+function refreshLabels(){
+  $('#ciL').textContent=ci?fmt(ci):s('addDate');$('#coL').textContent=co?fmt(co):s('addDate');$('#gL').textContent=gLabel();
+  $('#ga').textContent=ga;$('#gc').textContent=gc;
+  $$('[data-g]').forEach(b=>{const inc=+b.dataset.d>0;b.disabled=inc?(ga+gc>=MAXG):(b.dataset.g==='a'?ga<=1:gc<=0);});
+  updatePick();
+}
+function updatePick(){
+  const el=$('#pick'),m=$('#mailbtn');if(!el)return;
+  if(!ci){el.textContent='';m.href='mailto:'+P.email;return;}
+  const when=fmt(ci)+(co?' – '+fmt(co):''),whenFull=fmtFull(ci)+(co?' – '+fmtFull(co):'');
+  el.textContent=`${s('pick')}: ${when} · ${gLabel()}`;
+  m.href='mailto:'+P.email+'?subject='+encodeURIComponent(`${s('subj')}: ${whenFull}, ${gLabel()}`);
+}
+function closePops(){$$('.pop').forEach(p=>p.classList.remove('open'));}
+function selFld(p){$$('.fld').forEach(x=>x.classList.toggle('act',x.dataset.p===p));if(p==='out')$('#pCal').style.left='46%';}
+$('#search').addEventListener('click',e=>{
+  const mv=e.target.closest('[data-mv]');if(mv){e.stopPropagation();month.setMonth(month.getMonth()+ +mv.dataset.mv);drawCal();return;}
+  const dd=e.target.closest('[data-d]');
+  if(dd&&e.target.closest('#pCal')){e.stopPropagation();const d=new Date(+dd.dataset.d);
+    if(picking==='in'){ci=d;co=null;picking='out';refreshLabels();selFld('out');}
+    else{co=d;picking='in';refreshLabels();drawCal();setTimeout(()=>{closePops();selFld('gst');$('#pGst').classList.add('open');},320);return;}
+    drawCal();return;}
+  const gb=e.target.closest('[data-g]');
+  if(gb){e.stopPropagation();const dlt=+gb.dataset.d;if(gb.dataset.g==='a')ga=Math.min(MAXG-gc,Math.max(1,ga+dlt));else gc=Math.min(MAXG-ga,Math.max(0,gc+dlt));refreshLabels();return;}
+  if(e.target.closest('.pdone')){e.stopPropagation();closePops();return;}
+  if(e.target.closest('.pop'))return;
+  if(e.target.closest('#send')){closePops();updatePick();goTo('bentral');return;}
+  const fl=e.target.closest('.fld:not(.static)');if(!fl)return;
+  const p=fl.dataset.p,wasOpen=fl.classList.contains('act')&&$$('.pop.open').length;
+  closePops();selFld(p);if(wasOpen)return;
+  if(p==='in'||p==='out'){picking=p==='out'&&ci?'out':'in';drawCal();$('#pCal').style.left=p==='in'?'30%':'46%';$('#pCal').classList.add('open');}
+  if(p==='gst')$('#pGst').classList.add('open');
+});
+document.addEventListener('click',e=>{if(!e.target.closest('#search'))closePops();});
+function goTo(id){const el=document.getElementById(id);if(!el)return;el.scrollIntoView({behavior:RM?'auto':'smooth',block:'start'});}
+
+/* ---------- detail page with shared-element flight ---------- */
+let dOpen=false,dIdx=0,dFrom=null;
+function renderDetail(i){
+  const r=P.rooms[i],others=P.rooms.filter((_,j)=>j!==i);
+  const main=r.img.length?`<div class="im" style="background-image:url('${A}strato-${r.img[0]}.jpg')"></div>`:`<div class="nop"><b>${L(r.sl,r.en)}</b><span>${L(r.ssl,r.sen)}</span></div>`;
+  const th=r.img.length>1?`<div class="thumbs3">${r.img.slice(1,4).map(k=>`<button type="button" data-src="${A}strato-${k}.jpg" style="background-image:url('${A}strato-${k}.jpg')" aria-label="${r.sl}"></button>`).join('')}</div>`:'';
+  $('#dwrap').innerHTML=`<div class="crumb"><a href="#stays" data-home>${L('Domov','Home')}</a><i>›</i><span>${L('Prostori apartmaja','The apartment')}</span><i>›</i><span>${L(r.sl,r.en)}</span><button type="button" class="dclose" id="dclose" aria-label="${s('close')}">✕</button></div>
+  <div class="dgrid"><div><div class="dmain">${main}</div>${th}</div>
+   <div class="dinfo"><h1>${L(r.sl,r.en)}</h1><div class="host">${L('Gostitelja','Hosts')} <b>${P.hosts}</b> · Strato Apartment, Kočevje</div>
+    <h2>${L('O prostoru','About this space')}</h2><p class="ab">${L(r.tsl,r.ten)}</p>
+    <div class="book"><div class="pr">${L('Bivanje','Your stay')}</div>
+     <div class="bx"><div>${CALI}<span><small>${L('Prijava','Check-in')}</small>${L('od 15:00','from 15:00')}</span></div>
+      <div>${CALI}<span><small>${L('Odjava','Check-out')}</small>${L('do 11:00','until 11:00')}</span></div>
+      <div class="gsel"><span style="display:flex;gap:12px">${USRI}<span><small>${L('Gostje','Guests')}</small>${L(P.guests.sl,P.guests.en)}</span></span><span class="nop2">${L('Hišni ljubljenčki niso dovoljeni','Pets are not allowed')}</span></div></div>
+     <button type="button" class="bnow" data-goto="bentral">${L('Preveri termin','Check availability')}</button></div>
+    <div class="rate"><div><div class="num">${L(P.bk.split(' / ')[0],P.bkEn.split(' / ')[0])}<sup>/10</sup></div><small>Booking.com · ${L(P.bk.split('(')[1].replace(')','')+' · Izjemno',P.bkEn.split('(')[1].replace(')','')+' · Exceptional')}</small></div>
+     <div><div class="num">${L(P.ab.split(' / ')[0],P.abEn.split(' / ')[0])}<sup>/5</sup></div><small>Airbnb · ${L(P.ab.split('(')[1].replace(')','')+' · Izbira gostov',P.abEn.split('(')[1].replace(')','')+' · Guest favourite')}</small></div>
+     <button type="button" class="rnow" data-goto="reviews">${L('Mnenja gostov','Guest reviews')}</button></div>
+    <div class="am"><h2>${L('Oprema','Amenities')}</h2><div class="amg">${P.am.map(a=>`<div><svg viewBox="0 0 24 24">${a.i}</svg>${L(a.sl,a.en)}</div>`).join('')}</div></div></div></div>
+  <div class="sim"><div class="sh"><h2 style="font-family:'Gilda Display',Georgia,serif;font-weight:400;font-size:clamp(24px,2.2vw,32px)">${L('Drugi prostori','Other spaces')}</h2></div><div class="grid">${others.map(x=>cardHTML(x,P.rooms.indexOf(x))).join('')}</div></div>`;
+}
+function openDetail(i,cardEl){
+  const r=P.rooms[i];dIdx=i;dFrom=cardEl;renderDetail(i);
+  const D=$('#detail');D.scrollTop=0;
+  const from=cardEl.getBoundingClientRect();
+  D.classList.add('open');dOpen=true;nav.classList.add('solid');nav.classList.remove('menu');H.style.overflow='hidden';
+  const main=D.querySelector('.dmain');
+  if(!RM){
+    main.style.visibility='hidden';
+    requestAnimationFrame(()=>{
+      const to=main.getBoundingClientRect(),fly=$('#fly');
+      fly.style.backgroundImage=r.img.length?`url('${A}strato-${r.img[0]}.jpg')`:PEACH;fly.style.display='block';
+      const t0=performance.now(),Dur=900;
+      (function f(){const t=Math.min(1,(performance.now()-t0)/Dur),e=ease(t);
+        fly.style.left=from.left+(to.left-from.left)*e+'px';fly.style.top=from.top+(to.top-from.top)*e+'px';
+        fly.style.width=from.width+(to.width-from.width)*e+'px';fly.style.height=from.height+(to.height-from.height)*e+'px';fly.style.borderRadius=(12-2*e)+'px';
+        if(t<1)requestAnimationFrame(f);else{main.style.visibility='visible';fly.style.display='none';}
+      })();
+    });
+    $$('#detail .thumbs3 button,#detail .dinfo>*,#detail .sim').forEach((el,k)=>{el.animate([{transform:'translateY(26px)',opacity:0},{transform:'none',opacity:1}],{duration:900,delay:250+k*70,easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'});});
+  }
+  setTimeout(()=>{const b=$('#dclose');if(b)b.focus({preventScroll:true});},50);
+}
+function closeDetail(){const D=$('#detail');if(!dOpen)return;D.classList.remove('open');dOpen=false;H.style.overflow='';onScroll();if(dFrom&&document.contains(dFrom))dFrom.focus({preventScroll:true});}
+document.addEventListener('click',e=>{
+  if(e.target.closest('#dclose')){closeDetail();return;}
+  const th=e.target.closest('#detail .thumbs3 button');
+  if(th){const im=$('#detail .dmain .im');if(im){im.style.backgroundImage=`url('${th.dataset.src}')`;if(!RM)im.animate([{opacity:.35},{opacity:1}],{duration:500,easing:'ease-out'});}return;}
+  const g=e.target.closest('[data-goto]');
+  if(g){closeDetail();setTimeout(()=>goTo(g.dataset.goto),30);return;}
+  const hm=e.target.closest('[data-home]');
+  if(hm){e.preventDefault();if(dOpen){closeDetail();if(hm.getAttribute('href')==='#stays')setTimeout(()=>goTo('stays'),30);}else scrollTo({top:0,behavior:RM?'auto':'smooth'});return;}
+  const lk=e.target.closest('.links a,.pillbtn');
+  if(lk&&dOpen){closeDetail();}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(dOpen)closeDetail();else closePops();}});
+
+/* ---------- language ---------- */
+function setLang(l){
+  H.lang=l;document.title=S[l].title;
+  try{localStorage.setItem('strato-lang',l)}catch(e){}
+  $$('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.set===l));
+  setCap(cur,0);refreshLabels();
+  if($('#pCal').classList.contains('open'))drawCal();
+  if(dOpen)renderDetail(dIdx);
+}
+$$('[data-set]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.set)));
+setLang(lang());
+
+/* ---------- contact form -> mailto ---------- */
+$('#cform').addEventListener('submit',e=>{
+  e.preventDefault();
+  const n=$('#cn').value.trim(),m=$('#ce').value.trim(),msg=$('#cm').value.trim();
+  const body=(lang()==='sl'?`Pozdravljeni,\n\n${msg}\n\nLep pozdrav,\n${n}\n${m}`:`Hello,\n\n${msg}\n\nKind regards,\n${n}\n${m}`);
+  location.href='mailto:'+P.email+'?subject='+encodeURIComponent(s('subj')+(n?' – '+n:''))+'&body='+encodeURIComponent(body);
+});
+
+/* ---------- cursor (fine pointers only) ---------- */
+if(FINE){
+  const C=$('#cur');
+  addEventListener('pointermove',e=>{C.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;C.classList.toggle('hov',!!e.target.closest('button,a,.card,.thumb,.fld'));});
+  addEventListener('pointerdown',()=>C.classList.add('down'));
+  addEventListener('pointerup',()=>C.classList.remove('down'));
+}
+</script>
+</body>
+</html>
