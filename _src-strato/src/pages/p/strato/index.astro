@@ -3,7 +3,6 @@
 import d from '../../../data/strato.json';
 const A = 'assets/';
 const cards = [
-  { n: 8, img: '02', ref: 'predlog 5 + virtualni sprehod', badge: 'Priporočena · virtualni sprehod', sl: 'Vajin »dober vmesnik« (predlog 5), narejen bolj virtualno: celozaslonski sprehod po sobah iz vajinih fotografij z oznakami, ki jih tapnete, »lokacija v živo« z animirano potjo do jezera in središča, globina in gibanje ob drsenju, ter pripravljen prostor za pravi video ali 360° ogled.', en: 'Your "good interface" (proposal 5), made more virtual: a full-screen room-by-room walk built from your photos with tappable pins, a "live location" map with animated routes to the lake and the centre, depth and motion on scroll, and a ready slot for the real video or 360° tour.' },
   { n: 1, img: '05', ref: 'neu-residences.com/en/workation', sl: 'Kot NEU Residences: bela glava z logotipom v okvirju, terakota gumbi, izmenični obrobljeni bloki s fotografijami.', en: 'Like NEU Residences: white header with a boxed logo, terracotta buttons, alternating outlined blocks with photos.' },
   { n: 2, img: '09', ref: 'resort-beatrice.si', sl: 'Kot Resort Beatrice: zlata vrstica, fotografija čez cel zaslon, temen vrtiljak sob, zeleni pas z opremo, kartice z ocenami.', en: 'Like Resort Beatrice: gold bar, full-screen photo, a dark room carousel, a green amenities band, review cards.' },
   { n: 3, img: '11', ref: 'vilaspecial.com', sl: 'Kot Vila Special: temen drsnik z vrstico za prihod/odhod, elegantna serifna pisava, svetlo-temni pasovi.', en: 'Like Vila Special: dark slider with an arrival/departure bar, elegant serif type, light and dark bands.' },
@@ -18,7 +17,7 @@ const cards = [
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Strato Apartment – 8 predlogov</title>
+<title>Strato Apartment – 7 predlogov</title>
 <meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,12 +46,11 @@ const cards = [
 </head>
 <body>
 <div class="wrap">
-  <h1>Strato Apartment, 8 predlogov</h1>
-  <p class="sub">Novo: predlog 8 je vajin najljubši vmesnik, narejen bolj virtualno (sprehod po sobah iz fotografij). Za vsako referenčno stran, ki sta jo poslala, en celoten predlog z vajinimi fotografijami in podatki. Vsak ima slovenščino in angleščino (SL | EN), rezervacijski razdelek za Bentral, ocene, kontaktni obrazec in »things to do«. Kliknite predlog in ga preizkusite na telefonu in računalniku.<br /><small>One full proposal per reference site you sent. Each has SL | EN, a Bentral booking slot, ratings, a contact form and things to do.</small></p>
+  <h1>Strato Apartment, 7 predlogov</h1>
+  <p class="sub">Za vsako referenčno stran, ki sta jo poslala, en celoten predlog z vajinimi fotografijami in podatki. Vsak ima slovenščino in angleščino (SL | EN), rezervacijski razdelek za Bentral, ocene, kontaktni obrazec in »things to do«. Kliknite predlog in ga preizkusite na telefonu in računalniku.<br /><small>One full proposal per reference site you sent. Each has SL | EN, a Bentral booking slot, ratings, a contact form and things to do.</small></p>
   <div class="grid">
     {cards.map((c) => (
       <a class="card" href={`v${c.n}/`}>
-        {c.badge && <span class="star">{c.badge}</span>}
         {c.star && <span class="star">dober vmesnik</span>}
         <img src={A+'strato-'+c.img+'.jpg'} alt={`Predlog ${c.n}`} loading={c.n > 3 ? 'lazy' : 'eager'} />
         <div class="b">
