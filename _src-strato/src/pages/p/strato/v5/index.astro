@@ -10,7 +10,10 @@ const t = (sl, en) => `<span data-lang="sl">${sl}</span><span data-lang="en">${e
 const todo = d.things_to_do_from_hosts_folio_guide;
 const reviews = d.ratings.reviews;
 const split = (s) => s.split(' / ');
-const gallery = ['01','03','04','05','06','07','08','10','11','12','13','14','15'];
+const gallery = ['01','03','04','05','06','07','08','10','11','12','13','14','15','terasa-3','terasa-4','terasa-5','terasa-6','vrt-2','kopalnica-2','kopalnica-3','hodnik-1'];
+// Things-to-do photos: Wikimedia Commons, downloaded into ../assets/; the credit is part of the photo.
+const pimg = (p) => `<img src="${A}${p.photo}" width="${p.photo_w}" height="${p.photo_h}" loading="lazy" decoding="async" alt="${p.photo_alt_sl}">`;
+const cr = (p) => `<small class="credit">${t('Foto','Photo')}: ${p.photo_credit.author}, <a href="${p.photo_credit.license_url}" target="_blank" rel="noopener license">${p.photo_credit.license}</a>, <a href="${p.photo_credit.source}" target="_blank" rel="noopener">Wikimedia Commons</a></small>`;
 const amen = [[f.bedrooms,e.bedrooms],[f.living,e.living],[f.kitchen,e.kitchen],[f.bedroom1,e.bedroom1],[f.bedroom2,e.bedroom2],[f.bathroom,e.bathroom],[f.climate,e.climate],[f.outdoor,e.outdoor],[f.parking,e.parking],[f.extras,e.extras],[f.renovated,e.renovated],[f.languages,e.languages]];
 ---
 <!doctype html>
@@ -102,6 +105,11 @@ const amen = [[f.bedrooms,e.bedrooms],[f.living,e.living],[f.kitchen,e.kitchen],
   .figure{display:flex;justify-content:center;margin:26px 0 36px}
   .figure img{width:100%;max-width:1024px;aspect-ratio:3/2;object-fit:cover}
   .figure.narrow img{max-width:946px}
+  .figure.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:946px;margin:26px auto 30px}
+  @media (max-width:560px){.figure.duo{grid-template-columns:1fr}}
+  .cards img{width:100%;aspect-ratio:3/2;object-fit:cover;margin-bottom:14px}
+  .credit{display:block;font-size:12px;color:var(--mute);line-height:1.5;margin-top:4px}
+  .credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
   .block{margin-bottom:34px}
   .block h2{margin-bottom:10px}
   .block .btn{margin-top:2px}
@@ -280,6 +288,7 @@ const amen = [[f.bedrooms,e.bedrooms],[f.living,e.living],[f.kitchen,e.kitchen],
       <p><Fragment set:html={t(`${f.living}. ${f.bedroom1}. ${f.bedroom2}.`,`${e.living}. ${e.bedroom1}. ${e.bedroom2}.`)} /></p>
       <a class="btn" href="#galerija"><Fragment set:html={t('Poglej galerijo','View the gallery')} /></a>
     </div>
+    <div class="figure rv"><img src={A+'strato-terasa-1.jpg'} width="1280" height="852" alt="Terasa z jedilno mizo in pogledom na hiše in hribe" loading="lazy" /></div>
     <div class="block rv">
       <h2><Fragment set:html={t('Narava vas čaka','Nature awaits')} /><br /><Fragment set:html={t('Na prostem','Outdoors')} /></h2>
       <p><Fragment set:html={t(`${f.lake}, ${f.center}. ${f.outdoor}. Pet krajev iz vodnika gostiteljev najdete spodaj.`,`${e.lake}, ${e.center}. ${e.outdoor}. Five places from the hosts' guide are listed below.`)} /></p>
@@ -289,6 +298,7 @@ const amen = [[f.bedrooms,e.bedrooms],[f.living,e.living],[f.kitchen,e.kitchen],
     <div class="block rv">
       <h2><Fragment set:html={t('Kuhinja in oprema','Kitchen and amenities')} /></h2>
       <p><Fragment set:html={t(`${f.kitchen}. ${f.bathroom}. ${f.climate}.`,`${e.kitchen}. ${e.bathroom}. ${e.climate}.`)} /></p>
+      <div class="figure duo"><img src={A+'strato-kopalnica-1.jpg'} width="1440" height="958" alt="Kopalnica s tušem" loading="lazy" /><img src={A+'strato-vrt-1.jpg'} width="1440" height="958" alt="Hiša in vrt z napisom Strato Apartment" loading="lazy" /></div>
       <ul class="amen">{amen.map(([sl,en]) => (<li><Fragment set:html={t(sl,en)} /></li>))}</ul>
     </div>
   </div>
@@ -351,7 +361,7 @@ const amen = [[f.bedrooms,e.bedrooms],[f.living,e.living],[f.kitchen,e.kitchen],
     <span class="over rv"><Fragment set:html={t('Ne zamudite','Don’t miss')} /></span>
     <h2 class="rv"><Fragment set:html={t('Kaj početi v okolici','Things to do nearby')} /></h2>
     <div class="cards rv" id="places" style="margin-top:22px">
-      {todo.map((p) => (<div><h3><Fragment set:html={t(p.sl,p.en)} /></h3><p><Fragment set:html={t(p.note_sl,p.note_en)} /></p><a class="more" href={d.maps} target="_blank" rel="noopener"><Fragment set:html={t('Več','More')} /></a></div>))}
+      {todo.map((p) => (<div data-todo><Fragment set:html={pimg(p)} /><h3><Fragment set:html={t(p.sl,p.en)} /></h3><p><Fragment set:html={t(p.note_sl,p.note_en)} /></p><a class="more" href={d.maps} target="_blank" rel="noopener"><Fragment set:html={t('Več','More')} /></a><Fragment set:html={cr(p)} /></div>))}
     </div>
     <div class="arrows"><button type="button" data-for="places" data-dir="-1" aria-label="Prejšnja / Previous">←</button><button type="button" data-for="places" data-dir="1" aria-label="Naslednja / Next">→</button></div>
     <p class="chips rv"><b><Fragment set:html={t('Več iz vodnika:','More from the guide:')} /></b> {d.more_from_guide.map((m) => (<span>{m}</span>))}</p>

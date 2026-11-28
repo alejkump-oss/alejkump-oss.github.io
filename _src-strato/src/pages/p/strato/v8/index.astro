@@ -23,18 +23,18 @@ const rooms = [
   { id: 'kuhinja', img: ['09', '06', '07', '08'], sl: 'Kuhinja in jedilnica', en: 'Kitchen and dining', csl: 'popolnoma opremljena', cen: 'fully equipped', ssl: 'Indukcija, pečica, pomivalni stroj', sen: 'Induction hob, oven, dishwasher', tsl: f.kitchen, ten: e.kitchen },
   { id: 'velika', img: ['11', '10', '12', '13'], sl: 'Velika spalnica', en: 'Large bedroom', csl: 'velika zakonska postelja', cen: 'king-size bed', ssl: 'Multimedija, knjige, ambientna luč', sen: 'Media, books, ambient lighting', tsl: f.bedroom1, ten: e.bedroom1 },
   { id: 'manjsa', img: ['14', '15'], sl: 'Manjša spalnica', en: 'Second bedroom', csl: 'TV · Xbox', cen: 'TV · Xbox', ssl: 'Zakonska postelja, dve sedalni vreči', sen: 'Double bed, two bean bags', tsl: f.bedroom2, ten: e.bedroom2 },
-  { id: 'terasa', img: [], sl: 'Terasa in vrt', en: 'Terrace and garden', csl: 'senčnik · žar', cen: 'sunshade · barbecue', ssl: 'Brez fotografije', sen: 'No photo', tsl: f.outdoor, ten: e.outdoor },
-  { id: 'kopalnica', img: [], sl: 'Kopalnica', en: 'Bathroom', csl: 'tuš · pralni stroj', cen: 'shower · washing machine', ssl: 'Brez fotografije', sen: 'No photo', tsl: f.bathroom, ten: e.bathroom },
+  { id: 'terasa', img: ['terasa-1', 'vrt-1', 'terasa-2', 'terasa-3'], sl: 'Terasa in vrt', en: 'Terrace and garden', csl: 'senčnik · žar', cen: 'sunshade · barbecue', ssl: 'Senčnik, vrt, prostor za žar', sen: 'Sunshade, garden, barbecue area', tsl: f.outdoor, ten: e.outdoor },
+  { id: 'kopalnica', img: ['kopalnica-1', 'kopalnica-2', 'kopalnica-3'], sl: 'Kopalnica', en: 'Bathroom', csl: 'tuš · pralni stroj', cen: 'shower · washing machine', ssl: 'Tuš, pralni stroj, sušilec za lase', sen: 'Shower, washing machine, hair dryer', tsl: f.bathroom, ten: e.bathroom },
 ];
 const slides = [
   { img: '01', pos: 'center 62%', tsl: ['DOBRODOŠLI', 'V KOČEVJU'], ten: ['WELCOME TO', 'KOČEVJE'], thumb: 2,
     hsl: 'Strato Apartment', hen: 'Strato Apartment',
     psl: `${f.size}, ${f.guests}, ${f.renovated.charAt(0).toLowerCase()}${f.renovated.slice(1)}.`,
     pen: `${e.size}, ${e.guests}, ${e.renovated.charAt(0).toLowerCase()}${e.renovated.slice(1)}.` },
-  { img: '02', pos: 'center 55%', tsl: ['VAŠ DOM', 'OB JEZERU'], ten: ['YOUR HOME', 'BY THE LAKE'], thumb: 1,
+  { img: 'vrt-1', pos: 'center 60%', tsl: ['VAŠ DOM', 'OB JEZERU'], ten: ['YOUR HOME', 'BY THE LAKE'], thumb: 1,
     hsl: '270 m do jezera', hen: '270 m to the lake',
     psl: `${f.lake}, ${f.center}.`, pen: `${e.lake}, ${e.center}.` },
-  { img: '09', pos: 'center 50%', tsl: ['RAZIŠČITE', 'KOČEVSKO'], ten: ['EXPLORE', 'KOČEVSKO'], thumb: 0,
+  { img: 'terasa-2', pos: 'center 55%', tsl: ['RAZIŠČITE', 'KOČEVSKO'], ten: ['EXPLORE', 'KOČEVSKO'], thumb: 0,
     hsl: 'Kaj početi v okolici', hen: 'Things to do nearby',
     psl: todo.map((x) => x.sl).join(', ') + '.', pen: todo.map((x) => x.en).join(', ') + '.' },
 ];
@@ -55,7 +55,11 @@ const S = {
     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], days: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
     pick: 'Your selection', subj: 'Enquiry Strato Apartment', title: 'Strato Apartment · Kočevje' },
 };
-const P = { A: '../assets/', slides, thumbs: ['03', '06', '11'], rooms, am, S, hosts: d.hosts, email: d.email, guests: { sl: f.guests, en: e.guests }, bk, bkEn, ab, abEn };
+const P = { A: '../assets/', slides, thumbs: ['terasa-3', 'vrt-2', '11'], rooms, am, S, hosts: d.hosts, email: d.email, guests: { sl: f.guests, en: e.guests }, bk, bkEn, ab, abEn };
+// Things-to-do photos: Wikimedia Commons, downloaded into ../assets/; the credit is part of the photo.
+const A0 = '../assets/';
+const pimg = (p) => `<img src="${A0}${p.photo}" width="${p.photo_w}" height="${p.photo_h}" loading="lazy" decoding="async" alt="${p.photo_alt_sl}">`;
+const cr = (p) => `<small class="credit">${t('Foto', 'Photo')}: ${p.photo_credit.author}, <a href="${p.photo_credit.license_url}" target="_blank" rel="noopener license">${p.photo_credit.license}</a>, <a href="${p.photo_credit.source}" target="_blank" rel="noopener">Wikimedia Commons</a></small>`;
 const payload = ('window.STRATO=' + JSON.stringify(P) + ';').replace(/</g, '\\u003c');
 ---
 <!doctype html>
@@ -234,8 +238,12 @@ section{scroll-margin-top:90px}
 .tgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(12px,1.6vw,22px)}
 .tdo{background:linear-gradient(160deg,#fff 0%,#fbe7da 100%);border:1px solid rgba(29,26,28,.06);border-radius:18px;padding:22px 20px 20px;min-height:170px;display:flex;flex-direction:column}
 .tdo i{font-style:normal;font-family:'Gilda Display',Georgia,serif;font-size:28px;color:#c9a08b;line-height:1}
-.tdo h3{font-weight:600;font-size:17px;margin-top:auto;padding-top:22px}
+.tdo img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;margin-bottom:16px}
+.tdo h3{font-weight:600;font-size:17px;margin-top:auto;padding-top:14px}
 .tdo p{font-size:13.5px;color:#5c5156;margin-top:6px;line-height:1.4}
+.tdo .credit{display:block;font-size:11px;line-height:1.45;color:#8a7f83;margin-top:10px}
+.tdo .credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.cinfo .house{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:18px;margin-bottom:20px;box-shadow:0 14px 40px rgba(110,70,60,.12)}
 .more{margin-top:20px;font-size:14px;color:#5c5156;line-height:1.6}
 .more b{font-weight:600;color:var(--ink)}
 .bent{background:#fff;border-radius:26px;padding:clamp(20px,3vw,36px);box-shadow:0 18px 60px rgba(120,70,60,.12);display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(20px,3vw,40px);align-items:start}
@@ -455,7 +463,7 @@ footer .fb{font-size:18px;font-weight:300;color:var(--ink)}
   <div class="sh"><h2 set:html={t('Kaj početi v okolici', 'Things to do nearby')} /><div class="chips"><span set:html={t('iz vodiča gostiteljev', 'from the hosts’ guide')} /></div></div>
   <div class="tgrid">
     {todo.map((x, i) => (
-      <div class="tdo rv" style={`transition-delay:${i * .07}s`}><i>0{i + 1}</i><h3 set:html={t(x.sl, x.en)} /><p set:html={t(x.note_sl, x.note_en)} /></div>
+      <div class="tdo rv" data-todo style={`transition-delay:${i * .07}s`}><Fragment set:html={pimg(x)} /><i>0{i + 1}</i><h3 set:html={t(x.sl, x.en)} /><p set:html={t(x.note_sl, x.note_en)} /><Fragment set:html={cr(x)} /></div>
     ))}
   </div>
   <p class="more"><b set:html={t('Še iz vodiča: ', 'Also from the guide: ')} />{d.more_from_guide.join(' · ')}</p>
@@ -481,6 +489,7 @@ footer .fb{font-size:18px;font-weight:300;color:var(--ink)}
   <div class="sh"><h2 set:html={t('Kje smo', 'Where to find us')} /></div>
   <div class="cgrid">
     <div class="cinfo rv">
+      <img class="house" src={A0 + 'strato-vrt-1.jpg'} width="1440" height="958" loading="lazy" decoding="async" alt="Hiša in vrt z napisom Strato Apartment" />
       <div class="lbl" set:html={t('Naslov', 'Address')} /><p>{d.address}</p>
       <div class="lbl" set:html={t('Gostitelja', 'Hosts')} /><p>{d.hosts} · <span set:html={t(f.languages, e.languages)} /></p>
       <div class="lbl" set:html={t('Telefon in e-pošta', 'Phone and e-mail')} /><p><a href={d.phone_href}>{d.phone}</a> · <a href={`mailto:${d.email}`}>{d.email}</a></p>

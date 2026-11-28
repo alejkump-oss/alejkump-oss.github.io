@@ -15,8 +15,13 @@ const rooms = [
   { img: '02', sl: 'Dnevna soba – klavir, kitara, TV', en: 'Living room – piano, guitar, TV', n: '5' },
   { img: '11', sl: 'Velika spalnica – zakonska postelja', en: 'Large bedroom – king-size bed', n: '2' },
   { img: '14', sl: 'Manjša spalnica – TV in Xbox', en: 'Second bedroom – TV and Xbox', n: '2' },
+  { img: 'terasa-1', sl: 'Terasa in vrt – senčnik, žar', en: 'Terrace and garden – sunshade, barbecue', n: '' },
+  { img: 'kopalnica-1', sl: 'Kopalnica – tuš, pralni stroj', en: 'Bathroom – shower, washing machine', n: '' },
 ];
-const gallery = ['01','03','04','05','06','07','08','09','10','12','13','15'];
+const gallery = ['01','03','04','05','06','07','08','09','10','12','13','15','terasa-2','terasa-3','terasa-4','vrt-1','vrt-2','kopalnica-2','kopalnica-3','hodnik-1'];
+// Things-to-do photos: Wikimedia Commons, downloaded into ../assets/; the credit is part of the photo.
+const pimg = (p) => `<img src="${A}${p.photo}" width="${p.photo_w}" height="${p.photo_h}" loading="lazy" decoding="async" alt="${p.photo_alt_sl}">`;
+const cr = (p) => `<span class="credit">${t('Foto','Photo')}: ${p.photo_credit.author}, <a href="${p.photo_credit.license_url}" target="_blank" rel="noopener license">${p.photo_credit.license}</a>, <a href="${p.photo_credit.source}" target="_blank" rel="noopener">Wikimedia Commons</a></span>`;
 const faq = [
   ['Kdaj je prijava in odjava?', 'When are check-in and check-out?', f.checkin + '. ' + f.checkout + '.', e.checkin + '. ' + e.checkout + '.'],
   ['Ali so hišni ljubljenčki dovoljeni?', 'Are pets allowed?', 'Ne. ' + f.rules + '.', 'No. ' + e.rules + '.'],
@@ -172,6 +177,10 @@ const faq = [
   .prow i svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.8}
   .prow b{display:block;font-weight:800;font-size:17px}
   .prow small{font-size:13px;color:rgba(255,255,255,.85)}
+  .prow img{width:104px;height:78px;object-fit:cover;border-radius:12px;flex:0 0 104px}
+  .prow .credit{display:block;font-size:11px;line-height:1.45;color:rgba(255,255,255,.72);margin-top:4px}
+  .prow .credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+  @media (max-width:420px){.prow{align-items:flex-start}.prow img{width:84px;height:63px;flex-basis:84px}}
   .prow .m{margin-left:auto;background:rgba(255,255,255,.14);border-radius:14px;padding:8px 14px;text-align:center;font-weight:800;line-height:1}
   .prow .m small{display:block;font-size:9px;letter-spacing:.2em;margin-top:3px}
   .panel .pill{width:100%;margin-top:14px;min-height:44px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);box-shadow:none}
@@ -358,7 +367,7 @@ const faq = [
       </div>
       <div class="rooms">
         {rooms.map((r) => (
-          <article class="room"><img src={A+'strato-'+r.img+'.jpg'} alt={r.sl} loading="lazy" /><div class="b"><h3><Fragment set:html={t(r.sl,r.en)} /></h3><div class="row"><a class="pill ghost sm" href="#galerija"><Fragment set:html={t('Preveri','View')} /></a><span class="n"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>{r.n}</span></div></div></article>
+          <article class="room"><img src={A+'strato-'+r.img+'.jpg'} width="1440" height="958" alt={r.sl} loading="lazy" /><div class="b"><h3><Fragment set:html={t(r.sl,r.en)} /></h3><div class="row"><a class="pill ghost sm" href="#galerija"><Fragment set:html={t('Preveri','View')} /></a>{r.n && <span class="n"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg>{r.n}</span>}</div></div></article>
         ))}
       </div>
     </div>
@@ -384,7 +393,7 @@ const faq = [
       <h3><Fragment set:html={t('Dostopnost','Getting around')} /></h3>
       <p><Fragment set:html={t(`${f.lake}, ${f.center}. ${f.parking}.`,`${e.lake}, ${e.center}. ${e.parking}.`)} /></p>
       <div class="pbox"><small><Fragment set:html={t('Lokacija na zemljevidu','Location on the map')} /></small><b>Trata VI 11</b><p>1330 Kočevje, SI</p></div>
-      {todo.map((p) => (<div class="prow"><i><svg viewBox="0 0 24 24"><path d="M3 12c3-3 6-3 9 0s6 3 9 0"/><path d="M3 17c3-3 6-3 9 0s6 3 9 0"/></svg></i><div><b><Fragment set:html={t(p.sl,p.en)} /></b><small><Fragment set:html={t(p.note_sl,p.note_en)} /></small></div></div>))}
+      {todo.map((p) => (<div class="prow" data-todo><Fragment set:html={pimg(p)} /><div><b><Fragment set:html={t(p.sl,p.en)} /></b><small><Fragment set:html={t(p.note_sl,p.note_en)} /></small><Fragment set:html={cr(p)} /></div></div>))}
       <p style="font-size:13px;margin:12px 0 0;color:rgba(255,255,255,.8)"><Fragment set:html={t('Več iz vodnika: ','More from the guide: ')} />{d.more_from_guide.join(' · ')}</p>
       <a class="pill" href={d.maps} target="_blank" rel="noopener"><Fragment set:html={t('Poglej na zemljevidu','View on the map')} /></a>
     </div>

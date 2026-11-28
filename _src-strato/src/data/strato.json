@@ -99,36 +99,67 @@
       }
     ]
   },
+  "_photo_rules": "things_to_do photos are from Wikimedia Commons only (CC0 / CC BY / CC BY-SA), downloaded into assets/, never hot-linked, each shows that actual place. The credit (author, licence, Wikimedia Commons) must be shown next to or under every photo: CC BY-SA attribution is legally required. Never use kocevsko.com or other tourism-site photos.",
   "things_to_do_from_hosts_folio_guide": [
     {
       "sl": "Kočevsko jezero",
       "en": "Lake Kočevje",
       "note_sl": "približno 270 m od apartmaja",
-      "note_en": "about 270 m from the apartment"
+      "note_en": "about 270 m from the apartment",
+      "photo": "strato-okolica-jezero.jpg",
+      "photo_w": 1440,
+      "photo_h": 960,
+      "photo_alt_sl": "Pomol na plaži Kočevskega jezera",
+      "photo_alt_en": "Pier at the beach on Lake Kočevje",
+      "photo_credit": { "author": "Ostrorogi", "license": "CC BY-SA 4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "source": "https://commons.wikimedia.org/wiki/File:Kocevsko_jezero_1.jpg" }
     },
     {
       "sl": "Pragozd Krokar",
       "en": "Krokar virgin forest",
       "note_sl": "pragozd na Unescovem seznamu",
-      "note_en": "UNESCO-listed virgin forest"
+      "note_en": "UNESCO-listed virgin forest",
+      "photo": "strato-okolica-krokar.jpg",
+      "photo_w": 1200,
+      "photo_h": 900,
+      "photo_alt_sl": "Pragozd Krokar nad Kolpo",
+      "photo_alt_en": "Krokar virgin forest above the Kolpa",
+      "photo_credit": { "author": "Ljuba brank", "license": "CC BY-SA 3.0", "license_url": "https://creativecommons.org/licenses/by-sa/3.0/", "source": "https://commons.wikimedia.org/wiki/File:02_Krokar_(34).JPG" }
     },
     {
       "sl": "Grad Fridrihštajn",
       "en": "Fridrihštajn Castle",
       "note_sl": "razvaline gradu nad Kočevjem",
-      "note_en": "castle ruins above Kočevje"
+      "note_en": "castle ruins above Kočevje",
+      "photo": "strato-okolica-fridrihstajn.jpg",
+      "photo_w": 1024,
+      "photo_h": 683,
+      "photo_alt_sl": "Razvaline gradu Fridrihštajn",
+      "photo_alt_en": "Ruins of Fridrihštajn Castle",
+      "photo_credit": { "author": "Vid Pogačnik", "license": "CC BY-SA 4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "source": "https://commons.wikimedia.org/wiki/File:Fridrih%C5%A1tajn_castle_01.jpg" }
     },
     {
       "sl": "Željnske jame",
       "en": "Željne caves",
       "note_sl": "kraške jame tik ob mestu",
-      "note_en": "karst caves just outside town"
+      "note_en": "karst caves just outside town",
+      "photo": "strato-okolica-zeljne.jpg",
+      "photo_w": 1024,
+      "photo_h": 640,
+      "photo_alt_sl": "Naravni most v Željnskih jamah",
+      "photo_alt_en": "Natural arch in the Željne caves",
+      "photo_credit": { "author": "Vid Pogačnik", "license": "CC BY-SA 4.0", "license_url": "https://creativecommons.org/licenses/by-sa/4.0/", "source": "https://commons.wikimedia.org/wiki/File:Zeljnske_jame_1.jpg" }
     },
     {
       "sl": "Reka Kolpa",
       "en": "Kolpa river",
       "note_sl": "kopanje in rafting",
-      "note_en": "swimming and rafting"
+      "note_en": "swimming and rafting",
+      "photo": "strato-okolica-kolpa.jpg",
+      "photo_w": 1200,
+      "photo_h": 895,
+      "photo_alt_sl": "Reka Kolpa med Ribjekom in Osilnico",
+      "photo_alt_en": "The Kolpa river between Ribjek and Osilnica",
+      "photo_credit": { "author": "Ajznponar", "license": "CC0 1.0", "license_url": "https://creativecommons.org/publicdomain/zero/1.0/", "source": "https://commons.wikimedia.org/wiki/File:Kolpa_between_Ribjek_and_Osilnica_14.jpg" }
     }
   ],
   "more_from_guide": [
@@ -146,6 +177,6 @@
     "kocevsko": "Text link 'Najdete nas tudi na Kočevsko.com' -> kocevsko_link. Logo file pending from hosts."
   },
   "booking_widget": "Section 'Rezervacija' with id='bentral' containing a clearly labelled placeholder: 'Tu bo Bentral rezervacijski koledar (vstavimo kodo vtičnika)'. Plus buttons: call and e-mail.",
-  "photos": "assets/strato-01.jpg ... strato-15.jpg (950x632, their real photos from kocevsko.com). Look at them and pick the right ones per section.",
+  "photos": "assets/strato-01.jpg ... strato-15.jpg (1440x958, the hosts' own Airbnb listing photos; on 28.11.2026 they replaced the softer 950x632 kocevsko.com copies of the same rooms). New since 28.11.2026, also the hosts' own: strato-terasa-1..6 (terrace), strato-vrt-1..2 (house and garden, -1 has the STRATO sign), strato-kopalnica-1..3 (bathroom), strato-hodnik-1..3 (hall), strato-xbox-1. Every variant must show the terrace, the garden and the bathroom; no 'no photo' placeholders.",
   "languages": "Every variant must have SL and EN: a language switch (SL | EN) that swaps all text on the page (data-lang toggle, remembered in localStorage)."
 }

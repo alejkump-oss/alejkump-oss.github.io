@@ -18,9 +18,20 @@ const photos: Record<string, [string, string]> = {
   '10': ['Velika spalnica', 'Main bedroom'], '11': ['Velika spalnica z omaro', 'Main bedroom with wardrobe'],
   '12': ['Velika spalnica', 'Main bedroom'], '13': ['Velika spalnica', 'Main bedroom'],
   '14': ['Manjša spalnica s sedalnimi vrečami', 'Second bedroom with bean bags'], '15': ['Manjša spalnica', 'Second bedroom'],
+  'terasa-1': ['Terasa z jedilno mizo', 'Terrace with dining table'], 'terasa-2': ['Terasa s senčnikom in razgledom', 'Terrace with sunshade and view'],
+  'terasa-3': ['Terasa z ležalniki', 'Terrace with deck chairs'], 'terasa-4': ['Ležalnik na terasi', 'Deck chair on the terrace'],
+  'terasa-5': ['Žar na terasi', 'Barbecue on the terrace'], 'terasa-6': ['Terasa, pogled iz dnevne sobe', 'Terrace seen from the living room'],
+  'vrt-1': ['Hiša in vrt z napisom Strato Apartment', 'House and garden with the Strato Apartment sign'], 'vrt-2': ['Hiša, vrt in dvorišče', 'House, garden and courtyard'],
+  'kopalnica-1': ['Kopalnica s tušem', 'Bathroom with shower'], 'kopalnica-2': ['Kopalnica z umivalnikom', 'Bathroom with washbasin'], 'kopalnica-3': ['Pralni stroj v kopalnici', 'Washing machine in the bathroom'],
+  'hodnik-1': ['Hodnik z vhodom', 'Hallway and entrance'], 'hodnik-2': ['Hodnik', 'Hallway'], 'hodnik-3': ['Vhodni kotiček', 'Entrance corner'], 'xbox-1': ['TV in Xbox v manjši spalnici', 'TV and Xbox in the second bedroom'],
 };
 const img = (n: string, cls = '', loading: 'lazy' | 'eager' = 'lazy') =>
-  `<img src="../assets/strato-${n}.jpg" width="950" height="632" loading="${loading}" decoding="async" class="${cls}" alt="${photos[n][0]}" data-alt-sl="${photos[n][0]}" data-alt-en="${photos[n][1]}">`;
+  `<img src="../assets/strato-${n}.jpg" width="1440" height="958" loading="${loading}" decoding="async" class="${cls}" alt="${photos[n][0]}" data-alt-sl="${photos[n][0]}" data-alt-en="${photos[n][1]}">`;
+// Things-to-do photos: Wikimedia Commons, downloaded into ../assets/; the credit is part of the photo.
+const pimg = (p: any) =>
+  `<img src="../assets/${p.photo}" width="${p.photo_w}" height="${p.photo_h}" loading="lazy" decoding="async" alt="${p.photo_alt_sl}" data-alt-sl="${p.photo_alt_sl}" data-alt-en="${p.photo_alt_en}">`;
+const cr = (p: any) =>
+  `<small class="credit">${t('Foto','Photo')}: ${p.photo_credit.author}, <a href="${p.photo_credit.license_url}" target="_blank" rel="noopener license">${p.photo_credit.license}</a>, <a href="${p.photo_credit.source}" target="_blank" rel="noopener">Wikimedia Commons</a></small>`;
 const S = d.facts_sl as any, E = d.facts_en as any;
 const mailSl = 'Povpraševanje – Strato Apartment', mailEn = 'Enquiry – Strato Apartment';
 const dsl = (x: string) => x.split(' / ')[0], den = (x: string) => x.split(' / ')[1] || x;
@@ -29,6 +40,8 @@ const cards = [
   { n: '06', sl: 'Kuhinja', en: 'Kitchen', k: 'kitchen' },
   { n: '12', sl: 'Velika spalnica', en: 'Main bedroom', k: 'bedroom1' },
   { n: '15', sl: 'Manjša spalnica', en: 'Second bedroom', k: 'bedroom2' },
+  { n: 'terasa-1', sl: 'Terasa in vrt', en: 'Terrace and garden', k: 'outdoor' },
+  { n: 'kopalnica-1', sl: 'Kopalnica', en: 'Bathroom', k: 'bathroom' },
 ];
 const amenIcons: [string, string, string][] = [
   ['M4 20V10h16v10M4 15h16M7 10V7h4v3M13 10V7h4v3', 'Dve spalnici', 'Two bedrooms'],
@@ -207,8 +220,12 @@ details p{padding:0 0 20px;color:#333}
 .tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:70px}
 @media (max-width:900px){.tcards{grid-template-columns:1fr}}
 .tc{background:#fff;color:var(--ink);border-radius:4px;overflow:hidden}
-.tc .top{height:170px;background:linear-gradient(135deg,var(--green),#56685a);display:grid;place-items:center;color:var(--gold);font-family:'Playfair Display',serif;font-size:3rem}
+.tc .top{height:170px;background:linear-gradient(135deg,var(--green),#56685a);display:grid;place-items:center;color:var(--gold);font-family:'Playfair Display',serif;font-size:3rem;position:relative;overflow:hidden}
+.tc .top img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tc .top span{position:relative;z-index:1;text-shadow:0 2px 14px rgba(0,0,0,.7)}
 .tc .body{padding:26px}
+.credit{display:block;margin-top:10px;font-size:.72rem;line-height:1.5;color:#6a6a6a}
+.credit a{color:inherit}
 .tc h3{font-size:1.15rem;font-weight:500;margin-bottom:8px}
 .tc p{font-size:.9rem;color:#444}
 .trips .more{margin-top:40px;color:#cfcac0;font-size:.92rem;text-align:center}
@@ -299,7 +316,7 @@ footer p{font-size:.95rem;color:#444;max-width:360px;margin-top:16px}
 
 <main id="top">
   <section class="hero">
-    {['02','09','12'].map((n,i) => (<div class={`slide${i===0?' on':''}`} data-slide><Fragment set:html={img(n,'',i===0?'eager':'lazy')} /></div>))}
+    {['02','terasa-2','12'].map((n,i) => (<div class={`slide${i===0?' on':''}`} data-slide><Fragment set:html={img(n,'',i===0?'eager':'lazy')} /></div>))}
     <div class="in">
       <h1><Fragment set:html={t('Kjer se <em class="s">dom</em><br>začne na dopustu','Where <em class="s">home</em><br>begins on holiday')} /></h1>
       <p><Fragment set:html={t(`Strato Apartment, ${S.size} za ${S.guests} v Kočevju. ${S.lake}, ${S.center}.`,`Strato Apartment, ${E.size} for ${E.guests} in Kočevje. ${E.lake}, ${E.center}.`)} /></p>
@@ -349,7 +366,7 @@ footer p{font-size:.95rem;color:#444;max-width:360px;margin-top:16px}
       <p><Fragment set:html={t(`${S.renovated}. ${S.languages}. ${S.extras}.`,`${E.renovated}. ${E.languages}. ${E.extras}.`)} /></p>
     </div>
   </section>
-  <div class="rv"><div class="rows">{['03','04','09','10'].map(n => <Fragment set:html={img(n)} />)}</div><div class="rows">{['13','14','02','08'].map(n => <Fragment set:html={img(n)} />)}</div></div>
+  <div class="rv"><div class="rows">{['terasa-3','vrt-2','kopalnica-2','04'].map(n => <Fragment set:html={img(n)} />)}</div><div class="rows">{['terasa-4','13','hodnik-1','08'].map(n => <Fragment set:html={img(n)} />)}</div></div>
 
   <section class="green center" id="oprema">
     <div class="wrap">
@@ -370,7 +387,7 @@ footer p{font-size:.95rem;color:#444;max-width:360px;margin-top:16px}
         <p class="more"><Fragment set:html={t('Več iz vodiča','More from the guide')} />: {d.more_from_guide.join(', ')}</p>
         <a class="btn out" href={d.maps} target="_blank" rel="noopener"><Fragment set:html={t('Odpri zemljevid','Open the map')} /></a>
       </div>
-      <div class="lcol rv"><Fragment set:html={img('05','a')} /><Fragment set:html={img('10','b')} /><Fragment set:html={img('04','c')} /></div>
+      <div class="lcol rv"><Fragment set:html={img('terasa-1','a')} /><Fragment set:html={img('vrt-1','b')} /><Fragment set:html={img('terasa-5','c')} /></div>
     </div>
   </section>
 
@@ -409,7 +426,7 @@ footer p{font-size:.95rem;color:#444;max-width:360px;margin-top:16px}
         <div><span class="label"><Fragment set:html={t('Ideje za izlete','Trip ideas')} /></span><h2><Fragment set:html={t('Kraji, ki jih <em class="s">ne smete zamuditi</em>','Places you <em class="s">can’t miss</em>')} /></h2></div>
         <p><Fragment set:html={t('Iz vodiča gostiteljev: jezero, pragozd, grad, jame in reka – vse v bližini apartmaja.','From the hosts’ guide: a lake, a virgin forest, a castle, caves and a river, all close to the apartment.')} /></p>
       </div>
-      <div class="tcards rv">{d.things_to_do_from_hosts_folio_guide.map((p,i) => (<div class="tc"><div class="top">0{i+1}</div><div class="body"><h3><Fragment set:html={t(p.sl,p.en)} /></h3><p><Fragment set:html={t(p.note_sl,p.note_en)} /></p></div></div>))}</div>
+      <div class="tcards rv">{d.things_to_do_from_hosts_folio_guide.map((p,i) => (<div class="tc" data-todo><div class="top"><Fragment set:html={pimg(p)} /><span>0{i+1}</span></div><div class="body"><h3><Fragment set:html={t(p.sl,p.en)} /></h3><p><Fragment set:html={t(p.note_sl,p.note_en)} /></p><Fragment set:html={cr(p)} /></div></div>))}</div>
       <p class="more rv"><Fragment set:html={t('Več iz vodiča','More from the guide')} />: {d.more_from_guide.join(' · ')}</p>
     </div>
   </section>

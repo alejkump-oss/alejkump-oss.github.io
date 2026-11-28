@@ -16,8 +16,13 @@ const spaces = [
   { img: '09', sl: 'Kuhinja', en: 'Kitchen', ssl: 'Popolnoma opremljena', sen: 'Fully equipped', tsl: f.kitchen, ten: e.kitchen },
   { img: '11', sl: 'Velika spalnica', en: 'Large bedroom', ssl: 'Zakonska postelja', sen: 'King-size bed', tsl: f.bedroom1, ten: e.bedroom1 },
   { img: '14', sl: 'Manjša spalnica', en: 'Second bedroom', ssl: 'TV in Xbox', sen: 'TV and Xbox', tsl: f.bedroom2, ten: e.bedroom2 },
+  { img: 'terasa-1', sl: 'Terasa in vrt', en: 'Terrace and garden', ssl: 'Senčnik, vrt, žar', sen: 'Sunshade, garden, barbecue', tsl: f.outdoor, ten: e.outdoor },
+  { img: 'kopalnica-1', sl: 'Kopalnica', en: 'Bathroom', ssl: 'Tuš in pralni stroj', sen: 'Shower and washing machine', tsl: f.bathroom, ten: e.bathroom },
 ];
-const gallery = ['01','03','04','06','07','08','10','12','15'];
+const gallery = ['01','03','04','06','07','08','10','12','15','terasa-2','terasa-3','terasa-4','vrt-2','kopalnica-2','hodnik-1'];
+// Things-to-do photos: Wikimedia Commons, downloaded into ../assets/; the credit is part of the photo.
+const pimg = (p) => `<img src="${A}${p.photo}" width="${p.photo_w}" height="${p.photo_h}" loading="lazy" decoding="async" alt="${p.photo_alt_sl}">`;
+const cr = (p) => `<small class="credit">${t('Foto','Photo')}: ${p.photo_credit.author}, <a href="${p.photo_credit.license_url}" target="_blank" rel="noopener license">${p.photo_credit.license}</a>, <a href="${p.photo_credit.source}" target="_blank" rel="noopener">Wikimedia Commons</a></small>`;
 ---
 <!doctype html>
 <html lang="sl">
@@ -111,6 +116,15 @@ const gallery = ['01','03','04','06','07','08','10','12','15'];
   .card p{font-size:15px;line-height:1.75}
   .pattern{position:relative;background:#5a5a5a repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 3px,transparent 3px 8px);display:grid;place-items:center;color:rgba(255,255,255,.14);font:400 clamp(60px,10vw,170px)/1 var(--serif);text-transform:uppercase;letter-spacing:.08em;overflow:hidden}
   .pattern.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
+  .pattern.photo{min-height:360px}
+  .todo{border-bottom:1px solid rgba(255,255,255,.18);padding:14px 0;display:flex;gap:14px 18px;flex-wrap:wrap;align-items:center}
+  .todo img{width:120px;height:80px;object-fit:cover;flex:0 0 120px;border:1px solid #999;outline:3px double var(--pink2);outline-offset:-8px}
+  .todo .num{color:var(--pink2);font-size:14px}
+  .todo b{font-weight:400;font-size:22px;text-transform:uppercase}
+  .todo i{margin-left:auto;color:var(--pink2)}
+  .todo .credit{flex-basis:100%;font-size:12px;line-height:1.5;color:#bdbdbd;margin-top:-6px}
+  .todo .credit a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+  @media (max-width:520px){.todo i{margin-left:0;flex-basis:100%}}
   @media (max-width:860px){.frame{grid-template-columns:minmax(0,1fr)}.card{min-height:0;padding:40px 24px}.pattern{min-height:220px}}
 
   /* apartments blocks */
@@ -272,7 +286,7 @@ const gallery = ['01','03','04','06','07','08','10','12','15'];
   <div class="box">
     <div class="frame rv">
       <div class="card"><div><h2><Fragment set:html={t('Dobrodošli','Welcome')} /></h2><p><Fragment set:html={t('Dobrodošli na spletni strani Strato Apartmenta. Gostitelja Barbara in Rok vas sprejmeta osebno ali s samostojno prijavo s kodo – v prelepi kočevski pokrajini.','Welcome to the Strato Apartment website. Your hosts Barbara and Rok welcome you in person or with a self check-in code – in the beautiful Kočevsko countryside.')} /></p></div></div>
-      <div class="pattern"><span>Strato</span></div>
+      <div class="pattern photo"><img src={A+'strato-vrt-1.jpg'} width="1440" height="958" alt="Hiša in vrt z napisom Strato Apartment" loading="lazy" /></div>
     </div>
   </div>
 </section>
@@ -281,7 +295,7 @@ const gallery = ['01','03','04','06','07','08','10','12','15'];
   {spaces.map((s, i) => (
     <article class={'apt rv' + (i % 2 ? ' rev' : '')}>
       <div class="inner">
-        <div class="ph"><img src={A+'strato-'+s.img+'.jpg'} alt={s.sl} loading="lazy" /></div>
+        <div class="ph"><img src={A+'strato-'+s.img+'.jpg'} width="1440" height="958" alt={s.sl} loading="lazy" /></div>
         <div class="tx"><div><h2><Fragment set:html={t(s.sl,s.en)} /><em><Fragment set:html={t(s.ssl,s.sen)} /></em></h2><p><Fragment set:html={t(s.tsl+'.',s.ten+'.')} /></p><a class="btn" href="#galerija"><Fragment set:html={t('Poglej','View')} /></a></div></div>
       </div>
     </article>
@@ -300,7 +314,7 @@ const gallery = ['01','03','04','06','07','08','10','12','15'];
     <div class="frame rv">
       <div class="card"><div><h2><Fragment set:html={t('Okolica','Things to do')} /></h2><p><Fragment set:html={t('Pet krajev iz vodnika gostiteljev, ki jih priporočata Barbara in Rok. Vse je v bližini apartmaja.','Five places from the hosts’ guide, recommended by Barbara and Rok. All are close to the apartment.')} /></p><a class="btn light" href={d.maps} target="_blank" rel="noopener" style="margin-top:22px"><Fragment set:html={t('Obišči','Visit')} /></a></div></div>
       <div class="pattern" style="display:block;padding:40px 44px;color:#fff;font:400 16px/1.8 var(--serif);letter-spacing:0;text-transform:none">
-        {todo.map((p, i) => (<p style="border-bottom:1px solid rgba(255,255,255,.18);padding:12px 0;display:flex;gap:18px;flex-wrap:wrap"><span style="color:var(--pink2);font-size:14px">0{i+1}</span><b style="font-weight:400;font-size:22px;text-transform:uppercase"><Fragment set:html={t(p.sl,p.en)} /></b><i style="margin-left:auto;color:var(--pink2)"><Fragment set:html={t(p.note_sl,p.note_en)} /></i></p>))}
+        {todo.map((p, i) => (<p class="todo" data-todo><Fragment set:html={pimg(p)} /><span class="num">0{i+1}</span><b><Fragment set:html={t(p.sl,p.en)} /></b><i><Fragment set:html={t(p.note_sl,p.note_en)} /></i><Fragment set:html={cr(p)} /></p>))}
         <p style="padding-top:16px;font-size:15px;color:var(--pink2)"><Fragment set:html={t('Več iz vodnika: ','More from the guide: ')} />{d.more_from_guide.join(' · ')}</p>
       </div>
     </div>
